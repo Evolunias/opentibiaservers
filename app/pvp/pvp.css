@@ -1,0 +1,853 @@
+/* PvP System Page Styles */
+
+.section-header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 16px 0 8px;
+  color: var(--text);
+  text-shadow: 0 2px 8px rgba(251, 191, 36, 0.1);
+}
+
+.section-header p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.button-primary,
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease;
+  text-decoration: none;
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--green), var(--green-strong));
+  color: var(--text);
+  box-shadow: 0 8px 24px rgba(135, 160, 125, 0.2);
+}
+
+.button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(135, 160, 125, 0.3);
+}
+
+.button-secondary {
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+}
+
+.button-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Skull Warning Banner */
+.skull-warning-banner {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 32px;
+  border: 2px solid rgba(255, 68, 68, 0.3);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 68, 68, 0.08) 0%, transparent 100%);
+  margin-bottom: 32px;
+}
+
+.warning-icon {
+  width: 48px;
+  height: 48px;
+  color: #ff4444;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.warning-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #d32f2f;
+}
+
+.warning-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333333;
+  line-height: 1.7;
+}
+
+html[data-theme='dark'] .warning-content p {
+  color: var(--text-muted);
+}
+
+/* Skulls Grid */
+.skulls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.skull-card {
+  padding: 24px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skull-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 12px 32px rgba(251, 191, 36, 0.1);
+  transform: translateY(-2px);
+}
+
+.skull-header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.skull-badge {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.skull-title {
+  flex: 1;
+}
+
+.skull-title h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.skull-description {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.skull-details {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  animation: slideDown 200ms ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skull-rules {
+  margin-bottom: 16px;
+}
+
+.rules-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.rules-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rules-list li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.rule-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.danger-indicator {
+  padding: 12px;
+  background: rgba(255, 68, 68, 0.08);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.danger-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.danger-level {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.danger-level.extreme {
+  background: rgba(255, 68, 68, 0.15);
+  color: #d32f2f;
+}
+
+.danger-level.critical {
+  background: rgba(139, 0, 0, 0.15);
+  color: #c62828;
+}
+
+.danger-level.moderate {
+  background: rgba(251, 191, 36, 0.15);
+  color: #f57c00;
+}
+
+.skull-progression {
+  padding: 12px;
+  background: linear-gradient(135deg, rgba(105, 117, 101, 0.05), transparent);
+  border-radius: 8px;
+  border-left: 3px solid var(--green);
+}
+
+.progression-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.progression-text {
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Tactics Section */
+.tactics-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.tactics-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tactic-button {
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  background: transparent;
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 200ms ease;
+}
+
+.tactic-button:hover {
+  border-color: var(--gold);
+  color: var(--text);
+}
+
+.tactic-button.active {
+  background: linear-gradient(135deg, rgba(105, 117, 101, 0.2), transparent);
+  border-color: var(--gold);
+  color: var(--text);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.1);
+}
+
+.tactic-detail {
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(105, 117, 101, 0.02), transparent);
+}
+
+.tactic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.tactic-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.skill-level {
+  margin: 8px 0 0 0;
+}
+
+.level-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.level-badge.fundamental {
+  background: rgba(135, 160, 125, 0.2);
+  color: var(--green);
+}
+
+.level-badge.intermediate {
+  background: rgba(251, 191, 36, 0.2);
+  color: var(--gold);
+}
+
+.level-badge.advanced {
+  background: rgba(255, 68, 68, 0.2);
+  color: #ff6b6b;
+}
+
+.level-badge.master {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(135, 160, 125, 0.3));
+  color: var(--gold);
+}
+
+.tactic-description {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.strategies-list {
+  margin-top: 20px;
+}
+
+.strategies-list h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold);
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.strategies-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.strategies-list li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.strategy-icon {
+  color: var(--gold);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Pillars Grid */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.pillar-card {
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: all 300ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.pillar-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(251, 191, 36, 0.1);
+}
+
+.pillar-card:hover::before {
+  opacity: 1;
+}
+
+.pillar-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.pillar-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(135, 160, 125, 0.2), rgba(251, 191, 36, 0.1));
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.pillar-icon .icon {
+  width: 28px;
+  height: 28px;
+  color: var(--gold);
+}
+
+.pillar-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  position: relative;
+  z-index: 1;
+}
+
+.pillar-description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0 0 16px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.pillar-aspects {
+  position: relative;
+  z-index: 1;
+}
+
+.aspects-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.aspects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aspects-list li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aspect-dot {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* Progression Timeline */
+.progression-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.progression-step {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  transition: all 200ms ease;
+  position: relative;
+}
+
+.progression-step:hover {
+  border-color: var(--gold);
+  box-shadow: 0 8px 24px rgba(251, 191, 36, 0.08);
+}
+
+.step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--green), var(--gold));
+  border-radius: 50%;
+  font-weight: 700;
+  color: var(--bg);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.step-line {
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(180deg, var(--gold), transparent);
+  margin-top: 8px;
+}
+
+.step-content h3 {
+  margin: 0 0 16px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.step-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.info-value {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Rules Grid */
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.rule-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(105, 117, 101, 0.05), transparent);
+  transition: all 300ms ease;
+}
+
+.rule-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(251, 191, 36, 0.1);
+}
+
+.rule-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.rule-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Mindset Panel */
+.mindset-panel {
+  padding: 40px;
+  border: 2px solid var(--green);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(105, 117, 101, 0.05), transparent);
+  margin-bottom: 48px;
+}
+
+.mindset-content h2 {
+  margin: 0 0 24px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.mindset-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.mindset-item {
+  padding: 20px;
+  border-left: 3px solid var(--gold);
+}
+
+.mindset-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.mindset-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* CTA Panel */
+.cta-panel {
+  padding: 48px;
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(105, 117, 101, 0.05));
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: var(--text);
+}
+
+.cta-content p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin: 0 0 24px 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Side Panel */
+.side-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fact-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.fact-item:last-child {
+  border-bottom: none;
+}
+
+.fact-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.fact-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .button-primary,
+  .button-secondary {
+    width: 100%;
+  }
+
+  .tactics-container {
+    grid-template-columns: 1fr;
+  }
+
+  .tactics-nav {
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .tactic-button {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .skull-warning-banner {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .warning-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mindset-panel {
+    padding: 24px;
+  }
+
+  .cta-panel {
+    padding: 32px 20px;
+  }
+
+  .mindset-list {
+    grid-template-columns: 1fr;
+  }
+
+  .skull-header {
+    flex-direction: column;
+  }
+
+  .progression-step {
+    grid-template-columns: 1fr;
+  }
+
+  .step-marker {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .step-line {
+    display: none;
+  }
+}

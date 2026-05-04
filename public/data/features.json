@@ -1,0 +1,340 @@
+{
+  "features": [
+    {
+      "id": "talents",
+      "name": "Talent System",
+      "category": "Progression",
+      "description": "The most essential feature of Evolisca. Unlock talent pages and customize your character abilities through talents earned from outfits, mounts, auras, wings, and NPCs.",
+      "details": [
+        "Unlock Page 2 with Talent Page Parchment (1,000 coins)",
+        "Unlock Page 3 via Infinity Talents Quest",
+        "Reset talents using Talent Tokens",
+        "Gain 1 talent every 25 levels",
+        "Can be removed using talent tokens from dungeons and monsters"
+      ],
+      "level_buffs": [
+        "Level 850 vocation buff",
+        "Level 1100 vocation buff",
+        "Level 1500 vocation buff",
+        "Level 2500 vocation buff"
+      ]
+    },
+    {
+      "id": "dungeons",
+      "name": "Dungeons",
+      "category": "PvE Content",
+      "description": "Challenging dungeon encounters with 5 distinct difficulty levels. Daily dungeon allocations with unique rewards and formidable boss encounters.",
+      "details": [
+        "3 dungeons per day per player (4 with golden account)",
+        "5 distinct difficulty levels: 100, 200, 600, 1200, 1500",
+        "Each dungeon has unique rewards and a boss encounter",
+        "Dungeon tokens used to obtain items from Dungeon NPC",
+        "All dungeon charges reset at midnight server time"
+      ]
+    },
+    {
+      "id": "task-system",
+      "name": "Task System",
+      "category": "Progression",
+      "description": "Progressive system of tasks that unlock as you level. Tasks provide access to boss encounters and accumulate points for boss permissions.",
+      "details": [
+        "Tasks unlock at higher levels",
+        "Reset daily at 00:00 server time",
+        "Tasks starting from level 200+ offer valuable task points",
+        "Task points enable boss permissions from comprehensive boss list",
+        "All tasks now grant Star Coins and Task Points on completion"
+      ]
+    },
+    {
+      "id": "cursed-chests",
+      "name": "Cursed Chests",
+      "category": "Combat Mechanics",
+      "description": "Challenging chest encounters that appear after defeating monsters. Overcome 5 waves to claim rewards.",
+      "details": [
+        "Materialize upon defeating a monster",
+        "Exclusive to the player who defeated the monster",
+        "Requires overcoming 5 challenging waves",
+        "Rewards include: Star coins, currency, rare dolls, outfits, mounts"
+      ]
+    },
+    {
+      "id": "monster-orbs",
+      "name": "Monster Orbs",
+      "category": "Combat Mechanics",
+      "description": "Special orbs that spawn when killing monsters. Provide temporary buffs to damage, experience, and loot.",
+      "details": [
+        "Spawn when killing a monster",
+        "Only the defeating player can take the orb",
+        "Increase damage, experience, and loot for limited time",
+        "Can also give an aura to help kill the monster"
+      ]
+    },
+    {
+      "id": "monster-skulls",
+      "name": "Monster Skulls",
+      "category": "Combat Mechanics",
+      "description": "Four types of skulls (white, green, red, black) that appear after killing monsters and enhance combat.",
+      "details": [
+        "Four skull types: white, green, red, black",
+        "Appear after killing a monster",
+        "Each skull adds to monster's damage, health, experience, and loot"
+      ]
+    },
+    {
+      "id": "daily-quest",
+      "name": "Daily Reward Quest",
+      "category": "Daily Activities",
+      "description": "Daily activities with random rewards based on luck. Fight monsters and bosses for mounts, outfits, wings, auras, and currencies.",
+      "details": [
+        "Go to daily reward quest every day",
+        "Fight the monster and boss",
+        "Claim your reward",
+        "Reward categories: mounts, outfits, wings, auras, shaders, birds, money, star coins, talent coins",
+        "Daily box time resets with daily quest time"
+      ]
+    },
+    {
+      "id": "item-upgrade",
+      "name": "Enhanced Item System (Upgrades)",
+      "category": "Equipment",
+      "description": "Upgrade items to increase combat effectiveness. Upgrade various attributes up to level 10.",
+      "details": [
+        "Upgradeable attributes: armor, defense, attack power, attack bonuses, critical hit damage, damage increase, damage reduction, dodge chance, damage penetration, life leech, mana leech",
+        "Maximum upgrade level: 10",
+        "Level of upgrades achieved is subject to luck",
+        "Bonus: +10% Damage Increase for Soul Set"
+      ]
+    },
+    {
+      "id": "market",
+      "name": "Market System",
+      "category": "Economy",
+      "description": "Facilitates effortless buying and selling of items using money or premium points.",
+      "details": [
+        "Right-click item and select Add Market",
+        "Choose currency: gold or premium points",
+        "Set length of offer",
+        "Can also buy items in stacks"
+      ]
+    },
+    {
+      "id": "bosses",
+      "name": "Bosses and Cooldowns",
+      "category": "PvE Content",
+      "description": "Bosses spawn at regular intervals (every hour) at different locations with integrated cooldown module.",
+      "details": [
+        "Bosses emerge at regular intervals",
+        "Spawn every hour at different locations",
+        "Cooldown Module integrated into game",
+        "Real-time updates on boss status and availability",
+        "Daily Boss Charges available from Grizzly Adams using Task Points",
+        "Weekly Boss events on Sunday, Friday, Saturday"
+      ]
+    },
+    {
+      "id": "waypoints",
+      "name": "Waypoints",
+      "category": "Navigation",
+      "description": "Fast travel system with initial waypoints and ability to unlock additional locations.",
+      "details": [
+        "Three initial waypoints: Temple, Tasker, Quests Room",
+        "Stand on designated waypoint tiles to unlock additional waypoints",
+        "Checkpoint on second floor of Temple",
+        "Access world map through shop"
+      ]
+    },
+    {
+      "id": "crafting",
+      "name": "Craft System",
+      "category": "Economy",
+      "description": "Create items by combining ingredients. Four main craft categories available.",
+      "details": [
+        "Must complete a quest to use craft machine",
+        "Categories: Utility, Ingredient, Enchants, Cosmetics",
+        "Utility: craft stones for skill and regeneration, unlimited SSA, unlimited Might Ring",
+        "Ingredient: craft ingredients for other items",
+        "Enchants: craft end-game sets",
+        "Cosmetics: craft mounts, outfits, quest items"
+      ]
+    },
+    {
+      "id": "fishing",
+      "name": "Fish System",
+      "category": "Gathering",
+      "description": "Sea hunting with social skills. Catch fish with special effects and bonuses.",
+      "details": [
+        "Five types of fish available",
+        "Buy fishing rods from Alissa",
+        "Rods require specific skill levels and have break chance",
+        "Fish Effects: Green Perch restores mana, Northern Pike grants +5 skills, Rainbow Trout grants +10 skills, Wanda Fish grants +10% attack speed"
+      ]
+    },
+    {
+      "id": "online-points",
+      "name": "Online Points",
+      "category": "Currency",
+      "description": "Earn points for online time. Use with Khlfawy NPC for rewards.",
+      "details": [
+        "Earn +1 point every 30 minutes online",
+        "Use with Khlfawy NPC on 2nd floor of temple",
+        "Can be exchanged for stamina refiller"
+      ]
+    },
+    {
+      "id": "no-bot-spawn",
+      "name": "No-Bot Spawning System",
+      "category": "Hunting",
+      "description": "Choose between normal and no-bot spawns with increased difficulty and rewards.",
+      "details": [
+        "When entering hunting area, choose: Normal Spawn or No-Bot Spawn",
+        "No-Bot Spawn features: 2x monster density, expanded room layouts",
+        "Bonuses: +30% Experience, +30% Loot Chance"
+      ]
+    },
+    {
+      "id": "set-bonuses",
+      "name": "Set Bonuses",
+      "category": "Equipment",
+      "description": "Complete equipment sets grant powerful bonuses to combat effectiveness.",
+      "details": [
+        "Challenge Room Set: +10% Critical Chance",
+        "Raid Boss Set (Thorn Style): +5% Critical Chance, +5% Damage Increase",
+        "Soul Set: +10% Damage Increase",
+        "High-Level Set (3500+): +10% Damage Increase, +10% Critical Chance"
+      ]
+    },
+    {
+      "id": "challenge-room",
+      "name": "Challenge Room System",
+      "category": "PvE Content",
+      "description": "7-wave high-level dungeon encounters with escalating challenges and powerful rewards.",
+      "details": [
+        "Minimum Level: 1500",
+        "Entry Cost: 10x Monster Skull Tokens",
+        "7 waves: Monster waves 1-2, Boss wave 3, Monster waves 4-6, Boss wave 7",
+        "Gain +1 level after each wave",
+        "Cooldown: 15 minutes to complete all 7 waves",
+        "Enter once every 5 hours"
+      ]
+    },
+    {
+      "id": "bounce-system",
+      "name": "Bounce System",
+      "category": "Equipment",
+      "description": "Weapon enhancement system for hitting multiple targets.",
+      "details": [
+        "Bounce Stone: Unlocks Bounce System on weapon",
+        "Bounce Monster Stone: Increases number of targets",
+        "Bounce Stone Remover: Removes Bounce and returns stone"
+      ]
+    },
+    {
+      "id": "exp-recovery",
+      "name": "Recover Experience System",
+      "category": "Death Mechanics",
+      "description": "Recover lost experience upon death with EXP Restore Box.",
+      "details": [
+        "Players can recover 25% of lost experience",
+        "EXP Restore Box appears on corpse",
+        "Only deceased player can access",
+        "Other players cannot use or remove"
+      ]
+    },
+    {
+      "id": "spawn-parchment",
+      "name": "Spawn Parchment",
+      "category": "Hunting",
+      "description": "Private spawn access with increased monster density and experience.",
+      "details": [
+        "Cooldown reduced from 6 hours to 3 hours",
+        "1 hour private spawn with good experience",
+        "Boss appearance chance: 20%",
+        "Defeating boss: 10% chance to unlock Krakoloss mount",
+        "Eligibility: Players level 1000+"
+      ]
+    },
+    {
+      "id": "monster-scaling",
+      "name": "Monster Experience Scaling",
+      "category": "Progression",
+      "description": "Experience scales based on level difference between player and monster.",
+      "details": [
+        "If higher level than monster: EXP reduced (min 50%)",
+        "If monster higher than player: EXP boosted (max 120%)"
+      ]
+    },
+    {
+      "id": "boosted-monsters",
+      "name": "Boosted Monster System",
+      "category": "Daily Activities",
+      "description": "Daily rotating boosted monsters with increased experience and loot.",
+      "details": [
+        "Boosted monsters rotate daily at server save",
+        "Each day one monster is boosted",
+        "Higher Experience from boosted monster",
+        "Higher loot drop chance"
+      ]
+    },
+    {
+      "id": "pvp-system",
+      "name": "PvP System",
+      "category": "Combat",
+      "description": "Player vs Player combat with experience enabled and balanced level scaling.",
+      "details": [
+        "Experience enabled in PvP",
+        "Level range: 80% to 200%",
+        "No same IP/account abuse",
+        "Protection Zone (PZ) Lock: 1 minute",
+        "White Skull Time: 1 minute",
+        "Red Skull Length: 1 day"
+      ]
+    },
+    {
+      "id": "buff-system",
+      "name": "Buff System",
+      "category": "Combat Mechanics",
+      "description": "Select damage, reduction, and skills buffs with duration and cooldown.",
+      "details": [
+        "Select Damage, Reduction, and Skills buffs",
+        "Duration: 1 hour",
+        "Cooldown: 2 hours",
+        "Cost: Evolisca Tokens"
+      ]
+    },
+    {
+      "id": "daily-streak",
+      "name": "Daily Streak",
+      "category": "Progression",
+      "description": "Daily experience bonus system that resets on missed days.",
+      "details": [
+        "Earn EXP bonus daily (up to 10%)",
+        "Miss a day: reset",
+        "Incentivizes regular gameplay"
+      ]
+    },
+    {
+      "id": "vocation-buffs",
+      "name": "Vocation Buffs",
+      "category": "Class System",
+      "description": "Class-specific buffs at various level thresholds with unique abilities.",
+      "details": [
+        "Available at levels: 850, 1100, 1500, 2500",
+        "Unique abilities per class",
+        "High-risk, high-reward gameplay",
+        "Talent reduction caps by vocation: Knight max 30%, RP 25%, Mage 20%"
+      ]
+    },
+    {
+      "id": "reward-system",
+      "name": "Reward System",
+      "category": "Economy",
+      "description": "Minimum damage requirement for loot with bonuses and double loot chance.",
+      "details": [
+        "Minimum 10% damage required for loot",
+        "Knights gain +50% bonus",
+        "Chance for double loot (top damage)",
+        "Rewards go directly to backpack"
+      ]
+    }
+  ]
+}

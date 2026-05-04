@@ -1,0 +1,67 @@
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.page-header .eyebrow {
+  display: block;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #4a7c59;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: #666666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.gallery-section {
+  margin-bottom: 4rem;
+}
+
+.gallery-container {
+  margin-bottom: 4rem;
+}
+
+.gallery-container:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-header {
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+  }
+
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .button-secondary {
+    width: 100%;
+  }
+}

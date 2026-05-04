@@ -1,0 +1,517 @@
+{
+  "equipment_slots": {
+    "helmet": {
+      "label": "Helmet",
+      "description": "Protective headgear that provides defense bonuses",
+      "items": [
+        {
+          "name": "Bloodforge Helm",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "The legendary helmet from the Bloodforge Set. Provides substantial defense and upgrade points.",
+          "stats": {
+            "armor": 80,
+            "defense": 25
+          }
+        },
+        {
+          "name": "Ancient Crown",
+          "tier": "Rare",
+          "level_requirement": 1200,
+          "description": "A powerful helm suitable for experienced adventurers",
+          "stats": {
+            "armor": 65,
+            "defense": 20
+          }
+        }
+      ]
+    },
+    "armor": {
+      "label": "Armor",
+      "description": "Body armor that provides core defense",
+      "items": [
+        {
+          "name": "Bloodforge Plate",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "The legendary chest piece from the Bloodforge Set. Essential for high-level progression.",
+          "stats": {
+            "armor": 100,
+            "defense": 30
+          }
+        },
+        {
+          "name": "Dragon Scale Armor",
+          "tier": "Rare",
+          "level_requirement": 1200,
+          "description": "Made from dragon scales, offers excellent protection",
+          "stats": {
+            "armor": 85,
+            "defense": 25
+          }
+        }
+      ]
+    },
+    "legs": {
+      "label": "Legs",
+      "description": "Leg protection for lower body defense",
+      "items": [
+        {
+          "name": "Bloodforge Leggings",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "The legendary leg piece from the Bloodforge Set",
+          "stats": {
+            "armor": 80,
+            "defense": 22
+          }
+        },
+        {
+          "name": "Knight's Greaves",
+          "tier": "Rare",
+          "level_requirement": 1200,
+          "description": "Sturdy leg protection for warriors",
+          "stats": {
+            "armor": 70,
+            "defense": 18
+          }
+        },
+        {
+          "name": "Cosmic Legs",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "Leg armor infused with cosmic energy, providing superior protection.",
+          "weight": "19.00 oz",
+          "stats": {
+            "armor": 75,
+            "defense": 20
+          }
+        }
+      ]
+    },
+    "boots": {
+      "label": "Boots",
+      "description": "Footwear that enhances mobility and defense",
+      "items": [
+        {
+          "name": "Bloodforge Boots",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "The legendary boots from the Bloodforge Set",
+          "stats": {
+            "armor": 60,
+            "defense": 15,
+            "dodge": 3
+          }
+        },
+        {
+          "name": "Swift Treads",
+          "tier": "Rare",
+          "level_requirement": 1200,
+          "description": "Boots that enhance movement speed",
+          "stats": {
+            "armor": 50,
+            "defense": 12,
+            "dodge": 2
+          }
+        }
+      ]
+    },
+    "amulet": {
+      "label": "Amulet",
+      "description": "Magical pendant worn around the neck",
+      "items": [
+        {
+          "name": "Bloodforge Amulet",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "The legendary amulet from the Bloodforge Set. Boosts magical power significantly.",
+          "stats": {
+            "magic_power": 40,
+            "mana_leech": 5
+          }
+        },
+        {
+          "name": "Sage's Pendant",
+          "tier": "Rare",
+          "level_requirement": 1200,
+          "description": "Enhances magical abilities",
+          "stats": {
+            "magic_power": 30,
+            "mana_leech": 3
+          }
+        },
+        {
+          "name": "Violet Eye Amulet",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "A striking amulet featuring a mystical violet eye. Enhances both defensive and offensive capabilities.",
+          "weight": "12.00 oz",
+          "stats": {
+            "health_regeneration": 420,
+            "mana_regeneration": 420,
+            "max_health_percent": 9,
+            "max_mana_percent": 9,
+            "critical_hit_chance": 4,
+            "magic_power": 5,
+            "extra_weapon_attack": 14
+          }
+        },
+        {
+          "name": "Amulet Of Red Skull",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "An ominous amulet featuring a crimson skull. Provides defensive bonuses and life regeneration.",
+          "weight": "12.00 oz",
+          "stats": {
+            "skill_loss_reduction": 18,
+            "health_regeneration": 380,
+            "mana_regeneration": 380,
+            "max_health_percent": 7,
+            "max_mana_percent": 7,
+            "damage_reduction": 4,
+            "extra_weapon_attack": 10
+          }
+        }
+      ]
+    },
+    "ring": {
+      "label": "Ring",
+      "description": "Enchanted rings that provide various bonuses",
+      "items": [
+        {
+          "name": "Bloodforge Ring",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "The legendary ring from the Bloodforge Set",
+          "stats": {
+            "magic_power": 25,
+            "defense": 10
+          }
+        },
+        {
+          "name": "Power Ring",
+          "tier": "Rare",
+          "level_requirement": 1200,
+          "description": "Increases attack power",
+          "stats": {
+            "attack": 15,
+            "defense": 5
+          }
+        },
+        {
+          "name": "Soulring",
+          "tier": "Rare",
+          "level_requirement": 1200,
+          "description": "An enchanted ring that enhances dodging ability and evasion.",
+          "weight": "0.80 oz",
+          "stats": {
+            "dodge": 5
+          }
+        }
+      ]
+    },
+    "ammo_slot": {
+      "label": "Ammo Slot",
+      "description": "Ammunition and projectiles",
+      "items": [
+        {
+          "name": "Bloodforge Bolts",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "Legendary ammunition crafted from Bloodforge materials",
+          "stats": {
+            "attack": 35,
+            "crit_damage": 8
+          }
+        },
+        {
+          "name": "Piercing Arrows",
+          "tier": "Rare",
+          "level_requirement": 1200,
+          "description": "Arrows designed to pierce through armor",
+          "stats": {
+            "attack": 25,
+            "crit_damage": 5
+          }
+        }
+      ]
+    },
+    "backpack": {
+      "label": "Backpack",
+      "description": "Storage and carrying capacity",
+      "items": [
+        {
+          "name": "Bloodforge Satchel",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "The legendary backpack from the Bloodforge Set. Massive storage capacity.",
+          "stats": {
+            "capacity": 500,
+            "weight_reduction": 15
+          }
+        },
+        {
+          "name": "Ethereal Backpack",
+          "tier": "Legendary",
+          "level_requirement": 2300,
+          "vocation": "Archer",
+          "description": "A mystical backpack infused with ethereal energy. Designed for archers with exceptional combat capabilities.",
+          "weight": "8.00 oz",
+          "stats": {
+            "critical_hit_chance": 7,
+            "critical_damage": 10,
+            "attack_speed": 6,
+            "extra_weapon_attack": 20,
+            "distance_fighting": 8,
+            "protection_all": 2
+          }
+        },
+        {
+          "name": "Festive Backpack",
+          "tier": "Rare",
+          "level_requirement": 1200,
+          "description": "A cheerful backpack adorned with festive decorations. Provides sustained life and mana regeneration.",
+          "weight": "8.00 oz",
+          "stats": {
+            "life_leech": 0.1,
+            "mana_leech": 0.1,
+            "mp_per_sec": 250,
+            "hp_per_sec": 250
+          }
+        },
+        {
+          "name": "Winged Backpack",
+          "tier": "Rare",
+          "level_requirement": 1200,
+          "description": "A backpack with majestic wings. Enhances attack speed and weapon effectiveness.",
+          "weight": "8.00 oz",
+          "stats": {
+            "attack_speed": 4,
+            "extra_weapon_attack": 10
+          }
+        },
+        {
+          "name": "Demon Backpack",
+          "tier": "Uncommon",
+          "level_requirement": 8,
+          "description": "A dark backpack with demonic markings. Provides basic weapon attack bonus.",
+          "weight": "18.00 oz",
+          "stats": {
+            "extra_weapon_attack": 5
+          }
+        },
+        {
+          "name": "Explorer's Pack",
+          "tier": "Rare",
+          "level_requirement": 1200,
+          "description": "Durable pack for adventurers",
+          "stats": {
+            "capacity": 350,
+            "weight_reduction": 10
+          }
+        },
+        {
+          "name": "Cursed Crimsonevil Backpack",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "A sinister backpack imbued with dark power. Provides exceptional offensive bonuses.",
+          "weight": "21.00 oz",
+          "stats": {
+            "capacity": 52,
+            "absorption_all": 3,
+            "extra_weapon_attack": 22,
+            "critical_hit_chance": 6,
+            "critical_damage": 12,
+            "life_leech": 4,
+            "mana_leech": 4,
+            "max_health_percent": 8,
+            "max_mana_percent": 8
+          }
+        },
+        {
+          "name": "Draconic Backpack",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "A backpack crafted from dragon scales, offering superior storage and combat bonuses.",
+          "weight": "23.00 oz",
+          "stats": {
+            "capacity": 60,
+            "absorption_all": 4,
+            "extra_weapon_attack": 30,
+            "critical_hit_chance": 8,
+            "critical_damage": 16,
+            "distance_fighting": 10,
+            "sword_fighting": 10,
+            "damage_increase": 12,
+            "max_health_percent": 10,
+            "max_mana_percent": 10
+          }
+        }
+      ]
+    },
+    "charms": {
+      "label": "Charms",
+      "description": "Magical charm slots for special bonuses",
+      "items": [
+        {
+          "name": "Bloodforge Charm",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "The legendary charm from the Bloodforge Set. Provides versatile bonuses.",
+          "stats": {
+            "all_stats": 5,
+            "experience_boost": 10
+          }
+        },
+        {
+          "name": "Lucky Charm",
+          "tier": "Rare",
+          "level_requirement": 1200,
+          "description": "Increases chance-based effects",
+          "stats": {
+            "luck": 10,
+            "experience_boost": 5
+          }
+        },
+        {
+          "name": "Eternal Ankh (Charm)",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "An ancient charm in the shape of an ankh. Equip inside charm bag with !charms command. Provides balanced defensive and regenerative bonuses.",
+          "weight": "12.00 oz",
+          "stats": {
+            "skill_loss_reduction": 25,
+            "health_regeneration": 450,
+            "mana_regeneration": 450,
+            "max_health_percent": 8,
+            "max_mana_percent": 8,
+            "life_leech": 4,
+            "mana_leech": 4,
+            "extra_weapon_attack": 12
+          }
+        },
+        {
+          "name": "Necromancy Signed Contract (Charm)",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "A dark pact charm sealed with necromantic power. Equip inside charm bag with !charms command. Enhances magical and critical abilities.",
+          "weight": "9.50 oz",
+          "stats": {
+            "max_mana_percent": 12,
+            "magic_power": 10,
+            "critical_hit_chance": 6,
+            "critical_damage": 12,
+            "mana_rune_increase": 10,
+            "extra_weapon_attack": 28
+          }
+        },
+        {
+          "name": "Tentacle Lute (Charm)",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "A strange musical charm of otherworldly origin. Equip inside charm bag with !charms command. Boosts magical and mana regeneration.",
+          "weight": "9.00 oz",
+          "stats": {
+            "max_mana_percent": 10,
+            "magic_power": 8,
+            "mana_rune_increase": 8,
+            "critical_hit_chance": 4,
+            "mana_leech": 5,
+            "extra_weapon_attack": 22,
+            "attack_speed": 4
+          }
+        },
+        {
+          "name": "Arodis Magical Board (Charm)",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "A mystical game board of legendary power. Equip inside charm bag with !charms command. Provides balanced defense and life/mana leeching.",
+          "weight": "9.00 oz",
+          "stats": {
+            "max_health_percent": 10,
+            "max_mana_percent": 10,
+            "life_leech": 4,
+            "mana_leech": 4,
+            "damage_reduction": 4,
+            "dodge": 4,
+            "extra_weapon_attack": 22
+          }
+        },
+        {
+          "name": "Khufu Hand (Charm)",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "An ancient hand relic of immense power. Equip inside charm bag with !charms command. The most versatile charm with exceptional all-around stats.",
+          "weight": "10.00 oz",
+          "stats": {
+            "max_health_percent": 16,
+            "max_mana_percent": 16,
+            "damage_increase": 12,
+            "damage_reduction": 6,
+            "critical_hit_chance": 7,
+            "attack_speed": 7,
+            "distance_fighting": 8,
+            "sword_fighting": 8,
+            "magic_power": 8,
+            "extra_weapon_attack": 36
+          }
+        },
+        {
+          "name": "Arbaziloth Santa Figure (Charm)",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "A festive charm with dark origins. Equip inside charm bag with !charms command. Provides high health and mana bonuses with offensive capabilities.",
+          "weight": "9.50 oz",
+          "stats": {
+            "max_health_percent": 12,
+            "max_mana_percent": 10,
+            "life_leech": 6,
+            "mana_leech": 6,
+            "attack_speed": 6,
+            "extra_weapon_attack": 28
+          }
+        },
+        {
+          "name": "Demonic Contract Figure (Charm)",
+          "tier": "Legendary",
+          "level_requirement": 1400,
+          "description": "A sinister figure sealed within a charm. Equip inside charm bag with !charms command. Highest damage output charm with extreme critical and leech bonuses.",
+          "weight": "10.00 oz",
+          "stats": {
+            "max_health_percent": 15,
+            "max_mana_percent": 15,
+            "critical_hit_chance": 8,
+            "critical_damage": 18,
+            "life_leech": 8,
+            "mana_leech": 8,
+            "dodge": 6,
+            "extra_weapon_attack": 34
+          }
+        }
+      ]
+    }
+  },
+  "upgrade_currencies": {
+    "evolisca_tokens": {
+      "name": "Evolisca Tokens",
+      "description": "Currency used to remove upgrade points from items. Cost: 1 token per 1 attribute point removed",
+      "acquisition": "Available in the store"
+    },
+    "boss_points": {
+      "name": "Boss Points",
+      "description": "Earned by defeating bosses (100% from daily/weekly/world bosses, 10% from hourly/event bosses, 20% from Bosses Orb)",
+      "acquisition": "Boss encounters"
+    },
+    "monster_points": {
+      "name": "Monster Points",
+      "description": "Earned by completing task bosses (Level 1000+). Bloodback is the major source.",
+      "acquisition": "Task bosses"
+    },
+    "pvp_points": {
+      "name": "PvP Points",
+      "description": "Earned by killing players in PvP combat. Can also be obtained by converting 3 Boss Points to 1 PvP Point.",
+      "acquisition": "Player kills"
+    }
+  }
+}

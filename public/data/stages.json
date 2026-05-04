@@ -1,0 +1,118 @@
+{
+  "stages": [
+    {
+      "id": 1,
+      "minLevel": 1,
+      "maxLevel": 99,
+      "multiplier": 60
+    },
+    {
+      "id": 2,
+      "minLevel": 100,
+      "maxLevel": 199,
+      "multiplier": 45
+    },
+    {
+      "id": 3,
+      "minLevel": 200,
+      "maxLevel": 299,
+      "multiplier": 30
+    },
+    {
+      "id": 4,
+      "minLevel": 300,
+      "maxLevel": 399,
+      "multiplier": 23
+    },
+    {
+      "id": 5,
+      "minLevel": 400,
+      "maxLevel": 499,
+      "multiplier": 18
+    },
+    {
+      "id": 6,
+      "minLevel": 500,
+      "maxLevel": 599,
+      "multiplier": 13
+    },
+    {
+      "id": 7,
+      "minLevel": 600,
+      "maxLevel": 699,
+      "multiplier": 8
+    },
+    {
+      "id": 8,
+      "minLevel": 700,
+      "maxLevel": 899,
+      "multiplier": 5
+    },
+    {
+      "id": 9,
+      "minLevel": 900,
+      "maxLevel": 999,
+      "multiplier": 2.5
+    },
+    {
+      "id": 10,
+      "minLevel": 1000,
+      "maxLevel": 1199,
+      "multiplier": 1.8
+    },
+    {
+      "id": 11,
+      "minLevel": 1200,
+      "maxLevel": 1499,
+      "multiplier": 0.75
+    },
+    {
+      "id": 12,
+      "minLevel": 1500,
+      "maxLevel": 1999,
+      "multiplier": 0.25
+    },
+    {
+      "id": 13,
+      "minLevel": 2000,
+      "maxLevel": 2499,
+      "multiplier": 0.08
+    },
+    {
+      "id": 14,
+      "minLevel": 2500,
+      "maxLevel": 2999,
+      "multiplier": 0.04
+    },
+    {
+      "id": 15,
+      "minLevel": 3000,
+      "maxLevel": 3499,
+      "multiplier": 0.02
+    },
+    {
+      "id": 16,
+      "minLevel": 3500,
+      "maxLevel": 3999,
+      "multiplier": 0.01
+    },
+    {
+      "id": 17,
+      "minLevel": 4000,
+      "maxLevel": 4499,
+      "multiplier": 0.005
+    },
+    {
+      "id": 18,
+      "minLevel": 4500,
+      "maxLevel": 4999,
+      "multiplier": 0.003
+    },
+    {
+      "id": 19,
+      "minLevel": 5000,
+      "maxLevel": 5000,
+      "multiplier": 0.0015
+    }
+  ]
+}

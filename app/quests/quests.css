@@ -1,0 +1,248 @@
+/* Quests Page Styling */
+
+.quests-search-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.quests-search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--bg-elevated);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.quests-search-input::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+.quests-search-input:focus {
+  outline: none;
+  border-color: var(--green-strong);
+  box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.1);
+}
+
+.quests-results-info {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Difficulty Filter Buttons */
+.difficulty-filter-container {
+  display: grid;
+  gap: 8px;
+}
+
+.difficulty-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  font-family: inherit;
+}
+
+.difficulty-filter-btn:hover {
+  border-color: var(--line-strong);
+  background: rgba(74, 124, 89, 0.08);
+}
+
+.difficulty-filter-btn.active {
+  font-weight: 600;
+  background: var(--bg-soft);
+  border-color: var(--line-strong);
+}
+
+.difficulty-filter-count {
+  margin-left: auto;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-weight: 600;
+}
+
+/* Quest Cards Grid */
+.quests-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.quest-card {
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.quest-card:hover {
+  border-color: var(--line-strong);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+html[data-theme="dark"] .quest-card:hover {
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+}
+
+/* Quest Card Header */
+.quest-card-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.quest-card-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.quest-card-badge {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+}
+
+.quest-card-description {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Quest Card Info Grid */
+.quest-card-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.quest-card-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.quest-card-info-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.quest-card-info-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Quest Card Highlights */
+.quest-card-highlights {
+  display: grid;
+  gap: 8px;
+}
+
+.quest-highlight-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.quest-highlight-check {
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Quest Card CTA */
+.quest-card-cta {
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: auto;
+  border: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+.quest-card-cta:hover {
+  border-color: var(--line-strong);
+  background: rgba(74, 124, 89, 0.1);
+}
+
+/* No Results State */
+.no-quests-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+
+.no-quests-state h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.no-quests-state p {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quest-card-header {
+    flex-direction: column;
+  }
+
+  .quest-card-badge {
+    align-self: flex-start;
+  }
+}

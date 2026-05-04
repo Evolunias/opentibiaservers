@@ -1,0 +1,124 @@
+{
+  "bosses": [
+    {
+      "name": "Ward Barbarian",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/5/5d/Ward_1.png/revision/latest?cb=20240413223129",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/d/dd/Ward_2.png/revision/latest?cb=20240413223201"
+    },
+    {
+      "name": "Infectanus",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/1/10/Infectus_1.png/revision/latest?cb=20240413222925",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/4/4a/Infictus_2.png/revision/latest?cb=20240413223003"
+    },
+    {
+      "name": "Dracola",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/e/ea/Dracola_1.png/revision/latest?cb=20240413223510",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/3/36/Dracola_2.png/revision/latest?cb=20240413223613"
+    },
+    {
+      "name": "EtherShreck",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/3/33/Ethersik1.png/revision/latest?cb=20240413223407",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/b/b6/Ethir_shik_2.png/revision/latest?cb=20240413223342"
+    },
+    {
+      "name": "Actors Power",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/b/bb/Actros_power_1.png/revision/latest?cb=20240413223709",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/a/a6/Actors_power_2.png/revision/latest?cb=20240413223823"
+    },
+    {
+      "name": "Ancient Fungus",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/f/fc/Anicent_fung_2.png/revision/latest?cb=20240413223858",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/a/a4/Ancient_fungs_3.png/revision/latest?cb=20240413224009"
+    },
+    {
+      "name": "Frostbite",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/a/ae/Frostbite1.png/revision/latest?cb=20240413224306",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/8/83/Forst2.png/revision/latest?cb=20240413224954"
+    },
+    {
+      "name": "Eldritchbane",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/8/88/Rehmous_1.png/revision/latest?cb=20240413224135",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/8/8e/Rehmus_2.png/revision/latest?cb=20240413224232"
+    },
+    {
+      "name": "Ise",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/8/89/Isle1.png/revision/latest?cb=20240413230020",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/b/b3/Ise_2.png/revision/latest?cb=20240413230106"
+    },
+    {
+      "name": "Blackbeard the Ruthless",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/5/5d/Bb1.png/revision/latest?cb=20240413230153",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/d/dc/Bb2.png/revision/latest?cb=20240413230244"
+    },
+    {
+      "name": "Senkken",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/c/c9/Ske_1.png/revision/latest?cb=20240413230527",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/4/4b/Senkken_2.png/revision/latest?cb=20240413230656"
+    },
+    {
+      "name": "Demon Visco",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/0/00/Visco_1.png/revision/latest?cb=20240413230730",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/3/37/Visco2.png/revision/latest?cb=20240413231341"
+    },
+    {
+      "name": "Shenlong Lord",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/1/1c/Shenlog1.png/revision/latest?cb=20240413231408",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/a/a6/Shenlog2.png/revision/latest?cb=20240413231721"
+    },
+    {
+      "name": "Glooth Bomb",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/0/0b/Glooth_bomb.png/revision/latest/scale-to-width-down/184?cb=20250521202009",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/d/d9/Glooth_bomb_location.png/revision/latest/scale-to-width-down/185?cb=20250521203001"
+    },
+    {
+      "name": "Death Mage",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/9/9b/Death_mage.PNG/revision/latest/scale-to-width-down/184?cb=20250522101357",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/9/9c/Death_mage_location.PNG/revision/latest/scale-to-width-down/185?cb=20250522101356"
+    },
+    {
+      "name": "Cerberus",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/f/f6/Cerberus.PNG/revision/latest/scale-to-width-down/180?cb=20250522101357",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/8/85/Cerberus_location.PNG/revision/latest/scale-to-width-down/180?cb=20250522101357"
+    },
+    {
+      "name": "Ashee",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/6/63/Ashee_cd.PNG/revision/latest/scale-to-width-down/180?cb=20250522102754",
+      "mapLocation": null
+    },
+    {
+      "name": "Tyrn",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/f/f3/Tyrn_cd.PNG/revision/latest/scale-to-width-down/180?cb=20250522105403",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/6/60/Tyrn_location.PNG/revision/latest/scale-to-width-down/180?cb=20250522105402"
+    },
+    {
+      "name": "Cinnamon Ibex",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/1/13/Cinnamon_Ibex_cd.PNG/revision/latest/scale-to-width-down/180?cb=20250522105403",
+      "mapLocation": null
+    },
+    {
+      "name": "Sorcelight",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/e/e6/Sorcelight_cd.png/revision/latest/scale-to-width-down/180?cb=20250522105751",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/e/e2/Sorcelight_location.PNG/revision/latest/scale-to-width-down/180?cb=20250522105404"
+    },
+    {
+      "name": "Arcanum",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/8/8f/Arcanum_cd.png/revision/latest/scale-to-width-down/180?cb=20250522105841",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/8/82/Arcanum_location.png/revision/latest/scale-to-width-down/180?cb=20250522110000"
+    },
+    {
+      "name": "Gorillion",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/d/d3/Gorillion_cd.PNG/revision/latest/scale-to-width-down/180?cb=20250522110408",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/d/d4/Gorillion_location.PNG/revision/latest/scale-to-width-down/180?cb=20250522110410"
+    },
+    {
+      "name": "Grimreaper",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/2/2f/Grimreaper_cd.PNG/revision/latest/scale-to-width-down/180?cb=20250522110112",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/e/e8/Grimreaper_location.PNG/revision/latest/scale-to-width-down/180?cb=20250522110111"
+    },
+    {
+      "name": "Savage King",
+      "sprite": "https://static.wikia.nocookie.net/evolisca-tibia/images/5/51/Savage_king_cd.PNG/revision/latest/scale-to-width-down/180?cb=20250522110110",
+      "mapLocation": "https://static.wikia.nocookie.net/evolisca-tibia/images/3/32/Savage_king_location.PNG/revision/latest/scale-to-width-down/180?cb=20250522110112"
+    }
+  ]
+}

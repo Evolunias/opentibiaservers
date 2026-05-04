@@ -1,0 +1,747 @@
+/* Magic Stones Page Styling */
+
+.magic-stones-page {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0d1628 100%);
+  color: #e0e6ff;
+}
+
+/* Hero Section */
+.magic-stones-hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(99, 102, 241, 0.1) 100%);
+  border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+  margin-bottom: 3rem;
+}
+
+.magic-stones-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #a78bfa 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #c7d2fe;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Introduction Section */
+.magic-stones-intro {
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-content h2 {
+  font-size: 2rem;
+  color: #a78bfa;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+}
+
+.intro-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #d1d5f0;
+  margin: 0 0 2rem 0;
+}
+
+.intro-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.highlight-box {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.highlight-box:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.5);
+  transform: translateY(-4px);
+}
+
+.highlight-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.highlight-box p {
+  margin: 0;
+  color: #c7d2fe;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.highlight-box strong {
+  color: #a78bfa;
+}
+
+/* Search Section */
+.magic-stones-search {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.search-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 3.5rem 1rem 1.5rem;
+  font-size: 1rem;
+  background: rgba(30, 41, 59, 0.8);
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 10px;
+  color: #e0e6ff;
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: rgba(224, 230, 255, 0.6);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #a78bfa;
+  background: rgba(30, 41, 59, 1);
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.search-clear {
+  position: absolute;
+  right: 3.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #a78bfa;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.search-clear:hover {
+  color: #c4b5fd;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.search-results-info {
+  color: #c7d2fe;
+  font-size: 0.95rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.search-results-info strong {
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+/* Magic Stones Grid */
+.magic-stones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto 3rem;
+}
+
+.stone-card {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.stone-card:hover {
+  border-color: rgba(139, 92, 246, 0.6);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
+  box-shadow: 0 8px 32px rgba(167, 139, 250, 0.15);
+  transform: translateY(-4px);
+}
+
+.stone-card.expanded {
+  border-color: #a78bfa;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.15) 100%);
+}
+
+.stone-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  transition: background 0.3s ease;
+}
+
+.stone-card-header:hover {
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.stone-icon-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex: 1;
+}
+
+.stone-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.stone-title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stone-name {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #a78bfa;
+}
+
+.stone-boost {
+  font-size: 0.85rem;
+  color: #c7d2fe;
+  opacity: 0.9;
+}
+
+.expand-toggle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #a78bfa;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.stone-card.expanded .expand-toggle {
+  transform: rotate(180deg);
+}
+
+.stone-description {
+  padding: 1rem 1.5rem;
+  margin: 0;
+  color: #d1d5f0;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.stone-details {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-section h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #a78bfa;
+  font-weight: 700;
+}
+
+.detail-section p {
+  margin: 0;
+  color: #c7d2fe;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.crafting-materials {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.material-item {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.material-item:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.material-name {
+  color: #d1d5f0;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.material-quantity {
+  color: #a78bfa;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.stone-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(139, 92, 246, 0.15);
+  text-align: center;
+}
+
+.expand-hint {
+  font-size: 0.85rem;
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(139, 92, 246, 0.1);
+  border: 2px dashed rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+}
+
+.no-results p {
+  font-size: 1.2rem;
+  color: #c7d2fe;
+  margin: 0 0 1.5rem 0;
+}
+
+.clear-search-btn {
+  padding: 0.75rem 2rem;
+  background: rgba(167, 139, 250, 0.2);
+  border: 1px solid #a78bfa;
+  border-radius: 8px;
+  color: #a78bfa;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-search-btn:hover {
+  background: rgba(167, 139, 250, 0.3);
+  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.2);
+}
+
+/* Crafting Guide Section */
+.crafting-guide-section {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+}
+
+.crafting-guide-section h2 {
+  font-size: 2rem;
+  color: #a78bfa;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+}
+
+.crafting-guide-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #d1d5f0;
+  margin: 0 0 2rem 0;
+}
+
+.crafting-guide-content strong {
+  color: #a78bfa;
+}
+
+.crafting-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.step {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-4px);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #a78bfa 0%, #818cf8 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a0e27;
+  margin: 0 auto 1rem;
+}
+
+.step h4 {
+  margin: 0 0 0.75rem 0;
+  color: #a78bfa;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.step p {
+  margin: 0;
+  color: #c7d2fe;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Application Guide Section */
+.application-guide-section {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+}
+
+.application-guide-section h2 {
+  font-size: 2rem;
+  color: #a78bfa;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+}
+
+.application-guide-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #d1d5f0;
+  margin: 0 0 2rem 0;
+}
+
+.application-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.app-step {
+  display: flex;
+  gap: 1.5rem;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.app-step:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateX(4px);
+}
+
+.step-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.app-step h4 {
+  margin: 0 0 0.5rem 0;
+  color: #a78bfa;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.app-step p {
+  margin: 0;
+  color: #c7d2fe;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Playstyle Optimization Section */
+.playstyle-optimization {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.playstyle-optimization h2 {
+  font-size: 2rem;
+  color: #a78bfa;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+}
+
+.playstyle-optimization > p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #d1d5f0;
+  margin: 0 0 2rem 0;
+}
+
+.optimization-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.optimization-card {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(139, 92, 246, 0.08) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.optimization-card:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.18) 0%, rgba(139, 92, 246, 0.12) 100%);
+  border-color: rgba(139, 92, 246, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(167, 139, 250, 0.12);
+}
+
+.optimization-card h4 {
+  margin: 0 0 1rem 0;
+  color: #a78bfa;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.optimization-card p {
+  margin: 0;
+  color: #c7d2fe;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Magic Stones Image Section */
+.magic-stones-image-section {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.magic-stones-image-section h2 {
+  font-size: 2rem;
+  color: #a78bfa;
+  margin: 0 0 2rem 0;
+  font-weight: 700;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.stones-reference-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(167, 139, 250, 0.15);
+}
+
+.stones-reference-image:hover {
+  border-color: rgba(139, 92, 246, 0.6);
+  box-shadow: 0 12px 40px rgba(167, 139, 250, 0.25);
+  transform: scale(1.02);
+}
+
+.image-caption {
+  color: #c7d2fe;
+  font-size: 0.95rem;
+  max-width: 600px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Quick Tips Section */
+.quick-tips {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+}
+
+.quick-tips h2 {
+  font-size: 2rem;
+  color: #a78bfa;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.tips-list li {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: #d1d5f0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.tips-list li:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.tips-list strong {
+  color: #a78bfa;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .magic-stones-hero h1 {
+    font-size: 2rem;
+  }
+
+  .magic-stones-grid {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+
+  .intro-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .crafting-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .optimization-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-list {
+    grid-template-columns: 1fr;
+  }
+
+  .stone-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .expand-toggle {
+    align-self: flex-end;
+  }
+
+  .application-steps {
+    gap: 1rem;
+  }
+
+  .app-step {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .magic-stones-hero {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .magic-stones-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .magic-stones-intro {
+    padding: 1.5rem 1rem;
+  }
+
+  .intro-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .magic-stones-grid {
+    padding: 1rem;
+  }
+
+  .stone-name {
+    font-size: 1.1rem;
+  }
+
+  .crafting-materials {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,298 @@
+.global-footer {
+  background: #f5f5f8;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: #1a1a1a;
+  padding: 48px 20px 32px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-intro {
+  grid-column: 1 / -1;
+}
+
+.footer-discord {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-intro h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-intro p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0;
+  max-width: 600px;
+}
+
+.footer-crypto h4,
+.footer-links h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 1;
+}
+
+/* Crypto Grid */
+.crypto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.crypto-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.crypto-card:hover {
+  background: #ffffff;
+  border-color: rgba(74, 124, 89, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.crypto-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.crypto-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.crypto-symbol {
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(74, 124, 89, 0.1);
+  color: #4a7c59;
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.crypto-description {
+  font-size: 13px;
+  color: #666666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.crypto-address-container {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  background: #f9f9fc;
+  border-radius: 8px;
+  padding: 8px 10px;
+  flex-wrap: wrap;
+}
+
+.crypto-address {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 12px;
+  color: #4a7c59;
+  background: transparent;
+  border: none;
+  padding: 0;
+  flex: 1;
+  word-break: break-all;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(74, 124, 89, 0.1);
+  border: 1px solid rgba(74, 124, 89, 0.2);
+  color: #4a7c59;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.copy-button:hover {
+  background: rgba(74, 124, 89, 0.15);
+  border-color: rgba(74, 124, 89, 0.3);
+}
+
+.copy-button.copied {
+  background: rgba(46, 160, 67, 0.15);
+  border-color: rgba(46, 160, 67, 0.3);
+  color: #2ea043;
+}
+
+.copy-button .h-4 {
+  width: 16px;
+  height: 16px;
+}
+
+/* Footer Links */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-nav a {
+  color: #666666;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+  width: fit-content;
+}
+
+.footer-nav a:hover {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.footer-credit,
+.footer-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-credit p,
+.footer-meta p {
+  font-size: 13px;
+  color: #999999;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .global-footer {
+    padding: 36px 16px 24px;
+    margin-top: 60px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-crypto h4 {
+    margin-top: 0;
+  }
+
+  .crypto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .footer-credit,
+  .footer-meta {
+    justify-content: center;
+  }
+
+  .crypto-address-container {
+    flex-wrap: wrap;
+  }
+
+  .crypto-address {
+    min-width: 0;
+  }
+
+  .copy-button {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .global-footer {
+    padding: 28px 12px 20px;
+    margin-top: 40px;
+  }
+
+  .footer-intro h3 {
+    font-size: 20px;
+  }
+
+  .footer-intro p {
+    font-size: 13px;
+  }
+
+  .crypto-card {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .footer-bottom {
+    gap: 12px;
+  }
+
+  .footer-credit p,
+  .footer-meta p {
+    font-size: 12px;
+    text-align: center;
+  }
+}

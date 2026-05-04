@@ -1,0 +1,477 @@
+{
+  "https://cdn.builder.io/api/v1/image/assets%2Fd6ec467e427e4d28b82f1c0f8a0c2147%2Fadc86dce49184c958a9c4657262ad34d?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-adc86dce-f0463457.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/fishing/FishingClient.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2Fd6ec467e427e4d28b82f1c0f8a0c2147%2F577e4d06f78d4b7b8985198c6f3637da?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-577e4d06-181ba4f6.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/fishing/FishingClient.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2Fd6ec467e427e4d28b82f1c0f8a0c2147%2Ff983a6fd8cac44fb86484174eb3259f9?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-f983a6fd-c1881681.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/fishing/FishingClient.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2Fd6ec467e427e4d28b82f1c0f8a0c2147%2F5fdf42397d214f17ac05aba091e852b4?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-5fdf4239-b14f578c.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/fishing/FishingClient.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2Fd6ec467e427e4d28b82f1c0f8a0c2147%2F7fca0867daa9483da4ece288d1eb0b47?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-7fca0867-8cace5e8.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/fishing/FishingClient.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F3456e220f5b94f78b49768a22f3d03ee?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-3456e220-bfbfd021.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F3005ee98e8c04dd4a79a676215ac3a65?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-3005ee98-4a24eb7f.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F2c68900600b84a4eb9d45b83cf94d84f?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-2c689006-e323d4bc.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2Ffc17388423ac475ebf86e23e425af139?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-fc173884-eb048d68.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F5d24e7e84e474284881af72a5f2b898f?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-5d24e7e8-c46c3126.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F7b0c52b62fe24e5590454880d45035bc?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-7b0c52b6-4c5aa5b9.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2Fe1a90f39e9d047cbb79e97a9058b85ab?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-e1a90f39-9d64211b.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F57417481bfba44e1ae33151fb9c7e14b%2Fa1801e0190934f1fa50499dc0756d5ec?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-a1801e01-392a827b.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F0ea01cf0b74845b2a2d0e591428ca5c5?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-0ea01cf0-b0183232.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F08307deaa2cb4cff91c6cf40438cbb72?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-08307dea-ef253c94.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2Fd4935bde62684d048ab4e942e9acd848?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-d4935bde-aacf37ab.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2Fa8575be3326e41c78726c466b8dd2a6a?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-a8575be3-79d709e3.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F48cf76b953e241ca92abc6fd9f7381a1?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-48cf76b9-e5e5f19c.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2Fd2a0012f3d66448ca05d8f69de502072?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-d2a0012f-41a7c3ba.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F96c3301c0da64edeaf9f9979e5780a15?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-96c3301c-ba586017.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F6ef4721c36104a29900095992a4ff1f6?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-6ef4721c-81981da1.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F35e78abb959d4750a5cb43f2f98bc0d3?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-35e78abb-45c3ad3c.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F7f39d23550214b2e8f0688666c775f4e?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-7f39d235-50c32f8c.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2Fb8bfabab2d7846f7b17519a352a9d6b1?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-b8bfabab-6d446c1d.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F8d7b89c9b54548ac8bfa38ac66e683a2?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-8d7b89c9-01adb1d6.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F131ff9c7a87c451fae8bd2320820504b?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-131ff9c7-203b3da2.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F675925463e014c78bd92e1c90808fd94%2F85cb00bc82f54f4b951e7bd800b2f1a5?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-85cb00bc-bf0ed81e.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F57417481bfba44e1ae33151fb9c7e14b%2Fd4d90242f35642229a7c4dad866d46ac?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-d4d90242-7dc9d56a.webp",
+    "downloaded": true,
+    "files": 2,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx",
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F1cd6a25ce0424c9dbf4a0f7d695e5a8b%2F7dd3c8a85355498d91fb9e563c00af1e?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-7dd3c8a8-c6c08ed4.webp",
+    "downloaded": true,
+    "files": 2,
+    "filePaths": [
+      "/root/app/code/app/quests/avatar-quest/page.jsx",
+      "/root/app/code/app/quests/avatar-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F62f66fc149714bedbf0ce2e493d43bd2%2Fc40d875c142043f19809d91f3f4693ac?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-c40d875c-e49b8a26.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F62f66fc149714bedbf0ce2e493d43bd2%2Ffad4c37be4834d13b064060994053c58?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-fad4c37b-45dff3ac.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F62f66fc149714bedbf0ce2e493d43bd2%2Ff74984700ef8429a8b5bd61fc2ce7c62?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-f7498470-ca149629.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F62f66fc149714bedbf0ce2e493d43bd2%2F6cfab13717f44c85b06865a47caead18?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-6cfab137-64d4e917.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F62f66fc149714bedbf0ce2e493d43bd2%2F42dd8a6a74df42ae8928913c46375420?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-42dd8a6a-02dc3e61.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F62f66fc149714bedbf0ce2e493d43bd2%2F5d92793285a047a5bba9ce4e3b5013b6?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-5d927932-c6ce6312.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F697dd2b25a284b838dc0e9b6577842d5%2F77ca47a01e784dcb90e8d62a9a264dcb?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-77ca47a0-9cc73cef.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F697dd2b25a284b838dc0e9b6577842d5%2Fcad09ae5a3194cc393b70ff6edfffeaf?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-cad09ae5-030bd885.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F697dd2b25a284b838dc0e9b6577842d5%2Fc7daee9e3ef0418ba1fe4461c7ae6514?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-c7daee9e-eb8162fe.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F697dd2b25a284b838dc0e9b6577842d5%2Ff6303fcaf9b64bc595c219eed87cfafc?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-f6303fca-740c5164.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F697dd2b25a284b838dc0e9b6577842d5%2F8ea2933f91d14a2186befcc07bf54388?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-8ea2933f-047c6a2f.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F697dd2b25a284b838dc0e9b6577842d5%2Fba694bb884414822bce35d5f6fd39644?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-ba694bb8-129c2073.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F697dd2b25a284b838dc0e9b6577842d5%2Fc31fa653996549ebab4c9a1144e13c6f?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-c31fa653-46f54203.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F62f66fc149714bedbf0ce2e493d43bd2%2F7aeaf342d9d949c88c2b079193d96a91?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-7aeaf342-cffd921a.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F62f66fc149714bedbf0ce2e493d43bd2%2Fb7ab6a0052be41cdbc596204008b06cb?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-b7ab6a00-e102cdc4.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F62f66fc149714bedbf0ce2e493d43bd2%2Fd0a05c221afa4a1a89db3adf770b4fe2?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-d0a05c22-b0073975.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F62f66fc149714bedbf0ce2e493d43bd2%2F39326cf0774a4fd89ca7884cec62db78?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-39326cf0-da7f27f6.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F697dd2b25a284b838dc0e9b6577842d5%2F8ff44fc4bdc74fcd938d98e39e48e978?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-8ff44fc4-9b1449eb.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F697dd2b25a284b838dc0e9b6577842d5%2F7196218ffe7f416b81391848b4f461e7?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-7196218f-2e7d19ce.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F697dd2b25a284b838dc0e9b6577842d5%2F227fe243fa20400785addd962df1c0c5?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-227fe243-7d7462e8.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F697dd2b25a284b838dc0e9b6577842d5%2F220eac4a66584413a817fd131fb4cb66?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-220eac4a-1f33d4a9.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F57417481bfba44e1ae33151fb9c7e14b%2F5d8997d150894fd69f6bce0c69aa3afa?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-5d8997d1-cd8b7ab9.webp",
+    "downloaded": true,
+    "files": 2,
+    "filePaths": [
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx",
+      "/root/app/code/app/quests/second-promotion-quest/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2Fd81e586fd5c34544b66a1f68cf70b09c%2F7edaf092be96438fbd7bd38a4ce78565?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-7edaf092-bce6e33b.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/scripts/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2Fd81e586fd5c34544b66a1f68cf70b09c%2F34372cd406414448b7575b3a2930efa3?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-34372cd4-80af9609.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/scripts/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2Fd81e586fd5c34544b66a1f68cf70b09c%2Fe2966bea3b444888b95f9c8446b1cd26?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-e2966bea-0e4fe632.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/scripts/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2Fd81e586fd5c34544b66a1f68cf70b09c%2F249ae3cf410747ad99c8a35f56a3a435?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-249ae3cf-bbc94eb2.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/scripts/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F7185081b0fe84ba9a9709bb7d5fd6fb1%2F6be748779427408c8567dbd939e5638d?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-6be74877-af5a727c.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/talents/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F7185081b0fe84ba9a9709bb7d5fd6fb1%2Fb8fd151d080547d6b3c2cfb4d8ea1beb?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-b8fd151d-4bedaeef.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/talents/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F7185081b0fe84ba9a9709bb7d5fd6fb1%2F3ed6b4e3e7844b83a410e0ee7bf774e6?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-3ed6b4e3-34dcab33.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/talents/page.jsx"
+    ]
+  },
+  "https://cdn.builder.io/api/v1/image/assets%2F7185081b0fe84ba9a9709bb7d5fd6fb1%2F5097c09337d0454eb875cb19a4f4a36e?format=webp&width=800&height=1200": {
+    "localPath": "/images/downloaded/builder-5097c093-98ac837f.webp",
+    "downloaded": true,
+    "files": 1,
+    "filePaths": [
+      "/root/app/code/app/talents/page.jsx"
+    ]
+  }
+}
