@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a202c;
+  --bg-tertiary: #2d3748;
+  --text-primary: #f8f9fa;
+  --text-secondary: #cbd5e0;
+  --text-tertiary: #a0aec0;
+  --border: #2d3748;
+  --accent-blue: #3b82f6;
+  --accent-cyan: #06b6d4;
+  --accent-green: #10b981;
+  --accent-amber: #f59e0b;
+  --accent-red: #ef4444;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,6 +28,8 @@
 
 html, body {
   height: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 body {
@@ -22,9 +42,51 @@ h1 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
 }
 
 p {
-  font-size: 1rem;
-  color: #666;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-cyan);
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+input, select, textarea {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
