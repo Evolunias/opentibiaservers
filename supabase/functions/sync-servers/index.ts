@@ -36,98 +36,114 @@ async function fetchFromOtsList() {
 
   const html = await response.text();
   console.log(`Fetched ${html.length} bytes of HTML`);
-  console.log(`HTML preview (first 500 chars): ${html.substring(0, 500)}`);
+  console.log(`Status: ${response.status}`);
+  console.log(`Content-Type: ${response.headers.get("content-type")}`);
 
-  // Parse HTML - extract server rows
-  const servers = [];
+  // Log first 1000 chars to see page structure
+  const preview = html.substring(0, 1000);
+  console.log(`HTML preview: ${preview}`);
 
-  // Strategy 1: Look for <tr> table rows
-  let tableRegex = /<tr[^>]*>[\s\S]*?<\/tr>/gi;
-  let rows = html.match(tableRegex) || [];
+  // Check if we got an error page or redirect
+  if (html.includes("<!DOCTYPE") || html.includes("404") || html.includes("403")) {
+    console.warn("Page appears to be an error page");
+  }
 
-  console.log(`Strategy 1 (table rows): Found ${rows.length} rows`);
+  // Strategy 1: Look for JSON embedded in <script> tags (modern sites often do this)
+  const scriptMatch = html.match(/<script[^>]*>([\s\S]*?)<\/script>/i);
+  if (scriptMatch) {
+    try {
+      // Try to parse as JSON
+      const jsonStr = scriptMatch[1];
+      if (jsonStr.includes("server") || jsonStr.includes("ip")) {
+        const data = JSON.parse(jsonStr);
+        console.log("Found JSON in script tag");
 
-  // Strategy 2: If no rows, look for table data cells with server info
-  if (rows.length === 0) {
-    console.log("No table rows found, trying alternative parsing...");
-
-    // Look for server name in common patterns
-    const serverPatterns = [
-      /<td[^>]*>([^<]+)<\/td>[\s\S]*?(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/gi,
-      /<div[^>]*class="[^"]*server[^"]*"[^>]*>[\s\S]*?<\/div>/gi,
-      /<li[^>]*>[\s\S]*?(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})[\s\S]*?<\/li>/gi,
-    ];
-
-    for (const pattern of serverPatterns) {
-      rows = html.match(pattern) || [];
-      if (rows.length > 0) {
-        console.log(`Found ${rows.length} rows with pattern`);
-        break;
+        // Try to extract servers from JSON
+        const servers = [];
+        if (Array.isArray(data)) {
+          return data;
+        }
+        if (data.servers && Array.isArray(data.servers)) {
+          return data.servers;
+        }
+        if (data.data && Array.isArray(data.data)) {
+          return data.data;
+        }
       }
+    } catch (err) {
+      console.log("Script tag is not JSON, continuing...");
     }
   }
 
-  // Extract IPs - these are consistent regardless of structure
-  const ipRegex = /(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/g;
-  const allIps = html.match(ipRegex) || [];
-  console.log(`Found ${allIps.length} IP addresses in HTML`);
+  // Strategy 2: Parse all data with regex looking for server patterns
+  // Look for patterns like "server_name ip:port version"
+  const servers = [];
 
-  // For each unique IP, extract associated data
-  const seenIps = new Set();
-  for (const ip of allIps) {
-    // Avoid duplicates
-    if (seenIps.has(ip)) continue;
-    seenIps.add(ip);
+  // Find all lines with server info
+  const lines = html.split("\n");
+  console.log(`HTML has ${lines.length} lines`);
 
-    // Find context around this IP (500 chars before and after)
-    const ipIndex = html.indexOf(ip);
-    const start = Math.max(0, ipIndex - 500);
-    const end = Math.min(html.length, ipIndex + 500);
-    const context = html.substring(start, end);
+  for (const line of lines) {
+    // Skip empty lines and script/style tags
+    if (!line.trim() || line.includes("<script") || line.includes("<style")) continue;
 
-    // Extract server name - usually before the IP
-    const nameMatch = context.match(/(?:<a[^>]*>)?([^<>\n]{2,50}?)\s*(?:<\/a>)?(?:\s*<|$)/);
-    const name = nameMatch ? nameMatch[1].trim() : `Server ${servers.length + 1}`;
+    // Look for lines containing potential server data
+    if (line.match(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/)) {
+      console.log(`Potential server line: ${line.substring(0, 100)}`);
 
-    // Extract port
-    const portMatch = context.match(/(?::|\s)(\d{4,5})(?:\s|<|$)/);
-    const port = portMatch ? parseInt(portMatch[1]) : 7171;
+      // Extract IP
+      const ipMatch = line.match(/(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/);
+      if (!ipMatch) continue;
+      const ip = ipMatch[1];
 
-    // Extract version
-    const versionMatch = context.match(/(\d{1,2}\.\d{1,2})/);
-    const version = versionMatch ? versionMatch[1] : "8.6";
+      // Extract name (text before the IP, stripped of HTML)
+      const cleanLine = line.replace(/<[^>]*>/g, "").trim();
+      const nameMatch = cleanLine.match(/^([^0-9]*)/);
+      const name = nameMatch ? nameMatch[1].trim() || `Server at ${ip}` : `Server at ${ip}`;
 
-    // Extract world type
-    const worldMatch = context.match(/(PVP|Non-PVP|PVP-Enforced|RPG|WAR)/i);
-    const worldType = worldMatch ? worldMatch[1].toUpperCase() : "PVP";
+      // Extract port
+      const portMatch = line.match(/(?::|\s)(\d{4,5})(?:\s|<|>|$)/);
+      const port = portMatch ? parseInt(portMatch[1]) : 7171;
 
-    // Extract location
-    const locationMatch = context.match(/(USA|Europe|Germany|Brazil|Canada|Poland|Russia|Mexico|Other|UK|France|Spain|Asia|Australia)/i);
-    const location = locationMatch ? locationMatch[0] : null;
+      // Extract version (X.XX format)
+      const versionMatch = line.match(/(\d{1,2}\.\d{2})/);
+      const version = versionMatch ? versionMatch[1] : "8.6";
 
-    // Extract players online - look for numbers in context
-    const playersMatch = context.match(/(\d{1,5})\s*(?:player|online)/i);
-    const playersOnline = playersMatch ? Math.min(parseInt(playersMatch[1]), 9999) : 0;
+      // Extract world type
+      const worldMatch = line.match(/(PVP|Non-PVP|PVP-Enforced|RPG|WAR|RETRO|OPEN|HARDCORE)/i);
+      const worldType = worldMatch ? worldMatch[1].toUpperCase() : "PVP";
 
-    // Status - if we just found it, assume it's online
-    const isOnline = true;
+      // Extract location
+      const locMatch = line.match(/(USA|Europe|Germany|Brazil|Poland|Russia|Mexico|UK|France|Spain|Canada|Australia|Asia)/i);
+      const location = locMatch ? locMatch[0] : null;
 
-    servers.push({
-      name,
-      ip,
-      port,
-      version,
-      world_type: worldType,
-      location,
-      is_online: isOnline,
-      players_online: playersOnline,
-      last_check: new Date().toISOString(),
-    });
+      // Extract players
+      const playersMatch = line.match(/(\d+)\s*(?:player|online|\/)/i);
+      const playersOnline = playersMatch ? parseInt(playersMatch[1]) : 0;
+
+      servers.push({
+        name,
+        ip,
+        port,
+        version,
+        world_type: worldType,
+        location,
+        is_online: true,
+        players_online: playersOnline,
+        last_check: new Date().toISOString(),
+      });
+    }
   }
 
   if (servers.length === 0) {
-    console.error("HTML content sample:", html.substring(0, 2000));
-    throw new Error(`No servers found in otservlist.org HTML. Found ${allIps.length} IPs but couldn't parse them.`);
+    console.error("Could not extract any servers. HTML length:", html.length);
+    console.error("Checking for common server indicators...");
+    console.error("Has 'server':", html.includes("server"));
+    console.error("Has IP pattern:", /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(html));
+    console.error("Full HTML length:", html.length);
+
+    // Return a fallback response with at least something
+    throw new Error("Could not extract servers from otservlist.org - page may be JavaScript-rendered or blocked");
   }
 
   console.log(`Successfully extracted ${servers.length} servers from otservlist.org`);
