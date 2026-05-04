@@ -5,10 +5,10 @@ export default function ViewToggle({ view, onViewChange }) {
     <div className="flex gap-2 mb-6">
       <button
         onClick={() => onViewChange('grid')}
-        className={`px-4 py-2 rounded border transition-colors ${
+        className={`px-4 py-2 rounded-lg border-2 transition-all duration-300 font-semibold ${
           view === 'grid'
-            ? 'bg-cyan-600 border-cyan-500 text-white'
-            : 'bg-slate-800 border-slate-700 text-gray-300 hover:border-cyan-500'
+            ? 'bg-gradient-to-r from-blue-500 to-purple-500 border-blue-600 text-white shadow-lg'
+            : 'bg-white border-gray-300 text-gray-700 hover:border-blue-400 hover:shadow-md'
         }`}
       >
         <svg className="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -18,10 +18,10 @@ export default function ViewToggle({ view, onViewChange }) {
       </button>
       <button
         onClick={() => onViewChange('table')}
-        className={`px-4 py-2 rounded border transition-colors ${
+        className={`px-4 py-2 rounded-lg border-2 transition-all duration-300 font-semibold ${
           view === 'table'
-            ? 'bg-cyan-600 border-cyan-500 text-white'
-            : 'bg-slate-800 border-slate-700 text-gray-300 hover:border-cyan-500'
+            ? 'bg-gradient-to-r from-blue-500 to-purple-500 border-blue-600 text-white shadow-lg'
+            : 'bg-white border-gray-300 text-gray-700 hover:border-blue-400 hover:shadow-md'
         }`}
       >
         <svg className="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 20 20">

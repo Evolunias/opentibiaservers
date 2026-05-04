@@ -22,10 +22,22 @@
 
 @keyframes glow-pulse {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+    box-shadow: 0 0 20px rgba(0, 214, 255, 0.4);
   }
   50% {
-    box-shadow: 0 0 30px rgba(0, 170, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 214, 255, 0.6);
+  }
+}
+
+@keyframes rainbow-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -84,7 +96,7 @@
 
 html, body {
   height: 100%;
-  background: var(--bg-primary);
+  background: #ffffff;
   color: var(--text-primary);
 }
 
@@ -145,7 +157,7 @@ button {
 }
 
 input, select, textarea {
-  background: var(--bg-secondary);
+  background: #ffffff;
   border: 2px solid var(--border);
   color: var(--text-primary);
   border-radius: 0.75rem;
@@ -156,7 +168,7 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--accent-blue);
-  box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1);
+  box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.15), 0 0 8px rgba(0, 214, 255, 0.3);
   transform: translateY(-2px);
 }
 
