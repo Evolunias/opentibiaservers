@@ -11,53 +11,67 @@ if (!supabaseUrl || !supabaseServiceRoleKey) {
 const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
 
 /**
- * Fetch servers from otservers.online
+ * Fetch servers from multiple OTS list sources
  */
 async function fetchFromOtsList() {
-  const url = "https://otservers.online/api/servers";
-
-  console.log(`Fetching from otservers.online...`);
-
-  const response = await fetch(url, {
-    method: "GET",
-    headers: {
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-      "Accept": "application/json",
+  const sources = [
+    {
+      url: "https://otservlist.world/api/servers",
+      name: "OTServList World",
     },
-  });
+    {
+      url: "https://otchecker.net/api/servers",
+      name: "OTChecker",
+    },
+  ];
 
-  if (!response.ok) {
-    const text = await response.text();
-    console.error(`otservers.online returned status ${response.status}: ${text.substring(0, 200)}`);
-    throw new Error(`otservers.online returned status ${response.status}`);
+  for (const source of sources) {
+    try {
+      console.log(`Fetching from ${source.name}...`);
+
+      const response = await fetch(source.url, {
+        method: "GET",
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+          "Accept": "application/json",
+          "Accept-Language": "en-US,en;q=0.9",
+        },
+      });
+
+      if (!response.ok) {
+        console.warn(`${source.name} returned status ${response.status}`);
+        continue;
+      }
+
+      const contentType = response.headers.get("content-type");
+      let text = await response.text();
+
+      // Check if response is HTML instead of JSON
+      if (text.trim().startsWith("<")) {
+        console.warn(`${source.name} returned HTML instead of JSON`);
+        continue;
+      }
+
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (err) {
+        console.warn(`Failed to parse JSON from ${source.name}: ${err.message}`);
+        continue;
+      }
+
+      let servers = Array.isArray(data) ? data : data.servers || data.data || [];
+
+      if (servers && servers.length > 0) {
+        console.log(`Successfully fetched ${servers.length} servers from ${source.name}`);
+        return servers;
+      }
+    } catch (err) {
+      console.warn(`Error fetching from ${source.name}:`, err.message);
+    }
   }
 
-  const contentType = response.headers.get("content-type");
-  console.log(`Response content-type: ${contentType}`);
-
-  let text = await response.text();
-  console.log(`Response preview: ${text.substring(0, 200)}`);
-
-  // Check if response is HTML instead of JSON
-  if (text.trim().startsWith("<")) {
-    throw new Error(`otservers.online returned HTML instead of JSON. API may not be available.`);
-  }
-
-  let data;
-  try {
-    data = JSON.parse(text);
-  } catch (err) {
-    throw new Error(`Failed to parse JSON from otservers.online: ${err.message}`);
-  }
-
-  let servers = Array.isArray(data) ? data : data.servers || data.data || [];
-
-  if (!servers || servers.length === 0) {
-    throw new Error("No servers returned from otservers.online");
-  }
-
-  console.log(`Successfully fetched ${servers.length} servers from otservers.online`);
-  return servers;
+  throw new Error("Could not fetch servers from any available source (OTServList World, OTChecker)");
 }
 
 /**
