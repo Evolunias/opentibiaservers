@@ -27,10 +27,29 @@ async function fetchFromOtsList() {
   });
 
   if (!response.ok) {
+    const text = await response.text();
+    console.error(`ots-list.org returned status ${response.status}: ${text.substring(0, 200)}`);
     throw new Error(`ots-list.org returned status ${response.status}`);
   }
 
-  const data = await response.json();
+  const contentType = response.headers.get("content-type");
+  console.log(`Response content-type: ${contentType}`);
+
+  let text = await response.text();
+  console.log(`Response preview: ${text.substring(0, 200)}`);
+
+  // Check if response is HTML instead of JSON
+  if (text.trim().startsWith("<")) {
+    throw new Error(`ots-list.org returned HTML instead of JSON. API may not be available.`);
+  }
+
+  let data;
+  try {
+    data = JSON.parse(text);
+  } catch (err) {
+    throw new Error(`Failed to parse JSON from ots-list.org: ${err.message}`);
+  }
+
   let servers = Array.isArray(data) ? data : data.servers || data.data || [];
 
   if (!servers || servers.length === 0) {
