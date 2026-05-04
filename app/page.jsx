@@ -17,7 +17,7 @@ export default function Home() {
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalServers, setTotalServers] = useState(0);
-  const [view, setView] = useState('grid');
+  const [view, setView] = useState('table');
   const [filters, setFilters] = useState({});
 
   useEffect(() => {
