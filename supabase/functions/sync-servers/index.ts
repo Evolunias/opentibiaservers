@@ -11,54 +11,34 @@ if (!supabaseUrl || !supabaseServiceRoleKey) {
 const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
 
 /**
- * Fetch servers from multiple OTS list sources with fallbacks
+ * Fetch servers from ots-list.org
  */
 async function fetchFromOtsList() {
-  const sources = [
-    {
-      url: "https://ots-list.org/api/servers",
-      name: "OTS List",
-    },
-    {
-      url: "https://otservlist.world/api/servers",
-      name: "OTServList World",
-    },
-    {
-      url: "https://otservers.online/api/servers",
-      name: "OTServers Online",
-    },
-    {
-      url: "https://otchecker.net/api/servers",
-      name: "OTChecker",
-    },
-  ];
+  const url = "https://ots-list.org/api/servers";
 
-  for (const source of sources) {
-    try {
-      console.log(`Fetching from ${source.name}...`);
-      const response = await fetch(source.url, {
-        method: "GET",
-        headers: {
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-          "Accept": "application/json",
-        },
-      });
+  console.log(`Fetching from ots-list.org...`);
 
-      if (response.ok) {
-        const data = await response.json();
-        let servers = Array.isArray(data) ? data : data.servers || data.data || [];
-        
-        if (servers.length > 0) {
-          console.log(`Successfully fetched ${servers.length} servers from ${source.name}`);
-          return servers;
-        }
-      }
-    } catch (err) {
-      console.warn(`Failed to fetch from ${source.name}:`, err.message);
-    }
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "Accept": "application/json",
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`ots-list.org returned status ${response.status}`);
   }
 
-  throw new Error("Could not fetch servers from any source");
+  const data = await response.json();
+  let servers = Array.isArray(data) ? data : data.servers || data.data || [];
+
+  if (!servers || servers.length === 0) {
+    throw new Error("No servers returned from ots-list.org");
+  }
+
+  console.log(`Successfully fetched ${servers.length} servers from ots-list.org`);
+  return servers;
 }
 
 /**
