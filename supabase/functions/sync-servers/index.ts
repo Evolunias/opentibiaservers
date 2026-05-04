@@ -11,12 +11,12 @@ if (!supabaseUrl || !supabaseServiceRoleKey) {
 const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
 
 /**
- * Fetch servers from ots-list.org
+ * Fetch servers from otservers.online
  */
 async function fetchFromOtsList() {
-  const url = "https://ots-list.org/api/servers";
+  const url = "https://otservers.online/api/servers";
 
-  console.log(`Fetching from ots-list.org...`);
+  console.log(`Fetching from otservers.online...`);
 
   const response = await fetch(url, {
     method: "GET",
@@ -28,8 +28,8 @@ async function fetchFromOtsList() {
 
   if (!response.ok) {
     const text = await response.text();
-    console.error(`ots-list.org returned status ${response.status}: ${text.substring(0, 200)}`);
-    throw new Error(`ots-list.org returned status ${response.status}`);
+    console.error(`otservers.online returned status ${response.status}: ${text.substring(0, 200)}`);
+    throw new Error(`otservers.online returned status ${response.status}`);
   }
 
   const contentType = response.headers.get("content-type");
@@ -40,23 +40,23 @@ async function fetchFromOtsList() {
 
   // Check if response is HTML instead of JSON
   if (text.trim().startsWith("<")) {
-    throw new Error(`ots-list.org returned HTML instead of JSON. API may not be available.`);
+    throw new Error(`otservers.online returned HTML instead of JSON. API may not be available.`);
   }
 
   let data;
   try {
     data = JSON.parse(text);
   } catch (err) {
-    throw new Error(`Failed to parse JSON from ots-list.org: ${err.message}`);
+    throw new Error(`Failed to parse JSON from otservers.online: ${err.message}`);
   }
 
   let servers = Array.isArray(data) ? data : data.servers || data.data || [];
 
   if (!servers || servers.length === 0) {
-    throw new Error("No servers returned from ots-list.org");
+    throw new Error("No servers returned from otservers.online");
   }
 
-  console.log(`Successfully fetched ${servers.length} servers from ots-list.org`);
+  console.log(`Successfully fetched ${servers.length} servers from otservers.online`);
   return servers;
 }
 
