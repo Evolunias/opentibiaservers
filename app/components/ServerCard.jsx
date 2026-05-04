@@ -17,9 +17,9 @@ const getWorldTypeColor = (type) => {
 export default function ServerCard({ server }) {
   return (
     <Link href={`/server/${server.id}`}>
-      <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-500 hover:shadow-xl transition-all cursor-pointer h-full hover:scale-105 transform" style={{
-        animation: 'none',
-        backgroundColor: '#ffffff',
+      <div className="bg-white border-2 border-gray-300 rounded-xl p-6 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 cursor-pointer h-full transform hover:-translate-y-2" style={{
+        borderImageSource: 'linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(255, 0, 110, 0.2))',
+        borderRadius: '0.75rem'
       }}>
         <style>{`
           @keyframes card-float {
@@ -30,8 +30,11 @@ export default function ServerCard({ server }) {
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
-            <h3 className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">{server.name}</h3>
-            <p className="text-sm text-gray-500">{server.ip}:{server.port}</p>
+            <h3 className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1" style={{
+              animation: 'gradient-shift 6s ease infinite',
+              backgroundSize: '200% 200%'
+            }}>{server.name}</h3>
+            <p className="text-sm text-gray-600">{server.ip}:{server.port}</p>
           </div>
           <div className={`${getStatusColor(server.is_online)} w-4 h-4 rounded-full shadow-lg`} title={getStatusText(server.is_online)} style={{
             animation: server.is_online ? 'glow-pulse 2s ease-in-out infinite' : 'none'
