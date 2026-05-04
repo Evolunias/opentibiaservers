@@ -57,14 +57,14 @@ function parseServerData(serverData: any) {
 
 /**
  * Fetch all servers from available OTS list APIs
- * Tries ots-list.org as primary source with fallbacks
+ * Tries multiple sources with fallbacks
  */
 async function fetchFromOtservlist() {
   // List of OTS list APIs to try, in order of preference
   const apiEndpoints = [
     {
-      url: "https://ots-list.org/api/servers",
-      name: "OTS List",
+      url: "https://otservlist.world/api/servers",
+      name: "OTServList World",
       parser: (data: any) => {
         if (Array.isArray(data)) return data;
         if (data.servers) return data.servers;
@@ -73,8 +73,8 @@ async function fetchFromOtservlist() {
       },
     },
     {
-      url: "https://otservlist.world/api/servers",
-      name: "OTServList World",
+      url: "https://otservers.online/api/servers",
+      name: "OTServers Online",
       parser: (data: any) => {
         if (Array.isArray(data)) return data;
         if (data.servers) return data.servers;
@@ -131,7 +131,7 @@ async function fetchFromOtservlist() {
   if (servers.length === 0) {
     throw new Error(
       `Could not fetch servers from any source. Last error: ${lastError?.message}. ` +
-        `Tried: OTS List, OTServList World, OTChecker. ` +
+        `Tried: OTServList World, OTServers Online, OTChecker. ` +
         `Note: Consider setting up a cron job to monitor specific servers or use a different data source.`
     );
   }
