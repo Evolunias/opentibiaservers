@@ -24,7 +24,7 @@ The sync function is a **Supabase Edge Function** that:
 npm install -g supabase
 
 # Link to your Supabase project
-supabase link --project-ref zgjthtaesusdfeivbzja
+supabase link --project-ref YOUR_PROJECT_REF
 
 # Deploy the function
 supabase functions deploy sync-servers
@@ -38,7 +38,7 @@ Add these variables:
 
 | Variable | Value |
 |----------|-------|
-| `SUPABASE_URL` | Your Supabase URL (e.g., `https://zgjthtaesusdfeivbzja.supabase.co`) |
+| `SUPABASE_URL` | Your Supabase URL (e.g., `https://YOUR_PROJECT_REF.supabase.co`) |
 | `SUPABASE_SERVICE_ROLE_KEY` | Your Service Role Key |
 | `SYNC_TOKEN` | Optional: Random secure string for API security |
 
@@ -81,7 +81,7 @@ Supabase Edge Functions don't have built-in scheduling. You have these options:
 Services like **EasyCron**, **cron-job.org**, or **AWS EventBridge** can call your function every 15 minutes:
 
 ```
-POST https://zgjthtaesusdfeivbzja.supabase.co/functions/v1/sync-servers
+POST https://YOUR_PROJECT_REF.supabase.co/functions/v1/sync-servers
 Header: x-sync-token: your-sync-token
 ```
 
@@ -127,7 +127,7 @@ useEffect(() => {
 ### Edge Function Endpoint
 
 ```
-POST https://zgjthtaesusdfeivbzja.supabase.co/functions/v1/sync-servers
+POST https://YOUR_PROJECT_REF.supabase.co/functions/v1/sync-servers
 
 Headers:
   x-sync-token: your-sync-token (optional)
@@ -249,7 +249,7 @@ supabase functions deploy sync-servers --project-ref zgjthtaesusdfeivbzja
 supabase functions list
 
 # Test the deployed function
-curl -X POST https://zgjthtaesusdfeivbzja.supabase.co/functions/v1/sync-servers \
+curl -X POST https://YOUR_PROJECT_REF.supabase.co/functions/v1/sync-servers \
   -H "x-sync-token: your-sync-token"
 ```
 
