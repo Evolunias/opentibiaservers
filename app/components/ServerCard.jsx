@@ -79,7 +79,7 @@ export default function ServerCard({ server }) {
         </div>
 
         {/* Rates */}
-        <div className="grid grid-cols-3 gap-2 mb-4 text-xs">
+        <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
           <div className="bg-red-50 rounded-lg p-2 border border-red-200">
             <p className="text-red-600 uppercase tracking-wide font-bold mb-1">Exp</p>
             <p className="font-bold text-red-700">{server.exp_rate || 1}x</p>
@@ -91,6 +91,10 @@ export default function ServerCard({ server }) {
           <div className="bg-orange-50 rounded-lg p-2 border border-orange-200">
             <p className="text-orange-600 uppercase tracking-wide font-bold mb-1">Loot</p>
             <p className="font-bold text-orange-700">{server.loot_rate || 1}x</p>
+          </div>
+          <div className="bg-green-50 rounded-lg p-2 border border-green-200">
+            <p className="text-green-600 uppercase tracking-wide font-bold mb-1">Spawn</p>
+            <p className="font-bold text-green-700">{server.spawn_rate || 1}x</p>
           </div>
         </div>
 
