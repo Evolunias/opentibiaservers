@@ -4,8 +4,3 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-# Scheduled function to sync server data every 60 minutes
-[[functions]]
-  node_bundler = "esbuild"
-  schedule = "0 */1 * * *"
