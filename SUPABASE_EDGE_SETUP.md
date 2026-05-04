@@ -239,7 +239,7 @@ git push origin main
 ### Deploy via Supabase CLI
 
 ```bash
-supabase functions deploy sync-servers --project-ref zgjthtaesusdfeivbzja
+supabase functions deploy sync-servers --project-ref YOUR_PROJECT_REF
 ```
 
 ### Verify Deployment
