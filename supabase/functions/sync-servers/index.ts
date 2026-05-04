@@ -57,14 +57,14 @@ function parseServerData(serverData: any) {
 
 /**
  * Fetch all servers from available OTS list APIs
- * Tries multiple sources with fallbacks
+ * Tries ots-list.org as primary source with fallbacks
  */
 async function fetchFromOtservlist() {
   // List of OTS list APIs to try, in order of preference
   const apiEndpoints = [
     {
-      url: "https://otchecker.net/api/servers",
-      name: "OTChecker",
+      url: "https://ots-list.org/api/servers",
+      name: "OTS List",
       parser: (data: any) => {
         if (Array.isArray(data)) return data;
         if (data.servers) return data.servers;
@@ -83,11 +83,12 @@ async function fetchFromOtservlist() {
       },
     },
     {
-      url: "https://tibiadata.com/api/v3/worlds",
-      name: "TibiaData API",
+      url: "https://otchecker.net/api/servers",
+      name: "OTChecker",
       parser: (data: any) => {
-        // TibiaData returns official Tibia worlds, not OTS
-        if (data.worlds) return data.worlds;
+        if (Array.isArray(data)) return data;
+        if (data.servers) return data.servers;
+        if (data.data) return data.data;
         return [];
       },
     },
@@ -130,7 +131,7 @@ async function fetchFromOtservlist() {
   if (servers.length === 0) {
     throw new Error(
       `Could not fetch servers from any source. Last error: ${lastError?.message}. ` +
-        `Tried: OTChecker, OTServList World, TibiaData. ` +
+        `Tried: OTS List, OTServList World, OTChecker. ` +
         `Note: Consider setting up a cron job to monitor specific servers or use a different data source.`
     );
   }
@@ -207,9 +208,9 @@ async function syncServers() {
   try {
     console.log("Starting server sync at", new Date().toISOString());
 
-    // Fetch servers from otservlist.org
+    // Fetch servers from OTS list APIs
     const servers = await fetchFromOtservlist();
-    console.log(`Fetched ${servers.length} servers from otservlist.org`);
+    console.log(`Fetched ${servers.length} servers from OTS list`);
 
     // Upsert into database
     const stats = await upsertServers(servers);
