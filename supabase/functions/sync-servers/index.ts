@@ -11,67 +11,102 @@ if (!supabaseUrl || !supabaseServiceRoleKey) {
 const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
 
 /**
- * Fetch servers from multiple OTS list sources
+ * Scrape server data from otservlist.org HTML
  */
 async function fetchFromOtsList() {
-  const sources = [
-    {
-      url: "https://otservlist.world/api/servers",
-      name: "OTServList World",
+  const url = "https://otservlist.org/";
+  
+  console.log("Fetching from otservlist.org...");
+  
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.5",
+      "Accept-Encoding": "gzip, deflate",
+      "Connection": "keep-alive",
+      "Upgrade-Insecure-Requests": "1",
     },
-    {
-      url: "https://otchecker.net/api/servers",
-      name: "OTChecker",
-    },
-  ];
+  });
 
-  for (const source of sources) {
+  if (!response.ok) {
+    throw new Error(`otservlist.org returned status ${response.status}`);
+  }
+
+  const html = await response.text();
+  console.log(`Fetched ${html.length} bytes of HTML`);
+
+  // Parse HTML - extract server rows
+  const servers = [];
+  
+  // Look for server table rows - otservlist.org uses table structure
+  // Pattern: <tr> containing server data
+  const tableRegex = /<tr[^>]*>[\s\S]*?<\/tr>/gi;
+  const rows = html.match(tableRegex) || [];
+  
+  console.log(`Found ${rows.length} table rows`);
+
+  for (const row of rows) {
     try {
-      console.log(`Fetching from ${source.name}...`);
-
-      const response = await fetch(source.url, {
-        method: "GET",
-        headers: {
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-          "Accept": "application/json",
-          "Accept-Language": "en-US,en;q=0.9",
-        },
-      });
-
-      if (!response.ok) {
-        console.warn(`${source.name} returned status ${response.status}`);
-        continue;
-      }
-
-      const contentType = response.headers.get("content-type");
-      let text = await response.text();
-
-      // Check if response is HTML instead of JSON
-      if (text.trim().startsWith("<")) {
-        console.warn(`${source.name} returned HTML instead of JSON`);
-        continue;
-      }
-
-      let data;
-      try {
-        data = JSON.parse(text);
-      } catch (err) {
-        console.warn(`Failed to parse JSON from ${source.name}: ${err.message}`);
-        continue;
-      }
-
-      let servers = Array.isArray(data) ? data : data.servers || data.data || [];
-
-      if (servers && servers.length > 0) {
-        console.log(`Successfully fetched ${servers.length} servers from ${source.name}`);
-        return servers;
+      // Extract data using regex patterns
+      // Name: usually in a link or td
+      const nameMatch = row.match(/<a[^>]*href[^>]*>([^<]+)<\/a>/i);
+      const name = nameMatch ? nameMatch[1].trim() : null;
+      
+      // IP and Port: typically in format "ip:port" or separate cells
+      const ipMatch = row.match(/(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/);
+      const ip = ipMatch ? ipMatch[1] : null;
+      
+      // Port
+      const portMatch = row.match(/:(\d{4,5})/);
+      const port = portMatch ? parseInt(portMatch[1]) : 7171;
+      
+      // Players online - look for numbers in parentheses or specific pattern
+      const playersMatch = row.match(/(\d+)\s*(?:player|online|\/)/i);
+      const playersOnline = playersMatch ? parseInt(playersMatch[1]) : 0;
+      
+      // Version/Client - look for version patterns like 8.60, 12.00, etc.
+      const versionMatch = row.match(/(\d{1,2}\.\d{1,2})/);
+      const version = versionMatch ? versionMatch[1] : "8.6";
+      
+      // World Type - look for PVP, Non-PVP, etc.
+      const worldMatch = row.match(/(PVP|Non-PVP|PVP-Enforced|OT|RPG)/i);
+      const worldType = worldMatch ? worldMatch[1].toUpperCase() : "PVP";
+      
+      // Location - country codes or names
+      const locationMatch = row.match(/(?:USA|Europe|Germany|Brazil|Canada|Poland|Russia|Mexico|Other|UK|France|Spain)/i);
+      const location = locationMatch ? locationMatch[0] : null;
+      
+      // Status - online/offline
+      const statusMatch = row.match(/(?:online|offline)/i);
+      const isOnline = statusMatch ? statusMatch[0].toLowerCase() === "online" : false;
+      
+      // Only add if we have at least name and IP
+      if (name && ip) {
+        servers.push({
+          name,
+          ip,
+          port,
+          version,
+          world_type: worldType,
+          location,
+          is_online: isOnline,
+          players_online: playersOnline,
+          last_check: new Date().toISOString(),
+        });
       }
     } catch (err) {
-      console.warn(`Error fetching from ${source.name}:`, err.message);
+      console.warn("Error parsing row:", err.message);
     }
   }
 
-  throw new Error("Could not fetch servers from any available source (OTServList World, OTChecker)");
+  if (servers.length === 0) {
+    throw new Error("No servers found in otservlist.org HTML");
+  }
+
+  console.log(`Successfully extracted ${servers.length} servers from otservlist.org`);
+  return servers;
 }
 
 /**
@@ -79,55 +114,50 @@ async function fetchFromOtsList() {
  */
 function mapServerData(rawServer: any) {
   return {
-    name: rawServer.name || rawServer.servername || "Unknown Server",
-    ip: rawServer.ip || rawServer.ipaddress,
-    port: parseInt(rawServer.port || rawServer.game_port || 7171) || 7171,
-    website_url: rawServer.website || rawServer.website_url || null,
-    owner_email: rawServer.owner_email || rawServer.ownerEmail || null,
+    name: rawServer.name || "Unknown Server",
+    ip: rawServer.ip,
+    port: parseInt(rawServer.port || 7171) || 7171,
+    website_url: rawServer.website || null,
+    owner_email: rawServer.owner_email || null,
 
     // Client & Versioning
-    version: rawServer.version || rawServer.clientversion || rawServer.client || "8.6",
-    client_type: rawServer.client_type || rawServer.clienttype || rawServer.client || null,
+    version: rawServer.version || "8.6",
+    client_type: rawServer.client_type || null,
 
     // Gameplay Mechanics
-    world_type: (
-      rawServer.world_type ||
-      rawServer.pvp ||
-      rawServer.pvp_type ||
-      "PVP"
-    ).toUpperCase(),
-    pvp_type: rawServer.pvp_type || rawServer.pvptype || null,
-    map_name: rawServer.map_name || rawServer.mapname || rawServer.map || null,
-    server_type: rawServer.server_type || rawServer.servertype || null,
-    location: rawServer.location || rawServer.country || rawServer.region || null,
+    world_type: (rawServer.world_type || "PVP").toUpperCase(),
+    pvp_type: rawServer.pvp_type || null,
+    map_name: rawServer.map_name || null,
+    server_type: rawServer.server_type || null,
+    location: rawServer.location || null,
 
     // Detailed Rates
-    exp_rate: parseFloat(rawServer.exp_rate || rawServer.experiencerate || rawServer.rate || 1),
-    exp_stages: Boolean(rawServer.exp_stages || rawServer.experiencestages || false),
-    skill_rate: parseFloat(rawServer.skill_rate || rawServer.skillrate || 1),
-    magic_rate: parseFloat(rawServer.magic_rate || rawServer.magicrate || 1),
-    loot_rate: parseFloat(rawServer.loot_rate || rawServer.lootrate || 1),
-    spawn_rate: parseFloat(rawServer.spawn_rate || rawServer.spawnrate || 1),
+    exp_rate: parseFloat(rawServer.exp_rate || 1),
+    exp_stages: Boolean(rawServer.exp_stages || false),
+    skill_rate: parseFloat(rawServer.skill_rate || 1),
+    magic_rate: parseFloat(rawServer.magic_rate || 1),
+    loot_rate: parseFloat(rawServer.loot_rate || 1),
+    spawn_rate: parseFloat(rawServer.spawn_rate || 1),
 
-    // Status & Performance Metrics (The "Upending" logic - automatically updates)
-    is_online: Boolean(rawServer.is_online || rawServer.online || rawServer.status === "online"),
-    players_online: parseInt(rawServer.players_online || rawServer.onlineplayers || rawServer.players || 0),
-    players_peak: parseInt(rawServer.players_peak || rawServer.peakplayers || rawServer.peak || 0),
-    uptime_percent: parseFloat(rawServer.uptime_percent || rawServer.uptime || 0),
-    last_check: new Date().toISOString(),
+    // Status & Performance Metrics
+    is_online: Boolean(rawServer.is_online),
+    players_online: parseInt(rawServer.players_online || 0),
+    players_peak: parseInt(rawServer.players_peak || 0),
+    uptime_percent: parseFloat(rawServer.uptime_percent || 0),
+    last_check: rawServer.last_check || new Date().toISOString(),
 
     // Advanced Features
-    has_custom_map: Boolean(rawServer.has_custom_map || rawServer.custommap || rawServer.custom_map),
-    has_custom_sprites: Boolean(rawServer.has_custom_sprites || rawServer.customsprites || rawServer.custom_sprites),
-    has_store: Boolean(rawServer.has_store || rawServer.store || rawServer.shop),
-    is_premium_required: Boolean(rawServer.is_premium_required || rawServer.premiumpvp || rawServer.premium),
-    has_battleye: Boolean(rawServer.has_battleye || rawServer.battleye || rawServer.bans),
+    has_custom_map: Boolean(rawServer.has_custom_map || false),
+    has_custom_sprites: Boolean(rawServer.has_custom_sprites || false),
+    has_store: Boolean(rawServer.has_store || false),
+    is_premium_required: Boolean(rawServer.is_premium_required || false),
+    has_battleye: Boolean(rawServer.has_battleye || false),
 
     // Description & Tags
     description: rawServer.description || null,
     tags: Array.isArray(rawServer.tags) ? rawServer.tags : [],
 
-    // Timestamps (updated_at managed by upsert)
+    // Timestamps
     updated_at: new Date().toISOString(),
   };
 }
@@ -156,7 +186,7 @@ async function upsertServers(servers: any[]) {
         .from("servers")
         .upsert(batch, {
           onConflict: "ip",
-          ignoreDuplicates: false, // Allow status/player updates
+          ignoreDuplicates: false,
         });
 
       if (error) {
@@ -230,7 +260,7 @@ serve(async (req) => {
 
     console.log("Starting server sync...");
 
-    // 1. Fetch from OTS list sources
+    // 1. Fetch from otservlist.org
     const rawServers = await fetchFromOtsList();
     console.log(`Fetched ${rawServers.length} raw servers`);
 
