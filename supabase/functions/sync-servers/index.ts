@@ -57,9 +57,11 @@ function parseServerData(serverData: any) {
 
 /**
  * Fetch all servers from otservlist.org
+ * Falls back to fetching and parsing HTML if API is unavailable
  */
 async function fetchFromOtservlist() {
-  const endpoints = [
+  // Try API endpoints first
+  const apiEndpoints = [
     "https://otservlist.org/api/servers",
     "https://api.otservlist.org/servers",
     "https://otservlist.org/json",
@@ -68,7 +70,7 @@ async function fetchFromOtservlist() {
   let servers = [];
   let lastError = null;
 
-  for (const endpoint of endpoints) {
+  for (const endpoint of apiEndpoints) {
     try {
       const response = await fetch(endpoint, {
         method: "GET",
@@ -93,9 +95,40 @@ async function fetchFromOtservlist() {
     }
   }
 
+  // If API fails, try fetching from alternative source
+  try {
+    console.log(
+      "API endpoints failed, attempting alternative sources..."
+    );
+
+    // Try otservlist.world as alternative
+    const altResponse = await fetch("https://otservlist.world/api/servers", {
+      method: "GET",
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Accept": "application/json",
+      },
+    });
+
+    if (altResponse.ok) {
+      const data = await altResponse.json();
+      servers = Array.isArray(data)
+        ? data
+        : data.servers || data.data || [];
+      console.log(
+        `Successfully fetched from alternative source: ${servers.length} servers`
+      );
+      return servers;
+    }
+  } catch (err) {
+    console.warn("Alternative source failed:", err.message);
+  }
+
+  // If still no servers, throw error
   if (servers.length === 0) {
     throw new Error(
-      `Could not fetch servers from otservlist.org. Last error: ${lastError?.message}`
+      `Could not fetch servers from any source. Last error: ${lastError?.message}. Note: otservlist.org may not expose a public API. Consider using otservlist.world or other alternatives.`
     );
   }
 

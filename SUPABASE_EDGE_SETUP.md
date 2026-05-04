@@ -2,11 +2,13 @@
 
 ## Overview
 
-The sync function is now a **Supabase Edge Function** that:
-- Fetches server listings from otservlist.org
+The sync function is a **Supabase Edge Function** that:
+- Fetches server listings from otservlist.org (or alternative sources)
 - Parses and upserts data directly to your Supabase database
 - Can be called manually via HTTP or scheduled with a cron service
 - Runs in Deno (TypeScript) runtime
+
+**Important**: otservlist.org does not appear to expose a public JSON API. The function will attempt to fetch from alternative sources like **otservlist.world** which has a documented API.
 
 ## Files
 
@@ -188,17 +190,41 @@ SELECT * FROM servers ORDER BY last_check DESC LIMIT 5;
 **Solution**: Verify environment variables are set in:
 - Supabase Dashboard → Project Settings → Edge Functions → Environment Variables
 
+### Issue: "Could not fetch servers from otservlist.org"
+
+**Cause**: otservlist.org does not expose a public JSON API. The function attempts fallback sources.
+
+**Solution**: The function now tries:
+1. **otservlist.org** endpoints (primary)
+2. **otservlist.world** API (fallback)
+
+If both fail, you need to:
+1. Verify the actual OTS list API endpoint exists and is reachable
+2. Update the `fetchFromOtservlist()` function with the correct endpoint
+3. Or switch to a different data source that has a public API
+
+**Test if otservlist.world API works**:
+```bash
+curl https://otservlist.world/api/servers
+```
+
+If that returns JSON data, the function should work. Otherwise, you may need to:
+- Use a different OTS list service
+- Implement web scraping (more complex)
+- Manually populate the database from another source
+
 ### Issue: Function runs but doesn't update database
 
 **Causes**:
 1. Service Role Key is incorrect or expired
 2. Database permissions are restricted (check RLS policies)
-3. Network connectivity from Supabase to otservlist.org is blocked
+3. Network connectivity from Supabase to API is blocked
 
 **Solutions**:
 1. Check Service Role Key in Supabase Project Settings
 2. Verify RLS policies allow writes from service role
 3. Check function logs for specific errors
+4. Test the API endpoint manually before deploying
 
 ## Deployment to Production
 
