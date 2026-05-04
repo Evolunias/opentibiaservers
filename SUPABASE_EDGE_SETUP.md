@@ -94,7 +94,7 @@ Keep the original Netlify function (`netlify/functions/sync-servers.js`) that ca
 ```javascript
 // In netlify/functions/sync-servers.js
 const response = await fetch(
-  'https://zgjthtaesusdfeivbzja.supabase.co/functions/v1/sync-servers',
+  `${process.env.PROJECT_URL}/functions/v1/sync-servers`,
   {
     method: 'POST',
     headers: {
