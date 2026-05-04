@@ -7,7 +7,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL");
 const supabaseServiceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
-const syncToken = Deno.env.get("SYNC_TOKEN") || ""; // Optional security token
+const syncToken = Deno.env.get("SYNC_TOKEN") || "";
 
 if (!supabaseUrl || !supabaseServiceRoleKey) {
   throw new Error("Missing Supabase credentials in environment variables");
@@ -15,9 +15,9 @@ if (!supabaseUrl || !supabaseServiceRoleKey) {
 
 const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
 
-const OTSERVLIST_URL = "https://otservlist.org";
+const OTSERVLIST_BASE = "https://otservlist.org";
 const BATCH_SIZE = 50;
-const SCRAPE_TIMEOUT = 30000; // 30 seconds
+const SCRAPE_TIMEOUT = 30000;
 
 // ============================================================================
 // TYPES
@@ -63,27 +63,12 @@ interface SyncResult {
   failed: number;
   error?: string;
   execution_time_ms: number;
+  pages_scraped?: number;
 }
 
 // ============================================================================
 // UTILITIES
 // ============================================================================
-
-function sanitize_string(str: string, max_length: number = 255): string {
-  if (typeof str !== "string") return "";
-  return str
-    .trim()
-    .substring(0, max_length)
-    .replace(/[<>\"']/g, (char) => {
-      const escape_map: { [key: string]: string } = {
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#x27;",
-      };
-      return escape_map[char] || char;
-    });
-}
 
 function is_valid_ipv4(ip: string): boolean {
   const octets = ip.split(".");
@@ -114,131 +99,138 @@ function parse_safe_float(
   return Math.max(min, Math.min(max, num));
 }
 
+function get_country_from_flag_src(src: string): string {
+  const match = src.match(/\/([a-z]{2})\.png/i);
+  if (!match) return "Unknown";
+  
+  const code = match[1].toLowerCase();
+  const countryMap: { [key: string]: string } = {
+    us: "USA",
+    br: "Brazil",
+    pl: "Poland",
+    se: "Sweden",
+    de: "Germany",
+    fr: "France",
+    mx: "Mexico",
+    uk: "UK",
+    ca: "Canada",
+    au: "Australia",
+    ru: "Russia",
+    ar: "Argentina",
+    nl: "Netherlands",
+  };
+  
+  return countryMap[code] || "Other";
+}
+
 // ============================================================================
 // SCRAPING ENGINE
 // ============================================================================
 
-async function scrape_otservlist(): Promise<ServerData[]> {
-  console.log("Scraping otservlist.org...");
+async function fetch_page(url: string, page: number = 1): Promise<string> {
+  const page_url = page > 1 ? `${url}-${page}.html` : `${url}-1.html`;
+  
+  console.log(`Fetching page ${page}: ${page_url}`);
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), SCRAPE_TIMEOUT);
 
   try {
-    const response = await fetch(`${OTSERVLIST_URL}/`, {
+    const response = await fetch(page_url, {
       signal: controller.signal,
       headers: {
         "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        Accept:
-          "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
-        "Accept-Encoding": "gzip, deflate, br",
-        Connection: "keep-alive",
-        "Upgrade-Insecure-Requests": "1",
       },
     });
 
     clearTimeout(timeout);
 
     if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      if (response.status === 404) {
+        console.log(`Page ${page} not found (end of pagination)`);
+        return "";
+      }
+      throw new Error(`HTTP ${response.status}`);
     }
 
-    const html = await response.text();
-    const servers = extract_servers_from_html(html);
-
-    console.log(`Scraped ${servers.length} servers from otservlist.org`);
-    return servers;
+    return await response.text();
   } catch (error) {
     clearTimeout(timeout);
     if (error instanceof DOMException && error.name === "AbortError") {
-      throw new Error(`Scraping timed out after ${SCRAPE_TIMEOUT}ms`);
+      throw new Error(`Fetch timed out after ${SCRAPE_TIMEOUT}ms`);
     }
     throw error;
   }
 }
 
+async function scrape_all_pages(): Promise<ServerData[]> {
+  console.log("Starting multi-page scrape of otservlist.org...");
+
+  const all_servers: ServerData[] = [];
+  let page = 1;
+  let pages_scraped = 0;
+
+  // Try to scrape up to 50 pages (safety limit)
+  while (page <= 50) {
+    try {
+      const base_url = `${OTSERVLIST_BASE}/list-server_players_online-desc`;
+      const html = await fetch_page(base_url, page);
+
+      if (!html) break; // No more pages
+
+      const servers = extract_servers_from_html(html);
+      all_servers.push(...servers);
+      pages_scraped++;
+
+      console.log(`Page ${page}: ${servers.length} servers extracted`);
+
+      // Rate limiting between pages
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      page++;
+    } catch (error) {
+      console.error(`Error scraping page ${page}:`, error);
+      break;
+    }
+  }
+
+  console.log(
+    `Scraped ${pages_scraped} pages with total ${all_servers.length} servers`
+  );
+
+  return all_servers;
+}
+
 function extract_servers_from_html(html: string): ServerData[] {
   const servers: ServerData[] = [];
 
-  // Extract from table rows with data-ip attribute
-  // Pattern: <tr ... data-ip="X.X.X.X">...</tr>
-  const row_pattern = /<tr[^>]*data-ip="([^"]+)"[^>]*>(.+?)<\/tr>/gs;
-  let match;
-
-  while ((match = row_pattern.exec(html)) !== null) {
-    const ip = match[1]?.trim();
-    const row_content = match[2];
-
-    if (!ip || !is_valid_ipv4(ip)) {
-      continue;
-    }
-
-    // Extract table cells
-    const cell_pattern = /<td[^>]*>(.+?)<\/td>/g;
-    const cells: string[] = [];
-    let cell_match;
-
-    while ((cell_match = cell_pattern.exec(row_content)) !== null) {
-      cells.push((cell_match[1] || "").trim());
-    }
-
-    if (cells.length < 5) {
-      continue;
-    }
-
-    const server = parse_server_row(ip, cells);
-    if (server) {
-      servers.push(server);
-    }
+  // Find the main servlist table
+  const table_match = html.match(/<table id="servlist">(.+?)<\/table>/s);
+  if (!table_match) {
+    console.log("No servlist table found in HTML");
+    return [];
   }
 
-  // Fallback: if no rows found via data-ip, try parsing table directly
-  if (servers.length === 0) {
-    console.log("No servers found via data-ip pattern, trying alternative parsing...");
-    const alt_servers = extract_servers_fallback(html);
-    servers.push(...alt_servers);
-  }
+  const table_html = table_match[1];
 
-  return servers;
-}
+  // Extract all rows (skip header row)
+  const row_pattern = /<tr[^>]*>(.+?)<\/tr>/gs;
+  let row_match;
+  let is_first = true;
 
-function extract_servers_fallback(html: string): ServerData[] {
-  const servers: ServerData[] = [];
-
-  // Alternative: Extract all table rows and infer IP from content
-  const row_pattern = /<tr>(.+?)<\/tr>/gs;
-  let match;
-
-  while ((match = row_pattern.exec(html)) !== null) {
-    const row_content = match[1];
-
-    // Extract cells
-    const cell_pattern = /<td[^>]*>(.+?)<\/td>/g;
-    const cells: string[] = [];
-    let cell_match;
-
-    while ((cell_match = cell_pattern.exec(row_content)) !== null) {
-      cells.push((cell_match[1] || "").trim());
-    }
-
-    if (cells.length < 5) {
+  while ((row_match = row_pattern.exec(table_html)) !== null) {
+    // Skip header row (first row with class="top")
+    if (is_first || row_match[0].includes('class="top"')) {
+      is_first = false;
       continue;
     }
 
-    // Try to find IP in first cell
-    const ip_match = cells[0]?.match(/(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/);
-    if (!ip_match) {
-      continue;
-    }
+    const row_html = row_match[1];
+    const server = parse_server_row(row_html);
 
-    const ip = ip_match[1];
-    if (!is_valid_ipv4(ip)) {
-      continue;
-    }
-
-    const server = parse_server_row(ip, cells);
     if (server) {
       servers.push(server);
     }
@@ -247,80 +239,108 @@ function extract_servers_fallback(html: string): ServerData[] {
   return servers;
 }
 
-function parse_server_row(ip: string, cells: string[]): ServerData | null {
+function parse_server_row(row_html: string): ServerData | null {
   try {
-    // Extract name from first cell (might be in anchor tag)
-    const name_match = cells[0]?.match(/>([^<]+)<\//);
-    const name = name_match
-      ? sanitize_string(name_match[1], 100)
-      : sanitize_string(cells[0]?.replace(/<[^>]+>/g, ""), 100);
+    // Extract cells: <th>...</th> or <td>...</td>
+    const cell_pattern = /<(?:th|td)[^>]*>(.+?)<\/(?:th|td)>/gs;
+    const cells: string[] = [];
+    let cell_match;
+
+    while ((cell_match = cell_pattern.exec(row_html)) !== null) {
+      cells.push(cell_match[1]?.trim() || "");
+    }
+
+    if (cells.length < 10) {
+      return null;
+    }
+
+    // Parse structure based on otservlist.org HTML:
+    // 0: Country flag (img)
+    // 1: IP/Website (link to /ots/{id})
+    // 2: External link icon
+    // 3: Server name/description
+    // 4: Players online (X / Y)
+    // 5: Uptime percentage
+    // 6: Points
+    // 7: EXP rate
+    // 8: PVP type
+    // 9: Version
+
+    // Extract flag/country
+    const flag_match = cells[0]?.match(/src="([^"]*\/([a-z]{2})\.png)"/i);
+    const country = flag_match ? get_country_from_flag_src(flag_match[1]) : "Unknown";
+
+    // Extract IP/website from link
+    const ip_match = cells[1]?.match(/href="\/ots\/\d+">([^<]+)</);
+    const ip_or_website = ip_match ? ip_match[1]?.trim() : "";
+
+    // Try to parse as IP
+    let ip = "";
+    let website_url = null;
+
+    if (ip_or_website && is_valid_ipv4(ip_or_website)) {
+      ip = ip_or_website;
+    } else if (ip_or_website) {
+      website_url = ip_or_website;
+      // Try to extract IP from domain or use domain as-is
+      ip = ip_or_website; // Fall back to using domain as identifier
+    }
+
+    if (!ip) {
+      return null;
+    }
+
+    // Server name/description
+    const name = cells[3]?.replace(/<[^>]+>/g, "")?.trim() || "";
 
     if (!name || name.length < 2) {
       return null;
     }
 
-    // Extract port (usually in first cell like "IP:PORT")
-    let port = 7171;
-    const port_match = cells[0]?.match(/:(\d+)/);
-    if (port_match) {
-      port = parseInt(port_match[1], 10);
-    }
+    // Players online: "2246 (3129) / 2000" → extract first number
+    const players_match = cells[4]?.match(/(\d+)\s*\(/);
+    const players_online = players_match ? parseInt(players_match[1], 10) : 0;
 
-    // Parse cells based on typical otservlist.org table structure
-    // cells[0] = Name, IP
-    // cells[1] = World Type
-    // cells[2] = Online Players
-    // cells[3] = Peak Players
-    // cells[4] = Version
-    // cells[5] = Rates (Exp/Skill/Loot)
-    // cells[6] = Location
-
-    const world_type = sanitize_string((cells[1] || "PVP").toUpperCase(), 20);
-    const location = sanitize_string(cells[6] || "Unknown", 50);
-
-    // Extract player counts
-    const online_match = (cells[2] || "0")?.match(/(\d+)/);
-    const players_online = online_match ? parseInt(online_match[1], 10) : 0;
-
-    const peak_match = (cells[3] || "0")?.match(/(\d+)/);
+    // Peak players: extract number in parentheses
+    const peak_match = cells[4]?.match(/\((\d+)\)/);
     const players_peak = peak_match ? parseInt(peak_match[1], 10) : 0;
 
-    // Version
-    const version = sanitize_string(cells[4] || "8.6", 20);
+    // Uptime: "99.94%" → extract number
+    const uptime_match = cells[5]?.match(/(\d+\.?\d*)/);
+    const uptime_percent = uptime_match ? parseFloat(uptime_match[1]) : 100;
 
-    // Parse rates from cells[5] - format: "1x / 1x / 1x" or similar
-    let exp_rate = 1;
-    let skill_rate = 1;
-    let loot_rate = 1;
+    // EXP rate: "x1", "x100", "x2000" → extract number
+    const exp_match = cells[7]?.match(/x(\d+)/i);
+    const exp_rate = exp_match ? parseFloat(exp_match[1]) : 1;
 
-    const rates_text = cells[5] || "";
-    const rates_match = rates_text.match(
-      /(\d+\.?\d*)\s*[x\/]*\s*(\d+\.?\d*)\s*[x\/]*\s*(\d+\.?\d*)/
-    );
-    if (rates_match) {
-      exp_rate = parse_safe_float(rates_match[1]);
-      skill_rate = parse_safe_float(rates_match[2]);
-      loot_rate = parse_safe_float(rates_match[3]);
-    }
+    // PVP type
+    const world_type = cells[8]?.replace(/<[^>]+>/g, "")?.trim() || "PVP";
+
+    // Version: "[ 7.4 ]", "[ 8.6 ]", etc
+    const version_match = cells[9]?.match(/\[?\s*([0-9.]+)\s*\]?/);
+    const version = version_match ? version_match[1]?.trim() : "8.6";
+
+    // Determine if online by player count
+    const is_online = players_online > 0;
 
     const now = new Date().toISOString();
 
     return {
       name,
       ip,
-      port,
+      port: 7171, // Default Tibia port
       version,
       world_type,
-      location,
-      website_url: null,
+      location: country,
+      website_url,
       description: "",
       players_online,
       players_peak,
       exp_rate,
-      skill_rate,
-      loot_rate,
-      is_online: players_online > 0,
-      uptime_percent: 100,
+      skill_rate: 1, // Not in otservlist.org data
+      loot_rate: 1, // Not in otservlist.org data
+      is_online,
+      uptime_percent,
       has_custom_map: false,
       has_battleye: false,
       client_type: null,
@@ -418,7 +438,9 @@ async function batch_upsert_servers(servers: ServerData[]): Promise<{
     // Rate limiting between batches
     await new Promise((resolve) => setTimeout(resolve, 500));
 
-    console.log(`Processed ${Math.min(i + BATCH_SIZE, servers.length)}/${servers.length}`);
+    console.log(
+      `Database progress: ${Math.min(i + BATCH_SIZE, servers.length)}/${servers.length}`
+    );
   }
 
   return { inserted, updated, failed };
@@ -457,6 +479,7 @@ serve(async (req) => {
     updated: 0,
     failed: 0,
     execution_time_ms: 0,
+    pages_scraped: 0,
   };
 
   // CORS preflight
@@ -491,11 +514,12 @@ serve(async (req) => {
   }
 
   try {
-    console.log("Starting server sync...");
+    console.log("Starting otservlist.org sync...");
 
-    // Scrape otservlist.org
-    const raw_servers = await scrape_otservlist();
+    // Scrape all pages
+    const raw_servers = await scrape_all_pages();
     result.fetched = raw_servers.length;
+    result.pages_scraped = Math.ceil(raw_servers.length / 20); // Estimate based on ~20 servers per page
 
     if (result.fetched === 0) {
       throw new Error("No servers scraped from otservlist.org");
