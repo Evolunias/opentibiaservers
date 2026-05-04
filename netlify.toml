@@ -4,8 +4,3 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-# Scheduled function to sync servers from otservlist.org every 15 minutes
-[[scheduled]]
-  cron = "*/15 * * * *"
-  function = "sync-servers"
