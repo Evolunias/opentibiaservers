@@ -56,23 +56,51 @@ function parseServerData(serverData: any) {
 }
 
 /**
- * Fetch all servers from otservlist.org
- * Falls back to fetching and parsing HTML if API is unavailable
+ * Fetch all servers from available OTS list APIs
+ * Tries multiple sources with fallbacks
  */
 async function fetchFromOtservlist() {
-  // Try API endpoints first
+  // List of OTS list APIs to try, in order of preference
   const apiEndpoints = [
-    "https://otservlist.org/api/servers",
-    "https://api.otservlist.org/servers",
-    "https://otservlist.org/json",
+    {
+      url: "https://otchecker.net/api/servers",
+      name: "OTChecker",
+      parser: (data: any) => {
+        if (Array.isArray(data)) return data;
+        if (data.servers) return data.servers;
+        if (data.data) return data.data;
+        return [];
+      },
+    },
+    {
+      url: "https://otservlist.world/api/servers",
+      name: "OTServList World",
+      parser: (data: any) => {
+        if (Array.isArray(data)) return data;
+        if (data.servers) return data.servers;
+        if (data.data) return data.data;
+        return [];
+      },
+    },
+    {
+      url: "https://tibiadata.com/api/v3/worlds",
+      name: "TibiaData API",
+      parser: (data: any) => {
+        // TibiaData returns official Tibia worlds, not OTS
+        if (data.worlds) return data.worlds;
+        return [];
+      },
+    },
   ];
 
   let servers = [];
   let lastError = null;
 
+  // Try each endpoint
   for (const endpoint of apiEndpoints) {
     try {
-      const response = await fetch(endpoint, {
+      console.log(`Attempting to fetch from ${endpoint.name}...`);
+      const response = await fetch(endpoint.url, {
         method: "GET",
         headers: {
           "User-Agent":
@@ -83,52 +111,27 @@ async function fetchFromOtservlist() {
 
       if (response.ok) {
         const data = await response.json();
-        servers = Array.isArray(data) ? data : data.servers || data.data || [];
-        console.log(
-          `Successfully fetched from ${endpoint}: ${servers.length} servers`
-        );
-        return servers;
+        servers = endpoint.parser(data);
+
+        if (servers.length > 0) {
+          console.log(
+            `Successfully fetched from ${endpoint.name}: ${servers.length} servers`
+          );
+          return servers;
+        }
       }
     } catch (err) {
       lastError = err;
-      console.warn(`Failed to fetch from ${endpoint}:`, err.message);
+      console.warn(`Failed to fetch from ${endpoint.name}:`, err.message);
     }
   }
 
-  // If API fails, try fetching from alternative source
-  try {
-    console.log(
-      "API endpoints failed, attempting alternative sources..."
-    );
-
-    // Try otservlist.world as alternative
-    const altResponse = await fetch("https://otservlist.world/api/servers", {
-      method: "GET",
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Accept": "application/json",
-      },
-    });
-
-    if (altResponse.ok) {
-      const data = await altResponse.json();
-      servers = Array.isArray(data)
-        ? data
-        : data.servers || data.data || [];
-      console.log(
-        `Successfully fetched from alternative source: ${servers.length} servers`
-      );
-      return servers;
-    }
-  } catch (err) {
-    console.warn("Alternative source failed:", err.message);
-  }
-
-  // If still no servers, throw error
+  // If all endpoints fail, throw error with helpful message
   if (servers.length === 0) {
     throw new Error(
-      `Could not fetch servers from any source. Last error: ${lastError?.message}. Note: otservlist.org may not expose a public API. Consider using otservlist.world or other alternatives.`
+      `Could not fetch servers from any source. Last error: ${lastError?.message}. ` +
+        `Tried: OTChecker, OTServList World, TibiaData. ` +
+        `Note: Consider setting up a cron job to monitor specific servers or use a different data source.`
     );
   }
 
