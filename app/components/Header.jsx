@@ -19,7 +19,7 @@ export default function Header() {
           <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent drop-shadow-lg" style={{
             animation: 'gradient-shift 6s ease infinite',
             backgroundSize: '200% 200%'
-          }}>Tibia Servers</h1>
+          }}>Open Tibia Servers</h1>
         </div>
         <p className="text-gray-700 text-lg font-medium">Browse and compare open Tibia servers with comprehensive stats and details</p>
       </div>
