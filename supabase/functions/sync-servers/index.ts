@@ -10,7 +10,7 @@ if (!supabaseUrl || !supabaseServiceRoleKey) {
 const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
 
 /**
- * Parse server data from otservlist.org API response
+ * Parse server data from OTS list API responses
  */
 function parseServerData(serverData: any) {
   return {
@@ -60,7 +60,6 @@ function parseServerData(serverData: any) {
  * Tries multiple sources with fallbacks
  */
 async function fetchFromOtservlist() {
-  // List of OTS list APIs to try, in order of preference
   const apiEndpoints = [
     {
       url: "https://otservlist.world/api/servers",
@@ -97,7 +96,6 @@ async function fetchFromOtservlist() {
   let servers = [];
   let lastError = null;
 
-  // Try each endpoint
   for (const endpoint of apiEndpoints) {
     try {
       console.log(`Attempting to fetch from ${endpoint.name}...`);
@@ -127,12 +125,10 @@ async function fetchFromOtservlist() {
     }
   }
 
-  // If all endpoints fail, throw error with helpful message
   if (servers.length === 0) {
     throw new Error(
       `Could not fetch servers from any source. Last error: ${lastError?.message}. ` +
-        `Tried: OTServList World, OTServers Online, OTChecker. ` +
-        `Note: Consider setting up a cron job to monitor specific servers or use a different data source.`
+        `Tried: OTServList World, OTServers Online, OTChecker.`
     );
   }
 
@@ -151,7 +147,6 @@ async function upsertServers(servers: any[]) {
   const parsedServers = servers.map(parseServerData);
   const stats = { inserted: 0, updated: 0, errors: 0 };
 
-  // Upsert in batches to avoid timeout
   const batchSize = 10;
   for (let i = 0; i < parsedServers.length; i += batchSize) {
     const batch = parsedServers.slice(i, i + batchSize);
@@ -208,15 +203,12 @@ async function syncServers() {
   try {
     console.log("Starting server sync at", new Date().toISOString());
 
-    // Fetch servers from OTS list APIs
     const servers = await fetchFromOtservlist();
     console.log(`Fetched ${servers.length} servers from OTS list`);
 
-    // Upsert into database
     const stats = await upsertServers(servers);
     console.log("Upsert stats:", stats);
 
-    // Mark servers that weren't in this fetch as offline
     await markStaleServersOffline();
 
     return {
@@ -235,7 +227,6 @@ async function syncServers() {
 }
 
 Deno.serve(async (req) => {
-  // Handle CORS
   if (req.method === "OPTIONS") {
     return new Response("ok", {
       headers: {
@@ -246,7 +237,6 @@ Deno.serve(async (req) => {
     });
   }
 
-  // Verify token if provided
   const token = req.headers.get("x-sync-token");
   const expectedToken = Deno.env.get("SYNC_TOKEN");
 
