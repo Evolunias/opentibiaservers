@@ -15,9 +15,9 @@ const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
  */
 async function fetchFromOtsList() {
   const url = "https://otservlist.org/";
-  
+
   console.log("Fetching from otservlist.org...");
-  
+
   const response = await fetch(url, {
     method: "GET",
     headers: {
@@ -36,73 +36,98 @@ async function fetchFromOtsList() {
 
   const html = await response.text();
   console.log(`Fetched ${html.length} bytes of HTML`);
+  console.log(`HTML preview (first 500 chars): ${html.substring(0, 500)}`);
 
   // Parse HTML - extract server rows
   const servers = [];
-  
-  // Look for server table rows - otservlist.org uses table structure
-  // Pattern: <tr> containing server data
-  const tableRegex = /<tr[^>]*>[\s\S]*?<\/tr>/gi;
-  const rows = html.match(tableRegex) || [];
-  
-  console.log(`Found ${rows.length} table rows`);
 
-  for (const row of rows) {
-    try {
-      // Extract data using regex patterns
-      // Name: usually in a link or td
-      const nameMatch = row.match(/<a[^>]*href[^>]*>([^<]+)<\/a>/i);
-      const name = nameMatch ? nameMatch[1].trim() : null;
-      
-      // IP and Port: typically in format "ip:port" or separate cells
-      const ipMatch = row.match(/(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/);
-      const ip = ipMatch ? ipMatch[1] : null;
-      
-      // Port
-      const portMatch = row.match(/:(\d{4,5})/);
-      const port = portMatch ? parseInt(portMatch[1]) : 7171;
-      
-      // Players online - look for numbers in parentheses or specific pattern
-      const playersMatch = row.match(/(\d+)\s*(?:player|online|\/)/i);
-      const playersOnline = playersMatch ? parseInt(playersMatch[1]) : 0;
-      
-      // Version/Client - look for version patterns like 8.60, 12.00, etc.
-      const versionMatch = row.match(/(\d{1,2}\.\d{1,2})/);
-      const version = versionMatch ? versionMatch[1] : "8.6";
-      
-      // World Type - look for PVP, Non-PVP, etc.
-      const worldMatch = row.match(/(PVP|Non-PVP|PVP-Enforced|OT|RPG)/i);
-      const worldType = worldMatch ? worldMatch[1].toUpperCase() : "PVP";
-      
-      // Location - country codes or names
-      const locationMatch = row.match(/(?:USA|Europe|Germany|Brazil|Canada|Poland|Russia|Mexico|Other|UK|France|Spain)/i);
-      const location = locationMatch ? locationMatch[0] : null;
-      
-      // Status - online/offline
-      const statusMatch = row.match(/(?:online|offline)/i);
-      const isOnline = statusMatch ? statusMatch[0].toLowerCase() === "online" : false;
-      
-      // Only add if we have at least name and IP
-      if (name && ip) {
-        servers.push({
-          name,
-          ip,
-          port,
-          version,
-          world_type: worldType,
-          location,
-          is_online: isOnline,
-          players_online: playersOnline,
-          last_check: new Date().toISOString(),
-        });
+  // Strategy 1: Look for <tr> table rows
+  let tableRegex = /<tr[^>]*>[\s\S]*?<\/tr>/gi;
+  let rows = html.match(tableRegex) || [];
+
+  console.log(`Strategy 1 (table rows): Found ${rows.length} rows`);
+
+  // Strategy 2: If no rows, look for table data cells with server info
+  if (rows.length === 0) {
+    console.log("No table rows found, trying alternative parsing...");
+
+    // Look for server name in common patterns
+    const serverPatterns = [
+      /<td[^>]*>([^<]+)<\/td>[\s\S]*?(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/gi,
+      /<div[^>]*class="[^"]*server[^"]*"[^>]*>[\s\S]*?<\/div>/gi,
+      /<li[^>]*>[\s\S]*?(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})[\s\S]*?<\/li>/gi,
+    ];
+
+    for (const pattern of serverPatterns) {
+      rows = html.match(pattern) || [];
+      if (rows.length > 0) {
+        console.log(`Found ${rows.length} rows with pattern`);
+        break;
       }
-    } catch (err) {
-      console.warn("Error parsing row:", err.message);
     }
   }
 
+  // Extract IPs - these are consistent regardless of structure
+  const ipRegex = /(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/g;
+  const allIps = html.match(ipRegex) || [];
+  console.log(`Found ${allIps.length} IP addresses in HTML`);
+
+  // For each unique IP, extract associated data
+  const seenIps = new Set();
+  for (const ip of allIps) {
+    // Avoid duplicates
+    if (seenIps.has(ip)) continue;
+    seenIps.add(ip);
+
+    // Find context around this IP (500 chars before and after)
+    const ipIndex = html.indexOf(ip);
+    const start = Math.max(0, ipIndex - 500);
+    const end = Math.min(html.length, ipIndex + 500);
+    const context = html.substring(start, end);
+
+    // Extract server name - usually before the IP
+    const nameMatch = context.match(/(?:<a[^>]*>)?([^<>\n]{2,50}?)\s*(?:<\/a>)?(?:\s*<|$)/);
+    const name = nameMatch ? nameMatch[1].trim() : `Server ${servers.length + 1}`;
+
+    // Extract port
+    const portMatch = context.match(/(?::|\s)(\d{4,5})(?:\s|<|$)/);
+    const port = portMatch ? parseInt(portMatch[1]) : 7171;
+
+    // Extract version
+    const versionMatch = context.match(/(\d{1,2}\.\d{1,2})/);
+    const version = versionMatch ? versionMatch[1] : "8.6";
+
+    // Extract world type
+    const worldMatch = context.match(/(PVP|Non-PVP|PVP-Enforced|RPG|WAR)/i);
+    const worldType = worldMatch ? worldMatch[1].toUpperCase() : "PVP";
+
+    // Extract location
+    const locationMatch = context.match(/(USA|Europe|Germany|Brazil|Canada|Poland|Russia|Mexico|Other|UK|France|Spain|Asia|Australia)/i);
+    const location = locationMatch ? locationMatch[0] : null;
+
+    // Extract players online - look for numbers in context
+    const playersMatch = context.match(/(\d{1,5})\s*(?:player|online)/i);
+    const playersOnline = playersMatch ? Math.min(parseInt(playersMatch[1]), 9999) : 0;
+
+    // Status - if we just found it, assume it's online
+    const isOnline = true;
+
+    servers.push({
+      name,
+      ip,
+      port,
+      version,
+      world_type: worldType,
+      location,
+      is_online: isOnline,
+      players_online: playersOnline,
+      last_check: new Date().toISOString(),
+    });
+  }
+
   if (servers.length === 0) {
-    throw new Error("No servers found in otservlist.org HTML");
+    console.error("HTML content sample:", html.substring(0, 2000));
+    throw new Error(`No servers found in otservlist.org HTML. Found ${allIps.length} IPs but couldn't parse them.`);
   }
 
   console.log(`Successfully extracted ${servers.length} servers from otservlist.org`);
