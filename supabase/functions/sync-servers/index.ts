@@ -1,4 +1,5 @@
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.38.0";
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL");
 const supabaseServiceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
@@ -10,175 +11,166 @@ if (!supabaseUrl || !supabaseServiceRoleKey) {
 const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
 
 /**
- * Parse server data from OTS list API responses
+ * Fetch servers from multiple OTS list sources with fallbacks
  */
-function parseServerData(serverData: any) {
-  return {
-    name: serverData.name || serverData.servername || "Unknown",
-    ip: serverData.ip || serverData.ipaddress,
-    port: parseInt(serverData.port) || 7171,
-    website_url: serverData.website || serverData.website_url || null,
-    owner_email: serverData.owner_email || serverData.ownerEmail || null,
-    version: serverData.version || serverData.clientversion || "8.6",
-    client_type: serverData.client_type || serverData.clienttype || null,
-    world_type: serverData.world_type || serverData.pvp || "PVP",
-    pvp_type: serverData.pvp_type || serverData.pvptype || null,
-    map_name: serverData.map_name || serverData.mapname || null,
-    server_type: serverData.server_type || serverData.servertype || null,
-    location: serverData.location || serverData.country || null,
-    exp_rate: parseFloat(serverData.exp_rate || serverData.experiencerate || 1),
-    exp_stages: Boolean(serverData.exp_stages || serverData.experiencestages),
-    skill_rate: parseFloat(serverData.skill_rate || serverData.skillrate || 1),
-    magic_rate: parseFloat(serverData.magic_rate || serverData.magicrate || 1),
-    loot_rate: parseFloat(serverData.loot_rate || serverData.lootrate || 1),
-    spawn_rate: parseFloat(serverData.spawn_rate || serverData.spawnrate || 1),
-    is_online: Boolean(serverData.is_online || serverData.online),
-    players_online: parseInt(
-      serverData.players_online || serverData.onlineplayers || 0
-    ),
-    players_peak: parseInt(serverData.players_peak || serverData.peakplayers || 0),
-    uptime_percent: parseFloat(
-      serverData.uptime_percent || serverData.uptime || 0
-    ),
-    has_custom_map: Boolean(serverData.has_custom_map || serverData.custommap),
-    has_custom_sprites: Boolean(
-      serverData.has_custom_sprites || serverData.customsprites
-    ),
-    has_store: Boolean(serverData.has_store || serverData.store),
-    is_premium_required: Boolean(
-      serverData.is_premium_required || serverData.premiumpvp
-    ),
-    has_battleye: Boolean(serverData.has_battleye || serverData.battleye),
-    description: serverData.description || null,
-    tags: serverData.tags || [],
-    last_check: new Date().toISOString(),
-  };
-}
-
-/**
- * Fetch all servers from available OTS list APIs
- * Tries multiple sources with fallbacks
- */
-async function fetchFromOtservlist() {
-  const apiEndpoints = [
+async function fetchFromOtsList() {
+  const sources = [
+    {
+      url: "https://ots-list.org/api/servers",
+      name: "OTS List",
+    },
     {
       url: "https://otservlist.world/api/servers",
       name: "OTServList World",
-      parser: (data: any) => {
-        if (Array.isArray(data)) return data;
-        if (data.servers) return data.servers;
-        if (data.data) return data.data;
-        return [];
-      },
     },
     {
       url: "https://otservers.online/api/servers",
       name: "OTServers Online",
-      parser: (data: any) => {
-        if (Array.isArray(data)) return data;
-        if (data.servers) return data.servers;
-        if (data.data) return data.data;
-        return [];
-      },
     },
     {
       url: "https://otchecker.net/api/servers",
       name: "OTChecker",
-      parser: (data: any) => {
-        if (Array.isArray(data)) return data;
-        if (data.servers) return data.servers;
-        if (data.data) return data.data;
-        return [];
-      },
     },
   ];
 
-  let servers = [];
-  let lastError = null;
-
-  for (const endpoint of apiEndpoints) {
+  for (const source of sources) {
     try {
-      console.log(`Attempting to fetch from ${endpoint.name}...`);
-      const response = await fetch(endpoint.url, {
+      console.log(`Fetching from ${source.name}...`);
+      const response = await fetch(source.url, {
         method: "GET",
         headers: {
-          "User-Agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
           "Accept": "application/json",
         },
       });
 
       if (response.ok) {
         const data = await response.json();
-        servers = endpoint.parser(data);
-
+        let servers = Array.isArray(data) ? data : data.servers || data.data || [];
+        
         if (servers.length > 0) {
-          console.log(
-            `Successfully fetched from ${endpoint.name}: ${servers.length} servers`
-          );
+          console.log(`Successfully fetched ${servers.length} servers from ${source.name}`);
           return servers;
         }
       }
     } catch (err) {
-      lastError = err;
-      console.warn(`Failed to fetch from ${endpoint.name}:`, err.message);
+      console.warn(`Failed to fetch from ${source.name}:`, err.message);
     }
   }
 
-  if (servers.length === 0) {
-    throw new Error(
-      `Could not fetch servers from any source. Last error: ${lastError?.message}. ` +
-        `Tried: OTServList World, OTServers Online, OTChecker.`
-    );
-  }
-
-  return servers;
+  throw new Error("Could not fetch servers from any source");
 }
 
 /**
- * Upsert servers into Supabase
+ * Map raw server data to our comprehensive schema
+ */
+function mapServerData(rawServer: any) {
+  return {
+    name: rawServer.name || rawServer.servername || "Unknown Server",
+    ip: rawServer.ip || rawServer.ipaddress,
+    port: parseInt(rawServer.port || rawServer.game_port || 7171) || 7171,
+    website_url: rawServer.website || rawServer.website_url || null,
+    owner_email: rawServer.owner_email || rawServer.ownerEmail || null,
+
+    // Client & Versioning
+    version: rawServer.version || rawServer.clientversion || rawServer.client || "8.6",
+    client_type: rawServer.client_type || rawServer.clienttype || rawServer.client || null,
+
+    // Gameplay Mechanics
+    world_type: (
+      rawServer.world_type ||
+      rawServer.pvp ||
+      rawServer.pvp_type ||
+      "PVP"
+    ).toUpperCase(),
+    pvp_type: rawServer.pvp_type || rawServer.pvptype || null,
+    map_name: rawServer.map_name || rawServer.mapname || rawServer.map || null,
+    server_type: rawServer.server_type || rawServer.servertype || null,
+    location: rawServer.location || rawServer.country || rawServer.region || null,
+
+    // Detailed Rates
+    exp_rate: parseFloat(rawServer.exp_rate || rawServer.experiencerate || rawServer.rate || 1),
+    exp_stages: Boolean(rawServer.exp_stages || rawServer.experiencestages || false),
+    skill_rate: parseFloat(rawServer.skill_rate || rawServer.skillrate || 1),
+    magic_rate: parseFloat(rawServer.magic_rate || rawServer.magicrate || 1),
+    loot_rate: parseFloat(rawServer.loot_rate || rawServer.lootrate || 1),
+    spawn_rate: parseFloat(rawServer.spawn_rate || rawServer.spawnrate || 1),
+
+    // Status & Performance Metrics (The "Upending" logic - automatically updates)
+    is_online: Boolean(rawServer.is_online || rawServer.online || rawServer.status === "online"),
+    players_online: parseInt(rawServer.players_online || rawServer.onlineplayers || rawServer.players || 0),
+    players_peak: parseInt(rawServer.players_peak || rawServer.peakplayers || rawServer.peak || 0),
+    uptime_percent: parseFloat(rawServer.uptime_percent || rawServer.uptime || 0),
+    last_check: new Date().toISOString(),
+
+    // Advanced Features
+    has_custom_map: Boolean(rawServer.has_custom_map || rawServer.custommap || rawServer.custom_map),
+    has_custom_sprites: Boolean(rawServer.has_custom_sprites || rawServer.customsprites || rawServer.custom_sprites),
+    has_store: Boolean(rawServer.has_store || rawServer.store || rawServer.shop),
+    is_premium_required: Boolean(rawServer.is_premium_required || rawServer.premiumpvp || rawServer.premium),
+    has_battleye: Boolean(rawServer.has_battleye || rawServer.battleye || rawServer.bans),
+
+    // Description & Tags
+    description: rawServer.description || null,
+    tags: Array.isArray(rawServer.tags) ? rawServer.tags : [],
+
+    // Timestamps (updated_at managed by upsert)
+    updated_at: new Date().toISOString(),
+  };
+}
+
+/**
+ * Upsert servers with duplicate detection and status updates
  */
 async function upsertServers(servers: any[]) {
   if (!servers || servers.length === 0) {
     console.log("No servers to upsert");
-    return { inserted: 0, updated: 0, errors: 0 };
+    return { success: true, processed: 0, error: null };
   }
 
-  const parsedServers = servers.map(parseServerData);
-  const stats = { inserted: 0, updated: 0, errors: 0 };
+  const mappedServers = servers.map(mapServerData);
 
+  // Batch upsert in groups of 10 to avoid timeouts
   const batchSize = 10;
-  for (let i = 0; i < parsedServers.length; i += batchSize) {
-    const batch = parsedServers.slice(i, i + batchSize);
+  let totalProcessed = 0;
+  let lastError = null;
+
+  for (let i = 0; i < mappedServers.length; i += batchSize) {
+    const batch = mappedServers.slice(i, i + batchSize);
 
     try {
       const { data, error } = await supabase
         .from("servers")
-        .upsert(batch, { onConflict: "ip" });
+        .upsert(batch, {
+          onConflict: "ip",
+          ignoreDuplicates: false, // Allow status/player updates
+        });
 
       if (error) {
         console.error(`Batch ${i / batchSize + 1} error:`, error);
-        stats.errors += batch.length;
+        lastError = error;
       } else {
-        stats.updated += batch.length;
+        totalProcessed += batch.length;
       }
     } catch (err) {
       console.error(`Batch ${i / batchSize + 1} exception:`, err);
-      stats.errors += batch.length;
+      lastError = err;
     }
   }
 
-  return stats;
+  return {
+    success: !lastError,
+    processed: totalProcessed,
+    error: lastError ? lastError.message : null,
+  };
 }
 
 /**
- * Mark servers as offline if they weren't in the latest fetch
+ * Mark servers as offline if they weren't checked recently
  */
 async function markStaleServersOffline() {
   try {
-    const fiveMinutesAgo = new Date(
-      Date.now() - 5 * 60 * 1000
-    ).toISOString();
+    const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
 
     const { error } = await supabase
       .from("servers")
@@ -197,77 +189,77 @@ async function markStaleServersOffline() {
 }
 
 /**
- * Main sync function
+ * Main handler
  */
-async function syncServers() {
+serve(async (req) => {
   try {
-    console.log("Starting server sync at", new Date().toISOString());
+    // CORS preflight
+    if (req.method === "OPTIONS") {
+      return new Response("ok", {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type, x-sync-token",
+        },
+      });
+    }
 
-    const servers = await fetchFromOtservlist();
-    console.log(`Fetched ${servers.length} servers from OTS list`);
+    // Token verification (optional)
+    const token = req.headers.get("x-sync-token");
+    const expectedToken = Deno.env.get("SYNC_TOKEN");
 
-    const stats = await upsertServers(servers);
-    console.log("Upsert stats:", stats);
+    if (expectedToken && token !== expectedToken) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
 
+    console.log("Starting server sync...");
+
+    // 1. Fetch from OTS list sources
+    const rawServers = await fetchFromOtsList();
+    console.log(`Fetched ${rawServers.length} raw servers`);
+
+    // 2. Upsert to database
+    const upsertResult = await upsertServers(rawServers);
+    console.log(`Upserted ${upsertResult.processed} servers`);
+
+    // 3. Mark stale servers as offline
     await markStaleServersOffline();
 
-    return {
-      success: true,
-      timestamp: new Date().toISOString(),
-      stats,
-    };
-  } catch (error) {
-    console.error("Sync failed:", error);
-    return {
-      success: false,
-      timestamp: new Date().toISOString(),
-      error: error.message,
-    };
-  }
-}
-
-Deno.serve(async (req) => {
-  if (req.method === "OPTIONS") {
-    return new Response("ok", {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, x-sync-token",
-      },
-    });
-  }
-
-  const token = req.headers.get("x-sync-token");
-  const expectedToken = Deno.env.get("SYNC_TOKEN");
-
-  if (expectedToken && token !== expectedToken) {
-    return new Response(JSON.stringify({ error: "Unauthorized" }), {
-      status: 401,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-
-  try {
-    const result = await syncServers();
-    return new Response(JSON.stringify(result), {
-      status: result.success ? 200 : 500,
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
-  } catch (error) {
     return new Response(
       JSON.stringify({
-        error: "Sync failed",
-        message: error.message,
+        success: true,
+        timestamp: new Date().toISOString(),
+        stats: {
+          fetched: rawServers.length,
+          processed: upsertResult.processed,
+          errors: upsertResult.error ? 1 : 0,
+        },
       }),
       {
-        status: 500,
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },
+        status: 200,
+      }
+    );
+  } catch (err) {
+    console.error("Sync failed:", err);
+    return new Response(
+      JSON.stringify({
+        success: false,
+        timestamp: new Date().toISOString(),
+        error: err.message,
+      }),
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        status: 500,
       }
     );
   }
