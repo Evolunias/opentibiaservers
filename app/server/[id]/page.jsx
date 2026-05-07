@@ -256,6 +256,48 @@ export default function ServerDetail({ params }) {
               </div>
             )}
 
+            {/* Verification Status */}
+            {server.user_id && (
+              <div className="mt-8 pt-8 border-t-2 border-gray-300">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">Verification Status</h3>
+                <div className="space-y-3">
+                  {server.verification_status === 'verified' && (
+                    <div className="px-4 py-3 bg-green-50 border border-green-200 text-green-700 rounded-lg font-semibold flex items-center gap-2">
+                      <span>✓</span> Verified {server.verified_at && `on ${new Date(server.verified_at).toLocaleDateString()}`}
+                    </div>
+                  )}
+                  {server.verification_status === 'pending' && (
+                    <div className="px-4 py-3 bg-yellow-50 border border-yellow-200 text-yellow-700 rounded-lg font-semibold flex items-center gap-2">
+                      <span>⏳</span> Verification in progress
+                    </div>
+                  )}
+                  {server.verification_status === 'failed' && (
+                    <div className="px-4 py-3 bg-red-50 border border-red-200 text-red-700 rounded-lg font-semibold">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span>✗</span> Verification failed
+                      </div>
+                      {server.verification_error && (
+                        <p className="text-sm ml-6 text-red-600">{server.verification_error}</p>
+                      )}
+                    </div>
+                  )}
+                  {server.verification_status === 'unverified' && (
+                    <div className="px-4 py-3 bg-gray-50 border border-gray-200 text-gray-700 rounded-lg font-semibold">
+                      Not yet verified
+                    </div>
+                  )}
+                  <div className="text-sm text-gray-600 space-y-1">
+                    <p>DNS Verified: <span className={server.verification_dns_checked ? 'text-green-600 font-semibold' : 'text-gray-600'}>
+                      {server.verification_dns_checked ? '✓ Yes' : '○ Pending'}
+                    </span></p>
+                    <p>IP/Port Verified: <span className={server.verification_ip_checked ? 'text-green-600 font-semibold' : 'text-gray-600'}>
+                      {server.verification_ip_checked ? '✓ Yes' : '○ Pending'}
+                    </span></p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Contact Info */}
             {(server.website_url || server.owner_email) && (
               <div className="mt-8 pt-8 border-t-2 border-gray-300">

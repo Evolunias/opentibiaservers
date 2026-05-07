@@ -63,7 +63,7 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-6 py-8">
         <Filters onFiltersChange={handleFiltersChange} onSearch={handleSearch} />
 
         <div className="flex items-center justify-between mb-6">

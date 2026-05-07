@@ -1,4 +1,5 @@
 import "./globals.css";
+import { AuthProvider } from "./context/AuthContext";
 
 export const metadata = {
   title: "Tibia Servers - Directory & Listing",
@@ -13,7 +14,9 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

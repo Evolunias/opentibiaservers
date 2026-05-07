@@ -98,6 +98,27 @@ export default function ServerCard({ server }) {
           </div>
         </div>
 
+        {/* Verification Badge */}
+        {server.user_id && (
+          <div className="flex items-center gap-1 text-xs mb-3">
+            {server.verification_status === 'verified' && (
+              <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full border border-green-300 font-semibold flex items-center gap-1">
+                <span>✓</span> Verified
+              </span>
+            )}
+            {server.verification_status === 'pending' && (
+              <span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full border border-yellow-300 font-semibold flex items-center gap-1">
+                <span>⏳</span> Pending
+              </span>
+            )}
+            {server.verification_status === 'failed' && (
+              <span className="px-2 py-1 bg-red-100 text-red-700 rounded-full border border-red-300 font-semibold flex items-center gap-1">
+                <span>✗</span> Failed
+              </span>
+            )}
+          </div>
+        )}
+
         {/* Features */}
         {(server.has_custom_map || server.has_store || server.has_battleye) && (
           <div className="flex flex-wrap gap-2 text-xs">
