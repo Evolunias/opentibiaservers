@@ -68,18 +68,18 @@ export default function Home() {
 
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">
-              {servers.length > 0 ? `Found ${totalServers} Servers` : 'No Servers Found'}
+            <h2 className="text-xl font-bold text-gray-900">
+              {servers.length > 0 ? `${totalServers} Servers` : 'No Servers Found'}
             </h2>
             {filters.search && (
-              <p className="text-gray-600 text-sm mt-1">Searching for: <span className="text-blue-600 font-semibold">"{filters.search}"</span></p>
+              <p className="text-gray-600 text-xs mt-1">Searching: "{filters.search}"</p>
             )}
           </div>
           <ViewToggle view={view} onViewChange={setView} />
         </div>
 
         {error && (
-          <div className="bg-red-50 border border-red-300 text-red-800 px-6 py-4 rounded-lg mb-6 shadow-sm">
+          <div className="bg-red-50 border border-red-300 text-red-800 px-4 py-3 rounded mb-6 text-sm">
             {error}
           </div>
         )}
@@ -87,26 +87,26 @@ export default function Home() {
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <div className="text-center">
-              <div className="w-12 h-12 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading servers...</p>
+              <div className="w-8 h-8 border-3 border-gray-300 border-t-gray-900 rounded-full animate-spin mx-auto mb-3"></div>
+              <p className="text-gray-600 text-sm">Loading servers...</p>
             </div>
           </div>
         ) : servers.length === 0 ? (
-          <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-300 rounded-lg p-12 text-center shadow-sm">
-            <p className="text-gray-700 text-lg">No servers match your filters</p>
+          <div className="bg-gray-50 border border-gray-300 rounded p-8 text-center">
+            <p className="text-gray-700">No servers match your filters</p>
             <button
               onClick={() => {
                 setFilters({});
                 setCurrentPage(1);
               }}
-              className="mt-4 px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:shadow-lg transition-all duration-300 font-semibold"
+              className="mt-3 px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 font-medium text-sm"
             >
               Clear Filters
             </button>
           </div>
         ) : view === 'grid' ? (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               {servers.map(server => (
                 <ServerCard key={server.id} server={server} />
               ))}
@@ -120,7 +120,7 @@ export default function Home() {
           </>
         ) : (
           <>
-            <div className="border-2 border-gray-300 rounded-lg overflow-hidden mb-12 shadow-sm">
+            <div className="border border-gray-300 rounded overflow-hidden mb-8">
               <ServerList servers={servers} />
             </div>
             <Pagination
