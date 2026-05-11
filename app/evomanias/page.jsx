@@ -1,11 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useContext } from 'react';
-import { AuthContext } from '../context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 
 export default function EvomaniasHome() {
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-12">
@@ -61,21 +60,56 @@ export default function EvomaniasHome() {
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 mb-8">
         <h2 className="text-2xl font-bold text-blue-900 mb-4">Getting Started</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="font-semibold text-blue-900 mb-2">Create Account</h3>
-            <p className="text-blue-800">Sign up now to create your character and begin your journey in Evomanias.</p>
+          <div className="flex gap-4">
+            <div className="text-3xl">👤</div>
+            <div>
+              <h3 className="font-semibold text-blue-900 mb-2">Create Account</h3>
+              <p className="text-blue-800">Sign up now to create your character and begin your journey in Evomanias.</p>
+            </div>
           </div>
-          <div>
-            <h3 className="font-semibold text-blue-900 mb-2">Download Client</h3>
-            <p className="text-blue-800">Download the game client and start playing with our optimized custom Tibia experience.</p>
+          <div className="flex gap-4">
+            <div className="text-3xl">💾</div>
+            <div>
+              <h3 className="font-semibold text-blue-900 mb-2">Download Client</h3>
+              <p className="text-blue-800">Download the game client and start playing with our optimized custom Tibia experience.</p>
+            </div>
           </div>
-          <div>
-            <h3 className="font-semibold text-blue-900 mb-2">Check Highscores</h3>
-            <p className="text-blue-800">View the leaderboards and see where you stand among the top players.</p>
+          <div className="flex gap-4">
+            <div className="text-3xl">🏆</div>
+            <div>
+              <h3 className="font-semibold text-blue-900 mb-2">Check Highscores</h3>
+              <p className="text-blue-800">View the leaderboards and see where you stand among the top players.</p>
+            </div>
           </div>
-          <div>
-            <h3 className="font-semibold text-blue-900 mb-2">Join Community</h3>
-            <p className="text-blue-800">Connect with other players on Discord and participate in server events.</p>
+          <div className="flex gap-4">
+            <div className="text-3xl">👥</div>
+            <div>
+              <h3 className="font-semibold text-blue-900 mb-2">Join Community</h3>
+              <p className="text-blue-800">Connect with other players on Discord and participate in server events.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Server Stats */}
+      <div className="text-center py-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Server Statistics</h2>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+            <p className="text-4xl font-bold text-purple-600 mb-2">500+</p>
+            <p className="text-gray-600 font-semibold">Active Players</p>
+          </div>
+          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+            <p className="text-4xl font-bold text-blue-600 mb-2">10k+</p>
+            <p className="text-gray-600 font-semibold">Characters Created</p>
+          </div>
+          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+            <p className="text-4xl font-bold text-green-600 mb-2">99.9%</p>
+            <p className="text-gray-600 font-semibold">Uptime</p>
+          </div>
+          <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+            <p className="text-4xl font-bold text-amber-600 mb-2">1.0x</p>
+            <p className="text-gray-600 font-semibold">Experience Rate</p>
           </div>
         </div>
       </div>

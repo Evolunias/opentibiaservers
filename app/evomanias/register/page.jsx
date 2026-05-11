@@ -1,13 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { AuthContext } from '../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 
 export default function EvomaniasRegister() {
   const router = useRouter();
-  const { signUp } = useContext(AuthContext);
+  const { signUp } = useAuth();
   const [formData, setFormData] = useState({
     username: '',
     email: '',

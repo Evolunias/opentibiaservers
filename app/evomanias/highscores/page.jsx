@@ -2,8 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { fetchHighscores } from '@/lib/evomaniasActions';
 
-// Mock highscores data - replace with actual API calls
+const vocations = ['All', 'Knight', 'Sorcerer', 'Cleric', 'Ranger', 'Paladin'];
+const sortOptions = ['Level', 'Experience'];
+
+// Mock data fallback for development
 const mockHighscores = [
   { rank: 1, character: 'DragonSlayer', level: 450, experience: 1234567890, world: 'Evomanias', vocation: 'Knight' },
   { rank: 2, character: 'MageOfFire', level: 420, experience: 1100000000, world: 'Evomanias', vocation: 'Sorcerer' },
@@ -17,39 +21,41 @@ const mockHighscores = [
   { rank: 10, character: 'HolyKnight', level: 370, experience: 700000000, world: 'Evomanias', vocation: 'Paladin' },
 ];
 
-const vocations = ['All', 'Knight', 'Sorcerer', 'Cleric', 'Ranger', 'Paladin'];
-const sortOptions = ['Level', 'Experience'];
-
 export default function Highscores() {
-  const [highscores, setHighscores] = useState(mockHighscores);
+  const [highscores, setHighscores] = useState([]);
   const [selectedVocation, setSelectedVocation] = useState('All');
   const [sortBy, setSortBy] = useState('Level');
   const [searchTerm, setSearchTerm] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    let filtered = mockHighscores;
-
-    // Filter by vocation
-    if (selectedVocation !== 'All') {
-      filtered = filtered.filter(h => h.vocation === selectedVocation);
-    }
-
-    // Filter by search
-    if (searchTerm) {
-      filtered = filtered.filter(h => h.character.toLowerCase().includes(searchTerm.toLowerCase()));
-    }
-
-    // Sort
-    filtered = [...filtered].sort((a, b) => {
-      if (sortBy === 'Level') {
-        return b.level - a.level;
-      } else {
-        return b.experience - a.experience;
-      }
-    });
-
-    setHighscores(filtered);
+    loadHighscores();
   }, [selectedVocation, sortBy, searchTerm]);
+
+  const loadHighscores = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const { data, error: fetchError } = await fetchHighscores({
+        vocation: selectedVocation,
+        search: searchTerm,
+        sortBy: sortBy,
+        limit: 100,
+      });
+
+      if (fetchError) {
+        setHighscores(mockHighscores);
+      } else {
+        setHighscores(data.length > 0 ? data : mockHighscores);
+      }
+    } catch (err) {
+      console.error('Error loading highscores:', err);
+      setHighscores(mockHighscores);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
@@ -106,54 +112,72 @@ export default function Highscores() {
             </div>
           </div>
 
-          {/* Highscores Table */}
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-gray-100 border-b">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Rank</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Character</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Vocation</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Level</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Experience</th>
-                </tr>
-              </thead>
-              <tbody>
-                {highscores.map((entry, idx) => (
-                  <tr
-                    key={idx}
-                    className={`border-b transition ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-blue-50`}
-                  >
-                    <td className="px-6 py-4">
-                      <div className="flex items-center">
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-white ${
-                          entry.rank === 1 ? 'bg-yellow-500' :
-                          entry.rank === 2 ? 'bg-gray-400' :
-                          entry.rank === 3 ? 'bg-amber-600' :
-                          'bg-gray-500'
-                        }`}>
-                          {entry.rank}
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 font-semibold text-gray-900">{entry.character}</td>
-                    <td className="px-6 py-4 text-gray-600">{entry.vocation}</td>
-                    <td className="px-6 py-4">
-                      <span className="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm font-semibold">
-                        {entry.level}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 text-gray-600">{entry.experience.toLocaleString()}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {highscores.length === 0 && (
-            <div className="text-center py-12 bg-gray-50">
-              <p className="text-gray-600">No highscores match your filters</p>
+          {/* Loading State */}
+          {loading && (
+            <div className="flex items-center justify-center py-20">
+              <div className="text-center">
+                <div className="w-12 h-12 border-4 border-gray-200 border-t-purple-600 rounded-full animate-spin mx-auto mb-4"></div>
+                <p className="text-gray-600">Loading highscores...</p>
+              </div>
             </div>
+          )}
+
+          {/* Highscores Table */}
+          {!loading && (
+            <>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-gray-100 border-b">
+                    <tr>
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Rank</th>
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Character</th>
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Vocation</th>
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Level</th>
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Experience</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {highscores.map((entry, idx) => (
+                      <tr
+                        key={idx}
+                        className={`border-b transition ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-blue-50`}
+                      >
+                        <td className="px-6 py-4">
+                          <div className="flex items-center">
+                            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-white ${
+                              entry.rank === 1 ? 'bg-yellow-500' :
+                              entry.rank === 2 ? 'bg-gray-400' :
+                              entry.rank === 3 ? 'bg-amber-600' :
+                              'bg-gray-500'
+                            }`}>
+                              {entry.rank}
+                            </div>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 font-semibold text-gray-900">
+                          <Link href={`/evomanias/character/${entry.id || entry.rank}`} className="text-purple-600 hover:underline">
+                            {entry.character}
+                          </Link>
+                        </td>
+                        <td className="px-6 py-4 text-gray-600">{entry.vocation}</td>
+                        <td className="px-6 py-4">
+                          <span className="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm font-semibold">
+                            {entry.level}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4 text-gray-600">{entry.experience.toLocaleString()}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {highscores.length === 0 && (
+                <div className="text-center py-12 bg-gray-50">
+                  <p className="text-gray-600">No highscores match your filters</p>
+                </div>
+              )}
+            </>
           )}
 
           {/* Footer Navigation */}
