@@ -3,11 +3,11 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '../../context/AuthContext';
+import { useEvomaniasAuth } from '../../context/EvomaniasAuthContext';
 
 export default function EvomaniasRegister() {
   const router = useRouter();
-  const { signUp } = useAuth();
+  const { register } = useEvomaniasAuth();
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -47,7 +47,7 @@ export default function EvomaniasRegister() {
     }
 
     try {
-      await signUp(formData.email, formData.password, formData.username);
+      await register(formData.email, formData.password, formData.username);
       router.push('/evomanias/account');
     } catch (err) {
       setError(err.message || 'Failed to create account');

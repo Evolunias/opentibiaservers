@@ -1,10 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useAuth } from '../context/AuthContext';
+import { useEvomaniasAuth } from '../context/EvomaniasAuthContext';
 
 export default function EvomaniasHome() {
-  const { user } = useAuth();
+  const { account } = useEvomaniasAuth();
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-12">
@@ -15,7 +15,7 @@ export default function EvomaniasHome() {
           <p className="text-xl mb-8 opacity-90">Experience the ultimate Tibia adventure. Create your account, join thousands of players, and embark on an epic journey.</p>
           
           <div className="flex gap-4">
-            {!user ? (
+            {!account ? (
               <>
                 <Link href="/evomanias/register" className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
                   Create Account

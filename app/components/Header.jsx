@@ -16,12 +16,6 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-4">
-            <Link
-              href="/evomanias"
-              className="px-4 py-2 text-purple-600 font-semibold hover:bg-purple-50 rounded-lg transition-colors"
-            >
-              Evomanias
-            </Link>
             {!loading && (
               <>
                 {user ? (

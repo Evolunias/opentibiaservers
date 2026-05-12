@@ -3,11 +3,11 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '../../context/AuthContext';
+import { useEvomaniasAuth } from '../../context/EvomaniasAuthContext';
 
 export default function EvomaniasLogin() {
   const router = useRouter();
-  const { signIn } = useAuth();
+  const { login } = useEvomaniasAuth();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -33,7 +33,7 @@ export default function EvomaniasLogin() {
     }
 
     try {
-      await signIn(formData.email, formData.password);
+      await login(formData.email, formData.password);
       router.push('/evomanias/account');
     } catch (err) {
       setError(err.message || 'Failed to sign in');
