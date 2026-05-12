@@ -71,21 +71,9 @@ export default function EvomaniasHome() {
   };
 
   return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(12, 1fr)',
-      gap: '1.5rem',
-      maxWidth: '1300px',
-      margin: '0 auto',
-      padding: '1.5rem'
-    }}>
+    <div className="evomanias-grid">
       {/* Main Content (9 columns on desktop, 12 on mobile) */}
-      <div style={{
-        gridColumn: 'span 12',
-        '@media (min-width: 1024px)': {
-          gridColumn: 'span 9'
-        }
-      }}>
+      <div className="evomanias-main">
         {/* Hero Section */}
         <div className="card" style={{
           marginBottom: '2rem',
@@ -178,14 +166,7 @@ export default function EvomaniasHome() {
       </div>
 
       {/* Sidebar (3 columns on desktop, 12 on mobile) */}
-      <div style={{
-        gridColumn: 'span 12',
-        display: 'grid',
-        gap: '1.5rem',
-        '@media (min-width: 1024px)': {
-          gridColumn: 'span 3'
-        }
-      }}>
+      <div className="evomanias-sidebar">
         {/* Server Status Card */}
         <div className="card">
           <div className="card-header">
