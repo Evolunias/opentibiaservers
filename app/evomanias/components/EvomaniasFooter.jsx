@@ -6,43 +6,54 @@ export default function EvomaniasFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 border-t border-gray-800 mt-16">
-      {/* Decorative gradient line */}
-      <div className="h-1 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600"></div>
-
+    <footer style={{
+      background: 'rgba(20, 20, 25, 0.85)',
+      backdropFilter: 'blur(12px)',
+      borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+      borderRadius: '12px 12px 0 0',
+      marginTop: '3rem',
+      marginLeft: '1.5rem',
+      marginRight: '1.5rem',
+      marginBottom: 0
+    }}>
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          gap: '2rem',
+          marginBottom: '2rem'
+        }}>
           {/* Branding */}
           <div>
-            <h3 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4">
+            <h3 style={{ color: '#7cb8ff', fontWeight: 'bold', fontSize: '1.25rem', marginBottom: '1rem' }}>
               EVOMANIAS
             </h3>
-            <p className="text-gray-400 text-sm">
+            <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.875rem', lineHeight: '1.6' }}>
               Experience the ultimate Tibia adventure. Create your account, join thousands of players, and embark on an epic journey.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-purple-400 font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 style={{ color: '#7cb8ff', fontWeight: '600', marginBottom: '1rem' }}>Quick Links</h4>
+            <ul style={{ display: 'grid', gap: '0.5rem' }}>
               <li>
-                <Link href="/evomanias" className="text-gray-400 hover:text-purple-400 transition">
+                <Link href="/evomanias" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/evomanias/register" className="text-gray-400 hover:text-purple-400 transition">
+                <Link href="/evomanias/register" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
                   Create Account
                 </Link>
               </li>
               <li>
-                <Link href="/evomanias/highscores" className="text-gray-400 hover:text-purple-400 transition">
+                <Link href="/evomanias/highscores" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
                   Highscores
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition">
+                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
                   Download Client
                 </a>
               </li>
@@ -51,25 +62,25 @@ export default function EvomaniasFooter() {
 
           {/* Community */}
           <div>
-            <h4 className="text-purple-400 font-semibold mb-4">Community</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 style={{ color: '#7cb8ff', fontWeight: '600', marginBottom: '1rem' }}>Community</h4>
+            <ul style={{ display: 'grid', gap: '0.5rem' }}>
               <li>
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition">
+                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
                   Discord Server
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition">
+                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
                   Forums
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition">
+                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
                   Server Rules
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition">
+                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
                   Support
                 </a>
               </li>
@@ -78,20 +89,20 @@ export default function EvomaniasFooter() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-purple-400 font-semibold mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 style={{ color: '#7cb8ff', fontWeight: '600', marginBottom: '1rem' }}>Legal</h4>
+            <ul style={{ display: 'grid', gap: '0.5rem' }}>
               <li>
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition">
+                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition">
+                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition">
+                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
                   Contact Us
                 </a>
               </li>
@@ -100,16 +111,31 @@ export default function EvomaniasFooter() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-          <p>© {currentYear} EVOMANIAS. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-purple-400 transition">
+        <div style={{
+          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+          paddingTop: '2rem',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1rem',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          textAlign: 'center',
+          '@media (min-width: 768px)': {
+            flexDirection: 'row',
+            textAlign: 'left'
+          }
+        }}>
+          <p style={{ margin: 0, fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.7)' }}>
+            © {currentYear} EVOMANIAS. All rights reserved.
+          </p>
+          <div style={{ display: 'flex', gap: '1.5rem' }}>
+            <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
               Discord
             </a>
-            <a href="#" className="hover:text-purple-400 transition">
+            <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
               Twitter
             </a>
-            <a href="#" className="hover:text-purple-400 transition">
+            <a href="#" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>
               YouTube
             </a>
           </div>
