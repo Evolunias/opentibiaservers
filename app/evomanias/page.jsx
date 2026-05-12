@@ -7,14 +7,43 @@ import { useEvomaniasAuth } from '../context/EvomaniasAuthContext';
 export default function EvomaniasHome() {
   const { account } = useEvomaniasAuth();
   const [topPlayers, setTopPlayers] = useState([]);
-  const [totalPlayers, setTotalPlayers] = useState(0);
   const [serverStats, setServerStats] = useState({
-    online: 0,
-    characters: 0,
-    guilds: 0,
-    uptime: '99.9%',
+    online: 71,
+    characters: 342,
+    uptime: '1w 2d 5h',
   });
   const [loading, setLoading] = useState(true);
+
+  // Sample news data for demo
+  const [newsPosts] = useState([
+    {
+      id: 1,
+      day: '17',
+      month: 'Apr',
+      title: 'EVOMANIAS Server Launch',
+      content: 'Welcome to EVOMANIAS! We are excited to announce the official launch of our server. Join thousands of players and experience the ultimate Tibia adventure.',
+      author: 'Admin',
+      category: 'announcement'
+    },
+    {
+      id: 2,
+      day: '10',
+      month: 'Apr',
+      title: 'Balance Updates & New Features',
+      content: 'This patch includes several balance updates to improve gameplay. New features have been added to enhance your experience.',
+      author: 'GameMaster',
+      category: 'patch'
+    },
+    {
+      id: 3,
+      day: '5',
+      month: 'Apr',
+      title: 'Community Events',
+      content: 'Join our community events this week. Participate and win exclusive rewards. More details available in our Discord server.',
+      author: 'Admin',
+      category: 'event'
+    }
+  ]);
 
   useEffect(() => {
     loadServerData();
@@ -22,15 +51,12 @@ export default function EvomaniasHome() {
 
   const loadServerData = async () => {
     try {
-      // Fetch top 5 players
       const response = await fetch('/api/evomanias/characters?action=highscores');
       const data = await response.json();
-      
+
       const players = data.characters || [];
       setTopPlayers(players.slice(0, 5));
-      setTotalPlayers(players.length);
-      
-      // Calculate server stats
+
       const onlineCount = players.filter(p => p.status === 'active').length;
       setServerStats(prev => ({
         ...prev,
@@ -45,213 +71,243 @@ export default function EvomaniasHome() {
   };
 
   return (
-    <>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-600/20 to-blue-600/10"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(139,92,246,0.1),transparent)]"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-6 py-20 text-center">
-          <div className="mb-6">
-            <div className="inline-block px-4 py-2 bg-purple-600/20 border border-purple-500/50 rounded-full text-purple-300 text-sm font-semibold">
-              ⚔️ Welcome to EVOMANIAS
-            </div>
-          </div>
-          
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(12, 1fr)',
+      gap: '1.5rem',
+      maxWidth: '1300px',
+      margin: '0 auto',
+      padding: '1.5rem'
+    }}>
+      {/* Main Content (9 columns on desktop, 12 on mobile) */}
+      <div style={{
+        gridColumn: 'span 12',
+        '@media (min-width: 1024px)': {
+          gridColumn: 'span 9'
+        }
+      }}>
+        {/* Hero Section */}
+        <div className="card" style={{
+          marginBottom: '2rem',
+          textAlign: 'center',
+          background: 'linear-gradient(135deg, rgba(124, 184, 255, 0.1) 0%, rgba(90, 159, 230, 0.05) 100%)',
+          backdropFilter: 'blur(12px)',
+          border: '1px solid rgba(124, 184, 255, 0.2)'
+        }}>
+          <h1 style={{
+            fontSize: '2.5rem',
+            fontWeight: 700,
+            marginBottom: '1rem',
+            background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            color: '#7cb8ff'
+          }}>
             EVOMANIAS
           </h1>
-          
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            A premium Tibia experience. Create your account, join thousands of players, and become a legend.
+          <p style={{
+            fontSize: '1.125rem',
+            color: 'rgba(255, 255, 255, 0.85)',
+            marginBottom: '1.5rem',
+            maxWidth: '600px',
+            margin: '0 auto 1.5rem'
+          }}>
+            Experience the ultimate Tibia adventure. Create your account, join thousands of players, and become a legend.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div style={{
+            display: 'flex',
+            gap: '1rem',
+            justifyContent: 'center',
+            flexWrap: 'wrap'
+          }}>
             {!account ? (
               <>
-                <Link
-                  href="/evomanias/register"
-                  className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:opacity-90 transition"
-                >
+                <Link href="/evomanias/register" className="btn btn-primary">
                   Create Account
                 </Link>
-                <Link
-                  href="/evomanias/login"
-                  className="px-8 py-3 border-2 border-purple-500 text-purple-300 rounded-lg font-semibold hover:bg-purple-600/10 transition"
-                >
+                <Link href="/evomanias/login" className="btn btn-secondary">
                   Sign In
                 </Link>
               </>
             ) : (
               <>
-                <Link
-                  href="/evomanias/account"
-                  className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:opacity-90 transition"
-                >
+                <Link href="/evomanias/account" className="btn btn-primary">
                   My Account
                 </Link>
-                <Link
-                  href="/evomanias/highscores"
-                  className="px-8 py-3 border-2 border-purple-500 text-purple-300 rounded-lg font-semibold hover:bg-purple-600/10 transition"
-                >
+                <Link href="/evomanias/highscores" className="btn btn-secondary">
                   Highscores
                 </Link>
               </>
             )}
           </div>
         </div>
-      </section>
 
-      {/* Server Stats Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-purple-600/50 transition">
-            <div className="text-3xl font-bold text-purple-400 mb-2">
-              {loading ? '...' : serverStats.online}
+        {/* News/Patches Section */}
+        <div className="card">
+          <h2 style={{
+            fontSize: '1.5rem',
+            fontWeight: 700,
+            marginBottom: '1.5rem',
+            color: 'rgba(255, 255, 255, 0.95)'
+          }}>
+            Latest News
+          </h2>
+
+          {newsPosts.map((post) => (
+            <div key={post.id} className="post">
+              <div className="post-date">
+                <div className="post-date-day">{post.day}</div>
+                <div className="post-date-month">{post.month}</div>
+              </div>
+              <div className="post-body">
+                <h2>
+                  <a href="#" style={{ color: 'rgba(255, 255, 255, 0.95)' }}>
+                    {post.title}
+                  </a>
+                </h2>
+                <p>{post.content}</p>
+                <div className="post-meta">
+                  Posted by <a href="#">{post.author}</a> •
+                  <a href="#" style={{ marginLeft: '0.5rem' }}>View Thread →</a>
+                </div>
+              </div>
             </div>
-            <p className="text-gray-400 text-sm">Players Online</p>
-          </div>
-
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-blue-600/50 transition">
-            <div className="text-3xl font-bold text-blue-400 mb-2">
-              {loading ? '...' : serverStats.characters}
-            </div>
-            <p className="text-gray-400 text-sm">Total Characters</p>
-          </div>
-
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-cyan-600/50 transition">
-            <div className="text-3xl font-bold text-cyan-400 mb-2">
-              {serverStats.uptime}
-            </div>
-            <p className="text-gray-400 text-sm">Server Uptime</p>
-          </div>
-
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-emerald-600/50 transition">
-            <div className="text-3xl font-bold text-emerald-400 mb-2">🟢 Online</div>
-            <p className="text-gray-400 text-sm">Server Status</p>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
 
-      {/* Top Players Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-2">Top 5 Players</h2>
-          <p className="text-gray-400">The strongest players on EVOMANIAS</p>
-        </div>
-
-        {loading ? (
-          <div className="text-center py-8 text-gray-400">Loading top players...</div>
-        ) : topPlayers.length === 0 ? (
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 text-center text-gray-400">
-            No players yet. Be the first to create a character!
+      {/* Sidebar (3 columns on desktop, 12 on mobile) */}
+      <div style={{
+        gridColumn: 'span 12',
+        display: 'grid',
+        gap: '1.5rem',
+        '@media (min-width: 1024px)': {
+          gridColumn: 'span 3'
+        }
+      }}>
+        {/* Server Status Card */}
+        <div className="card">
+          <div className="card-header">
+            <h3 style={{
+              color: '#7cb8ff',
+              fontSize: '1.125rem',
+              fontWeight: 700,
+              margin: 0
+            }}>
+              🌐 Server Status
+            </h3>
           </div>
-        ) : (
-          <div className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
-            <table className="w-full">
-              <thead className="bg-gray-800">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Rank</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Character</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Vocation</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Level</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Experience</th>
-                </tr>
-              </thead>
+          <div className="card-body" style={{ padding: '1rem 0' }}>
+            <table className="table" style={{ margin: 0 }}>
               <tbody>
-                {topPlayers.map((player, idx) => (
-                  <tr key={player.id} className={`border-t border-gray-800 ${idx % 2 === 0 ? 'bg-gray-900/50' : ''} hover:bg-gray-800/50 transition`}>
-                    <td className="px-6 py-4">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-white ${
-                        idx === 0 ? 'bg-yellow-600' :
-                        idx === 1 ? 'bg-gray-500' :
-                        idx === 2 ? 'bg-orange-700' :
-                        'bg-gray-700'
-                      }`}>
-                        {idx + 1}
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <Link href={`/evomanias/character/${player.id}`} className="text-purple-400 hover:text-purple-300 transition font-semibold">
-                        {player.name}
-                      </Link>
-                    </td>
-                    <td className="px-6 py-4 text-gray-300">{player.vocation}</td>
-                    <td className="px-6 py-4">
-                      <span className="bg-blue-600/20 border border-blue-600/50 px-3 py-1 rounded text-sm font-semibold text-blue-400">
-                        {player.level || 1}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 text-gray-400">{(player.experience || 0).toLocaleString()}</td>
-                  </tr>
-                ))}
+                <tr>
+                  <td style={{ fontSize: '0.875rem' }}>Status</td>
+                  <td style={{ fontSize: '0.875rem', textAlign: 'right', color: '#00bc8c', fontWeight: '700' }}>● Online</td>
+                </tr>
+                <tr>
+                  <td style={{ fontSize: '0.875rem' }}>Online Players</td>
+                  <td style={{ fontSize: '0.875rem', textAlign: 'right', color: '#7cb8ff' }}>
+                    <Link href="#" style={{ color: '#7cb8ff', fontWeight: '600' }}>
+                      {loading ? '...' : serverStats.online}
+                    </Link>
+                  </td>
+                </tr>
+                <tr>
+                  <td style={{ fontSize: '0.875rem' }}>Total Characters</td>
+                  <td style={{ fontSize: '0.875rem', textAlign: 'right' }}>{loading ? '...' : serverStats.characters}</td>
+                </tr>
+                <tr>
+                  <td style={{ fontSize: '0.875rem' }}>Uptime</td>
+                  <td style={{ fontSize: '0.875rem', textAlign: 'right' }}>{serverStats.uptime}</td>
+                </tr>
               </tbody>
             </table>
           </div>
-        )}
-
-        <div className="mt-6 text-center">
-          <Link
-            href="/evomanias/highscores"
-            className="inline-block px-8 py-3 border-2 border-purple-600 text-purple-400 rounded-lg font-semibold hover:bg-purple-600/10 transition"
-          >
-            View Full Highscores →
-          </Link>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-2">Why Play EVOMANIAS?</h2>
-          <p className="text-gray-400">Everything you need for an epic adventure</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 hover:border-purple-600/50 transition group">
-            <div className="text-4xl mb-4 group-hover:scale-110 transition">⚔️</div>
-            <h3 className="text-xl font-bold mb-2">Epic Adventure</h3>
-            <p className="text-gray-400 text-sm">Explore vast dungeons, face dangerous creatures, and discover treasures beyond imagination.</p>
-          </div>
-
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 hover:border-blue-600/50 transition group">
-            <div className="text-4xl mb-4 group-hover:scale-110 transition">👥</div>
-            <h3 className="text-xl font-bold mb-2">Community Driven</h3>
-            <p className="text-gray-400 text-sm">Join a vibrant community of players. Form guilds, engage in PvP, and make lasting friendships.</p>
-          </div>
-
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 hover:border-cyan-600/50 transition group">
-            <div className="text-4xl mb-4 group-hover:scale-110 transition">💰</div>
-            <h3 className="text-xl font-bold mb-2">Balanced Economy</h3>
-            <p className="text-gray-400 text-sm">Experience fair gameplay with balanced rates and custom content tailored for the best experience.</p>
+          <div className="card-footer">
+            <button className="btn btn-success btn-block" style={{ margin: 0 }}>
+              Download Client
+            </button>
           </div>
         </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-600/50 rounded-lg p-12 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Create your account now and become part of the EVOMANIAS community. Your adventure awaits.
+        {/* Top 5 Players Card */}
+        <div className="card">
+          <div className="card-header">
+            <h3 style={{
+              color: '#7cb8ff',
+              fontSize: '1.125rem',
+              fontWeight: 700,
+              margin: 0
+            }}>
+              🏆 Top 5 Players
+            </h3>
+          </div>
+          <div className="card-body" style={{ padding: '1rem 0' }}>
+            {loading ? (
+              <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)' }}>Loading...</p>
+            ) : topPlayers.length === 0 ? (
+              <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.875rem' }}>
+                No players yet. Be the first!
+              </p>
+            ) : (
+              <table className="table" style={{ margin: 0 }}>
+                <tbody>
+                  {topPlayers.map((player, idx) => (
+                    <tr key={player.id}>
+                      <td style={{ fontSize: '0.875rem', paddingLeft: '0.5rem', width: '30px' }}>
+                        <strong>{idx + 1}</strong>
+                      </td>
+                      <td style={{ fontSize: '0.875rem' }}>
+                        <Link href={`/evomanias/character/${player.id}`} style={{ color: '#7cb8ff', fontWeight: '600' }}>
+                          {player.name}
+                        </Link>
+                        <div style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.5)' }}>
+                          Lv. {player.level || 1}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </div>
+          <div className="card-footer">
+            <Link href="/evomanias/highscores" className="btn btn-secondary btn-block" style={{ margin: 0 }}>
+              View All →
+            </Link>
+          </div>
+        </div>
+
+        {/* Join Discord Card */}
+        <div className="card" style={{
+          textAlign: 'center',
+          background: 'linear-gradient(135deg, rgba(114, 137, 218, 0.1) 0%, rgba(100, 120, 200, 0.05) 100%)',
+          border: '1px solid rgba(114, 137, 218, 0.2)'
+        }}>
+          <div style={{ marginBottom: '1rem' }}>
+            <span style={{ fontSize: '2rem' }}>💬</span>
+          </div>
+          <h3 style={{
+            color: '#7cb8ff',
+            fontSize: '1.125rem',
+            fontWeight: 700,
+            marginBottom: '0.5rem'
+          }}>
+            Join Our Discord
+          </h3>
+          <p style={{
+            color: 'rgba(255, 255, 255, 0.7)',
+            fontSize: '0.875rem',
+            marginBottom: '1rem'
+          }}>
+            Connect with the community, get updates, and meet fellow adventurers.
           </p>
-          {!account ? (
-            <Link
-              href="/evomanias/register"
-              className="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:opacity-90 transition"
-            >
-              Create Account Now
-            </Link>
-          ) : (
-            <Link
-              href="/evomanias/account"
-              className="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:opacity-90 transition"
-            >
-              Go to Your Account
-            </Link>
-          )}
+          <a href="#" className="btn btn-primary btn-block" style={{ margin: 0 }}>
+            Join Discord
+          </a>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }

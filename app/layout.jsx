@@ -21,3 +21,6 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+// This layout intentionally skips header/footer for /evomanias/* routes
+// /evomanias has its own isolated layout at app/evomanias/layout.jsx

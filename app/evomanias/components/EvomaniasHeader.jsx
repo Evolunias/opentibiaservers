@@ -7,50 +7,109 @@ import { useState } from 'react';
 export default function EvomaniasHeader() {
   const { account } = useEvomaniasAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   return (
-    <header className="bg-gray-900 border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+    <header className="navbar" style={{
+      background: 'rgba(20, 20, 25, 0.85)',
+      backdropFilter: 'blur(12px)',
+      borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+    }}>
+      <div className="max-w-7xl mx-auto px-6 py-3 w-full">
+        <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/evomanias" className="flex items-center gap-2 hover:opacity-80 transition">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center font-bold text-lg">
+          <Link href="/evomanias" className="flex items-center gap-2 hover:opacity-80 transition flex-shrink-0">
+            <div style={{
+              width: '40px',
+              height: '40px',
+              background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontWeight: 'bold',
+              fontSize: '20px'
+            }}>
               ⚔️
             </div>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <h1 className="text-xl font-bold hidden sm:block" style={{ color: '#7cb8ff' }}>
               EVOMANIAS
             </h1>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
-            <Link href="/evomanias" className="px-4 py-2 text-gray-300 hover:text-purple-400 transition">
+          <nav className="hidden lg:flex items-center gap-0 flex-1 ml-8">
+            <Link href="/evomanias" className="nav-link">
               Home
             </Link>
-            <Link href="/evomanias/highscores" className="px-4 py-2 text-gray-300 hover:text-purple-400 transition">
+            <Link href="/evomanias/highscores" className="nav-link">
               Highscores
             </Link>
-            <a href="#characters" className="px-4 py-2 text-gray-300 hover:text-purple-400 transition">
-              Characters
-            </a>
-            <a href="#community" className="px-4 py-2 text-gray-300 hover:text-purple-400 transition">
+            <a href="#community" className="nav-link">
               Community
+            </a>
+            <a href="#library" className="nav-link">
+              Library
             </a>
           </nav>
 
+          {/* Search Bar (Desktop) */}
+          <div className="hidden md:flex items-center gap-2 flex-1 justify-center max-w-xs">
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              background: 'rgba(0, 0, 0, 0.4)',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              borderRadius: '6px',
+              padding: '0.5rem',
+              width: '100%'
+            }}>
+              <input
+                type="search"
+                placeholder="Search character..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  color: 'rgba(255, 255, 255, 0.95)',
+                  outline: 'none',
+                  flex: 1,
+                  fontSize: '0.875rem',
+                  padding: '0.25rem 0.5rem'
+                }}
+              />
+              <button style={{
+                background: 'none',
+                border: 'none',
+                color: 'rgba(124, 184, 255, 0.7)',
+                cursor: 'pointer',
+                padding: '0.25rem',
+              }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.35-4.35"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
           {/* Auth Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 flex-shrink-0">
             {!account ? (
               <>
                 <Link
                   href="/evomanias/login"
-                  className="hidden sm:inline-block px-4 py-2 text-purple-400 hover:text-purple-300 transition"
+                  className="btn btn-secondary hidden sm:inline-block"
+                  style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}
                 >
                   Sign In
                 </Link>
                 <Link
                   href="/evomanias/register"
-                  className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded hover:opacity-90 transition"
+                  className="btn btn-primary"
+                  style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}
                 >
                   Create Account
                 </Link>
@@ -59,11 +118,22 @@ export default function EvomaniasHeader() {
               <>
                 <Link
                   href="/evomanias/account"
-                  className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded hover:opacity-90 transition text-sm"
+                  className="btn btn-primary"
+                  style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}
                 >
                   My Account
                 </Link>
-                <div className="text-gray-400 text-sm hidden sm:block border-l border-gray-700 pl-3 ml-3">
+                <div style={{
+                  fontSize: '0.875rem',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
+                  paddingLeft: '0.75rem',
+                  marginLeft: '0.75rem',
+                  display: 'none',
+                  '@media (min-width: 640px)': {
+                    display: 'block'
+                  }
+                }}>
                   {account.name}
                 </div>
               </>
@@ -72,10 +142,20 @@ export default function EvomaniasHeader() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-gray-400 hover:text-purple-400"
+              className="lg:hidden p-2"
+              style={{
+                background: 'none',
+                border: 'none',
+                color: 'rgba(255, 255, 255, 0.7)',
+                cursor: 'pointer',
+                marginLeft: '0.5rem'
+              }}
+              title="Toggle menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
               </svg>
             </button>
           </div>
@@ -83,18 +163,24 @@ export default function EvomaniasHeader() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pt-4 border-t border-gray-800 space-y-2">
-            <Link href="/evomanias" className="block px-4 py-2 text-gray-300 hover:text-purple-400">
+          <nav style={{
+            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+            marginTop: '0.75rem',
+            paddingTop: '0.75rem',
+            display: 'grid',
+            gap: '0.5rem'
+          }}>
+            <Link href="/evomanias" className="nav-link" style={{ padding: '0.5rem 0' }}>
               Home
             </Link>
-            <Link href="/evomanias/highscores" className="block px-4 py-2 text-gray-300 hover:text-purple-400">
+            <Link href="/evomanias/highscores" className="nav-link" style={{ padding: '0.5rem 0' }}>
               Highscores
             </Link>
-            <a href="#characters" className="block px-4 py-2 text-gray-300 hover:text-purple-400">
-              Characters
-            </a>
-            <a href="#community" className="block px-4 py-2 text-gray-300 hover:text-purple-400">
+            <a href="#community" className="nav-link" style={{ padding: '0.5rem 0' }}>
               Community
+            </a>
+            <a href="#library" className="nav-link" style={{ padding: '0.5rem 0' }}>
+              Library
             </a>
           </nav>
         )}
