@@ -2,60 +2,43 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { fetchHighscores } from '@/lib/evomaniasActions';
 
 const vocations = ['All', 'Knight', 'Sorcerer', 'Cleric', 'Ranger', 'Paladin'];
-const sortOptions = ['Level', 'Experience'];
-
-// Mock data fallback for development
-const mockHighscores = [
-  { rank: 1, character: 'DragonSlayer', level: 450, experience: 1234567890, world: 'Evomanias', vocation: 'Knight' },
-  { rank: 2, character: 'MageOfFire', level: 420, experience: 1100000000, world: 'Evomanias', vocation: 'Sorcerer' },
-  { rank: 3, character: 'HealerLord', level: 410, experience: 1050000000, world: 'Evomanias', vocation: 'Cleric' },
-  { rank: 4, character: 'RangerPro', level: 405, experience: 1000000000, world: 'Evomanias', vocation: 'Ranger' },
-  { rank: 5, character: 'PaladinKing', level: 398, experience: 950000000, world: 'Evomanias', vocation: 'Paladin' },
-  { rank: 6, character: 'WarriorBeast', level: 390, experience: 900000000, world: 'Evomanias', vocation: 'Knight' },
-  { rank: 7, character: 'SorceryMaster', level: 385, experience: 850000000, world: 'Evomanias', vocation: 'Sorcerer' },
-  { rank: 8, character: 'ClericOfLight', level: 380, experience: 800000000, world: 'Evomanias', vocation: 'Cleric' },
-  { rank: 9, character: 'SwiftArcher', level: 375, experience: 750000000, world: 'Evomanias', vocation: 'Ranger' },
-  { rank: 10, character: 'HolyKnight', level: 370, experience: 700000000, world: 'Evomanias', vocation: 'Paladin' },
-];
 
 export default function Highscores() {
   const [highscores, setHighscores] = useState([]);
   const [selectedVocation, setSelectedVocation] = useState('All');
-  const [sortBy, setSortBy] = useState('Level');
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     loadHighscores();
-  }, [selectedVocation, sortBy, searchTerm]);
+  }, [selectedVocation, searchTerm]);
 
   const loadHighscores = async () => {
     setLoading(true);
-    setError(null);
     try {
-      const { data, error: fetchError } = await fetchHighscores({
-        vocation: selectedVocation,
-        search: searchTerm,
-        sortBy: sortBy,
-        limit: 100,
-      });
-
-      if (fetchError) {
-        setHighscores(mockHighscores);
-      } else {
-        setHighscores(data.length > 0 ? data : mockHighscores);
+      let query = '/api/evomanias/characters?action=highscores';
+      if (selectedVocation !== 'All') {
+        query += `&vocation=${selectedVocation}`;
       }
-    } catch (err) {
-      console.error('Error loading highscores:', err);
-      setHighscores(mockHighscores);
+
+      const response = await fetch(query);
+      const data = await response.json();
+      
+      let results = data.characters || [];
+      
+      if (searchTerm) {
+        results = results.filter(c => c.name.toLowerCase().includes(searchTerm.toLowerCase()));
+      }
+      
+      setHighscores(results);
+    } catch (error) {
+      console.error('Error loading highscores:', error);
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
@@ -69,7 +52,7 @@ export default function Highscores() {
 
           {/* Filters */}
           <div className="bg-gray-50 border-b p-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Search */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Search Character</label>
@@ -92,20 +75,6 @@ export default function Highscores() {
                 >
                   {vocations.map(voc => (
                     <option key={voc} value={voc}>{voc}</option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Sort */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Sort By</label>
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                >
-                  {sortOptions.map(opt => (
-                    <option key={opt} value={opt}>{opt}</option>
                   ))}
                 </select>
               </div>
@@ -139,33 +108,33 @@ export default function Highscores() {
                   <tbody>
                     {highscores.map((entry, idx) => (
                       <tr
-                        key={idx}
+                        key={entry.id}
                         className={`border-b transition ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-blue-50`}
                       >
                         <td className="px-6 py-4">
                           <div className="flex items-center">
                             <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-white ${
-                              entry.rank === 1 ? 'bg-yellow-500' :
-                              entry.rank === 2 ? 'bg-gray-400' :
-                              entry.rank === 3 ? 'bg-amber-600' :
+                              idx === 0 ? 'bg-yellow-500' :
+                              idx === 1 ? 'bg-gray-400' :
+                              idx === 2 ? 'bg-amber-600' :
                               'bg-gray-500'
                             }`}>
-                              {entry.rank}
+                              {idx + 1}
                             </div>
                           </div>
                         </td>
                         <td className="px-6 py-4 font-semibold text-gray-900">
-                          <Link href={`/evomanias/character/${entry.id || entry.rank}`} className="text-purple-600 hover:underline">
-                            {entry.character}
+                          <Link href={`/evomanias/character/${entry.id}`} className="text-purple-600 hover:underline">
+                            {entry.name}
                           </Link>
                         </td>
                         <td className="px-6 py-4 text-gray-600">{entry.vocation}</td>
                         <td className="px-6 py-4">
                           <span className="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm font-semibold">
-                            {entry.level}
+                            {entry.level || 1}
                           </span>
                         </td>
-                        <td className="px-6 py-4 text-gray-600">{entry.experience.toLocaleString()}</td>
+                        <td className="px-6 py-4 text-gray-600">{(entry.experience || 0).toLocaleString()}</td>
                       </tr>
                     ))}
                   </tbody>

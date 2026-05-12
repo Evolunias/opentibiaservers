@@ -1,15 +1,19 @@
-import Header from '../components/Header';
+'use client';
 
-export const metadata = {
-  title: "Evomanias - Tibia Server",
-  description: "Evomanias - The ultimate Tibia experience",
-};
+import { EvomaniasAuthProvider } from '../context/EvomaniasAuthContext';
+import EvomaniasHeader from './components/EvomaniasHeader';
+import EvomaniasFooter from './components/EvomaniasFooter';
 
 export default function EvomaniasLayout({ children }) {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      {children}
-    </div>
+    <EvomaniasAuthProvider>
+      <div className="min-h-screen bg-gray-950 text-white flex flex-col">
+        <EvomaniasHeader />
+        <main className="flex-1">
+          {children}
+        </main>
+        <EvomaniasFooter />
+      </div>
+    </EvomaniasAuthProvider>
   );
 }

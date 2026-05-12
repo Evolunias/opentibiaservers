@@ -1,13 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { fetchCharacter } from '@/lib/evomaniasActions';
 
 export default function CharacterDetail() {
   const params = useParams();
-  const router = useRouter();
   const [character, setCharacter] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -20,12 +18,13 @@ export default function CharacterDetail() {
     setLoading(true);
     setError(null);
     try {
-      const { data, error: fetchError } = await fetchCharacter(params.id);
-      if (fetchError) {
-        setError('Failed to load character');
-        setCharacter(null);
+      const response = await fetch(`/api/evomanias/characters?action=detail&characterId=${params.id}`);
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || 'Character not found');
       } else {
-        setCharacter(data);
+        setCharacter(data.character);
       }
     } catch (err) {
       setError(err.message);
@@ -90,7 +89,7 @@ export default function CharacterDetail() {
                 <p className="text-xl opacity-90">{character.vocation}</p>
               </div>
               <div className="text-right">
-                <div className="text-5xl font-bold">{character.level}</div>
+                <div className="text-5xl font-bold">{character.level || 1}</div>
                 <p className="text-sm opacity-90">Level</p>
               </div>
             </div>
@@ -101,7 +100,7 @@ export default function CharacterDetail() {
             <div className="space-y-4">
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 p-6 rounded-lg">
                 <p className="text-sm text-blue-600 font-semibold mb-1">Experience</p>
-                <p className="text-3xl font-bold text-blue-900">{character.experience?.toLocaleString() || 'N/A'}</p>
+                <p className="text-3xl font-bold text-blue-900">{(character.experience || 0).toLocaleString()}</p>
               </div>
 
               <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 p-6 rounded-lg">
@@ -114,16 +113,16 @@ export default function CharacterDetail() {
               <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 p-6 rounded-lg">
                 <p className="text-sm text-green-600 font-semibold mb-1">Status</p>
                 <div className="flex items-center gap-2">
-                  <div className={`w-3 h-3 rounded-full ${character.status === 'alive' ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                  <p className="text-2xl font-bold text-green-900 capitalize">{character.status || 'Alive'}</p>
+                  <div className={`w-3 h-3 rounded-full ${character.status === 'active' ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                  <p className="text-2xl font-bold text-green-900 capitalize">{character.status || 'Active'}</p>
                 </div>
               </div>
 
               <div className="bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 p-6 rounded-lg">
                 <p className="text-sm text-amber-600 font-semibold mb-1">Last Login</p>
                 <p className="text-lg font-bold text-amber-900">
-                  {character.lastLogin 
-                    ? new Date(character.lastLogin).toLocaleDateString() 
+                  {character.last_login 
+                    ? new Date(character.last_login).toLocaleDateString() 
                     : 'Never'}
                 </p>
               </div>
@@ -137,11 +136,11 @@ export default function CharacterDetail() {
               <div className="border-l-4 border-purple-500 pl-4">
                 <p className="text-sm text-gray-600 font-semibold mb-1">Created</p>
                 <p className="text-lg font-bold text-gray-900">
-                  {character.createdAt ? new Date(character.createdAt).toLocaleDateString() : 'Unknown'}
+                  {character.created ? new Date(character.created).toLocaleDateString() : 'Unknown'}
                 </p>
               </div>
               <div className="border-l-4 border-blue-500 pl-4">
-                <p className="text-sm text-gray-600 font-semibold mb-1">Experience Gain Rate</p>
+                <p className="text-sm text-gray-600 font-semibold mb-1">Experience Rate</p>
                 <p className="text-lg font-bold text-gray-900">1.0x (Default)</p>
               </div>
               <div className="border-l-4 border-green-500 pl-4">
