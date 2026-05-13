@@ -1,14 +1,5 @@
 import pool from '@/lib/aiven';
 
-// Mock data for development when database is unavailable
-const mockCharacters = [
-  { id: 1, name: 'Pojken', level: 4157, experience: 999999999, vocation: 'Sorcerer', status: 'active' },
-  { id: 2, name: 'Sissa', level: 3913, experience: 888888888, vocation: 'Druid', status: 'active' },
-  { id: 3, name: 'Amin', level: 3624, experience: 777777777, vocation: 'Knight', status: 'active' },
-  { id: 4, name: 'Heartz Of Men', level: 3569, experience: 666666666, vocation: 'Paladin', status: 'active' },
-  { id: 5, name: 'Nuno Mendes', level: 3534, experience: 555555555, vocation: 'Knight', status: 'active' },
-];
-
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
   const action = searchParams.get('action');
@@ -60,17 +51,7 @@ export async function GET(req) {
     }
   } catch (error) {
     console.error('Characters error:', error);
-
-    // Fallback to mock data in development
-    if (action === 'highscores') {
-      return Response.json({ characters: mockCharacters }, { status: 200 });
-    }
-
-    if (action === 'list' && accountId) {
-      return Response.json({ characters: [] }, { status: 200 });
-    }
-
-    return Response.json({ error: 'Server error' }, { status: 500 });
+    return Response.json({ error: 'Server error', details: error.message }, { status: 500 });
   }
 }
 
