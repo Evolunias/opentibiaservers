@@ -11,7 +11,7 @@ export async function GET(req) {
     try {
       if (action === 'list' && accountId) {
         const [characters] = await conn.execute(
-          'SELECT id, name, level, experience, vocation, world, status, created FROM players WHERE account_id = ? ORDER BY level DESC',
+          'SELECT id, name, level, experience, vocation, status, created FROM players WHERE account_id = ? ORDER BY level DESC',
           [accountId]
         );
 
@@ -20,7 +20,7 @@ export async function GET(req) {
 
       if (action === 'detail' && characterId) {
         const [characters] = await conn.execute(
-          'SELECT id, name, level, experience, vocation, world, status, created, last_login FROM players WHERE id = ?',
+          'SELECT id, name, level, experience, vocation, status, created FROM players WHERE id = ?',
           [characterId]
         );
 
@@ -33,11 +33,11 @@ export async function GET(req) {
 
       if (action === 'highscores') {
         const vocation = searchParams.get('vocation');
-        let query = 'SELECT id, name, level, experience, vocation, world FROM players WHERE status = "active" ORDER BY experience DESC LIMIT 100';
+        let query = 'SELECT id, name, level, experience, vocation, status FROM players WHERE status = "active" ORDER BY experience DESC LIMIT 100';
         const params = [];
 
         if (vocation) {
-          query = 'SELECT id, name, level, experience, vocation, world FROM players WHERE status = "active" AND vocation = ? ORDER BY experience DESC LIMIT 100';
+          query = 'SELECT id, name, level, experience, vocation, status FROM players WHERE status = "active" AND vocation = ? ORDER BY experience DESC LIMIT 100';
           params.push(vocation);
         }
 
@@ -80,8 +80,8 @@ export async function POST(req) {
       }
 
       const [result] = await conn.execute(
-        'INSERT INTO players (account_id, name, vocation, world, level, experience, status, created) VALUES (?, ?, ?, ?, 1, 0, "active", NOW())',
-        [accountId, name, vocation, world]
+        'INSERT INTO players (account_id, name, vocation, level, experience, status, created) VALUES (?, ?, ?, 1, 0, "active", NOW())',
+        [accountId, name, vocation]
       );
 
       return Response.json({ 
