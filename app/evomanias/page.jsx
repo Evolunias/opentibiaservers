@@ -389,15 +389,15 @@ export default function EvomaniasHome() {
           }}>
             <div style={{ textAlign: 'center' }}>
               <div style={{
-                fontSize: '4rem',
-                fontWeight: 900,
-                color: serverStats.status === 'Online' ? '#00bc8c' : '#ff6b6b',
-                textShadow: `0 0 30px ${serverStats.status === 'Online' ? 'rgba(0, 188, 140, 0.8)' : 'rgba(255, 107, 107, 0.8)'}`,
-                animation: 'pulse 2s ease-in-out infinite'
-              }}>
-                LIVE
-              </div>
-              <div style={{ fontSize: '0.95rem', color: 'rgba(255, 255, 255, 0.6)', marginTop: '0.5rem', textTransform: 'uppercase' }}>Server Status</div>
+                width: '60px',
+                height: '60px',
+                borderRadius: '50%',
+                background: serverStats.status === 'Online' ? '#00bc8c' : '#ff6b6b',
+                boxShadow: `0 0 40px ${serverStats.status === 'Online' ? 'rgba(0, 188, 140, 0.8)' : 'rgba(255, 107, 107, 0.8)'}`,
+                animation: 'pulse 2s ease-in-out infinite',
+                margin: '0 auto'
+              }} />
+              <div style={{ fontSize: '0.95rem', color: 'rgba(255, 255, 255, 0.6)', marginTop: '1rem', textTransform: 'uppercase' }}>Server Status</div>
             </div>
             <div style={{ textAlign: 'center' }}>
               <div style={{
