@@ -124,7 +124,7 @@ export default function EvomaniasHome() {
                 <Link href="/evomanias/account" className="btn btn-primary">
                   My Account
                 </Link>
-                <Link href="/evomanias/highscores" className="btn btn-secondary">
+                <Link href="/evomanias/players" className="btn btn-secondary">
                   View Rankings
                 </Link>
               </>
