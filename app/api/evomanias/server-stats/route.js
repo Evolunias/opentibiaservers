@@ -33,13 +33,13 @@ export async function GET(req) {
       conn.release();
     }
   } catch (error) {
-    console.error('Server stats error:', error);
+    console.error('[server-stats] Database error:', error.message, error.code);
     return Response.json({
       onlinePlayers: 0,
       totalCharacters: 0,
       status: 'Offline',
       error: error.message,
       timestamp: new Date().toISOString()
-    }, { status: 500 });
+    }, { status: 200 });
   }
 }

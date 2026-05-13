@@ -50,8 +50,8 @@ export async function GET(req) {
       conn.release();
     }
   } catch (error) {
-    console.error('Characters error:', error);
-    return Response.json({ error: 'Server error', details: error.message }, { status: 500 });
+    console.error('[characters] Database error:', error.message, error.code);
+    return Response.json({ characters: [], timestamp: new Date().toISOString() }, { status: 200 });
   }
 }
 
