@@ -72,10 +72,10 @@ export default function EvomaniasHome() {
   };
 
   const vocations = {
-    'Knight': '⚔️',
-    'Paladin': '🛡️',
-    'Druid': '🌿',
-    'Sorcerer': '✨',
+    'Knight': 'KNIGHT',
+    'Paladin': 'PALADIN',
+    'Druid': 'DRUID',
+    'Sorcerer': 'SORCERER',
   };
 
   return (
@@ -188,7 +188,7 @@ export default function EvomaniasHome() {
               textShadow: '0 0 60px rgba(124, 184, 255, 0.5)',
               letterSpacing: '-2px'
             }} className="glow-text">
-              ⚔️ EVOMANIAS ⚔️
+              EVOMANIAS
             </h1>
           </div>
 
@@ -321,12 +321,12 @@ export default function EvomaniasHome() {
           }}>
             <div style={{ textAlign: 'center' }}>
               <div style={{
-                fontSize: '2.5rem',
+                fontSize: '1.5rem',
                 fontWeight: 900,
-                color: '#7cb8ff',
-                textShadow: '0 0 20px rgba(124, 184, 255, 0.8)'
+                color: serverStats.status === 'Online' ? '#00bc8c' : '#ff6b6b',
+                textShadow: `0 0 20px ${serverStats.status === 'Online' ? 'rgba(0, 188, 140, 0.8)' : 'rgba(255, 107, 107, 0.8)'}`
               }}>
-                {serverStats.status === 'Online' ? '🟢' : '🔴'}
+                {serverStats.status}
               </div>
               <div style={{
                 fontSize: '0.9rem',
@@ -334,7 +334,7 @@ export default function EvomaniasHome() {
                 marginTop: '0.5rem',
                 textTransform: 'uppercase'
               }}>
-                Server {serverStats.status}
+                Server Status
               </div>
             </div>
             <div style={{ textAlign: 'center' }}>
@@ -395,7 +395,7 @@ export default function EvomaniasHome() {
               textTransform: 'uppercase',
               letterSpacing: '2px'
             }}>
-              🏆 Elite Warriors 🏆
+              Elite Warriors
             </h2>
 
             {loading ? (
@@ -444,7 +444,7 @@ export default function EvomaniasHome() {
                         color: idx === 0 ? '#ffd700' : '#7cb8ff',
                         minWidth: '40px'
                       }}>
-                        {idx === 0 ? '👑' : `#${idx + 1}`}
+                        #{idx + 1}
                       </span>
                       <div style={{ flex: 1 }}>
                         <div style={{
@@ -458,7 +458,7 @@ export default function EvomaniasHome() {
                           fontSize: '0.9rem',
                           color: 'rgba(255, 255, 255, 0.7)'
                         }}>
-                          {vocations[player.vocation] || '⚔️'} Level {player.level}
+                          {vocations[player.vocation] || 'WARRIOR'} Level {player.level}
                         </div>
                       </div>
                     </div>
@@ -498,7 +498,7 @@ export default function EvomaniasHome() {
                 textTransform: 'uppercase',
                 letterSpacing: '2px'
               }}>
-                📜 Battle Chronicles 📜
+                Battle Chronicles
               </h2>
 
               <div style={{ display: 'grid', gap: '2rem' }}>
