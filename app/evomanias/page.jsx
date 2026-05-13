@@ -391,8 +391,8 @@ export default function EvomaniasHome() {
               <div style={{
                 fontSize: '4rem',
                 fontWeight: 900,
-                color: '#00d97e',
-                textShadow: '0 0 30px rgba(0, 217, 126, 0.8)',
+                color: serverStats.status === 'Online' ? '#00bc8c' : '#ff6b6b',
+                textShadow: `0 0 30px ${serverStats.status === 'Online' ? 'rgba(0, 188, 140, 0.8)' : 'rgba(255, 107, 107, 0.8)'}`,
                 animation: 'pulse 2s ease-in-out infinite'
               }}>
                 LIVE
