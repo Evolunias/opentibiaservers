@@ -31,19 +31,22 @@ export default function EvomaniasHome() {
   const loadAllData = async () => {
     try {
       setError(null);
-      
+
       // Load server stats
       const statsResponse = await fetch('/api/evomanias/server-stats');
+      if (!statsResponse.ok) throw new Error(`HTTP ${statsResponse.status}`);
       const statsData = await statsResponse.json();
       setServerStats(statsData);
 
       // Load top players
       const playersResponse = await fetch('/api/evomanias/characters?action=highscores');
+      if (!playersResponse.ok) throw new Error(`HTTP ${playersResponse.status}`);
       const playersData = await playersResponse.json();
       setTopPlayers((playersData.characters || []).slice(0, 5));
 
       // Load announcements
       const announcementsResponse = await fetch('/api/evomanias/announcements');
+      if (!announcementsResponse.ok) throw new Error(`HTTP ${announcementsResponse.status}`);
       const announcementsData = await announcementsResponse.json();
       setAnnouncements(announcementsData.announcements || []);
     } catch (err) {
