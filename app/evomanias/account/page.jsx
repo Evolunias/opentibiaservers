@@ -14,7 +14,6 @@ export default function EvomaniasAccount() {
   const [characterForm, setCharacterForm] = useState({
     name: '',
     vocation: 'Knight',
-    world: 'Evomanias',
   });
   const [createError, setCreateError] = useState('');
   const [createLoading, setCreateLoading] = useState(false);
@@ -54,7 +53,6 @@ export default function EvomaniasAccount() {
           accountId: account.id,
           name: characterForm.name,
           vocation: characterForm.vocation,
-          world: characterForm.world,
         }),
       });
 
@@ -63,7 +61,7 @@ export default function EvomaniasAccount() {
       if (!response.ok) throw new Error(data.error);
 
       setCharacters([...characters, data.character]);
-      setCharacterForm({ name: '', vocation: 'Knight', world: 'Evomanias' });
+      setCharacterForm({ name: '', vocation: 'Knight' });
       setShowCreateModal(false);
     } catch (error) {
       setCreateError(error.message || 'Failed to create character');
@@ -218,28 +216,18 @@ export default function EvomaniasAccount() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Vocation</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Choose Your Class</label>
                       <select
                         value={characterForm.vocation}
                         onChange={(e) => setCharacterForm({ ...characterForm, vocation: e.target.value })}
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                         disabled={createLoading}
                       >
-                        <option value="Knight">Knight</option>
-                        <option value="Sorcerer">Sorcerer</option>
-                        <option value="Cleric">Cleric</option>
-                        <option value="Ranger">Ranger</option>
-                        <option value="Paladin">Paladin</option>
+                        <option value="Knight">🗡️ Knight - Master of defense and combat</option>
+                        <option value="Paladin">🏹 Paladin - Balance magic and melee</option>
+                        <option value="Druid">🌿 Druid - Master of nature and healing</option>
+                        <option value="Sorcerer">⚡ Sorcerer - Master of spells</option>
                       </select>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">World</label>
-                      <input
-                        type="text"
-                        value={characterForm.world}
-                        disabled
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-600"
-                      />
                     </div>
                     <div className="flex gap-3">
                       <button

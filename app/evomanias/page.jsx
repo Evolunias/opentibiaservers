@@ -7,85 +7,74 @@ import { useEvomaniasAuth } from '../context/EvomaniasAuthContext';
 export default function EvomaniasHome() {
   const { account } = useEvomaniasAuth();
   const [topPlayers, setTopPlayers] = useState([]);
+  const [announcements, setAnnouncements] = useState([]);
   const [serverStats, setServerStats] = useState({
-    online: 71,
-    characters: 342,
-    uptime: '1w 2d 5h',
+    onlinePlayers: 0,
+    totalCharacters: 0,
+    status: 'Offline',
   });
   const [loading, setLoading] = useState(true);
-
-  // Sample news data for demo
-  const [newsPosts] = useState([
-    {
-      id: 1,
-      day: '17',
-      month: 'Apr',
-      title: 'EVOMANIAS Server Launch',
-      content: 'Welcome to EVOMANIAS! We are excited to announce the official launch of our server. Join thousands of players and experience the ultimate Tibia adventure.',
-      author: 'Admin',
-      category: 'announcement'
-    },
-    {
-      id: 2,
-      day: '10',
-      month: 'Apr',
-      title: 'Balance Updates & New Features',
-      content: 'This patch includes several balance updates to improve gameplay. New features have been added to enhance your experience.',
-      author: 'GameMaster',
-      category: 'patch'
-    },
-    {
-      id: 3,
-      day: '5',
-      month: 'Apr',
-      title: 'Community Events',
-      content: 'Join our community events this week. Participate and win exclusive rewards. More details available in our Discord server.',
-      author: 'Admin',
-      category: 'event'
-    }
-  ]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    loadServerData();
+    loadAllData();
+
+    // Set up real-time syncing - refresh every 5 seconds
+    const interval = setInterval(() => {
+      loadAllData();
+    }, 5000);
+
+    // Clean up interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
-  const loadServerData = async () => {
+  const loadAllData = async () => {
     try {
-      const response = await fetch('/api/evomanias/characters?action=highscores');
-      const data = await response.json();
+      setError(null);
+      
+      // Load server stats
+      const statsResponse = await fetch('/api/evomanias/server-stats');
+      const statsData = await statsResponse.json();
+      setServerStats(statsData);
 
-      const players = data.characters || [];
-      setTopPlayers(players.slice(0, 5));
+      // Load top players
+      const playersResponse = await fetch('/api/evomanias/characters?action=highscores');
+      const playersData = await playersResponse.json();
+      setTopPlayers((playersData.characters || []).slice(0, 5));
 
-      const onlineCount = players.filter(p => p.status === 'active').length;
-      setServerStats(prev => ({
-        ...prev,
-        online: onlineCount,
-        characters: players.length,
-      }));
-    } catch (error) {
-      console.error('Error loading server data:', error);
+      // Load announcements
+      const announcementsResponse = await fetch('/api/evomanias/announcements');
+      const announcementsData = await announcementsResponse.json();
+      setAnnouncements(announcementsData.announcements || []);
+    } catch (err) {
+      console.error('Error loading data:', err);
+      setError('Unable to load server data. Please try again later.');
     } finally {
       setLoading(false);
     }
   };
 
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: date.getFullYear() !== new Date().getFullYear() ? 'numeric' : undefined
+    });
+  };
+
+  const vocations = {
+    'Knight': '🗡️',
+    'Paladin': '🏹',
+    'Druid': '🌿',
+    'Sorcerer': '⚡',
+  };
+
   return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(12, 1fr)',
-      gap: '1.5rem',
-      maxWidth: '1300px',
-      margin: '0 auto',
-      padding: '1.5rem'
-    }}>
-      {/* Main Content (9 columns on desktop, 12 on mobile) */}
-      <div style={{
-        gridColumn: 'span 12',
-        '@media (min-width: 1024px)': {
-          gridColumn: 'span 9'
-        }
-      }}>
+    <div className="evomanias-grid">
+      {/* Main Content */}
+      <div className="evomanias-main">
         {/* Hero Section */}
         <div className="card" style={{
           marginBottom: '2rem',
@@ -113,7 +102,7 @@ export default function EvomaniasHome() {
             maxWidth: '600px',
             margin: '0 auto 1.5rem'
           }}>
-            Experience the ultimate Tibia adventure. Create your account, join thousands of players, and become a legend.
+            Experience the ultimate Tibia adventure. Create your account, join our community, and become a legend.
           </p>
           <div style={{
             display: 'flex',
@@ -124,7 +113,7 @@ export default function EvomaniasHome() {
             {!account ? (
               <>
                 <Link href="/evomanias/register" className="btn btn-primary">
-                  Create Account
+                  Create My Account
                 </Link>
                 <Link href="/evomanias/login" className="btn btn-secondary">
                   Sign In
@@ -135,15 +124,15 @@ export default function EvomaniasHome() {
                 <Link href="/evomanias/account" className="btn btn-primary">
                   My Account
                 </Link>
-                <Link href="/evomanias/highscores" className="btn btn-secondary">
-                  Highscores
+                <Link href="/evomanias/players" className="btn btn-secondary">
+                  View Rankings
                 </Link>
               </>
             )}
           </div>
         </div>
 
-        {/* News/Patches Section */}
+        {/* News & Announcements Section */}
         <div className="card">
           <h2 style={{
             fontSize: '1.5rem',
@@ -151,41 +140,67 @@ export default function EvomaniasHome() {
             marginBottom: '1.5rem',
             color: 'rgba(255, 255, 255, 0.95)'
           }}>
-            Latest News
+            📢 Latest News & Updates
           </h2>
 
-          {newsPosts.map((post) => (
-            <div key={post.id} className="post">
-              <div className="post-date">
-                <div className="post-date-day">{post.day}</div>
-                <div className="post-date-month">{post.month}</div>
-              </div>
-              <div className="post-body">
-                <h2>
-                  <a href="#" style={{ color: 'rgba(255, 255, 255, 0.95)' }}>
-                    {post.title}
-                  </a>
-                </h2>
-                <p>{post.content}</p>
-                <div className="post-meta">
-                  Posted by <a href="#">{post.author}</a> •
-                  <a href="#" style={{ marginLeft: '0.5rem' }}>View Thread →</a>
+          {error && (
+            <div style={{
+              padding: '1rem',
+              background: 'rgba(220, 53, 69, 0.1)',
+              border: '1px solid rgba(220, 53, 69, 0.3)',
+              borderRadius: '4px',
+              color: '#ff6b6b',
+              marginBottom: '1.5rem',
+              fontSize: '0.875rem'
+            }}>
+              {error}
+            </div>
+          )}
+
+          {loading ? (
+            <div style={{
+              textAlign: 'center',
+              padding: '2rem',
+              color: 'rgba(255, 255, 255, 0.5)'
+            }}>
+              Loading updates...
+            </div>
+          ) : announcements.length === 0 ? (
+            <div style={{
+              textAlign: 'center',
+              padding: '2rem',
+              color: 'rgba(255, 255, 255, 0.5)'
+            }}>
+              No announcements yet. Check back soon!
+            </div>
+          ) : (
+            announcements.map((post) => (
+              <div key={post.id} className="post">
+                <div className="post-date">
+                  <div className="post-date-day">{formatDate(post.created).split(' ')[1]}</div>
+                  <div className="post-date-month">{formatDate(post.created).split(' ')[0]}</div>
+                </div>
+                <div className="post-body">
+                  <h2>
+                    <span style={{ color: 'rgba(255, 255, 255, 0.95)' }}>
+                      {post.title}
+                    </span>
+                  </h2>
+                  <p>{post.content}</p>
+                  <div className="post-meta">
+                    Posted by <strong>{post.author}</strong> • <span style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.4)' }}>
+                      {formatDate(post.created)}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
 
-      {/* Sidebar (3 columns on desktop, 12 on mobile) */}
-      <div style={{
-        gridColumn: 'span 12',
-        display: 'grid',
-        gap: '1.5rem',
-        '@media (min-width: 1024px)': {
-          gridColumn: 'span 3'
-        }
-      }}>
+      {/* Sidebar */}
+      <div className="evomanias-sidebar">
         {/* Server Status Card */}
         <div className="card">
           <div className="card-header">
@@ -202,36 +217,39 @@ export default function EvomaniasHome() {
             <table className="table" style={{ margin: 0 }}>
               <tbody>
                 <tr>
-                  <td style={{ fontSize: '0.875rem' }}>Status</td>
-                  <td style={{ fontSize: '0.875rem', textAlign: 'right', color: '#00bc8c', fontWeight: '700' }}>● Online</td>
+                  <td style={{ fontSize: '0.875rem' }}>Server</td>
+                  <td style={{ fontSize: '0.875rem', textAlign: 'right', color: '#00bc8c', fontWeight: '700' }}>
+                    {loading ? '...' : '● ' + serverStats.status}
+                  </td>
                 </tr>
                 <tr>
-                  <td style={{ fontSize: '0.875rem' }}>Online Players</td>
-                  <td style={{ fontSize: '0.875rem', textAlign: 'right', color: '#7cb8ff' }}>
-                    <Link href="#" style={{ color: '#7cb8ff', fontWeight: '600' }}>
-                      {loading ? '...' : serverStats.online}
-                    </Link>
+                  <td style={{ fontSize: '0.875rem' }}>Adventurers Online</td>
+                  <td style={{ fontSize: '0.875rem', textAlign: 'right', color: '#7cb8ff', fontWeight: '600' }}>
+                    {loading ? '...' : serverStats.onlinePlayers}
                   </td>
                 </tr>
                 <tr>
                   <td style={{ fontSize: '0.875rem' }}>Total Characters</td>
-                  <td style={{ fontSize: '0.875rem', textAlign: 'right' }}>{loading ? '...' : serverStats.characters}</td>
-                </tr>
-                <tr>
-                  <td style={{ fontSize: '0.875rem' }}>Uptime</td>
-                  <td style={{ fontSize: '0.875rem', textAlign: 'right' }}>{serverStats.uptime}</td>
+                  <td style={{ fontSize: '0.875rem', textAlign: 'right', fontWeight: '600' }}>
+                    {loading ? '...' : serverStats.totalCharacters}
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div className="card-footer">
-            <button className="btn btn-success btn-block" style={{ margin: 0 }}>
-              Download Client
+            <button 
+              className="btn btn-success btn-block" 
+              style={{ margin: 0 }}
+              onClick={loadAllData}
+              disabled={loading}
+            >
+              {loading ? 'Refreshing...' : 'Refresh Status'}
             </button>
           </div>
         </div>
 
-        {/* Top 5 Players Card */}
+        {/* Top Adventurers Card */}
         <div className="card">
           <div className="card-header">
             <h3 style={{
@@ -240,15 +258,17 @@ export default function EvomaniasHome() {
               fontWeight: 700,
               margin: 0
             }}>
-              🏆 Top 5 Players
+              🏆 Top Adventurers
             </h3>
           </div>
           <div className="card-body" style={{ padding: '1rem 0' }}>
             {loading ? (
-              <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)' }}>Loading...</p>
-            ) : topPlayers.length === 0 ? (
               <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.875rem' }}>
-                No players yet. Be the first!
+                Loading rankings...
+              </p>
+            ) : topPlayers.length === 0 ? (
+              <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.875rem', padding: '1rem' }}>
+                Be the first to claim your glory!
               </p>
             ) : (
               <table className="table" style={{ margin: 0 }}>
@@ -256,14 +276,14 @@ export default function EvomaniasHome() {
                   {topPlayers.map((player, idx) => (
                     <tr key={player.id}>
                       <td style={{ fontSize: '0.875rem', paddingLeft: '0.5rem', width: '30px' }}>
-                        <strong>{idx + 1}</strong>
+                        <strong>{idx === 0 ? '👑' : idx + 1}</strong>
                       </td>
                       <td style={{ fontSize: '0.875rem' }}>
                         <Link href={`/evomanias/character/${player.id}`} style={{ color: '#7cb8ff', fontWeight: '600' }}>
                           {player.name}
                         </Link>
                         <div style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.5)' }}>
-                          Lv. {player.level || 1}
+                          {vocations[player.vocation] || '⚔️'} Level {player.level}
                         </div>
                       </td>
                     </tr>
@@ -272,14 +292,17 @@ export default function EvomaniasHome() {
               </table>
             )}
           </div>
-          <div className="card-footer">
-            <Link href="/evomanias/highscores" className="btn btn-secondary btn-block" style={{ margin: 0 }}>
-              View All →
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+            <Link href="/evomanias/players" className="btn btn-secondary btn-block" style={{ margin: 0 }}>
+              All Players
+            </Link>
+            <Link href="/evomanias/online" className="btn btn-secondary btn-block" style={{ margin: 0 }}>
+              Online Now
             </Link>
           </div>
         </div>
 
-        {/* Join Discord Card */}
+        {/* Join Community Card */}
         <div className="card" style={{
           textAlign: 'center',
           background: 'linear-gradient(135deg, rgba(114, 137, 218, 0.1) 0%, rgba(100, 120, 200, 0.05) 100%)',
@@ -294,14 +317,14 @@ export default function EvomaniasHome() {
             fontWeight: 700,
             marginBottom: '0.5rem'
           }}>
-            Join Our Discord
+            Join Our Community
           </h3>
           <p style={{
             color: 'rgba(255, 255, 255, 0.7)',
             fontSize: '0.875rem',
             marginBottom: '1rem'
           }}>
-            Connect with the community, get updates, and meet fellow adventurers.
+            Connect with other adventurers, share tips, and stay updated on server news.
           </p>
           <a href="#" className="btn btn-primary btn-block" style={{ margin: 0 }}>
             Join Discord

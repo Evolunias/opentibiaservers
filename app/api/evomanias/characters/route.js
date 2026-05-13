@@ -1,14 +1,5 @@
 import pool from '@/lib/aiven';
 
-// Mock data for development when database is unavailable
-const mockCharacters = [
-  { id: 1, name: 'Pojken', level: 4157, experience: 999999999, vocation: 'Sorcerer', status: 'active' },
-  { id: 2, name: 'Sissa', level: 3913, experience: 888888888, vocation: 'Druid', status: 'active' },
-  { id: 3, name: 'Amin', level: 3624, experience: 777777777, vocation: 'Knight', status: 'active' },
-  { id: 4, name: 'Heartz Of Men', level: 3569, experience: 666666666, vocation: 'Paladin', status: 'active' },
-  { id: 5, name: 'Nuno Mendes', level: 3534, experience: 555555555, vocation: 'Knight', status: 'active' },
-];
-
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
   const action = searchParams.get('action');
@@ -20,7 +11,7 @@ export async function GET(req) {
     try {
       if (action === 'list' && accountId) {
         const [characters] = await conn.execute(
-          'SELECT id, name, level, experience, vocation, world, status, created FROM players WHERE account_id = ? ORDER BY level DESC',
+          'SELECT id, name, level, experience, vocation, status, created FROM players WHERE account_id = ? ORDER BY level DESC',
           [accountId]
         );
 
@@ -29,7 +20,7 @@ export async function GET(req) {
 
       if (action === 'detail' && characterId) {
         const [characters] = await conn.execute(
-          'SELECT id, name, level, experience, vocation, world, status, created, last_login FROM players WHERE id = ?',
+          'SELECT id, name, level, experience, vocation, status, created FROM players WHERE id = ?',
           [characterId]
         );
 
@@ -42,16 +33,16 @@ export async function GET(req) {
 
       if (action === 'highscores') {
         const vocation = searchParams.get('vocation');
-        let query = 'SELECT id, name, level, experience, vocation, world FROM players WHERE status = "active" ORDER BY experience DESC LIMIT 100';
+        let query = 'SELECT id, name, level, experience, vocation FROM players ORDER BY experience DESC LIMIT 100';
         const params = [];
 
         if (vocation) {
-          query = 'SELECT id, name, level, experience, vocation, world FROM players WHERE status = "active" AND vocation = ? ORDER BY experience DESC LIMIT 100';
+          query = 'SELECT id, name, level, experience, vocation FROM players WHERE vocation = ? ORDER BY experience DESC LIMIT 100';
           params.push(vocation);
         }
 
         const [characters] = await conn.execute(query, params);
-        return Response.json({ characters }, { status: 200 });
+        return Response.json({ characters, timestamp: new Date().toISOString() }, { status: 200 });
       }
 
       return Response.json({ error: 'Invalid action' }, { status: 400 });
@@ -60,17 +51,7 @@ export async function GET(req) {
     }
   } catch (error) {
     console.error('Characters error:', error);
-
-    // Fallback to mock data in development
-    if (action === 'highscores') {
-      return Response.json({ characters: mockCharacters }, { status: 200 });
-    }
-
-    if (action === 'list' && accountId) {
-      return Response.json({ characters: [] }, { status: 200 });
-    }
-
-    return Response.json({ error: 'Server error' }, { status: 500 });
+    return Response.json({ error: 'Server error', details: error.message }, { status: 500 });
   }
 }
 
@@ -99,8 +80,8 @@ export async function POST(req) {
       }
 
       const [result] = await conn.execute(
-        'INSERT INTO players (account_id, name, vocation, world, level, experience, status, created) VALUES (?, ?, ?, ?, 1, 0, "active", NOW())',
-        [accountId, name, vocation, world]
+        'INSERT INTO players (account_id, name, vocation, level, experience, status, created) VALUES (?, ?, ?, 1, 0, "active", NOW())',
+        [accountId, name, vocation]
       );
 
       return Response.json({ 
