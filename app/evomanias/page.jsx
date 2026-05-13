@@ -18,6 +18,14 @@ export default function EvomaniasHome() {
 
   useEffect(() => {
     loadAllData();
+
+    // Set up real-time syncing - refresh every 5 seconds
+    const interval = setInterval(() => {
+      loadAllData();
+    }, 5000);
+
+    // Clean up interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   const loadAllData = async () => {
@@ -284,9 +292,12 @@ export default function EvomaniasHome() {
               </table>
             )}
           </div>
-          <div className="card-footer">
-            <Link href="/evomanias/highscores" className="btn btn-secondary btn-block" style={{ margin: 0 }}>
-              View Full Rankings →
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+            <Link href="/evomanias/players" className="btn btn-secondary btn-block" style={{ margin: 0 }}>
+              All Players
+            </Link>
+            <Link href="/evomanias/online" className="btn btn-secondary btn-block" style={{ margin: 0 }}>
+              Online Now
             </Link>
           </div>
         </div>

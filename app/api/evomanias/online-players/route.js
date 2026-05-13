@@ -5,10 +5,9 @@ export async function GET(req) {
     const conn = await pool.getConnection();
     try {
       const [onlinePlayers] = await conn.execute(
-        `SELECT id, name, level, vocation, status, created 
-         FROM players 
-         WHERE status = "active" 
-         ORDER BY level DESC, experience DESC 
+        `SELECT id, name, level, vocation, experience, created
+         FROM players
+         ORDER BY level DESC, experience DESC
          LIMIT 50`
       );
 
@@ -25,7 +24,8 @@ export async function GET(req) {
     return Response.json({
       onlinePlayers: [],
       count: 0,
-      error: error.message
+      error: error.message,
+      timestamp: new Date().toISOString()
     }, { status: 500 });
   }
 }

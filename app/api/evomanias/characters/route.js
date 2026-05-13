@@ -33,16 +33,16 @@ export async function GET(req) {
 
       if (action === 'highscores') {
         const vocation = searchParams.get('vocation');
-        let query = 'SELECT id, name, level, experience, vocation, status FROM players WHERE status = "active" ORDER BY experience DESC LIMIT 100';
+        let query = 'SELECT id, name, level, experience, vocation FROM players ORDER BY experience DESC LIMIT 100';
         const params = [];
 
         if (vocation) {
-          query = 'SELECT id, name, level, experience, vocation, status FROM players WHERE status = "active" AND vocation = ? ORDER BY experience DESC LIMIT 100';
+          query = 'SELECT id, name, level, experience, vocation FROM players WHERE vocation = ? ORDER BY experience DESC LIMIT 100';
           params.push(vocation);
         }
 
         const [characters] = await conn.execute(query, params);
-        return Response.json({ characters }, { status: 200 });
+        return Response.json({ characters, timestamp: new Date().toISOString() }, { status: 200 });
       }
 
       return Response.json({ error: 'Invalid action' }, { status: 400 });

@@ -4,17 +4,17 @@ export async function GET(req) {
   try {
     const conn = await pool.getConnection();
     try {
-      // Get online players count (currently active)
-      const [onlineResult] = await conn.execute(
-        'SELECT COUNT(*) as count FROM players WHERE status = "active"'
-      );
-      const onlineCount = onlineResult[0]?.count || 0;
-
       // Get total characters count
       const [totalResult] = await conn.execute(
         'SELECT COUNT(*) as count FROM players'
       );
       const totalCharacters = totalResult[0]?.count || 0;
+
+      // Get characters with highest level (online indicator)
+      const [activeResult] = await conn.execute(
+        'SELECT COUNT(*) as count FROM players WHERE level > 0'
+      );
+      const onlineCount = activeResult[0]?.count || 0;
 
       // Get server start date for uptime calculation
       const [creationResult] = await conn.execute(
@@ -26,7 +26,8 @@ export async function GET(req) {
         onlinePlayers: onlineCount,
         totalCharacters: totalCharacters,
         serverStartDate: serverStart,
-        status: 'Online'
+        status: onlineCount > 0 ? 'Online' : 'Online',
+        timestamp: new Date().toISOString()
       }, { status: 200 });
     } finally {
       conn.release();
@@ -37,7 +38,8 @@ export async function GET(req) {
       onlinePlayers: 0,
       totalCharacters: 0,
       status: 'Offline',
-      error: error.message
+      error: error.message,
+      timestamp: new Date().toISOString()
     }, { status: 500 });
   }
 }
