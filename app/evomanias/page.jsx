@@ -15,11 +15,23 @@ export default function EvomaniasHome() {
   });
   const [loading, setLoading] = useState(true);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [particles, setParticles] = useState([]);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     loadAllData();
-    const interval = setInterval(() => loadAllData(), 5000);
-    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    setIsClient(true);
+    setParticles([...Array(15)].map(() => ({
+      width: Math.random() * 4 + 1,
+      height: Math.random() * 4 + 1,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      duration: Math.random() * 5 + 5,
+      delay: Math.random() * 2
+    })));
   }, []);
 
   useEffect(() => {
@@ -30,16 +42,23 @@ export default function EvomaniasHome() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const fetchWithTimeout = async (url, timeout = 5000) => {
+  const fetchWithTimeout = async (url, timeout = 8000) => {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), timeout);
     try {
-      const response = await fetch(url, { signal: controller.signal });
+      const response = await fetch(url, {
+        signal: controller.signal,
+        headers: { 'Content-Type': 'application/json' }
+      });
       clearTimeout(timeoutId);
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return await response.json();
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      const data = await response.json();
+      return data || {};
     } catch (err) {
       clearTimeout(timeoutId);
+      console.error(`Fetch error for ${url}:`, err.message);
       throw err;
     }
   };
@@ -50,21 +69,39 @@ export default function EvomaniasHome() {
         const statsData = await fetchWithTimeout('/api/evomanias/server-stats');
         setServerStats(statsData);
       } catch (err) {
-        console.error('Failed to load stats:', err.message);
+        console.error('Failed to load stats, trying mock:', err.message);
+        try {
+          const mockData = await fetchWithTimeout('/api/evomanias/mock-data');
+          setServerStats(mockData.serverStats);
+        } catch (fallbackErr) {
+          console.error('Mock data also failed:', fallbackErr.message);
+        }
       }
 
       try {
         const playersData = await fetchWithTimeout('/api/evomanias/characters?action=highscores');
         setTopPlayers((playersData.characters || []).slice(0, 10));
       } catch (err) {
-        console.error('Failed to load players:', err.message);
+        console.error('Failed to load players, trying mock:', err.message);
+        try {
+          const mockData = await fetchWithTimeout('/api/evomanias/mock-data');
+          setTopPlayers((mockData.players.characters || []).slice(0, 10));
+        } catch (fallbackErr) {
+          console.error('Mock players also failed:', fallbackErr.message);
+        }
       }
 
       try {
         const announcementsData = await fetchWithTimeout('/api/evomanias/announcements');
         setAnnouncements(announcementsData.announcements || []);
       } catch (err) {
-        console.error('Failed to load announcements:', err.message);
+        console.error('Failed to load announcements, trying mock:', err.message);
+        try {
+          const mockData = await fetchWithTimeout('/api/evomanias/mock-data');
+          setAnnouncements(mockData.announcements.announcements || []);
+        } catch (fallbackErr) {
+          console.error('Mock announcements also failed:', fallbackErr.message);
+        }
       }
     } finally {
       setLoading(false);
@@ -129,19 +166,19 @@ export default function EvomaniasHome() {
         }} />
 
         {/* Animated particles */}
-        {[...Array(15)].map((_, i) => (
+        {isClient && particles.map((p, i) => (
           <div
             key={i}
             style={{
               position: 'absolute',
-              width: Math.random() * 4 + 1 + 'px',
-              height: Math.random() * 4 + 1 + 'px',
+              width: p.width + 'px',
+              height: p.height + 'px',
               background: 'rgba(124, 184, 255, 0.6)',
               borderRadius: '50%',
-              left: Math.random() * 100 + '%',
-              top: Math.random() * 100 + '%',
-              animation: `float ${Math.random() * 5 + 5}s ease-in-out infinite`,
-              animationDelay: Math.random() * 2 + 's',
+              left: p.left + '%',
+              top: p.top + '%',
+              animation: `float ${p.duration}s ease-in-out infinite`,
+              animationDelay: p.delay + 's',
               boxShadow: '0 0 20px rgba(124, 184, 255, 0.8)'
             }}
           />
