@@ -28,18 +28,31 @@ export default function EvomaniasHome() {
     return () => clearInterval(interval);
   }, []);
 
+  const fetchWithTimeout = async (url, timeout = 5000) => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+    try {
+      const response = await fetch(url, { signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return await response.json();
+    } catch (err) {
+      clearTimeout(timeoutId);
+      throw err;
+    }
+  };
+
   const loadAllData = async () => {
     try {
       setError(null);
 
       // Load server stats
       try {
-        const statsResponse = await fetch('/api/evomanias/server-stats');
-        if (!statsResponse.ok) throw new Error(`HTTP ${statsResponse.status}`);
-        const statsData = await statsResponse.json();
+        const statsData = await fetchWithTimeout('/api/evomanias/server-stats');
         setServerStats(statsData);
       } catch (err) {
-        console.error('Failed to load server stats:', err);
+        console.error('Failed to load server stats:', err.message);
         setServerStats({
           onlinePlayers: 0,
           totalCharacters: 0,
@@ -49,23 +62,19 @@ export default function EvomaniasHome() {
 
       // Load top players
       try {
-        const playersResponse = await fetch('/api/evomanias/characters?action=highscores');
-        if (!playersResponse.ok) throw new Error(`HTTP ${playersResponse.status}`);
-        const playersData = await playersResponse.json();
+        const playersData = await fetchWithTimeout('/api/evomanias/characters?action=highscores');
         setTopPlayers((playersData.characters || []).slice(0, 5));
       } catch (err) {
-        console.error('Failed to load top players:', err);
+        console.error('Failed to load top players:', err.message);
         setTopPlayers([]);
       }
 
       // Load announcements
       try {
-        const announcementsResponse = await fetch('/api/evomanias/announcements');
-        if (!announcementsResponse.ok) throw new Error(`HTTP ${announcementsResponse.status}`);
-        const announcementsData = await announcementsResponse.json();
+        const announcementsData = await fetchWithTimeout('/api/evomanias/announcements');
         setAnnouncements(announcementsData.announcements || []);
       } catch (err) {
-        console.error('Failed to load announcements:', err);
+        console.error('Failed to load announcements:', err.message);
         setAnnouncements([]);
       }
     } catch (err) {
