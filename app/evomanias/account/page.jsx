@@ -72,15 +72,15 @@ export default function EvomaniasAccount() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-gray-50 py-12">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center justify-center py-20">
-            <div className="text-center">
-              <div className="w-12 h-12 border-4 border-gray-200 border-t-purple-600 rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading your account...</p>
-            </div>
-          </div>
-        </div>
+      <main style={{
+        minHeight: '100vh',
+        color: 'white',
+        padding: '3rem 1.5rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <p>Loading your account...</p>
       </main>
     );
   }
@@ -95,95 +95,260 @@ export default function EvomaniasAccount() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+    <main style={{
+      color: 'white',
+      padding: '3rem 1.5rem'
+    }}>
+      <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
+        <div style={{
+          background: 'rgba(20, 20, 25, 0.85)',
+          backdropFilter: 'blur(12px)',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
+        }}>
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8">
-            <h1 className="text-3xl font-bold mb-2">My Account</h1>
-            <p className="opacity-90">Manage your Evomanias account and characters</p>
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(124, 184, 255, 0.15) 0%, rgba(90, 159, 230, 0.1) 100%)',
+            borderBottom: '1px solid rgba(124, 184, 255, 0.2)',
+            padding: '2rem'
+          }}>
+            <h1 style={{
+              fontSize: '2rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}>
+              My Account
+            </h1>
+            <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+              Manage your Evomanias account and characters
+            </p>
           </div>
 
           {/* Content */}
-          <div className="p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div style={{ padding: '2rem' }}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
+              marginBottom: '2rem'
+            }}>
               {/* Account Info */}
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Account Information</h2>
-                <div className="space-y-4">
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <p className="text-sm text-gray-600">Email</p>
-                    <p className="text-lg font-semibold text-gray-900">{account.email}</p>
+                <h2 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  marginBottom: '1rem',
+                  color: 'white'
+                }}>
+                  Account Information
+                </h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <div style={{
+                    background: 'rgba(124, 184, 255, 0.1)',
+                    padding: '1rem',
+                    borderRadius: '8px',
+                    border: '1px solid rgba(124, 184, 255, 0.2)'
+                  }}>
+                    <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>Email</p>
+                    <p style={{ fontSize: '1rem', fontWeight: '600', color: 'white' }}>{account.email}</p>
                   </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <p className="text-sm text-gray-600">Account Name</p>
-                    <p className="text-lg font-semibold text-gray-900">{account.name}</p>
+                  <div style={{
+                    background: 'rgba(124, 184, 255, 0.1)',
+                    padding: '1rem',
+                    borderRadius: '8px',
+                    border: '1px solid rgba(124, 184, 255, 0.2)'
+                  }}>
+                    <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>Account Name</p>
+                    <p style={{ fontSize: '1rem', fontWeight: '600', color: 'white' }}>{account.name}</p>
                   </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <p className="text-sm text-gray-600">Account Status</p>
-                    <p className="text-lg font-semibold text-green-600">Active</p>
+                  <div style={{
+                    background: 'rgba(16, 185, 129, 0.1)',
+                    padding: '1rem',
+                    borderRadius: '8px',
+                    border: '1px solid rgba(16, 185, 129, 0.2)'
+                  }}>
+                    <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>Account Status</p>
+                    <p style={{ fontSize: '1rem', fontWeight: '600', color: '#10b981' }}>Active</p>
                   </div>
                 </div>
               </div>
 
               {/* Quick Stats */}
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Quick Stats</h2>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                    <p className="text-sm text-blue-600 font-semibold">Characters</p>
-                    <p className="text-2xl font-bold text-blue-900">{characters.length}</p>
+                <h2 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  marginBottom: '1rem',
+                  color: 'white'
+                }}>
+                  Quick Stats
+                </h2>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(2, 1fr)',
+                  gap: '1rem'
+                }}>
+                  <div style={{
+                    background: 'rgba(124, 184, 255, 0.1)',
+                    border: '1px solid rgba(124, 184, 255, 0.3)',
+                    padding: '1rem',
+                    borderRadius: '8px'
+                  }}>
+                    <p style={{ fontSize: '0.875rem', color: '#7cb8ff', fontWeight: '600' }}>Characters</p>
+                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#7cb8ff' }}>{characters.length}</p>
                   </div>
-                  <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
-                    <p className="text-sm text-purple-600 font-semibold">Total Level</p>
-                    <p className="text-2xl font-bold text-purple-900">
+                  <div style={{
+                    background: 'rgba(124, 184, 255, 0.1)',
+                    border: '1px solid rgba(124, 184, 255, 0.3)',
+                    padding: '1rem',
+                    borderRadius: '8px'
+                  }}>
+                    <p style={{ fontSize: '0.875rem', color: '#7cb8ff', fontWeight: '600' }}>Total Level</p>
+                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#7cb8ff' }}>
                       {characters.reduce((sum, c) => sum + (c.level || 1), 0)}
                     </p>
                   </div>
-                  <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
-                    <p className="text-sm text-green-600 font-semibold">World</p>
-                    <p className="text-2xl font-bold text-green-900">Evomanias</p>
+                  <div style={{
+                    background: 'rgba(16, 185, 129, 0.1)',
+                    border: '1px solid rgba(16, 185, 129, 0.3)',
+                    padding: '1rem',
+                    borderRadius: '8px'
+                  }}>
+                    <p style={{ fontSize: '0.875rem', color: '#10b981', fontWeight: '600' }}>World</p>
+                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#10b981' }}>Evomanias</p>
                   </div>
-                  <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
-                    <p className="text-sm text-amber-600 font-semibold">Status</p>
-                    <p className="text-2xl font-bold text-amber-900">Online</p>
+                  <div style={{
+                    background: 'rgba(16, 185, 129, 0.1)',
+                    border: '1px solid rgba(16, 185, 129, 0.3)',
+                    padding: '1rem',
+                    borderRadius: '8px'
+                  }}>
+                    <p style={{ fontSize: '0.875rem', color: '#10b981', fontWeight: '600' }}>Status</p>
+                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#10b981' }}>Online</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Characters Section */}
-            <div className="mb-8">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-2xl font-bold text-gray-900">Your Characters</h2>
+            <div style={{ marginBottom: '2rem' }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginBottom: '1rem'
+              }}>
+                <h2 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  color: 'white'
+                }}>
+                  Your Characters
+                </h2>
                 <button
                   onClick={() => setShowCreateModal(true)}
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition text-sm"
+                  style={{
+                    background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+                    color: 'white',
+                    padding: '0.75rem 1rem',
+                    borderRadius: '8px',
+                    fontWeight: '600',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontSize: '0.875rem',
+                    transition: 'opacity 0.3s'
+                  }}
+                  onMouseEnter={(e) => (e.target.style.opacity = '0.9')}
+                  onMouseLeave={(e) => (e.target.style.opacity = '1')}
                 >
                   + Create Character
                 </button>
               </div>
 
               {characters.length === 0 ? (
-                <div className="bg-gray-50 rounded-lg p-8 text-center border-2 border-dashed border-gray-300">
-                  <p className="text-gray-600 mb-4">You don't have any characters yet.</p>
-                  <p className="text-gray-500 text-sm">Create your first character to begin your adventure in Evomanias.</p>
+                <div style={{
+                  background: 'rgba(0, 0, 0, 0.2)',
+                  borderRadius: '8px',
+                  padding: '2rem',
+                  textAlign: 'center',
+                  border: '2px dashed rgba(124, 184, 255, 0.3)'
+                }}>
+                  <p style={{
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    marginBottom: '1rem'
+                  }}>
+                    You don't have any characters yet.
+                  </p>
+                  <p style={{
+                    color: 'rgba(255, 255, 255, 0.5)',
+                    fontSize: '0.875rem'
+                  }}>
+                    Create your first character to begin your adventure in Evomanias.
+                  </p>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                  gap: '1rem'
+                }}>
                   {characters.map((char) => (
                     <Link
                       key={char.id}
                       href={`/evomanias/character/${char.id}`}
-                      className="bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-200 p-6 rounded-lg hover:shadow-md transition cursor-pointer"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(124, 184, 255, 0.1) 0%, rgba(90, 159, 230, 0.05) 100%)',
+                        border: '1px solid rgba(124, 184, 255, 0.3)',
+                        padding: '1.5rem',
+                        borderRadius: '8px',
+                        transition: 'all 0.3s',
+                        cursor: 'pointer',
+                        textDecoration: 'none',
+                        color: 'white',
+                        display: 'flex',
+                        flexDirection: 'column'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(124, 184, 255, 0.6)';
+                        e.currentTarget.style.background = 'linear-gradient(135deg, rgba(124, 184, 255, 0.15) 0%, rgba(90, 159, 230, 0.08) 100%)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(124, 184, 255, 0.3)';
+                        e.currentTarget.style.background = 'linear-gradient(135deg, rgba(124, 184, 255, 0.1) 0%, rgba(90, 159, 230, 0.05) 100%)';
+                      }}
                     >
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">{char.name}</h3>
-                      <div className="space-y-1 text-sm text-gray-600 mb-4">
-                        <p>Level <span className="font-semibold text-gray-900">{char.level || 1}</span></p>
-                        <p>Vocation <span className="font-semibold text-gray-900">{char.vocation}</span></p>
-                        <p>Experience <span className="font-semibold text-gray-900">{(char.experience || 0).toLocaleString()}</span></p>
+                      <h3 style={{
+                        fontSize: '1.1rem',
+                        fontWeight: 'bold',
+                        marginBottom: '0.5rem',
+                        color: '#7cb8ff'
+                      }}>
+                        {char.name}
+                      </h3>
+                      <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.25rem',
+                        fontSize: '0.875rem',
+                        color: 'rgba(255, 255, 255, 0.7)',
+                        marginBottom: '1rem'
+                      }}>
+                        <p>Level <span style={{ fontWeight: '600', color: 'white' }}>{char.level || 1}</span></p>
+                        <p>Vocation <span style={{ fontWeight: '600', color: 'white' }}>{char.vocation}</span></p>
+                        <p>Experience <span style={{ fontWeight: '600', color: 'white' }}>{(char.experience || 0).toLocaleString()}</span></p>
                       </div>
-                      <p className="text-xs text-gray-500">Click to view details</p>
+                      <p style={{
+                        fontSize: '0.75rem',
+                        color: 'rgba(255, 255, 255, 0.5)'
+                      }}>
+                        Click to view details
+                      </p>
                     </Link>
                   ))}
                 </div>
@@ -192,35 +357,101 @@ export default function EvomaniasAccount() {
 
             {/* Create Character Modal */}
             {showCreateModal && (
-              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Create Character</h3>
+              <div style={{
+                position: 'fixed',
+                inset: 0,
+                background: 'rgba(0, 0, 0, 0.8)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                zIndex: 50,
+                padding: '1rem'
+              }}>
+                <div style={{
+                  background: 'rgba(20, 20, 25, 0.95)',
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
+                  maxWidth: '28rem',
+                  width: '100%',
+                  padding: '2rem',
+                  border: '1px solid rgba(124, 184, 255, 0.2)'
+                }}>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: 'bold',
+                    color: 'white',
+                    marginBottom: '1rem'
+                  }}>
+                    Create Character
+                  </h3>
 
                   {createError && (
-                    <div className="bg-red-50 border border-red-300 text-red-800 px-4 py-3 rounded-lg mb-4 text-sm">
+                    <div style={{
+                      background: 'rgba(239, 68, 68, 0.1)',
+                      border: '1px solid rgba(239, 68, 68, 0.3)',
+                      color: '#ff6b6b',
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      marginBottom: '1rem',
+                      fontSize: '0.875rem'
+                    }}>
                       {createError}
                     </div>
                   )}
 
-                  <form onSubmit={handleCreateCharacter} className="space-y-4">
+                  <form onSubmit={handleCreateCharacter} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Character Name</label>
+                      <label style={{
+                        display: 'block',
+                        fontSize: '0.875rem',
+                        fontWeight: '600',
+                        color: 'rgba(255, 255, 255, 0.8)',
+                        marginBottom: '0.5rem'
+                      }}>
+                        Character Name
+                      </label>
                       <input
                         type="text"
                         value={characterForm.name}
                         onChange={(e) => setCharacterForm({ ...characterForm, name: e.target.value })}
                         placeholder="Enter character name"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.75rem 1rem',
+                          background: 'rgba(0, 0, 0, 0.3)',
+                          border: '1px solid rgba(124, 184, 255, 0.2)',
+                          borderRadius: '8px',
+                          color: 'white',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                         required
                         disabled={createLoading}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Choose Your Class</label>
+                      <label style={{
+                        display: 'block',
+                        fontSize: '0.875rem',
+                        fontWeight: '600',
+                        color: 'rgba(255, 255, 255, 0.8)',
+                        marginBottom: '0.5rem'
+                      }}>
+                        Choose Your Class
+                      </label>
                       <select
                         value={characterForm.vocation}
                         onChange={(e) => setCharacterForm({ ...characterForm, vocation: e.target.value })}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.75rem 1rem',
+                          background: 'rgba(0, 0, 0, 0.3)',
+                          border: '1px solid rgba(124, 184, 255, 0.2)',
+                          borderRadius: '8px',
+                          color: 'white',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                         disabled={createLoading}
                       >
                         <option value="Knight">🗡️ Knight - Master of defense and combat</option>
@@ -229,11 +460,22 @@ export default function EvomaniasAccount() {
                         <option value="Sorcerer">⚡ Sorcerer - Master of spells</option>
                       </select>
                     </div>
-                    <div className="flex gap-3">
+                    <div style={{ display: 'flex', gap: '0.75rem' }}>
                       <button
                         type="submit"
                         disabled={createLoading}
-                        className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 rounded-lg font-semibold hover:opacity-90 transition disabled:opacity-50"
+                        style={{
+                          flex: 1,
+                          background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+                          color: 'white',
+                          padding: '0.75rem 1rem',
+                          borderRadius: '8px',
+                          fontWeight: '600',
+                          border: 'none',
+                          cursor: createLoading ? 'not-allowed' : 'pointer',
+                          opacity: createLoading ? 0.6 : 1,
+                          transition: 'all 0.3s'
+                        }}
                       >
                         {createLoading ? 'Creating...' : 'Create'}
                       </button>
@@ -241,7 +483,18 @@ export default function EvomaniasAccount() {
                         type="button"
                         onClick={() => setShowCreateModal(false)}
                         disabled={createLoading}
-                        className="flex-1 bg-gray-200 text-gray-900 py-2 rounded-lg font-semibold hover:bg-gray-300 transition disabled:opacity-50"
+                        style={{
+                          flex: 1,
+                          background: 'rgba(255, 255, 255, 0.1)',
+                          color: 'white',
+                          padding: '0.75rem 1rem',
+                          borderRadius: '8px',
+                          fontWeight: '600',
+                          border: '1px solid rgba(255, 255, 255, 0.2)',
+                          cursor: createLoading ? 'not-allowed' : 'pointer',
+                          opacity: createLoading ? 0.6 : 1,
+                          transition: 'all 0.3s'
+                        }}
                       >
                         Cancel
                       </button>
@@ -252,27 +505,61 @@ export default function EvomaniasAccount() {
             )}
 
             {/* Navigation Links */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: '1rem',
+              marginBottom: '2rem'
+            }}>
               <Link
                 href="/evomanias/highscores"
-                className="bg-blue-50 border border-blue-200 p-4 rounded-lg hover:bg-blue-100 transition text-center"
+                style={{
+                  background: 'rgba(124, 184, 255, 0.1)',
+                  border: '1px solid rgba(124, 184, 255, 0.3)',
+                  padding: '1rem',
+                  borderRadius: '8px',
+                  textAlign: 'center',
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  color: 'white',
+                  transition: 'all 0.3s'
+                }}
               >
-                <p className="font-semibold text-blue-900">View Highscores</p>
-                <p className="text-sm text-blue-700">See the top players</p>
+                <p style={{ fontWeight: '600', color: '#7cb8ff' }}>View Highscores</p>
+                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>See the top players</p>
               </Link>
               <Link
                 href="/evomanias"
-                className="bg-purple-50 border border-purple-200 p-4 rounded-lg hover:bg-purple-100 transition text-center"
+                style={{
+                  background: 'rgba(124, 184, 255, 0.1)',
+                  border: '1px solid rgba(124, 184, 255, 0.3)',
+                  padding: '1rem',
+                  borderRadius: '8px',
+                  textAlign: 'center',
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  color: 'white',
+                  transition: 'all 0.3s'
+                }}
               >
-                <p className="font-semibold text-purple-900">Return to Home</p>
-                <p className="text-sm text-purple-700">Back to main page</p>
+                <p style={{ fontWeight: '600', color: '#7cb8ff' }}>Return to Home</p>
+                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>Back to main page</p>
               </Link>
               <button
                 onClick={handleSignOut}
-                className="bg-red-50 border border-red-200 p-4 rounded-lg hover:bg-red-100 transition text-center cursor-pointer"
+                style={{
+                  background: 'rgba(239, 68, 68, 0.1)',
+                  border: '1px solid rgba(239, 68, 68, 0.3)',
+                  padding: '1rem',
+                  borderRadius: '8px',
+                  textAlign: 'center',
+                  cursor: 'pointer',
+                  color: 'white',
+                  transition: 'all 0.3s'
+                }}
               >
-                <p className="font-semibold text-red-900">Sign Out</p>
-                <p className="text-sm text-red-700">Exit your account</p>
+                <p style={{ fontWeight: '600', color: '#ff6b6b' }}>Sign Out</p>
+                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>Exit your account</p>
               </button>
             </div>
           </div>

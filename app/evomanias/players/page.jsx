@@ -52,8 +52,12 @@ export default function PlayersPage() {
     : players;
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white p-4">
-      <div className="max-w-7xl mx-auto">
+    <main style={{
+      minHeight: '100vh',
+      color: 'white',
+      padding: '2rem 1rem'
+    }}>
+      <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
         {/* Header */}
         <div style={{
           marginBottom: '2rem',
