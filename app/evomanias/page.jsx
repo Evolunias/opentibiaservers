@@ -180,22 +180,14 @@ export default function EvomaniasHome() {
           left: 0,
           width: '100%',
           height: '100%',
-          background: `
-            radial-gradient(ellipse at 20% 50%, rgba(229, 231, 235, 0.6) 0%, transparent 50%),
-            radial-gradient(ellipse at 80% 20%, rgba(243, 244, 246, 0.6) 0%, transparent 50%),
-            linear-gradient(180deg, #ffffff 0%, #f9fafb 40%, #f3f4f6 100%)
-          `,
-          filter: 'blur(2px)'
+          background: '#ffffff'
         }} />
 
         <div style={{
           position: 'absolute',
           width: '200%',
           height: '200%',
-          background: `
-            radial-gradient(circle at 30% 40%, rgba(239, 68, 68, 0.05) 0%, transparent 40%),
-            radial-gradient(circle at 70% 60%, rgba(37, 99, 235, 0.05) 0%, transparent 40%)
-          `,
+          background: 'transparent',
           animation: 'float 40s ease-in-out infinite',
           left: -scrollY * 0.3,
           top: -scrollY * 0.2
@@ -205,13 +197,14 @@ export default function EvomaniasHome() {
           position: 'absolute',
           width: '1200px',
           height: '1200px',
-          background: 'radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(239, 68, 68, 0.08) 50%, transparent 100%)',
+          background: 'radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%)',
           borderRadius: '50%',
           left: mousePos.x - 600,
           top: mousePos.y - 600,
           transition: 'all 0.5s ease-out',
           filter: 'blur(100px)',
-          pointerEvents: 'none'
+          pointerEvents: 'none',
+          opacity: 0.6
         }} />
 
         {isClient && particles.map((p, i) => (
@@ -271,8 +264,9 @@ export default function EvomaniasHome() {
             transform: 'translateX(-50%)',
             width: '150%',
             height: '150%',
-            background: 'radial-gradient(ellipse at center, rgba(37, 99, 235, 0.12) 0%, transparent 70%)',
-            filter: 'blur(60px)'
+            background: 'radial-gradient(ellipse at center, rgba(37, 99, 235, 0.06) 0%, transparent 70%)',
+            filter: 'blur(60px)',
+            opacity: 0.5
           }} />
 
           <h1 style={{
@@ -365,10 +359,9 @@ export default function EvomaniasHome() {
               <div style={{
                 fontSize: '3rem',
                 fontWeight: 900,
-                background: 'linear-gradient(135deg, #2563eb, #1d4ed8)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                color: '#1f2937',
+                textShadow: '0 2px 8px rgba(37, 99, 235, 0.15)',
+                letterSpacing: '1px'
               }}>
                 {serverStats.onlinePlayers.toLocaleString()}
               </div>
@@ -378,10 +371,9 @@ export default function EvomaniasHome() {
               <div style={{
                 fontSize: '3rem',
                 fontWeight: 900,
-                background: 'linear-gradient(135deg, #dc2626, #ea580c)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                color: '#1f2937',
+                textShadow: '0 2px 8px rgba(239, 68, 68, 0.15)',
+                letterSpacing: '1px'
               }}>
                 {serverStats.totalCharacters.toLocaleString()}
               </div>
@@ -395,8 +387,8 @@ export default function EvomaniasHome() {
         {/* TOP WARRIORS SECTION */}
         <section style={{
           padding: '8rem 2rem',
-          background: 'linear-gradient(180deg, rgba(249, 250, 251, 0.8) 0%, rgba(26, 26, 62, 0.9) 100%)',
-          borderTop: '2px solid rgba(37, 99, 235, 0.4)',
+          background: '#ffffff',
+          borderTop: '1px solid rgba(31, 41, 55, 0.08)',
           position: 'relative'
         }}>
           <div style={{ maxWidth: '1300px', margin: '0 auto' }}>

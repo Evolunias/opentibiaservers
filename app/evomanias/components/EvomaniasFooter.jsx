@@ -119,11 +119,7 @@ export default function EvomaniasFooter() {
           gap: '1rem',
           justifyContent: 'space-between',
           alignItems: 'center',
-          textAlign: 'center',
-          '@media (min-width: 768px)': {
-            flexDirection: 'row',
-            textAlign: 'left'
-          }
+          textAlign: 'center'
         }}>
           <p style={{ margin: 0, fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.7)' }}>
             © {currentYear} EVOMANIAS. All rights reserved.

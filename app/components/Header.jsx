@@ -7,43 +7,154 @@ export default function Header() {
   const { user, loading } = useAuth();
 
   return (
-    <header className="bg-white border-b border-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-6">
-        <div className="flex items-center justify-between mb-4">
-          <Link href="/" className="flex items-center gap-3 hover:opacity-80">
-            <div className="w-10 h-10 bg-gray-200 rounded flex items-center justify-center font-bold text-xl">⚔️</div>
-            <h1 className="text-2xl font-bold text-gray-900">Open Tibia Servers</h1>
+    <header style={{
+      background: 'rgba(255, 255, 255, 0.92)',
+      backdropFilter: 'blur(12px)',
+      borderBottom: '1px solid rgba(31, 41, 55, 0.08)',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+      position: 'sticky',
+      top: 0,
+      zIndex: 100
+    }}>
+      <div className="max-w-7xl mx-auto px-6 py-5">
+        <div className="flex items-center justify-between mb-3">
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <div style={{
+              width: '40px',
+              height: '40px',
+              background: 'rgba(31, 41, 55, 0.08)',
+              borderRadius: '2px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontWeight: 700,
+              fontSize: '1.2rem',
+              color: '#1f2937'
+            }}>
+              ⚔️
+            </div>
+            <h1 style={{
+              fontSize: '1.3rem',
+              fontWeight: 600,
+              color: '#1f2937',
+              margin: 0,
+              letterSpacing: '0.5px'
+            }}>
+              Open Tibia Servers
+            </h1>
           </Link>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             {!loading && (
               <>
                 {user ? (
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
                     <Link
                       href="/submit-server"
-                      className="px-4 py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-700"
+                      style={{
+                        padding: '0.6rem 1.2rem',
+                        background: '#1f2937',
+                        color: '#ffffff',
+                        fontWeight: 600,
+                        fontSize: '0.85rem',
+                        borderRadius: '2px',
+                        textDecoration: 'none',
+                        transition: 'all 0.3s ease',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        display: 'inline-block',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.boxShadow = '0 4px 12px rgba(31, 41, 55, 0.2)';
+                        e.target.style.transform = 'translateY(-1px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.boxShadow = 'none';
+                        e.target.style.transform = 'translateY(0)';
+                      }}
                     >
-                      Submit Server
+                      Submit
                     </Link>
                     <Link
                       href="/dashboard"
-                      className="px-4 py-2 bg-gray-700 text-white font-medium rounded hover:bg-gray-800"
+                      style={{
+                        padding: '0.6rem 1.2rem',
+                        background: 'rgba(31, 41, 55, 0.06)',
+                        color: '#1f2937',
+                        fontWeight: 600,
+                        fontSize: '0.85rem',
+                        border: '1px solid rgba(31, 41, 55, 0.15)',
+                        borderRadius: '2px',
+                        textDecoration: 'none',
+                        transition: 'all 0.3s ease',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        display: 'inline-block',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.background = 'rgba(31, 41, 55, 0.12)';
+                        e.target.style.boxShadow = '0 2px 8px rgba(31, 41, 55, 0.08)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.background = 'rgba(31, 41, 55, 0.06)';
+                        e.target.style.boxShadow = 'none';
+                      }}
                     >
                       Dashboard
                     </Link>
                   </div>
                 ) : (
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
                     <Link
                       href="/auth/login"
-                      className="px-4 py-2 text-blue-600 font-medium hover:text-blue-700"
+                      style={{
+                        padding: '0.6rem 1.2rem',
+                        color: '#1f2937',
+                        fontWeight: 600,
+                        fontSize: '0.85rem',
+                        textDecoration: 'none',
+                        transition: 'all 0.3s ease',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        display: 'inline-block',
+                        cursor: 'pointer',
+                        borderBottom: '1.5px solid transparent'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.borderBottomColor = '#1f2937';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.borderBottomColor = 'transparent';
+                      }}
                     >
                       Sign In
                     </Link>
                     <Link
                       href="/auth/register"
-                      className="px-4 py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-700"
+                      style={{
+                        padding: '0.6rem 1.2rem',
+                        background: '#1f2937',
+                        color: '#ffffff',
+                        fontWeight: 600,
+                        fontSize: '0.85rem',
+                        borderRadius: '2px',
+                        textDecoration: 'none',
+                        transition: 'all 0.3s ease',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        display: 'inline-block',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.boxShadow = '0 4px 12px rgba(31, 41, 55, 0.2)';
+                        e.target.style.transform = 'translateY(-1px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.boxShadow = 'none';
+                        e.target.style.transform = 'translateY(0)';
+                      }}
                     >
                       Register
                     </Link>
@@ -53,7 +164,9 @@ export default function Header() {
             )}
           </div>
         </div>
-        <p className="text-gray-600 text-sm">Browse and compare open Tibia servers with comprehensive stats and details</p>
+        <p style={{ color: 'rgba(71, 85, 105, 0.6)', fontSize: '0.9rem', margin: 0, fontWeight: 400 }}>
+          Curated premium servers. Excellence in every detail.
+        </p>
       </div>
     </header>
   );
