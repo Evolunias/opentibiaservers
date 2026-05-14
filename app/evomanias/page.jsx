@@ -305,25 +305,19 @@ export default function EvomaniasHome() {
               <>
                 <Link href="/evomanias/register" style={ButtonStyle(true)} className="epic-btn"
                   onMouseEnter={(e) => {
-                    e.target.style.boxShadow = '0 0 60px rgba(37, 99, 235, 1)';
-                    e.target.style.transform = 'scale(1.08)';
+                    e.target.style.opacity = '0.9';
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.boxShadow = '0 0 30px rgba(37, 99, 235, 0.7)';
-                    e.target.style.transform = 'scale(1)';
+                    e.target.style.opacity = '1';
                   }}>
                   Begin
                 </Link>
                 <Link href="/evomanias/login" style={ButtonStyle(false)}
                   onMouseEnter={(e) => {
-                    e.target.style.background = 'rgba(37, 99, 235, 0.2)';
-                    e.target.style.boxShadow = '0 0 50px rgba(37, 99, 235, 0.8)';
-                    e.target.style.transform = 'scale(1.08)';
+                    e.target.style.opacity = '0.9';
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.background = 'rgba(37, 99, 235, 0.1)';
-                    e.target.style.boxShadow = '0 0 20px rgba(37, 99, 235, 0.4)';
-                    e.target.style.transform = 'scale(1)';
+                    e.target.style.opacity = '1';
                   }}>
                   Sign In
                 </Link>
@@ -448,15 +442,11 @@ export default function EvomaniasHome() {
                     }}
                     onMouseEnter={(e) => {
                       const el = e.currentTarget;
-                      el.style.boxShadow = idx === 0
-                        ? '0 0 50px rgba(255, 215, 0, 0.6)'
-                        : '0 0 50px rgba(37, 99, 235, 0.8)';
-                      el.style.transform = 'translateY(-10px)';
+                      el.style.opacity = '0.95';
                     }}
                     onMouseLeave={(e) => {
                       const el = e.currentTarget;
-                      el.style.boxShadow = 'none';
-                      el.style.transform = 'translateY(0)';
+                      el.style.opacity = '1';
                     }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '1rem' }}>

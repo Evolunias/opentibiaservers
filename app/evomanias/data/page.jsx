@@ -163,14 +163,10 @@ export default function DataExplorerPage() {
                   cursor: 'pointer'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(20, 20, 30, 0.95)';
-                  e.currentTarget.style.borderColor = 'rgba(124, 184, 255, 0.4)';
-                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.opacity = '0.9';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(20, 20, 30, 0.8)';
-                  e.currentTarget.style.borderColor = 'rgba(124, 184, 255, 0.2)';
-                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.opacity = '1';
                 }}
               >
                 <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>
@@ -246,12 +242,10 @@ export default function DataExplorerPage() {
                     cursor: 'pointer'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(124, 184, 255, 0.4)';
-                    e.currentTarget.style.background = 'rgba(124, 184, 255, 0.05)';
+                    e.currentTarget.style.opacity = '0.9';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(124, 184, 255, 0.2)';
-                    e.currentTarget.style.background = 'rgba(20, 20, 30, 0.8)';
+                    e.currentTarget.style.opacity = '1';
                   }}
                 >
                   <div style={{

@@ -59,19 +59,17 @@ export default function Header() {
                         fontSize: '0.85rem',
                         borderRadius: '2px',
                         textDecoration: 'none',
-                        transition: 'all 0.3s ease',
+                        transition: 'opacity 0.2s ease',
                         textTransform: 'uppercase',
                         letterSpacing: '0.5px',
                         display: 'inline-block',
                         cursor: 'pointer'
                       }}
                       onMouseEnter={(e) => {
-                        e.target.style.boxShadow = '0 4px 12px rgba(31, 41, 55, 0.2)';
-                        e.target.style.transform = 'translateY(-1px)';
+                        e.target.style.opacity = '0.85';
                       }}
                       onMouseLeave={(e) => {
-                        e.target.style.boxShadow = 'none';
-                        e.target.style.transform = 'translateY(0)';
+                        e.target.style.opacity = '1';
                       }}
                     >
                       Submit
@@ -87,19 +85,17 @@ export default function Header() {
                         border: '1px solid rgba(31, 41, 55, 0.15)',
                         borderRadius: '2px',
                         textDecoration: 'none',
-                        transition: 'all 0.3s ease',
+                        transition: 'opacity 0.2s ease',
                         textTransform: 'uppercase',
                         letterSpacing: '0.5px',
                         display: 'inline-block',
                         cursor: 'pointer'
                       }}
                       onMouseEnter={(e) => {
-                        e.target.style.background = 'rgba(31, 41, 55, 0.12)';
-                        e.target.style.boxShadow = '0 2px 8px rgba(31, 41, 55, 0.08)';
+                        e.target.style.opacity = '0.85';
                       }}
                       onMouseLeave={(e) => {
-                        e.target.style.background = 'rgba(31, 41, 55, 0.06)';
-                        e.target.style.boxShadow = 'none';
+                        e.target.style.opacity = '1';
                       }}
                     >
                       Dashboard
@@ -115,18 +111,17 @@ export default function Header() {
                         fontWeight: 600,
                         fontSize: '0.85rem',
                         textDecoration: 'none',
-                        transition: 'all 0.3s ease',
+                        transition: 'opacity 0.2s ease',
                         textTransform: 'uppercase',
                         letterSpacing: '0.5px',
                         display: 'inline-block',
-                        cursor: 'pointer',
-                        borderBottom: '1.5px solid transparent'
+                        cursor: 'pointer'
                       }}
                       onMouseEnter={(e) => {
-                        e.target.style.borderBottomColor = '#1f2937';
+                        e.target.style.opacity = '0.85';
                       }}
                       onMouseLeave={(e) => {
-                        e.target.style.borderBottomColor = 'transparent';
+                        e.target.style.opacity = '1';
                       }}
                     >
                       Sign In
@@ -141,19 +136,17 @@ export default function Header() {
                         fontSize: '0.85rem',
                         borderRadius: '2px',
                         textDecoration: 'none',
-                        transition: 'all 0.3s ease',
+                        transition: 'opacity 0.2s ease',
                         textTransform: 'uppercase',
                         letterSpacing: '0.5px',
                         display: 'inline-block',
                         cursor: 'pointer'
                       }}
                       onMouseEnter={(e) => {
-                        e.target.style.boxShadow = '0 4px 12px rgba(31, 41, 55, 0.2)';
-                        e.target.style.transform = 'translateY(-1px)';
+                        e.target.style.opacity = '0.85';
                       }}
                       onMouseLeave={(e) => {
-                        e.target.style.boxShadow = 'none';
-                        e.target.style.transform = 'translateY(0)';
+                        e.target.style.opacity = '1';
                       }}
                     >
                       Register

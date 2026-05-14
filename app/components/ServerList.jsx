@@ -32,7 +32,7 @@ export default function ServerList({ servers }) {
           {servers.map((server) => (
             <tr key={server.id} className="border-b border-gray-200 hover:bg-gray-50">
               <td className="px-4 py-3">
-                <Link href={`/server/${server.id}`} className="hover:text-blue-600">
+                <Link href={`/server/${server.id}`} className="hover:opacity-75 transition-opacity">
                   <div className="font-semibold text-gray-900">{server.name}</div>
                   <div className="text-xs text-gray-600">{server.ip}:{server.port}</div>
                 </Link>

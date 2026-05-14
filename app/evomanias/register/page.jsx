@@ -139,7 +139,7 @@ export default function EvomaniasRegister() {
             <div className="mt-6 pt-6 border-t border-gray-800 text-center">
               <p className="text-gray-400 mb-3">
                 Already have an account?{' '}
-                <Link href="/evomanias/login" className="text-purple-400 font-semibold hover:text-purple-300 transition">
+                <Link href="/evomanias/login" className="text-purple-400 font-semibold hover:opacity-80 transition">
                   Sign in
                 </Link>
               </p>
