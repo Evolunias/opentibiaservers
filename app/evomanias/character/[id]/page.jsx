@@ -35,26 +35,43 @@ export default function CharacterDetail() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="flex items-center justify-center py-20">
-            <div className="text-center">
-              <div className="w-12 h-12 border-4 border-gray-200 border-t-purple-600 rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading character...</p>
-            </div>
-          </div>
-        </div>
+      <main style={{
+        minHeight: '100vh',
+        color: 'white',
+        padding: '3rem 1.5rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <p>Loading character...</p>
       </main>
     );
   }
 
   if (error || !character) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-            <p className="text-gray-600 mb-4">{error || 'Character not found'}</p>
-            <Link href="/evomanias/highscores" className="text-purple-600 font-semibold hover:underline">
+      <main style={{
+        color: 'white',
+        padding: '3rem 1.5rem'
+      }}>
+        <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
+          <div style={{
+            background: 'rgba(20, 20, 25, 0.85)',
+            backdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '12px',
+            padding: '2rem',
+            textAlign: 'center',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
+          }}>
+            <p style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '1rem' }}>
+              {error || 'Character not found'}
+            </p>
+            <Link href="/evomanias/highscores" style={{
+              color: '#7cb8ff',
+              fontWeight: '600',
+              textDecoration: 'none'
+            }}>
               Back to Highscores
             </Link>
           </div>
@@ -74,97 +91,223 @@ export default function CharacterDetail() {
   const vocInfo = vocations[character.vocation] || vocations.Knight;
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          {/* Header with gradient background */}
-          <div className={`bg-gradient-to-r ${vocInfo.color} text-white p-8`}>
-            <Link href="/evomanias/highscores" className="text-white/80 hover:text-white text-sm mb-4 inline-block">
+    <main style={{ color: 'white', padding: '3rem 1.5rem' }}>
+      <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
+        <div style={{
+          background: 'rgba(20, 20, 25, 0.85)',
+          backdropFilter: 'blur(12px)',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
+        }}>
+          {/* Header */}
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(124, 184, 255, 0.15) 0%, rgba(90, 159, 230, 0.1) 100%)',
+            borderBottom: '1px solid rgba(124, 184, 255, 0.2)',
+            padding: '2rem'
+          }}>
+            <Link href="/evomanias/highscores" style={{
+              color: 'rgba(255, 255, 255, 0.7)',
+              fontSize: '0.875rem',
+              display: 'inline-block',
+              marginBottom: '1rem',
+              textDecoration: 'none'
+            }}>
               ← Back to Highscores
             </Link>
-            <div className="flex items-start justify-between">
+            <div style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'space-between'
+            }}>
               <div>
-                <div className="text-5xl mb-3">{vocInfo.icon}</div>
-                <h1 className="text-4xl font-bold mb-2">{character.name}</h1>
-                <p className="text-xl opacity-90">{character.vocation}</p>
+                <div style={{ fontSize: '3rem', marginBottom: '0.75rem' }}>{vocInfo.icon}</div>
+                <h1 style={{
+                  fontSize: '2.25rem',
+                  fontWeight: 'bold',
+                  marginBottom: '0.5rem',
+                  background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}>
+                  {character.name}
+                </h1>
+                <p style={{ fontSize: '1.1rem', color: 'rgba(255, 255, 255, 0.7)' }}>
+                  {character.vocation}
+                </p>
               </div>
-              <div className="text-right">
-                <div className="text-5xl font-bold">{character.level || 1}</div>
-                <p className="text-sm opacity-90">Level</p>
+              <div style={{ textAlign: 'right' }}>
+                <div style={{
+                  fontSize: '3rem',
+                  fontWeight: 'bold',
+                  color: '#7cb8ff'
+                }}>
+                  {character.level || 1}
+                </div>
+                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>Level</p>
               </div>
             </div>
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8 border-b">
-            <div className="space-y-4">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 p-6 rounded-lg">
-                <p className="text-sm text-blue-600 font-semibold mb-1">Experience</p>
-                <p className="text-3xl font-bold text-blue-900">{(character.experience || 0).toLocaleString()}</p>
-              </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '1.5rem',
+            padding: '2rem',
+            borderBottom: '1px solid rgba(124, 184, 255, 0.2)'
+          }}>
+            <div style={{
+              background: 'rgba(124, 184, 255, 0.1)',
+              border: '1px solid rgba(124, 184, 255, 0.3)',
+              padding: '1.5rem',
+              borderRadius: '8px'
+            }}>
+              <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)', fontWeight: '600', marginBottom: '0.5rem' }}>
+                Experience
+              </p>
+              <p style={{ fontSize: '1.75rem', fontWeight: 'bold', color: '#7cb8ff' }}>
+                {(character.experience || 0).toLocaleString()}
+              </p>
+            </div>
 
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 p-6 rounded-lg">
-                <p className="text-sm text-purple-600 font-semibold mb-1">World</p>
-                <p className="text-2xl font-bold text-purple-900">{character.world || 'Evomanias'}</p>
+            <div style={{
+              background: 'rgba(124, 184, 255, 0.1)',
+              border: '1px solid rgba(124, 184, 255, 0.3)',
+              padding: '1.5rem',
+              borderRadius: '8px'
+            }}>
+              <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)', fontWeight: '600', marginBottom: '0.5rem' }}>
+                World
+              </p>
+              <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#7cb8ff' }}>
+                {character.world || 'Evomanias'}
+              </p>
+            </div>
+
+            <div style={{
+              background: 'rgba(16, 185, 129, 0.1)',
+              border: '1px solid rgba(16, 185, 129, 0.3)',
+              padding: '1.5rem',
+              borderRadius: '8px'
+            }}>
+              <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)', fontWeight: '600', marginBottom: '0.5rem' }}>
+                Status
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <div style={{
+                  width: '12px',
+                  height: '12px',
+                  borderRadius: '50%',
+                  background: character.status === 'active' ? '#10b981' : '#ef4444'
+                }} />
+                <p style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#10b981', textTransform: 'capitalize' }}>
+                  {character.status || 'Active'}
+                </p>
               </div>
             </div>
 
-            <div className="space-y-4">
-              <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 p-6 rounded-lg">
-                <p className="text-sm text-green-600 font-semibold mb-1">Status</p>
-                <div className="flex items-center gap-2">
-                  <div className={`w-3 h-3 rounded-full ${character.status === 'active' ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                  <p className="text-2xl font-bold text-green-900 capitalize">{character.status || 'Active'}</p>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 p-6 rounded-lg">
-                <p className="text-sm text-amber-600 font-semibold mb-1">Last Login</p>
-                <p className="text-lg font-bold text-amber-900">
-                  {character.last_login 
-                    ? new Date(character.last_login).toLocaleDateString() 
-                    : 'Never'}
-                </p>
-              </div>
+            <div style={{
+              background: 'rgba(124, 184, 255, 0.1)',
+              border: '1px solid rgba(124, 184, 255, 0.3)',
+              padding: '1.5rem',
+              borderRadius: '8px'
+            }}>
+              <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)', fontWeight: '600', marginBottom: '0.5rem' }}>
+                Last Login
+              </p>
+              <p style={{ fontSize: '1rem', fontWeight: 'bold', color: '#7cb8ff' }}>
+                {character.last_login
+                  ? new Date(character.last_login).toLocaleDateString()
+                  : 'Never'}
+              </p>
             </div>
           </div>
 
           {/* Character Info */}
-          <div className="p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Character Information</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border-l-4 border-purple-500 pl-4">
-                <p className="text-sm text-gray-600 font-semibold mb-1">Created</p>
-                <p className="text-lg font-bold text-gray-900">
+          <div style={{ padding: '2rem' }}>
+            <h2 style={{
+              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              marginBottom: '1.5rem',
+              color: 'white'
+            }}>
+              Character Information
+            </h2>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: '1.5rem'
+            }}>
+              <div style={{
+                borderLeft: '4px solid #7cb8ff',
+                paddingLeft: '1rem'
+              }}>
+                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)', fontWeight: '600', marginBottom: '0.5rem' }}>
+                  Created
+                </p>
+                <p style={{ fontSize: '1rem', fontWeight: 'bold', color: 'white' }}>
                   {character.created ? new Date(character.created).toLocaleDateString() : 'Unknown'}
                 </p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
-                <p className="text-sm text-gray-600 font-semibold mb-1">Experience Rate</p>
-                <p className="text-lg font-bold text-gray-900">1.0x (Default)</p>
+              <div style={{
+                borderLeft: '4px solid #7cb8ff',
+                paddingLeft: '1rem'
+              }}>
+                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)', fontWeight: '600', marginBottom: '0.5rem' }}>
+                  Experience Rate
+                </p>
+                <p style={{ fontSize: '1rem', fontWeight: 'bold', color: 'white' }}>1.0x (Default)</p>
               </div>
-              <div className="border-l-4 border-green-500 pl-4">
-                <p className="text-sm text-gray-600 font-semibold mb-1">Skill Rate</p>
-                <p className="text-lg font-bold text-gray-900">1.0x (Default)</p>
+              <div style={{
+                borderLeft: '4px solid #7cb8ff',
+                paddingLeft: '1rem'
+              }}>
+                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)', fontWeight: '600', marginBottom: '0.5rem' }}>
+                  Skill Rate
+                </p>
+                <p style={{ fontSize: '1rem', fontWeight: 'bold', color: 'white' }}>1.0x (Default)</p>
               </div>
-              <div className="border-l-4 border-amber-500 pl-4">
-                <p className="text-sm text-gray-600 font-semibold mb-1">Magic Level Rate</p>
-                <p className="text-lg font-bold text-gray-900">1.0x (Default)</p>
+              <div style={{
+                borderLeft: '4px solid #7cb8ff',
+                paddingLeft: '1rem'
+              }}>
+                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)', fontWeight: '600', marginBottom: '0.5rem' }}>
+                  Magic Level Rate
+                </p>
+                <p style={{ fontSize: '1rem', fontWeight: 'bold', color: 'white' }}>1.0x (Default)</p>
               </div>
             </div>
           </div>
 
           {/* Footer Navigation */}
-          <div className="bg-gray-50 border-t p-6 flex justify-between">
+          <div style={{
+            background: 'rgba(0, 0, 0, 0.2)',
+            borderTop: '1px solid rgba(124, 184, 255, 0.2)',
+            padding: '1.5rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            gap: '1rem'
+          }}>
             <Link
               href="/evomanias/highscores"
-              className="text-purple-600 font-semibold hover:underline"
+              style={{
+                color: '#7cb8ff',
+                fontWeight: '600',
+                textDecoration: 'none'
+              }}
             >
               ← Highscores
             </Link>
             <Link
               href="/evomanias/account"
-              className="text-purple-600 font-semibold hover:underline"
+              style={{
+                color: '#7cb8ff',
+                fontWeight: '600',
+                textDecoration: 'none'
+              }}
             >
               My Account →
             </Link>

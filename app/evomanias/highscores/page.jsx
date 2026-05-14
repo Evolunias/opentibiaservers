@@ -41,37 +41,102 @@ export default function Highscores() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+    <main style={{ color: 'white', padding: '3rem 1.5rem' }}>
+      <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
+        <div style={{
+          background: 'rgba(20, 20, 25, 0.85)',
+          backdropFilter: 'blur(12px)',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
+        }}>
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8">
-            <h1 className="text-3xl font-bold mb-2">Highscores</h1>
-            <p className="opacity-90">Top players in Evomanias</p>
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(124, 184, 255, 0.15) 0%, rgba(90, 159, 230, 0.1) 100%)',
+            borderBottom: '1px solid rgba(124, 184, 255, 0.2)',
+            padding: '2rem'
+          }}>
+            <h1 style={{
+              fontSize: '2rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}>
+              Highscores
+            </h1>
+            <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+              Top players in Evomanias
+            </p>
           </div>
 
           {/* Filters */}
-          <div className="bg-gray-50 border-b p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div style={{
+            background: 'rgba(0, 0, 0, 0.2)',
+            borderBottom: '1px solid rgba(124, 184, 255, 0.2)',
+            padding: '1.5rem'
+          }}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: '1.5rem'
+            }}>
               {/* Search */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Search Character</label>
+                <label style={{
+                  display: 'block',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  color: 'rgba(255, 255, 255, 0.8)',
+                  marginBottom: '0.5rem'
+                }}>
+                  Search Character
+                </label>
                 <input
                   type="text"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Search by character name..."
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1rem',
+                    background: 'rgba(0, 0, 0, 0.3)',
+                    border: '1px solid rgba(124, 184, 255, 0.2)',
+                    borderRadius: '8px',
+                    color: 'white',
+                    fontSize: '0.875rem',
+                    outline: 'none'
+                  }}
                 />
               </div>
 
               {/* Vocation Filter */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Vocation</label>
+                <label style={{
+                  display: 'block',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  color: 'rgba(255, 255, 255, 0.8)',
+                  marginBottom: '0.5rem'
+                }}>
+                  Vocation
+                </label>
                 <select
                   value={selectedVocation}
                   onChange={(e) => setSelectedVocation(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1rem',
+                    background: 'rgba(0, 0, 0, 0.3)',
+                    border: '1px solid rgba(124, 184, 255, 0.2)',
+                    borderRadius: '8px',
+                    color: 'white',
+                    fontSize: '0.875rem',
+                    outline: 'none'
+                  }}
                 >
                   {vocations.map(voc => (
                     <option key={voc} value={voc}>{voc}</option>
@@ -83,58 +148,125 @@ export default function Highscores() {
 
           {/* Loading State */}
           {loading && (
-            <div className="flex items-center justify-center py-20">
-              <div className="text-center">
-                <div className="w-12 h-12 border-4 border-gray-200 border-t-purple-600 rounded-full animate-spin mx-auto mb-4"></div>
-                <p className="text-gray-600">Loading highscores...</p>
-              </div>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '3rem'
+            }}>
+              <p>Loading highscores...</p>
             </div>
           )}
 
           {/* Highscores Table */}
           {!loading && (
             <>
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead className="bg-gray-100 border-b">
-                    <tr>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Rank</th>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Character</th>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Vocation</th>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Level</th>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Experience</th>
+              <div style={{ overflowX: 'auto' }}>
+                <table style={{
+                  width: '100%',
+                  borderCollapse: 'collapse'
+                }}>
+                  <thead>
+                    <tr style={{
+                      background: 'rgba(124, 184, 255, 0.1)',
+                      borderBottom: '1px solid rgba(124, 184, 255, 0.2)'
+                    }}>
+                      <th style={{
+                        padding: '1rem',
+                        textAlign: 'left',
+                        fontWeight: '700',
+                        color: '#7cb8ff',
+                        fontSize: '0.875rem'
+                      }}>
+                        Rank
+                      </th>
+                      <th style={{
+                        padding: '1rem',
+                        textAlign: 'left',
+                        fontWeight: '700',
+                        color: '#7cb8ff',
+                        fontSize: '0.875rem'
+                      }}>
+                        Character
+                      </th>
+                      <th style={{
+                        padding: '1rem',
+                        textAlign: 'left',
+                        fontWeight: '700',
+                        color: '#7cb8ff',
+                        fontSize: '0.875rem'
+                      }}>
+                        Vocation
+                      </th>
+                      <th style={{
+                        padding: '1rem',
+                        textAlign: 'left',
+                        fontWeight: '700',
+                        color: '#7cb8ff',
+                        fontSize: '0.875rem'
+                      }}>
+                        Level
+                      </th>
+                      <th style={{
+                        padding: '1rem',
+                        textAlign: 'left',
+                        fontWeight: '700',
+                        color: '#7cb8ff',
+                        fontSize: '0.875rem'
+                      }}>
+                        Experience
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {highscores.map((entry, idx) => (
                       <tr
                         key={entry.id}
-                        className={`border-b transition ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-blue-50`}
+                        style={{
+                          borderBottom: '1px solid rgba(124, 184, 255, 0.1)',
+                          background: idx % 2 === 0 ? 'transparent' : 'rgba(124, 184, 255, 0.02)',
+                          transition: 'background 0.3s'
+                        }}
                       >
-                        <td className="px-6 py-4">
-                          <div className="flex items-center">
-                            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-white ${
-                              idx === 0 ? 'bg-yellow-500' :
-                              idx === 1 ? 'bg-gray-400' :
-                              idx === 2 ? 'bg-amber-600' :
-                              'bg-gray-500'
-                            }`}>
-                              {idx + 1}
-                            </div>
-                          </div>
+                        <td style={{
+                          padding: '1rem',
+                          fontWeight: '700',
+                          color: idx === 0 ? '#ffd700' : '#7cb8ff',
+                          fontSize: '0.875rem'
+                        }}>
+                          {idx === 0 ? '👑' : idx + 1}
                         </td>
-                        <td className="px-6 py-4 font-semibold text-gray-900">
-                          <Link href={`/evomanias/character/${entry.id}`} className="text-purple-600 hover:underline">
+                        <td style={{
+                          padding: '1rem',
+                          fontSize: '0.875rem'
+                        }}>
+                          <Link href={`/evomanias/character/${entry.id}`} style={{
+                            color: '#7cb8ff',
+                            textDecoration: 'none'
+                          }}>
                             {entry.name}
                           </Link>
                         </td>
-                        <td className="px-6 py-4 text-gray-600">{entry.vocation}</td>
-                        <td className="px-6 py-4">
-                          <span className="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm font-semibold">
-                            {entry.level || 1}
-                          </span>
+                        <td style={{
+                          padding: '1rem',
+                          fontSize: '0.875rem'
+                        }}>
+                          {entry.vocation}
                         </td>
-                        <td className="px-6 py-4 text-gray-600">{(entry.experience || 0).toLocaleString()}</td>
+                        <td style={{
+                          padding: '1rem',
+                          fontSize: '0.875rem',
+                          fontWeight: '600'
+                        }}>
+                          {entry.level || 1}
+                        </td>
+                        <td style={{
+                          padding: '1rem',
+                          fontSize: '0.875rem',
+                          color: 'rgba(255, 255, 255, 0.7)'
+                        }}>
+                          {(entry.experience || 0).toLocaleString()}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -142,24 +274,44 @@ export default function Highscores() {
               </div>
 
               {highscores.length === 0 && (
-                <div className="text-center py-12 bg-gray-50">
-                  <p className="text-gray-600">No highscores match your filters</p>
+                <div style={{
+                  textAlign: 'center',
+                  padding: '3rem',
+                  background: 'rgba(0, 0, 0, 0.2)',
+                  color: 'rgba(255, 255, 255, 0.6)'
+                }}>
+                  No highscores match your filters
                 </div>
               )}
             </>
           )}
 
           {/* Footer Navigation */}
-          <div className="bg-gray-50 border-t p-6 flex justify-between">
+          <div style={{
+            background: 'rgba(0, 0, 0, 0.2)',
+            borderTop: '1px solid rgba(124, 184, 255, 0.2)',
+            padding: '1.5rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            gap: '1rem'
+          }}>
             <Link
               href="/evomanias"
-              className="text-purple-600 font-semibold hover:underline"
+              style={{
+                color: '#7cb8ff',
+                fontWeight: '600',
+                textDecoration: 'none'
+              }}
             >
               ← Back to Home
             </Link>
             <Link
               href="/evomanias/account"
-              className="text-purple-600 font-semibold hover:underline"
+              style={{
+                color: '#7cb8ff',
+                fontWeight: '600',
+                textDecoration: 'none'
+              }}
             >
               My Account →
             </Link>

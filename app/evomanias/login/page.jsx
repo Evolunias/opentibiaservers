@@ -45,44 +45,130 @@ export default function EvomaniasLogin() {
   return (
     <main className="min-h-screen flex items-center justify-center px-6 py-12">
       <div className="w-full max-w-md">
-        <div className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
+        <div style={{
+          background: 'rgba(20, 20, 25, 0.85)',
+          backdropFilter: 'blur(12px)',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
+        }}>
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-8 text-center">
-            <h1 className="text-3xl font-bold mb-2">Welcome Back</h1>
-            <p className="text-purple-100">Sign in to your EVOMANIAS account</p>
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(124, 184, 255, 0.15) 0%, rgba(90, 159, 230, 0.1) 100%)',
+            borderBottom: '1px solid rgba(124, 184, 255, 0.2)',
+            padding: '2rem',
+            textAlign: 'center'
+          }}>
+            <h1 style={{
+              fontSize: '2rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}>
+              Welcome Back
+            </h1>
+            <p style={{
+              color: 'rgba(124, 184, 255, 0.8)'
+            }}>
+              Sign in to your EVOMANIAS account
+            </p>
           </div>
 
           {/* Form */}
-          <div className="p-8">
+          <div style={{ padding: '2rem' }}>
             {error && (
-              <div className="bg-red-900/30 border border-red-600/50 text-red-300 px-4 py-3 rounded-lg mb-6 text-sm">
+              <div style={{
+                background: 'rgba(239, 68, 68, 0.1)',
+                border: '1px solid rgba(239, 68, 68, 0.3)',
+                color: '#ff6b6b',
+                padding: '1rem',
+                borderRadius: '8px',
+                marginBottom: '1.5rem',
+                fontSize: '0.875rem'
+              }}>
                 {error}
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div>
-                <label className="block text-sm font-semibold text-gray-300 mb-2">Email Address</label>
+                <label style={{
+                  display: 'block',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  color: 'rgba(255, 255, 255, 0.8)',
+                  marginBottom: '0.5rem'
+                }}>
+                  Email Address
+                </label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your@email.com"
-                  className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-600 transition"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1rem',
+                    background: 'rgba(0, 0, 0, 0.3)',
+                    border: '1px solid rgba(124, 184, 255, 0.2)',
+                    borderRadius: '8px',
+                    color: 'white',
+                    fontSize: '0.875rem',
+                    outline: 'none',
+                    transition: 'all 0.3s',
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = 'rgba(124, 184, 255, 0.6)';
+                    e.target.style.background = 'rgba(0, 0, 0, 0.5)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = 'rgba(124, 184, 255, 0.2)';
+                    e.target.style.background = 'rgba(0, 0, 0, 0.3)';
+                  }}
                   disabled={loading}
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-300 mb-2">Password</label>
+                <label style={{
+                  display: 'block',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  color: 'rgba(255, 255, 255, 0.8)',
+                  marginBottom: '0.5rem'
+                }}>
+                  Password
+                </label>
                 <input
                   type="password"
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-600 transition"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1rem',
+                    background: 'rgba(0, 0, 0, 0.3)',
+                    border: '1px solid rgba(124, 184, 255, 0.2)',
+                    borderRadius: '8px',
+                    color: 'white',
+                    fontSize: '0.875rem',
+                    outline: 'none',
+                    transition: 'all 0.3s',
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = 'rgba(124, 184, 255, 0.6)';
+                    e.target.style.background = 'rgba(0, 0, 0, 0.5)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = 'rgba(124, 184, 255, 0.2)';
+                    e.target.style.background = 'rgba(0, 0, 0, 0.3)';
+                  }}
                   disabled={loading}
                 />
               </div>
@@ -90,20 +176,53 @@ export default function EvomaniasLogin() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 rounded-lg font-semibold hover:opacity-90 transition disabled:opacity-50 mt-6"
+                style={{
+                  width: '100%',
+                  background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+                  color: 'white',
+                  padding: '0.75rem 1rem',
+                  borderRadius: '8px',
+                  fontWeight: '600',
+                  border: 'none',
+                  cursor: loading ? 'not-allowed' : 'pointer',
+                  opacity: loading ? 0.6 : 1,
+                  transition: 'all 0.3s',
+                  marginTop: '1.5rem'
+                }}
+                onMouseEnter={(e) => !loading && (e.target.style.opacity = '0.9')}
+                onMouseLeave={(e) => !loading && (e.target.style.opacity = '1')}
               >
                 {loading ? 'Signing In...' : 'Sign In'}
               </button>
             </form>
 
-            <div className="mt-6 pt-6 border-t border-gray-800 text-center">
-              <p className="text-gray-400 mb-3">
+            <div style={{
+              marginTop: '1.5rem',
+              paddingTop: '1.5rem',
+              borderTop: '1px solid rgba(124, 184, 255, 0.2)',
+              textAlign: 'center'
+            }}>
+              <p style={{
+                color: 'rgba(255, 255, 255, 0.6)',
+                marginBottom: '1rem',
+                fontSize: '0.875rem'
+              }}>
                 Don't have an account?{' '}
-                <Link href="/evomanias/register" className="text-purple-400 font-semibold hover:opacity-80 transition">
+                <Link href="/evomanias/register" style={{
+                  color: '#7cb8ff',
+                  fontWeight: '600',
+                  textDecoration: 'none',
+                  transition: 'opacity 0.3s'
+                }}>
                   Create one
                 </Link>
               </p>
-              <Link href="/evomanias" className="text-gray-500 hover:text-gray-400 text-sm transition">
+              <Link href="/evomanias" style={{
+                color: 'rgba(255, 255, 255, 0.5)',
+                fontSize: '0.875rem',
+                textDecoration: 'none',
+                transition: 'color 0.3s'
+              }}>
                 ← Back to home
               </Link>
             </div>
