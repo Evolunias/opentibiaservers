@@ -4,13 +4,12 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useEvomaniasAuth } from '../../context/EvomaniasAuthContext';
-import { useTheme } from '../../context/ThemeContext';
-import EvomaniasHeader from '../components/EvomaniasHeader';
+import { useEvomaniasTheme } from '../context/EvomaniasThemeContext';
 
 export default function EvomaniasLogin() {
   const router = useRouter();
   const { login } = useEvomaniasAuth();
-  const { theme } = useTheme();
+  const { theme } = useEvomaniasTheme();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -34,8 +33,6 @@ export default function EvomaniasLogin() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  const isDark = theme === 'dark';
 
   const isDark = theme === 'dark';
 
@@ -97,7 +94,6 @@ export default function EvomaniasLogin() {
       display: 'flex',
       flexDirection: 'column'
     }}>
-      <EvomaniasHeader />
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) translateX(0px); }

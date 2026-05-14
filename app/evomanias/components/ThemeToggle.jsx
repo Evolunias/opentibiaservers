@@ -1,11 +1,11 @@
 'use client';
 
-import { useTheme } from '../../context/ThemeContext';
+import { useEvomaniasTheme } from '../context/EvomaniasThemeContext';
 
 export default function ThemeToggle() {
-  const { theme, toggleTheme, mounted } = useTheme();
+  const { theme, toggleTheme, isMounted } = useEvomaniasTheme();
 
-  if (!mounted) return null;
+  if (!isMounted) return null;
 
   return (
     <div style={{
