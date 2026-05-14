@@ -29,15 +29,21 @@ export default function EvomaniasHeader() {
       };
 
   return (
-    <header className="navbar" style={headerStyle}>
-      <div className="max-w-7xl mx-auto px-6 py-3 w-full">
-        {/* Center Theme Toggle */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.75rem' }}>
-          <ThemeToggle />
-        </div>
+    <>
+      {/* Fixed Theme Toggle - Top Right */}
+      <div style={{
+        position: 'fixed',
+        top: '1rem',
+        right: '1rem',
+        zIndex: 9999
+      }}>
+        <ThemeToggle />
+      </div>
 
-        {/* Main Navigation Row */}
-        <div className="flex items-center justify-between gap-4">
+      <header className="navbar" style={headerStyle}>
+        <div className="max-w-7xl mx-auto px-6 py-3 w-full">
+          {/* Main Navigation Row */}
+          <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/evomanias" className="flex items-center gap-2 hover:opacity-80 transition flex-shrink-0">
             <h1 className="text-xl font-bold" style={{ color: '#7cb8ff', letterSpacing: '1px' }}>
@@ -66,8 +72,8 @@ export default function EvomaniasHeader() {
             <div style={{
               display: 'flex',
               alignItems: 'center',
-              background: 'rgba(0, 0, 0, 0.4)',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
+              background: isDark ? 'rgba(0, 0, 0, 0.4)' : 'rgba(37, 99, 235, 0.05)',
+              border: isDark ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(37, 99, 235, 0.2)',
               borderRadius: '6px',
               padding: '0.5rem',
               width: '100%'
@@ -80,7 +86,7 @@ export default function EvomaniasHeader() {
                 style={{
                   background: 'transparent',
                   border: 'none',
-                  color: 'rgba(255, 255, 255, 0.95)',
+                  color: isDark ? 'rgba(255, 255, 255, 0.95)' : 'rgba(31, 41, 55, 0.95)',
                   outline: 'none',
                   flex: 1,
                   fontSize: '0.875rem',
@@ -90,7 +96,7 @@ export default function EvomaniasHeader() {
               <button style={{
                 background: 'none',
                 border: 'none',
-                color: 'rgba(124, 184, 255, 0.7)',
+                color: isDark ? 'rgba(124, 184, 255, 0.7)' : '#2563eb',
                 cursor: 'pointer',
                 padding: '0.25rem',
               }}>
@@ -109,14 +115,39 @@ export default function EvomaniasHeader() {
                 <Link
                   href="/evomanias/login"
                   className="btn btn-secondary hidden sm:inline-block"
-                  style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}
+                  style={{
+                    padding: '0.5rem 1rem',
+                    fontSize: '0.875rem',
+                    background: isDark ? 'rgba(100, 181, 246, 0.12)' : 'rgba(37, 99, 235, 0.08)',
+                    color: isDark ? '#64b5f6' : '#2563eb',
+                    border: isDark ? '1.5px solid #64b5f6' : '1.5px solid #2563eb',
+                    borderRadius: '6px',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
                 >
                   Sign In
                 </Link>
                 <Link
                   href="/evomanias/register"
                   className="btn btn-primary"
-                  style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}
+                  style={{
+                    padding: '0.5rem 1rem',
+                    fontSize: '0.875rem',
+                    background: isDark
+                      ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
+                      : 'linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%)',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: '6px',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    boxShadow: isDark
+                      ? '0 4px 12px rgba(37, 99, 235, 0.3), 0 0 0 1px rgba(124, 184, 255, 0.2)'
+                      : '0 4px 12px rgba(37, 99, 235, 0.25), 0 0 0 1px rgba(37, 99, 235, 0.1)'
+                  }}
                 >
                   Create Account
                 </Link>
@@ -193,5 +224,6 @@ export default function EvomaniasHeader() {
         )}
       </div>
     </header>
+    </>
   );
 }
