@@ -245,7 +245,7 @@ export default function OnlinePage() {
                     color: 'rgba(255, 255, 255, 0.6)',
                     margin: '0 0 0.5rem 0'
                   }}>
-                    {vocations[player.vocation] || '⚔️'} {player.vocation}
+                    {player.vocation}
                   </p>
                   <p style={{
                     fontSize: '0.875rem',
@@ -275,7 +275,7 @@ export default function OnlinePage() {
               transition: 'opacity 0.3s'
             }}
           >
-            ← Back to Home
+            Back to Home
           </Link>
         </div>
       </div>

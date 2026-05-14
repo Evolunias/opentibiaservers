@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useEvomaniasAuth } from '../../context/EvomaniasAuthContext';
 import { useEvomaniasTheme } from '../context/EvomaniasThemeContext';
+import ThemeToggle from '../components/ThemeToggle';
 
 export default function EvomaniasRegister() {
   const router = useRouter();
@@ -80,7 +81,11 @@ export default function EvomaniasRegister() {
     : 'rgba(107, 114, 128, 0.6)';
 
   return (
-    <main className="min-h-screen flex items-center justify-center px-6 py-12">
+    <main className="min-h-screen flex flex-col items-center justify-center px-6 py-12">
+      {/* Theme Toggle */}
+      <div style={{ position: 'absolute', top: '1rem', left: '50%', transform: 'translateX(-50%)', zIndex: 10 }}>
+        <ThemeToggle />
+      </div>
       <style>{`
         @keyframes gradientShift {
           0%, 100% { background-position: 0% 50%; }
@@ -349,7 +354,7 @@ export default function EvomaniasRegister() {
                 textDecoration: 'none',
                 transition: 'color 0.3s'
               }}>
-                ← Back to home
+                Back to home
               </Link>
             </div>
           </div>

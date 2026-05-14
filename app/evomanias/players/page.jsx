@@ -273,7 +273,7 @@ export default function PlayersPage() {
                       padding: '1rem',
                       fontSize: '0.875rem'
                     }}>
-                      {vocations[player.vocation] || '⚔️'} {player.vocation}
+                      {player.vocation}
                     </td>
                     <td style={{
                       padding: '1rem',
@@ -313,7 +313,7 @@ export default function PlayersPage() {
               transition: 'opacity 0.3s'
             }}
           >
-            ← Back to Home
+            Back to Home
           </Link>
         </div>
       </div>

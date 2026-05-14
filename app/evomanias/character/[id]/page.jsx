@@ -81,11 +81,11 @@ export default function CharacterDetail() {
   }
 
   const vocations = {
-    Knight: { color: 'from-red-500 to-red-600', icon: '⚔️' },
-    Sorcerer: { color: 'from-purple-500 to-purple-600', icon: '🔮' },
-    Cleric: { color: 'from-yellow-500 to-yellow-600', icon: '✨' },
-    Ranger: { color: 'from-green-500 to-green-600', icon: '🏹' },
-    Paladin: { color: 'from-blue-500 to-blue-600', icon: '⚡' },
+    Knight: { color: 'from-red-500 to-red-600', icon: 'K' },
+    Sorcerer: { color: 'from-purple-500 to-purple-600', icon: 'S' },
+    Cleric: { color: 'from-yellow-500 to-yellow-600', icon: 'C' },
+    Ranger: { color: 'from-green-500 to-green-600', icon: 'R' },
+    Paladin: { color: 'from-blue-500 to-blue-600', icon: 'P' },
   };
 
   const vocInfo = vocations[character.vocation] || vocations.Knight;
@@ -114,7 +114,7 @@ export default function CharacterDetail() {
               marginBottom: '1rem',
               textDecoration: 'none'
             }}>
-              ← Back to Highscores
+              Back to Highscores
             </Link>
             <div style={{
               display: 'flex',
@@ -299,7 +299,7 @@ export default function CharacterDetail() {
                 textDecoration: 'none'
               }}
             >
-              ← Highscores
+              Highscores
             </Link>
             <Link
               href="/evomanias/account"

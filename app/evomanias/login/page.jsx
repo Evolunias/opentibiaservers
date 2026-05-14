@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useEvomaniasAuth } from '../../context/EvomaniasAuthContext';
 import { useEvomaniasTheme } from '../context/EvomaniasThemeContext';
+import ThemeToggle from '../components/ThemeToggle';
 
 export default function EvomaniasLogin() {
   const router = useRouter();
@@ -156,6 +157,11 @@ export default function EvomaniasLogin() {
           backgroundSize: '50px 50px',
           opacity: 0.3
         }} />
+      </div>
+
+      {/* Theme Toggle */}
+      <div style={{ position: 'relative', zIndex: 10, padding: '1rem', display: 'flex', justifyContent: 'center' }}>
+        <ThemeToggle />
       </div>
 
       {/* CONTENT */}
@@ -338,7 +344,7 @@ export default function EvomaniasLogin() {
               textDecoration: 'none',
               transition: 'color 0.3s'
             }}>
-              ← Back to home
+              Back to home
             </Link>
           </div>
         </div>

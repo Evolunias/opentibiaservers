@@ -59,17 +59,17 @@ export default function DataExplorerPage() {
   ];
 
   const tableIcons = {
-    players: '⚔️',
-    accounts: '👤',
-    announcements: '📢',
-    news: '📰',
-    market: '🛍️',
-    guilds: '🏰',
-    items: '📦',
-    quests: '📜',
-    events: '🎉',
-    trades: '💰',
-    storage: '🏠',
+    players: 'P',
+    accounts: 'A',
+    announcements: 'AN',
+    news: 'N',
+    market: 'M',
+    guilds: 'G',
+    items: 'I',
+    quests: 'Q',
+    events: 'E',
+    trades: 'T',
+    storage: 'S',
   };
 
   const getTableIcon = (tableName) => {
@@ -291,7 +291,7 @@ export default function DataExplorerPage() {
               transition: 'opacity 0.3s'
             }}
           >
-            ← Back to Home
+            Back to Home
           </Link>
         </div>
       </div>
