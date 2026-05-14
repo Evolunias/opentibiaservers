@@ -212,12 +212,10 @@ export default function OnlinePage() {
                     transition: 'all 0.3s'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(124, 184, 255, 0.1)';
-                    e.currentTarget.style.borderColor = 'rgba(124, 184, 255, 0.4)';
+                    e.currentTarget.style.opacity = '0.9';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(124, 184, 255, 0.05)';
-                    e.currentTarget.style.borderColor = 'rgba(124, 184, 255, 0.2)';
+                    e.currentTarget.style.opacity = '1';
                   }}
                 >
                   <div style={{

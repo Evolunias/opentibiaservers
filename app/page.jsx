@@ -348,15 +348,13 @@ export default function Home() {
                     fontWeight: 600,
                     fontSize: '0.9rem',
                     cursor: 'pointer',
-                    transition: 'all 0.3s ease'
+                    transition: 'opacity 0.2s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.boxShadow = '0 4px 12px rgba(31, 41, 55, 0.2)';
-                    e.target.style.transform = 'translateY(-1px)';
+                    e.target.style.opacity = '0.85';
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.boxShadow = 'none';
-                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.opacity = '1';
                   }}
                 >
                   Clear Filters

@@ -144,12 +144,12 @@ export default function TablesPage() {
                     }}
                     onMouseEnter={(e) => {
                       if (selectedTable !== table.name) {
-                        e.currentTarget.style.background = 'rgba(124, 184, 255, 0.1)';
+                        e.currentTarget.style.opacity = '0.8';
                       }
                     }}
                     onMouseLeave={(e) => {
                       if (selectedTable !== table.name) {
-                        e.currentTarget.style.background = 'transparent';
+                        e.currentTarget.style.opacity = '1';
                       }
                     }}
                   >
