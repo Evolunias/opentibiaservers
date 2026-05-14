@@ -1,21 +1,41 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useEvomaniasAuth } from '../../context/EvomaniasAuthContext';
-import { useEvomaniasTheme } from '../context/EvomaniasThemeContext';
+import { useTheme } from '../../context/ThemeContext';
+import EvomaniasHeader from '../components/EvomaniasHeader';
 
 export default function EvomaniasLogin() {
   const router = useRouter();
   const { login } = useEvomaniasAuth();
-  const { theme } = useEvomaniasTheme();
+  const { theme } = useTheme();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const isDark = theme === 'dark';
 
   const isDark = theme === 'dark';
 
@@ -46,218 +66,287 @@ export default function EvomaniasLogin() {
     }
   };
 
-  const cardBg = isDark
-    ? 'rgba(20, 20, 25, 0.8)'
-    : 'rgba(255, 255, 255, 0.95)';
-  const cardBorder = isDark
-    ? 'rgba(255, 255, 255, 0.1)'
-    : 'rgba(71, 85, 105, 0.1)';
-  const inputBg = isDark
-    ? 'rgba(0, 0, 0, 0.3)'
-    : 'rgba(71, 85, 105, 0.05)';
-  const inputBorder = isDark
-    ? 'rgba(255, 255, 255, 0.15)'
-    : 'rgba(71, 85, 105, 0.2)';
-  const textColor = isDark
-    ? 'rgba(255, 255, 255, 0.95)'
-    : 'rgba(31, 41, 55, 0.95)';
-  const textMuted = isDark
-    ? 'rgba(255, 255, 255, 0.6)'
-    : 'rgba(107, 114, 128, 0.6)';
+  const ButtonStyle = (primary = true) => ({
+    padding: primary ? '1.3rem 3.5rem' : '1.3rem 3.5rem',
+    fontSize: '1.15rem',
+    fontWeight: 700,
+    textTransform: 'uppercase',
+    letterSpacing: '3px',
+    background: primary
+      ? 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)'
+      : 'rgba(37, 99, 235, 0.1)',
+    color: primary ? '#ffffff' : '#2563eb',
+    border: primary ? 'none' : '2px solid #2563eb',
+    borderRadius: '2px',
+    textDecoration: 'none',
+    cursor: 'pointer',
+    transition: 'all 0.3s ease',
+    boxShadow: primary
+      ? '0 0 30px rgba(37, 99, 235, 0.4)'
+      : '0 0 20px rgba(37, 99, 235, 0.2)',
+    display: 'inline-block'
+  });
 
   return (
-    <main className="min-h-screen flex items-center justify-center px-6 py-12">
+    <div style={{
+      minHeight: '100vh',
+      background: isDark ? '#ffffff' : '#ffffff',
+      color: isDark ? '#333333' : '#333333',
+      overflow: 'hidden',
+      fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
+      <EvomaniasHeader />
       <style>{`
-        @keyframes gradientShift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) translateX(0px); }
+          25% { transform: translateY(-40px) translateX(15px); }
+          50% { transform: translateY(-70px) translateX(-8px); }
+          75% { transform: translateY(-30px) translateX(20px); }
         }
-        .gradient-header {
-          background: linear-gradient(135deg, #7cb8ff 0%, #2563eb 50%, #5a9fe6 100%);
-          background-size: 200% 200%;
-          animation: gradientShift 6s ease infinite;
-        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(37, 99, 235, 0.4); } 50% { transform: scale(1.1); box-shadow: 0 0 50px rgba(37, 99, 235, 0.8); } }
+        @keyframes slideInDown { from { opacity: 0; transform: translateY(-100px) rotateX(30deg); } to { opacity: 1; transform: translateY(0) rotateX(0deg); } }
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(100px) rotateX(-30deg); } to { opacity: 1; transform: translateY(0) rotateX(0deg); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes zoomIn { from { opacity: 0; transform: scale(0.7) rotateZ(5deg); } to { opacity: 1; transform: scale(1) rotateZ(0deg); } }
+        * { box-sizing: border-box; }
       `}</style>
-      <div className="w-full max-w-md">
-        <div
-          style={{
-            background: cardBg,
-            border: `1px solid ${cardBorder}`,
-            borderRadius: '12px',
-            overflow: 'hidden',
-            backdropFilter: 'blur(12px)',
-            boxShadow: isDark
-              ? '0 8px 32px rgba(0, 0, 0, 0.3)'
-              : '0 8px 32px rgba(0, 0, 0, 0.08)'
-          }}
-        >
-          {/* Header */}
-          <div className="gradient-header px-8 py-8 text-center">
-            <h1 style={{ color: '#ffffff', fontSize: '1.875rem', fontWeight: 700, marginBottom: '0.5rem' }}>
-              Welcome Back
-            </h1>
-            <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.95rem' }}>
-              Sign in to your EVOMANIAS account
-            </p>
-          </div>
 
-          {/* Form */}
-          <div style={{ padding: '2rem' }}>
-            {error && (
-              <div style={{
-                background: isDark
-                  ? 'rgba(239, 68, 68, 0.15)'
-                  : 'rgba(239, 68, 68, 0.1)',
-                border: `1px solid ${isDark ? 'rgba(239, 68, 68, 0.5)' : 'rgba(239, 68, 68, 0.3)'}`,
-                color: isDark ? 'rgba(248, 113, 113, 0.9)' : 'rgba(220, 38, 38, 0.9)',
-                padding: '0.75rem 1rem',
-                borderRadius: '8px',
-                marginBottom: '1.5rem',
-                fontSize: '0.875rem'
+      {/* Animated Background */}
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: 0,
+        pointerEvents: 'none',
+        overflow: 'hidden'
+      }}>
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: '#ffffff'
+        }} />
+
+        <div style={{
+          position: 'absolute',
+          width: '1200px',
+          height: '1200px',
+          background: 'radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%)',
+          borderRadius: '50%',
+          left: mousePos.x - 600,
+          top: mousePos.y - 600,
+          transition: 'all 0.5s ease-out',
+          filter: 'blur(100px)',
+          pointerEvents: 'none',
+          opacity: 0.6
+        }} />
+
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundImage: `
+            linear-gradient(0deg, transparent 24%, rgba(37, 99, 235, 0.02) 25%, rgba(37, 99, 235, 0.02) 26%, transparent 27%, transparent 74%, rgba(37, 99, 235, 0.02) 75%, rgba(37, 99, 235, 0.02) 76%, transparent 77%, transparent),
+            linear-gradient(90deg, transparent 24%, rgba(37, 99, 235, 0.02) 25%, rgba(37, 99, 235, 0.02) 26%, transparent 27%, transparent 74%, rgba(37, 99, 235, 0.02) 75%, rgba(37, 99, 235, 0.02) 76%, transparent 77%, transparent)
+          `,
+          backgroundSize: '50px 50px',
+          opacity: 0.3
+        }} />
+      </div>
+
+      {/* CONTENT */}
+      <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '2rem' }}>
+        <div style={{
+          textAlign: 'center',
+          marginBottom: '3rem',
+          animation: 'slideInDown 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) both'
+        }}>
+          <h1 style={{
+            fontSize: 'clamp(2.5rem, 10vw, 4rem)',
+            fontWeight: 300,
+            margin: '0 0 1rem 0',
+            lineHeight: 1,
+            color: '#1f2937',
+            letterSpacing: '2px'
+          }}>
+            Welcome Back
+          </h1>
+          <p style={{
+            fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+            fontWeight: 400,
+            color: 'rgba(71, 85, 105, 0.85)',
+            margin: '0 0 2rem 0',
+            maxWidth: '500px',
+            lineHeight: 1.6,
+            letterSpacing: '0.5px'
+          }}>
+            Sign in to your EVOMANIAS account
+          </p>
+        </div>
+
+        <div style={{
+          width: '100%',
+          maxWidth: '500px',
+          background: 'rgba(255, 255, 255, 0.9)',
+          backdropFilter: 'blur(10px)',
+          border: '2px solid rgba(37, 99, 235, 0.2)',
+          borderRadius: '8px',
+          padding: '3rem',
+          boxShadow: '0 20px 50px rgba(37, 99, 235, 0.1)',
+          animation: 'zoomIn 1s cubic-bezier(0.34, 1.56, 0.64, 1) both'
+        }}>
+          {error && (
+            <div style={{
+              background: 'rgba(239, 68, 68, 0.1)',
+              border: '2px solid rgba(239, 68, 68, 0.3)',
+              color: '#dc2626',
+              padding: '1rem',
+              borderRadius: '6px',
+              marginBottom: '1.5rem',
+              fontSize: '0.95rem',
+              fontWeight: 500
+            }}>
+              {error}
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div>
+              <label style={{
+                display: 'block',
+                fontSize: '0.95rem',
+                fontWeight: 600,
+                color: '#1f2937',
+                marginBottom: '0.5rem'
               }}>
-                {error}
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div>
-                <label style={{
-                  display: 'block',
-                  fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: textColor,
-                  marginBottom: '0.5rem'
-                }}>
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem 1rem',
-                    background: inputBg,
-                    border: `1px solid ${inputBorder}`,
-                    borderRadius: '8px',
-                    color: textColor,
-                    fontSize: '0.95rem',
-                    transition: 'all 0.3s ease',
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = '#7cb8ff';
-                    e.target.style.boxShadow = isDark
-                      ? '0 0 0 3px rgba(124, 184, 255, 0.1)'
-                      : '0 0 0 3px rgba(37, 99, 235, 0.1)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = inputBorder;
-                    e.target.style.boxShadow = 'none';
-                  }}
-                  disabled={loading}
-                />
-              </div>
-
-              <div>
-                <label style={{
-                  display: 'block',
-                  fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: textColor,
-                  marginBottom: '0.5rem'
-                }}>
-                  Password
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  placeholder="••••••••"
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem 1rem',
-                    background: inputBg,
-                    border: `1px solid ${inputBorder}`,
-                    borderRadius: '8px',
-                    color: textColor,
-                    fontSize: '0.95rem',
-                    transition: 'all 0.3s ease',
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = '#7cb8ff';
-                    e.target.style.boxShadow = isDark
-                      ? '0 0 0 3px rgba(124, 184, 255, 0.1)'
-                      : '0 0 0 3px rgba(37, 99, 235, 0.1)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = inputBorder;
-                    e.target.style.boxShadow = 'none';
-                  }}
-                  disabled={loading}
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={loading}
+                Email Address
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="your@email.com"
                 style={{
                   width: '100%',
-                  background: 'linear-gradient(135deg, #7cb8ff 0%, #2563eb 100%)',
-                  color: '#ffffff',
-                  padding: '0.75rem 1rem',
-                  borderRadius: '8px',
-                  border: 'none',
-                  fontWeight: 600,
+                  padding: '0.875rem 1rem',
+                  background: 'rgba(37, 99, 235, 0.05)',
+                  border: '2px solid rgba(37, 99, 235, 0.2)',
+                  borderRadius: '6px',
+                  color: '#1f2937',
                   fontSize: '0.95rem',
-                  cursor: loading ? 'not-allowed' : 'pointer',
-                  transition: 'all 0.3s ease',
-                  marginTop: '1rem',
-                  opacity: loading ? 0.7 : 1,
-                  boxShadow: '0 4px 15px rgba(37, 99, 235, 0.3)'
+                  outline: 'none',
+                  transition: 'all 0.3s',
+                  fontFamily: 'inherit'
                 }}
-              >
-                {loading ? 'Signing In...' : 'Sign In'}
-              </button>
-            </form>
-
-            <div style={{
-              marginTop: '1.5rem',
-              paddingTop: '1.5rem',
-              borderTop: `1px solid ${cardBorder}`,
-              textAlign: 'center'
-            }}>
-              <p style={{ color: textMuted, marginBottom: '0.75rem', fontSize: '0.95rem' }}>
-                Don't have an account?{' '}
-                <Link href="/evomanias/register" style={{
-                  color: '#7cb8ff',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                  transition: 'opacity 0.3s ease'
+                onFocus={(e) => {
+                  e.target.style.borderColor = 'rgba(37, 99, 235, 0.6)';
+                  e.target.style.background = 'rgba(37, 99, 235, 0.08)';
                 }}
-                onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-                onMouseLeave={(e) => e.target.style.opacity = '1'}
-                >
-                  Create one
-                </Link>
-              </p>
-              <Link href="/evomanias" style={{
-                color: textMuted,
-                fontSize: '0.875rem',
-                textDecoration: 'none',
-                transition: 'color 0.3s ease'
-              }}
-              onMouseEnter={(e) => e.target.style.color = isDark ? '#7cb8ff' : '#2563eb'}
-              onMouseLeave={(e) => e.target.style.color = textMuted}
-              >
-                ← Back to home
-              </Link>
+                onBlur={(e) => {
+                  e.target.style.borderColor = 'rgba(37, 99, 235, 0.2)';
+                  e.target.style.background = 'rgba(37, 99, 235, 0.05)';
+                }}
+                disabled={loading}
+              />
             </div>
+
+            <div>
+              <label style={{
+                display: 'block',
+                fontSize: '0.95rem',
+                fontWeight: 600,
+                color: '#1f2937',
+                marginBottom: '0.5rem'
+              }}>
+                Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="••••••••"
+                style={{
+                  width: '100%',
+                  padding: '0.875rem 1rem',
+                  background: 'rgba(37, 99, 235, 0.05)',
+                  border: '2px solid rgba(37, 99, 235, 0.2)',
+                  borderRadius: '6px',
+                  color: '#1f2937',
+                  fontSize: '0.95rem',
+                  outline: 'none',
+                  transition: 'all 0.3s',
+                  fontFamily: 'inherit'
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = 'rgba(37, 99, 235, 0.6)';
+                  e.target.style.background = 'rgba(37, 99, 235, 0.08)';
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = 'rgba(37, 99, 235, 0.2)';
+                  e.target.style.background = 'rgba(37, 99, 235, 0.05)';
+                }}
+                disabled={loading}
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              style={ButtonStyle(true)}
+              className="epic-btn"
+              onMouseEnter={(e) => {
+                e.target.style.opacity = '0.9';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.opacity = '1';
+              }}
+            >
+              {loading ? 'Signing In...' : 'Sign In'}
+            </button>
+          </form>
+
+          <div style={{
+            marginTop: '2rem',
+            paddingTop: '2rem',
+            borderTop: '2px solid rgba(37, 99, 235, 0.1)',
+            textAlign: 'center'
+          }}>
+            <p style={{
+              color: 'rgba(71, 85, 105, 0.8)',
+              marginBottom: '1rem',
+              fontSize: '0.95rem'
+            }}>
+              Don't have an account?{' '}
+              <Link href="/evomanias/register" style={{
+                color: '#2563eb',
+                fontWeight: 700,
+                textDecoration: 'none',
+                transition: 'opacity 0.3s'
+              }}>
+                Create one
+              </Link>
+            </p>
+            <Link href="/evomanias" style={{
+              color: 'rgba(71, 85, 105, 0.6)',
+              fontSize: '0.95rem',
+              textDecoration: 'none',
+              transition: 'color 0.3s'
+            }}>
+              ← Back to home
+            </Link>
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

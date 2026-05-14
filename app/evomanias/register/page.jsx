@@ -93,24 +93,35 @@ export default function EvomaniasRegister() {
         }
       `}</style>
       <div className="w-full max-w-md">
-        <div
-          style={{
-            background: cardBg,
-            border: `1px solid ${cardBorder}`,
-            borderRadius: '12px',
-            overflow: 'hidden',
-            backdropFilter: 'blur(12px)',
-            boxShadow: isDark
-              ? '0 8px 32px rgba(0, 0, 0, 0.3)'
-              : '0 8px 32px rgba(0, 0, 0, 0.08)'
-          }}
-        >
+        <div style={{
+          background: 'rgba(20, 20, 25, 0.85)',
+          backdropFilter: 'blur(12px)',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
+        }}>
           {/* Header */}
-          <div className="gradient-header px-8 py-8 text-center">
-            <h1 style={{ color: '#ffffff', fontSize: '1.875rem', fontWeight: 700, marginBottom: '0.5rem' }}>
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(124, 184, 255, 0.15) 0%, rgba(90, 159, 230, 0.1) 100%)',
+            borderBottom: '1px solid rgba(124, 184, 255, 0.2)',
+            padding: '2rem',
+            textAlign: 'center'
+          }}>
+            <h1 style={{
+              fontSize: '2rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}>
               Join EVOMANIAS
             </h1>
-            <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.95rem' }}>
+            <p style={{
+              color: 'rgba(124, 184, 255, 0.8)'
+            }}>
               Create your account and begin your adventure
             </p>
           </div>
@@ -119,12 +130,10 @@ export default function EvomaniasRegister() {
           <div style={{ padding: '2rem' }}>
             {error && (
               <div style={{
-                background: isDark
-                  ? 'rgba(239, 68, 68, 0.15)'
-                  : 'rgba(239, 68, 68, 0.1)',
-                border: `1px solid ${isDark ? 'rgba(239, 68, 68, 0.5)' : 'rgba(239, 68, 68, 0.3)'}`,
-                color: isDark ? 'rgba(248, 113, 113, 0.9)' : 'rgba(220, 38, 38, 0.9)',
-                padding: '0.75rem 1rem',
+                background: 'rgba(239, 68, 68, 0.1)',
+                border: '1px solid rgba(239, 68, 68, 0.3)',
+                color: '#ff6b6b',
+                padding: '1rem',
                 borderRadius: '8px',
                 marginBottom: '1.5rem',
                 fontSize: '0.875rem'
@@ -138,8 +147,8 @@ export default function EvomaniasRegister() {
                 <label style={{
                   display: 'block',
                   fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: textColor,
+                  fontWeight: '600',
+                  color: 'rgba(255, 255, 255, 0.8)',
                   marginBottom: '0.5rem'
                 }}>
                   Account Name
@@ -153,22 +162,21 @@ export default function EvomaniasRegister() {
                   style={{
                     width: '100%',
                     padding: '0.75rem 1rem',
-                    background: inputBg,
-                    border: `1px solid ${inputBorder}`,
+                    background: 'rgba(0, 0, 0, 0.3)',
+                    border: '1px solid rgba(124, 184, 255, 0.2)',
                     borderRadius: '8px',
-                    color: textColor,
-                    fontSize: '0.95rem',
-                    transition: 'all 0.3s ease',
+                    color: 'white',
+                    fontSize: '0.875rem',
+                    outline: 'none',
+                    transition: 'all 0.3s',
                   }}
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#7cb8ff';
-                    e.target.style.boxShadow = isDark
-                      ? '0 0 0 3px rgba(124, 184, 255, 0.1)'
-                      : '0 0 0 3px rgba(37, 99, 235, 0.1)';
+                    e.target.style.borderColor = 'rgba(124, 184, 255, 0.6)';
+                    e.target.style.background = 'rgba(0, 0, 0, 0.5)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = inputBorder;
-                    e.target.style.boxShadow = 'none';
+                    e.target.style.borderColor = 'rgba(124, 184, 255, 0.2)';
+                    e.target.style.background = 'rgba(0, 0, 0, 0.3)';
                   }}
                   disabled={loading}
                 />
@@ -178,8 +186,8 @@ export default function EvomaniasRegister() {
                 <label style={{
                   display: 'block',
                   fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: textColor,
+                  fontWeight: '600',
+                  color: 'rgba(255, 255, 255, 0.8)',
                   marginBottom: '0.5rem'
                 }}>
                   Email Address
@@ -193,22 +201,21 @@ export default function EvomaniasRegister() {
                   style={{
                     width: '100%',
                     padding: '0.75rem 1rem',
-                    background: inputBg,
-                    border: `1px solid ${inputBorder}`,
+                    background: 'rgba(0, 0, 0, 0.3)',
+                    border: '1px solid rgba(124, 184, 255, 0.2)',
                     borderRadius: '8px',
-                    color: textColor,
-                    fontSize: '0.95rem',
-                    transition: 'all 0.3s ease',
+                    color: 'white',
+                    fontSize: '0.875rem',
+                    outline: 'none',
+                    transition: 'all 0.3s',
                   }}
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#7cb8ff';
-                    e.target.style.boxShadow = isDark
-                      ? '0 0 0 3px rgba(124, 184, 255, 0.1)'
-                      : '0 0 0 3px rgba(37, 99, 235, 0.1)';
+                    e.target.style.borderColor = 'rgba(124, 184, 255, 0.6)';
+                    e.target.style.background = 'rgba(0, 0, 0, 0.5)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = inputBorder;
-                    e.target.style.boxShadow = 'none';
+                    e.target.style.borderColor = 'rgba(124, 184, 255, 0.2)';
+                    e.target.style.background = 'rgba(0, 0, 0, 0.3)';
                   }}
                   disabled={loading}
                 />
@@ -218,8 +225,8 @@ export default function EvomaniasRegister() {
                 <label style={{
                   display: 'block',
                   fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: textColor,
+                  fontWeight: '600',
+                  color: 'rgba(255, 255, 255, 0.8)',
                   marginBottom: '0.5rem'
                 }}>
                   Password
@@ -233,22 +240,21 @@ export default function EvomaniasRegister() {
                   style={{
                     width: '100%',
                     padding: '0.75rem 1rem',
-                    background: inputBg,
-                    border: `1px solid ${inputBorder}`,
+                    background: 'rgba(0, 0, 0, 0.3)',
+                    border: '1px solid rgba(124, 184, 255, 0.2)',
                     borderRadius: '8px',
-                    color: textColor,
-                    fontSize: '0.95rem',
-                    transition: 'all 0.3s ease',
+                    color: 'white',
+                    fontSize: '0.875rem',
+                    outline: 'none',
+                    transition: 'all 0.3s',
                   }}
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#7cb8ff';
-                    e.target.style.boxShadow = isDark
-                      ? '0 0 0 3px rgba(124, 184, 255, 0.1)'
-                      : '0 0 0 3px rgba(37, 99, 235, 0.1)';
+                    e.target.style.borderColor = 'rgba(124, 184, 255, 0.6)';
+                    e.target.style.background = 'rgba(0, 0, 0, 0.5)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = inputBorder;
-                    e.target.style.boxShadow = 'none';
+                    e.target.style.borderColor = 'rgba(124, 184, 255, 0.2)';
+                    e.target.style.background = 'rgba(0, 0, 0, 0.3)';
                   }}
                   disabled={loading}
                 />
@@ -258,8 +264,8 @@ export default function EvomaniasRegister() {
                 <label style={{
                   display: 'block',
                   fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: textColor,
+                  fontWeight: '600',
+                  color: 'rgba(255, 255, 255, 0.8)',
                   marginBottom: '0.5rem'
                 }}>
                   Confirm Password
@@ -273,22 +279,21 @@ export default function EvomaniasRegister() {
                   style={{
                     width: '100%',
                     padding: '0.75rem 1rem',
-                    background: inputBg,
-                    border: `1px solid ${inputBorder}`,
+                    background: 'rgba(0, 0, 0, 0.3)',
+                    border: '1px solid rgba(124, 184, 255, 0.2)',
                     borderRadius: '8px',
-                    color: textColor,
-                    fontSize: '0.95rem',
-                    transition: 'all 0.3s ease',
+                    color: 'white',
+                    fontSize: '0.875rem',
+                    outline: 'none',
+                    transition: 'all 0.3s',
                   }}
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#7cb8ff';
-                    e.target.style.boxShadow = isDark
-                      ? '0 0 0 3px rgba(124, 184, 255, 0.1)'
-                      : '0 0 0 3px rgba(37, 99, 235, 0.1)';
+                    e.target.style.borderColor = 'rgba(124, 184, 255, 0.6)';
+                    e.target.style.background = 'rgba(0, 0, 0, 0.5)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = inputBorder;
-                    e.target.style.boxShadow = 'none';
+                    e.target.style.borderColor = 'rgba(124, 184, 255, 0.2)';
+                    e.target.style.background = 'rgba(0, 0, 0, 0.3)';
                   }}
                   disabled={loading}
                 />
@@ -299,19 +304,19 @@ export default function EvomaniasRegister() {
                 disabled={loading}
                 style={{
                   width: '100%',
-                  background: 'linear-gradient(135deg, #7cb8ff 0%, #2563eb 100%)',
-                  color: '#ffffff',
+                  background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+                  color: 'white',
                   padding: '0.75rem 1rem',
                   borderRadius: '8px',
+                  fontWeight: '600',
                   border: 'none',
-                  fontWeight: 600,
-                  fontSize: '0.95rem',
                   cursor: loading ? 'not-allowed' : 'pointer',
-                  transition: 'all 0.3s ease',
-                  marginTop: '1rem',
-                  opacity: loading ? 0.7 : 1,
-                  boxShadow: '0 4px 15px rgba(37, 99, 235, 0.3)'
+                  opacity: loading ? 0.6 : 1,
+                  transition: 'all 0.3s',
+                  marginTop: '1.5rem'
                 }}
+                onMouseEnter={(e) => !loading && (e.target.style.opacity = '0.9')}
+                onMouseLeave={(e) => !loading && (e.target.style.opacity = '1')}
               >
                 {loading ? 'Creating Account...' : 'Create Account'}
               </button>
@@ -320,32 +325,30 @@ export default function EvomaniasRegister() {
             <div style={{
               marginTop: '1.5rem',
               paddingTop: '1.5rem',
-              borderTop: `1px solid ${cardBorder}`,
+              borderTop: '1px solid rgba(124, 184, 255, 0.2)',
               textAlign: 'center'
             }}>
-              <p style={{ color: textMuted, marginBottom: '0.75rem', fontSize: '0.95rem' }}>
+              <p style={{
+                color: 'rgba(255, 255, 255, 0.6)',
+                marginBottom: '1rem',
+                fontSize: '0.875rem'
+              }}>
                 Already have an account?{' '}
                 <Link href="/evomanias/login" style={{
                   color: '#7cb8ff',
-                  fontWeight: 600,
+                  fontWeight: '600',
                   textDecoration: 'none',
-                  transition: 'opacity 0.3s ease'
-                }}
-                onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-                onMouseLeave={(e) => e.target.style.opacity = '1'}
-                >
+                  transition: 'opacity 0.3s'
+                }}>
                   Sign in
                 </Link>
               </p>
               <Link href="/evomanias" style={{
-                color: textMuted,
+                color: 'rgba(255, 255, 255, 0.5)',
                 fontSize: '0.875rem',
                 textDecoration: 'none',
-                transition: 'color 0.3s ease'
-              }}
-              onMouseEnter={(e) => e.target.style.color = isDark ? '#7cb8ff' : '#2563eb'}
-              onMouseLeave={(e) => e.target.style.color = textMuted}
-              >
+                transition: 'color 0.3s'
+              }}>
                 ← Back to home
               </Link>
             </div>

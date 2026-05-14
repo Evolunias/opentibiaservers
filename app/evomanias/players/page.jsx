@@ -67,8 +67,12 @@ export default function PlayersPage() {
   const buttonInactiveBg = isDark ? 'rgba(124, 184, 255, 0.2)' : 'rgba(37, 99, 235, 0.1)';
 
   return (
-    <main className="min-h-screen text-white p-4" style={{ color: textColor }}>
-      <div className="max-w-7xl mx-auto">
+    <main style={{
+      minHeight: '100vh',
+      color: 'white',
+      padding: '2rem 1rem'
+    }}>
+      <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
         {/* Header */}
         <div style={{
           marginBottom: '2rem',
