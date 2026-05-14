@@ -303,7 +303,7 @@ export default function Highscores() {
                 textDecoration: 'none'
               }}
             >
-              ← Back to Home
+              Back to Home
             </Link>
             <Link
               href="/evomanias/account"

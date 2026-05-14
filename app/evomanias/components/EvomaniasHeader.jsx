@@ -49,9 +49,9 @@ export default function EvomaniasHeader() {
               alignItems: 'center',
               justifyContent: 'center',
               fontWeight: 'bold',
-              fontSize: '20px'
+              fontSize: '16px'
             }}>
-              ⚔️
+              E
             </div>
             <h1 className="text-xl font-bold hidden sm:block" style={{ color: '#7cb8ff' }}>
               EVOMANIAS

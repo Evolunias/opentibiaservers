@@ -354,7 +354,7 @@ export default function EvomaniasRegister() {
                 textDecoration: 'none',
                 transition: 'color 0.3s'
               }}>
-                ← Back to home
+                Back to home
               </Link>
             </div>
           </div>

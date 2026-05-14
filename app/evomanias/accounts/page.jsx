@@ -256,7 +256,7 @@ export default function AccountsPage() {
               textAlign: 'center'
             }}
           >
-            ← Back to Home
+            Back to Home
           </Link>
         </div>
       </div>

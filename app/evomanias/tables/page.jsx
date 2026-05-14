@@ -184,7 +184,7 @@ export default function TablesPage() {
               transition: 'opacity 0.3s'
             }}
           >
-            ← Back to Home
+            Back to Home
           </Link>
         </div>
       </div>
@@ -414,7 +414,7 @@ function TableViewer({ tableName }) {
                 fontWeight: '600'
               }}
             >
-              ← Previous
+              Previous
             </button>
 
             {Array.from({ length: Math.min(pagination.pages, 5) }, (_, i) => {
