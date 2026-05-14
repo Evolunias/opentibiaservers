@@ -118,26 +118,26 @@ export default function EvomaniasHome() {
     fontWeight: 700,
     textTransform: 'uppercase',
     letterSpacing: '3px',
-    background: primary 
-      ? 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)'
-      : 'rgba(124, 184, 255, 0.1)',
-    color: primary ? '#000814' : '#7cb8ff',
-    border: primary ? 'none' : '2px solid #7cb8ff',
+    background: primary
+      ? 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)'
+      : 'rgba(37, 99, 235, 0.1)',
+    color: primary ? '#ffffff' : '#2563eb',
+    border: primary ? 'none' : '2px solid #2563eb',
     borderRadius: '2px',
     textDecoration: 'none',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
     boxShadow: primary
-      ? '0 0 30px rgba(124, 184, 255, 0.7)'
-      : '0 0 20px rgba(124, 184, 255, 0.4)',
+      ? '0 0 30px rgba(37, 99, 235, 0.4)'
+      : '0 0 20px rgba(37, 99, 235, 0.2)',
     display: 'inline-block'
   });
 
   return (
     <div style={{
       minHeight: '100vh',
-      background: '#000814',
-      color: '#fff',
+      background: '#ffffff',
+      color: '#333333',
       overflow: 'hidden',
       fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
     }}>
@@ -148,14 +148,14 @@ export default function EvomaniasHome() {
           50% { transform: translateY(-70px) translateX(-8px); }
           75% { transform: translateY(-30px) translateX(20px); }
         }
-        @keyframes pulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(124, 184, 255, 0.4); } 50% { transform: scale(1.1); box-shadow: 0 0 50px rgba(124, 184, 255, 0.8); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(37, 99, 235, 0.4); } 50% { transform: scale(1.1); box-shadow: 0 0 50px rgba(37, 99, 235, 0.8); } }
         @keyframes slideInDown { from { opacity: 0; transform: translateY(-100px) rotateX(30deg); } to { opacity: 1; transform: translateY(0) rotateX(0deg); } }
         @keyframes slideInUp { from { opacity: 0; transform: translateY(100px) rotateX(-30deg); } to { opacity: 1; transform: translateY(0) rotateX(0deg); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes zoomIn { from { opacity: 0; transform: scale(0.7) rotateZ(5deg); } to { opacity: 1; transform: scale(1) rotateZ(0deg); } }
-        @keyframes glow-pulse { 0%, 100% { text-shadow: 0 0 20px rgba(124, 184, 255, 0.5), 0 0 40px rgba(255, 107, 107, 0.3); } 50% { text-shadow: 0 0 40px rgba(124, 184, 255, 0.9), 0 0 80px rgba(255, 107, 107, 0.6); } }
+        @keyframes glow-pulse { 0%, 100% { text-shadow: 0 0 20px rgba(37, 99, 235, 0.5), 0 0 40px rgba(239, 68, 68, 0.3); } 50% { text-shadow: 0 0 40px rgba(37, 99, 235, 0.9), 0 0 80px rgba(239, 68, 68, 0.6); } }
         @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
-        @keyframes glow-text { 0%, 100% { opacity: 0.8; text-shadow: 0 0 10px rgba(124, 184, 255, 0.5), 0 0 20px rgba(124, 184, 255, 0.3); } 50% { opacity: 1; text-shadow: 0 0 30px rgba(124, 184, 255, 1), 0 0 50px rgba(124, 184, 255, 0.6); } }
+        @keyframes glow-text { 0%, 100% { opacity: 0.8; text-shadow: 0 0 10px rgba(37, 99, 235, 0.5), 0 0 20px rgba(37, 99, 235, 0.3); } 50% { opacity: 1; text-shadow: 0 0 30px rgba(37, 99, 235, 1), 0 0 50px rgba(37, 99, 235, 0.6); } }
         @keyframes slide-right { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
         @keyframes reveal-lines { from { width: 0; } to { width: 100%; } }
         .battle-glow { animation: glow-text 3s ease-in-out infinite; }
@@ -181,9 +181,9 @@ export default function EvomaniasHome() {
           width: '100%',
           height: '100%',
           background: `
-            radial-gradient(ellipse at 20% 50%, rgba(139, 69, 19, 0.15) 0%, transparent 50%),
-            radial-gradient(ellipse at 80% 20%, rgba(25, 25, 112, 0.15) 0%, transparent 50%),
-            linear-gradient(180deg, #0a0e27 0%, #1a1a3e 40%, #0f1428 100%)
+            radial-gradient(ellipse at 20% 50%, rgba(229, 231, 235, 0.6) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 20%, rgba(243, 244, 246, 0.6) 0%, transparent 50%),
+            linear-gradient(180deg, #ffffff 0%, #f9fafb 40%, #f3f4f6 100%)
           `,
           filter: 'blur(2px)'
         }} />
@@ -193,8 +193,8 @@ export default function EvomaniasHome() {
           width: '200%',
           height: '200%',
           background: `
-            radial-gradient(circle at 30% 40%, rgba(255, 107, 107, 0.05) 0%, transparent 40%),
-            radial-gradient(circle at 70% 60%, rgba(124, 184, 255, 0.05) 0%, transparent 40%)
+            radial-gradient(circle at 30% 40%, rgba(239, 68, 68, 0.05) 0%, transparent 40%),
+            radial-gradient(circle at 70% 60%, rgba(37, 99, 235, 0.05) 0%, transparent 40%)
           `,
           animation: 'float 40s ease-in-out infinite',
           left: -scrollY * 0.3,
@@ -205,7 +205,7 @@ export default function EvomaniasHome() {
           position: 'absolute',
           width: '1200px',
           height: '1200px',
-          background: 'radial-gradient(circle, rgba(124, 184, 255, 0.15) 0%, rgba(255, 107, 107, 0.08) 50%, transparent 100%)',
+          background: 'radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(239, 68, 68, 0.08) 50%, transparent 100%)',
           borderRadius: '50%',
           left: mousePos.x - 600,
           top: mousePos.y - 600,
@@ -220,16 +220,16 @@ export default function EvomaniasHome() {
             width: p.width + 'px',
             height: p.height + 'px',
             background: i % 2 === 0 
-              ? 'radial-gradient(circle, rgba(124, 184, 255, 0.8), rgba(124, 184, 255, 0.2))'
-              : 'radial-gradient(circle, rgba(255, 107, 107, 0.6), rgba(255, 107, 107, 0.1))',
+              ? 'radial-gradient(circle, rgba(37, 99, 235, 0.8), rgba(37, 99, 235, 0.2))'
+              : 'radial-gradient(circle, rgba(239, 68, 68, 0.6), rgba(239, 68, 68, 0.1))',
             borderRadius: '50%',
             left: p.left + '%',
             top: p.top + '%',
             animation: `float ${p.duration}s ease-in-out infinite`,
             animationDelay: p.delay + 's',
             boxShadow: i % 2 === 0 
-              ? '0 0 30px rgba(124, 184, 255, 0.9)'
-              : '0 0 25px rgba(255, 107, 107, 0.8)',
+              ? '0 0 30px rgba(37, 99, 235, 0.9)'
+              : '0 0 25px rgba(239, 68, 68, 0.8)',
             filter: `blur(${1 + i % 3}px)`,
             opacity: p.opacity
           }} />
@@ -242,8 +242,8 @@ export default function EvomaniasHome() {
           width: '100%',
           height: '100%',
           backgroundImage: `
-            linear-gradient(0deg, transparent 24%, rgba(124, 184, 255, 0.02) 25%, rgba(124, 184, 255, 0.02) 26%, transparent 27%, transparent 74%, rgba(124, 184, 255, 0.02) 75%, rgba(124, 184, 255, 0.02) 76%, transparent 77%, transparent),
-            linear-gradient(90deg, transparent 24%, rgba(124, 184, 255, 0.02) 25%, rgba(124, 184, 255, 0.02) 26%, transparent 27%, transparent 74%, rgba(124, 184, 255, 0.02) 75%, rgba(124, 184, 255, 0.02) 76%, transparent 77%, transparent)
+            linear-gradient(0deg, transparent 24%, rgba(37, 99, 235, 0.02) 25%, rgba(37, 99, 235, 0.02) 26%, transparent 27%, transparent 74%, rgba(37, 99, 235, 0.02) 75%, rgba(37, 99, 235, 0.02) 76%, transparent 77%, transparent),
+            linear-gradient(90deg, transparent 24%, rgba(37, 99, 235, 0.02) 25%, rgba(37, 99, 235, 0.02) 26%, transparent 27%, transparent 74%, rgba(37, 99, 235, 0.02) 75%, rgba(37, 99, 235, 0.02) 76%, transparent 77%, transparent)
           `,
           backgroundSize: '50px 50px',
           opacity: 0.3
@@ -271,7 +271,7 @@ export default function EvomaniasHome() {
             transform: 'translateX(-50%)',
             width: '150%',
             height: '150%',
-            background: 'radial-gradient(ellipse at center, rgba(124, 184, 255, 0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse at center, rgba(37, 99, 235, 0.12) 0%, transparent 70%)',
             filter: 'blur(60px)'
           }} />
 
@@ -280,7 +280,7 @@ export default function EvomaniasHome() {
             fontWeight: 900,
             margin: '0 0 1.5rem 0',
             lineHeight: 1,
-            background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 30%, #ff6b6b 70%, #ffa500 100%)',
+            background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 30%, #ef4444 70%, #ea580c 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
@@ -294,7 +294,7 @@ export default function EvomaniasHome() {
           <p style={{
             fontSize: 'clamp(1.4rem, 5vw, 2.8rem)',
             fontWeight: 800,
-            color: '#ff8c42',
+            color: '#dc2626',
             margin: '1.5rem 0 2rem 0',
             textTransform: 'uppercase',
             letterSpacing: '4px',
@@ -309,14 +309,14 @@ export default function EvomaniasHome() {
           <div style={{
             height: '3px',
             width: '250px',
-            background: 'linear-gradient(90deg, transparent, #7cb8ff, #ff8c42, transparent)',
+            background: 'linear-gradient(90deg, transparent, #2563eb, #dc2626, transparent)',
             margin: '1.5rem auto 2rem',
             animation: 'slideInDown 1s ease-out 0.5s both'
           }} />
 
           <p style={{
             fontSize: 'clamp(1rem, 2.5vw, 1.5rem)',
-            color: 'rgba(255, 255, 255, 0.9)',
+            color: 'rgba(51, 65, 85, 0.9)',
             maxWidth: '800px',
             marginBottom: '2rem',
             lineHeight: 1.8,
@@ -328,7 +328,7 @@ export default function EvomaniasHome() {
 
           <p style={{
             fontSize: 'clamp(0.9rem, 2vw, 1.2rem)',
-            color: 'rgba(255, 255, 255, 0.75)',
+            color: 'rgba(71, 85, 105, 0.75)',
             maxWidth: '750px',
             marginBottom: '3rem',
             lineHeight: 1.7,
@@ -349,24 +349,24 @@ export default function EvomaniasHome() {
               <>
                 <Link href="/evomanias/register" style={ButtonStyle(true)} className="epic-btn"
                   onMouseEnter={(e) => {
-                    e.target.style.boxShadow = '0 0 60px rgba(124, 184, 255, 1)';
+                    e.target.style.boxShadow = '0 0 60px rgba(37, 99, 235, 1)';
                     e.target.style.transform = 'scale(1.08)';
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.boxShadow = '0 0 30px rgba(124, 184, 255, 0.7)';
+                    e.target.style.boxShadow = '0 0 30px rgba(37, 99, 235, 0.7)';
                     e.target.style.transform = 'scale(1)';
                   }}>
                   Start Your Legend
                 </Link>
                 <Link href="/evomanias/login" style={ButtonStyle(false)}
                   onMouseEnter={(e) => {
-                    e.target.style.background = 'rgba(124, 184, 255, 0.2)';
-                    e.target.style.boxShadow = '0 0 50px rgba(124, 184, 255, 0.8)';
+                    e.target.style.background = 'rgba(37, 99, 235, 0.2)';
+                    e.target.style.boxShadow = '0 0 50px rgba(37, 99, 235, 0.8)';
                     e.target.style.transform = 'scale(1.08)';
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.background = 'rgba(124, 184, 255, 0.1)';
-                    e.target.style.boxShadow = '0 0 20px rgba(124, 184, 255, 0.4)';
+                    e.target.style.background = 'rgba(37, 99, 235, 0.1)';
+                    e.target.style.boxShadow = '0 0 20px rgba(37, 99, 235, 0.4)';
                     e.target.style.transform = 'scale(1)';
                   }}>
                   Return Warrior
@@ -392,38 +392,38 @@ export default function EvomaniasHome() {
                 width: '60px',
                 height: '60px',
                 borderRadius: '50%',
-                background: serverStats.status === 'Online' ? '#00bc8c' : '#ff6b6b',
-                boxShadow: `0 0 40px ${serverStats.status === 'Online' ? 'rgba(0, 188, 140, 0.8)' : 'rgba(255, 107, 107, 0.8)'}`,
+                background: serverStats.status === 'Online' ? '#10b981' : '#ef4444',
+                boxShadow: `0 0 40px ${serverStats.status === 'Online' ? 'rgba(16, 185, 129, 0.8)' : 'rgba(239, 68, 68, 0.8)'}`,
                 animation: 'pulse 2s ease-in-out infinite',
                 margin: '0 auto'
               }} />
-              <div style={{ fontSize: '0.95rem', color: 'rgba(255, 255, 255, 0.6)', marginTop: '1rem', textTransform: 'uppercase' }}>Server Status</div>
+              <div style={{ fontSize: '0.95rem', color: 'rgba(71, 85, 105, 0.6)', marginTop: '1rem', textTransform: 'uppercase' }}>Server Status</div>
             </div>
             <div style={{ textAlign: 'center' }}>
               <div style={{
                 fontSize: '3rem',
                 fontWeight: 900,
-                background: 'linear-gradient(135deg, #7cb8ff, #5a9fe6)',
+                background: 'linear-gradient(135deg, #2563eb, #1d4ed8)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'
               }}>
                 {serverStats.onlinePlayers.toLocaleString()}
               </div>
-              <div style={{ fontSize: '0.95rem', color: 'rgba(255, 255, 255, 0.6)', marginTop: '0.5rem', textTransform: 'uppercase' }}>In Battle Now</div>
+              <div style={{ fontSize: '0.95rem', color: 'rgba(71, 85, 105, 0.6)', marginTop: '0.5rem', textTransform: 'uppercase' }}>In Battle Now</div>
             </div>
             <div style={{ textAlign: 'center' }}>
               <div style={{
                 fontSize: '3rem',
                 fontWeight: 900,
-                background: 'linear-gradient(135deg, #ff6b6b, #ffa500)',
+                background: 'linear-gradient(135deg, #dc2626, #ea580c)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'
               }}>
                 {serverStats.totalCharacters.toLocaleString()}
               </div>
-              <div style={{ fontSize: '0.95rem', color: 'rgba(255, 255, 255, 0.6)', marginTop: '0.5rem', textTransform: 'uppercase' }}>Total Legends</div>
+              <div style={{ fontSize: '0.95rem', color: 'rgba(71, 85, 105, 0.6)', marginTop: '0.5rem', textTransform: 'uppercase' }}>Total Legends</div>
             </div>
           </div>
         </section>
@@ -431,8 +431,8 @@ export default function EvomaniasHome() {
         {/* FEATURE 1: EVOLUTION SYSTEM */}
         <section style={{
           padding: '8rem 2rem',
-          background: 'linear-gradient(180deg, rgba(10, 14, 39, 0.7) 0%, rgba(26, 26, 62, 0.9) 100%)',
-          borderTop: '2px solid rgba(124, 184, 255, 0.3)',
+          background: 'linear-gradient(180deg, rgba(249, 250, 251, 0.7) 0%, rgba(26, 26, 62, 0.9) 100%)',
+          borderTop: '2px solid rgba(37, 99, 235, 0.3)',
           position: 'relative'
         }}>
           <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
@@ -441,7 +441,7 @@ export default function EvomaniasHome() {
               fontWeight: 900,
               textAlign: 'center',
               marginBottom: '2rem',
-              background: 'linear-gradient(135deg, #7cb8ff 0%, #ff8c42 100%)',
+              background: 'linear-gradient(135deg, #2563eb 0%, #dc2626 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -452,7 +452,7 @@ export default function EvomaniasHome() {
             </h2>
             <p style={{
               fontSize: '1.3rem',
-              color: 'rgba(255, 255, 255, 0.85)',
+              color: 'rgba(55, 65, 81, 0.85)',
               textAlign: 'center',
               marginBottom: '3rem',
               lineHeight: 1.8,
@@ -469,21 +469,21 @@ export default function EvomaniasHome() {
             }}>
               {['Skill Mastery', 'Power Ascension', 'Form Transformation', 'Ultimate Abilities'].map((feature, i) => (
                 <div key={i} style={{
-                  background: 'linear-gradient(135deg, rgba(124, 184, 255, 0.1), rgba(255, 107, 107, 0.05))',
-                  border: '2px solid rgba(124, 184, 255, 0.3)',
+                  background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(239, 68, 68, 0.05))',
+                  border: '2px solid rgba(37, 99, 235, 0.3)',
                   padding: '2rem',
                   borderRadius: '4px',
                   textAlign: 'center',
                   transition: 'all 0.3s ease'
                 }} onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = '0 0 40px rgba(124, 184, 255, 0.5)';
+                  e.currentTarget.style.boxShadow = '0 0 40px rgba(37, 99, 235, 0.5)';
                   e.currentTarget.style.transform = 'translateY(-10px)';
                 }} onMouseLeave={(e) => {
                   e.currentTarget.style.boxShadow = 'none';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}>
-                  <h3 style={{ fontSize: '1.5rem', color: '#7cb8ff', marginBottom: '1rem' }}>{feature}</h3>
-                  <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Unlock legendary powers that reshape your combat prowess</p>
+                  <h3 style={{ fontSize: '1.5rem', color: '#2563eb', marginBottom: '1rem' }}>{feature}</h3>
+                  <p style={{ color: 'rgba(75, 85, 99, 0.7)' }}>Unlock legendary powers that reshape your combat prowess</p>
                 </div>
               ))}
             </div>
@@ -493,8 +493,8 @@ export default function EvomaniasHome() {
         {/* FEATURE 2: EPIC PVP */}
         <section style={{
           padding: '8rem 2rem',
-          background: 'linear-gradient(180deg, rgba(26, 26, 62, 0.7) 0%, rgba(10, 14, 39, 0.9) 100%)',
-          borderTop: '2px solid rgba(255, 107, 107, 0.3)',
+          background: 'linear-gradient(180deg, rgba(243, 244, 246, 0.7) 0%, rgba(10, 14, 39, 0.9) 100%)',
+          borderTop: '2px solid rgba(239, 68, 68, 0.3)',
           position: 'relative'
         }}>
           <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
@@ -503,7 +503,7 @@ export default function EvomaniasHome() {
               fontWeight: 900,
               textAlign: 'center',
               marginBottom: '2rem',
-              background: 'linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%)',
+              background: 'linear-gradient(135deg, #ef4444 0%, #ea580c 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -514,7 +514,7 @@ export default function EvomaniasHome() {
             </h2>
             <p style={{
               fontSize: '1.3rem',
-              color: 'rgba(255, 255, 255, 0.85)',
+              color: 'rgba(55, 65, 81, 0.85)',
               textAlign: 'center',
               marginBottom: '3rem',
               lineHeight: 1.8,
@@ -530,21 +530,21 @@ export default function EvomaniasHome() {
             }}>
               {['1v1 Duels', 'Guild Wars', 'Arena Tournaments', 'Faction Battles'].map((feature, i) => (
                 <div key={i} style={{
-                  background: 'linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 165, 0, 0.05))',
-                  border: '2px solid rgba(255, 107, 107, 0.3)',
+                  background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(255, 165, 0, 0.05))',
+                  border: '2px solid rgba(239, 68, 68, 0.3)',
                   padding: '2rem',
                   borderRadius: '4px',
                   textAlign: 'center',
                   transition: 'all 0.3s ease'
                 }} onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = '0 0 40px rgba(255, 107, 107, 0.5)';
+                  e.currentTarget.style.boxShadow = '0 0 40px rgba(239, 68, 68, 0.5)';
                   e.currentTarget.style.transform = 'translateY(-10px)';
                 }} onMouseLeave={(e) => {
                   e.currentTarget.style.boxShadow = 'none';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}>
-                  <h3 style={{ fontSize: '1.5rem', color: '#ff8c42', marginBottom: '1rem' }}>{feature}</h3>
-                  <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Test your might against worthy opponents</p>
+                  <h3 style={{ fontSize: '1.5rem', color: '#dc2626', marginBottom: '1rem' }}>{feature}</h3>
+                  <p style={{ color: 'rgba(75, 85, 99, 0.7)' }}>Test your might against worthy opponents</p>
                 </div>
               ))}
             </div>
@@ -554,8 +554,8 @@ export default function EvomaniasHome() {
         {/* TOP WARRIORS SECTION */}
         <section style={{
           padding: '8rem 2rem',
-          background: 'linear-gradient(180deg, rgba(10, 14, 39, 0.8) 0%, rgba(26, 26, 62, 0.9) 100%)',
-          borderTop: '2px solid rgba(124, 184, 255, 0.4)',
+          background: 'linear-gradient(180deg, rgba(249, 250, 251, 0.8) 0%, rgba(26, 26, 62, 0.9) 100%)',
+          borderTop: '2px solid rgba(37, 99, 235, 0.4)',
           position: 'relative'
         }}>
           <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
@@ -564,7 +564,7 @@ export default function EvomaniasHome() {
               fontWeight: 900,
               textAlign: 'center',
               marginBottom: '1.5rem',
-              background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 40%, #ff6b6b 100%)',
+              background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 40%, #ef4444 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -576,18 +576,18 @@ export default function EvomaniasHome() {
             <p style={{
               fontSize: '1.1rem',
               textAlign: 'center',
-              color: 'rgba(255, 255, 255, 0.7)',
+              color: 'rgba(75, 85, 99, 0.7)',
               marginBottom: '3rem'
             }}>
               The mightiest champions who have risen to supremacy
             </p>
 
             {loading ? (
-              <div style={{ textAlign: 'center', padding: '4rem', fontSize: '1.2rem', color: 'rgba(255, 255, 255, 0.6)' }}>
+              <div style={{ textAlign: 'center', padding: '4rem', fontSize: '1.2rem', color: 'rgba(71, 85, 105, 0.6)' }}>
                 Loading legendary warriors...
               </div>
             ) : topPlayers.length === 0 ? (
-              <div style={{ textAlign: 'center', padding: '4rem', fontSize: '1.2rem', color: 'rgba(255, 255, 255, 0.6)' }}>
+              <div style={{ textAlign: 'center', padding: '4rem', fontSize: '1.2rem', color: 'rgba(71, 85, 105, 0.6)' }}>
                 The leaderboard awaits your conquest...
               </div>
             ) : (
@@ -603,8 +603,8 @@ export default function EvomaniasHome() {
                     style={{
                       background: idx === 0
                         ? 'linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 165, 0, 0.08))'
-                        : 'linear-gradient(135deg, rgba(124, 184, 255, 0.12), rgba(90, 159, 230, 0.06))',
-                      border: `2px solid ${idx === 0 ? 'rgba(255, 215, 0, 0.5)' : 'rgba(124, 184, 255, 0.4)'}`,
+                        : 'linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(90, 159, 230, 0.06))',
+                      border: `2px solid ${idx === 0 ? 'rgba(255, 215, 0, 0.5)' : 'rgba(37, 99, 235, 0.4)'}`,
                       padding: '2rem',
                       borderRadius: '4px',
                       textDecoration: 'none',
@@ -620,7 +620,7 @@ export default function EvomaniasHome() {
                       const el = e.currentTarget;
                       el.style.boxShadow = idx === 0
                         ? '0 0 50px rgba(255, 215, 0, 0.6)'
-                        : '0 0 50px rgba(124, 184, 255, 0.8)';
+                        : '0 0 50px rgba(37, 99, 235, 0.8)';
                       el.style.transform = 'translateY(-10px)';
                     }}
                     onMouseLeave={(e) => {
@@ -633,7 +633,7 @@ export default function EvomaniasHome() {
                       <span style={{
                         fontSize: '2.5rem',
                         fontWeight: 900,
-                        color: idx === 0 ? '#ffd700' : '#7cb8ff',
+                        color: idx === 0 ? '#ffd700' : '#2563eb',
                         minWidth: '60px'
                       }}>
                         #{idx + 1}
@@ -647,17 +647,17 @@ export default function EvomaniasHome() {
                         }}>
                           {player.name}
                         </div>
-                        <div style={{ fontSize: '0.95rem', color: 'rgba(255, 255, 255, 0.7)' }}>
+                        <div style={{ fontSize: '0.95rem', color: 'rgba(75, 85, 99, 0.7)' }}>
                           {vocations[player.vocation] || 'WARRIOR'} • Level {player.level}
                         </div>
                       </div>
                     </div>
                     <div style={{
                       fontSize: '0.85rem',
-                      color: 'rgba(255, 255, 255, 0.6)',
+                      color: 'rgba(71, 85, 105, 0.6)',
                       marginTop: 'auto',
                       paddingTop: '1rem',
-                      borderTop: '1px solid rgba(124, 184, 255, 0.2)'
+                      borderTop: '1px solid rgba(37, 99, 235, 0.2)'
                     }}>
                       EXP: <strong>{(player.experience || 0).toLocaleString()}</strong>
                     </div>
@@ -678,7 +678,7 @@ export default function EvomaniasHome() {
         {announcements.length > 0 && (
           <section style={{
             padding: '8rem 2rem',
-            background: 'linear-gradient(180deg, rgba(26, 26, 62, 0.7) 0%, rgba(10, 14, 39, 0.9) 100%)',
+            background: 'linear-gradient(180deg, rgba(243, 244, 246, 0.7) 0%, rgba(10, 14, 39, 0.9) 100%)',
             borderTop: '2px solid rgba(255, 165, 0, 0.3)',
             position: 'relative'
           }}>
@@ -688,7 +688,7 @@ export default function EvomaniasHome() {
                 fontWeight: 900,
                 textAlign: 'center',
                 marginBottom: '1.5rem',
-                background: 'linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%)',
+                background: 'linear-gradient(135deg, #ef4444 0%, #ea580c 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -700,7 +700,7 @@ export default function EvomaniasHome() {
               <p style={{
                 fontSize: '1.1rem',
                 textAlign: 'center',
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: 'rgba(75, 85, 99, 0.7)',
                 marginBottom: '3rem'
               }}>
                 Stories from the realm of eternal conflict
@@ -711,7 +711,7 @@ export default function EvomaniasHome() {
                   <div
                     key={post.id}
                     style={{
-                      background: 'linear-gradient(135deg, rgba(255, 107, 107, 0.08), rgba(255, 165, 0, 0.04))',
+                      background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(255, 165, 0, 0.04))',
                       border: '2px solid rgba(255, 165, 0, 0.35)',
                       padding: '2.5rem',
                       borderRadius: '4px',
@@ -735,19 +735,19 @@ export default function EvomaniasHome() {
                       top: 0,
                       width: '4px',
                       height: '100%',
-                      background: 'linear-gradient(180deg, #ff8c42, #ff6b6b)'
+                      background: 'linear-gradient(180deg, #dc2626, #ef4444)'
                     }} />
                     <h3 style={{
                       fontSize: '1.6rem',
                       fontWeight: 700,
-                      color: '#ff8c42',
+                      color: '#dc2626',
                       marginBottom: '1rem',
                       marginLeft: '1rem'
                     }}>
                       {post.title}
                     </h3>
                     <p style={{
-                      color: 'rgba(255, 255, 255, 0.85)',
+                      color: 'rgba(55, 65, 81, 0.85)',
                       fontSize: '1.05rem',
                       lineHeight: 1.7,
                       marginBottom: '1rem',
@@ -757,7 +757,7 @@ export default function EvomaniasHome() {
                     </p>
                     <div style={{
                       fontSize: '0.9rem',
-                      color: 'rgba(255, 255, 255, 0.5)',
+                      color: 'rgba(107, 114, 128, 0.5)',
                       marginLeft: '1rem'
                     }}>
                       By <strong style={{ color: 'rgba(255, 165, 0, 0.9)' }}>{post.author}</strong> · {new Date(post.created).toLocaleDateString()}
@@ -773,8 +773,8 @@ export default function EvomaniasHome() {
         <section style={{
           padding: '10rem 2rem',
           textAlign: 'center',
-          background: 'linear-gradient(180deg, rgba(10, 14, 39, 0.95) 0%, rgba(0, 0, 0, 1) 100%)',
-          borderTop: '3px solid rgba(124, 184, 255, 0.4)',
+          background: 'linear-gradient(180deg, rgba(249, 250, 251, 0.95) 0%, rgba(0, 0, 0, 1) 100%)',
+          borderTop: '3px solid rgba(37, 99, 235, 0.4)',
           position: 'relative',
           overflow: 'hidden'
         }}>
@@ -785,7 +785,7 @@ export default function EvomaniasHome() {
             transform: 'translateX(-50%)',
             width: '100%',
             height: '300px',
-            background: 'radial-gradient(ellipse, rgba(124, 184, 255, 0.15), transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(37, 99, 235, 0.15), transparent 70%)',
             filter: 'blur(60px)'
           }} />
 
@@ -794,20 +794,20 @@ export default function EvomaniasHome() {
               fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
               fontWeight: 900,
               marginBottom: '2rem',
-              background: 'linear-gradient(135deg, #7cb8ff 0%, #ff6b6b 100%)',
+              background: 'linear-gradient(135deg, #2563eb 0%, #ef4444 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               textTransform: 'uppercase',
               letterSpacing: '2px',
-              textShadow: '0 0 40px rgba(124, 184, 255, 0.3)'
+              textShadow: '0 0 40px rgba(37, 99, 235, 0.3)'
             }} className="battle-glow">
               Your Legend Awaits
             </h2>
 
             <p style={{
               fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
-              color: 'rgba(255, 255, 255, 0.85)',
+              color: 'rgba(55, 65, 81, 0.85)',
               marginBottom: '2rem',
               lineHeight: 1.8,
               fontWeight: 400
@@ -833,22 +833,22 @@ export default function EvomaniasHome() {
                   fontWeight: 700,
                   textTransform: 'uppercase',
                   letterSpacing: '4px',
-                  background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+                  background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
                   color: '#000814',
                   border: 'none',
                   borderRadius: '2px',
                   textDecoration: 'none',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
-                  boxShadow: '0 0 50px rgba(124, 184, 255, 0.8)',
+                  boxShadow: '0 0 50px rgba(37, 99, 235, 0.8)',
                   display: 'inline-block'
                 }} className="epic-btn"
                   onMouseEnter={(e) => {
-                    e.target.style.boxShadow = '0 0 100px rgba(124, 184, 255, 1)';
+                    e.target.style.boxShadow = '0 0 100px rgba(37, 99, 235, 1)';
                     e.target.style.transform = 'scale(1.1)';
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.boxShadow = '0 0 50px rgba(124, 184, 255, 0.8)';
+                    e.target.style.boxShadow = '0 0 50px rgba(37, 99, 235, 0.8)';
                     e.target.style.transform = 'scale(1)';
                   }}>
                   Create Legend Now
@@ -856,10 +856,10 @@ export default function EvomaniasHome() {
 
                 <p style={{
                   fontSize: '0.95rem',
-                  color: 'rgba(255, 255, 255, 0.5)',
+                  color: 'rgba(107, 114, 128, 0.5)',
                   marginTop: '2.5rem'
                 }}>
-                  Already have an account? <Link href="/evomanias/login" style={{ color: '#7cb8ff', textDecoration: 'underline' }}>Sign in here</Link>
+                  Already have an account? <Link href="/evomanias/login" style={{ color: '#2563eb', textDecoration: 'underline' }}>Sign in here</Link>
                 </p>
               </>
             )}
