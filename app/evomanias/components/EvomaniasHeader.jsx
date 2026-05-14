@@ -2,20 +2,34 @@
 
 import Link from 'next/link';
 import { useEvomaniasAuth } from '../../context/EvomaniasAuthContext';
+import { useEvomaniasTheme } from '../context/EvomaniasThemeContext';
+import ThemeToggle from './ThemeToggle';
 import { useState } from 'react';
 
 export default function EvomaniasHeader() {
   const { account } = useEvomaniasAuth();
+  const { theme } = useEvomaniasTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
+  const isDark = theme === 'dark';
+
+  const headerStyle = isDark
+    ? {
+        background: 'rgba(20, 20, 25, 0.85)',
+        backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+      }
+    : {
+        background: 'rgba(255, 255, 255, 0.8)',
+        backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid rgba(71, 85, 105, 0.1)',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+      };
+
   return (
-    <header className="navbar" style={{
-      background: 'rgba(20, 20, 25, 0.85)',
-      backdropFilter: 'blur(12px)',
-      borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
-    }}>
+    <header className="navbar" style={headerStyle}>
       <div className="max-w-7xl mx-auto px-6 py-3 w-full">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
@@ -95,8 +109,9 @@ export default function EvomaniasHeader() {
             </div>
           </div>
 
-          {/* Auth Buttons */}
+          {/* Theme Toggle & Auth Buttons */}
           <div className="flex items-center gap-2 flex-shrink-0">
+            <ThemeToggle />
             {!account ? (
               <>
                 <Link
