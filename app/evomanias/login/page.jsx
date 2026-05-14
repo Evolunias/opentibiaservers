@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useEvomaniasAuth } from '../../context/EvomaniasAuthContext';
 import { useTheme } from '../../context/ThemeContext';
+import EvomaniasHeader from '../components/EvomaniasHeader';
 
 export default function EvomaniasLogin() {
   const router = useRouter();
@@ -90,8 +91,11 @@ export default function EvomaniasLogin() {
       background: isDark ? '#ffffff' : '#ffffff',
       color: isDark ? '#333333' : '#333333',
       overflow: 'hidden',
-      fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
+      fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+      display: 'flex',
+      flexDirection: 'column'
     }}>
+      <EvomaniasHeader />
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) translateX(0px); }
@@ -157,7 +161,7 @@ export default function EvomaniasLogin() {
       </div>
 
       {/* CONTENT */}
-      <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '2rem' }}>
+      <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '2rem' }}>
         <div style={{
           textAlign: 'center',
           marginBottom: '3rem',
