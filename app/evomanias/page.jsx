@@ -365,10 +365,9 @@ export default function EvomaniasHome() {
               <div style={{
                 fontSize: '3rem',
                 fontWeight: 900,
-                background: 'linear-gradient(135deg, #2563eb, #1d4ed8)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                color: '#1f2937',
+                textShadow: '0 2px 8px rgba(37, 99, 235, 0.15)',
+                letterSpacing: '1px'
               }}>
                 {serverStats.onlinePlayers.toLocaleString()}
               </div>
@@ -378,10 +377,9 @@ export default function EvomaniasHome() {
               <div style={{
                 fontSize: '3rem',
                 fontWeight: 900,
-                background: 'linear-gradient(135deg, #dc2626, #ea580c)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                color: '#1f2937',
+                textShadow: '0 2px 8px rgba(239, 68, 68, 0.15)',
+                letterSpacing: '1px'
               }}>
                 {serverStats.totalCharacters.toLocaleString()}
               </div>
