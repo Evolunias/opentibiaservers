@@ -53,12 +53,13 @@ export default function EvomaniasLogin() {
   const cardBorder = isDark ? 'rgba(124, 184, 255, 0.25)' : 'rgba(71, 85, 105, 0.1)';
   const primaryColor = isDark ? '#64b5f6' : '#2563eb';
   const buttonGradient = isDark
-    ? 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)'
+    ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
     : 'linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%)';
-  const inputBg = isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(37, 99, 235, 0.05)';
-  const inputBorder = isDark ? 'rgba(124, 184, 255, 0.35)' : 'rgba(37, 99, 235, 0.2)';
-  const inputBorderFocus = isDark ? 'rgba(124, 184, 255, 0.8)' : 'rgba(37, 99, 235, 0.6)';
-  const inputBgFocus = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(37, 99, 235, 0.08)';
+  const inputBg = isDark ? 'rgba(255, 255, 255, 0.95)' : 'rgba(37, 99, 235, 0.05)';
+  const inputBorder = isDark ? 'rgba(124, 184, 255, 0.5)' : 'rgba(37, 99, 235, 0.2)';
+  const inputBorderFocus = isDark ? '#3b82f6' : 'rgba(37, 99, 235, 0.6)';
+  const inputBgFocus = isDark ? 'rgba(255, 255, 255, 1)' : 'rgba(37, 99, 235, 0.08)';
+  const inputTextColor = isDark ? '#1f2937' : '#1f2937';
 
   const ButtonStyle = (primary = true) => ({
     padding: primary ? '0.875rem 2.5rem' : '0.875rem 2.5rem',
@@ -189,26 +190,26 @@ export default function EvomaniasLogin() {
                   padding: '0.875rem 1rem',
                   background: inputBg,
                   border: `2px solid ${inputBorder}`,
-                  borderRadius: '4px',
-                  color: textColor,
+                  borderRadius: '6px',
+                  color: inputTextColor,
                   fontSize: '0.95rem',
                   fontWeight: 500,
                   outline: 'none',
                   transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
                   fontFamily: 'inherit',
-                  boxShadow: 'inset 0 1px 3px rgba(0, 0, 0, 0.1)'
+                  boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.05)'
                 }}
                 onFocus={(e) => {
                   e.target.style.borderColor = inputBorderFocus;
                   e.target.style.background = inputBgFocus;
                   e.target.style.boxShadow = isDark
-                    ? 'inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(124, 184, 255, 0.1)'
-                    : 'inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 3px rgba(37, 99, 235, 0.1)';
+                    ? 'inset 0 2px 4px rgba(0, 0, 0, 0.05), 0 0 0 3px rgba(59, 130, 246, 0.2)'
+                    : 'inset 0 2px 4px rgba(0, 0, 0, 0.05), 0 0 0 3px rgba(37, 99, 235, 0.1)';
                 }}
                 onBlur={(e) => {
                   e.target.style.borderColor = inputBorder;
                   e.target.style.background = inputBg;
-                  e.target.style.boxShadow = 'inset 0 1px 3px rgba(0, 0, 0, 0.1)';
+                  e.target.style.boxShadow = 'inset 0 2px 4px rgba(0, 0, 0, 0.05)';
                 }}
                 disabled={loading}
               />

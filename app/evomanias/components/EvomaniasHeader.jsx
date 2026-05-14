@@ -40,20 +40,7 @@ export default function EvomaniasHeader() {
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/evomanias" className="flex items-center gap-2 hover:opacity-80 transition flex-shrink-0">
-            <div style={{
-              width: '40px',
-              height: '40px',
-              background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: 'bold',
-              fontSize: '16px'
-            }}>
-              E
-            </div>
-            <h1 className="text-xl font-bold hidden sm:block" style={{ color: '#7cb8ff' }}>
+            <h1 className="text-xl font-bold" style={{ color: '#7cb8ff', letterSpacing: '1px' }}>
               EVOMANIAS
             </h1>
           </Link>
