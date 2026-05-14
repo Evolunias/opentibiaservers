@@ -60,34 +60,38 @@ export default function EvomaniasRegister() {
     }
   };
 
-  const bgColor = isDark ? '#1a1a20' : '#ffffff';
+  const bgColor = isDark ? '#0f0f14' : '#ffffff';
   const textColor = isDark ? '#ffffff' : '#1f2937';
-  const textSecondary = isDark ? 'rgba(255, 255, 255, 0.6)' : 'rgba(71, 85, 105, 0.6)';
-  const cardBg = isDark ? 'rgba(30, 30, 35, 0.7)' : 'rgba(255, 255, 255, 0.95)';
-  const cardBorder = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(71, 85, 105, 0.1)';
-  const primaryColor = isDark ? '#7cb8ff' : '#2563eb';
+  const textSecondary = isDark ? 'rgba(255, 255, 255, 0.7)' : 'rgba(71, 85, 105, 0.6)';
+  const cardBg = isDark ? 'rgba(25, 25, 32, 0.95)' : 'rgba(255, 255, 255, 0.95)';
+  const cardBorder = isDark ? 'rgba(124, 184, 255, 0.25)' : 'rgba(71, 85, 105, 0.1)';
+  const primaryColor = isDark ? '#64b5f6' : '#2563eb';
   const buttonGradient = isDark
     ? 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)'
     : 'linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%)';
+  const inputBg = isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(37, 99, 235, 0.05)';
+  const inputBorder = isDark ? 'rgba(124, 184, 255, 0.35)' : 'rgba(37, 99, 235, 0.2)';
+  const inputBorderFocus = isDark ? 'rgba(124, 184, 255, 0.8)' : 'rgba(37, 99, 235, 0.6)';
+  const inputBgFocus = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(37, 99, 235, 0.08)';
 
   const ButtonStyle = (primary = true) => ({
-    padding: primary ? '1.3rem 3.5rem' : '1.3rem 3.5rem',
-    fontSize: '1.15rem',
-    fontWeight: 700,
+    padding: primary ? '0.875rem 2.5rem' : '0.875rem 2.5rem',
+    fontSize: '0.95rem',
+    fontWeight: 600,
     textTransform: 'uppercase',
-    letterSpacing: '3px',
+    letterSpacing: '1.5px',
     background: primary
       ? buttonGradient
-      : isDark ? 'rgba(37, 99, 235, 0.1)' : 'rgba(37, 99, 235, 0.08)',
+      : isDark ? 'rgba(100, 181, 246, 0.12)' : 'rgba(37, 99, 235, 0.08)',
     color: primary ? '#ffffff' : primaryColor,
-    border: primary ? 'none' : `2px solid ${primaryColor}`,
-    borderRadius: '2px',
+    border: primary ? 'none' : `1.5px solid ${primaryColor}`,
+    borderRadius: '6px',
     textDecoration: 'none',
     cursor: 'pointer',
-    transition: 'all 0.3s ease',
+    transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
     boxShadow: primary
-      ? `0 0 30px ${isDark ? 'rgba(37, 99, 235, 0.4)' : 'rgba(37, 99, 235, 0.3)'}`
-      : `0 0 20px ${isDark ? 'rgba(37, 99, 235, 0.2)' : 'rgba(37, 99, 235, 0.1)'}`,
+      ? `0 4px 12px ${isDark ? 'rgba(37, 99, 235, 0.3)' : 'rgba(37, 99, 235, 0.25)'}, 0 0 0 1px ${isDark ? 'rgba(124, 184, 255, 0.2)' : 'rgba(37, 99, 235, 0.1)'}`
+      : 'none',
     display: 'inline-block'
   });
 
@@ -197,22 +201,28 @@ export default function EvomaniasRegister() {
                 style={{
                   width: '100%',
                   padding: '0.875rem 1rem',
-                  background: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)',
-                  border: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)'}`,
-                  borderRadius: '2px',
+                  background: inputBg,
+                  border: `2px solid ${inputBorder}`,
+                  borderRadius: '4px',
                   color: textColor,
                   fontSize: '0.95rem',
+                  fontWeight: 500,
                   outline: 'none',
-                  transition: 'all 0.3s',
-                  fontFamily: 'inherit'
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                  fontFamily: 'inherit',
+                  boxShadow: 'inset 0 1px 3px rgba(0, 0, 0, 0.1)'
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(37, 99, 235, 0.6)';
-                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(37, 99, 235, 0.08)';
+                  e.target.style.borderColor = inputBorderFocus;
+                  e.target.style.background = inputBgFocus;
+                  e.target.style.boxShadow = isDark
+                    ? 'inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(124, 184, 255, 0.1)'
+                    : 'inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 3px rgba(37, 99, 235, 0.1)';
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)';
-                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)';
+                  e.target.style.borderColor = inputBorder;
+                  e.target.style.background = inputBg;
+                  e.target.style.boxShadow = 'inset 0 1px 3px rgba(0, 0, 0, 0.1)';
                 }}
                 disabled={loading}
               />
@@ -237,22 +247,28 @@ export default function EvomaniasRegister() {
                 style={{
                   width: '100%',
                   padding: '0.875rem 1rem',
-                  background: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)',
-                  border: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)'}`,
-                  borderRadius: '2px',
+                  background: inputBg,
+                  border: `2px solid ${inputBorder}`,
+                  borderRadius: '4px',
                   color: textColor,
                   fontSize: '0.95rem',
+                  fontWeight: 500,
                   outline: 'none',
-                  transition: 'all 0.3s',
-                  fontFamily: 'inherit'
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                  fontFamily: 'inherit',
+                  boxShadow: 'inset 0 1px 3px rgba(0, 0, 0, 0.1)'
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(37, 99, 235, 0.6)';
-                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(37, 99, 235, 0.08)';
+                  e.target.style.borderColor = inputBorderFocus;
+                  e.target.style.background = inputBgFocus;
+                  e.target.style.boxShadow = isDark
+                    ? 'inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(124, 184, 255, 0.1)'
+                    : 'inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 3px rgba(37, 99, 235, 0.1)';
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)';
-                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)';
+                  e.target.style.borderColor = inputBorder;
+                  e.target.style.background = inputBg;
+                  e.target.style.boxShadow = 'inset 0 1px 3px rgba(0, 0, 0, 0.1)';
                 }}
                 disabled={loading}
               />
@@ -277,22 +293,28 @@ export default function EvomaniasRegister() {
                 style={{
                   width: '100%',
                   padding: '0.875rem 1rem',
-                  background: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)',
-                  border: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)'}`,
-                  borderRadius: '2px',
+                  background: inputBg,
+                  border: `2px solid ${inputBorder}`,
+                  borderRadius: '4px',
                   color: textColor,
                   fontSize: '0.95rem',
+                  fontWeight: 500,
                   outline: 'none',
-                  transition: 'all 0.3s',
-                  fontFamily: 'inherit'
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                  fontFamily: 'inherit',
+                  boxShadow: 'inset 0 1px 3px rgba(0, 0, 0, 0.1)'
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(37, 99, 235, 0.6)';
-                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(37, 99, 235, 0.08)';
+                  e.target.style.borderColor = inputBorderFocus;
+                  e.target.style.background = inputBgFocus;
+                  e.target.style.boxShadow = isDark
+                    ? 'inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(124, 184, 255, 0.1)'
+                    : 'inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 3px rgba(37, 99, 235, 0.1)';
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)';
-                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)';
+                  e.target.style.borderColor = inputBorder;
+                  e.target.style.background = inputBg;
+                  e.target.style.boxShadow = 'inset 0 1px 3px rgba(0, 0, 0, 0.1)';
                 }}
                 disabled={loading}
               />
@@ -317,22 +339,28 @@ export default function EvomaniasRegister() {
                 style={{
                   width: '100%',
                   padding: '0.875rem 1rem',
-                  background: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)',
-                  border: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)'}`,
-                  borderRadius: '2px',
+                  background: inputBg,
+                  border: `2px solid ${inputBorder}`,
+                  borderRadius: '4px',
                   color: textColor,
                   fontSize: '0.95rem',
+                  fontWeight: 500,
                   outline: 'none',
-                  transition: 'all 0.3s',
-                  fontFamily: 'inherit'
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                  fontFamily: 'inherit',
+                  boxShadow: 'inset 0 1px 3px rgba(0, 0, 0, 0.1)'
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(37, 99, 235, 0.6)';
-                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(37, 99, 235, 0.08)';
+                  e.target.style.borderColor = inputBorderFocus;
+                  e.target.style.background = inputBgFocus;
+                  e.target.style.boxShadow = isDark
+                    ? 'inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(124, 184, 255, 0.1)'
+                    : 'inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 3px rgba(37, 99, 235, 0.1)';
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)';
-                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)';
+                  e.target.style.borderColor = inputBorder;
+                  e.target.style.background = inputBg;
+                  e.target.style.boxShadow = 'inset 0 1px 3px rgba(0, 0, 0, 0.1)';
                 }}
                 disabled={loading}
               />
