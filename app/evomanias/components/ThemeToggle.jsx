@@ -15,18 +15,37 @@ export default function ThemeToggle() {
       className="theme-toggle"
       title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
       style={{
-        background: 'none',
-        border: '1px solid rgba(255, 255, 255, 0.15)',
-        borderRadius: '8px',
-        padding: '0.5rem',
+        background: isDark
+          ? 'rgba(124, 184, 255, 0.08)'
+          : 'rgba(37, 99, 235, 0.08)',
+        border: `1.5px solid ${isDark ? 'rgba(124, 184, 255, 0.25)' : 'rgba(37, 99, 235, 0.25)'}`,
+        borderRadius: '10px',
+        padding: '0.6rem 0.8rem',
         cursor: 'pointer',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '40px',
-        height: '40px',
+        width: 'auto',
+        minWidth: '44px',
+        height: '44px',
         transition: 'all 0.3s ease',
-        color: isDark ? 'rgba(124, 184, 255, 0.8)' : 'rgba(71, 85, 105, 0.8)',
+        color: isDark ? '#7cb8ff' : '#2563eb',
+        boxShadow: isDark
+          ? '0 0 15px rgba(124, 184, 255, 0.15)'
+          : '0 0 12px rgba(37, 99, 235, 0.12)',
+        backdropFilter: 'blur(8px)',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow = isDark
+          ? '0 0 25px rgba(124, 184, 255, 0.25)'
+          : '0 0 20px rgba(37, 99, 235, 0.2)';
+        e.currentTarget.style.transform = 'scale(1.05)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow = isDark
+          ? '0 0 15px rgba(124, 184, 255, 0.15)'
+          : '0 0 12px rgba(37, 99, 235, 0.12)';
+        e.currentTarget.style.transform = 'scale(1)';
       }}
     >
       {isDark ? (

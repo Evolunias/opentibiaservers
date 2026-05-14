@@ -31,6 +31,12 @@ export default function EvomaniasHeader() {
   return (
     <header className="navbar" style={headerStyle}>
       <div className="max-w-7xl mx-auto px-6 py-3 w-full">
+        {/* Center Theme Toggle */}
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.75rem' }}>
+          <ThemeToggle />
+        </div>
+
+        {/* Main Navigation Row */}
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/evomanias" className="flex items-center gap-2 hover:opacity-80 transition flex-shrink-0">
@@ -109,9 +115,8 @@ export default function EvomaniasHeader() {
             </div>
           </div>
 
-          {/* Theme Toggle & Auth Buttons */}
+          {/* Auth Buttons */}
           <div className="flex items-center gap-2 flex-shrink-0">
-            <ThemeToggle />
             {!account ? (
               <>
                 <Link
