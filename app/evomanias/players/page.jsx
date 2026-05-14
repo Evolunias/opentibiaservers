@@ -2,13 +2,17 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useEvomaniasTheme } from '../context/EvomaniasThemeContext';
 
 export default function PlayersPage() {
+  const { theme } = useEvomaniasTheme();
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [vocationFilter, setVocationFilter] = useState('');
   const [lastUpdated, setLastUpdated] = useState(null);
+
+  const isDark = theme === 'dark';
 
   const vocations = {
     'Knight': '🗡️',
@@ -47,9 +51,20 @@ export default function PlayersPage() {
     }
   };
 
-  const filteredPlayers = vocationFilter 
+  const filteredPlayers = vocationFilter
     ? players.filter(p => p.vocation === vocationFilter)
     : players;
+
+  const primaryColor = isDark ? '#7cb8ff' : '#2563eb';
+  const bgCard = isDark ? 'rgba(20, 20, 30, 0.8)' : 'rgba(255, 255, 255, 0.8)';
+  const borderColor = isDark ? 'rgba(124, 184, 255, 0.2)' : 'rgba(37, 99, 235, 0.1)';
+  const textColor = isDark ? 'rgba(255, 255, 255, 0.9)' : 'rgba(31, 41, 55, 0.9)';
+  const textMuted = isDark ? 'rgba(255, 255, 255, 0.5)' : 'rgba(107, 114, 128, 0.6)';
+  const headerBg = isDark
+    ? 'linear-gradient(135deg, rgba(124, 184, 255, 0.1) 0%, rgba(90, 159, 230, 0.05) 100%)'
+    : 'linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(37, 99, 235, 0.03) 100%)';
+  const buttonActiveBg = isDark ? '#7cb8ff' : '#2563eb';
+  const buttonInactiveBg = isDark ? 'rgba(124, 184, 255, 0.2)' : 'rgba(37, 99, 235, 0.1)';
 
   return (
     <main style={{
@@ -62,9 +77,9 @@ export default function PlayersPage() {
         <div style={{
           marginBottom: '2rem',
           textAlign: 'center',
-          background: 'linear-gradient(135deg, rgba(124, 184, 255, 0.1) 0%, rgba(90, 159, 230, 0.05) 100%)',
+          background: headerBg,
           backdropFilter: 'blur(12px)',
-          border: '1px solid rgba(124, 184, 255, 0.2)',
+          border: `1px solid ${borderColor}`,
           padding: '2rem',
           borderRadius: '12px'
         }}>
@@ -72,7 +87,9 @@ export default function PlayersPage() {
             fontSize: '2.5rem',
             fontWeight: 700,
             marginBottom: '1rem',
-            background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+            background: isDark
+              ? 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)'
+              : 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
@@ -80,7 +97,7 @@ export default function PlayersPage() {
             🏆 All Adventurers
           </h1>
           <p style={{
-            color: 'rgba(255, 255, 255, 0.7)',
+            color: textMuted,
             marginBottom: '1rem'
           }}>
             Real-time player rankings and statistics
@@ -88,7 +105,7 @@ export default function PlayersPage() {
           {lastUpdated && (
             <p style={{
               fontSize: '0.875rem',
-              color: 'rgba(124, 184, 255, 0.8)'
+              color: primaryColor
             }}>
               Last updated: {lastUpdated}
             </p>
@@ -106,8 +123,8 @@ export default function PlayersPage() {
             onClick={() => setVocationFilter('')}
             style={{
               padding: '0.75rem 1.5rem',
-              background: vocationFilter === '' ? '#7cb8ff' : 'rgba(124, 184, 255, 0.2)',
-              border: '1px solid rgba(124, 184, 255, 0.4)',
+              background: vocationFilter === '' ? buttonActiveBg : buttonInactiveBg,
+              border: `1px solid ${primaryColor}${isDark ? '66' : '40'}`,
               color: 'white',
               borderRadius: '8px',
               cursor: 'pointer',
@@ -123,8 +140,8 @@ export default function PlayersPage() {
               onClick={() => setVocationFilter(vocation)}
               style={{
                 padding: '0.75rem 1.5rem',
-                background: vocationFilter === vocation ? '#7cb8ff' : 'rgba(124, 184, 255, 0.2)',
-                border: '1px solid rgba(124, 184, 255, 0.4)',
+                background: vocationFilter === vocation ? buttonActiveBg : buttonInactiveBg,
+                border: `1px solid ${primaryColor}${isDark ? '66' : '40'}`,
                 color: 'white',
                 borderRadius: '8px',
                 cursor: 'pointer',
@@ -139,17 +156,17 @@ export default function PlayersPage() {
 
         {/* Players Table */}
         <div style={{
-          background: 'rgba(20, 20, 30, 0.8)',
+          background: bgCard,
           backdropFilter: 'blur(12px)',
-          border: '1px solid rgba(124, 184, 255, 0.2)',
+          border: `1px solid ${borderColor}`,
           borderRadius: '12px',
           overflow: 'hidden'
         }}>
           {error && (
             <div style={{
               padding: '1rem',
-              background: 'rgba(220, 53, 69, 0.1)',
-              color: '#ff6b6b',
+              background: isDark ? 'rgba(220, 53, 69, 0.1)' : 'rgba(220, 53, 69, 0.08)',
+              color: isDark ? '#ff6b6b' : '#dc3545',
               fontSize: '0.875rem'
             }}>
               {error}
@@ -160,7 +177,7 @@ export default function PlayersPage() {
             <div style={{
               padding: '3rem',
               textAlign: 'center',
-              color: 'rgba(255, 255, 255, 0.5)'
+              color: textMuted
             }}>
               Loading adventurers...
             </div>
@@ -168,7 +185,7 @@ export default function PlayersPage() {
             <div style={{
               padding: '3rem',
               textAlign: 'center',
-              color: 'rgba(255, 255, 255, 0.5)'
+              color: textMuted
             }}>
               No adventurers found
             </div>
@@ -179,28 +196,28 @@ export default function PlayersPage() {
             }}>
               <thead>
                 <tr style={{
-                  background: 'rgba(124, 184, 255, 0.1)',
-                  borderBottom: '1px solid rgba(124, 184, 255, 0.2)'
+                  background: isDark ? 'rgba(124, 184, 255, 0.1)' : 'rgba(37, 99, 235, 0.08)',
+                  borderBottom: `1px solid ${borderColor}`
                 }}>
                   <th style={{
                     padding: '1rem',
                     textAlign: 'left',
                     fontWeight: '700',
-                    color: '#7cb8ff',
+                    color: primaryColor,
                     fontSize: '0.875rem'
                   }}>Rank</th>
                   <th style={{
                     padding: '1rem',
                     textAlign: 'left',
                     fontWeight: '700',
-                    color: '#7cb8ff',
+                    color: primaryColor,
                     fontSize: '0.875rem'
                   }}>Adventurer</th>
                   <th style={{
                     padding: '1rem',
                     textAlign: 'left',
                     fontWeight: '700',
-                    color: '#7cb8ff',
+                    color: primaryColor,
                     fontSize: '0.875rem'
                   }}>Class</th>
                   <th style={{

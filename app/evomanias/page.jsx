@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useEvomaniasAuth } from '../context/EvomaniasAuthContext';
+import { useEvomaniasTheme } from './context/EvomaniasThemeContext';
 
 export default function EvomaniasHome() {
   const { account } = useEvomaniasAuth();
+  const { theme } = useEvomaniasTheme();
   const [topPlayers, setTopPlayers] = useState([]);
   const [announcements, setAnnouncements] = useState([]);
   const [serverStats, setServerStats] = useState({
@@ -18,6 +20,8 @@ export default function EvomaniasHome() {
   const [particles, setParticles] = useState([]);
   const [isClient, setIsClient] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+
+  const isDark = theme === 'dark';
 
   useEffect(() => {
     setIsClient(true);
@@ -119,25 +123,35 @@ export default function EvomaniasHome() {
     textTransform: 'uppercase',
     letterSpacing: '3px',
     background: primary
-      ? 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)'
-      : 'rgba(37, 99, 235, 0.1)',
-    color: primary ? '#ffffff' : '#2563eb',
-    border: primary ? 'none' : '2px solid #2563eb',
+      ? buttonGradient
+      : isDark ? 'rgba(37, 99, 235, 0.1)' : 'rgba(37, 99, 235, 0.08)',
+    color: primary ? '#ffffff' : primaryColor,
+    border: primary ? 'none' : `2px solid ${primaryColor}`,
     borderRadius: '2px',
     textDecoration: 'none',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
     boxShadow: primary
-      ? '0 0 30px rgba(37, 99, 235, 0.4)'
-      : '0 0 20px rgba(37, 99, 235, 0.2)',
+      ? `0 0 30px ${isDark ? 'rgba(37, 99, 235, 0.4)' : 'rgba(37, 99, 235, 0.3)'}`
+      : `0 0 20px ${isDark ? 'rgba(37, 99, 235, 0.2)' : 'rgba(37, 99, 235, 0.1)'}`,
     display: 'inline-block'
   });
+
+  const bgColor = isDark ? '#1a1a20' : '#ffffff';
+  const textColor = isDark ? '#ffffff' : '#1f2937';
+  const textSecondary = isDark ? 'rgba(255, 255, 255, 0.6)' : 'rgba(71, 85, 105, 0.6)';
+  const cardBg = isDark ? 'rgba(30, 30, 35, 0.7)' : 'rgba(255, 255, 255, 0.95)';
+  const cardBorder = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(71, 85, 105, 0.1)';
+  const primaryColor = isDark ? '#7cb8ff' : '#2563eb';
+  const buttonGradient = isDark
+    ? 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)'
+    : 'linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%)';
 
   return (
     <div style={{
       minHeight: '100vh',
-      background: '#ffffff',
-      color: '#333333',
+      background: bgColor,
+      color: textColor,
       overflow: 'hidden',
       fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
     }}>
@@ -180,7 +194,7 @@ export default function EvomaniasHome() {
           left: 0,
           width: '100%',
           height: '100%',
-          background: '#ffffff'
+          background: bgColor
         }} />
 
         <div style={{
@@ -197,14 +211,16 @@ export default function EvomaniasHome() {
           position: 'absolute',
           width: '1200px',
           height: '1200px',
-          background: 'radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%)',
+          background: isDark
+            ? 'radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%)'
+            : 'radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%)',
           borderRadius: '50%',
           left: mousePos.x - 600,
           top: mousePos.y - 600,
           transition: 'all 0.5s ease-out',
           filter: 'blur(100px)',
           pointerEvents: 'none',
-          opacity: 0.6
+          opacity: isDark ? 0.6 : 0.4
         }} />
 
         {isClient && particles.map((p, i) => (
@@ -274,7 +290,7 @@ export default function EvomaniasHome() {
             fontWeight: 300,
             margin: '0 0 1rem 0',
             lineHeight: 1,
-            color: '#1f2937',
+            color: textColor,
             letterSpacing: '2px',
             animation: 'slideInDown 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both'
           }}>
@@ -284,7 +300,7 @@ export default function EvomaniasHome() {
           <p style={{
             fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
             fontWeight: 400,
-            color: 'rgba(71, 85, 105, 0.85)',
+            color: textSecondary,
             margin: '0.5rem 0 2.5rem 0',
             maxWidth: '700px',
             lineHeight: 1.6,
@@ -347,31 +363,31 @@ export default function EvomaniasHome() {
                 animation: 'pulse 2s ease-in-out infinite',
                 margin: '0 auto'
               }} />
-              <div style={{ fontSize: '0.95rem', color: 'rgba(71, 85, 105, 0.6)', marginTop: '1rem', textTransform: 'uppercase' }}>Server Status</div>
+              <div style={{ fontSize: '0.95rem', color: textSecondary, marginTop: '1rem', textTransform: 'uppercase' }}>Server Status</div>
             </div>
             <div style={{ textAlign: 'center' }}>
               <div style={{
                 fontSize: '3rem',
                 fontWeight: 900,
-                color: '#1f2937',
-                textShadow: '0 2px 8px rgba(37, 99, 235, 0.15)',
+                color: textColor,
+                textShadow: `0 2px 8px ${isDark ? 'rgba(37, 99, 235, 0.15)' : 'rgba(37, 99, 235, 0.1)'}`,
                 letterSpacing: '1px'
               }}>
                 {serverStats.onlinePlayers.toLocaleString()}
               </div>
-              <div style={{ fontSize: '0.95rem', color: 'rgba(71, 85, 105, 0.6)', marginTop: '0.5rem', textTransform: 'uppercase' }}>In Battle Now</div>
+              <div style={{ fontSize: '0.95rem', color: textSecondary, marginTop: '0.5rem', textTransform: 'uppercase' }}>In Battle Now</div>
             </div>
             <div style={{ textAlign: 'center' }}>
               <div style={{
                 fontSize: '3rem',
                 fontWeight: 900,
-                color: '#1f2937',
-                textShadow: '0 2px 8px rgba(239, 68, 68, 0.15)',
+                color: textColor,
+                textShadow: `0 2px 8px ${isDark ? 'rgba(239, 68, 68, 0.15)' : 'rgba(239, 68, 68, 0.1)'}`,
                 letterSpacing: '1px'
               }}>
                 {serverStats.totalCharacters.toLocaleString()}
               </div>
-              <div style={{ fontSize: '0.95rem', color: 'rgba(71, 85, 105, 0.6)', marginTop: '0.5rem', textTransform: 'uppercase' }}>Total Legends</div>
+              <div style={{ fontSize: '0.95rem', color: textSecondary, marginTop: '0.5rem', textTransform: 'uppercase' }}>Total Legends</div>
             </div>
           </div>
         </section>
@@ -381,8 +397,8 @@ export default function EvomaniasHome() {
         {/* TOP WARRIORS SECTION */}
         <section style={{
           padding: '8rem 2rem',
-          background: '#ffffff',
-          borderTop: '1px solid rgba(31, 41, 55, 0.08)',
+          background: bgColor,
+          borderTop: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(71, 85, 105, 0.08)'}`,
           position: 'relative'
         }}>
           <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
@@ -391,7 +407,7 @@ export default function EvomaniasHome() {
               fontWeight: 300,
               textAlign: 'center',
               marginBottom: '1.5rem',
-              color: '#1f2937',
+              color: textColor,
               letterSpacing: '2px'
             }}>
               Elite Players
@@ -399,7 +415,7 @@ export default function EvomaniasHome() {
             <p style={{
               fontSize: '1rem',
               textAlign: 'center',
-              color: 'rgba(107, 114, 128, 0.7)',
+              color: textSecondary,
               marginBottom: '3rem',
               letterSpacing: '0.5px'
             }}>
@@ -407,11 +423,11 @@ export default function EvomaniasHome() {
             </p>
 
             {loading ? (
-              <div style={{ textAlign: 'center', padding: '4rem', fontSize: '1.2rem', color: 'rgba(71, 85, 105, 0.6)' }}>
+              <div style={{ textAlign: 'center', padding: '4rem', fontSize: '1.2rem', color: textSecondary }}>
                 Loading...
               </div>
             ) : topPlayers.length === 0 ? (
-              <div style={{ textAlign: 'center', padding: '4rem', fontSize: '1.2rem', color: 'rgba(71, 85, 105, 0.6)' }}>
+              <div style={{ textAlign: 'center', padding: '4rem', fontSize: '1.2rem', color: textSecondary }}>
                 No players yet
               </div>
             ) : (
@@ -426,13 +442,15 @@ export default function EvomaniasHome() {
                     href={`/evomanias/character/${player.id}`}
                     style={{
                       background: idx === 0
-                        ? 'linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(255, 165, 0, 0.04))'
-                        : 'linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.04))',
-                      border: `2px solid ${idx === 0 ? 'rgba(255, 215, 0, 0.3)' : 'rgba(37, 99, 235, 0.2)'}`,
+                        ? isDark
+                          ? 'linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(255, 165, 0, 0.04))'
+                          : 'linear-gradient(135deg, rgba(255, 215, 0, 0.06), rgba(255, 165, 0, 0.03))'
+                        : cardBg,
+                      border: `2px solid ${idx === 0 ? (isDark ? 'rgba(255, 215, 0, 0.3)' : 'rgba(255, 215, 0, 0.2)') : cardBorder}`,
                       padding: '2rem',
                       borderRadius: '4px',
                       textDecoration: 'none',
-                      color: '#1f2937',
+                      color: textColor,
                       transition: 'all 0.4s ease',
                       cursor: 'pointer',
                       position: 'relative',
@@ -453,7 +471,7 @@ export default function EvomaniasHome() {
                       <span style={{
                         fontSize: '2.5rem',
                         fontWeight: 900,
-                        color: idx === 0 ? '#ffd700' : '#2563eb',
+                        color: idx === 0 ? '#ffd700' : primaryColor,
                         minWidth: '60px'
                       }}>
                         #{idx + 1}
@@ -462,22 +480,22 @@ export default function EvomaniasHome() {
                         <div style={{
                           fontSize: '1.4rem',
                           fontWeight: 700,
-                          color: '#1f2937',
+                          color: textColor,
                           marginBottom: '0.25rem'
                         }}>
                           {player.name}
                         </div>
-                        <div style={{ fontSize: '0.95rem', color: 'rgba(107, 114, 128, 0.7)' }}>
+                        <div style={{ fontSize: '0.95rem', color: textSecondary }}>
                           {vocations[player.vocation] || 'WARRIOR'} • Level {player.level}
                         </div>
                       </div>
                     </div>
                     <div style={{
                       fontSize: '0.85rem',
-                      color: 'rgba(71, 85, 105, 0.6)',
+                      color: textSecondary,
                       marginTop: 'auto',
                       paddingTop: '1rem',
-                      borderTop: '1px solid rgba(37, 99, 235, 0.1)'
+                      borderTop: `1px solid ${isDark ? 'rgba(37, 99, 235, 0.1)' : 'rgba(37, 99, 235, 0.08)'}`
                     }}>
                       EXP: <strong>{(player.experience || 0).toLocaleString()}</strong>
                     </div>

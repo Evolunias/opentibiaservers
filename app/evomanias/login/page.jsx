@@ -37,6 +37,8 @@ export default function EvomaniasLogin() {
 
   const isDark = theme === 'dark';
 
+  const isDark = theme === 'dark';
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));

@@ -4,10 +4,12 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useEvomaniasAuth } from '../../context/EvomaniasAuthContext';
+import { useEvomaniasTheme } from '../context/EvomaniasThemeContext';
 
 export default function EvomaniasRegister() {
   const router = useRouter();
   const { register } = useEvomaniasAuth();
+  const { theme } = useEvomaniasTheme();
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -16,6 +18,8 @@ export default function EvomaniasRegister() {
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const isDark = theme === 'dark';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,8 +60,38 @@ export default function EvomaniasRegister() {
     }
   };
 
+  const cardBg = isDark
+    ? 'rgba(20, 20, 25, 0.8)'
+    : 'rgba(255, 255, 255, 0.95)';
+  const cardBorder = isDark
+    ? 'rgba(255, 255, 255, 0.1)'
+    : 'rgba(71, 85, 105, 0.1)';
+  const inputBg = isDark
+    ? 'rgba(0, 0, 0, 0.3)'
+    : 'rgba(71, 85, 105, 0.05)';
+  const inputBorder = isDark
+    ? 'rgba(255, 255, 255, 0.15)'
+    : 'rgba(71, 85, 105, 0.2)';
+  const textColor = isDark
+    ? 'rgba(255, 255, 255, 0.95)'
+    : 'rgba(31, 41, 55, 0.95)';
+  const textMuted = isDark
+    ? 'rgba(255, 255, 255, 0.6)'
+    : 'rgba(107, 114, 128, 0.6)';
+
   return (
     <main className="min-h-screen flex items-center justify-center px-6 py-12">
+      <style>{`
+        @keyframes gradientShift {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        .gradient-header {
+          background: linear-gradient(135deg, #7cb8ff 0%, #2563eb 50%, #5a9fe6 100%);
+          background-size: 200% 200%;
+          animation: gradientShift 6s ease infinite;
+        }
+      `}</style>
       <div className="w-full max-w-md">
         <div style={{
           background: 'rgba(20, 20, 25, 0.85)',
