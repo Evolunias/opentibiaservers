@@ -1,11 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useEvomaniasAuth } from '../../context/EvomaniasAuthContext';
 import { useEvomaniasTheme } from '../context/EvomaniasThemeContext';
-import ThemeToggle from '../components/ThemeToggle';
 
 export default function EvomaniasRegister() {
   const router = useRouter();
@@ -19,38 +18,6 @@ export default function EvomaniasRegister() {
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [scrollY, setScrollY] = useState(0);
-  const [isClient, setIsClient] = useState(false);
-  const [particles, setParticles] = useState([]);
-
-  useEffect(() => {
-    setIsClient(true);
-    setParticles([...Array(25)].map(() => ({
-      width: Math.random() * 8 + 2,
-      height: Math.random() * 8 + 2,
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-      duration: Math.random() * 10 + 8,
-      delay: Math.random() * 3,
-      opacity: Math.random() * 0.6 + 0.2
-    })));
-  }, []);
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const isDark = theme === 'dark';
 
@@ -125,398 +92,300 @@ export default function EvomaniasRegister() {
   });
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: bgColor,
-      color: textColor,
-      overflow: 'hidden',
-      fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
-    }}>
+    <div style={{ fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif' }}>
       <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) translateX(0px); }
-          25% { transform: translateY(-40px) translateX(15px); }
-          50% { transform: translateY(-70px) translateX(-8px); }
-          75% { transform: translateY(-30px) translateX(20px); }
-        }
-        @keyframes pulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(37, 99, 235, 0.4); } 50% { transform: scale(1.1); box-shadow: 0 0 50px rgba(37, 99, 235, 0.8); } }
         @keyframes slideInDown { from { opacity: 0; transform: translateY(-100px) rotateX(30deg); } to { opacity: 1; transform: translateY(0) rotateX(0deg); } }
-        @keyframes slideInUp { from { opacity: 0; transform: translateY(100px) rotateX(-30deg); } to { opacity: 1; transform: translateY(0) rotateX(0deg); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes zoomIn { from { opacity: 0; transform: scale(0.7) rotateZ(5deg); } to { opacity: 1; transform: scale(1) rotateZ(0deg); } }
-        @keyframes glow-text { 0%, 100% { opacity: 0.8; text-shadow: 0 0 10px rgba(37, 99, 235, 0.5), 0 0 20px rgba(37, 99, 235, 0.3); } 50% { opacity: 1; text-shadow: 0 0 30px rgba(37, 99, 235, 1), 0 0 50px rgba(37, 99, 235, 0.6); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(37, 99, 235, 0.4); } 50% { transform: scale(1.1); box-shadow: 0 0 50px rgba(37, 99, 235, 0.8); } }
         .epic-btn { animation: pulse 2.5s ease-in-out infinite; }
         * { box-sizing: border-box; }
       `}</style>
 
-      {/* Animated Background */}
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: 0,
-        pointerEvents: 'none',
+      <section style={{
+        minHeight: 'calc(100vh - 200px)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        padding: '4rem 2rem',
+        position: 'relative',
         overflow: 'hidden'
       }}>
         <div style={{
           position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: bgColor
+          top: '-20%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '150%',
+          height: '150%',
+          background: 'radial-gradient(ellipse at center, rgba(37, 99, 235, 0.06) 0%, transparent 70%)',
+          filter: 'blur(60px)',
+          opacity: 0.5,
+          zIndex: -1
         }} />
 
-        <div style={{
-          position: 'absolute',
-          width: '200%',
-          height: '200%',
-          background: 'transparent',
-          animation: 'float 40s ease-in-out infinite',
-          left: -scrollY * 0.3,
-          top: -scrollY * 0.2
-        }} />
-
-        <div style={{
-          position: 'absolute',
-          width: '1200px',
-          height: '1200px',
-          background: isDark
-            ? 'radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%)'
-            : 'radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%)',
-          borderRadius: '50%',
-          left: mousePos.x - 600,
-          top: mousePos.y - 600,
-          transition: 'all 0.5s ease-out',
-          filter: 'blur(100px)',
-          pointerEvents: 'none',
-          opacity: isDark ? 0.6 : 0.4
-        }} />
-
-        {isClient && particles.map((p, i) => (
-          <div key={i} style={{
-            position: 'absolute',
-            width: p.width + 'px',
-            height: p.height + 'px',
-            background: i % 2 === 0
-              ? 'radial-gradient(circle, rgba(37, 99, 235, 0.8), rgba(37, 99, 235, 0.2))'
-              : 'radial-gradient(circle, rgba(239, 68, 68, 0.6), rgba(239, 68, 68, 0.1))',
-            borderRadius: '50%',
-            left: p.left + '%',
-            top: p.top + '%',
-            animation: `float ${p.duration}s ease-in-out infinite`,
-            animationDelay: p.delay + 's',
-            boxShadow: i % 2 === 0
-              ? '0 0 30px rgba(37, 99, 235, 0.9)'
-              : '0 0 25px rgba(239, 68, 68, 0.8)',
-            filter: `blur(${1 + i % 3}px)`,
-            opacity: p.opacity
-          }} />
-        ))}
-
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundImage: `
-            linear-gradient(0deg, transparent 24%, rgba(37, 99, 235, 0.02) 25%, rgba(37, 99, 235, 0.02) 26%, transparent 27%, transparent 74%, rgba(37, 99, 235, 0.02) 75%, rgba(37, 99, 235, 0.02) 76%, transparent 77%, transparent),
-            linear-gradient(90deg, transparent 24%, rgba(37, 99, 235, 0.02) 25%, rgba(37, 99, 235, 0.02) 26%, transparent 27%, transparent 74%, rgba(37, 99, 235, 0.02) 75%, rgba(37, 99, 235, 0.02) 76%, transparent 77%, transparent)
-          `,
-          backgroundSize: '50px 50px',
-          opacity: 0.3
-        }} />
-      </div>
-
-      {/* CONTENT */}
-      <div style={{ position: 'relative', zIndex: 1 }}>
-        <section style={{
-          minHeight: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          textAlign: 'center',
-          padding: '4rem 2rem',
-          position: 'relative',
-          overflow: 'hidden'
+        <h1 style={{
+          fontSize: 'clamp(2.5rem, 10vw, 3.5rem)',
+          fontWeight: 300,
+          margin: '0 0 1rem 0',
+          lineHeight: 1,
+          color: textColor,
+          letterSpacing: '2px',
+          animation: 'slideInDown 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both'
         }}>
-          <div style={{
-            position: 'absolute',
-            top: '-20%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '150%',
-            height: '150%',
-            background: 'radial-gradient(ellipse at center, rgba(37, 99, 235, 0.06) 0%, transparent 70%)',
-            filter: 'blur(60px)',
-            opacity: 0.5
-          }} />
+          Join EVOMANIAS
+        </h1>
 
-          <h1 style={{
-            fontSize: 'clamp(2.5rem, 10vw, 3.5rem)',
-            fontWeight: 300,
-            margin: '0 0 1rem 0',
-            lineHeight: 1,
-            color: textColor,
-            letterSpacing: '2px',
-            animation: 'slideInDown 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both'
-          }}>
-            Join EVOMANIAS
-          </h1>
+        <p style={{
+          fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
+          fontWeight: 400,
+          color: textSecondary,
+          margin: '0.5rem 0 2.5rem 0',
+          maxWidth: '700px',
+          lineHeight: 1.6,
+          letterSpacing: '0.5px',
+          animation: 'fadeIn 1.5s ease-out 0.7s both'
+        }}>
+          Create your account and begin your adventure
+        </p>
 
-          <p style={{
-            fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
-            fontWeight: 400,
-            color: textSecondary,
-            margin: '0.5rem 0 2.5rem 0',
-            maxWidth: '700px',
-            lineHeight: 1.6,
-            letterSpacing: '0.5px',
-            animation: 'fadeIn 1.5s ease-out 0.7s both'
-          }}>
-            Create your account and begin your adventure
-          </p>
-
-          <div style={{
-            width: '100%',
-            maxWidth: '500px',
-            background: cardBg,
-            backdropFilter: 'blur(10px)',
-            border: `2px solid ${cardBorder}`,
-            borderRadius: '2px',
-            padding: '3rem',
-            boxShadow: `0 20px 50px ${isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.1)'}`,
-            animation: 'zoomIn 1s cubic-bezier(0.34, 1.56, 0.64, 1) both'
-          }}>
-            {error && (
-              <div style={{
-                background: 'rgba(239, 68, 68, 0.1)',
-                border: '2px solid rgba(239, 68, 68, 0.3)',
-                color: '#ff6b6b',
-                padding: '1rem',
-                borderRadius: '2px',
-                marginBottom: '1.5rem',
-                fontSize: '0.95rem',
-                fontWeight: 500
-              }}>
-                {error}
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div>
-                <label style={{
-                  display: 'block',
-                  fontSize: '0.95rem',
-                  fontWeight: 600,
-                  color: textColor,
-                  marginBottom: '0.5rem'
-                }}>
-                  Account Name
-                </label>
-                <input
-                  type="text"
-                  name="username"
-                  value={formData.username}
-                  onChange={handleChange}
-                  placeholder="Your account name"
-                  style={{
-                    width: '100%',
-                    padding: '0.875rem 1rem',
-                    background: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)',
-                    border: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)'}`,
-                    borderRadius: '2px',
-                    color: textColor,
-                    fontSize: '0.95rem',
-                    outline: 'none',
-                    transition: 'all 0.3s',
-                    fontFamily: 'inherit'
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(37, 99, 235, 0.6)';
-                    e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(37, 99, 235, 0.08)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)';
-                    e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)';
-                  }}
-                  disabled={loading}
-                />
-              </div>
-
-              <div>
-                <label style={{
-                  display: 'block',
-                  fontSize: '0.95rem',
-                  fontWeight: 600,
-                  color: textColor,
-                  marginBottom: '0.5rem'
-                }}>
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  style={{
-                    width: '100%',
-                    padding: '0.875rem 1rem',
-                    background: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)',
-                    border: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)'}`,
-                    borderRadius: '2px',
-                    color: textColor,
-                    fontSize: '0.95rem',
-                    outline: 'none',
-                    transition: 'all 0.3s',
-                    fontFamily: 'inherit'
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(37, 99, 235, 0.6)';
-                    e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(37, 99, 235, 0.08)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)';
-                    e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)';
-                  }}
-                  disabled={loading}
-                />
-              </div>
-
-              <div>
-                <label style={{
-                  display: 'block',
-                  fontSize: '0.95rem',
-                  fontWeight: 600,
-                  color: textColor,
-                  marginBottom: '0.5rem'
-                }}>
-                  Password
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  placeholder="••••••••"
-                  style={{
-                    width: '100%',
-                    padding: '0.875rem 1rem',
-                    background: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)',
-                    border: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)'}`,
-                    borderRadius: '2px',
-                    color: textColor,
-                    fontSize: '0.95rem',
-                    outline: 'none',
-                    transition: 'all 0.3s',
-                    fontFamily: 'inherit'
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(37, 99, 235, 0.6)';
-                    e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(37, 99, 235, 0.08)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)';
-                    e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)';
-                  }}
-                  disabled={loading}
-                />
-              </div>
-
-              <div>
-                <label style={{
-                  display: 'block',
-                  fontSize: '0.95rem',
-                  fontWeight: 600,
-                  color: textColor,
-                  marginBottom: '0.5rem'
-                }}>
-                  Confirm Password
-                </label>
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                  placeholder="••••••••"
-                  style={{
-                    width: '100%',
-                    padding: '0.875rem 1rem',
-                    background: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)',
-                    border: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)'}`,
-                    borderRadius: '2px',
-                    color: textColor,
-                    fontSize: '0.95rem',
-                    outline: 'none',
-                    transition: 'all 0.3s',
-                    fontFamily: 'inherit'
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(37, 99, 235, 0.6)';
-                    e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(37, 99, 235, 0.08)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)';
-                    e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)';
-                  }}
-                  disabled={loading}
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={loading}
-                style={ButtonStyle(true)}
-                className="epic-btn"
-                onMouseEnter={(e) => {
-                  !loading && (e.target.style.opacity = '0.9');
-                }}
-                onMouseLeave={(e) => {
-                  !loading && (e.target.style.opacity = '1');
-                }}
-              >
-                {loading ? 'Creating Account...' : 'Create Account'}
-              </button>
-            </form>
-
+        <div style={{
+          width: '100%',
+          maxWidth: '500px',
+          background: cardBg,
+          backdropFilter: 'blur(10px)',
+          border: `2px solid ${cardBorder}`,
+          borderRadius: '2px',
+          padding: '3rem',
+          boxShadow: `0 20px 50px ${isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.1)'}`,
+          animation: 'zoomIn 1s cubic-bezier(0.34, 1.56, 0.64, 1) both'
+        }}>
+          {error && (
             <div style={{
-              marginTop: '2rem',
-              paddingTop: '2rem',
-              borderTop: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(37, 99, 235, 0.1)'}`,
-              textAlign: 'center'
+              background: 'rgba(239, 68, 68, 0.1)',
+              border: '2px solid rgba(239, 68, 68, 0.3)',
+              color: '#ff6b6b',
+              padding: '1rem',
+              borderRadius: '2px',
+              marginBottom: '1.5rem',
+              fontSize: '0.95rem',
+              fontWeight: 500
             }}>
-              <p style={{
-                color: textSecondary,
-                marginBottom: '1rem',
-                fontSize: '0.95rem'
-              }}>
-                Already have an account?{' '}
-                <Link href="/evomanias/login" style={{
-                  color: primaryColor,
-                  fontWeight: 700,
-                  textDecoration: 'none',
-                  transition: 'opacity 0.3s'
-                }}>
-                  Sign in
-                </Link>
-              </p>
-              <Link href="/evomanias" style={{
-                color: textSecondary,
-                fontSize: '0.95rem',
-                textDecoration: 'none',
-                transition: 'color 0.3s'
-              }}>
-                Back to home
-              </Link>
+              {error}
             </div>
+          )}
+
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div>
+              <label style={{
+                display: 'block',
+                fontSize: '0.95rem',
+                fontWeight: 600,
+                color: textColor,
+                marginBottom: '0.5rem'
+              }}>
+                Account Name
+              </label>
+              <input
+                type="text"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                placeholder="Your account name"
+                style={{
+                  width: '100%',
+                  padding: '0.875rem 1rem',
+                  background: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)',
+                  border: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)'}`,
+                  borderRadius: '2px',
+                  color: textColor,
+                  fontSize: '0.95rem',
+                  outline: 'none',
+                  transition: 'all 0.3s',
+                  fontFamily: 'inherit'
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(37, 99, 235, 0.6)';
+                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(37, 99, 235, 0.08)';
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)';
+                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)';
+                }}
+                disabled={loading}
+              />
+            </div>
+
+            <div>
+              <label style={{
+                display: 'block',
+                fontSize: '0.95rem',
+                fontWeight: 600,
+                color: textColor,
+                marginBottom: '0.5rem'
+              }}>
+                Email Address
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="your@email.com"
+                style={{
+                  width: '100%',
+                  padding: '0.875rem 1rem',
+                  background: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)',
+                  border: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)'}`,
+                  borderRadius: '2px',
+                  color: textColor,
+                  fontSize: '0.95rem',
+                  outline: 'none',
+                  transition: 'all 0.3s',
+                  fontFamily: 'inherit'
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(37, 99, 235, 0.6)';
+                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(37, 99, 235, 0.08)';
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)';
+                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)';
+                }}
+                disabled={loading}
+              />
+            </div>
+
+            <div>
+              <label style={{
+                display: 'block',
+                fontSize: '0.95rem',
+                fontWeight: 600,
+                color: textColor,
+                marginBottom: '0.5rem'
+              }}>
+                Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="••••••••"
+                style={{
+                  width: '100%',
+                  padding: '0.875rem 1rem',
+                  background: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)',
+                  border: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)'}`,
+                  borderRadius: '2px',
+                  color: textColor,
+                  fontSize: '0.95rem',
+                  outline: 'none',
+                  transition: 'all 0.3s',
+                  fontFamily: 'inherit'
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(37, 99, 235, 0.6)';
+                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(37, 99, 235, 0.08)';
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)';
+                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)';
+                }}
+                disabled={loading}
+              />
+            </div>
+
+            <div>
+              <label style={{
+                display: 'block',
+                fontSize: '0.95rem',
+                fontWeight: 600,
+                color: textColor,
+                marginBottom: '0.5rem'
+              }}>
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                placeholder="••••••••"
+                style={{
+                  width: '100%',
+                  padding: '0.875rem 1rem',
+                  background: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)',
+                  border: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)'}`,
+                  borderRadius: '2px',
+                  color: textColor,
+                  fontSize: '0.95rem',
+                  outline: 'none',
+                  transition: 'all 0.3s',
+                  fontFamily: 'inherit'
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(37, 99, 235, 0.6)';
+                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(37, 99, 235, 0.08)';
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(37, 99, 235, 0.2)';
+                  e.target.style.background = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(37, 99, 235, 0.05)';
+                }}
+                disabled={loading}
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              style={ButtonStyle(true)}
+              className="epic-btn"
+              onMouseEnter={(e) => {
+                !loading && (e.target.style.opacity = '0.9');
+              }}
+              onMouseLeave={(e) => {
+                !loading && (e.target.style.opacity = '1');
+              }}
+            >
+              {loading ? 'Creating Account...' : 'Create Account'}
+            </button>
+          </form>
+
+          <div style={{
+            marginTop: '2rem',
+            paddingTop: '2rem',
+            borderTop: `2px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(37, 99, 235, 0.1)'}`,
+            textAlign: 'center'
+          }}>
+            <p style={{
+              color: textSecondary,
+              marginBottom: '1rem',
+              fontSize: '0.95rem'
+            }}>
+              Already have an account?{' '}
+              <Link href="/evomanias/login" style={{
+                color: primaryColor,
+                fontWeight: 700,
+                textDecoration: 'none',
+                transition: 'opacity 0.3s'
+              }}>
+                Sign in
+              </Link>
+            </p>
+            <Link href="/evomanias" style={{
+              color: textSecondary,
+              fontSize: '0.95rem',
+              textDecoration: 'none',
+              transition: 'color 0.3s'
+            }}>
+              Back to home
+            </Link>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }
