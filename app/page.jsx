@@ -190,17 +190,14 @@ export default function Home() {
               borderRadius: '2px',
               textDecoration: 'none',
               cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              boxShadow: '0 2px 12px rgba(31, 41, 55, 0.15)',
+              transition: 'opacity 0.2s ease',
               display: 'inline-block'
             }}
               onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 8px 24px rgba(31, 41, 55, 0.25)';
-                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.opacity = '0.85';
               }}
               onMouseLeave={(e) => {
-                e.target.style.boxShadow = '0 2px 12px rgba(31, 41, 55, 0.15)';
-                e.target.style.transform = 'translateY(0)';
+                e.target.style.opacity = '1';
               }}
             >
               Explore Servers
@@ -217,18 +214,14 @@ export default function Home() {
               borderRadius: '2px',
               textDecoration: 'none',
               cursor: 'pointer',
-              transition: 'all 0.3s ease',
+              transition: 'opacity 0.2s ease',
               display: 'inline-block'
             }}
               onMouseEnter={(e) => {
-                e.target.style.background = 'rgba(31, 41, 55, 0.12)';
-                e.target.style.boxShadow = '0 4px 16px rgba(31, 41, 55, 0.1)';
-                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.opacity = '0.85';
               }}
               onMouseLeave={(e) => {
-                e.target.style.background = 'rgba(31, 41, 55, 0.06)';
-                e.target.style.boxShadow = 'none';
-                e.target.style.transform = 'translateY(0)';
+                e.target.style.opacity = '1';
               }}
             >
               Evomanias
