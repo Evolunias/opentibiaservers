@@ -46,7 +46,14 @@ export default function EvomaniasHeader() {
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
             <Link href="/evomanias" className="flex items-center gap-2 hover:opacity-80 transition flex-shrink-0">
-              <h1 className="text-xl font-bold" style={{ color: '#7cb8ff', letterSpacing: '1px' }}>
+              <h1
+                className="text-xl font-bold"
+                style={{
+                  color: isDark ? '#7cb8ff' : '#2563eb',
+                  letterSpacing: '1px',
+                  transition: 'color 0.3s ease'
+                }}
+              >
                 EVOMANIAS
               </h1>
             </Link>
