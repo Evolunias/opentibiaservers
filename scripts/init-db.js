@@ -1,4 +1,15 @@
-import pool from '@/lib/aiven';
+#!/usr/bin/env node
+
+import mysql from 'mysql2/promise';
+
+const config = {
+  host: process.env.AIVEN_MYSQL_HOST,
+  port: parseInt(process.env.AIVEN_MYSQL_PORT || '3306'),
+  user: process.env.AIVEN_MYSQL_USER,
+  password: process.env.AIVEN_MYSQL_PASSWORD,
+  database: process.env.AIVEN_MYSQL_DATABASE,
+  ssl: { rejectUnauthorized: false },
+};
 
 const createTablesSQL = `
 CREATE TABLE IF NOT EXISTS accounts (
@@ -39,38 +50,31 @@ CREATE TABLE IF NOT EXISTS announcements (
 );
 `;
 
-export async function POST(req) {
-  // Check auth (simple check for now)
-  const authHeader = req.headers.get('authorization');
-  if (authHeader !== 'Bearer init-secret-key') {
-    return Response.json({ error: 'Unauthorized' }, { status: 401 });
-  }
-
+async function initDatabase() {
+  let conn;
+  
   try {
-    const conn = await pool.getConnection();
-    try {
-      const statements = createTablesSQL.split(';').filter(s => s.trim());
-      
-      for (const statement of statements) {
-        if (statement.trim()) {
-          await conn.execute(statement);
-        }
-      }
+    console.log('Connecting to Aiven MySQL...');
+    conn = await mysql.createConnection(config);
+    console.log('✓ Connected successfully');
 
-      return Response.json({
-        success: true,
-        message: 'Database initialized successfully',
-        timestamp: new Date().toISOString()
-      }, { status: 200 });
-    } finally {
-      conn.release();
+    const statements = createTablesSQL.split(';').filter(s => s.trim());
+    
+    for (const statement of statements) {
+      if (statement.trim()) {
+        console.log(`Executing: ${statement.substring(0, 50)}...`);
+        await conn.execute(statement);
+        console.log('✓ Table created/verified');
+      }
     }
+
+    console.log('\n✓ Database initialized successfully!');
   } catch (error) {
-    console.error('[init-db] Error:', error.message);
-    return Response.json({
-      success: false,
-      error: error.message,
-      timestamp: new Date().toISOString()
-    }, { status: 500 });
+    console.error('✗ Error initializing database:', error.message);
+    process.exit(1);
+  } finally {
+    if (conn) await conn.end();
   }
 }
+
+initDatabase();
