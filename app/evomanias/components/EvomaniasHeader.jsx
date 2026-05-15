@@ -161,16 +161,12 @@ export default function EvomaniasHeader() {
                   >
                     My Account
                   </Link>
-                  <div style={{
+                  <div className="hidden sm:block" style={{
                     fontSize: '0.875rem',
                     color: 'rgba(255, 255, 255, 0.7)',
                     borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
                     paddingLeft: '0.75rem',
-                    marginLeft: '0.75rem',
-                    display: 'none',
-                    '@media (min-width: 640px)': {
-                      display: 'block'
-                    }
+                    marginLeft: '0.75rem'
                   }}>
                     {account.name}
                   </div>
