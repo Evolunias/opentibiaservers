@@ -4,10 +4,12 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useEvomaniasAuth } from '../../context/EvomaniasAuthContext';
+import { useEvomaniasTheme } from '../context/EvomaniasThemeContext';
 
 export default function EvomaniasAccount() {
   const router = useRouter();
   const { account, logout } = useEvomaniasAuth();
+  const { theme } = useEvomaniasTheme();
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showCreateModal, setShowCreateModal] = useState(false);
@@ -17,6 +19,27 @@ export default function EvomaniasAccount() {
   });
   const [createError, setCreateError] = useState('');
   const [createLoading, setCreateLoading] = useState(false);
+
+  const isDark = theme === 'dark';
+
+  const colors = {
+    bg: isDark ? 'rgba(20, 20, 25, 0.85)' : 'rgba(255, 255, 255, 0.95)',
+    bgHover: isDark ? 'rgba(30, 30, 35, 0.85)' : 'rgba(240, 240, 245, 0.95)',
+    bgLight: isDark ? 'rgba(124, 184, 255, 0.1)' : 'rgba(124, 184, 255, 0.05)',
+    text: isDark ? 'white' : '#1f2937',
+    textMuted: isDark ? 'rgba(255, 255, 255, 0.6)' : 'rgba(75, 85, 99, 0.6)',
+    textLight: isDark ? 'rgba(255, 255, 255, 0.7)' : 'rgba(75, 85, 99, 0.7)',
+    border: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(124, 184, 255, 0.2)',
+    borderLight: isDark ? '1px solid rgba(124, 184, 255, 0.2)' : '1px solid rgba(124, 184, 255, 0.15)',
+    input: isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(240, 240, 245, 0.8)',
+    inputBorder: isDark ? 'rgba(124, 184, 255, 0.2)' : 'rgba(124, 184, 255, 0.3)',
+    modal: isDark ? 'rgba(20, 20, 25, 0.95)' : 'rgba(255, 255, 255, 0.98)',
+    modalOverlay: isDark ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.5)',
+    empty: isDark ? 'rgba(0, 0, 0, 0.2)' : 'rgba(124, 184, 255, 0.08)',
+    accent: '#7cb8ff',
+    accentSecond: '#5a9fe6',
+    success: '#10b981'
+  };
 
   useEffect(() => {
     if (!account) {
@@ -74,7 +97,8 @@ export default function EvomaniasAccount() {
     return (
       <main style={{
         minHeight: '100vh',
-        color: 'white',
+        color: colors.text,
+        background: isDark ? 'rgb(15, 15, 18)' : '#f9fafb',
         padding: '3rem 1.5rem',
         display: 'flex',
         alignItems: 'center',
@@ -96,22 +120,26 @@ export default function EvomaniasAccount() {
 
   return (
     <main style={{
-      color: 'white',
-      padding: '3rem 1.5rem'
+      color: colors.text,
+      padding: '3rem 1.5rem',
+      background: isDark ? 'rgb(15, 15, 18)' : '#f9fafb',
+      minHeight: '100vh'
     }}>
       <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
         <div style={{
-          background: 'rgba(20, 20, 25, 0.85)',
+          background: colors.bg,
           backdropFilter: 'blur(12px)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
+          border: `1px solid ${colors.border}`,
           borderRadius: '12px',
           overflow: 'hidden',
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
+          boxShadow: isDark ? '0 4px 20px rgba(0, 0, 0, 0.3)' : '0 4px 20px rgba(0, 0, 0, 0.08)'
         }}>
           {/* Header */}
           <div style={{
-            background: 'linear-gradient(135deg, rgba(124, 184, 255, 0.15) 0%, rgba(90, 159, 230, 0.1) 100%)',
-            borderBottom: '1px solid rgba(124, 184, 255, 0.2)',
+            background: isDark
+              ? 'linear-gradient(135deg, rgba(124, 184, 255, 0.15) 0%, rgba(90, 159, 230, 0.1) 100%)'
+              : 'linear-gradient(135deg, rgba(124, 184, 255, 0.08) 0%, rgba(90, 159, 230, 0.05) 100%)',
+            borderBottom: `1px solid ${colors.border}`,
             padding: '2rem'
           }}>
             <h1 style={{
@@ -125,7 +153,7 @@ export default function EvomaniasAccount() {
             }}>
               My Account
             </h1>
-            <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+            <p style={{ color: colors.textLight }}>
               Manage your Evomanias account and characters
             </p>
           </div>
@@ -144,37 +172,37 @@ export default function EvomaniasAccount() {
                   fontSize: '1.5rem',
                   fontWeight: 'bold',
                   marginBottom: '1rem',
-                  color: 'white'
+                  color: colors.text
                 }}>
                   Account Information
                 </h2>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <div style={{
-                    background: 'rgba(124, 184, 255, 0.1)',
+                    background: colors.bgLight,
                     padding: '1rem',
                     borderRadius: '8px',
-                    border: '1px solid rgba(124, 184, 255, 0.2)'
+                    border: colors.borderLight
                   }}>
-                    <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>Email</p>
-                    <p style={{ fontSize: '1rem', fontWeight: '600', color: 'white' }}>{account.email}</p>
+                    <p style={{ fontSize: '0.875rem', color: colors.textMuted }}>Email</p>
+                    <p style={{ fontSize: '1rem', fontWeight: '600', color: colors.text }}>{account.email}</p>
                   </div>
                   <div style={{
-                    background: 'rgba(124, 184, 255, 0.1)',
+                    background: colors.bgLight,
                     padding: '1rem',
                     borderRadius: '8px',
-                    border: '1px solid rgba(124, 184, 255, 0.2)'
+                    border: colors.borderLight
                   }}>
-                    <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>Account Name</p>
-                    <p style={{ fontSize: '1rem', fontWeight: '600', color: 'white' }}>{account.name}</p>
+                    <p style={{ fontSize: '0.875rem', color: colors.textMuted }}>Account Name</p>
+                    <p style={{ fontSize: '1rem', fontWeight: '600', color: colors.text }}>{account.name}</p>
                   </div>
                   <div style={{
-                    background: 'rgba(16, 185, 129, 0.1)',
+                    background: isDark ? 'rgba(16, 185, 129, 0.1)' : 'rgba(16, 185, 129, 0.05)',
                     padding: '1rem',
                     borderRadius: '8px',
-                    border: '1px solid rgba(16, 185, 129, 0.2)'
+                    border: isDark ? '1px solid rgba(16, 185, 129, 0.2)' : '1px solid rgba(16, 185, 129, 0.3)'
                   }}>
-                    <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>Account Status</p>
-                    <p style={{ fontSize: '1rem', fontWeight: '600', color: '#10b981' }}>Active</p>
+                    <p style={{ fontSize: '0.875rem', color: colors.textMuted }}>Account Status</p>
+                    <p style={{ fontSize: '1rem', fontWeight: '600', color: colors.success }}>Active</p>
                   </div>
                 </div>
               </div>
@@ -185,7 +213,7 @@ export default function EvomaniasAccount() {
                   fontSize: '1.5rem',
                   fontWeight: 'bold',
                   marginBottom: '1rem',
-                  color: 'white'
+                  color: colors.text
                 }}>
                   Quick Stats
                 </h2>
@@ -195,42 +223,42 @@ export default function EvomaniasAccount() {
                   gap: '1rem'
                 }}>
                   <div style={{
-                    background: 'rgba(124, 184, 255, 0.1)',
-                    border: '1px solid rgba(124, 184, 255, 0.3)',
+                    background: colors.bgLight,
+                    border: colors.borderLight,
                     padding: '1rem',
                     borderRadius: '8px'
                   }}>
-                    <p style={{ fontSize: '0.875rem', color: '#7cb8ff', fontWeight: '600' }}>Characters</p>
-                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#7cb8ff' }}>{characters.length}</p>
+                    <p style={{ fontSize: '0.875rem', color: colors.accent, fontWeight: '600' }}>Characters</p>
+                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: colors.accent }}>{characters.length}</p>
                   </div>
                   <div style={{
-                    background: 'rgba(124, 184, 255, 0.1)',
-                    border: '1px solid rgba(124, 184, 255, 0.3)',
+                    background: colors.bgLight,
+                    border: colors.borderLight,
                     padding: '1rem',
                     borderRadius: '8px'
                   }}>
-                    <p style={{ fontSize: '0.875rem', color: '#7cb8ff', fontWeight: '600' }}>Total Level</p>
-                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#7cb8ff' }}>
+                    <p style={{ fontSize: '0.875rem', color: colors.accent, fontWeight: '600' }}>Total Level</p>
+                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: colors.accent }}>
                       {characters.reduce((sum, c) => sum + (c.level || 1), 0)}
                     </p>
                   </div>
                   <div style={{
-                    background: 'rgba(16, 185, 129, 0.1)',
-                    border: '1px solid rgba(16, 185, 129, 0.3)',
+                    background: isDark ? 'rgba(16, 185, 129, 0.1)' : 'rgba(16, 185, 129, 0.05)',
+                    border: isDark ? '1px solid rgba(16, 185, 129, 0.2)' : '1px solid rgba(16, 185, 129, 0.3)',
                     padding: '1rem',
                     borderRadius: '8px'
                   }}>
-                    <p style={{ fontSize: '0.875rem', color: '#10b981', fontWeight: '600' }}>World</p>
-                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#10b981' }}>Evomanias</p>
+                    <p style={{ fontSize: '0.875rem', color: colors.success, fontWeight: '600' }}>World</p>
+                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: colors.success }}>Evomanias</p>
                   </div>
                   <div style={{
-                    background: 'rgba(16, 185, 129, 0.1)',
-                    border: '1px solid rgba(16, 185, 129, 0.3)',
+                    background: isDark ? 'rgba(16, 185, 129, 0.1)' : 'rgba(16, 185, 129, 0.05)',
+                    border: isDark ? '1px solid rgba(16, 185, 129, 0.2)' : '1px solid rgba(16, 185, 129, 0.3)',
                     padding: '1rem',
                     borderRadius: '8px'
                   }}>
-                    <p style={{ fontSize: '0.875rem', color: '#10b981', fontWeight: '600' }}>Status</p>
-                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#10b981' }}>Online</p>
+                    <p style={{ fontSize: '0.875rem', color: colors.success, fontWeight: '600' }}>Status</p>
+                    <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: colors.success }}>Online</p>
                   </div>
                 </div>
               </div>
@@ -247,7 +275,7 @@ export default function EvomaniasAccount() {
                 <h2 style={{
                   fontSize: '1.5rem',
                   fontWeight: 'bold',
-                  color: 'white'
+                  color: colors.text
                 }}>
                   Your Characters
                 </h2>
@@ -273,20 +301,20 @@ export default function EvomaniasAccount() {
 
               {characters.length === 0 ? (
                 <div style={{
-                  background: 'rgba(0, 0, 0, 0.2)',
+                  background: colors.empty,
                   borderRadius: '8px',
                   padding: '2rem',
                   textAlign: 'center',
-                  border: '2px dashed rgba(124, 184, 255, 0.3)'
+                  border: `2px dashed ${colors.border}`
                 }}>
                   <p style={{
-                    color: 'rgba(255, 255, 255, 0.7)',
+                    color: colors.textLight,
                     marginBottom: '1rem'
                   }}>
                     You don't have any characters yet.
                   </p>
                   <p style={{
-                    color: 'rgba(255, 255, 255, 0.5)',
+                    color: colors.textMuted,
                     fontSize: '0.875rem'
                   }}>
                     Create your first character to begin your adventure in Evomanias.
@@ -303,31 +331,37 @@ export default function EvomaniasAccount() {
                       key={char.id}
                       href={`/evomanias/character/${char.id}`}
                       style={{
-                        background: 'linear-gradient(135deg, rgba(124, 184, 255, 0.1) 0%, rgba(90, 159, 230, 0.05) 100%)',
-                        border: '1px solid rgba(124, 184, 255, 0.3)',
+                        background: isDark
+                          ? 'linear-gradient(135deg, rgba(124, 184, 255, 0.1) 0%, rgba(90, 159, 230, 0.05) 100%)'
+                          : 'linear-gradient(135deg, rgba(124, 184, 255, 0.05) 0%, rgba(90, 159, 230, 0.02) 100%)',
+                        border: colors.borderLight,
                         padding: '1.5rem',
                         borderRadius: '8px',
                         transition: 'all 0.3s',
                         cursor: 'pointer',
                         textDecoration: 'none',
-                        color: 'white',
+                        color: colors.text,
                         display: 'flex',
                         flexDirection: 'column'
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(124, 184, 255, 0.6)';
-                        e.currentTarget.style.background = 'linear-gradient(135deg, rgba(124, 184, 255, 0.15) 0%, rgba(90, 159, 230, 0.08) 100%)';
+                        e.currentTarget.style.borderColor = isDark ? 'rgba(124, 184, 255, 0.6)' : 'rgba(124, 184, 255, 0.5)';
+                        e.currentTarget.style.background = isDark
+                          ? 'linear-gradient(135deg, rgba(124, 184, 255, 0.15) 0%, rgba(90, 159, 230, 0.08) 100%)'
+                          : 'linear-gradient(135deg, rgba(124, 184, 255, 0.08) 0%, rgba(90, 159, 230, 0.04) 100%)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(124, 184, 255, 0.3)';
-                        e.currentTarget.style.background = 'linear-gradient(135deg, rgba(124, 184, 255, 0.1) 0%, rgba(90, 159, 230, 0.05) 100%)';
+                        e.currentTarget.style.borderColor = colors.borderLight.split(' ')[1];
+                        e.currentTarget.style.background = isDark
+                          ? 'linear-gradient(135deg, rgba(124, 184, 255, 0.1) 0%, rgba(90, 159, 230, 0.05) 100%)'
+                          : 'linear-gradient(135deg, rgba(124, 184, 255, 0.05) 0%, rgba(90, 159, 230, 0.02) 100%)';
                       }}
                     >
                       <h3 style={{
                         fontSize: '1.1rem',
                         fontWeight: 'bold',
                         marginBottom: '0.5rem',
-                        color: '#7cb8ff'
+                        color: colors.accent
                       }}>
                         {char.name}
                       </h3>
@@ -336,16 +370,16 @@ export default function EvomaniasAccount() {
                         flexDirection: 'column',
                         gap: '0.25rem',
                         fontSize: '0.875rem',
-                        color: 'rgba(255, 255, 255, 0.7)',
+                        color: colors.textLight,
                         marginBottom: '1rem'
                       }}>
-                        <p>Level <span style={{ fontWeight: '600', color: 'white' }}>{char.level || 1}</span></p>
-                        <p>Vocation <span style={{ fontWeight: '600', color: 'white' }}>{char.vocation}</span></p>
-                        <p>Experience <span style={{ fontWeight: '600', color: 'white' }}>{(char.experience || 0).toLocaleString()}</span></p>
+                        <p>Level <span style={{ fontWeight: '600', color: colors.text }}>{char.level || 1}</span></p>
+                        <p>Vocation <span style={{ fontWeight: '600', color: colors.text }}>{char.vocation}</span></p>
+                        <p>Experience <span style={{ fontWeight: '600', color: colors.text }}>{(char.experience || 0).toLocaleString()}</span></p>
                       </div>
                       <p style={{
                         fontSize: '0.75rem',
-                        color: 'rgba(255, 255, 255, 0.5)'
+                        color: colors.textMuted
                       }}>
                         Click to view details
                       </p>
@@ -360,7 +394,7 @@ export default function EvomaniasAccount() {
               <div style={{
                 position: 'fixed',
                 inset: 0,
-                background: 'rgba(0, 0, 0, 0.8)',
+                background: colors.modalOverlay,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -368,18 +402,18 @@ export default function EvomaniasAccount() {
                 padding: '1rem'
               }}>
                 <div style={{
-                  background: 'rgba(20, 20, 25, 0.95)',
+                  background: colors.modal,
                   borderRadius: '12px',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
+                  boxShadow: isDark ? '0 4px 20px rgba(0, 0, 0, 0.5)' : '0 4px 20px rgba(0, 0, 0, 0.15)',
                   maxWidth: '28rem',
                   width: '100%',
                   padding: '2rem',
-                  border: '1px solid rgba(124, 184, 255, 0.2)'
+                  border: `1px solid ${colors.border}`
                 }}>
                   <h3 style={{
                     fontSize: '1.5rem',
                     fontWeight: 'bold',
-                    color: 'white',
+                    color: colors.text,
                     marginBottom: '1rem'
                   }}>
                     Create Character
@@ -387,7 +421,7 @@ export default function EvomaniasAccount() {
 
                   {createError && (
                     <div style={{
-                      background: 'rgba(239, 68, 68, 0.1)',
+                      background: isDark ? 'rgba(239, 68, 68, 0.1)' : 'rgba(239, 68, 68, 0.08)',
                       border: '1px solid rgba(239, 68, 68, 0.3)',
                       color: '#ff6b6b',
                       padding: '1rem',
@@ -405,7 +439,7 @@ export default function EvomaniasAccount() {
                         display: 'block',
                         fontSize: '0.875rem',
                         fontWeight: '600',
-                        color: 'rgba(255, 255, 255, 0.8)',
+                        color: colors.textLight,
                         marginBottom: '0.5rem'
                       }}>
                         Character Name
@@ -418,10 +452,10 @@ export default function EvomaniasAccount() {
                         style={{
                           width: '100%',
                           padding: '0.75rem 1rem',
-                          background: 'rgba(0, 0, 0, 0.3)',
-                          border: '1px solid rgba(124, 184, 255, 0.2)',
+                          background: colors.input,
+                          border: colors.inputBorder,
                           borderRadius: '8px',
-                          color: 'white',
+                          color: colors.text,
                           fontSize: '0.875rem',
                           outline: 'none'
                         }}
@@ -434,7 +468,7 @@ export default function EvomaniasAccount() {
                         display: 'block',
                         fontSize: '0.875rem',
                         fontWeight: '600',
-                        color: 'rgba(255, 255, 255, 0.8)',
+                        color: colors.textLight,
                         marginBottom: '0.5rem'
                       }}>
                         Choose Your Class
@@ -445,10 +479,10 @@ export default function EvomaniasAccount() {
                         style={{
                           width: '100%',
                           padding: '0.75rem 1rem',
-                          background: 'rgba(0, 0, 0, 0.3)',
-                          border: '1px solid rgba(124, 184, 255, 0.2)',
+                          background: colors.input,
+                          border: colors.inputBorder,
                           borderRadius: '8px',
-                          color: 'white',
+                          color: colors.text,
                           fontSize: '0.875rem',
                           outline: 'none'
                         }}
@@ -485,12 +519,12 @@ export default function EvomaniasAccount() {
                         disabled={createLoading}
                         style={{
                           flex: 1,
-                          background: 'rgba(255, 255, 255, 0.1)',
-                          color: 'white',
+                          background: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
+                          color: colors.text,
                           padding: '0.75rem 1rem',
                           borderRadius: '8px',
                           fontWeight: '600',
-                          border: '1px solid rgba(255, 255, 255, 0.2)',
+                          border: isDark ? '1px solid rgba(255, 255, 255, 0.2)' : `1px solid ${colors.border}`,
                           cursor: createLoading ? 'not-allowed' : 'pointer',
                           opacity: createLoading ? 0.6 : 1,
                           transition: 'all 0.3s'
@@ -514,52 +548,52 @@ export default function EvomaniasAccount() {
               <Link
                 href="/evomanias/highscores"
                 style={{
-                  background: 'rgba(124, 184, 255, 0.1)',
-                  border: '1px solid rgba(124, 184, 255, 0.3)',
+                  background: colors.bgLight,
+                  border: colors.borderLight,
                   padding: '1rem',
                   borderRadius: '8px',
                   textAlign: 'center',
                   cursor: 'pointer',
                   textDecoration: 'none',
-                  color: 'white',
+                  color: colors.text,
                   transition: 'all 0.3s'
                 }}
               >
-                <p style={{ fontWeight: '600', color: '#7cb8ff' }}>View Highscores</p>
-                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>See the top players</p>
+                <p style={{ fontWeight: '600', color: colors.accent }}>View Highscores</p>
+                <p style={{ fontSize: '0.875rem', color: colors.textMuted }}>See the top players</p>
               </Link>
               <Link
                 href="/evomanias"
                 style={{
-                  background: 'rgba(124, 184, 255, 0.1)',
-                  border: '1px solid rgba(124, 184, 255, 0.3)',
+                  background: colors.bgLight,
+                  border: colors.borderLight,
                   padding: '1rem',
                   borderRadius: '8px',
                   textAlign: 'center',
                   cursor: 'pointer',
                   textDecoration: 'none',
-                  color: 'white',
+                  color: colors.text,
                   transition: 'all 0.3s'
                 }}
               >
-                <p style={{ fontWeight: '600', color: '#7cb8ff' }}>Return to Home</p>
-                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>Back to main page</p>
+                <p style={{ fontWeight: '600', color: colors.accent }}>Return to Home</p>
+                <p style={{ fontSize: '0.875rem', color: colors.textMuted }}>Back to main page</p>
               </Link>
               <button
                 onClick={handleSignOut}
                 style={{
-                  background: 'rgba(239, 68, 68, 0.1)',
+                  background: isDark ? 'rgba(239, 68, 68, 0.1)' : 'rgba(239, 68, 68, 0.08)',
                   border: '1px solid rgba(239, 68, 68, 0.3)',
                   padding: '1rem',
                   borderRadius: '8px',
                   textAlign: 'center',
                   cursor: 'pointer',
-                  color: 'white',
+                  color: colors.text,
                   transition: 'all 0.3s'
                 }}
               >
                 <p style={{ fontWeight: '600', color: '#ff6b6b' }}>Sign Out</p>
-                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.6)' }}>Exit your account</p>
+                <p style={{ fontSize: '0.875rem', color: colors.textMuted }}>Exit your account</p>
               </button>
             </div>
           </div>
