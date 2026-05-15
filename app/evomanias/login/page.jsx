@@ -91,9 +91,9 @@ export default function EvomaniasLogin() {
         @keyframes pulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(37, 99, 235, 0.4); } 50% { transform: scale(1.1); box-shadow: 0 0 50px rgba(37, 99, 235, 0.8); } }
         .epic-btn { animation: pulse 2.5s ease-in-out infinite; }
         * { box-sizing: border-box; }
-        input::placeholder { color: rgba(107, 114, 128, 0.9); opacity: 1; }
-        input::-webkit-input-placeholder { color: rgba(107, 114, 128, 0.9); opacity: 1; }
-        input::-moz-placeholder { color: rgba(107, 114, 128, 0.9); opacity: 1; }
+        input::placeholder { color: #9ca3af; opacity: 1; }
+        input::-webkit-input-placeholder { color: #9ca3af; opacity: 1; }
+        input::-moz-placeholder { color: #9ca3af; opacity: 1; }
       `}</style>
 
       <section style={{
