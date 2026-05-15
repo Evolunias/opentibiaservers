@@ -39,7 +39,7 @@ export default function EvomaniasFooter() {
           {/* Branding */}
           <div>
             <h3 style={{ color: colors.heading, fontWeight: 'bold', fontSize: '1.25rem', marginBottom: '1rem', transition: 'color 0.3s ease' }}>
-              EVOMANIAS
+              Evomanias
             </h3>
             <p style={{ color: colors.text, fontSize: '0.875rem', lineHeight: '1.6', transition: 'color 0.3s ease' }}>
               Experience the ultimate Tibia adventure. Create your account, join thousands of players, and embark on an epic journey.
@@ -136,7 +136,7 @@ export default function EvomaniasFooter() {
           transition: 'border-color 0.3s ease'
         }}>
           <p style={{ margin: 0, fontSize: '0.875rem', color: colors.text, transition: 'color 0.3s ease' }}>
-            © {currentYear} EVOMANIAS. All rights reserved.
+            © {currentYear} Evomanias. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             <a href="#" style={{ color: colors.text, textDecoration: 'none', fontSize: '0.875rem', transition: 'color 0.3s' }}>

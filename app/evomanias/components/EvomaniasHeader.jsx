@@ -54,7 +54,7 @@ export default function EvomaniasHeader() {
                   transition: 'color 0.3s ease'
                 }}
               >
-                EVOMANIAS
+                Evomanias
               </h1>
             </Link>
 

@@ -294,7 +294,7 @@ export default function EvomaniasHome() {
             letterSpacing: '2px',
             animation: 'slideInDown 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both'
           }}>
-            EVOMANIAS
+            Evomanias
           </h1>
 
           <p style={{

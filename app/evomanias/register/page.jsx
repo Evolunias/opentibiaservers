@@ -140,7 +140,7 @@ export default function EvomaniasRegister() {
           letterSpacing: '2px',
           animation: 'slideInDown 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both'
         }}>
-          Join EVOMANIAS
+          Join Evomanias
         </h1>
 
         <p style={{

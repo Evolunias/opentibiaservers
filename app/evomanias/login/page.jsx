@@ -143,7 +143,7 @@ export default function EvomaniasLogin() {
           letterSpacing: '0.5px',
           animation: 'fadeIn 1.5s ease-out 0.7s both'
         }}>
-          Sign in to your EVOMANIAS account
+          Sign in to your Evomanias account
         </p>
 
         <div style={{
