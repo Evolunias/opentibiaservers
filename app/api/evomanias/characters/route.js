@@ -1,5 +1,22 @@
 import pool from '@/lib/aiven';
 
+const vocationMap = {
+  0: 'Knight',
+  1: 'Paladin',
+  2: 'Sorcerer',
+  3: 'Druid'
+};
+
+const parseVocation = (vocation) => {
+  // If it's already a string vocation name, return it
+  if (typeof vocation === 'string' && ['Knight', 'Paladin', 'Sorcerer', 'Druid'].includes(vocation)) {
+    return vocation;
+  }
+  // If it's a number, map it
+  const numVocation = parseInt(vocation);
+  return vocationMap[numVocation] || 'Unknown';
+};
+
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
   const action = searchParams.get('action');
@@ -15,7 +32,12 @@ export async function GET(req) {
           [accountId]
         );
 
-        return Response.json({ characters }, { status: 200 });
+        const mappedCharacters = characters.map(char => ({
+          ...char,
+          vocation: parseVocation(char.vocation)
+        }));
+
+        return Response.json({ characters: mappedCharacters }, { status: 200 });
       }
 
       if (action === 'detail' && characterId) {
@@ -28,7 +50,12 @@ export async function GET(req) {
           return Response.json({ error: 'Character not found' }, { status: 404 });
         }
 
-        return Response.json({ character: characters[0] }, { status: 200 });
+        const character = {
+          ...characters[0],
+          vocation: parseVocation(characters[0].vocation)
+        };
+
+        return Response.json({ character }, { status: 200 });
       }
 
       if (action === 'highscores') {
@@ -37,12 +64,18 @@ export async function GET(req) {
         const params = [];
 
         if (vocation) {
-          query = 'SELECT id, name, level, experience, vocation FROM players WHERE vocation = ? ORDER BY experience DESC LIMIT 100';
-          params.push(vocation);
+          // Find the numeric ID for the vocation name
+          const vocId = Object.entries(vocationMap).find(([_, name]) => name === vocation)?.[0];
+          query = 'SELECT id, name, level, experience, vocation FROM players WHERE vocation = ? OR vocation = ? ORDER BY experience DESC LIMIT 100';
+          params.push(vocId, vocation); // Handle both numeric and string values
         }
 
         const [characters] = await conn.execute(query, params);
-        return Response.json({ characters, timestamp: new Date().toISOString() }, { status: 200 });
+        const mappedCharacters = characters.map(char => ({
+          ...char,
+          vocation: parseVocation(char.vocation)
+        }));
+        return Response.json({ characters: mappedCharacters, timestamp: new Date().toISOString() }, { status: 200 });
       }
 
       return Response.json({ error: 'Invalid action' }, { status: 400 });
