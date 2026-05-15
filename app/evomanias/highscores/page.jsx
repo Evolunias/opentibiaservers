@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const vocations = ['All', 'Knight', 'Sorcerer', 'Cleric', 'Ranger', 'Paladin'];
+const vocations = ['All', 'Knight', 'Paladin', 'Sorcerer', 'Druid'];
 
 export default function Highscores() {
   const [highscores, setHighscores] = useState([]);
