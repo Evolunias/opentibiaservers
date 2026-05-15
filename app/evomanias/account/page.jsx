@@ -76,6 +76,7 @@ export default function EvomaniasAccount() {
           accountId: account.id,
           name: characterForm.name,
           vocation: characterForm.vocation,
+          world: 'Evomanias',
         }),
       });
 
