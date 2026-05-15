@@ -241,7 +241,7 @@ export default function EvomaniasLogin() {
                   background: inputBg,
                   border: `2px solid ${inputBorder}`,
                   borderRadius: '4px',
-                  color: textColor,
+                  color: inputTextColor,
                   fontSize: '0.95rem',
                   fontWeight: 500,
                   outline: 'none',

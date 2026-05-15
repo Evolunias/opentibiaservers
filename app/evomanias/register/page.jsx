@@ -73,6 +73,7 @@ export default function EvomaniasRegister() {
   const inputBorder = isDark ? 'rgba(124, 184, 255, 0.35)' : 'rgba(37, 99, 235, 0.2)';
   const inputBorderFocus = isDark ? 'rgba(124, 184, 255, 0.8)' : 'rgba(37, 99, 235, 0.6)';
   const inputBgFocus = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(37, 99, 235, 0.08)';
+  const inputTextColor = isDark ? '#ffffff' : '#1f2937';
 
   const ButtonStyle = (primary = true) => ({
     padding: primary ? '0.875rem 2.5rem' : '0.875rem 2.5rem',
@@ -296,7 +297,7 @@ export default function EvomaniasRegister() {
                   background: inputBg,
                   border: `2px solid ${inputBorder}`,
                   borderRadius: '4px',
-                  color: textColor,
+                  color: inputTextColor,
                   fontSize: '0.95rem',
                   fontWeight: 500,
                   outline: 'none',
@@ -342,7 +343,7 @@ export default function EvomaniasRegister() {
                   background: inputBg,
                   border: `2px solid ${inputBorder}`,
                   borderRadius: '4px',
-                  color: textColor,
+                  color: inputTextColor,
                   fontSize: '0.95rem',
                   fontWeight: 500,
                   outline: 'none',
