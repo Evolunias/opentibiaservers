@@ -38,7 +38,7 @@ export async function POST(req) {
       const hashedPassword = await bcrypt.hash(password, 10);
 
       const [result] = await conn.execute(
-        'INSERT INTO accounts (name, email, password, created) VALUES (?, ?, ?, NOW())',
+        'INSERT INTO accounts (name, email, password) VALUES (?, ?, ?)',
         [username, email, hashedPassword]
       );
 
