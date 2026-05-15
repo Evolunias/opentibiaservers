@@ -2,15 +2,25 @@ import pool from '@/lib/aiven';
 import bcrypt from 'bcrypt';
 
 export async function POST(req) {
-  const { action, email, password, username } = await req.json();
-
-  if (!action) {
-    return Response.json({ error: 'Missing action' }, { status: 400 });
-  }
-
-  const conn = await pool.getConnection();
+  let conn;
 
   try {
+    let body;
+    try {
+      body = await req.json();
+    } catch (parseError) {
+      console.error('JSON parse error:', parseError);
+      return Response.json({ error: 'Invalid JSON in request body' }, { status: 400 });
+    }
+
+    const { action, email, password, username } = body;
+
+    if (!action) {
+      return Response.json({ error: 'Missing action' }, { status: 400 });
+    }
+
+    conn = await pool.getConnection();
+
     if (action === 'register') {
       if (!email || !password || !username) {
         return Response.json({ error: 'Missing required fields' }, { status: 400 });
@@ -32,10 +42,10 @@ export async function POST(req) {
         [username, email, hashedPassword]
       );
 
-      return Response.json({ 
-        success: true, 
+      return Response.json({
+        success: true,
         accountId: result.insertId,
-        message: 'Account created successfully' 
+        message: 'Account created successfully'
       }, { status: 201 });
     }
 
@@ -60,8 +70,8 @@ export async function POST(req) {
         return Response.json({ error: 'Invalid credentials' }, { status: 401 });
       }
 
-      return Response.json({ 
-        success: true, 
+      return Response.json({
+        success: true,
         account: {
           id: user.id,
           name: user.name,
@@ -72,9 +82,9 @@ export async function POST(req) {
 
     return Response.json({ error: 'Invalid action' }, { status: 400 });
   } catch (error) {
-    console.error('Auth error:', error);
-    return Response.json({ error: 'Server error' }, { status: 500 });
+    console.error('Auth error:', error.message, error);
+    return Response.json({ error: 'Server error', details: error.message }, { status: 500 });
   } finally {
-    conn.release();
+    if (conn) conn.release();
   }
 }
