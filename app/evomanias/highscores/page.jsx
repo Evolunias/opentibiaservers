@@ -41,42 +41,42 @@ export default function Highscores() {
   };
 
   return (
-    <main style={{ color: 'white', padding: '3rem 1.5rem' }}>
+    <main style={{ color: 'var(--text-primary)', padding: '3rem 1.5rem' }}>
       <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
         <div style={{
-          background: 'rgba(20, 20, 25, 0.85)',
+          background: 'var(--bg-card)',
           backdropFilter: 'blur(12px)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
+          border: '1px solid var(--border-light)',
           borderRadius: '12px',
           overflow: 'hidden',
           boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
         }}>
           {/* Header */}
           <div style={{
-            background: 'linear-gradient(135deg, rgba(124, 184, 255, 0.15) 0%, rgba(90, 159, 230, 0.1) 100%)',
-            borderBottom: '1px solid rgba(124, 184, 255, 0.2)',
+            background: 'var(--bg-header)',
+            borderBottom: '1px solid var(--border-primary)',
             padding: '2rem'
           }}>
             <h1 style={{
               fontSize: '2rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
-              background: 'linear-gradient(135deg, #7cb8ff 0%, #5a9fe6 100%)',
+              background: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}>
               Highscores
             </h1>
-            <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+            <p style={{ color: 'var(--text-muted)' }}>
               Top players in Evomanias
             </p>
           </div>
 
           {/* Filters */}
           <div style={{
-            background: 'rgba(0, 0, 0, 0.2)',
-            borderBottom: '1px solid rgba(124, 184, 255, 0.2)',
+            background: 'var(--bg-filter)',
+            borderBottom: '1px solid var(--border-primary)',
             padding: '1.5rem'
           }}>
             <div style={{
@@ -90,7 +90,7 @@ export default function Highscores() {
                   display: 'block',
                   fontSize: '0.875rem',
                   fontWeight: '600',
-                  color: 'rgba(255, 255, 255, 0.8)',
+                  color: 'var(--text-label)',
                   marginBottom: '0.5rem'
                 }}>
                   Search Character
@@ -103,12 +103,21 @@ export default function Highscores() {
                   style={{
                     width: '100%',
                     padding: '0.75rem 1rem',
-                    background: 'rgba(0, 0, 0, 0.3)',
-                    border: '1px solid rgba(124, 184, 255, 0.2)',
+                    background: 'var(--bg-input)',
+                    border: '1px solid var(--border-primary)',
                     borderRadius: '8px',
-                    color: 'white',
+                    color: 'var(--text-primary)',
                     fontSize: '0.875rem',
-                    outline: 'none'
+                    outline: 'none',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.background = 'var(--bg-input-hover)';
+                    e.target.style.borderColor = 'var(--primary)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.background = 'var(--bg-input)';
+                    e.target.style.borderColor = 'var(--border-primary)';
                   }}
                 />
               </div>
@@ -119,7 +128,7 @@ export default function Highscores() {
                   display: 'block',
                   fontSize: '0.875rem',
                   fontWeight: '600',
-                  color: 'rgba(255, 255, 255, 0.8)',
+                  color: 'var(--text-label)',
                   marginBottom: '0.5rem'
                 }}>
                   Vocation
@@ -130,12 +139,21 @@ export default function Highscores() {
                   style={{
                     width: '100%',
                     padding: '0.75rem 1rem',
-                    background: 'rgba(0, 0, 0, 0.3)',
-                    border: '1px solid rgba(124, 184, 255, 0.2)',
+                    background: 'var(--bg-input)',
+                    border: '1px solid var(--border-primary)',
                     borderRadius: '8px',
-                    color: 'white',
+                    color: 'var(--text-primary)',
                     fontSize: '0.875rem',
-                    outline: 'none'
+                    outline: 'none',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.background = 'var(--bg-input-hover)';
+                    e.target.style.borderColor = 'var(--primary)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.background = 'var(--bg-input)';
+                    e.target.style.borderColor = 'var(--border-primary)';
                   }}
                 >
                   {vocations.map(voc => (
@@ -168,14 +186,14 @@ export default function Highscores() {
                 }}>
                   <thead>
                     <tr style={{
-                      background: 'rgba(124, 184, 255, 0.1)',
-                      borderBottom: '1px solid rgba(124, 184, 255, 0.2)'
+                      background: `rgba(var(--primary-rgb), 0.1)`,
+                      borderBottom: '1px solid var(--border-primary)'
                     }}>
                       <th style={{
                         padding: '1rem',
                         textAlign: 'left',
                         fontWeight: '700',
-                        color: '#7cb8ff',
+                        color: 'var(--primary)',
                         fontSize: '0.875rem'
                       }}>
                         Rank
@@ -184,7 +202,7 @@ export default function Highscores() {
                         padding: '1rem',
                         textAlign: 'left',
                         fontWeight: '700',
-                        color: '#7cb8ff',
+                        color: 'var(--primary)',
                         fontSize: '0.875rem'
                       }}>
                         Character
@@ -193,7 +211,7 @@ export default function Highscores() {
                         padding: '1rem',
                         textAlign: 'left',
                         fontWeight: '700',
-                        color: '#7cb8ff',
+                        color: 'var(--primary)',
                         fontSize: '0.875rem'
                       }}>
                         Vocation
@@ -202,7 +220,7 @@ export default function Highscores() {
                         padding: '1rem',
                         textAlign: 'left',
                         fontWeight: '700',
-                        color: '#7cb8ff',
+                        color: 'var(--primary)',
                         fontSize: '0.875rem'
                       }}>
                         Level
@@ -211,7 +229,7 @@ export default function Highscores() {
                         padding: '1rem',
                         textAlign: 'left',
                         fontWeight: '700',
-                        color: '#7cb8ff',
+                        color: 'var(--primary)',
                         fontSize: '0.875rem'
                       }}>
                         Experience
@@ -223,15 +241,15 @@ export default function Highscores() {
                       <tr
                         key={entry.id}
                         style={{
-                          borderBottom: '1px solid rgba(124, 184, 255, 0.1)',
-                          background: idx % 2 === 0 ? 'transparent' : 'rgba(124, 184, 255, 0.02)',
+                          borderBottom: '1px solid var(--border-light)',
+                          background: idx % 2 === 0 ? 'transparent' : `rgba(var(--primary-rgb), 0.02)`,
                           transition: 'background 0.3s'
                         }}
                       >
                         <td style={{
                           padding: '1rem',
                           fontWeight: '700',
-                          color: idx === 0 ? '#ffd700' : '#7cb8ff',
+                          color: idx === 0 ? '#ffd700' : 'var(--primary)',
                           fontSize: '0.875rem'
                         }}>
                           {idx === 0 ? '👑' : idx + 1}
@@ -241,7 +259,7 @@ export default function Highscores() {
                           fontSize: '0.875rem'
                         }}>
                           <Link href={`/evomanias/character/${entry.id}`} style={{
-                            color: '#7cb8ff',
+                            color: 'var(--primary)',
                             textDecoration: 'none'
                           }}>
                             {entry.name}
@@ -249,21 +267,23 @@ export default function Highscores() {
                         </td>
                         <td style={{
                           padding: '1rem',
-                          fontSize: '0.875rem'
+                          fontSize: '0.875rem',
+                          color: 'var(--text-secondary)'
                         }}>
                           {entry.vocation}
                         </td>
                         <td style={{
                           padding: '1rem',
                           fontSize: '0.875rem',
-                          fontWeight: '600'
+                          fontWeight: '600',
+                          color: 'var(--text-secondary)'
                         }}>
                           {entry.level || 1}
                         </td>
                         <td style={{
                           padding: '1rem',
                           fontSize: '0.875rem',
-                          color: 'rgba(255, 255, 255, 0.7)'
+                          color: 'var(--text-muted)'
                         }}>
                           {(entry.experience || 0).toLocaleString()}
                         </td>
@@ -277,8 +297,8 @@ export default function Highscores() {
                 <div style={{
                   textAlign: 'center',
                   padding: '3rem',
-                  background: 'rgba(0, 0, 0, 0.2)',
-                  color: 'rgba(255, 255, 255, 0.6)'
+                  background: 'var(--bg-filter)',
+                  color: 'var(--text-muted)'
                 }}>
                   No highscores match your filters
                 </div>
@@ -288,8 +308,8 @@ export default function Highscores() {
 
           {/* Footer Navigation */}
           <div style={{
-            background: 'rgba(0, 0, 0, 0.2)',
-            borderTop: '1px solid rgba(124, 184, 255, 0.2)',
+            background: 'var(--bg-filter)',
+            borderTop: '1px solid var(--border-primary)',
             padding: '1.5rem',
             display: 'flex',
             justifyContent: 'space-between',
@@ -298,7 +318,7 @@ export default function Highscores() {
             <Link
               href="/evomanias"
               style={{
-                color: '#7cb8ff',
+                color: 'var(--primary)',
                 fontWeight: '600',
                 textDecoration: 'none'
               }}
@@ -308,7 +328,7 @@ export default function Highscores() {
             <Link
               href="/evomanias/account"
               style={{
-                color: '#7cb8ff',
+                color: 'var(--primary)',
                 fontWeight: '600',
                 textDecoration: 'none'
               }}
