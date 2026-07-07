@@ -8,7 +8,13 @@ import { useAuth } from '@/app/context/AuthContext';
 export default function RegisterPage() {
   const router = useRouter();
   const { signUp, error: authError, loading } = useAuth();
-  const [formData, setFormData] = useState({ email: '', password: '', confirmPassword: '', username: '' });
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+    username: '',
+    account_type: 'player',
+  });
   const [error, setError] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -41,7 +47,9 @@ export default function RegisterPage() {
       return;
     }
 
-    const result = await signUp(formData.email, formData.password, formData.username);
+    const result = await signUp(formData.email, formData.password, formData.username, {
+      account_type: formData.account_type,
+    });
     if (result.success) {
       router.push('/dashboard');
     } else {
@@ -66,7 +74,7 @@ export default function RegisterPage() {
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Create Account</h1>
-          <p className="text-gray-600 mb-8">Sign up to submit and manage your servers</p>
+          <p className="text-gray-600 mb-8">Join as a player, server owner, or community manager.</p>
 
           {(error || authError) && (
             <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
@@ -105,6 +113,24 @@ export default function RegisterPage() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 disabled={isSubmitting}
               />
+            </div>
+
+            <div>
+              <label htmlFor="account_type" className="block text-sm font-medium text-gray-700 mb-2">
+                Account Type
+              </label>
+              <select
+                id="account_type"
+                name="account_type"
+                value={formData.account_type}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                disabled={isSubmitting}
+              >
+                <option value="player">Player</option>
+                <option value="server_owner">Server Owner</option>
+                <option value="community_manager">Community Manager</option>
+              </select>
             </div>
 
             <div>

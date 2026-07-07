@@ -16,7 +16,7 @@ export function withAuth(Component, redirectTo = '/auth/login') {
           : redirectTo;
         router.push(redirect);
       }
-    }, [user, loading, router, props, redirectTo]);
+    }, [user, loading, router, props]);
 
     if (loading) {
       return (

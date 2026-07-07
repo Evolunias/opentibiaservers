@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { createClient } from '@/lib/supabase';
 
 export default function SyncStatus() {
@@ -10,7 +10,6 @@ export default function SyncStatus() {
 
   useEffect(() => {
     fetchSyncStatus();
-    // Refresh every 5 minutes
     const interval = setInterval(fetchSyncStatus, 5 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
@@ -23,7 +22,7 @@ export default function SyncStatus() {
         .select('*')
         .order('timestamp', { ascending: false })
         .limit(1)
-        .single();
+        .maybeSingle();
 
       if (error) throw error;
 
@@ -40,47 +39,42 @@ export default function SyncStatus() {
   }
 
   if (loading || !lastSync) {
-    return (
-      <div className="text-xs text-gray-500">
-        Loading sync status...
-      </div>
-    );
+    return <div className="text-xs text-gray-500">Sync status unavailable</div>;
   }
 
-  const lastSyncTime = new Date(lastSync.timestamp);
-  const timeAgo = getTimeAgo(lastSyncTime);
-  const statusColor = syncStatus === 'success' ? 'text-green-600' : 'text-red-600';
-  const statusIcon = syncStatus === 'success' ? '✓' : '✗';
+  const timeAgo = getTimeAgo(new Date(lastSync.timestamp));
+  const statusColor = syncStatus === 'success' ? 'text-green-700' : 'text-red-700';
+  const statusLabel = syncStatus === 'success' ? 'Synced' : 'Sync failed';
 
   return (
     <div className={`text-xs ${statusColor}`}>
-      {statusIcon} Last sync: {timeAgo}
-      {lastSync.fetched && (
+      {statusLabel}: {timeAgo}
+      {lastSync.fetched ? (
         <span className="ml-2">
-          ({lastSync.inserted} new, {lastSync.updated} updated)
+          ({lastSync.inserted || 0} new, {lastSync.updated || 0} updated)
         </span>
-      )}
+      ) : null}
     </div>
   );
 }
 
 function getTimeAgo(date) {
   const seconds = Math.floor((new Date() - date) / 1000);
-  
+
   let interval = seconds / 31536000;
-  if (interval > 1) return Math.floor(interval) + ' years ago';
-  
+  if (interval > 1) return `${Math.floor(interval)} years ago`;
+
   interval = seconds / 2592000;
-  if (interval > 1) return Math.floor(interval) + ' months ago';
-  
+  if (interval > 1) return `${Math.floor(interval)} months ago`;
+
   interval = seconds / 86400;
-  if (interval > 1) return Math.floor(interval) + ' days ago';
-  
+  if (interval > 1) return `${Math.floor(interval)} days ago`;
+
   interval = seconds / 3600;
-  if (interval > 1) return Math.floor(interval) + ' hours ago';
-  
+  if (interval > 1) return `${Math.floor(interval)} hours ago`;
+
   interval = seconds / 60;
-  if (interval > 1) return Math.floor(interval) + ' minutes ago';
-  
-  return Math.floor(seconds) + ' seconds ago';
+  if (interval > 1) return `${Math.floor(interval)} minutes ago`;
+
+  return `${Math.max(0, Math.floor(seconds))} seconds ago`;
 }

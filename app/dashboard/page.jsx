@@ -1,51 +1,77 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/app/context/AuthContext';
 import { supabase } from '@/lib/supabase';
 
+function accountTypeLabel(value) {
+  switch (value) {
+    case 'server_owner':
+      return 'Server Owner';
+    case 'community_manager':
+      return 'Community Manager';
+    case 'admin':
+      return 'Admin';
+    case 'player':
+    default:
+      return 'Player';
+  }
+}
+
 export default function DashboardPage() {
   const router = useRouter();
   const { user, profile, loading, signOut } = useAuth();
-  const [userServers, setUserServers] = useState([]);
-  const [loadingServers, setLoadingServers] = useState(true);
-  const [stats, setStats] = useState({ total: 0, verified: 0, pending: 0, failed: 0 });
+  const [servers, setServers] = useState([]);
+  const [claims, setClaims] = useState([]);
+  const [loadingDashboard, setLoadingDashboard] = useState(true);
+
+  const loadDashboard = useCallback(async () => {
+    if (!user) return;
+
+    setLoadingDashboard(true);
+
+    try {
+      const [{ data: serverRows, error: serverError }, { data: claimRows, error: claimError }] = await Promise.all([
+        supabase
+          .from('servers')
+          .select('*')
+          .or(`user_id.eq.${user.id},owner_user_id.eq.${user.id}`)
+          .order('updated_at', { ascending: false }),
+        supabase
+          .from('server_claims')
+          .select('*, servers(id,name,ip,host,port,source,source_id)')
+          .eq('claimant_user_id', user.id)
+          .order('created_at', { ascending: false }),
+      ]);
+
+      if (serverError) throw serverError;
+      if (claimError) throw claimError;
+
+      setServers(serverRows || []);
+      setClaims(claimRows || []);
+    } catch (error) {
+      console.error('Error loading dashboard:', error);
+    } finally {
+      setLoadingDashboard(false);
+    }
+  }, [user]);
 
   useEffect(() => {
     if (!loading && !user) {
       router.push('/auth/login');
     } else if (user) {
-      loadUserServers();
+      loadDashboard();
     }
-  }, [user, loading, router]);
+  }, [user, loading, router, loadDashboard]);
 
-  const loadUserServers = async () => {
-    try {
-      const { data, error } = await supabase
-        .from('servers')
-        .select('*')
-        .eq('user_id', user.id)
-        .order('created_at', { ascending: false });
-
-      if (error) throw error;
-
-      setUserServers(data || []);
-
-      const counts = {
-        total: data?.length || 0,
-        verified: data?.filter(s => s.verification_status === 'verified').length || 0,
-        pending: data?.filter(s => s.verification_status === 'pending').length || 0,
-        failed: data?.filter(s => s.verification_status === 'failed').length || 0,
-      };
-      setStats(counts);
-    } catch (err) {
-      console.error('Error loading servers:', err);
-    } finally {
-      setLoadingServers(false);
-    }
-  };
+  const stats = useMemo(() => ({
+    listings: servers.length,
+    claimed: servers.filter((server) => server.claim_status === 'claimed').length,
+    verified: servers.filter((server) => server.verification_status === 'verified').length,
+    pendingClaims: claims.filter((claim) => claim.status === 'pending').length,
+  }), [servers, claims]);
 
   const handleSignOut = async () => {
     await signOut();
@@ -53,19 +79,19 @@ export default function DashboardPage() {
   };
 
   const handleDeleteServer = async (serverId) => {
-    if (!confirm('Are you sure you want to delete this server listing?')) return;
+    if (!confirm('Delete this listing from your account?')) return;
 
     try {
       const { error } = await supabase
         .from('servers')
         .delete()
         .eq('id', serverId)
-        .eq('user_id', user.id);
+        .or(`user_id.eq.${user.id},owner_user_id.eq.${user.id}`);
 
       if (error) throw error;
-      setUserServers(userServers.filter(s => s.id !== serverId));
-    } catch (err) {
-      console.error('Error deleting server:', err);
+      setServers((current) => current.filter((server) => server.id !== serverId));
+    } catch (error) {
+      console.error('Error deleting server:', error);
     }
   };
 
@@ -73,7 +99,7 @@ export default function DashboardPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="w-12 h-12 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin mx-auto mb-4" />
           <p className="text-gray-600">Loading...</p>
         </div>
       </div>
@@ -84,161 +110,112 @@ export default function DashboardPage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6 py-8">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8">
           <div>
-            <h1 className="text-4xl font-bold text-gray-900">Dashboard</h1>
-            <p className="text-gray-600 mt-2">Manage your servers and account</p>
+            <Link href="/" className="text-sm font-semibold text-gray-600 hover:text-gray-950">
+              Back to directory
+            </Link>
+            <h1 className="text-4xl font-bold text-gray-950 mt-2">Account Dashboard</h1>
+            <p className="text-gray-600 mt-2">Manage listings, claims, reviews, and community activity.</p>
           </div>
-          <div className="flex gap-4">
-            <Link
-              href="/submit-server"
-              className="px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
-            >
-              + Submit Server
+          <div className="flex flex-wrap gap-3">
+            <Link href="/submit-server" className="px-4 py-2 bg-gray-950 text-white font-semibold rounded hover:opacity-85">
+              Submit Server
+            </Link>
+            <Link href="/community" className="px-4 py-2 bg-white text-gray-900 font-semibold border border-gray-300 rounded hover:bg-gray-50">
+              Community
             </Link>
             <button
+              type="button"
               onClick={handleSignOut}
-              className="px-6 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition-all duration-300"
+              className="px-4 py-2 bg-white text-gray-700 font-semibold border border-gray-300 rounded hover:bg-gray-50"
             >
               Sign Out
             </button>
           </div>
         </div>
 
-        {/* User Info */}
-        <div className="bg-white rounded-lg shadow p-6 mb-8">
+        <section className="bg-white border border-gray-200 rounded p-6 mb-6">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
-              {user.email[0].toUpperCase()}
+            <div className="w-14 h-14 bg-gray-950 rounded flex items-center justify-center text-white text-xl font-bold">
+              {user.email?.[0]?.toUpperCase()}
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">{profile?.username || 'User'}</h2>
+              <h2 className="text-2xl font-bold text-gray-950">{profile?.display_name || profile?.username || 'User'}</h2>
               <p className="text-gray-600">{user.email}</p>
-              <p className="text-sm text-gray-500 mt-1">Account created {new Date(user.created_at).toLocaleDateString()}</p>
+              <p className="text-sm text-gray-500 mt-1">{accountTypeLabel(profile?.account_type)} account</p>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div className="bg-white rounded-lg shadow p-6">
-            <p className="text-gray-600 text-sm">Total Servers</p>
-            <p className="text-3xl font-bold text-gray-900">{stats.total}</p>
-          </div>
-          <div className="bg-white rounded-lg shadow p-6">
-            <p className="text-gray-600 text-sm">Verified</p>
-            <p className="text-3xl font-bold text-green-600">{stats.verified}</p>
-          </div>
-          <div className="bg-white rounded-lg shadow p-6">
-            <p className="text-gray-600 text-sm">Pending Verification</p>
-            <p className="text-3xl font-bold text-yellow-600">{stats.pending}</p>
-          </div>
-          <div className="bg-white rounded-lg shadow p-6">
-            <p className="text-gray-600 text-sm">Verification Failed</p>
-            <p className="text-3xl font-bold text-red-600">{stats.failed}</p>
-          </div>
-        </div>
+        <section className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <Stat label="Managed Listings" value={stats.listings} />
+          <Stat label="Claimed" value={stats.claimed} />
+          <Stat label="Verified" value={stats.verified} />
+          <Stat label="Pending Claims" value={stats.pendingClaims} />
+        </section>
 
-        {/* Servers List */}
-        <div className="bg-white rounded-lg shadow overflow-hidden">
+        <section className="bg-white border border-gray-200 rounded overflow-hidden mb-6">
           <div className="border-b border-gray-200 px-6 py-4">
-            <h2 className="text-2xl font-bold text-gray-900">Your Servers</h2>
+            <h2 className="text-xl font-bold text-gray-950">Managed Listings</h2>
+            <p className="text-sm text-gray-600">Listings you submitted or that have been assigned to your account.</p>
           </div>
 
-          {loadingServers ? (
+          {loadingDashboard ? (
             <div className="flex items-center justify-center py-12">
               <div className="text-center">
-                <div className="w-8 h-8 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin mx-auto mb-3"></div>
-                <p className="text-gray-600">Loading servers...</p>
+                <div className="w-8 h-8 border-4 border-gray-200 border-t-gray-900 rounded-full animate-spin mx-auto mb-3" />
+                <p className="text-gray-600">Loading dashboard...</p>
               </div>
             </div>
-          ) : userServers.length === 0 ? (
+          ) : servers.length === 0 ? (
             <div className="px-6 py-12 text-center">
-              <p className="text-gray-600 mb-4">You haven't submitted any servers yet.</p>
-              <Link
-                href="/submit-server"
-                className="inline-block px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
-              >
+              <p className="text-gray-600 mb-4">No managed listings yet.</p>
+              <Link href="/submit-server" className="inline-block px-4 py-2 bg-gray-950 text-white font-semibold rounded hover:opacity-85">
                 Submit Your First Server
               </Link>
             </div>
           ) : (
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full text-sm">
                 <thead className="bg-gray-50 border-b border-gray-200">
                   <tr>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Server Name</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">IP:Port</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Status</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Verification</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Submitted</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Actions</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Server</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Claim</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Verification</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Rating</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Monitor</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
-                  {userServers.map(server => (
-                    <tr key={server.id} className="hover:bg-gray-50 transition-colors">
+                  {servers.map((server) => (
+                    <tr key={server.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4">
-                        <Link
-                          href={`/server/${server.id}`}
-                          className="text-blue-600 hover:underline font-semibold"
-                        >
+                        <Link href={`/server/${server.id}`} className="text-blue-700 hover:underline font-semibold">
                           {server.name}
                         </Link>
+                        <div className="text-xs text-gray-500">{server.host || server.ip}:{server.port || 7171}</div>
                       </td>
-                      <td className="px-6 py-4 text-gray-700">{server.ip}:{server.port}</td>
-                      <td className="px-6 py-4">
-                        {server.is_online ? (
-                          <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-semibold rounded-full">
-                            Online
-                          </span>
-                        ) : (
-                          <span className="inline-block px-3 py-1 bg-red-100 text-red-800 text-sm font-semibold rounded-full">
-                            Offline
-                          </span>
-                        )}
+                      <td className="px-6 py-4 text-gray-700">{server.claim_status || 'unclaimed'}</td>
+                      <td className="px-6 py-4 text-gray-700">{server.verification_status || 'unverified'}</td>
+                      <td className="px-6 py-4 text-gray-700">
+                        {Number(server.average_rating || 0).toFixed(2)} ({server.review_count || 0})
+                      </td>
+                      <td className="px-6 py-4 text-gray-700">
+                        {server.last_monitor_status || 'unknown'}
+                        {server.last_response_time_ms ? ` / ${server.last_response_time_ms}ms` : ''}
                       </td>
                       <td className="px-6 py-4">
-                        {server.verification_status === 'verified' && (
-                          <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-semibold rounded-full">
-                            ✓ Verified
-                          </span>
-                        )}
-                        {server.verification_status === 'pending' && (
-                          <span className="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-semibold rounded-full">
-                            ⏳ Pending
-                          </span>
-                        )}
-                        {server.verification_status === 'failed' && (
-                          <span
-                            title={server.verification_error || 'Verification failed'}
-                            className="inline-block px-3 py-1 bg-red-100 text-red-800 text-sm font-semibold rounded-full cursor-help"
-                          >
-                            ✗ Failed
-                          </span>
-                        )}
-                        {server.verification_status === 'unverified' && (
-                          <span className="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm font-semibold rounded-full">
-                            Not Started
-                          </span>
-                        )}
-                      </td>
-                      <td className="px-6 py-4 text-gray-700 text-sm">
-                        {new Date(server.created_at).toLocaleDateString()}
-                      </td>
-                      <td className="px-6 py-4">
-                        <div className="flex gap-2">
-                          <Link
-                            href={`/server/${server.id}`}
-                            className="text-blue-600 hover:underline text-sm font-medium"
-                          >
+                        <div className="flex gap-3">
+                          <Link href={`/server/${server.id}`} className="text-blue-700 hover:underline font-semibold">
                             View
                           </Link>
                           <button
+                            type="button"
                             onClick={() => handleDeleteServer(server.id)}
-                            className="text-red-600 hover:underline text-sm font-medium"
+                            className="text-red-700 hover:underline font-semibold"
                           >
                             Delete
                           </button>
@@ -250,8 +227,61 @@ export default function DashboardPage() {
               </table>
             </div>
           )}
-        </div>
+        </section>
+
+        <section className="bg-white border border-gray-200 rounded overflow-hidden">
+          <div className="border-b border-gray-200 px-6 py-4">
+            <h2 className="text-xl font-bold text-gray-950">Claim Requests</h2>
+            <p className="text-sm text-gray-600">Claim imported listings by proving ownership or management access.</p>
+          </div>
+
+          {claims.length === 0 ? (
+            <div className="px-6 py-8 text-gray-600 text-sm">No claim requests yet. Open an imported listing and use the claim form.</div>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead className="bg-gray-50 border-b border-gray-200">
+                  <tr>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Server</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Role</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Proof</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Status</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Created</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  {claims.map((claim) => (
+                    <tr key={claim.id}>
+                      <td className="px-6 py-4">
+                        {claim.servers?.id ? (
+                          <Link href={`/server/${claim.servers.id}`} className="text-blue-700 hover:underline font-semibold">
+                            {claim.servers.name}
+                          </Link>
+                        ) : (
+                          'Deleted listing'
+                        )}
+                      </td>
+                      <td className="px-6 py-4 text-gray-700">{claim.claimant_role}</td>
+                      <td className="px-6 py-4 text-gray-700">{claim.proof_type}</td>
+                      <td className="px-6 py-4 text-gray-700">{claim.status}</td>
+                      <td className="px-6 py-4 text-gray-700">{new Date(claim.created_at).toLocaleDateString()}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </section>
       </div>
     </main>
+  );
+}
+
+function Stat({ label, value }) {
+  return (
+    <div className="bg-white border border-gray-200 rounded p-5">
+      <p className="text-gray-500 text-sm">{label}</p>
+      <p className="text-3xl font-bold text-gray-950">{value}</p>
+    </div>
   );
 }

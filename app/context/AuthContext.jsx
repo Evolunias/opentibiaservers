@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 
 const AuthContext = createContext();
@@ -10,6 +10,36 @@ export function AuthProvider({ children }) {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const loadProfile = useCallback(async (userId) => {
+    try {
+      const { data, error: err } = await supabase
+        .from('user_profiles')
+        .select('*')
+        .eq('id', userId)
+        .single();
+
+      if (err && err.code !== 'PGRST116') throw err;
+      setProfile(data || null);
+    } catch (err) {
+      console.error('Error loading profile:', err);
+    }
+  }, []);
+
+  const checkUser = useCallback(async () => {
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        setUser(session.user);
+        await loadProfile(session.user.id);
+      }
+    } catch (err) {
+      console.error('Error checking user:', err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }, [loadProfile]);
 
   useEffect(() => {
     checkUser();
@@ -26,39 +56,9 @@ export function AuthProvider({ children }) {
     return () => {
       authListener?.subscription?.unsubscribe();
     };
-  }, []);
+  }, [checkUser, loadProfile]);
 
-  const checkUser = async () => {
-    try {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (session?.user) {
-        setUser(session.user);
-        await loadProfile(session.user.id);
-      }
-    } catch (err) {
-      console.error('Error checking user:', err);
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const loadProfile = async (userId) => {
-    try {
-      const { data, error: err } = await supabase
-        .from('user_profiles')
-        .select('*')
-        .eq('id', userId)
-        .single();
-
-      if (err && err.code !== 'PGRST116') throw err;
-      setProfile(data || null);
-    } catch (err) {
-      console.error('Error loading profile:', err);
-    }
-  };
-
-  const signUp = async (email, password, username) => {
+  const signUp = async (email, password, username, profileData = {}) => {
     try {
       setError(null);
       const { data: { user: newUser }, error: signUpError } = await supabase.auth.signUp({
@@ -71,7 +71,12 @@ export function AuthProvider({ children }) {
       if (newUser) {
         const { error: profileError } = await supabase
           .from('user_profiles')
-          .insert([{ id: newUser.id, username }]);
+          .insert([{
+            id: newUser.id,
+            username,
+            display_name: profileData.display_name || username,
+            account_type: profileData.account_type || 'player',
+          }]);
 
         if (profileError) throw profileError;
         setUser(newUser);

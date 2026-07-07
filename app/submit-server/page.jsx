@@ -78,6 +78,11 @@ export default function SubmitServerPage() {
             skill_rate: parseFloat(formData.skill_rate),
             loot_rate: parseFloat(formData.loot_rate),
             user_id: user.id,
+            owner_user_id: user.id,
+            source: 'user_submission',
+            host: formData.ip,
+            claim_status: 'claimed',
+            claimed_at: new Date().toISOString(),
             verification_status: 'pending',
             is_online: false,
           },
@@ -123,7 +128,7 @@ export default function SubmitServerPage() {
     <main className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-6 py-12">
         <Link href="/dashboard" className="text-blue-600 hover:underline mb-6 inline-block">
-          ← Back to Dashboard
+          Back to Dashboard
         </Link>
 
         <h1 className="text-4xl font-bold text-gray-900 mb-2">Submit Your Server</h1>

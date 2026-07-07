@@ -1,330 +1,100 @@
-'use client';
+import { createClient } from '@supabase/supabase-js';
+import ServerDetailClient from './ServerDetailClient';
+import {
+  buildAbsoluteUrl,
+  buildServerDescription,
+  buildServerJsonLd,
+  buildServerTitle,
+  getSiteName,
+  getSiteUrl,
+  makeServerKeywordList,
+} from '@/lib/seo';
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { supabase } from '@/lib/supabase';
+function getSupabaseServerClient() {
+  const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-const getWorldTypeColor = (type) => {
-  switch(type) {
-    case 'PVP': return 'bg-red-100 text-red-700 border border-red-300';
-    case 'Non-PVP': return 'bg-green-100 text-green-700 border border-green-300';
-    case 'PVP-Enforced': return 'bg-amber-100 text-amber-700 border border-amber-300';
-    default: return 'bg-gray-100 text-gray-700 border border-gray-300';
+  if (!url || !key) return null;
+
+  return createClient(url, key, {
+    auth: {
+      persistSession: false,
+      autoRefreshToken: false,
+    },
+  });
+}
+
+async function getServerRecord(id) {
+  const supabase = getSupabaseServerClient();
+  if (!supabase) return null;
+
+  const { data } = await supabase
+    .from('servers')
+    .select('*')
+    .eq('id', id)
+    .single();
+
+  return data || null;
+}
+
+export async function generateMetadata({ params }) {
+  const server = await getServerRecord(params.id);
+  const siteUrl = getSiteUrl();
+
+  if (!server) {
+    return {
+      title: `Server Listing Not Found | ${getSiteName()}`,
+      description: 'The requested Open Tibia server listing could not be found.',
+      alternates: {
+        canonical: `${siteUrl}/server/${params.id}`,
+      },
+      robots: {
+        index: false,
+        follow: true,
+      },
+    };
   }
-};
 
-export default function ServerDetail({ params }) {
-  const [server, setServer] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const title = buildServerTitle(server);
+  const description = buildServerDescription(server);
+  const keywords = makeServerKeywordList(server);
+  const canonical = buildAbsoluteUrl(`/server/${server.id}`);
 
-  useEffect(() => {
-    loadServer();
-  }, [params.id]);
-
-  const loadServer = async () => {
-    try {
-      const { data, error: fetchError } = await supabase
-        .from('servers')
-        .select('*')
-        .eq('id', params.id)
-        .single();
-
-      if (fetchError) {
-        setError('Server not found');
-      } else {
-        setServer(data);
-      }
-    } catch (err) {
-      setError('Failed to load server details');
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
+  return {
+    title,
+    description,
+    keywords,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: getSiteName(),
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
   };
+}
 
-  if (loading) {
-    return (
-      <main className="min-h-screen bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <Link href="/" className="text-blue-600 hover:text-blue-700 mb-6 inline-block font-semibold">
-            ← Back to Servers
-          </Link>
-          <div className="flex items-center justify-center py-20">
-            <div className="text-center">
-              <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading server...</p>
-            </div>
-          </div>
-        </div>
-      </main>
-    );
-  }
-
-  if (error || !server) {
-    return (
-      <main className="min-h-screen bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <Link href="/" className="text-blue-600 hover:text-blue-700 mb-6 inline-block font-semibold">
-            ← Back to Servers
-          </Link>
-          <div className="bg-red-50 border-2 border-red-300 text-red-800 px-6 py-4 rounded-lg shadow-sm">
-            {error}
-          </div>
-        </div>
-      </main>
-    );
-  }
+export default async function ServerPage({ params }) {
+  const server = await getServerRecord(params.id);
+  const jsonLd = server ? buildServerJsonLd(server) : null;
 
   return (
-    <main className="min-h-screen bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <Link href="/" className="text-blue-600 hover:text-blue-700 mb-6 inline-block font-semibold">
-          ← Back to Servers
-        </Link>
-
-        <div className="bg-white border-2 border-gray-300 rounded-lg overflow-hidden shadow-md">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-blue-100 to-purple-100 px-8 py-8 border-b-2 border-gray-300">
-            <div className="flex items-start justify-between">
-              <div>
-                <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2" style={{
-                  animation: 'gradient-shift 6s ease infinite',
-                  backgroundSize: '200% 200%'
-                }}>{server.name}</h1>
-                <p className="text-gray-700 text-lg">{server.ip}:{server.port}</p>
-              </div>
-              <div className={`px-4 py-2 rounded-lg font-semibold ${getWorldTypeColor(server.world_type)}`}>
-                {server.world_type}
-              </div>
-            </div>
-          </div>
-
-          <div className="p-8">
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 border border-blue-200 shadow-sm">
-                <p className="text-blue-600 text-sm uppercase tracking-wide font-bold mb-2">Players Online</p>
-                <p className="text-3xl font-bold text-blue-700">{server.players_online || 0}</p>
-              </div>
-              <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg p-6 border border-amber-200 shadow-sm">
-                <p className="text-amber-600 text-sm uppercase tracking-wide font-bold mb-2">Peak Players</p>
-                <p className="text-3xl font-bold text-amber-700">{server.players_peak || 0}</p>
-              </div>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6 border border-green-200 shadow-sm">
-                <p className="text-green-600 text-sm uppercase tracking-wide font-bold mb-2">Uptime</p>
-                <p className="text-3xl font-bold text-green-700">{server.uptime_percent || 0}%</p>
-              </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 border border-purple-200 shadow-sm">
-                <p className="text-purple-600 text-sm uppercase tracking-wide font-bold mb-2">Status</p>
-                <p className={`text-xl font-bold ${server.is_online ? 'text-green-600' : 'text-red-600'}`}>
-                  {server.is_online ? 'Online' : 'Offline'}
-                </p>
-              </div>
-            </div>
-
-            {/* Rates Section */}
-            <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-300 rounded-lg p-6 mb-8 shadow-sm">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Experience Rates</h2>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <div>
-                  <p className="text-gray-600 text-sm uppercase tracking-wide font-bold mb-2">Experience</p>
-                  <p className="text-2xl font-bold text-gray-900">{server.exp_rate || 1}x</p>
-                </div>
-                <div>
-                  <p className="text-gray-600 text-sm uppercase tracking-wide font-bold mb-2">Skill</p>
-                  <p className="text-2xl font-bold text-gray-900">{server.skill_rate || 1}x</p>
-                </div>
-                <div>
-                  <p className="text-gray-600 text-sm uppercase tracking-wide font-bold mb-2">Magic</p>
-                  <p className="text-2xl font-bold text-gray-900">{server.magic_rate || 1}x</p>
-                </div>
-                <div>
-                  <p className="text-gray-600 text-sm uppercase tracking-wide font-bold mb-2">Loot</p>
-                  <p className="text-2xl font-bold text-gray-900">{server.loot_rate || 1}x</p>
-                </div>
-                <div>
-                  <p className="text-gray-600 text-sm uppercase tracking-wide font-bold mb-2">Spawn</p>
-                  <p className="text-2xl font-bold text-gray-900">{server.spawn_rate || 1}x</p>
-                </div>
-              </div>
-              {server.exp_stages && (
-                <div className="mt-4 px-3 py-2 bg-blue-100 text-blue-700 rounded text-sm border border-blue-300 font-semibold">
-                  ✓ Experience Stages Enabled
-                </div>
-              )}
-            </div>
-
-            {/* Server Information */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-300 rounded-lg p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Server Information</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Version:</span>
-                    <span className="text-gray-900 font-semibold">{server.version}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Client Type:</span>
-                    <span className="text-gray-900 font-semibold">{server.client_type || 'N/A'}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">World Type:</span>
-                    <span className="text-gray-900 font-semibold">{server.world_type}</span>
-                  </div>
-                  {server.pvp_type && (
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">PVP Type:</span>
-                      <span className="text-gray-900 font-semibold">{server.pvp_type}</span>
-                    </div>
-                  )}
-                  {server.map_name && (
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Map:</span>
-                      <span className="text-gray-900 font-semibold">{server.map_name}</span>
-                    </div>
-                  )}
-                  {server.server_type && (
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Server Type:</span>
-                      <span className="text-gray-900 font-semibold">{server.server_type}</span>
-                    </div>
-                  )}
-                  {server.location && (
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Location:</span>
-                      <span className="text-gray-900 font-semibold">{server.location}</span>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-300 rounded-lg p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Features</h3>
-                <div className="space-y-2">
-                  {server.has_custom_map && (
-                    <div className="flex items-center gap-2 text-green-600 font-semibold">
-                      <span>✓</span> Custom Map
-                    </div>
-                  )}
-                  {server.has_custom_sprites && (
-                    <div className="flex items-center gap-2 text-green-600 font-semibold">
-                      <span>✓</span> Custom Sprites
-                    </div>
-                  )}
-                  {server.has_store && (
-                    <div className="flex items-center gap-2 text-green-600 font-semibold">
-                      <span>✓</span> In-Game Store
-                    </div>
-                  )}
-                  {server.is_premium_required && (
-                    <div className="flex items-center gap-2 text-amber-600 font-semibold">
-                      <span>!</span> Premium Required
-                    </div>
-                  )}
-                  {server.has_battleye && (
-                    <div className="flex items-center gap-2 text-blue-600 font-semibold">
-                      <span>✓</span> BattlEye Anti-Cheat
-                    </div>
-                  )}
-                  {!server.has_custom_map && !server.has_custom_sprites && !server.has_store && !server.is_premium_required && !server.has_battleye && (
-                    <p className="text-gray-600">Standard server setup</p>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            {/* Description */}
-            {server.description && (
-              <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-300 rounded-lg p-6 mb-8 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Description</h3>
-                <p className="text-gray-700 leading-relaxed">{server.description}</p>
-              </div>
-            )}
-
-            {/* Tags */}
-            {server.tags && server.tags.length > 0 && (
-              <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-300 rounded-lg p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Tags</h3>
-                <div className="flex flex-wrap gap-2">
-                  {server.tags.map((tag, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-blue-100 text-blue-700 rounded text-sm border border-blue-300 font-semibold">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Verification Status */}
-            {server.user_id && (
-              <div className="mt-8 pt-8 border-t-2 border-gray-300">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Verification Status</h3>
-                <div className="space-y-3">
-                  {server.verification_status === 'verified' && (
-                    <div className="px-4 py-3 bg-green-50 border border-green-200 text-green-700 rounded-lg font-semibold flex items-center gap-2">
-                      <span>✓</span> Verified {server.verified_at && `on ${new Date(server.verified_at).toLocaleDateString()}`}
-                    </div>
-                  )}
-                  {server.verification_status === 'pending' && (
-                    <div className="px-4 py-3 bg-yellow-50 border border-yellow-200 text-yellow-700 rounded-lg font-semibold flex items-center gap-2">
-                      <span>⏳</span> Verification in progress
-                    </div>
-                  )}
-                  {server.verification_status === 'failed' && (
-                    <div className="px-4 py-3 bg-red-50 border border-red-200 text-red-700 rounded-lg font-semibold">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span>✗</span> Verification failed
-                      </div>
-                      {server.verification_error && (
-                        <p className="text-sm ml-6 text-red-600">{server.verification_error}</p>
-                      )}
-                    </div>
-                  )}
-                  {server.verification_status === 'unverified' && (
-                    <div className="px-4 py-3 bg-gray-50 border border-gray-200 text-gray-700 rounded-lg font-semibold">
-                      Not yet verified
-                    </div>
-                  )}
-                  <div className="text-sm text-gray-600 space-y-1">
-                    <p>DNS Verified: <span className={server.verification_dns_checked ? 'text-green-600 font-semibold' : 'text-gray-600'}>
-                      {server.verification_dns_checked ? '✓ Yes' : '○ Pending'}
-                    </span></p>
-                    <p>IP/Port Verified: <span className={server.verification_ip_checked ? 'text-green-600 font-semibold' : 'text-gray-600'}>
-                      {server.verification_ip_checked ? '✓ Yes' : '○ Pending'}
-                    </span></p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Contact Info */}
-            {(server.website_url || server.owner_email) && (
-              <div className="mt-8 pt-8 border-t-2 border-gray-300">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Contact & Links</h3>
-                <div className="space-y-2 text-sm">
-                  {server.website_url && (
-                    <p>
-                      <span className="text-gray-600">Website: </span>
-                      <a href={server.website_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 font-semibold">
-                        {server.website_url}
-                      </a>
-                    </p>
-                  )}
-                  {server.owner_email && (
-                    <p>
-                      <span className="text-gray-600">Contact: </span>
-                      <a href={`mailto:${server.owner_email}`} className="text-blue-600 hover:text-blue-700 font-semibold">
-                        {server.owner_email}
-                      </a>
-                    </p>
-                  )}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </main>
+    <>
+      {jsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      ) : null}
+      <ServerDetailClient params={params} initialServer={server} />
+    </>
   );
 }

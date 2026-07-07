@@ -1,256 +1,120 @@
-# Deployment Setup Guide - Open Tibia Servers
-
-## Overview
-
-This application fetches real-time server listings from otservlist.org and displays them in a searchable, filterable interface. A Netlify scheduled function syncs data every 15 minutes.
+# Deployment Setup - Open Tibia Servers
 
 ## Architecture
 
-- **Frontend**: Next.js with React (deployed to Netlify)
-- **Database**: Supabase (PostgreSQL)
-- **Data Source**: otservlist.org
-- **Sync**: Netlify Scheduled Function (every 15 minutes)
+- Frontend: Next.js 14
+- Database: Supabase PostgreSQL
+- Primary source: otservlist.org
+- Future source: OTLand launch threads
+- Sync endpoint: `POST /api/sync-servers`
 
-## Prerequisites
+## Database Setup
 
-1. **Supabase Project** with the `servers` table created
-2. **Netlify Account** connected to your GitHub repository
-3. **Environment Variables** configured
+Run these SQL files in Supabase:
 
-## Step 1: Database Setup
+1. `supabase/migrations/001_add_auth_and_users.sql`
+2. `supabase/migrations/002_add_external_source_fields.sql`
+3. `supabase/migrations/add_sync_logs.sql`
+4. `supabase/migrations/003_platform_features.sql`
 
-Create the `servers` table in Supabase with the following structure:
+`001_add_auth_and_users.sql` now creates the base `servers` table if it does not exist. `002_add_external_source_fields.sql` adds source IDs, source URLs, max players, points, source payload JSON, and other imported listing fields.
+`003_platform_features.sql` adds account types, claim requests, reviews, listing conversations, community boards, and uptime history.
 
-```sql
-create table public.servers (
-  id uuid not null default gen_random_uuid (),
-  name text not null,
-  ip text not null,
-  port integer null default 7171,
-  website_url text null,
-  owner_email text null,
-  version text not null,
-  client_type text null,
-  world_type text null default 'PVP'::text,
-  pvp_type text null,
-  map_name text null,
-  server_type text null,
-  location text null,
-  exp_rate numeric null,
-  exp_stages boolean null default false,
-  skill_rate numeric null,
-  magic_rate numeric null,
-  loot_rate numeric null,
-  spawn_rate numeric null default 1,
-  is_online boolean null default false,
-  players_online integer null default 0,
-  players_peak integer null default 0,
-  uptime_percent numeric(5, 2) null,
-  last_check timestamp with time zone null default now(),
-  has_custom_map boolean null default false,
-  has_custom_sprites boolean null default false,
-  has_store boolean null default false,
-  is_premium_required boolean null default false,
-  has_battleye boolean null default false,
-  description text null,
-  tags text[] null,
-  created_at timestamp with time zone null default now(),
-  updated_at timestamp with time zone null default now(),
-  constraint servers_pkey primary key (id),
-  constraint servers_ip_key unique (ip)
-) TABLESPACE pg_default;
-```
-
-## Step 2: Environment Variables
-
-### Client-Side Variables (PUBLIC - Exposed to Browser)
-
-These must have the `NEXT_PUBLIC_` prefix:
+## Environment Variables
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co/
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+SYNC_TOKEN=use-a-long-random-secret
+MONITOR_TOKEN=optional-monitor-secret
 ```
 
-Get these from: **Supabase Dashboard → Project Settings → API → Project URL and Anon Key**
-
-### Server-Side Variables (SECRET - Never Exposed)
-
-Keep these secure, use only in server-side code:
+Optional sync controls:
 
 ```env
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-SUPABASE_JWT_SECRET=your-jwt-secret
-DIRECT_CONNECTION_STRING=postgresql://postgres:password@db.xxxx.supabase.co:5432/postgres
-DATABASE_PASSWORD=your-db-password
-SUPABASE_JWKS=xxxx-xxxx-xxxx-xxxx
+OTSERVLIST_BASE_URL=https://otservlist.org
+OTSERVLIST_PAGE_LIMIT=3
+OTSERVLIST_INCLUDE_DETAILS=false
+OTSERVLIST_DETAIL_LIMIT=25
+NEXT_PUBLIC_SERVER_REFRESH_INTERVAL_MS=30000
 ```
 
-Get the Service Role Key from: **Supabase Dashboard → Project Settings → API → Service Role Key**
+## Manual Sync
 
-### Application Variables
-
-```env
-PUBLIC_API_URL=/api
-PROJECT_URL=https://your-project.supabase.co/
-SYNC_TOKEN=your-secure-random-token-here
+```bash
+curl -X POST "https://your-domain.com/api/sync-servers" \
+  -H "x-sync-token: your-sync-token" \
+  -H "Content-Type: application/json" \
+  -d "{\"pageLimit\":3,\"includeDetails\":true,\"detailLimit\":25}"
 ```
-
-## Step 3: Configure Netlify Environment Variables
-
-1. Go to **Netlify Dashboard → Site Settings → Build & Deploy → Environment**
-2. Click **Edit Variables**
-3. Add the following:
-
-| Variable | Value | Type |
-|----------|-------|------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase URL | public |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Your Anon Key | secret |
-| `SUPABASE_SERVICE_ROLE_KEY` | Your Service Role Key | secret |
-| `SUPABASE_JWT_SECRET` | Your JWT Secret | secret |
-| `DIRECT_CONNECTION_STRING` | Your Connection String | secret |
-| `DATABASE_PASSWORD` | Your DB Password | secret |
-| `SUPABASE_JWKS` | Your JWKS ID | secret |
-| `SYNC_TOKEN` | Generate a random string | secret |
-
-## Step 4: Verify Configuration
-
-Before deploying, verify your setup:
-
-1. **Test the sync endpoint locally**:
-   ```bash
-   npm run dev
-   # Then visit: http://localhost:3000/api/sync-servers?token=your-sync-token
-   ```
-
-2. **Check Netlify scheduled functions are enabled**:
-   - Go to **Netlify Dashboard → Site Settings → Functions**
-   - Verify **Scheduled Functions** is enabled (requires paid plan)
-
-3. **Verify the netlify.toml is correct**:
-   ```toml
-   [[scheduled]]
-   cron = "*/15 * * * *"
-   function = "sync-servers"
-   ```
-
-## Step 5: Deploy to Netlify
-
-1. Push your code to GitHub:
-   ```bash
-   git add .
-   git commit -m "Add server sync functionality"
-   git push origin main
-   ```
-
-2. Netlify will automatically deploy from your GitHub repository
-
-3. Monitor the build:
-   - Go to **Netlify Dashboard → Deploys**
-   - Wait for the build to complete
-   - Check the **Functions** tab to verify `sync-servers` is deployed
-
-## Step 6: Verify Sync is Working
-
-1. **Manual trigger** (for testing):
-   ```bash
-   curl -X POST https://your-site.netlify.app/api/sync-servers \
-     -H "x-sync-token: your-sync-token"
-   ```
-
-2. **Check Netlify Function Logs**:
-   - Go to **Netlify Dashboard → Functions**
-   - Click on `sync-servers`
-   - View the function logs to see sync results
-
-3. **Check Database**:
-   - Go to **Supabase Dashboard → SQL Editor**
-   - Run: `SELECT COUNT(*) FROM servers;`
-   - Should return > 0 after first sync
-
-## Troubleshooting
-
-### Issue: No servers appearing in the app
-
-1. Check if `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` are set correctly
-2. Verify the anon key has `SELECT` permissions on the `servers` table
-3. Check Supabase Row Level Security (RLS) policies - ensure public read access is enabled
-
-### Issue: Sync function not running
-
-1. Verify Netlify plan supports **Scheduled Functions** (Pro plan or higher)
-2. Check Netlify function logs for errors
-3. Verify `SUPABASE_SERVICE_ROLE_KEY` is set correctly
-4. Try manual trigger to test the sync endpoint
-
-### Issue: "Cannot find otservlist.org data"
-
-The sync function tries multiple API endpoints. If none work:
-1. Check the Netlify function logs for the actual error
-2. Verify network connectivity from Netlify to otservlist.org
-3. The data format may have changed - update the `parseServerData` function in `netlify/functions/sync-servers.js`
-
-### Issue: "Unique constraint violated on ip"
-
-This is normal - it means servers are being updated. The upsert handles this automatically.
-
-## Monitoring
-
-1. **Real-time logs**: Check Netlify Functions dashboard
-2. **Database**: Monitor table size in Supabase
-3. **Performance**: Track sync duration in function logs
-4. **Errors**: Set up Netlify notifications for failed builds/functions
-
-## Maintenance
-
-### Updating Server Data Format
-
-If otservlist.org changes their API format:
-
-1. Edit `netlify/functions/sync-servers.js`
-2. Update the `parseServerData()` function to match new field names
-3. Update the fetch endpoints in `fetchFromOtservlist()` if needed
-4. Deploy the changes
-
-### Cleaning up Old Data
-
-To remove servers not seen in the last 30 days:
-
-```sql
-DELETE FROM servers 
-WHERE last_check < NOW() - INTERVAL '30 days';
-```
-
-Run this as a periodic maintenance task in Supabase.
-
-## API Reference
-
-### Sync Endpoint
-
-```
-POST /api/sync-servers
-Header: x-sync-token: your-sync-token
 
 Response:
+
+```json
 {
   "success": true,
-  "timestamp": "2024-01-15T10:30:00Z",
-  "stats": {
-    "inserted": 5,
-    "updated": 120,
-    "errors": 0
-  }
+  "source": "otservlist.org",
+  "fetched": 120,
+  "inserted": 15,
+  "updated": 105,
+  "failed": 0
 }
 ```
 
-### Server Fields
+## Scheduled Sync
 
-All fields from the database schema are exposed via the `/api/sync-servers` endpoint when fetching servers for the UI.
+Use any cron service that can send an HTTP request, such as Netlify Scheduled Functions, cron-job.org, GitHub Actions, or a server cron.
 
-## Security Considerations
+Recommended schedule:
 
-1. **Never commit .env files** - they're in .gitignore
-2. **Rotate SYNC_TOKEN regularly** - use a strong random string
-3. **Use Supabase RLS** - restrict database access to specific roles
-4. **Limit anon key permissions** - it should only read from `servers`
-5. **Monitor function executions** - watch for unusual patterns
+```text
+*/30 * * * *
+```
+
+Use:
+
+- Method: `POST`
+- URL: `https://your-domain.com/api/sync-servers`
+- Header: `x-sync-token: your-sync-token`
+- Body: `{"pageLimit":5,"includeDetails":false}`
+
+Use detail sync less often because it visits one source detail page per server:
+
+```json
+{"pageLimit":5,"includeDetails":true,"detailLimit":100}
+```
+
+The frontend updates from SQL changes in two ways:
+
+- Supabase realtime subscription on `public.servers`
+- interval refresh controlled by `NEXT_PUBLIC_SERVER_REFRESH_INTERVAL_MS`
+
+The SQL rows still change only when the sync endpoint runs, so a cron trigger is required for continuous autopopulation.
+
+## Uptime Monitoring
+
+Run this endpoint from a separate cron:
+
+```bash
+curl -X POST "https://your-domain.com/api/monitor-servers" \
+  -H "x-monitor-token: your-monitor-token" \
+  -H "Content-Type: application/json" \
+  -d "{\"limit\":100,\"timeoutMs\":5000}"
+```
+
+It writes `server_uptime_checks` rows and updates `servers.last_monitor_status`, `servers.last_response_time_ms`, and `servers.last_monitor_checked_at`.
+
+## Cloudflare Note
+
+otservlist.org may return a Cloudflare browser challenge to server-side fetches. The sync endpoint detects this and logs a clear failure in `sync_logs` instead of importing bad challenge HTML. If this happens in production, use a browser-capable worker or approved scraping service that can legally access the source, then keep the same `/api/sync-servers` ingestion contract.
+
+## Verify
+
+```sql
+SELECT COUNT(*) FROM servers;
+SELECT source, COUNT(*) FROM servers GROUP BY source;
+SELECT * FROM sync_logs ORDER BY timestamp DESC LIMIT 10;
+```
+
+Open the site and confirm the main table shows source, source ID, players/max, points, uptime, client version, and last-seen data.

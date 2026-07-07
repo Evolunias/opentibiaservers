@@ -1,3 +1,42 @@
+-- Base server directory table
+CREATE TABLE IF NOT EXISTS public.servers (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  name text NOT NULL,
+  ip text NOT NULL,
+  port integer DEFAULT 7171,
+  website_url text,
+  owner_email text,
+  version text NOT NULL DEFAULT 'n/a',
+  client_type text,
+  world_type text DEFAULT 'PVP',
+  pvp_type text,
+  map_name text,
+  server_type text,
+  location text,
+  exp_rate numeric,
+  exp_stages boolean DEFAULT false,
+  skill_rate numeric,
+  magic_rate numeric,
+  loot_rate numeric,
+  spawn_rate numeric DEFAULT 1,
+  is_online boolean DEFAULT false,
+  players_online integer DEFAULT 0,
+  players_peak integer DEFAULT 0,
+  uptime_percent numeric(5, 2),
+  last_check timestamp with time zone DEFAULT now(),
+  has_custom_map boolean DEFAULT false,
+  has_custom_sprites boolean DEFAULT false,
+  has_store boolean DEFAULT false,
+  is_premium_required boolean DEFAULT false,
+  has_battleye boolean DEFAULT false,
+  description text,
+  tags text[],
+  created_at timestamp with time zone DEFAULT now(),
+  updated_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT servers_pkey PRIMARY KEY (id),
+  CONSTRAINT servers_ip_key UNIQUE (ip)
+);
+
 -- Create user_profiles table for additional user metadata
 CREATE TABLE IF NOT EXISTS public.user_profiles (
   id uuid NOT NULL PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
