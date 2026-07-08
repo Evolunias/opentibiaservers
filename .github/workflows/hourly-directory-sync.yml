@@ -1,0 +1,38 @@
+name: Hourly Directory Sync
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: hourly-directory-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger otservlist sync
+        run: |
+          curl --fail --show-error --silent \
+            -X POST "${{ secrets.OTS_PLATFORM_URL }}/api/sync-servers" \
+            -H "x-sync-token: ${{ secrets.OTS_SYNC_TOKEN }}" \
+            -H "content-type: application/json" \
+            --data '{"pageLimit":4,"includeDetails":true,"detailLimit":100,"officialResearchLimit":25}'
+
+      - name: Trigger official site enrichment
+        run: |
+          curl --fail --show-error --silent \
+            -X POST "${{ secrets.OTS_PLATFORM_URL }}/api/enrich-servers" \
+            -H "x-sync-token: ${{ secrets.OTS_SYNC_TOKEN }}" \
+            -H "content-type: application/json" \
+            --data '{"limit":100,"timeoutMs":15000}'
+
+      - name: Trigger server monitor
+        run: |
+          curl --fail --show-error --silent \
+            -X POST "${{ secrets.OTS_PLATFORM_URL }}/api/monitor-servers" \
+            -H "x-monitor-token: ${{ secrets.OTS_SYNC_TOKEN }}" \
+            -H "content-type: application/json" \
+            --data '{"limit":100,"timeoutMs":5000}'

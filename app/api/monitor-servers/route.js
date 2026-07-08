@@ -5,11 +5,20 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 function getSupabaseAdmin() {
-  const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const url = [
+    process.env.SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_SUPABASE_DB_URL,
+    process.env.PROJECT_URL,
+  ].find((value) => typeof value === 'string' && value.trim());
+  const serviceRoleKey = [
+    process.env.SUPABASE_SERVICE_ROLE_KEY,
+    process.env.NEXT_SUPABASE_SERVICE_ROLE_KEY,
+    process.env.SECRET_KEY,
+  ].find((value) => typeof value === 'string' && value.trim());
 
   if (!url || !serviceRoleKey) {
-    throw new Error('Missing SUPABASE_URL/NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY');
+    throw new Error('Missing Supabase project URL or service role key');
   }
 
   return createClient(url, serviceRoleKey, {

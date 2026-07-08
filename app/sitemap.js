@@ -1,19 +1,6 @@
-import { createClient } from '@supabase/supabase-js';
 import { buildAbsoluteUrl } from '@/lib/seo';
-
-function getSupabaseServerClient() {
-  const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (!url || !key) return null;
-
-  return createClient(url, key, {
-    auth: {
-      persistSession: false,
-      autoRefreshToken: false,
-    },
-  });
-}
+import { getSupabaseServerClient } from '@/lib/supabase-server';
+import { getServerPath } from '@/lib/server-paths';
 
 export default async function sitemap() {
   const staticUrls = [
@@ -36,12 +23,12 @@ export default async function sitemap() {
 
   const { data } = await supabase
     .from('servers')
-    .select('id,updated_at,last_seen_at')
+    .select('id,slug,updated_at,last_seen_at')
     .order('updated_at', { ascending: false })
     .limit(5000);
 
   const serverUrls = (data || []).map((server) => ({
-    url: buildAbsoluteUrl(`/server/${server.id}`),
+    url: buildAbsoluteUrl(getServerPath(server)),
     lastModified: server.updated_at || server.last_seen_at || new Date().toISOString(),
     changeFrequency: 'hourly',
     priority: 0.9,

@@ -43,9 +43,18 @@ function InfoRow({ label, value }) {
   );
 }
 
-export default function ServerDetailClient({ params, initialServer }) {
+function stringifyJson(value, fallback) {
+  try {
+    return JSON.stringify(value ?? fallback, null, 2);
+  } catch {
+    return JSON.stringify(fallback, null, 2);
+  }
+}
+
+export default function ServerDetailClient({ params, initialServer, serverId: explicitServerId }) {
   const router = useRouter();
   const { user } = useAuth();
+  const serverId = explicitServerId || params?.id || initialServer?.id;
   const [server, setServer] = useState(initialServer || null);
   const [reviews, setReviews] = useState([]);
   const [messages, setMessages] = useState([]);
@@ -68,6 +77,18 @@ export default function ServerDetailClient({ params, initialServer }) {
     body: '',
   });
   const [messageBody, setMessageBody] = useState('');
+  const [ownerEditor, setOwnerEditor] = useState({
+    template_name: initialServer?.template_name || 'directory_pro',
+    promo_headline: initialServer?.promo_headline || '',
+    promo_subheadline: initialServer?.promo_subheadline || '',
+    contact_discord: initialServer?.contact_discord || '',
+    launcher_url: initialServer?.launcher_url || '',
+    trailer_url: initialServer?.trailer_url || '',
+    feature_bullets: (initialServer?.feature_bullets || []).join('\n'),
+    gallery_images: (initialServer?.gallery_images || []).join('\n'),
+    faq_items: stringifyJson(initialServer?.faq_items, []),
+    custom_sections: stringifyJson(initialServer?.custom_sections, []),
+  });
 
   const loadServer = useCallback(async () => {
     setLoading(true);
@@ -77,13 +98,25 @@ export default function ServerDetailClient({ params, initialServer }) {
       const { data, error: fetchError } = await supabase
         .from('servers')
         .select('*')
-        .eq('id', params.id)
+        .eq('id', serverId)
         .single();
 
       if (fetchError) {
         setError('Server not found.');
       } else {
         setServer(data);
+        setOwnerEditor({
+          template_name: data.template_name || 'directory_pro',
+          promo_headline: data.promo_headline || '',
+          promo_subheadline: data.promo_subheadline || '',
+          contact_discord: data.contact_discord || '',
+          launcher_url: data.launcher_url || '',
+          trailer_url: data.trailer_url || '',
+          feature_bullets: (data.feature_bullets || []).join('\n'),
+          gallery_images: (data.gallery_images || []).join('\n'),
+          faq_items: stringifyJson(data.faq_items, []),
+          custom_sections: stringifyJson(data.custom_sections, []),
+        });
       }
     } catch (err) {
       setError('Failed to load server details.');
@@ -91,7 +124,7 @@ export default function ServerDetailClient({ params, initialServer }) {
     } finally {
       setLoading(false);
     }
-  }, [params.id]);
+  }, [serverId]);
 
   const loadCommunity = useCallback(async () => {
     setCommunityLoading(true);
@@ -101,21 +134,21 @@ export default function ServerDetailClient({ params, initialServer }) {
         supabase
           .from('server_reviews')
           .select('*')
-          .eq('server_id', params.id)
+          .eq('server_id', serverId)
           .eq('status', 'published')
           .order('created_at', { ascending: false })
           .limit(25),
         supabase
           .from('server_messages')
           .select('*')
-          .eq('server_id', params.id)
+          .eq('server_id', serverId)
           .eq('status', 'published')
           .order('created_at', { ascending: false })
           .limit(25),
         supabase
           .from('server_uptime_checks')
           .select('*')
-          .eq('server_id', params.id)
+          .eq('server_id', serverId)
           .order('checked_at', { ascending: false })
           .limit(12),
       ];
@@ -125,7 +158,7 @@ export default function ServerDetailClient({ params, initialServer }) {
           supabase
             .from('server_claims')
             .select('*')
-            .eq('server_id', params.id)
+            .eq('server_id', serverId)
             .eq('claimant_user_id', user.id)
             .order('created_at', { ascending: false })
             .limit(1)
@@ -149,7 +182,7 @@ export default function ServerDetailClient({ params, initialServer }) {
     } finally {
       setCommunityLoading(false);
     }
-  }, [params.id, user]);
+  }, [serverId, user]);
 
   useEffect(() => {
     if (!initialServer) {
@@ -163,21 +196,21 @@ export default function ServerDetailClient({ params, initialServer }) {
 
   useEffect(() => {
     const channel = supabase
-      .channel(`server-detail-${params.id}`)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'server_reviews', filter: `server_id=eq.${params.id}` }, loadCommunity)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'server_messages', filter: `server_id=eq.${params.id}` }, loadCommunity)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'server_uptime_checks', filter: `server_id=eq.${params.id}` }, loadCommunity)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'servers', filter: `id=eq.${params.id}` }, loadServer)
+      .channel(`server-detail-${serverId}`)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'server_reviews', filter: `server_id=eq.${serverId}` }, loadCommunity)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'server_messages', filter: `server_id=eq.${serverId}` }, loadCommunity)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'server_uptime_checks', filter: `server_id=eq.${serverId}` }, loadCommunity)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'servers', filter: `id=eq.${serverId}` }, loadServer)
       .subscribe();
 
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [params.id, loadCommunity, loadServer]);
+  }, [serverId, loadCommunity, loadServer]);
 
   const requireUser = () => {
     if (user) return true;
-    router.push(`/auth/login?redirect=/server/${params.id}`);
+    router.push(`/auth/login?redirect=/servers/${server.slug || serverId}`);
     return false;
   };
 
@@ -191,7 +224,7 @@ export default function ServerDetailClient({ params, initialServer }) {
     try {
       const { error: claimError } = await supabase.from('server_claims').insert([
         {
-          server_id: params.id,
+          server_id: serverId,
           claimant_user_id: user.id,
           claimant_role: claimForm.claimant_role,
           proof_type: claimForm.proof_type,
@@ -219,7 +252,7 @@ export default function ServerDetailClient({ params, initialServer }) {
     try {
       const { error: reviewError } = await supabase.from('server_reviews').upsert(
         {
-          server_id: params.id,
+          server_id: serverId,
           user_id: user.id,
           rating: Number(reviewForm.rating),
           title: reviewForm.title || null,
@@ -248,7 +281,7 @@ export default function ServerDetailClient({ params, initialServer }) {
     try {
       const { error: messageError } = await supabase.from('server_messages').insert([
         {
-          server_id: params.id,
+          server_id: serverId,
           user_id: user.id,
           body: messageBody,
         },
@@ -295,6 +328,52 @@ export default function ServerDetailClient({ params, initialServer }) {
   }
 
   const isOwned = Boolean(server.owner_user_id || server.user_id);
+  const canEditListing = Boolean(user && (user.id === server.owner_user_id || user.id === server.user_id));
+  const renderHeadline = server.promo_headline || server.official_facts?.headline || server.name;
+  const renderSubheadline = server.promo_subheadline || server.official_summary || server.description;
+
+  const saveOwnerTemplate = async (event) => {
+    event.preventDefault();
+    if (!requireUser()) return;
+
+    setCommunityError(null);
+    setCommunityNotice(null);
+
+    try {
+      const payload = {
+        template_name: ownerEditor.template_name || 'directory_pro',
+        promo_headline: ownerEditor.promo_headline || null,
+        promo_subheadline: ownerEditor.promo_subheadline || null,
+        contact_discord: ownerEditor.contact_discord || null,
+        launcher_url: ownerEditor.launcher_url || null,
+        trailer_url: ownerEditor.trailer_url || null,
+        feature_bullets: ownerEditor.feature_bullets
+          .split('\n')
+          .map((item) => item.trim())
+          .filter(Boolean),
+        gallery_images: ownerEditor.gallery_images
+          .split('\n')
+          .map((item) => item.trim())
+          .filter(Boolean),
+        faq_items: ownerEditor.faq_items.trim() ? JSON.parse(ownerEditor.faq_items) : [],
+        custom_sections: ownerEditor.custom_sections.trim() ? JSON.parse(ownerEditor.custom_sections) : [],
+        owner_edit_updated_at: new Date().toISOString(),
+      };
+
+      const { error: updateError } = await supabase
+        .from('servers')
+        .update(payload)
+        .eq('id', serverId)
+        .or(`owner_user_id.eq.${user.id},user_id.eq.${user.id}`);
+
+      if (updateError) throw updateError;
+
+      setCommunityNotice('Listing template updated.');
+      await loadServer();
+    } catch (err) {
+      setCommunityError(err.message || 'Unable to update listing template.');
+    }
+  };
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -332,6 +411,35 @@ export default function ServerDetailClient({ params, initialServer }) {
           </header>
 
           <div className="p-6">
+            <section className="border border-gray-200 rounded p-5 mb-6 bg-gray-50">
+              <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+                <div className="max-w-3xl">
+                  <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
+                    {server.template_name || 'directory_pro'} template
+                  </p>
+                  <h2 className="text-2xl font-bold text-gray-950 mb-2">{renderHeadline}</h2>
+                  <p className="text-gray-700">{renderSubheadline || 'Server owners can customize this listing after claiming it.'}</p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {server.launcher_url ? (
+                    <a href={server.launcher_url} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-950 text-white rounded font-semibold hover:opacity-85">
+                      Launcher
+                    </a>
+                  ) : null}
+                  {server.website_url ? (
+                    <a href={server.website_url} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded font-semibold hover:bg-gray-100">
+                      Official Site
+                    </a>
+                  ) : null}
+                  {server.contact_discord ? (
+                    <span className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded font-semibold">
+                      Discord: {server.contact_discord}
+                    </span>
+                  ) : null}
+                </div>
+              </div>
+            </section>
+
             <div className="grid grid-cols-2 md:grid-cols-6 gap-3 mb-6">
               <Stat label="Online" value={number(server.players_online || 0)} />
               <Stat label="Max" value={number(server.max_players)} />
@@ -372,6 +480,83 @@ export default function ServerDetailClient({ params, initialServer }) {
               </section>
             </div>
 
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.3fr)_minmax(320px,0.7fr)] gap-6 mb-6">
+              <section className="border border-gray-200 rounded p-4">
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Official Summary</h2>
+                <p className="text-gray-700 whitespace-pre-wrap">
+                  {server.official_summary || server.description || 'No official summary has been collected for this listing yet.'}
+                </p>
+              </section>
+
+              <section className="border border-gray-200 rounded p-4">
+                <h2 className="text-lg font-bold text-gray-950 mb-3">SEO and Research</h2>
+                <InfoRow label="Keyword" value={server.keyword_primary || server.name} />
+                <InfoRow label="Slug" value={server.slug} />
+                <InfoRow label="Content Status" value={server.content_status} />
+                <InfoRow label="Official Research" value={date(server.official_last_researched_at)} />
+                <InfoRow
+                  label="Research Sources"
+                  value={Array.isArray(server.research_sources) && server.research_sources.length
+                    ? server.research_sources.map((source) => source.url || source.type).join(', ')
+                    : '-'}
+                />
+              </section>
+            </div>
+
+            {server.feature_bullets?.length ? (
+              <section className="border border-gray-200 rounded p-4 mb-6">
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Highlights</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {server.feature_bullets.map((feature) => (
+                    <div key={feature} className="border border-gray-200 rounded bg-gray-50 px-4 py-3 text-sm text-gray-700">
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+
+            {Array.isArray(server.custom_sections) && server.custom_sections.length ? (
+              <section className="border border-gray-200 rounded p-4 mb-6">
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Directory Content</h2>
+                <div className="space-y-4">
+                  {server.custom_sections.map((section, index) => (
+                    <div key={`${section.title || 'section'}-${index}`} className="border border-gray-200 rounded p-4">
+                      <h3 className="text-base font-bold text-gray-950 mb-2">{section.title || `Section ${index + 1}`}</h3>
+                      <p className="text-sm text-gray-700 whitespace-pre-wrap">{section.body || '-'}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+
+            {Array.isArray(server.faq_items) && server.faq_items.length ? (
+              <section className="border border-gray-200 rounded p-4 mb-6">
+                <h2 className="text-lg font-bold text-gray-950 mb-3">FAQ</h2>
+                <div className="space-y-3">
+                  {server.faq_items.map((item, index) => (
+                    <div key={`${item.question || 'faq'}-${index}`} className="border border-gray-200 rounded p-4">
+                      <h3 className="text-sm font-bold text-gray-950 mb-2">{item.question || `Question ${index + 1}`}</h3>
+                      <p className="text-sm text-gray-700 whitespace-pre-wrap">{item.answer || '-'}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+
+            {server.gallery_images?.length ? (
+              <section className="border border-gray-200 rounded p-4 mb-6">
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Media</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+                  {server.gallery_images.map((imageUrl) => (
+                    <a key={imageUrl} href={imageUrl} target="_blank" rel="noopener noreferrer" className="border border-gray-200 rounded bg-gray-50 px-4 py-6 text-sm text-gray-700 break-all hover:bg-gray-100">
+                      {imageUrl}
+                    </a>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+
             {server.description ? (
               <section className="border border-gray-200 rounded p-4 mb-6">
                 <h2 className="text-lg font-bold text-gray-950 mb-3">Description</h2>
@@ -393,6 +578,111 @@ export default function ServerDetailClient({ params, initialServer }) {
             ) : null}
           </div>
         </article>
+
+        {canEditListing ? (
+          <section className="bg-white border border-gray-200 rounded p-6 mb-6">
+            <h2 className="text-xl font-bold text-gray-950 mb-2">Listing Template Editor</h2>
+            <p className="text-sm text-gray-600 mb-5">
+              Permission-based editing is enabled because this listing is attached to your account. Imported otservlist data stays intact while these fields control the public presentation layer.
+            </p>
+            <form onSubmit={saveOwnerTemplate} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Template</label>
+                <select
+                  value={ownerEditor.template_name}
+                  onChange={(event) => setOwnerEditor((current) => ({ ...current, template_name: event.target.value }))}
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+                >
+                  <option value="directory_pro">Directory Pro</option>
+                  <option value="launch_focus">Launch Focus</option>
+                  <option value="community_first">Community First</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Discord</label>
+                <input
+                  value={ownerEditor.contact_discord}
+                  onChange={(event) => setOwnerEditor((current) => ({ ...current, contact_discord: event.target.value }))}
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+                  placeholder="discord.gg/example or handle"
+                />
+              </div>
+              <div className="md:col-span-2">
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Promo Headline</label>
+                <input
+                  value={ownerEditor.promo_headline}
+                  onChange={(event) => setOwnerEditor((current) => ({ ...current, promo_headline: event.target.value }))}
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+                />
+              </div>
+              <div className="md:col-span-2">
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Promo Subheadline</label>
+                <textarea
+                  value={ownerEditor.promo_subheadline}
+                  onChange={(event) => setOwnerEditor((current) => ({ ...current, promo_subheadline: event.target.value }))}
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm min-h-[96px]"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Launcher URL</label>
+                <input
+                  value={ownerEditor.launcher_url}
+                  onChange={(event) => setOwnerEditor((current) => ({ ...current, launcher_url: event.target.value }))}
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Trailer URL</label>
+                <input
+                  value={ownerEditor.trailer_url}
+                  onChange={(event) => setOwnerEditor((current) => ({ ...current, trailer_url: event.target.value }))}
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Feature Bullets</label>
+                <textarea
+                  value={ownerEditor.feature_bullets}
+                  onChange={(event) => setOwnerEditor((current) => ({ ...current, feature_bullets: event.target.value }))}
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm min-h-[140px]"
+                  placeholder="One feature per line"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Gallery URLs</label>
+                <textarea
+                  value={ownerEditor.gallery_images}
+                  onChange={(event) => setOwnerEditor((current) => ({ ...current, gallery_images: event.target.value }))}
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm min-h-[140px]"
+                  placeholder="One image URL per line"
+                />
+              </div>
+              <div className="md:col-span-2">
+                <label className="block text-sm font-semibold text-gray-700 mb-2">FAQ JSON</label>
+                <textarea
+                  value={ownerEditor.faq_items}
+                  onChange={(event) => setOwnerEditor((current) => ({ ...current, faq_items: event.target.value }))}
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm min-h-[160px] font-mono"
+                  placeholder='[{"question":"How do I join?","answer":"Download the launcher and create an account."}]'
+                />
+              </div>
+              <div className="md:col-span-2">
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Custom Sections JSON</label>
+                <textarea
+                  value={ownerEditor.custom_sections}
+                  onChange={(event) => setOwnerEditor((current) => ({ ...current, custom_sections: event.target.value }))}
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm min-h-[180px] font-mono"
+                  placeholder='[{"title":"PvP Rules","body":"Explain skulls, frag system, and anti-bot rules here."}]'
+                />
+              </div>
+              <div className="md:col-span-2">
+                <button type="submit" className="px-4 py-2 bg-gray-950 text-white rounded font-semibold hover:opacity-85">
+                  Save Listing Template
+                </button>
+              </div>
+            </form>
+          </section>
+        ) : null}
 
         {communityNotice ? <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded mb-4">{communityNotice}</div> : null}
         {communityError ? <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded mb-4">{communityError}</div> : null}

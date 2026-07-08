@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { getServerPath } from '@/lib/server-paths';
 
 const typeClass = (type) => {
   switch (type) {
@@ -27,7 +28,7 @@ function percent(value) {
 
 export default function ServerCard({ server }) {
   return (
-    <Link href={`/server/${server.id}`} className="block h-full">
+    <Link href={getServerPath(server)} className="block h-full">
       <article className="bg-white border border-gray-200 rounded p-4 hover:border-gray-400 hover:shadow-md cursor-pointer h-full">
         <div className="flex items-start justify-between gap-3 mb-3">
           <div className="min-w-0">

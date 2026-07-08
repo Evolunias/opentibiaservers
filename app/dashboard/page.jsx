@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/app/context/AuthContext';
 import { supabase } from '@/lib/supabase';
+import { getServerPath } from '@/lib/server-paths';
 
 function accountTypeLabel(value) {
   switch (value) {
@@ -193,7 +194,7 @@ export default function DashboardPage() {
                   {servers.map((server) => (
                     <tr key={server.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4">
-                        <Link href={`/server/${server.id}`} className="text-blue-700 hover:underline font-semibold">
+                        <Link href={getServerPath(server)} className="text-blue-700 hover:underline font-semibold">
                           {server.name}
                         </Link>
                         <div className="text-xs text-gray-500">{server.host || server.ip}:{server.port || 7171}</div>
@@ -209,7 +210,7 @@ export default function DashboardPage() {
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex gap-3">
-                          <Link href={`/server/${server.id}`} className="text-blue-700 hover:underline font-semibold">
+                          <Link href={getServerPath(server)} className="text-blue-700 hover:underline font-semibold">
                             View
                           </Link>
                           <button
@@ -254,7 +255,7 @@ export default function DashboardPage() {
                     <tr key={claim.id}>
                       <td className="px-6 py-4">
                         {claim.servers?.id ? (
-                          <Link href={`/server/${claim.servers.id}`} className="text-blue-700 hover:underline font-semibold">
+                          <Link href={getServerPath(claim.servers)} className="text-blue-700 hover:underline font-semibold">
                             {claim.servers.name}
                           </Link>
                         ) : (

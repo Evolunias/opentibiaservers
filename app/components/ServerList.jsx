@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { getServerPath } from '@/lib/server-paths';
 
 const statusClass = (server) => (server.is_online ? 'text-green-700' : 'text-red-700');
 
@@ -47,7 +48,7 @@ export default function ServerList({ servers }) {
                 {server.source_rank || '-'}
               </td>
               <td className="px-4 py-3 min-w-64">
-                <Link href={`/server/${server.id}`} className="hover:opacity-75 transition-opacity">
+                <Link href={getServerPath(server)} className="hover:opacity-75 transition-opacity">
                   <div className="font-semibold text-gray-900">{server.name}</div>
                   <div className="text-xs text-gray-600">{server.host || server.ip}:{server.port || 7171}</div>
                 </Link>

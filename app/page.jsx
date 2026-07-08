@@ -51,7 +51,7 @@ export default function Home() {
       );
 
       if (fetchError) {
-        setError('Unable to load servers. Check Supabase configuration and migrations.');
+        setError(fetchError);
         setServers([]);
         setTotalServers(0);
       } else {

@@ -1,17 +1,31 @@
 import { createClient } from '@supabase/supabase-js';
 import { fetchOtservlistServers } from '@/lib/otservlist';
+import { buildEnrichedServerPayload, fetchOfficialWebsiteResearch } from '@/lib/server-enrichment';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 const SOURCE = 'otservlist.org';
 
+function firstNonEmpty(values = []) {
+  return values.find((value) => typeof value === 'string' && value.trim())?.trim() || '';
+}
+
 function getSupabaseAdmin() {
-  const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const url = firstNonEmpty([
+    process.env.SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_SUPABASE_DB_URL,
+    process.env.PROJECT_URL,
+  ]);
+  const serviceRoleKey = firstNonEmpty([
+    process.env.SUPABASE_SERVICE_ROLE_KEY,
+    process.env.NEXT_SUPABASE_SERVICE_ROLE_KEY,
+    process.env.SECRET_KEY,
+  ]);
 
   if (!url || !serviceRoleKey) {
-    throw new Error('Missing SUPABASE_URL/NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY');
+    throw new Error('Missing Supabase project URL or service role key');
   }
 
   return createClient(url, serviceRoleKey, {
@@ -122,19 +136,25 @@ async function handleSync(req) {
   const supabase = getSupabaseAdmin();
   const pageLimit = intOption(
     body.pageLimit ?? url.searchParams.get('pages') ?? process.env.OTSERVLIST_PAGE_LIMIT,
-    3,
+    4,
     1,
     50
   );
   const includeDetails = boolOption(
     body.includeDetails ?? url.searchParams.get('includeDetails') ?? process.env.OTSERVLIST_INCLUDE_DETAILS,
-    false
+    true
   );
   const detailLimit = intOption(
     body.detailLimit ?? url.searchParams.get('detailLimit') ?? process.env.OTSERVLIST_DETAIL_LIMIT,
-    25,
+    100,
     0,
     500
+  );
+  const officialResearchLimit = intOption(
+    body.officialResearchLimit ?? url.searchParams.get('officialResearchLimit') ?? process.env.OTSERVLIST_OFFICIAL_RESEARCH_LIMIT,
+    0,
+    0,
+    250
   );
 
   const result = {
@@ -162,9 +182,18 @@ async function handleSync(req) {
     result.pages = payload.pages;
     result.fetched = payload.servers.length;
 
-    for (const server of payload.servers) {
+    for (const [index, server] of payload.servers.entries()) {
       try {
-        const status = await upsertServer(supabase, cleanRow(server));
+        const research = index < officialResearchLimit
+          ? await fetchOfficialWebsiteResearch(server, {
+              timeoutMs: intOption(process.env.OTSERVLIST_OFFICIAL_TIMEOUT_MS, 15000, 1000, 30000),
+            })
+          : null;
+        const row = {
+          ...server,
+          ...buildEnrichedServerPayload(server, research),
+        };
+        const status = await upsertServer(supabase, cleanRow(row));
         if (status === 'inserted') result.inserted += 1;
         if (status === 'updated') result.updated += 1;
       } catch (error) {

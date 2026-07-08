@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { createClient } from '@/lib/supabase';
+import { createClient, isSupabaseConfigured } from '@/lib/supabase';
 
 export default function SyncStatus() {
   const [lastSync, setLastSync] = useState(null);
@@ -15,6 +15,12 @@ export default function SyncStatus() {
   }, []);
 
   async function fetchSyncStatus() {
+    if (!isSupabaseConfigured) {
+      setLoading(false);
+      setSyncStatus('unknown');
+      return;
+    }
+
     try {
       const supabase = createClient();
       const { data, error } = await supabase
@@ -24,7 +30,14 @@ export default function SyncStatus() {
         .limit(1)
         .maybeSingle();
 
-      if (error) throw error;
+      if (error) {
+        if (error.code === '42P01') {
+          setLoading(false);
+          setSyncStatus('unknown');
+          return;
+        }
+        throw error;
+      }
 
       if (data) {
         setLastSync(data);

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/app/context/AuthContext';
 import { supabase } from '@/lib/supabase';
+import { buildServerSlug } from '@/lib/server-paths';
 
 export default function SubmitServerPage() {
   const router = useRouter();
@@ -81,6 +82,11 @@ export default function SubmitServerPage() {
             owner_user_id: user.id,
             source: 'user_submission',
             host: formData.ip,
+            slug: buildServerSlug({ name: formData.name }),
+            canonical_path: `/servers/${buildServerSlug({ name: formData.name })}`,
+            keyword_primary: formData.name,
+            seo_title: `${formData.name} | Open Tibia Server Listing | OpenTibiaServers.com`,
+            seo_description: `${formData.name}. ${formData.version} Open Tibia server. ${formData.world_type} world hosted in ${formData.location}.`.slice(0, 158),
             claim_status: 'claimed',
             claimed_at: new Date().toISOString(),
             verification_status: 'pending',
