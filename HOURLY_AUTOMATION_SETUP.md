@@ -32,15 +32,20 @@ Required GitHub repository secrets:
 - `OTS_SYNC_TOKEN`
   - Must match the deployed `SYNC_TOKEN`
 
+Required deployment environment variables:
+
+- `SCRAPINGBEE_API_KEY`
+- `OTSERVLIST_FETCH_MODE=scrapingbee`
+
 ## Payload defaults
 
 The workflow calls:
 
 ```json
-{"pageLimit":4,"includeDetails":true,"detailLimit":100,"officialResearchLimit":25,"enrichLimit":100,"monitorLimit":100}
+{"fetchMode":"scrapingbee","pageLimit":20,"includeDetails":true,"detailLimit":1000,"officialResearchLimit":25,"enrichLimit":100,"monitorLimit":100}
 ```
 
-That captures the top 100 otservlist rows, enriches a bounded subset of official sites, and refreshes monitoring data each hour.
+That captures up to 1,000 otservlist rows through ScrapingBee, enriches a bounded subset of official sites, and refreshes monitoring data each hour.
 
 ## Permissions model
 

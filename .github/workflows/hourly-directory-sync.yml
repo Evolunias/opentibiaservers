@@ -19,4 +19,4 @@ jobs:
             -X POST "${{ secrets.OTS_PLATFORM_URL }}/api/sync-directory" \
             -H "x-sync-token: ${{ secrets.OTS_SYNC_TOKEN }}" \
             -H "content-type: application/json" \
-            --data '{"pageLimit":4,"includeDetails":true,"detailLimit":100,"officialResearchLimit":25,"enrichLimit":100,"monitorLimit":100}'
+            --data '{"fetchMode":"scrapingbee","pageLimit":20,"includeDetails":true,"detailLimit":1000,"officialResearchLimit":25,"enrichLimit":100,"monitorLimit":100}'

@@ -148,7 +148,7 @@ async function handleSync(req) {
     body.detailLimit ?? url.searchParams.get('detailLimit') ?? process.env.OTSERVLIST_DETAIL_LIMIT,
     100,
     0,
-    500
+    1000
   );
   const officialResearchLimit = intOption(
     body.officialResearchLimit ?? url.searchParams.get('officialResearchLimit') ?? process.env.OTSERVLIST_OFFICIAL_RESEARCH_LIMIT,
@@ -172,9 +172,14 @@ async function handleSync(req) {
   try {
     const payload = await fetchOtservlistServers({
       baseUrl: process.env.OTSERVLIST_BASE_URL || 'https://otservlist.org',
+      fetchMode: body.fetchMode ?? url.searchParams.get('fetchMode') ?? process.env.OTSERVLIST_FETCH_MODE,
       pageLimit,
       includeDetails,
       detailLimit,
+      scrapingBeeApiKey: process.env.SCRAPINGBEE_API_KEY,
+      renderJs: boolOption(body.renderJs ?? url.searchParams.get('renderJs') ?? process.env.SCRAPINGBEE_RENDER_JS, false),
+      premiumProxy: boolOption(body.premiumProxy ?? url.searchParams.get('premiumProxy') ?? process.env.SCRAPINGBEE_PREMIUM_PROXY, false),
+      countryCode: body.countryCode ?? url.searchParams.get('countryCode') ?? process.env.SCRAPINGBEE_COUNTRY_CODE,
       pageDelayMs: intOption(process.env.OTSERVLIST_PAGE_DELAY_MS, 750, 0, 10000),
       detailDelayMs: intOption(process.env.OTSERVLIST_DETAIL_DELAY_MS, 750, 0, 10000),
     });

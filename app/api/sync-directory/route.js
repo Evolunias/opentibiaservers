@@ -47,6 +47,10 @@ export async function POST(req) {
     includeDetails: body.includeDetails ?? true,
     detailLimit: body.detailLimit ?? 100,
     officialResearchLimit: body.officialResearchLimit ?? 25,
+    fetchMode: body.fetchMode,
+    renderJs: body.renderJs,
+    premiumProxy: body.premiumProxy,
+    countryCode: body.countryCode,
   };
   const enrichPayload = {
     limit: body.enrichLimit ?? 100,
