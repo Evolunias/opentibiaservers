@@ -1,0 +1,25 @@
+{
+  "servers": [
+    "evolunia",
+    "cyntara",
+    "otmadness"
+  ],
+  "official_worlds": [
+    "antica",
+    "nova"
+  ],
+  "ecosystem": [
+    "otservlist",
+    "otland"
+  ],
+  "next_candidates": [
+    "secura",
+    "premia",
+    "calmera",
+    "tibiantis",
+    "medivia",
+    "archlight",
+    "noxiousot",
+    "realesta"
+  ]
+}

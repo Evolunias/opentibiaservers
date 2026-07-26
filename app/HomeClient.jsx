@@ -18,6 +18,7 @@ const defaultFilters = {
 };
 const curatedLinks = [
   { href: '/antica', label: 'Antica', detail: 'Official-world history and OT alternatives' },
+  { href: '/nova', label: 'Nova', detail: 'Fresh-start world history and OT launch intent' },
   { href: '/otservlist', label: 'otservlist.org', detail: 'Server-list comparison and discovery intent' },
   { href: '/otland', label: 'OTLand', detail: 'Community, Server Gala, and development resources' },
   { href: '/cyntara', label: 'Cyntara', detail: 'Highrate server research and live comparisons' },
@@ -123,9 +124,17 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
                 Open Tibia server directory
               </h1>
               <p className="text-base text-gray-600 max-w-3xl">
-                Search live Open Tibia servers imported from listing sources like otservlist.org, with source IDs,
-                player counts, uptime, points, rates, and client versions mapped into one database.
+                Search active Open Tibia servers with live listing data, official home pages, owner-managed profiles,
+                screenshots, contact links, reviews, uptime history, and community discussion mapped into one database.
               </p>
+              <div className="mt-4 grid gap-2 text-sm text-gray-700 md:grid-cols-2">
+                <div className="border border-gray-200 bg-gray-50 px-3 py-2">
+                  Public source rows become permanent, searchable server records.
+                </div>
+                <div className="border border-gray-200 bg-gray-50 px-3 py-2">
+                  Claimed listings can add websites, Discord, launchers, screenshots, FAQs, and support details.
+                </div>
+              </div>
             </div>
 
             <div className="border border-gray-200 rounded bg-gray-50 p-4">

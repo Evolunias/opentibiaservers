@@ -43,6 +43,25 @@ function InfoRow({ label, value }) {
   );
 }
 
+function externalHref(value) {
+  if (!value) return '';
+  const text = String(value).trim();
+  if (!text) return '';
+  if (/^https?:\/\//i.test(text)) return text;
+  if (/^discord\.gg\//i.test(text)) return `https://${text}`;
+  return text.includes('.') ? `https://${text}` : '';
+}
+
+function DirectoryEmptyState({ title, body, action }) {
+  return (
+    <div className="rounded border border-dashed border-gray-300 bg-gray-50 p-4">
+      <h3 className="text-sm font-bold text-gray-950">{title}</h3>
+      <p className="mt-1 text-sm text-gray-600">{body}</p>
+      {action ? <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-gray-500">{action}</p> : null}
+    </div>
+  );
+}
+
 function stringifyJson(value, fallback) {
   try {
     return JSON.stringify(value ?? fallback, null, 2);
@@ -331,6 +350,13 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
   const canEditListing = Boolean(user && (user.id === server.owner_user_id || user.id === server.user_id));
   const renderHeadline = server.promo_headline || server.official_facts?.headline || server.name;
   const renderSubheadline = server.promo_subheadline || server.official_summary || server.description;
+  const officialWebsiteHref = externalHref(server.website_url || server.external_launch_url);
+  const discordHref = externalHref(server.contact_discord);
+  const forumHref = externalHref(server.forum_url || server.community_url);
+  const launcherHref = externalHref(server.launcher_url);
+  const trailerHref = externalHref(server.trailer_url);
+  const galleryImages = Array.isArray(server.gallery_images) ? server.gallery_images.filter(Boolean) : [];
+  const hasOfficialLinks = Boolean(officialWebsiteHref || launcherHref || trailerHref || discordHref || forumHref || server.owner_email);
 
   const saveOwnerTemplate = async (event) => {
     event.preventDefault();
@@ -421,20 +447,20 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                   <p className="text-gray-700">{renderSubheadline || 'Server owners can customize this listing after claiming it.'}</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {server.launcher_url ? (
-                    <a href={server.launcher_url} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-950 text-white rounded font-semibold hover:opacity-85">
+                  {launcherHref ? (
+                    <a href={launcherHref} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-950 text-white rounded font-semibold hover:opacity-85">
                       Launcher
                     </a>
                   ) : null}
-                  {server.website_url ? (
-                    <a href={server.website_url} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded font-semibold hover:bg-gray-100">
+                  {officialWebsiteHref ? (
+                    <a href={officialWebsiteHref} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded font-semibold hover:bg-gray-100">
                       Official Site
                     </a>
                   ) : null}
-                  {server.contact_discord ? (
-                    <span className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded font-semibold">
-                      Discord: {server.contact_discord}
-                    </span>
+                  {discordHref ? (
+                    <a href={discordHref} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded font-semibold hover:bg-gray-100">
+                      Discord
+                    </a>
                   ) : null}
                 </div>
               </div>
@@ -503,9 +529,39 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
               </section>
             </div>
 
-            {server.feature_bullets?.length ? (
-              <section className="border border-gray-200 rounded p-4 mb-6">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">Highlights</h2>
+            <section className="border border-gray-200 rounded p-4 mb-6">
+              <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between mb-4">
+                <div>
+                  <h2 className="text-lg font-bold text-gray-950">Official Links and Contact</h2>
+                  <p className="text-sm text-gray-600">Home page, launcher, community channels, and ownership contact signals for this server.</p>
+                </div>
+                {!isOwned ? (
+                  <a href="#claim-listing" className="text-sm font-semibold text-blue-700 hover:underline">
+                    Claim to enrich
+                  </a>
+                ) : null}
+              </div>
+              {hasOfficialLinks ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+                  {officialWebsiteHref ? <ContactLink label="Official Website" value={server.website_url || server.external_launch_url} href={officialWebsiteHref} /> : null}
+                  {launcherHref ? <ContactLink label="Launcher or Client" value={server.launcher_url} href={launcherHref} /> : null}
+                  {trailerHref ? <ContactLink label="Trailer or Video" value={server.trailer_url} href={trailerHref} /> : null}
+                  {discordHref ? <ContactLink label="Discord" value={server.contact_discord} href={discordHref} /> : null}
+                  {forumHref ? <ContactLink label="Forum or Community" value={server.forum_url || server.community_url} href={forumHref} /> : null}
+                  {server.owner_email ? <ContactLink label="Owner Contact" value={server.owner_email} /> : null}
+                </div>
+              ) : (
+                <DirectoryEmptyState
+                  title="Official links have not been mapped yet"
+                  body="This is exactly where OpenTibiaServers.com improves on older server lists: owners can add a home page, launcher, Discord, forum, screenshots, rules, and support contact after claiming the listing."
+                  action="Needed: website, Discord, forum, client download, owner contact"
+                />
+              )}
+            </section>
+
+            <section className="border border-gray-200 rounded p-4 mb-6">
+              <h2 className="text-lg font-bold text-gray-950 mb-3">Server Highlights</h2>
+              {server.feature_bullets?.length ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {server.feature_bullets.map((feature) => (
                     <div key={feature} className="border border-gray-200 rounded bg-gray-50 px-4 py-3 text-sm text-gray-700">
@@ -513,8 +569,14 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                     </div>
                   ))}
                 </div>
-              </section>
-            ) : null}
+              ) : (
+                <DirectoryEmptyState
+                  title="Highlights are waiting for owner or editorial enrichment"
+                  body="Good listings should explain the map style, rates, PvP rules, client version, custom systems, launch status, anti-cheat stance, events, and why players should care."
+                  action="Needed: custom systems, launch notes, rates, PvP policy, community features"
+                />
+              )}
+            </section>
 
             {Array.isArray(server.custom_sections) && server.custom_sections.length ? (
               <section className="border border-gray-200 rounded p-4 mb-6">
@@ -544,18 +606,28 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
               </section>
             ) : null}
 
-            {server.gallery_images?.length ? (
-              <section className="border border-gray-200 rounded p-4 mb-6">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">Media</h2>
+            <section className="border border-gray-200 rounded p-4 mb-6">
+              <h2 className="text-lg font-bold text-gray-950 mb-3">Screenshots and Media</h2>
+              {galleryImages.length ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-                  {server.gallery_images.map((imageUrl) => (
-                    <a key={imageUrl} href={imageUrl} target="_blank" rel="noopener noreferrer" className="border border-gray-200 rounded bg-gray-50 px-4 py-6 text-sm text-gray-700 break-all hover:bg-gray-100">
-                      {imageUrl}
+                  {galleryImages.map((imageUrl) => (
+                    <a key={imageUrl} href={imageUrl} target="_blank" rel="noopener noreferrer" className="group block overflow-hidden rounded border border-gray-200 bg-gray-50 hover:border-gray-400 hover:no-underline">
+                      <div className="aspect-video bg-gray-100">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={imageUrl} alt={`${server.name} screenshot`} className="h-full w-full object-cover transition group-hover:scale-[1.02]" />
+                      </div>
+                      <div className="px-3 py-2 text-xs text-gray-600 break-all">{imageUrl}</div>
                     </a>
                   ))}
                 </div>
-              </section>
-            ) : null}
+              ) : (
+                <DirectoryEmptyState
+                  title="No screenshots have been added yet"
+                  body="A modern OT directory should let players inspect the client, map, website, events, bosses, trainers, depot, and custom systems before they commit time to a server."
+                  action="Needed: homepage screenshots, gameplay images, launch graphics, trailer"
+                />
+              )}
+            </section>
 
             {server.description ? (
               <section className="border border-gray-200 rounded p-4 mb-6">
@@ -688,7 +760,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
         {communityError ? <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded mb-4">{communityError}</div> : null}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-          <section className="bg-white border border-gray-200 rounded p-4">
+          <section id="claim-listing" className="bg-white border border-gray-200 rounded p-4">
             <h2 className="text-lg font-bold text-gray-950 mb-2">Claim This Listing</h2>
             {isOwned ? (
               <p className="text-sm text-gray-600">This listing is already claimed or directly submitted.</p>
@@ -852,5 +924,24 @@ function Stat({ label, value }) {
       <p className="text-xs text-gray-500 uppercase font-bold mb-1">{label}</p>
       <p className="text-2xl font-bold text-gray-950">{value}</p>
     </div>
+  );
+}
+
+function ContactLink({ label, value, href }) {
+  const content = (
+    <>
+      <div className="text-xs font-bold uppercase tracking-wide text-gray-500">{label}</div>
+      <div className="mt-1 text-sm font-semibold text-gray-950 break-words">{value}</div>
+    </>
+  );
+
+  if (!href) {
+    return <div className="rounded border border-gray-200 bg-gray-50 p-4">{content}</div>;
+  }
+
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="rounded border border-gray-200 bg-gray-50 p-4 hover:border-gray-400 hover:no-underline">
+      {content}
+    </a>
   );
 }

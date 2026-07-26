@@ -19,7 +19,16 @@ export default function SubmitServerPage() {
     location: 'USA',
     website_url: '',
     owner_email: '',
+    contact_discord: '',
+    forum_url: '',
+    launcher_url: '',
+    trailer_url: '',
     description: '',
+    promo_headline: '',
+    feature_bullets: '',
+    gallery_images: '',
+    faq_items: '',
+    custom_sections: '',
     exp_rate: '1',
     skill_rate: '1',
     loot_rate: '1',
@@ -74,7 +83,23 @@ export default function SubmitServerPage() {
             location: formData.location,
             website_url: formData.website_url || null,
             owner_email: formData.owner_email,
+            contact_discord: formData.contact_discord || null,
+            forum_url: formData.forum_url || null,
+            launcher_url: formData.launcher_url || null,
+            trailer_url: formData.trailer_url || null,
             description: formData.description || null,
+            promo_headline: formData.promo_headline || formData.name,
+            promo_subheadline: formData.description || null,
+            feature_bullets: formData.feature_bullets
+              .split('\n')
+              .map((item) => item.trim())
+              .filter(Boolean),
+            gallery_images: formData.gallery_images
+              .split('\n')
+              .map((item) => item.trim())
+              .filter(Boolean),
+            faq_items: formData.faq_items.trim() ? JSON.parse(formData.faq_items) : [],
+            custom_sections: formData.custom_sections.trim() ? JSON.parse(formData.custom_sections) : [],
             exp_rate: parseFloat(formData.exp_rate),
             skill_rate: parseFloat(formData.skill_rate),
             loot_rate: parseFloat(formData.loot_rate),
@@ -109,7 +134,7 @@ export default function SubmitServerPage() {
         router.push('/dashboard');
       }, 2000);
     } catch (err) {
-      setError('An error occurred while submitting your server');
+      setError(err.message || 'An error occurred while submitting your server');
       console.error(err);
       setIsSubmitting(false);
     }
@@ -230,7 +255,7 @@ export default function SubmitServerPage() {
 
           <div>
             <label htmlFor="website_url" className="block text-sm font-medium text-gray-700 mb-2">
-              Website URL (for DNS verification)
+              Official Website URL (for DNS verification)
             </label>
             <input
               id="website_url"
@@ -239,6 +264,38 @@ export default function SubmitServerPage() {
               value={formData.website_url}
               onChange={handleChange}
               placeholder="https://example.com"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="contact_discord" className="block text-sm font-medium text-gray-700 mb-2">
+              Discord or Community Contact
+            </label>
+            <input
+              id="contact_discord"
+              type="text"
+              name="contact_discord"
+              value={formData.contact_discord}
+              onChange={handleChange}
+              placeholder="https://discord.gg/example"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="forum_url" className="block text-sm font-medium text-gray-700 mb-2">
+              Forum or Community Board URL
+            </label>
+            <input
+              id="forum_url"
+              type="url"
+              name="forum_url"
+              value={formData.forum_url}
+              onChange={handleChange}
+              placeholder="https://example.com/forum"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               disabled={isSubmitting}
             />
@@ -362,7 +419,7 @@ export default function SubmitServerPage() {
 
           <div className="md:col-span-2">
             <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
-              Description
+              Directory Summary
             </label>
             <textarea
               id="description"
@@ -372,6 +429,125 @@ export default function SubmitServerPage() {
               placeholder="Tell us about your server..."
               rows="4"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div className="md:col-span-2">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-4">Enhanced Listing Profile</h2>
+            <p className="text-sm text-gray-600 mb-4">
+              These fields power the richer OpenTibiaServers.com profile: screenshots, official links, FAQs, and structured sections that old server lists do not support.
+            </p>
+          </div>
+
+          <div className="md:col-span-2">
+            <label htmlFor="promo_headline" className="block text-sm font-medium text-gray-700 mb-2">
+              Profile Headline
+            </label>
+            <input
+              id="promo_headline"
+              type="text"
+              name="promo_headline"
+              value={formData.promo_headline}
+              onChange={handleChange}
+              placeholder="e.g., Custom 8.6 PvP with daily events and active Discord"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="launcher_url" className="block text-sm font-medium text-gray-700 mb-2">
+              Launcher or Client URL
+            </label>
+            <input
+              id="launcher_url"
+              type="url"
+              name="launcher_url"
+              value={formData.launcher_url}
+              onChange={handleChange}
+              placeholder="https://example.com/download"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="trailer_url" className="block text-sm font-medium text-gray-700 mb-2">
+              Trailer or Video URL
+            </label>
+            <input
+              id="trailer_url"
+              type="url"
+              name="trailer_url"
+              value={formData.trailer_url}
+              onChange={handleChange}
+              placeholder="https://youtube.com/..."
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="feature_bullets" className="block text-sm font-medium text-gray-700 mb-2">
+              Highlights
+            </label>
+            <textarea
+              id="feature_bullets"
+              name="feature_bullets"
+              value={formData.feature_bullets}
+              onChange={handleChange}
+              placeholder="One highlight per line: custom bosses, active wars, real map, anti-bot, daily events..."
+              rows="6"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="gallery_images" className="block text-sm font-medium text-gray-700 mb-2">
+              Screenshot URLs
+            </label>
+            <textarea
+              id="gallery_images"
+              name="gallery_images"
+              value={formData.gallery_images}
+              onChange={handleChange}
+              placeholder="One image URL per line"
+              rows="6"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div className="md:col-span-2">
+            <label htmlFor="faq_items" className="block text-sm font-medium text-gray-700 mb-2">
+              FAQ JSON
+            </label>
+            <textarea
+              id="faq_items"
+              name="faq_items"
+              value={formData.faq_items}
+              onChange={handleChange}
+              placeholder='[{"question":"How do I play?","answer":"Create an account, download the client, and connect with the launcher."}]'
+              rows="5"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div className="md:col-span-2">
+            <label htmlFor="custom_sections" className="block text-sm font-medium text-gray-700 mb-2">
+              Custom Content Sections JSON
+            </label>
+            <textarea
+              id="custom_sections"
+              name="custom_sections"
+              value={formData.custom_sections}
+              onChange={handleChange}
+              placeholder='[{"title":"Launch Information","body":"Explain season, start date, rates, events, and rules."}]'
+              rows="6"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
               disabled={isSubmitting}
             />
           </div>
@@ -386,7 +562,7 @@ export default function SubmitServerPage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-6 py-3 bg-gray-950 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? 'Submitting...' : 'Submit Server'}
             </button>

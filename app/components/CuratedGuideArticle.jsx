@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import KeywordPageCommunity from '@/app/components/KeywordPageCommunity';
 import { buildServerSlug } from '@/lib/server-paths';
 import { buildCuratedJsonLd } from '@/lib/curated-pages';
 import { fetchDirectoryServers } from '@/lib/directory-data';
+import { buildDeepDiveSections, estimateCuratedPageWords } from '@/lib/deep-dive-pages';
 
 function createQueryHref(query) {
   return `/?search=${encodeURIComponent(query)}`;
@@ -16,6 +18,8 @@ export default async function CuratedGuideArticle({ page }) {
     onlineOnly: false,
   });
   const jsonLd = buildCuratedJsonLd(page);
+  const deepDiveSections = buildDeepDiveSections(page);
+  const estimatedWords = estimateCuratedPageWords(page);
 
   return (
     <main className="min-h-screen bg-gray-50 text-gray-950">
@@ -84,6 +88,9 @@ export default async function CuratedGuideArticle({ page }) {
               ))}
             </dl>
             <p className="mt-5 text-xs text-gray-300">Updated {page.updatedAt}</p>
+            {page.type === 'server' ? (
+              <p className="mt-2 text-xs text-gray-300">Estimated depth: {estimatedWords.toLocaleString()} words</p>
+            ) : null}
           </aside>
         </div>
       </section>
@@ -154,6 +161,66 @@ export default async function CuratedGuideArticle({ page }) {
                   </div>
                 ))}
               </dl>
+            </section>
+          ) : null}
+
+          {page.researchNotes?.length ? (
+            <section className="border-b border-gray-200 pb-8">
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Sourced Research</p>
+              <h2 className="mb-4 text-2xl font-bold text-gray-950">What Public Sources Already Tell Us</h2>
+              <div className="grid gap-4">
+                {page.researchNotes.map((note) => (
+                  <div key={note.label} className="rounded border border-gray-200 bg-white p-4">
+                    <h3 className="text-base font-bold text-gray-950">{note.label}</h3>
+                    <p className="mt-2 text-sm leading-7 text-gray-700">{note.value}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {page.mediaLeads?.length ? (
+            <section className="border-b border-gray-200 pb-8">
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Media Leads</p>
+              <h2 className="mb-4 text-2xl font-bold text-gray-950">Public Screenshot and Media Sources</h2>
+              <p className="mb-4 text-base leading-8 text-gray-700">
+                These are source leads for real screenshots and community media. We link to them for attribution and verification; files should only be mirrored locally when the server owner, source license, or contributor permission allows it.
+              </p>
+              <div className="grid gap-3">
+                {page.mediaLeads.map((lead) => (
+                  <a key={lead.href} href={lead.href} target="_blank" rel="noopener noreferrer" className="rounded border border-gray-200 bg-white p-4 hover:border-gray-400 hover:no-underline">
+                    <h3 className="text-base font-bold text-blue-700">{lead.label}</h3>
+                    <p className="mt-2 text-sm leading-7 text-gray-700">{lead.note}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {deepDiveSections.length ? (
+            <section className="border-b border-gray-200 pb-8">
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Deep Dive</p>
+              <h2 className="mb-4 text-2xl font-bold text-gray-950">{page.primaryKeyword} Complete Player Research Guide</h2>
+              <p className="mb-5 text-base leading-8 text-gray-700">
+                These chapters are written for players who want to explore the server before registering, downloading a client, or investing time. Each section is designed to be expanded with owner-confirmed data, screenshots, reviews, and community notes.
+              </p>
+              <div className="space-y-3">
+                {deepDiveSections.map((section, index) => (
+                  <details key={`${section.heading}-${index}`} className="rounded border border-gray-200 bg-white p-4" open={index < 3}>
+                    <summary className="cursor-pointer">
+                      <span className="block text-xs font-bold uppercase tracking-widest text-gray-500">{section.eyebrow}</span>
+                      <span className="mt-1 block text-lg font-bold text-gray-950">{section.heading}</span>
+                    </summary>
+                    <div className="mt-4 space-y-4">
+                      {section.body.map((paragraph) => (
+                        <p key={paragraph} className="text-sm leading-7 text-gray-700">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+              </div>
             </section>
           ) : null}
 
@@ -242,6 +309,8 @@ export default async function CuratedGuideArticle({ page }) {
           </div>
         </aside>
       </section>
+
+      <KeywordPageCommunity pageSlug={page.slug} keyword={page.primaryKeyword} />
     </main>
   );
 }

@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-07-26T12:33:29.025Z",
+  "target_count": 100000,
+  "actual_count": 100000,
+  "csv": "data\\keyword-research\\open-tibia-keywords-100000.csv",
+  "json": "data\\keyword-research\\open-tibia-keywords-100000.json",
+  "clusters": {
+    "ecosystem": 870,
+    "server_name": 33040,
+    "official_world": 991,
+    "client_version": 243,
+    "geo": 102,
+    "long_tail": 6052,
+    "long_tail_geo": 5370,
+    "synthetic_server_long_tail": 53332
+  },
+  "volume_note": "search_volume is intentionally blank until imported from a deterministic provider such as Google Ads Keyword Planner, DataForSEO, Ahrefs, or Semrush."
+}

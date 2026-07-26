@@ -2,6 +2,7 @@ import { buildAbsoluteUrl } from '@/lib/seo';
 import { getSupabaseServerClient } from '@/lib/supabase-server';
 import { getServerPath, slugifyServerName } from '@/lib/server-paths';
 import { getCuratedPages } from '@/lib/curated-pages';
+import { getIndexableKeywordPages } from '@/lib/keyword-pages';
 
 function isMissingColumn(error) {
   return error?.code === '42703' || /column .* does not exist/i.test(error?.message || '');
@@ -28,9 +29,15 @@ export default async function sitemap() {
     changeFrequency: 'weekly',
     priority: page.slug === 'antica' ? 0.85 : 0.8,
   }));
+  const keywordUrls = getIndexableKeywordPages(1000).map((page) => ({
+    url: buildAbsoluteUrl(`/topics/${page.slug}`),
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: Number(page.priority_score || 0) >= 90 ? 0.72 : 0.62,
+  }));
 
   const supabase = getSupabaseServerClient();
-  if (!supabase) return [...staticUrls, ...curatedUrls];
+  if (!supabase) return [...staticUrls, ...curatedUrls, ...keywordUrls];
 
   let { data, error } = await supabase
     .from('servers')
@@ -70,5 +77,5 @@ export default async function sitemap() {
     })),
   ];
 
-  return [...staticUrls, ...curatedUrls, ...facetUrls, ...serverUrls];
+  return [...staticUrls, ...curatedUrls, ...keywordUrls, ...facetUrls, ...serverUrls];
 }
