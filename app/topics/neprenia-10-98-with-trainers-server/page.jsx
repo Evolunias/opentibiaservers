@@ -1,0 +1,8 @@
+import Neprenia1098WithTrainersServerKeywordPage, { generateMetadata } from './neprenia-10-98-with-trainers-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Neprenia1098WithTrainersServerKeywordPage />;
+}

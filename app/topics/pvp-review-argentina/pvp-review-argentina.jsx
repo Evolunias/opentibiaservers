@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('pvp-review-argentina');
+}
+
+export default function PvpReviewArgentinaKeywordPage() {
+  return <StaticKeywordPage slug="pvp-review-argentina" />;
+}

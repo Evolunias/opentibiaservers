@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('top-demolidores-forum');
+}
+
+export default function TopDemolidoresForumKeywordPage() {
+  return <StaticKeywordPage slug="top-demolidores-forum" />;
+}

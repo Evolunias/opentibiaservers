@@ -1,0 +1,8 @@
+import ForteraPlayersKeywordPage, { generateMetadata } from './fortera-players';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <ForteraPlayersKeywordPage />;
+}

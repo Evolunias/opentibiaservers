@@ -1,0 +1,8 @@
+import OfficialCoxaotKeywordPage, { generateMetadata } from './official-coxaot';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OfficialCoxaotKeywordPage />;
+}

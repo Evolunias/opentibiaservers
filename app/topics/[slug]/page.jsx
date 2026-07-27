@@ -9,6 +9,7 @@ import {
   buildKeywordJsonLd,
   buildKeywordPageDescription,
   buildKeywordPageTitle,
+  buildKeywordSeoSemantics,
   getKeywordPageBySlug,
   getRelatedKeywordPages,
   shouldIndexKeywordPage,
@@ -33,6 +34,15 @@ export async function generateMetadata({ params }) {
   return {
     title,
     description,
+    keywords: [
+      page.keyword,
+      page.seed_entity,
+      `${page.keyword} open tibia`,
+      `${page.keyword} ot server`,
+      `${page.keyword} review`,
+      `${page.keyword} screenshots`,
+      `${page.keyword} players online`,
+    ].filter(Boolean),
     alternates: { canonical },
     robots: { index: indexable, follow: true },
     openGraph: {
@@ -59,6 +69,7 @@ export default async function KeywordTopicPage({ params }) {
   if (!page) notFound();
 
   const article = buildKeywordArticle(page);
+  const seoSemantics = buildKeywordSeoSemantics(page);
   const related = getRelatedKeywordPages(page, 12);
   const directoryData = await fetchDirectoryServers({
     page: 1,
@@ -130,13 +141,34 @@ export default async function KeywordTopicPage({ params }) {
             <section key={section.heading} className="border-b border-gray-200 pb-8">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">{section.eyebrow}</p>
               <h2 className="mb-4 text-2xl font-bold text-gray-950">{section.heading}</h2>
+              <h3 className="mb-3 text-xl font-bold text-gray-900">{page.keyword} player research signals</h3>
               <div className="space-y-4">
                 {section.body.map((paragraph) => (
-                  <p key={paragraph} className="text-base leading-8 text-gray-700">{paragraph}</p>
+                  <p key={paragraph} className="text-base leading-8 text-gray-700">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
             </section>
           ))}
+
+          <section className="border-b border-gray-200 pb-8">
+            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">{seoSemantics.eyebrow}</p>
+            <h2 className="mb-4 text-2xl font-bold text-gray-950">{seoSemantics.h2}</h2>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">{seoSemantics.h3}</h3>
+            <div className="space-y-4 text-base leading-8 text-gray-700">
+              <p>
+                <strong>{seoSemantics.keyword}</strong> is the primary search target, <em>{seoSemantics.seed}</em> is the supporting entity, and the page stays <u>{seoSemantics.underline}</u>.
+              </p>
+              <p>
+                {seoSemantics.copy} Internal paths point players toward <Link href={`/?search=${encodeURIComponent(page.seed_entity || page.keyword)}`} className="font-semibold text-blue-700">matching live listings</Link>, related keyword pages, and account/community actions.
+              </p>
+            </div>
+            <h4 className="mt-5 text-lg font-bold text-gray-950">{seoSemantics.h4}</h4>
+            <p className="mt-2 text-sm leading-7 text-gray-700">{seoSemantics.keyword}</p>
+            <h5 className="mt-4 text-base font-bold text-gray-950">{seoSemantics.h5}</h5>
+            <p className="mt-2 text-sm leading-7 text-gray-700">{seoSemantics.support}</p>
+          </section>
 
           {directoryData.servers.length ? (
             <section className="pb-8">
@@ -152,6 +184,20 @@ export default async function KeywordTopicPage({ params }) {
                       <div className="text-sm font-bold text-gray-950">{Number(server.players_online || 0).toLocaleString()} online</div>
                     </div>
                   </Link>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {article.faqs?.length ? (
+            <section className="border-b border-gray-200 pb-8">
+              <h2 className="mb-4 text-2xl font-bold text-gray-950">{page.keyword} FAQ</h2>
+              <div className="space-y-4">
+                {article.faqs.map((faq) => (
+                  <details key={faq.question} className="rounded border border-gray-200 bg-white p-4">
+                    <summary className="cursor-pointer text-base font-bold text-gray-950">{faq.question}</summary>
+                    <p className="mt-3 text-sm leading-7 text-gray-700">{faq.answer}</p>
+                  </details>
                 ))}
               </div>
             </section>

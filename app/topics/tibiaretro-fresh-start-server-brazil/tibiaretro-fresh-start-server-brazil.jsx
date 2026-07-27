@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('tibiaretro-fresh-start-server-brazil');
+}
+
+export default function TibiaretroFreshStartServerBrazilKeywordPage() {
+  return <StaticKeywordPage slug="tibiaretro-fresh-start-server-brazil" />;
+}

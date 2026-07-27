@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('midhem-with-screenshots-server-poland');
+}
+
+export default function MidhemWithScreenshotsServerPolandKeywordPage() {
+  return <StaticKeywordPage slug="midhem-with-screenshots-server-poland" />;
+}

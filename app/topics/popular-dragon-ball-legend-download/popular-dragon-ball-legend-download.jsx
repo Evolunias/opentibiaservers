@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('popular-dragon-ball-legend-download');
+}
+
+export default function PopularDragonBallLegendDownloadKeywordPage() {
+  return <StaticKeywordPage slug="popular-dragon-ball-legend-download" />;
+}

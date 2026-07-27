@@ -1,0 +1,8 @@
+import LowrateCanobWikiKeywordPage, { generateMetadata } from './lowrate-canob-wiki';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <LowrateCanobWikiKeywordPage />;
+}

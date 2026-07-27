@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('midhem-baiak-server-france');
+}
+
+export default function MidhemBaiakServerFranceKeywordPage() {
+  return <StaticKeywordPage slug="midhem-baiak-server-france" />;
+}

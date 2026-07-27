@@ -1,0 +1,8 @@
+import OfficialTibiantisDownloadKeywordPage, { generateMetadata } from './official-tibiantis-download';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OfficialTibiantisDownloadKeywordPage />;
+}

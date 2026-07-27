@@ -1,0 +1,8 @@
+import HighrateBlazeraOtKeywordPage, { generateMetadata } from './highrate-blazera-ot';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <HighrateBlazeraOtKeywordPage />;
+}

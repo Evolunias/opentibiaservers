@@ -1,0 +1,8 @@
+import TopXanteriaKeywordPage, { generateMetadata } from './top-xanteria';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <TopXanteriaKeywordPage />;
+}

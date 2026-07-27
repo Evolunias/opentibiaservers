@@ -1,0 +1,8 @@
+import CustomAmeriaCreateAccountKeywordPage, { generateMetadata } from './custom-ameria-create-account';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <CustomAmeriaCreateAccountKeywordPage />;
+}

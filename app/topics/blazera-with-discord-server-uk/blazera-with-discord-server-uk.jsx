@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('blazera-with-discord-server-uk');
+}
+
+export default function BlazeraWithDiscordServerUkKeywordPage() {
+  return <StaticKeywordPage slug="blazera-with-discord-server-uk" />;
+}

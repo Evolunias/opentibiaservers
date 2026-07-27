@@ -1,0 +1,8 @@
+import MidhemPvpeServerUsaKeywordPage, { generateMetadata } from './midhem-pvpe-server-usa';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <MidhemPvpeServerUsaKeywordPage />;
+}

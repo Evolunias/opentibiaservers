@@ -1,0 +1,8 @@
+import NoResetHarmoniaOtOtKeywordPage, { generateMetadata } from './no-reset-harmonia-ot-ot';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <NoResetHarmoniaOtOtKeywordPage />;
+}

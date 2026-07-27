@@ -1,0 +1,8 @@
+import RookgaardTales96WithScreenshotsServerKeywordPage, { generateMetadata } from './rookgaard-tales-9-6-with-screenshots-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <RookgaardTales96WithScreenshotsServerKeywordPage />;
+}

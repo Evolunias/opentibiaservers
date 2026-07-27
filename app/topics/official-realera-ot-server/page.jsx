@@ -1,0 +1,8 @@
+import OfficialRealeraOtServerKeywordPage, { generateMetadata } from './official-realera-ot-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OfficialRealeraOtServerKeywordPage />;
+}

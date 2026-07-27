@@ -1,0 +1,8 @@
+import Sabrehaven854PvpServerKeywordPage, { generateMetadata } from './sabrehaven-8-54-pvp-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Sabrehaven854PvpServerKeywordPage />;
+}

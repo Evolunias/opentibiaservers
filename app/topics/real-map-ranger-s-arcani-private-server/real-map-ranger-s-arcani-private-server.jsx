@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('real-map-ranger-s-arcani-private-server');
+}
+
+export default function RealMapRangerSArcaniPrivateServerKeywordPage() {
+  return <StaticKeywordPage slug="real-map-ranger-s-arcani-private-server" />;
+}

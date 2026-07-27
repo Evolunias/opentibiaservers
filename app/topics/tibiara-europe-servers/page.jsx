@@ -1,0 +1,8 @@
+import TibiaraEuropeServersKeywordPage, { generateMetadata } from './tibiara-europe-servers';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <TibiaraEuropeServersKeywordPage />;
+}

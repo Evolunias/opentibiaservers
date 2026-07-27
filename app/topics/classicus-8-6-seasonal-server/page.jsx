@@ -1,0 +1,8 @@
+import Classicus86SeasonalServerKeywordPage, { generateMetadata } from './classicus-8-6-seasonal-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Classicus86SeasonalServerKeywordPage />;
+}

@@ -1,0 +1,8 @@
+import DuraOnlineRealMapServerSouthAmericaKeywordPage, { generateMetadata } from './dura-online-real-map-server-south-america';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <DuraOnlineRealMapServerSouthAmericaKeywordPage />;
+}

@@ -1,0 +1,8 @@
+import Ameria76WithTrainersServerKeywordPage, { generateMetadata } from './ameria-7-6-with-trainers-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Ameria76WithTrainersServerKeywordPage />;
+}

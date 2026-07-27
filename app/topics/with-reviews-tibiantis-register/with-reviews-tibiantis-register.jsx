@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('with-reviews-tibiantis-register');
+}
+
+export default function WithReviewsTibiantisRegisterKeywordPage() {
+  return <StaticKeywordPage slug="with-reviews-tibiantis-register" />;
+}

@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('with-reviews-madnessalive-forum');
+}
+
+export default function WithReviewsMadnessaliveForumKeywordPage() {
+  return <StaticKeywordPage slug="with-reviews-madnessalive-forum" />;
+}

@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('imperianic-with-reviews-server-sweden');
+}
+
+export default function ImperianicWithReviewsServerSwedenKeywordPage() {
+  return <StaticKeywordPage slug="imperianic-with-reviews-server-sweden" />;
+}

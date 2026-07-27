@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('imperianic-8-1-real-map-server');
+}
+
+export default function Imperianic81RealMapServerKeywordPage() {
+  return <StaticKeywordPage slug="imperianic-8-1-real-map-server" />;
+}

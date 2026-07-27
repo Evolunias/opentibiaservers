@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('zunera-ot-evo-server-argentina');
+}
+
+export default function ZuneraOtEvoServerArgentinaKeywordPage() {
+  return <StaticKeywordPage slug="zunera-ot-evo-server-argentina" />;
+}

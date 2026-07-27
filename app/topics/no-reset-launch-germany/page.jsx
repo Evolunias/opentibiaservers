@@ -1,0 +1,8 @@
+import NoResetLaunchGermanyKeywordPage, { generateMetadata } from './no-reset-launch-germany';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <NoResetLaunchGermanyKeywordPage />;
+}

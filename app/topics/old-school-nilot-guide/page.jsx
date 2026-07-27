@@ -1,0 +1,8 @@
+import OldSchoolNilotGuideKeywordPage, { generateMetadata } from './old-school-nilot-guide';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OldSchoolNilotGuideKeywordPage />;
+}

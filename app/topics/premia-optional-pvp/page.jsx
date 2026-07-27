@@ -1,0 +1,8 @@
+import PremiaOptionalPvpKeywordPage, { generateMetadata } from './premia-optional-pvp';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <PremiaOptionalPvpKeywordPage />;
+}

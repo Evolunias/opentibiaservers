@@ -1,0 +1,8 @@
+import Trashformers74RealMapServersKeywordPage, { generateMetadata } from './trashformers-7-4-real-map-servers';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Trashformers74RealMapServersKeywordPage />;
+}

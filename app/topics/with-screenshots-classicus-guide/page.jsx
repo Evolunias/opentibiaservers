@@ -1,0 +1,8 @@
+import WithScreenshotsClassicusGuideKeywordPage, { generateMetadata } from './with-screenshots-classicus-guide';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <WithScreenshotsClassicusGuideKeywordPage />;
+}

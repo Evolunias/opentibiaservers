@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('infernal-ot-12-baiak-server');
+}
+
+export default function InfernalOt12BaiakServerKeywordPage() {
+  return <StaticKeywordPage slug="infernal-ot-12-baiak-server" />;
+}

@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('ruthless-chaos-7-4-evo-servers');
+}
+
+export default function RuthlessChaos74EvoServersKeywordPage() {
+  return <StaticKeywordPage slug="ruthless-chaos-7-4-evo-servers" />;
+}

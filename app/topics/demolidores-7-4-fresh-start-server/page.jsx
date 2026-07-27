@@ -1,0 +1,8 @@
+import Demolidores74FreshStartServerKeywordPage, { generateMetadata } from './demolidores-7-4-fresh-start-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Demolidores74FreshStartServerKeywordPage />;
+}

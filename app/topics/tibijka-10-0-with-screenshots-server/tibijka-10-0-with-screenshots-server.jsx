@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('tibijka-10-0-with-screenshots-server');
+}
+
+export default function Tibijka100WithScreenshotsServerKeywordPage() {
+  return <StaticKeywordPage slug="tibijka-10-0-with-screenshots-server" />;
+}

@@ -1,0 +1,8 @@
+import Tibia96PvpeServerListKeywordPage, { generateMetadata } from './tibia-9-6-pvpe-server-list';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Tibia96PvpeServerListKeywordPage />;
+}

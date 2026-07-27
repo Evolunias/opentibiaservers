@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('yurots-high-exp-server-uk');
+}
+
+export default function YurotsHighExpServerUkKeywordPage() {
+  return <StaticKeywordPage slug="yurots-high-exp-server-uk" />;
+}

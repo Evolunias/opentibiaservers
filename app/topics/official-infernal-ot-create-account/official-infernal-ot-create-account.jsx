@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('official-infernal-ot-create-account');
+}
+
+export default function OfficialInfernalOtCreateAccountKeywordPage() {
+  return <StaticKeywordPage slug="official-infernal-ot-create-account" />;
+}

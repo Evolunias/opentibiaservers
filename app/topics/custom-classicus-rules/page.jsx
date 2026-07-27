@@ -1,0 +1,8 @@
+import CustomClassicusRulesKeywordPage, { generateMetadata } from './custom-classicus-rules';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <CustomClassicusRulesKeywordPage />;
+}

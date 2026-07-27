@@ -1,0 +1,8 @@
+import HighrateNilotCreateAccountKeywordPage, { generateMetadata } from './highrate-nilot-create-account';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <HighrateNilotCreateAccountKeywordPage />;
+}

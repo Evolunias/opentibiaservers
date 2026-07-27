@@ -1,0 +1,8 @@
+import MistOfDeath81PvpServerKeywordPage, { generateMetadata } from './mist-of-death-8-1-pvp-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <MistOfDeath81PvpServerKeywordPage />;
+}

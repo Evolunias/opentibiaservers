@@ -1,0 +1,8 @@
+import RealeraTrailerKeywordPage, { generateMetadata } from './realera-trailer';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <RealeraTrailerKeywordPage />;
+}

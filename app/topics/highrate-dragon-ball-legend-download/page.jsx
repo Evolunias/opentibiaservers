@@ -1,0 +1,8 @@
+import HighrateDragonBallLegendDownloadKeywordPage, { generateMetadata } from './highrate-dragon-ball-legend-download';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <HighrateDragonBallLegendDownloadKeywordPage />;
+}

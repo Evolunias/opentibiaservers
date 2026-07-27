@@ -1,0 +1,8 @@
+import WithDiscordEvoleraPrivateServerKeywordPage, { generateMetadata } from './with-discord-evolera-private-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <WithDiscordEvoleraPrivateServerKeywordPage />;
+}

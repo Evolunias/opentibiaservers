@@ -1,0 +1,8 @@
+import TibiaraTrainingKeywordPage, { generateMetadata } from './tibiara-training';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <TibiaraTrainingKeywordPage />;
+}

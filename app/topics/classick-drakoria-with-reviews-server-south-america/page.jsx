@@ -1,0 +1,8 @@
+import ClassickDrakoriaWithReviewsServerSouthAmericaKeywordPage, { generateMetadata } from './classick-drakoria-with-reviews-server-south-america';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <ClassickDrakoriaWithReviewsServerSouthAmericaKeywordPage />;
+}

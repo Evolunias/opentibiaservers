@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('alastera-retro-server-brazil');
+}
+
+export default function AlasteraRetroServerBrazilKeywordPage() {
+  return <StaticKeywordPage slug="alastera-retro-server-brazil" />;
+}

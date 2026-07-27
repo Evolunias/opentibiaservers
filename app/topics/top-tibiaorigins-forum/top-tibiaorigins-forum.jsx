@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('top-tibiaorigins-forum');
+}
+
+export default function TopTibiaoriginsForumKeywordPage() {
+  return <StaticKeywordPage slug="top-tibiaorigins-forum" />;
+}

@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('with-reviews-gunzodus-open-tibia');
+}
+
+export default function WithReviewsGunzodusOpenTibiaKeywordPage() {
+  return <StaticKeywordPage slug="with-reviews-gunzodus-open-tibia" />;
+}

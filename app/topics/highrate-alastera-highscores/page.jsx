@@ -1,0 +1,8 @@
+import HighrateAlasteraHighscoresKeywordPage, { generateMetadata } from './highrate-alastera-highscores';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <HighrateAlasteraHighscoresKeywordPage />;
+}

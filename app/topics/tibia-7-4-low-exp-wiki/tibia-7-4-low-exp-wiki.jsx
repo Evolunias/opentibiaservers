@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('tibia-7-4-low-exp-wiki');
+}
+
+export default function Tibia74LowExpWikiKeywordPage() {
+  return <StaticKeywordPage slug="tibia-7-4-low-exp-wiki" />;
+}

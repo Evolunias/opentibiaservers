@@ -1,0 +1,8 @@
+import NoResetVenoreotWikiKeywordPage, { generateMetadata } from './no-reset-venoreot-wiki';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <NoResetVenoreotWikiKeywordPage />;
+}

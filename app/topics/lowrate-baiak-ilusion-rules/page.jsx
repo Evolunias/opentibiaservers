@@ -1,0 +1,8 @@
+import LowrateBaiakIlusionRulesKeywordPage, { generateMetadata } from './lowrate-baiak-ilusion-rules';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <LowrateBaiakIlusionRulesKeywordPage />;
+}

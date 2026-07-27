@@ -1,0 +1,8 @@
+import Keyword2026ShadowcoresOtKeywordPage, { generateMetadata } from './2026-shadowcores-ot';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Keyword2026ShadowcoresOtKeywordPage />;
+}

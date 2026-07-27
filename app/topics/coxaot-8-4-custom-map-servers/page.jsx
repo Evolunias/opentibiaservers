@@ -1,0 +1,8 @@
+import Coxaot84CustomMapServersKeywordPage, { generateMetadata } from './coxaot-8-4-custom-map-servers';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Coxaot84CustomMapServersKeywordPage />;
+}

@@ -1,0 +1,8 @@
+import OtmadnessPolandServerKeywordPage, { generateMetadata } from './otmadness-poland-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OtmadnessPolandServerKeywordPage />;
+}

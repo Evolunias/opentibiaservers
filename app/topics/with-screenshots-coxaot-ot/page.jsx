@@ -1,0 +1,8 @@
+import WithScreenshotsCoxaotOtKeywordPage, { generateMetadata } from './with-screenshots-coxaot-ot';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <WithScreenshotsCoxaotOtKeywordPage />;
+}

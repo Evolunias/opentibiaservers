@@ -1,0 +1,8 @@
+import Tibia80SeasonalOtServerKeywordPage, { generateMetadata } from './tibia-8-0-seasonal-ot-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Tibia80SeasonalOtServerKeywordPage />;
+}

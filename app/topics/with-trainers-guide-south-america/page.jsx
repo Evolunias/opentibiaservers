@@ -1,0 +1,8 @@
+import WithTrainersGuideSouthAmericaKeywordPage, { generateMetadata } from './with-trainers-guide-south-america';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <WithTrainersGuideSouthAmericaKeywordPage />;
+}

@@ -1,0 +1,8 @@
+import PvpForumPolandKeywordPage, { generateMetadata } from './pvp-forum-poland';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <PvpForumPolandKeywordPage />;
+}

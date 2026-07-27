@@ -1,0 +1,8 @@
+import ForgottenServerClientKeywordPage, { generateMetadata } from './forgotten-server-client';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <ForgottenServerClientKeywordPage />;
+}

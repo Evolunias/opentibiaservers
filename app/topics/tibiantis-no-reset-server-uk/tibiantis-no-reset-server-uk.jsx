@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('tibiantis-no-reset-server-uk');
+}
+
+export default function TibiantisNoResetServerUkKeywordPage() {
+  return <StaticKeywordPage slug="tibiantis-no-reset-server-uk" />;
+}

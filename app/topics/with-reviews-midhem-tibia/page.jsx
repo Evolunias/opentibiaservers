@@ -1,0 +1,8 @@
+import WithReviewsMidhemTibiaKeywordPage, { generateMetadata } from './with-reviews-midhem-tibia';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <WithReviewsMidhemTibiaKeywordPage />;
+}

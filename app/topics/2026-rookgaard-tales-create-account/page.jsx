@@ -1,0 +1,8 @@
+import Keyword2026RookgaardTalesCreateAccountKeywordPage, { generateMetadata } from './2026-rookgaard-tales-create-account';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Keyword2026RookgaardTalesCreateAccountKeywordPage />;
+}

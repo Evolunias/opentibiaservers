@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('trashformers-no-reset-server-germany');
+}
+
+export default function TrashformersNoResetServerGermanyKeywordPage() {
+  return <StaticKeywordPage slug="trashformers-no-reset-server-germany" />;
+}

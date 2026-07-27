@@ -1,0 +1,8 @@
+import NewSeasonTibianusKeywordPage, { generateMetadata } from './new-season-tibianus';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <NewSeasonTibianusKeywordPage />;
+}

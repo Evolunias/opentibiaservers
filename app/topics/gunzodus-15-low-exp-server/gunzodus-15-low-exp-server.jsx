@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('gunzodus-15-low-exp-server');
+}
+
+export default function Gunzodus15LowExpServerKeywordPage() {
+  return <StaticKeywordPage slug="gunzodus-15-low-exp-server" />;
+}

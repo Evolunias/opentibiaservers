@@ -1,0 +1,8 @@
+import CurrentMiracleClientKeywordPage, { generateMetadata } from './current-miracle-client';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <CurrentMiracleClientKeywordPage />;
+}

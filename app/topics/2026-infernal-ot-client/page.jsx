@@ -1,0 +1,8 @@
+import Keyword2026InfernalOtClientKeywordPage, { generateMetadata } from './2026-infernal-ot-client';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Keyword2026InfernalOtClientKeywordPage />;
+}

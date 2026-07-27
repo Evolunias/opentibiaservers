@@ -1,0 +1,8 @@
+import WithScreenshotsEvoluniaRegisterKeywordPage, { generateMetadata } from './with-screenshots-evolunia-register';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <WithScreenshotsEvoluniaRegisterKeywordPage />;
+}

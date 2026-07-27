@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('new-season-neprenia-ot-server');
+}
+
+export default function NewSeasonNepreniaOtServerKeywordPage() {
+  return <StaticKeywordPage slug="new-season-neprenia-ot-server" />;
+}

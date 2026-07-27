@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('otmadness-10-98-with-discord-server');
+}
+
+export default function Otmadness1098WithDiscordServerKeywordPage() {
+  return <StaticKeywordPage slug="otmadness-10-98-with-discord-server" />;
+}

@@ -1,0 +1,8 @@
+import Eldera100CustomMapServerKeywordPage, { generateMetadata } from './eldera-10-0-custom-map-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Eldera100CustomMapServerKeywordPage />;
+}

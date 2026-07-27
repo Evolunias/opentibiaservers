@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('popular-tibiaorigins-tibia');
+}
+
+export default function PopularTibiaoriginsTibiaKeywordPage() {
+  return <StaticKeywordPage slug="popular-tibiaorigins-tibia" />;
+}

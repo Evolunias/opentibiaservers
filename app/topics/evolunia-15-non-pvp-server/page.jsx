@@ -1,0 +1,8 @@
+import Evolunia15NonPvpServerKeywordPage, { generateMetadata } from './evolunia-15-non-pvp-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Evolunia15NonPvpServerKeywordPage />;
+}

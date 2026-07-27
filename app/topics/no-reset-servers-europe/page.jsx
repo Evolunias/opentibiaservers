@@ -1,0 +1,8 @@
+import NoResetServersEuropeKeywordPage, { generateMetadata } from './no-reset-servers-europe';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <NoResetServersEuropeKeywordPage />;
+}

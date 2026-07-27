@@ -1,0 +1,8 @@
+import NoResetElderaWebsiteKeywordPage, { generateMetadata } from './no-reset-eldera-website';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <NoResetElderaWebsiteKeywordPage />;
+}

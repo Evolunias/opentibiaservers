@@ -1,0 +1,8 @@
+import Tibijka854WithActivePlayersServerKeywordPage, { generateMetadata } from './tibijka-8-54-with-active-players-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Tibijka854WithActivePlayersServerKeywordPage />;
+}

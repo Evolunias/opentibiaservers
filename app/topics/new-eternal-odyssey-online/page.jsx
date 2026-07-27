@@ -1,0 +1,8 @@
+import NewEternalOdysseyOnlineKeywordPage, { generateMetadata } from './new-eternal-odyssey-online';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <NewEternalOdysseyOnlineKeywordPage />;
+}

@@ -1,0 +1,8 @@
+import CurrentBaiakIlusionKeywordPage, { generateMetadata } from './current-baiak-ilusion';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <CurrentBaiakIlusionKeywordPage />;
+}

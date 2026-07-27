@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('zezenia-online-8-1-seasonal-server');
+}
+
+export default function ZezeniaOnline81SeasonalServerKeywordPage() {
+  return <StaticKeywordPage slug="zezenia-online-8-1-seasonal-server" />;
+}

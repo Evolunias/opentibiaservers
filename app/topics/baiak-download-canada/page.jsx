@@ -1,0 +1,8 @@
+import BaiakDownloadCanadaKeywordPage, { generateMetadata } from './baiak-download-canada';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <BaiakDownloadCanadaKeywordPage />;
+}

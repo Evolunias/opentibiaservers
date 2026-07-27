@@ -1,0 +1,8 @@
+import ActiveTibiascapePrivateServerKeywordPage, { generateMetadata } from './active-tibiascape-private-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <ActiveTibiascapePrivateServerKeywordPage />;
+}

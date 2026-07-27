@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('realera-8-1-no-reset-server');
+}
+
+export default function Realera81NoResetServerKeywordPage() {
+  return <StaticKeywordPage slug="realera-8-1-no-reset-server" />;
+}

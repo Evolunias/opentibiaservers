@@ -1,0 +1,8 @@
+import Oxygenot14CustomMapServerKeywordPage, { generateMetadata } from './oxygenot-14-custom-map-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Oxygenot14CustomMapServerKeywordPage />;
+}

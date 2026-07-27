@@ -1,0 +1,8 @@
+import PopularCoxaotLoginKeywordPage, { generateMetadata } from './popular-coxaot-login';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <PopularCoxaotLoginKeywordPage />;
+}

@@ -1,0 +1,8 @@
+import NewCyntaraOpenTibiaKeywordPage, { generateMetadata } from './new-cyntara-open-tibia';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <NewCyntaraOpenTibiaKeywordPage />;
+}

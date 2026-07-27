@@ -1,0 +1,8 @@
+import Eldera86RealMapServerKeywordPage, { generateMetadata } from './eldera-8-6-real-map-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Eldera86RealMapServerKeywordPage />;
+}

@@ -1,0 +1,8 @@
+import OlderaUsaServersKeywordPage, { generateMetadata } from './oldera-usa-servers';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OlderaUsaServersKeywordPage />;
+}

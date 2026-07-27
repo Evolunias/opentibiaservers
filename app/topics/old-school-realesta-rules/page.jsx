@@ -1,0 +1,8 @@
+import OldSchoolRealestaRulesKeywordPage, { generateMetadata } from './old-school-realesta-rules';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OldSchoolRealestaRulesKeywordPage />;
+}

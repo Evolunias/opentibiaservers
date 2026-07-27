@@ -1,0 +1,8 @@
+import RexiaPage, { generateMetadata } from './rexia';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <RexiaPage />;
+}

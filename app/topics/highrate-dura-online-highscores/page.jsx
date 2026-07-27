@@ -1,0 +1,8 @@
+import HighrateDuraOnlineHighscoresKeywordPage, { generateMetadata } from './highrate-dura-online-highscores';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <HighrateDuraOnlineHighscoresKeywordPage />;
+}

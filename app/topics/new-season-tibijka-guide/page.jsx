@@ -1,0 +1,8 @@
+import NewSeasonTibijkaGuideKeywordPage, { generateMetadata } from './new-season-tibijka-guide';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <NewSeasonTibijkaGuideKeywordPage />;
+}

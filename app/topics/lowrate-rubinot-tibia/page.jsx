@@ -1,0 +1,8 @@
+import LowrateRubinotTibiaKeywordPage, { generateMetadata } from './lowrate-rubinot-tibia';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <LowrateRubinotTibiaKeywordPage />;
+}

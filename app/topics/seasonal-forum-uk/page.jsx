@@ -1,0 +1,8 @@
+import SeasonalForumUkKeywordPage, { generateMetadata } from './seasonal-forum-uk';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <SeasonalForumUkKeywordPage />;
+}

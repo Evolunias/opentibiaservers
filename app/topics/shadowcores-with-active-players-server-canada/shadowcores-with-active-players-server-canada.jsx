@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('shadowcores-with-active-players-server-canada');
+}
+
+export default function ShadowcoresWithActivePlayersServerCanadaKeywordPage() {
+  return <StaticKeywordPage slug="shadowcores-with-active-players-server-canada" />;
+}

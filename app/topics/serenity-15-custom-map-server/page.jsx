@@ -1,0 +1,8 @@
+import Serenity15CustomMapServerKeywordPage, { generateMetadata } from './serenity-15-custom-map-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Serenity15CustomMapServerKeywordPage />;
+}

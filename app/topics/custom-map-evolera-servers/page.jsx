@@ -1,0 +1,8 @@
+import CustomMapEvoleraServersKeywordPage, { generateMetadata } from './custom-map-evolera-servers';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <CustomMapEvoleraServersKeywordPage />;
+}

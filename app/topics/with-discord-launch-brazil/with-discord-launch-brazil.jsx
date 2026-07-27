@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('with-discord-launch-brazil');
+}
+
+export default function WithDiscordLaunchBrazilKeywordPage() {
+  return <StaticKeywordPage slug="with-discord-launch-brazil" />;
+}

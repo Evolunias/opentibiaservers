@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('popular-mist-of-death-login');
+}
+
+export default function PopularMistOfDeathLoginKeywordPage() {
+  return <StaticKeywordPage slug="popular-mist-of-death-login" />;
+}

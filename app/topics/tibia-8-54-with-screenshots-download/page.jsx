@@ -1,0 +1,8 @@
+import Tibia854WithScreenshotsDownloadKeywordPage, { generateMetadata } from './tibia-8-54-with-screenshots-download';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Tibia854WithScreenshotsDownloadKeywordPage />;
+}

@@ -1,0 +1,8 @@
+import WithScreenshotsClientUkKeywordPage, { generateMetadata } from './with-screenshots-client-uk';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <WithScreenshotsClientUkKeywordPage />;
+}

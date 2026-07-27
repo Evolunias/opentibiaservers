@@ -1,0 +1,8 @@
+import OfficialTibijkaKeywordPage, { generateMetadata } from './official-tibijka';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OfficialTibijkaKeywordPage />;
+}

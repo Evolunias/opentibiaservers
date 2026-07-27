@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('old-school-tibia-private-server-usa');
+}
+
+export default function OldSchoolTibiaPrivateServerUsaKeywordPage() {
+  return <StaticKeywordPage slug="old-school-tibia-private-server-usa" />;
+}

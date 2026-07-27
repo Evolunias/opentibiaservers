@@ -1,0 +1,8 @@
+import ThaisotOtServerKeywordPage, { generateMetadata } from './thaisot-ot-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <ThaisotOtServerKeywordPage />;
+}

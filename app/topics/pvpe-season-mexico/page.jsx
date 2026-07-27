@@ -1,0 +1,8 @@
+import PvpeSeasonMexicoKeywordPage, { generateMetadata } from './pvpe-season-mexico';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <PvpeSeasonMexicoKeywordPage />;
+}

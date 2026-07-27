@@ -1,0 +1,8 @@
+import ZuneraOtEvoServerArgentinaKeywordPage, { generateMetadata } from './zunera-ot-evo-server-argentina';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <ZuneraOtEvoServerArgentinaKeywordPage />;
+}

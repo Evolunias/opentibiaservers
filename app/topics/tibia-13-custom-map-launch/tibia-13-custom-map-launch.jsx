@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('tibia-13-custom-map-launch');
+}
+
+export default function Tibia13CustomMapLaunchKeywordPage() {
+  return <StaticKeywordPage slug="tibia-13-custom-map-launch" />;
+}

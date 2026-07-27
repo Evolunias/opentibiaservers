@@ -1,0 +1,8 @@
+import DragonBallLegendWithDiscordServerChileKeywordPage, { generateMetadata } from './dragon-ball-legend-with-discord-server-chile';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <DragonBallLegendWithDiscordServerChileKeywordPage />;
+}

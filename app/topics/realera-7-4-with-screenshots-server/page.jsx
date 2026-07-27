@@ -1,0 +1,8 @@
+import Realera74WithScreenshotsServerKeywordPage, { generateMetadata } from './realera-7-4-with-screenshots-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Realera74WithScreenshotsServerKeywordPage />;
+}

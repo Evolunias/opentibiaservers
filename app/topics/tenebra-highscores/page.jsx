@@ -1,0 +1,8 @@
+import TenebraHighscoresKeywordPage, { generateMetadata } from './tenebra-highscores';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <TenebraHighscoresKeywordPage />;
+}

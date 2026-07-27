@@ -1,0 +1,8 @@
+import ZuneraOtOldSchoolServerArgentinaKeywordPage, { generateMetadata } from './zunera-ot-old-school-server-argentina';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <ZuneraOtOldSchoolServerArgentinaKeywordPage />;
+}

@@ -1,0 +1,8 @@
+import WithScreenshotsTibiascapeHighscoresKeywordPage, { generateMetadata } from './with-screenshots-tibiascape-highscores';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <WithScreenshotsTibiascapeHighscoresKeywordPage />;
+}

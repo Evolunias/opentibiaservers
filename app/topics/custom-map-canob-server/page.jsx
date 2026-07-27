@@ -1,0 +1,8 @@
+import CustomMapCanobServerKeywordPage, { generateMetadata } from './custom-map-canob-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <CustomMapCanobServerKeywordPage />;
+}

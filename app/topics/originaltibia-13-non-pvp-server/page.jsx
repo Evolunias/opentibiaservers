@@ -1,0 +1,8 @@
+import Originaltibia13NonPvpServerKeywordPage, { generateMetadata } from './originaltibia-13-non-pvp-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Originaltibia13NonPvpServerKeywordPage />;
+}

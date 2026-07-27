@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('no-reset-trashformers-tibia');
+}
+
+export default function NoResetTrashformersTibiaKeywordPage() {
+  return <StaticKeywordPage slug="no-reset-trashformers-tibia" />;
+}

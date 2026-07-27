@@ -1,0 +1,8 @@
+import OldSchoolRangerSArcaniKeywordPage, { generateMetadata } from './old-school-ranger-s-arcani';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OldSchoolRangerSArcaniKeywordPage />;
+}

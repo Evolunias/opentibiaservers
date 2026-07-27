@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('top-alastera-rules');
+}
+
+export default function TopAlasteraRulesKeywordPage() {
+  return <StaticKeywordPage slug="top-alastera-rules" />;
+}

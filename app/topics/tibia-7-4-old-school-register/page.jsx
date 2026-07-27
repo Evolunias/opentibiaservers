@@ -1,0 +1,8 @@
+import Tibia74OldSchoolRegisterKeywordPage, { generateMetadata } from './tibia-7-4-old-school-register';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Tibia74OldSchoolRegisterKeywordPage />;
+}

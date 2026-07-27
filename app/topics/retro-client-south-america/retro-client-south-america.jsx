@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('retro-client-south-america');
+}
+
+export default function RetroClientSouthAmericaKeywordPage() {
+  return <StaticKeywordPage slug="retro-client-south-america" />;
+}

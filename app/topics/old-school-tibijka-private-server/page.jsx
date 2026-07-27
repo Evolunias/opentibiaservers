@@ -1,0 +1,8 @@
+import OldSchoolTibijkaPrivateServerKeywordPage, { generateMetadata } from './old-school-tibijka-private-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OldSchoolTibijkaPrivateServerKeywordPage />;
+}

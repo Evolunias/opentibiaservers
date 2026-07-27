@@ -1,0 +1,8 @@
+import Coxaot84EvoServerKeywordPage, { generateMetadata } from './coxaot-8-4-evo-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Coxaot84EvoServerKeywordPage />;
+}

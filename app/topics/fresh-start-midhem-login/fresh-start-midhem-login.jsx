@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('fresh-start-midhem-login');
+}
+
+export default function FreshStartMidhemLoginKeywordPage() {
+  return <StaticKeywordPage slug="fresh-start-midhem-login" />;
+}

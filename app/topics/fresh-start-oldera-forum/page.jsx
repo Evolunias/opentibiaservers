@@ -1,0 +1,8 @@
+import FreshStartOlderaForumKeywordPage, { generateMetadata } from './fresh-start-oldera-forum';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <FreshStartOlderaForumKeywordPage />;
+}

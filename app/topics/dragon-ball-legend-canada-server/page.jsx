@@ -1,0 +1,8 @@
+import DragonBallLegendCanadaServerKeywordPage, { generateMetadata } from './dragon-ball-legend-canada-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <DragonBallLegendCanadaServerKeywordPage />;
+}

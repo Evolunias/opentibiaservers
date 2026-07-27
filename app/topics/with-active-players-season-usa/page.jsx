@@ -1,0 +1,8 @@
+import WithActivePlayersSeasonUsaKeywordPage, { generateMetadata } from './with-active-players-season-usa';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <WithActivePlayersSeasonUsaKeywordPage />;
+}

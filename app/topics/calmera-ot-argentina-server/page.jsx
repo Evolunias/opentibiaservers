@@ -1,0 +1,8 @@
+import CalmeraOtArgentinaServerKeywordPage, { generateMetadata } from './calmera-ot-argentina-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <CalmeraOtArgentinaServerKeywordPage />;
+}

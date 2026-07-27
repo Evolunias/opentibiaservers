@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('best-yurots-register');
+}
+
+export default function BestYurotsRegisterKeywordPage() {
+  return <StaticKeywordPage slug="best-yurots-register" />;
+}

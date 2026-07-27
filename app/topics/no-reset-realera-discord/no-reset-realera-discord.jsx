@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('no-reset-realera-discord');
+}
+
+export default function NoResetRealeraDiscordKeywordPage() {
+  return <StaticKeywordPage slug="no-reset-realera-discord" />;
+}

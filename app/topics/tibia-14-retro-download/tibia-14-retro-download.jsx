@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('tibia-14-retro-download');
+}
+
+export default function Tibia14RetroDownloadKeywordPage() {
+  return <StaticKeywordPage slug="tibia-14-retro-download" />;
+}

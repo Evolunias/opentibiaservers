@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('otmadness-10-98-low-exp-server');
+}
+
+export default function Otmadness1098LowExpServerKeywordPage() {
+  return <StaticKeywordPage slug="otmadness-10-98-low-exp-server" />;
+}

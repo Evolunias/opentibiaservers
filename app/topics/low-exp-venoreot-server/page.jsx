@@ -1,0 +1,8 @@
+import LowExpVenoreotServerKeywordPage, { generateMetadata } from './low-exp-venoreot-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <LowExpVenoreotServerKeywordPage />;
+}

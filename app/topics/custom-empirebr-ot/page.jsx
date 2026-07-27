@@ -1,0 +1,8 @@
+import CustomEmpirebrOtKeywordPage, { generateMetadata } from './custom-empirebr-ot';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <CustomEmpirebrOtKeywordPage />;
+}

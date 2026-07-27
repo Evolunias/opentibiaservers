@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('xanteria-real-map-servers-europe');
+}
+
+export default function XanteriaRealMapServersEuropeKeywordPage() {
+  return <StaticKeywordPage slug="xanteria-real-map-servers-europe" />;
+}

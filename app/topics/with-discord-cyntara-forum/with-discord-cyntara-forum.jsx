@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('with-discord-cyntara-forum');
+}
+
+export default function WithDiscordCyntaraForumKeywordPage() {
+  return <StaticKeywordPage slug="with-discord-cyntara-forum" />;
+}

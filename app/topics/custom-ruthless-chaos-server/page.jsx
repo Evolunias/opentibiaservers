@@ -1,0 +1,8 @@
+import CustomRuthlessChaosServerKeywordPage, { generateMetadata } from './custom-ruthless-chaos-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <CustomRuthlessChaosServerKeywordPage />;
+}

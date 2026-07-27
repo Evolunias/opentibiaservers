@@ -1,0 +1,8 @@
+import Thaisot86EvoServersKeywordPage, { generateMetadata } from './thaisot-8-6-evo-servers';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Thaisot86EvoServersKeywordPage />;
+}

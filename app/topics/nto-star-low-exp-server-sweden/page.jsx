@@ -1,0 +1,8 @@
+import NtoStarLowExpServerSwedenKeywordPage, { generateMetadata } from './nto-star-low-exp-server-sweden';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <NtoStarLowExpServerSwedenKeywordPage />;
+}

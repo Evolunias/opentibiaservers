@@ -1,0 +1,8 @@
+import Tibiascape81PvpeServerKeywordPage, { generateMetadata } from './tibiascape-8-1-pvpe-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Tibiascape81PvpeServerKeywordPage />;
+}

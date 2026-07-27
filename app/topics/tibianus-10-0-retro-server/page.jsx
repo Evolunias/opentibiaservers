@@ -1,0 +1,8 @@
+import Tibianus100RetroServerKeywordPage, { generateMetadata } from './tibianus-10-0-retro-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Tibianus100RetroServerKeywordPage />;
+}

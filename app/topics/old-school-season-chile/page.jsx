@@ -1,0 +1,8 @@
+import OldSchoolSeasonChileKeywordPage, { generateMetadata } from './old-school-season-chile';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OldSchoolSeasonChileKeywordPage />;
+}

@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('imperianic-12-non-pvp-server');
+}
+
+export default function Imperianic12NonPvpServerKeywordPage() {
+  return <StaticKeywordPage slug="imperianic-12-non-pvp-server" />;
+}

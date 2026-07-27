@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('with-trainers-server-list-canada');
+}
+
+export default function WithTrainersServerListCanadaKeywordPage() {
+  return <StaticKeywordPage slug="with-trainers-server-list-canada" />;
+}

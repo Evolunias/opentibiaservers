@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('ruthless-chaos-with-trainers-server-argentina');
+}
+
+export default function RuthlessChaosWithTrainersServerArgentinaKeywordPage() {
+  return <StaticKeywordPage slug="ruthless-chaos-with-trainers-server-argentina" />;
+}

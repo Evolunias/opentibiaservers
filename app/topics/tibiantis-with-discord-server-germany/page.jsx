@@ -1,0 +1,8 @@
+import TibiantisWithDiscordServerGermanyKeywordPage, { generateMetadata } from './tibiantis-with-discord-server-germany';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <TibiantisWithDiscordServerGermanyKeywordPage />;
+}

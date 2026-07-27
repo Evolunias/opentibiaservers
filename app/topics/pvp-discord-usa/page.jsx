@@ -1,0 +1,8 @@
+import PvpDiscordUsaKeywordPage, { generateMetadata } from './pvp-discord-usa';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <PvpDiscordUsaKeywordPage />;
+}

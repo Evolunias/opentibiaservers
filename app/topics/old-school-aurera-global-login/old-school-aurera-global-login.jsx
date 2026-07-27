@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('old-school-aurera-global-login');
+}
+
+export default function OldSchoolAureraGlobalLoginKeywordPage() {
+  return <StaticKeywordPage slug="old-school-aurera-global-login" />;
+}

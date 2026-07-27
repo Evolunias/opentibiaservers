@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('demolidores-donations');
+}
+
+export default function DemolidoresDonationsKeywordPage() {
+  return <StaticKeywordPage slug="demolidores-donations" />;
+}

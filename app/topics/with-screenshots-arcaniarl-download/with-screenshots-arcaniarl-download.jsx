@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('with-screenshots-arcaniarl-download');
+}
+
+export default function WithScreenshotsArcaniarlDownloadKeywordPage() {
+  return <StaticKeywordPage slug="with-screenshots-arcaniarl-download" />;
+}

@@ -1,0 +1,8 @@
+import ActiveTrashformersOtServerKeywordPage, { generateMetadata } from './active-trashformers-ot-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <ActiveTrashformersOtServerKeywordPage />;
+}

@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('noxiousot-8-1-with-reviews-server');
+}
+
+export default function Noxiousot81WithReviewsServerKeywordPage() {
+  return <StaticKeywordPage slug="noxiousot-8-1-with-reviews-server" />;
+}

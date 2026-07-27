@@ -1,0 +1,8 @@
+import Trashformers1098LowExpServerKeywordPage, { generateMetadata } from './trashformers-10-98-low-exp-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Trashformers1098LowExpServerKeywordPage />;
+}

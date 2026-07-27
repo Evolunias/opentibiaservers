@@ -1,0 +1,8 @@
+import Saintsot772PvpEnforcedServerKeywordPage, { generateMetadata } from './saintsot-7-72-pvp-enforced-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Saintsot772PvpEnforcedServerKeywordPage />;
+}

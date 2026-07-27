@@ -1,0 +1,8 @@
+import OldSchoolTibiameOtKeywordPage, { generateMetadata } from './old-school-tibiame-ot';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OldSchoolTibiameOtKeywordPage />;
+}

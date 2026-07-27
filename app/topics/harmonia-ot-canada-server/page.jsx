@@ -1,0 +1,8 @@
+import HarmoniaOtCanadaServerKeywordPage, { generateMetadata } from './harmonia-ot-canada-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <HarmoniaOtCanadaServerKeywordPage />;
+}

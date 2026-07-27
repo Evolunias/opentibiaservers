@@ -1,0 +1,8 @@
+import Tibia86BaiakWikiKeywordPage, { generateMetadata } from './tibia-8-6-baiak-wiki';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Tibia86BaiakWikiKeywordPage />;
+}

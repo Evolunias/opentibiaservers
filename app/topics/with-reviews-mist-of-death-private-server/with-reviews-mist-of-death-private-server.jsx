@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('with-reviews-mist-of-death-private-server');
+}
+
+export default function WithReviewsMistOfDeathPrivateServerKeywordPage() {
+  return <StaticKeywordPage slug="with-reviews-mist-of-death-private-server" />;
+}

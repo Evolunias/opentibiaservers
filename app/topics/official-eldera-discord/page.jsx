@@ -1,0 +1,8 @@
+import OfficialElderaDiscordKeywordPage, { generateMetadata } from './official-eldera-discord';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OfficialElderaDiscordKeywordPage />;
+}

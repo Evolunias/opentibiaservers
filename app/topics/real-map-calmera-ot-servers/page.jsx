@@ -1,0 +1,8 @@
+import RealMapCalmeraOtServersKeywordPage, { generateMetadata } from './real-map-calmera-ot-servers';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <RealMapCalmeraOtServersKeywordPage />;
+}

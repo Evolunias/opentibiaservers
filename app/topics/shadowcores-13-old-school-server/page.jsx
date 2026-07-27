@@ -1,0 +1,8 @@
+import Shadowcores13OldSchoolServerKeywordPage, { generateMetadata } from './shadowcores-13-old-school-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Shadowcores13OldSchoolServerKeywordPage />;
+}

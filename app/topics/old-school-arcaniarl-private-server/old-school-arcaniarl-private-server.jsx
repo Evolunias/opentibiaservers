@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('old-school-arcaniarl-private-server');
+}
+
+export default function OldSchoolArcaniarlPrivateServerKeywordPage() {
+  return <StaticKeywordPage slug="old-school-arcaniarl-private-server" />;
+}

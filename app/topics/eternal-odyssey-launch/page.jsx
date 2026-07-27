@@ -1,0 +1,8 @@
+import EternalOdysseyLaunchKeywordPage, { generateMetadata } from './eternal-odyssey-launch';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <EternalOdysseyLaunchKeywordPage />;
+}

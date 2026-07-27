@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('thornia-7-1-seasonal-server');
+}
+
+export default function Thornia71SeasonalServerKeywordPage() {
+  return <StaticKeywordPage slug="thornia-7-1-seasonal-server" />;
+}

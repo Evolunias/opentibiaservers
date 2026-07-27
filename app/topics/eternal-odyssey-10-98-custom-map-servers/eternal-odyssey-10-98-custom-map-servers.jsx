@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('eternal-odyssey-10-98-custom-map-servers');
+}
+
+export default function EternalOdyssey1098CustomMapServersKeywordPage() {
+  return <StaticKeywordPage slug="eternal-odyssey-10-98-custom-map-servers" />;
+}

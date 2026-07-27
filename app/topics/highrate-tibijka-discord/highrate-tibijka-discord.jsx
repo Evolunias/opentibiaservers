@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('highrate-tibijka-discord');
+}
+
+export default function HighrateTibijkaDiscordKeywordPage() {
+  return <StaticKeywordPage slug="highrate-tibijka-discord" />;
+}

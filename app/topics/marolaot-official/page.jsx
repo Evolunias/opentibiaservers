@@ -1,0 +1,8 @@
+import MarolaotOfficialKeywordPage, { generateMetadata } from './marolaot-official';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <MarolaotOfficialKeywordPage />;
+}

@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('xanteria-alternatives');
+}
+
+export default function XanteriaAlternativesKeywordPage() {
+  return <StaticKeywordPage slug="xanteria-alternatives" />;
+}

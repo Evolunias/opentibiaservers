@@ -1,0 +1,8 @@
+import Neprenia1098WithScreenshotsServerKeywordPage, { generateMetadata } from './neprenia-10-98-with-screenshots-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Neprenia1098WithScreenshotsServerKeywordPage />;
+}

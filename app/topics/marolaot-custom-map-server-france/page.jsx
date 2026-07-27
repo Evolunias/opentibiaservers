@@ -1,0 +1,8 @@
+import MarolaotCustomMapServerFranceKeywordPage, { generateMetadata } from './marolaot-custom-map-server-france';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <MarolaotCustomMapServerFranceKeywordPage />;
+}

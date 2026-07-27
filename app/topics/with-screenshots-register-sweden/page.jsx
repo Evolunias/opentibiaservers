@@ -1,0 +1,8 @@
+import WithScreenshotsRegisterSwedenKeywordPage, { generateMetadata } from './with-screenshots-register-sweden';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <WithScreenshotsRegisterSwedenKeywordPage />;
+}

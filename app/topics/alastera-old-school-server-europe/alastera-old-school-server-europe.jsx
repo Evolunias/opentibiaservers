@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('alastera-old-school-server-europe');
+}
+
+export default function AlasteraOldSchoolServerEuropeKeywordPage() {
+  return <StaticKeywordPage slug="alastera-old-school-server-europe" />;
+}

@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('classicus-12-real-map-servers');
+}
+
+export default function Classicus12RealMapServersKeywordPage() {
+  return <StaticKeywordPage slug="classicus-12-real-map-servers" />;
+}

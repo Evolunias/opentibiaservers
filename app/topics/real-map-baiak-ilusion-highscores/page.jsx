@@ -1,0 +1,8 @@
+import RealMapBaiakIlusionHighscoresKeywordPage, { generateMetadata } from './real-map-baiak-ilusion-highscores';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <RealMapBaiakIlusionHighscoresKeywordPage />;
+}

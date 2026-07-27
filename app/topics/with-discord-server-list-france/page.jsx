@@ -1,0 +1,8 @@
+import WithDiscordServerListFranceKeywordPage, { generateMetadata } from './with-discord-server-list-france';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <WithDiscordServerListFranceKeywordPage />;
+}

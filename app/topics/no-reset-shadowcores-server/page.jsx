@@ -1,0 +1,8 @@
+import NoResetShadowcoresServerKeywordPage, { generateMetadata } from './no-reset-shadowcores-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <NoResetShadowcoresServerKeywordPage />;
+}

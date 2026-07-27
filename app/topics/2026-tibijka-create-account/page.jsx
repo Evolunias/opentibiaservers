@@ -1,0 +1,8 @@
+import Keyword2026TibijkaCreateAccountKeywordPage, { generateMetadata } from './2026-tibijka-create-account';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Keyword2026TibijkaCreateAccountKeywordPage />;
+}

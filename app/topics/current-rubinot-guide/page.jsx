@@ -1,0 +1,8 @@
+import CurrentRubinotGuideKeywordPage, { generateMetadata } from './current-rubinot-guide';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <CurrentRubinotGuideKeywordPage />;
+}

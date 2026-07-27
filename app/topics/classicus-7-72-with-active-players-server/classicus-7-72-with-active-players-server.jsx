@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('classicus-7-72-with-active-players-server');
+}
+
+export default function Classicus772WithActivePlayersServerKeywordPage() {
+  return <StaticKeywordPage slug="classicus-7-72-with-active-players-server" />;
+}

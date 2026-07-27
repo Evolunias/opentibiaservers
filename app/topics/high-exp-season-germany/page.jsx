@@ -1,0 +1,8 @@
+import HighExpSeasonGermanyKeywordPage, { generateMetadata } from './high-exp-season-germany';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <HighExpSeasonGermanyKeywordPage />;
+}

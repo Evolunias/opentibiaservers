@@ -1,0 +1,8 @@
+import NonPvpClientSouthAmericaKeywordPage, { generateMetadata } from './non-pvp-client-south-america';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <NonPvpClientSouthAmericaKeywordPage />;
+}

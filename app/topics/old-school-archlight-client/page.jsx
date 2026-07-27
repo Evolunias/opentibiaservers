@@ -1,0 +1,8 @@
+import OldSchoolArchlightClientKeywordPage, { generateMetadata } from './old-school-archlight-client';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <OldSchoolArchlightClientKeywordPage />;
+}

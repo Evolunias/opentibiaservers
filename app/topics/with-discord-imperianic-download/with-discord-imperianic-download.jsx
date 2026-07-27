@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('with-discord-imperianic-download');
+}
+
+export default function WithDiscordImperianicDownloadKeywordPage() {
+  return <StaticKeywordPage slug="with-discord-imperianic-download" />;
+}

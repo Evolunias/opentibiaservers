@@ -1,0 +1,8 @@
+import TopMadnessaliveClientKeywordPage, { generateMetadata } from './top-madnessalive-client';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <TopMadnessaliveClientKeywordPage />;
+}

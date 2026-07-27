@@ -1,0 +1,8 @@
+import TibiaoriginsSeasonKeywordPage, { generateMetadata } from './tibiaorigins-season';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <TibiaoriginsSeasonKeywordPage />;
+}

@@ -10,6 +10,45 @@ function createQueryHref(query) {
   return `/?search=${encodeURIComponent(query)}`;
 }
 
+function semanticProfile(page) {
+  if (page.type === 'official-world') {
+    return {
+      eyebrow: 'World Archive Signals',
+      h2: `${page.primaryKeyword} historical world reference`,
+      h3: 'Guild memory, player history, wars, and OT alternatives',
+      h4: 'Primary world keyword',
+      h5: 'Historical support terms',
+      underline: 'world history, community memory, and durable archive value',
+      copy:
+        'Internal links connect this world archive to comparable Open Tibia listings, historical references, contribution workflows, and related search terms.',
+    };
+  }
+
+  if (page.type === 'ecosystem') {
+    return {
+      eyebrow: 'Ecosystem Search Signals',
+      h2: `${page.primaryKeyword} Open Tibia ecosystem reference`,
+      h3: 'Discovery, community context, sources, and directory intent',
+      h4: 'Primary ecosystem keyword',
+      h5: 'Supporting ecosystem terms',
+      underline: 'source context, community usefulness, and player discovery',
+      copy:
+        'Internal links connect this ecosystem page to active listings, related keywords, server owner workflows, and source-backed community records.',
+    };
+  }
+
+  return {
+    eyebrow: 'Server Search Signals',
+    h2: `${page.primaryKeyword} server research and verification`,
+    h3: 'Official links, screenshots, reviews, and live server signals',
+    h4: 'Primary server keyword',
+    h5: 'Supporting server keywords',
+    underline: 'server identity, source verification, and player trust',
+    copy:
+      'Internal links connect this server reference to matching Open Tibia listings, related search terms, server-claim workflows, and community contribution areas.',
+  };
+}
+
 export default async function CuratedGuideArticle({ page }) {
   const directoryData = await fetchDirectoryServers({
     page: 1,
@@ -20,6 +59,7 @@ export default async function CuratedGuideArticle({ page }) {
   const jsonLd = buildCuratedJsonLd(page);
   const deepDiveSections = buildDeepDiveSections(page);
   const estimatedWords = estimateCuratedPageWords(page);
+  const semantics = semanticProfile(page);
 
   return (
     <main className="min-h-screen bg-gray-50 text-gray-950">
@@ -125,6 +165,7 @@ export default async function CuratedGuideArticle({ page }) {
             <section key={section.heading} className="border-b border-gray-200 pb-8">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">{section.eyebrow}</p>
               <h2 className="mb-4 text-2xl font-bold text-gray-950">{section.heading}</h2>
+              <h3 className="mb-3 text-xl font-bold text-gray-900">{page.primaryKeyword} research context</h3>
               <div className="space-y-4">
                 {section.body.map((paragraph) => (
                   <p key={paragraph} className="text-base leading-8 text-gray-700">
@@ -134,6 +175,24 @@ export default async function CuratedGuideArticle({ page }) {
               </div>
             </section>
           ))}
+
+          <section className="border-b border-gray-200 pb-8">
+            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">{semantics.eyebrow}</p>
+            <h2 className="mb-4 text-2xl font-bold text-gray-950">{semantics.h2}</h2>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">{semantics.h3}</h3>
+            <div className="space-y-4 text-base leading-8 text-gray-700">
+              <p>
+                <strong>{page.primaryKeyword}</strong> is the primary entity, <em>{page.keywords?.slice(0, 3).join(', ')}</em> are supporting terms, and this page stays <u>{semantics.underline}</u>.
+              </p>
+              <p>
+                {semantics.copy} The page also points players toward <Link href={createQueryHref(page.primaryKeyword)} className="font-semibold text-blue-700">matching Open Tibia listings</Link>. Outbound links remain in the reference-source section for verification.
+              </p>
+            </div>
+            <h4 className="mt-5 text-lg font-bold text-gray-950">{semantics.h4}</h4>
+            <p className="mt-2 text-sm leading-7 text-gray-700">{page.primaryKeyword}</p>
+            <h5 className="mt-4 text-base font-bold text-gray-950">{semantics.h5}</h5>
+            <p className="mt-2 text-sm leading-7 text-gray-700">{page.keywords?.join(' / ')}</p>
+          </section>
 
           {page.faqs.length ? (
             <section className="border-b border-gray-200 pb-8">

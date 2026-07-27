@@ -3,6 +3,9 @@ import { getSupabaseServerClient } from '@/lib/supabase-server';
 import { getServerPath, slugifyServerName } from '@/lib/server-paths';
 import { getCuratedPages } from '@/lib/curated-pages';
 import { getIndexableKeywordPages } from '@/lib/keyword-pages';
+import { getOtServerCuratedPages } from '@/lib/otserver-curated-pages';
+import { topOtservlistServers } from '@/lib/top-otservlist-servers';
+import { getTibiaWorldPages } from '@/lib/tibia-world-pages';
 
 function isMissingColumn(error) {
   return error?.code === '42703' || /column .* does not exist/i.test(error?.message || '');
@@ -29,15 +32,46 @@ export default async function sitemap() {
     changeFrequency: 'weekly',
     priority: page.slug === 'antica' ? 0.85 : 0.8,
   }));
+  const tibiaWorldUrls = getTibiaWorldPages().map((page) => ({
+    url: buildAbsoluteUrl(page.path),
+    lastModified: page.updatedAt,
+    changeFrequency: 'monthly',
+    priority: page.slug.includes('world') ? 0.72 : 0.76,
+  }));
+  const generatedOtServerUrls = getOtServerCuratedPages().map((page) => ({
+    url: buildAbsoluteUrl(page.path),
+    lastModified: page.updatedAt,
+    changeFrequency: 'weekly',
+    priority: 0.82,
+  }));
   const keywordUrls = getIndexableKeywordPages(1000).map((page) => ({
     url: buildAbsoluteUrl(`/topics/${page.slug}`),
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: Number(page.priority_score || 0) >= 90 ? 0.72 : 0.62,
   }));
+  const seededServerUrls = topOtservlistServers.map((server) => ({
+    url: buildAbsoluteUrl(getServerPath(server)),
+    lastModified: server.updated_at || new Date(),
+    changeFrequency: 'hourly',
+    priority: server.source_rank <= 25 ? 0.88 : 0.82,
+  }));
+  const seededExactMatchUrls = topOtservlistServers.map((server) => ({
+    url: buildAbsoluteUrl(`/${server.slug}`),
+    lastModified: server.updated_at || new Date(),
+    changeFrequency: 'hourly',
+    priority: server.source_rank <= 25 ? 0.9 : 0.84,
+  }));
 
   const supabase = getSupabaseServerClient();
-  if (!supabase) return [...staticUrls, ...curatedUrls, ...keywordUrls];
+  if (!supabase) {
+    const seenUrls = new Set();
+    return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...tibiaWorldUrls, ...keywordUrls, ...seededExactMatchUrls, ...seededServerUrls].filter((entry) => {
+      if (seenUrls.has(entry.url)) return false;
+      seenUrls.add(entry.url);
+      return true;
+    });
+  }
 
   let { data, error } = await supabase
     .from('servers')
@@ -77,5 +111,10 @@ export default async function sitemap() {
     })),
   ];
 
-  return [...staticUrls, ...curatedUrls, ...keywordUrls, ...facetUrls, ...serverUrls];
+  const seenUrls = new Set();
+  return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...tibiaWorldUrls, ...keywordUrls, ...facetUrls, ...seededExactMatchUrls, ...seededServerUrls, ...serverUrls].filter((entry) => {
+    if (seenUrls.has(entry.url)) return false;
+    seenUrls.add(entry.url);
+    return true;
+  });
 }

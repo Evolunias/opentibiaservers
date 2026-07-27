@@ -1,0 +1,8 @@
+import AureraGlobalNonPvpServerLatinAmericaKeywordPage, { generateMetadata } from './aurera-global-non-pvp-server-latin-america';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <AureraGlobalNonPvpServerLatinAmericaKeywordPage />;
+}

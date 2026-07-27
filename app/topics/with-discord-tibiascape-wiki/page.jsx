@@ -1,0 +1,8 @@
+import WithDiscordTibiascapeWikiKeywordPage, { generateMetadata } from './with-discord-tibiascape-wiki';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <WithDiscordTibiascapeWikiKeywordPage />;
+}

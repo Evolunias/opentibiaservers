@@ -1,0 +1,8 @@
+import Tibianus14RealMapServerKeywordPage, { generateMetadata } from './tibianus-14-real-map-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Tibianus14RealMapServerKeywordPage />;
+}

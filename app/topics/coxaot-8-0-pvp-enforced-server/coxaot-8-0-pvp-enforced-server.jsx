@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('coxaot-8-0-pvp-enforced-server');
+}
+
+export default function Coxaot80PvpEnforcedServerKeywordPage() {
+  return <StaticKeywordPage slug="coxaot-8-0-pvp-enforced-server" />;
+}

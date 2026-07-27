@@ -1,0 +1,8 @@
+import FreshStartElderaOnlineKeywordPage, { generateMetadata } from './fresh-start-eldera-online';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <FreshStartElderaOnlineKeywordPage />;
+}

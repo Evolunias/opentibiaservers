@@ -1,0 +1,9 @@
+import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
+
+export function generateMetadata() {
+  return buildStaticKeywordMetadata('venoreot-real-map-server-poland');
+}
+
+export default function VenoreotRealMapServerPolandKeywordPage() {
+  return <StaticKeywordPage slug="venoreot-real-map-server-poland" />;
+}

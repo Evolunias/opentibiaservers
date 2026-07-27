@@ -1,0 +1,8 @@
+import BestSabrehavenOtServerKeywordPage, { generateMetadata } from './best-sabrehaven-ot-server';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <BestSabrehavenOtServerKeywordPage />;
+}

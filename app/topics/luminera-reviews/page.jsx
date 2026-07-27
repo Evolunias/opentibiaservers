@@ -1,0 +1,8 @@
+import LumineraReviewsKeywordPage, { generateMetadata } from './luminera-reviews';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <LumineraReviewsKeywordPage />;
+}
