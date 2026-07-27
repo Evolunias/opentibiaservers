@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const outPath = path.join(repoRoot, 'data', 'otland-server-gala-servers.json');
 const forumBase = 'https://otland.net/forums/server-gala.43/';
+const excludedSlugs = new Set(['evomanias']);
 
 function decodeHtml(value = '') {
   return String(value)
@@ -128,6 +129,7 @@ for (let page = 1; page <= pages; page += 1) {
 
 const bySlug = new Map();
 for (const item of all) {
+  if (excludedSlugs.has(item.slug)) continue;
   let slug = item.slug;
   let suffix = 2;
   while (bySlug.has(slug)) {
