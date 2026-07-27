@@ -165,6 +165,7 @@ async function handleSync(req) {
     inserted: 0,
     updated: 0,
     failed: 0,
+    errors: [],
     pages: [],
     execution_time_ms: 0,
   };
@@ -203,6 +204,15 @@ async function handleSync(req) {
         if (status === 'updated') result.updated += 1;
       } catch (error) {
         result.failed += 1;
+        if (result.errors.length < 5) {
+          result.errors.push({
+            source_id: server.source_id || null,
+            name: server.name || null,
+            error: error?.message || String(error),
+            code: error?.code || null,
+            details: error?.details || null,
+          });
+        }
         console.error(`Failed to sync ${server.source_id || server.ip}:`, error);
       }
     }
