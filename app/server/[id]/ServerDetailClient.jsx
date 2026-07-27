@@ -383,8 +383,12 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
   const forumHref = externalHref(server.forum_url || server.community_url);
   const launcherHref = externalHref(server.launcher_url);
   const trailerHref = externalHref(server.trailer_url);
+  const ownerContact = server.owner_email || server.contact_email;
   const galleryImages = Array.isArray(server.gallery_images) ? server.gallery_images.filter(Boolean) : [];
-  const hasOfficialLinks = Boolean(officialWebsiteHref || launcherHref || trailerHref || discordHref || forumHref || server.owner_email);
+  const referenceSources = Array.isArray(server.research_sources)
+    ? server.research_sources.filter((source) => source?.url && source?.label)
+    : [];
+  const hasOfficialLinks = Boolean(officialWebsiteHref || launcherHref || trailerHref || discordHref || forumHref || ownerContact);
   const playerGuide = buildPlayerGuide(server);
 
   const saveOwnerTemplate = async (event) => {
@@ -587,7 +591,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                   {trailerHref ? <ContactLink label="Trailer or Video" value={server.trailer_url} href={trailerHref} /> : null}
                   {discordHref ? <ContactLink label="Discord" value={server.contact_discord} href={discordHref} /> : null}
                   {forumHref ? <ContactLink label="Forum or Community" value={server.forum_url || server.community_url} href={forumHref} /> : null}
-                  {server.owner_email ? <ContactLink label="Owner Contact" value={server.owner_email} /> : null}
+                  {ownerContact ? <ContactLink label="Owner Contact" value={ownerContact} /> : null}
                 </div>
               ) : (
                 <DirectoryEmptyState
@@ -597,6 +601,26 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                 />
               )}
             </section>
+
+            {referenceSources.length ? (
+              <section className="border border-gray-200 rounded p-4 mb-6">
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Reference Sources</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {referenceSources.map((source) => (
+                    <a
+                      key={`${source.type || 'source'}-${source.url}`}
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded border border-gray-200 bg-gray-50 px-4 py-3 text-sm hover:border-gray-400 hover:bg-white hover:no-underline"
+                    >
+                      <span className="block font-semibold text-gray-950">{source.label}</span>
+                      <span className="mt-1 block text-xs uppercase tracking-wide text-gray-500">{source.type || 'source'}</span>
+                    </a>
+                  ))}
+                </div>
+              </section>
+            ) : null}
 
             <section className="border border-gray-200 rounded p-4 mb-6">
               <h2 className="text-lg font-bold text-gray-950 mb-3">Server Highlights</h2>
