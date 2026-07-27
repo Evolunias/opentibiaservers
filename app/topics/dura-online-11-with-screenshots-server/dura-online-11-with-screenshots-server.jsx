@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('dura-online-11-with-screenshots-server');
-}
-
-export default function DuraOnline11WithScreenshotsServerKeywordPage() {
-  return <StaticKeywordPage slug="dura-online-11-with-screenshots-server" />;
-}

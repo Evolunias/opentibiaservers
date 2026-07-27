@@ -1,8 +1,0 @@
-import RealeraCustomMapServerBrazilKeywordPage, { generateMetadata } from './realera-custom-map-server-brazil';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <RealeraCustomMapServerBrazilKeywordPage />;
-}

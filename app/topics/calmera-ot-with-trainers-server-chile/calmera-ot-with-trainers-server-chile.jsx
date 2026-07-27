@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('calmera-ot-with-trainers-server-chile');
-}
-
-export default function CalmeraOtWithTrainersServerChileKeywordPage() {
-  return <StaticKeywordPage slug="calmera-ot-with-trainers-server-chile" />;
-}

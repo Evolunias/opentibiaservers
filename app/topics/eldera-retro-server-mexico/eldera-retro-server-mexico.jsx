@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('eldera-retro-server-mexico');
-}
-
-export default function ElderaRetroServerMexicoKeywordPage() {
-  return <StaticKeywordPage slug="eldera-retro-server-mexico" />;
-}

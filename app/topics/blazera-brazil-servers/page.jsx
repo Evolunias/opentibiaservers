@@ -1,8 +1,0 @@
-import BlazeraBrazilServersKeywordPage, { generateMetadata } from './blazera-brazil-servers';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <BlazeraBrazilServersKeywordPage />;
-}

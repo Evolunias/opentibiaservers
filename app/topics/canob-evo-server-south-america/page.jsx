@@ -1,8 +1,0 @@
-import CanobEvoServerSouthAmericaKeywordPage, { generateMetadata } from './canob-evo-server-south-america';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <CanobEvoServerSouthAmericaKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import DragonBallLegendWithActivePlayersServerMexicoKeywordPage, { generateMetadata } from './dragon-ball-legend-with-active-players-server-mexico';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <DragonBallLegendWithActivePlayersServerMexicoKeywordPage />;
-}

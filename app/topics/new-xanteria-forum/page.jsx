@@ -1,8 +1,0 @@
-import NewXanteriaForumKeywordPage, { generateMetadata } from './new-xanteria-forum';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewXanteriaForumKeywordPage />;
-}

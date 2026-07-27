@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('active-unline-highscores');
-}
-
-export default function ActiveUnlineHighscoresKeywordPage() {
-  return <StaticKeywordPage slug="active-unline-highscores" />;
-}

@@ -1,8 +1,0 @@
-import SeasonalGuideGermanyKeywordPage, { generateMetadata } from './seasonal-guide-germany';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <SeasonalGuideGermanyKeywordPage />;
-}

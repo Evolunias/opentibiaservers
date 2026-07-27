@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('oxygenot-custom-map-servers-france');
-}
-
-export default function OxygenotCustomMapServersFranceKeywordPage() {
-  return <StaticKeywordPage slug="oxygenot-custom-map-servers-france" />;
-}

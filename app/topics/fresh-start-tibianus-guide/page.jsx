@@ -1,8 +1,0 @@
-import FreshStartTibianusGuideKeywordPage, { generateMetadata } from './fresh-start-tibianus-guide';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <FreshStartTibianusGuideKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import NewSeasonArchlightClientKeywordPage, { generateMetadata } from './new-season-archlight-client';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewSeasonArchlightClientKeywordPage />;
-}

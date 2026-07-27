@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('tibijka-high-exp');
-}
-
-export default function TibijkaHighExpKeywordPage() {
-  return <StaticKeywordPage slug="tibijka-high-exp" />;
-}

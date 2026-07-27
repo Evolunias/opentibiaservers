@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('rubinot-high-exp-server-latin-america');
-}
-
-export default function RubinotHighExpServerLatinAmericaKeywordPage() {
-  return <StaticKeywordPage slug="rubinot-high-exp-server-latin-america" />;
-}

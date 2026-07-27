@@ -1,8 +1,0 @@
-import Tibiaretro84LowExpServerKeywordPage, { generateMetadata } from './tibiaretro-8-4-low-exp-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Tibiaretro84LowExpServerKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import InfernalOtEvoServerEuropeKeywordPage, { generateMetadata } from './infernal-ot-evo-server-europe';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <InfernalOtEvoServerEuropeKeywordPage />;
-}

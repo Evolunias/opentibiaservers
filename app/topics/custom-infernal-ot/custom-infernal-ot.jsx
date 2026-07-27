@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('custom-infernal-ot');
-}
-
-export default function CustomInfernalOtKeywordPage() {
-  return <StaticKeywordPage slug="custom-infernal-ot" />;
-}

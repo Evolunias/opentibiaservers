@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('empirebr-7-72-retro-server');
-}
-
-export default function Empirebr772RetroServerKeywordPage() {
-  return <StaticKeywordPage slug="empirebr-7-72-retro-server" />;
-}

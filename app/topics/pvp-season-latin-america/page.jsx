@@ -1,8 +1,0 @@
-import PvpSeasonLatinAmericaKeywordPage, { generateMetadata } from './pvp-season-latin-america';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <PvpSeasonLatinAmericaKeywordPage />;
-}

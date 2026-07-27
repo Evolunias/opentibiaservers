@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('midhem-discord');
-}
-
-export default function MidhemDiscordKeywordPage() {
-  return <StaticKeywordPage slug="midhem-discord" />;
-}

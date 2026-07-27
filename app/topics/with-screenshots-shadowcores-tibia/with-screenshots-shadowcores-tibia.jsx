@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('with-screenshots-shadowcores-tibia');
-}
-
-export default function WithScreenshotsShadowcoresTibiaKeywordPage() {
-  return <StaticKeywordPage slug="with-screenshots-shadowcores-tibia" />;
-}

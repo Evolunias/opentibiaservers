@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('fresh-start-neprenia-server');
-}
-
-export default function FreshStartNepreniaServerKeywordPage() {
-  return <StaticKeywordPage slug="fresh-start-neprenia-server" />;
-}

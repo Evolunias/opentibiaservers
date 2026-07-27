@@ -1,8 +1,0 @@
-import Tibiantis76WithReviewsServerKeywordPage, { generateMetadata } from './tibiantis-7-6-with-reviews-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Tibiantis76WithReviewsServerKeywordPage />;
-}

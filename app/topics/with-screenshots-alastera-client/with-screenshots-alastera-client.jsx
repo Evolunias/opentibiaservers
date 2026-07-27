@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('with-screenshots-alastera-client');
-}
-
-export default function WithScreenshotsAlasteraClientKeywordPage() {
-  return <StaticKeywordPage slug="with-screenshots-alastera-client" />;
-}

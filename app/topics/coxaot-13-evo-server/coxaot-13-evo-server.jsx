@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('coxaot-13-evo-server');
-}
-
-export default function Coxaot13EvoServerKeywordPage() {
-  return <StaticKeywordPage slug="coxaot-13-evo-server" />;
-}

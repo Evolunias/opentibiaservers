@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('saintsot-8-4-real-map-server');
-}
-
-export default function Saintsot84RealMapServerKeywordPage() {
-  return <StaticKeywordPage slug="saintsot-8-4-real-map-server" />;
-}

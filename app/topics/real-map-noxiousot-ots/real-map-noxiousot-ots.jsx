@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('real-map-noxiousot-ots');
-}
-
-export default function RealMapNoxiousotOtsKeywordPage() {
-  return <StaticKeywordPage slug="real-map-noxiousot-ots" />;
-}

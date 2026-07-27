@@ -1,8 +1,0 @@
-import MistOfDeath1098HighExpServerKeywordPage, { generateMetadata } from './mist-of-death-10-98-high-exp-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <MistOfDeath1098HighExpServerKeywordPage />;
-}

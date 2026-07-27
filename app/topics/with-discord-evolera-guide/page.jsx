@@ -1,8 +1,0 @@
-import WithDiscordEvoleraGuideKeywordPage, { generateMetadata } from './with-discord-evolera-guide';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <WithDiscordEvoleraGuideKeywordPage />;
-}

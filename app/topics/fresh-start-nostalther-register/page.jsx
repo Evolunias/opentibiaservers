@@ -1,8 +1,0 @@
-import FreshStartNostaltherRegisterKeywordPage, { generateMetadata } from './fresh-start-nostalther-register';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <FreshStartNostaltherRegisterKeywordPage />;
-}

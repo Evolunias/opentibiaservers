@@ -1,8 +1,0 @@
-import CustomRuthlessChaosRulesKeywordPage, { generateMetadata } from './custom-ruthless-chaos-rules';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <CustomRuthlessChaosRulesKeywordPage />;
-}

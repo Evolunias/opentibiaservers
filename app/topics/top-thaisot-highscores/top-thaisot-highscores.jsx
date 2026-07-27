@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('top-thaisot-highscores');
-}
-
-export default function TopThaisotHighscoresKeywordPage() {
-  return <StaticKeywordPage slug="top-thaisot-highscores" />;
-}

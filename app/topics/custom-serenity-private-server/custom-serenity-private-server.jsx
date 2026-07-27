@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('custom-serenity-private-server');
-}
-
-export default function CustomSerenityPrivateServerKeywordPage() {
-  return <StaticKeywordPage slug="custom-serenity-private-server" />;
-}

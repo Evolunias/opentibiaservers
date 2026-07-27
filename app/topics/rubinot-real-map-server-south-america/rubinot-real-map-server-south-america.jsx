@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('rubinot-real-map-server-south-america');
-}
-
-export default function RubinotRealMapServerSouthAmericaKeywordPage() {
-  return <StaticKeywordPage slug="rubinot-real-map-server-south-america" />;
-}

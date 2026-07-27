@@ -1,8 +1,0 @@
-import OldSchoolTibiascapeRegisterKeywordPage, { generateMetadata } from './old-school-tibiascape-register';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <OldSchoolTibiascapeRegisterKeywordPage />;
-}

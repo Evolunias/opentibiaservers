@@ -1,8 +1,0 @@
-import Carlinot100SeasonalServerKeywordPage, { generateMetadata } from './carlinot-10-0-seasonal-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Carlinot100SeasonalServerKeywordPage />;
-}

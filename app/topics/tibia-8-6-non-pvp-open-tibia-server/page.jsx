@@ -1,8 +1,0 @@
-import Tibia86NonPvpOpenTibiaServerKeywordPage, { generateMetadata } from './tibia-8-6-non-pvp-open-tibia-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Tibia86NonPvpOpenTibiaServerKeywordPage />;
-}

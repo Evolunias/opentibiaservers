@@ -1,8 +1,0 @@
-import BaiakPlayersOnlineCanadaKeywordPage, { generateMetadata } from './baiak-players-online-canada';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <BaiakPlayersOnlineCanadaKeywordPage />;
-}

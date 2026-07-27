@@ -1,8 +1,0 @@
-import Eldera71RetroServerKeywordPage, { generateMetadata } from './eldera-7-1-retro-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Eldera71RetroServerKeywordPage />;
-}

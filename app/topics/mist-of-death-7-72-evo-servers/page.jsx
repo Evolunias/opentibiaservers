@@ -1,8 +1,0 @@
-import MistOfDeath772EvoServersKeywordPage, { generateMetadata } from './mist-of-death-7-72-evo-servers';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <MistOfDeath772EvoServersKeywordPage />;
-}

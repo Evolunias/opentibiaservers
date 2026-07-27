@@ -1,8 +1,0 @@
-import TopCanobGuideKeywordPage, { generateMetadata } from './top-canob-guide';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <TopCanobGuideKeywordPage />;
-}

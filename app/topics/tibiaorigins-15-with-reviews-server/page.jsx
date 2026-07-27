@@ -1,8 +1,0 @@
-import Tibiaorigins15WithReviewsServerKeywordPage, { generateMetadata } from './tibiaorigins-15-with-reviews-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Tibiaorigins15WithReviewsServerKeywordPage />;
-}

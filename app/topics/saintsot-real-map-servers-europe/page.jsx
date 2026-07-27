@@ -1,8 +1,0 @@
-import SaintsotRealMapServersEuropeKeywordPage, { generateMetadata } from './saintsot-real-map-servers-europe';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <SaintsotRealMapServersEuropeKeywordPage />;
-}

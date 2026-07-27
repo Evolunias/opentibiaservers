@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('madnessalive-fresh-start-server-north-america');
-}
-
-export default function MadnessaliveFreshStartServerNorthAmericaKeywordPage() {
-  return <StaticKeywordPage slug="madnessalive-fresh-start-server-north-america" />;
-}

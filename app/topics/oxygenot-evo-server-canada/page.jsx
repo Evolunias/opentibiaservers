@@ -1,8 +1,0 @@
-import OxygenotEvoServerCanadaKeywordPage, { generateMetadata } from './oxygenot-evo-server-canada';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <OxygenotEvoServerCanadaKeywordPage />;
-}

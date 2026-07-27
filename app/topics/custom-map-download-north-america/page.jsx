@@ -1,8 +1,0 @@
-import CustomMapDownloadNorthAmericaKeywordPage, { generateMetadata } from './custom-map-download-north-america';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <CustomMapDownloadNorthAmericaKeywordPage />;
-}

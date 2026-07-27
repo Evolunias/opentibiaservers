@@ -1,8 +1,0 @@
-import MidhemUkServerKeywordPage, { generateMetadata } from './midhem-uk-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <MidhemUkServerKeywordPage />;
-}

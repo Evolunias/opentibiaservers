@@ -1,8 +1,0 @@
-import UnlineScreenshotsKeywordPage, { generateMetadata } from './unline-screenshots';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <UnlineScreenshotsKeywordPage />;
-}

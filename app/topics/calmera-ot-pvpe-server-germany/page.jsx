@@ -1,8 +1,0 @@
-import CalmeraOtPvpeServerGermanyKeywordPage, { generateMetadata } from './calmera-ot-pvpe-server-germany';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <CalmeraOtPvpeServerGermanyKeywordPage />;
-}

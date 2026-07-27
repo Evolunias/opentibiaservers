@@ -1,8 +1,0 @@
-import EmpirebrMarketKeywordPage, { generateMetadata } from './empirebr-market';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <EmpirebrMarketKeywordPage />;
-}

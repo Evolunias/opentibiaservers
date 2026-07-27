@@ -1,8 +1,0 @@
-import WithTrainersGuideArgentinaKeywordPage, { generateMetadata } from './with-trainers-guide-argentina';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <WithTrainersGuideArgentinaKeywordPage />;
-}

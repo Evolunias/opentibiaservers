@@ -1,8 +1,0 @@
-import ZezeniaOnlineSeasonalServerSwedenKeywordPage, { generateMetadata } from './zezenia-online-seasonal-server-sweden';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <ZezeniaOnlineSeasonalServerSwedenKeywordPage />;
-}

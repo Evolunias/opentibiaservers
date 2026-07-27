@@ -1,8 +1,0 @@
-import ThorniaUsaServerKeywordPage, { generateMetadata } from './thornia-usa-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <ThorniaUsaServerKeywordPage />;
-}

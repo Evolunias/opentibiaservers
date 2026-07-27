@@ -1,8 +1,0 @@
-import WithScreenshotsTrashformersOtServerKeywordPage, { generateMetadata } from './with-screenshots-trashformers-ot-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <WithScreenshotsTrashformersOtServerKeywordPage />;
-}

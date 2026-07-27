@@ -1,8 +1,0 @@
-import DuraOnlineRetroServerSouthAmericaKeywordPage, { generateMetadata } from './dura-online-retro-server-south-america';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <DuraOnlineRetroServerSouthAmericaKeywordPage />;
-}

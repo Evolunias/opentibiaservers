@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('alastera-12-high-exp-server');
-}
-
-export default function Alastera12HighExpServerKeywordPage() {
-  return <StaticKeywordPage slug="alastera-12-high-exp-server" />;
-}

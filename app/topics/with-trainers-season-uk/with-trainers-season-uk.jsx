@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('with-trainers-season-uk');
-}
-
-export default function WithTrainersSeasonUkKeywordPage() {
-  return <StaticKeywordPage slug="with-trainers-season-uk" />;
-}

@@ -1,8 +1,0 @@
-import TibiaraFreshStartServerUkKeywordPage, { generateMetadata } from './tibiara-fresh-start-server-uk';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <TibiaraFreshStartServerUkKeywordPage />;
-}

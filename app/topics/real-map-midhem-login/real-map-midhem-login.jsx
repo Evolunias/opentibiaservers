@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('real-map-midhem-login');
-}
-
-export default function RealMapMidhemLoginKeywordPage() {
-  return <StaticKeywordPage slug="real-map-midhem-login" />;
-}

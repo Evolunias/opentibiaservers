@@ -1,8 +1,0 @@
-import NewSeasonMiracleOpenTibiaKeywordPage, { generateMetadata } from './new-season-miracle-open-tibia';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewSeasonMiracleOpenTibiaKeywordPage />;
-}

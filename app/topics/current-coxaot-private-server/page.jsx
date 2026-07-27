@@ -1,8 +1,0 @@
-import CurrentCoxaotPrivateServerKeywordPage, { generateMetadata } from './current-coxaot-private-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <CurrentCoxaotPrivateServerKeywordPage />;
-}

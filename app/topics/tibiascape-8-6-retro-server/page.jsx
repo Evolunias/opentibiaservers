@@ -1,8 +1,0 @@
-import Tibiascape86RetroServerKeywordPage, { generateMetadata } from './tibiascape-8-6-retro-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Tibiascape86RetroServerKeywordPage />;
-}

@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('zezenia-online-low-exp-server-uk');
-}
-
-export default function ZezeniaOnlineLowExpServerUkKeywordPage() {
-  return <StaticKeywordPage slug="zezenia-online-low-exp-server-uk" />;
-}

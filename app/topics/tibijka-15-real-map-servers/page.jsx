@@ -1,8 +1,0 @@
-import Tibijka15RealMapServersKeywordPage, { generateMetadata } from './tibijka-15-real-map-servers';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Tibijka15RealMapServersKeywordPage />;
-}

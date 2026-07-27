@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('rookgaard-tales-baiak-server-germany');
-}
-
-export default function RookgaardTalesBaiakServerGermanyKeywordPage() {
-  return <StaticKeywordPage slug="rookgaard-tales-baiak-server-germany" />;
-}

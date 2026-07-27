@@ -1,8 +1,0 @@
-import FreshStartRuthlessChaosGuideKeywordPage, { generateMetadata } from './fresh-start-ruthless-chaos-guide';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <FreshStartRuthlessChaosGuideKeywordPage />;
-}

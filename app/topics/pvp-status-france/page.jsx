@@ -1,8 +1,0 @@
-import PvpStatusFranceKeywordPage, { generateMetadata } from './pvp-status-france';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <PvpStatusFranceKeywordPage />;
-}

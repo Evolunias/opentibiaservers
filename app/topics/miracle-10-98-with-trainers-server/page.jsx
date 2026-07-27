@@ -1,8 +1,0 @@
-import Miracle1098WithTrainersServerKeywordPage, { generateMetadata } from './miracle-10-98-with-trainers-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Miracle1098WithTrainersServerKeywordPage />;
-}

@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('new-season-tibiantis-download');
-}
-
-export default function NewSeasonTibiantisDownloadKeywordPage() {
-  return <StaticKeywordPage slug="new-season-tibiantis-download" />;
-}

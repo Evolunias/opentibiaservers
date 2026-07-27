@@ -1,8 +1,0 @@
-import Kasteria12RealMapServersKeywordPage, { generateMetadata } from './kasteria-12-real-map-servers';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Kasteria12RealMapServersKeywordPage />;
-}

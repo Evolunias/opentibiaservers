@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('old-school-medivia-forum');
-}
-
-export default function OldSchoolMediviaForumKeywordPage() {
-  return <StaticKeywordPage slug="old-school-medivia-forum" />;
-}

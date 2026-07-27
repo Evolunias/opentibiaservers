@@ -1,8 +1,0 @@
-import RealMapYurotsWebsiteKeywordPage, { generateMetadata } from './real-map-yurots-website';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <RealMapYurotsWebsiteKeywordPage />;
-}

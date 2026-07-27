@@ -1,8 +1,0 @@
-import OriginaltibiaPvpServerUkKeywordPage, { generateMetadata } from './originaltibia-pvp-server-uk';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <OriginaltibiaPvpServerUkKeywordPage />;
-}

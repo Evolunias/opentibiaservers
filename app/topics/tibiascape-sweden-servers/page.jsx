@@ -1,8 +1,0 @@
-import TibiascapeSwedenServersKeywordPage, { generateMetadata } from './tibiascape-sweden-servers';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <TibiascapeSwedenServersKeywordPage />;
-}

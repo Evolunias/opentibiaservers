@@ -1,8 +1,0 @@
-import Tibiantis14RetroServerKeywordPage, { generateMetadata } from './tibiantis-14-retro-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Tibiantis14RetroServerKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import NewSeasonClassicusHighscoresKeywordPage, { generateMetadata } from './new-season-classicus-highscores';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewSeasonClassicusHighscoresKeywordPage />;
-}

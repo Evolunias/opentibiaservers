@@ -1,8 +1,0 @@
-import NoResetEternalOdysseyWebsiteKeywordPage, { generateMetadata } from './no-reset-eternal-odyssey-website';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NoResetEternalOdysseyWebsiteKeywordPage />;
-}

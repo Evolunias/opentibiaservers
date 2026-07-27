@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('old-school-unline-ot');
-}
-
-export default function OldSchoolUnlineOtKeywordPage() {
-  return <StaticKeywordPage slug="old-school-unline-ot" />;
-}

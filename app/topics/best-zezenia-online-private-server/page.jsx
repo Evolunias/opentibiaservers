@@ -1,8 +1,0 @@
-import BestZezeniaOnlinePrivateServerKeywordPage, { generateMetadata } from './best-zezenia-online-private-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <BestZezeniaOnlinePrivateServerKeywordPage />;
-}

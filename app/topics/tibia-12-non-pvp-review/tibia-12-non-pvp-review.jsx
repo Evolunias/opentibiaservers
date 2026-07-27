@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('tibia-12-non-pvp-review');
-}
-
-export default function Tibia12NonPvpReviewKeywordPage() {
-  return <StaticKeywordPage slug="tibia-12-non-pvp-review" />;
-}

@@ -1,8 +1,0 @@
-import ActiveLumineraRegisterKeywordPage, { generateMetadata } from './active-luminera-register';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <ActiveLumineraRegisterKeywordPage />;
-}

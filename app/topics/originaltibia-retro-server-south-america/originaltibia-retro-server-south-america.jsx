@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('originaltibia-retro-server-south-america');
-}
-
-export default function OriginaltibiaRetroServerSouthAmericaKeywordPage() {
-  return <StaticKeywordPage slug="originaltibia-retro-server-south-america" />;
-}

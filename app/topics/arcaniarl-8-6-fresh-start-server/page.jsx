@@ -1,8 +1,0 @@
-import Arcaniarl86FreshStartServerKeywordPage, { generateMetadata } from './arcaniarl-8-6-fresh-start-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Arcaniarl86FreshStartServerKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import ZezeniaOnlineEvoServerUkKeywordPage, { generateMetadata } from './zezenia-online-evo-server-uk';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <ZezeniaOnlineEvoServerUkKeywordPage />;
-}

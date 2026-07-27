@@ -1,8 +1,0 @@
-import Imperianic80OldSchoolServerKeywordPage, { generateMetadata } from './imperianic-8-0-old-school-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Imperianic80OldSchoolServerKeywordPage />;
-}

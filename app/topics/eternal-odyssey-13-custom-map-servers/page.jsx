@@ -1,8 +1,0 @@
-import EternalOdyssey13CustomMapServersKeywordPage, { generateMetadata } from './eternal-odyssey-13-custom-map-servers';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <EternalOdyssey13CustomMapServersKeywordPage />;
-}

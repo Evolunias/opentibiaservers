@@ -1,8 +1,0 @@
-import TopTibiaretroOtServerKeywordPage, { generateMetadata } from './top-tibiaretro-ot-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <TopTibiaretroOtServerKeywordPage />;
-}

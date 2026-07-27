@@ -1,8 +1,0 @@
-import Shadowcores1098SeasonalServerKeywordPage, { generateMetadata } from './shadowcores-10-98-seasonal-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Shadowcores1098SeasonalServerKeywordPage />;
-}

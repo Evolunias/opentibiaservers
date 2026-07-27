@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('shadowcores-with-screenshots-server-uk');
-}
-
-export default function ShadowcoresWithScreenshotsServerUkKeywordPage() {
-  return <StaticKeywordPage slug="shadowcores-with-screenshots-server-uk" />;
-}

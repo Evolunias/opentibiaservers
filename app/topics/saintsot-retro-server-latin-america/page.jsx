@@ -1,8 +1,0 @@
-import SaintsotRetroServerLatinAmericaKeywordPage, { generateMetadata } from './saintsot-retro-server-latin-america';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <SaintsotRetroServerLatinAmericaKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import ElderaHighExpServerBrazilKeywordPage, { generateMetadata } from './eldera-high-exp-server-brazil';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <ElderaHighExpServerBrazilKeywordPage />;
-}

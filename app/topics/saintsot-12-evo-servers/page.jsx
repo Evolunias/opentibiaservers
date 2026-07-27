@@ -1,8 +1,0 @@
-import Saintsot12EvoServersKeywordPage, { generateMetadata } from './saintsot-12-evo-servers';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Saintsot12EvoServersKeywordPage />;
-}

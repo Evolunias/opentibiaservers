@@ -1,8 +1,0 @@
-import BestEvoluniaOtsKeywordPage, { generateMetadata } from './best-evolunia-ots';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <BestEvoluniaOtsKeywordPage />;
-}

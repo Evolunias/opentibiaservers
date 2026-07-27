@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('zunera-ot-usa-servers');
-}
-
-export default function ZuneraOtUsaServersKeywordPage() {
-  return <StaticKeywordPage slug="zunera-ot-usa-servers" />;
-}

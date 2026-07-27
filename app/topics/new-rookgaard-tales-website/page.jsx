@@ -1,8 +1,0 @@
-import NewRookgaardTalesWebsiteKeywordPage, { generateMetadata } from './new-rookgaard-tales-website';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewRookgaardTalesWebsiteKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import NewRuthlessChaosWikiKeywordPage, { generateMetadata } from './new-ruthless-chaos-wiki';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewRuthlessChaosWikiKeywordPage />;
-}

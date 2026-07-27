@@ -1,8 +1,0 @@
-import NewSeasonNostaltherClientKeywordPage, { generateMetadata } from './new-season-nostalther-client';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewSeasonNostaltherClientKeywordPage />;
-}

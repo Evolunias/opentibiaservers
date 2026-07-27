@@ -1,8 +1,0 @@
-import MiracleKeywordPage, { generateMetadata } from './miracle';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <MiracleKeywordPage />;
-}

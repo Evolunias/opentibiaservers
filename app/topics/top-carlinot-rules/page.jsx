@@ -1,8 +1,0 @@
-import TopCarlinotRulesKeywordPage, { generateMetadata } from './top-carlinot-rules';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <TopCarlinotRulesKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import CyntaraSouthAmericaServersKeywordPage, { generateMetadata } from './cyntara-south-america-servers';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <CyntaraSouthAmericaServersKeywordPage />;
-}

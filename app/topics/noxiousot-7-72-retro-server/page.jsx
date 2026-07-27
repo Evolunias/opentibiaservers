@@ -1,8 +1,0 @@
-import Noxiousot772RetroServerKeywordPage, { generateMetadata } from './noxiousot-7-72-retro-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Noxiousot772RetroServerKeywordPage />;
-}

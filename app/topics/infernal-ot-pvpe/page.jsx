@@ -1,8 +1,0 @@
-import InfernalOtPvpeKeywordPage, { generateMetadata } from './infernal-ot-pvpe';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <InfernalOtPvpeKeywordPage />;
-}

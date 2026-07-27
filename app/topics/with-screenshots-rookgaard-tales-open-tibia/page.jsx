@@ -1,8 +1,0 @@
-import WithScreenshotsRookgaardTalesOpenTibiaKeywordPage, { generateMetadata } from './with-screenshots-rookgaard-tales-open-tibia';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <WithScreenshotsRookgaardTalesOpenTibiaKeywordPage />;
-}

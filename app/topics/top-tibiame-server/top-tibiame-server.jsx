@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('top-tibiame-server');
-}
-
-export default function TopTibiameServerKeywordPage() {
-  return <StaticKeywordPage slug="top-tibiame-server" />;
-}

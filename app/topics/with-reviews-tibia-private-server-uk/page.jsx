@@ -1,8 +1,0 @@
-import WithReviewsTibiaPrivateServerUkKeywordPage, { generateMetadata } from './with-reviews-tibia-private-server-uk';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <WithReviewsTibiaPrivateServerUkKeywordPage />;
-}

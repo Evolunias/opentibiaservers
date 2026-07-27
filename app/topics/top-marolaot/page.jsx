@@ -1,8 +1,0 @@
-import TopMarolaotKeywordPage, { generateMetadata } from './top-marolaot';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <TopMarolaotKeywordPage />;
-}

@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('new-season-thornia-website');
-}
-
-export default function NewSeasonThorniaWebsiteKeywordPage() {
-  return <StaticKeywordPage slug="new-season-thornia-website" />;
-}

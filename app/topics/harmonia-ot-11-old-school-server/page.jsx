@@ -1,8 +1,0 @@
-import HarmoniaOt11OldSchoolServerKeywordPage, { generateMetadata } from './harmonia-ot-11-old-school-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <HarmoniaOt11OldSchoolServerKeywordPage />;
-}

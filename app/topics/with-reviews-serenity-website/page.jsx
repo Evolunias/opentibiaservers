@@ -1,8 +1,0 @@
-import WithReviewsSerenityWebsiteKeywordPage, { generateMetadata } from './with-reviews-serenity-website';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <WithReviewsSerenityWebsiteKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import NewSeasonMiracleGuideKeywordPage, { generateMetadata } from './new-season-miracle-guide';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewSeasonMiracleGuideKeywordPage />;
-}

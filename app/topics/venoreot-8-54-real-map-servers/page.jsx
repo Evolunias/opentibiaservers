@@ -1,8 +1,0 @@
-import Venoreot854RealMapServersKeywordPage, { generateMetadata } from './venoreot-8-54-real-map-servers';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Venoreot854RealMapServersKeywordPage />;
-}

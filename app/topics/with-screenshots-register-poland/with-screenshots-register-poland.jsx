@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('with-screenshots-register-poland');
-}
-
-export default function WithScreenshotsRegisterPolandKeywordPage() {
-  return <StaticKeywordPage slug="with-screenshots-register-poland" />;
-}

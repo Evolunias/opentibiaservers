@@ -1,8 +1,0 @@
-import ActiveMadnessaliveWebsiteKeywordPage, { generateMetadata } from './active-madnessalive-website';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <ActiveMadnessaliveWebsiteKeywordPage />;
-}

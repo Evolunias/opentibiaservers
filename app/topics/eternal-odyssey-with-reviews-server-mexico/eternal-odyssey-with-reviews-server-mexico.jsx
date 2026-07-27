@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('eternal-odyssey-with-reviews-server-mexico');
-}
-
-export default function EternalOdysseyWithReviewsServerMexicoKeywordPage() {
-  return <StaticKeywordPage slug="eternal-odyssey-with-reviews-server-mexico" />;
-}

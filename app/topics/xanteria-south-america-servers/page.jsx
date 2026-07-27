@@ -1,8 +1,0 @@
-import XanteriaSouthAmericaServersKeywordPage, { generateMetadata } from './xanteria-south-america-servers';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <XanteriaSouthAmericaServersKeywordPage />;
-}

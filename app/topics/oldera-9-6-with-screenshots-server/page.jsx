@@ -1,8 +1,0 @@
-import Oldera96WithScreenshotsServerKeywordPage, { generateMetadata } from './oldera-9-6-with-screenshots-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Oldera96WithScreenshotsServerKeywordPage />;
-}

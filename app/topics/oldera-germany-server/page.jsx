@@ -1,8 +1,0 @@
-import OlderaGermanyServerKeywordPage, { generateMetadata } from './oldera-germany-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <OlderaGermanyServerKeywordPage />;
-}

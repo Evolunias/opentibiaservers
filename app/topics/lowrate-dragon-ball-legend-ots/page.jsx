@@ -1,8 +1,0 @@
-import LowrateDragonBallLegendOtsKeywordPage, { generateMetadata } from './lowrate-dragon-ball-legend-ots';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <LowrateDragonBallLegendOtsKeywordPage />;
-}

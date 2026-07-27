@@ -1,8 +1,0 @@
-import RealMapBaiakIlusionOtsKeywordPage, { generateMetadata } from './real-map-baiak-ilusion-ots';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <RealMapBaiakIlusionOtsKeywordPage />;
-}

@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('top-ameria-online');
-}
-
-export default function TopAmeriaOnlineKeywordPage() {
-  return <StaticKeywordPage slug="top-ameria-online" />;
-}

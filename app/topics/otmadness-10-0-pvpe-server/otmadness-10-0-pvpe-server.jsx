@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('otmadness-10-0-pvpe-server');
-}
-
-export default function Otmadness100PvpeServerKeywordPage() {
-  return <StaticKeywordPage slug="otmadness-10-0-pvpe-server" />;
-}

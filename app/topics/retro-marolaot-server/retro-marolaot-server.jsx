@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('retro-marolaot-server');
-}
-
-export default function RetroMarolaotServerKeywordPage() {
-  return <StaticKeywordPage slug="retro-marolaot-server" />;
-}

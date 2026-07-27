@@ -1,8 +1,0 @@
-import DragonBallLegendBaiakServerGermanyKeywordPage, { generateMetadata } from './dragon-ball-legend-baiak-server-germany';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <DragonBallLegendBaiakServerGermanyKeywordPage />;
-}

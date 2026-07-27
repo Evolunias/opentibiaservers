@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('lowrate-ruthless-chaos-rules');
-}
-
-export default function LowrateRuthlessChaosRulesKeywordPage() {
-  return <StaticKeywordPage slug="lowrate-ruthless-chaos-rules" />;
-}

@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('archlight-with-reviews-server-france');
-}
-
-export default function ArchlightWithReviewsServerFranceKeywordPage() {
-  return <StaticKeywordPage slug="archlight-with-reviews-server-france" />;
-}

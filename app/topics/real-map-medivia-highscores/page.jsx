@@ -1,8 +1,0 @@
-import RealMapMediviaHighscoresKeywordPage, { generateMetadata } from './real-map-medivia-highscores';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <RealMapMediviaHighscoresKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import NewSeasonImperianicDownloadKeywordPage, { generateMetadata } from './new-season-imperianic-download';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewSeasonImperianicDownloadKeywordPage />;
-}

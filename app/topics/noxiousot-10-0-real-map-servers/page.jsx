@@ -1,8 +1,0 @@
-import Noxiousot100RealMapServersKeywordPage, { generateMetadata } from './noxiousot-10-0-real-map-servers';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Noxiousot100RealMapServersKeywordPage />;
-}

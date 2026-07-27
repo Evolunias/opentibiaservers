@@ -1,8 +1,0 @@
-import NewSeasonGunzodusWikiKeywordPage, { generateMetadata } from './new-season-gunzodus-wiki';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewSeasonGunzodusWikiKeywordPage />;
-}

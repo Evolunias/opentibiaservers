@@ -1,8 +1,0 @@
-import LowrateImperianicWebsiteKeywordPage, { generateMetadata } from './lowrate-imperianic-website';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <LowrateImperianicWebsiteKeywordPage />;
-}

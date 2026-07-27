@@ -1,8 +1,0 @@
-import PopularVenoreotRulesKeywordPage, { generateMetadata } from './popular-venoreot-rules';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <PopularVenoreotRulesKeywordPage />;
-}

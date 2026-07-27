@@ -1,8 +1,0 @@
-import ThorniaDownloadKeywordPage, { generateMetadata } from './thornia-download';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <ThorniaDownloadKeywordPage />;
-}

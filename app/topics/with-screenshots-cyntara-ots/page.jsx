@@ -1,8 +1,0 @@
-import WithScreenshotsCyntaraOtsKeywordPage, { generateMetadata } from './with-screenshots-cyntara-ots';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <WithScreenshotsCyntaraOtsKeywordPage />;
-}

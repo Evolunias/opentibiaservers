@@ -1,8 +1,0 @@
-import ActiveImperianicServerKeywordPage, { generateMetadata } from './active-imperianic-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <ActiveImperianicServerKeywordPage />;
-}

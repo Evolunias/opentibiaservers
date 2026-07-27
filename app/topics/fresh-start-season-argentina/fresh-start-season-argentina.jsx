@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('fresh-start-season-argentina');
-}
-
-export default function FreshStartSeasonArgentinaKeywordPage() {
-  return <StaticKeywordPage slug="fresh-start-season-argentina" />;
-}

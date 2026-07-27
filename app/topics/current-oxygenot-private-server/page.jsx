@@ -1,8 +1,0 @@
-import CurrentOxygenotPrivateServerKeywordPage, { generateMetadata } from './current-oxygenot-private-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <CurrentOxygenotPrivateServerKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import OtServersDownloadKeywordPage, { generateMetadata } from './ot-servers-download';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <OtServersDownloadKeywordPage />;
-}

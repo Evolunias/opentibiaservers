@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('realera-with-active-players-server-latin-america');
-}
-
-export default function RealeraWithActivePlayersServerLatinAmericaKeywordPage() {
-  return <StaticKeywordPage slug="realera-with-active-players-server-latin-america" />;
-}

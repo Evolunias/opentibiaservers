@@ -1,8 +1,0 @@
-import TopNoxiousotServerKeywordPage, { generateMetadata } from './top-noxiousot-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <TopNoxiousotServerKeywordPage />;
-}

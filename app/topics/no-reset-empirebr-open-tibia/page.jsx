@@ -1,8 +1,0 @@
-import NoResetEmpirebrOpenTibiaKeywordPage, { generateMetadata } from './no-reset-empirebr-open-tibia';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NoResetEmpirebrOpenTibiaKeywordPage />;
-}

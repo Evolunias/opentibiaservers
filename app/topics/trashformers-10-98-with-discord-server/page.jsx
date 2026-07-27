@@ -1,8 +1,0 @@
-import Trashformers1098WithDiscordServerKeywordPage, { generateMetadata } from './trashformers-10-98-with-discord-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Trashformers1098WithDiscordServerKeywordPage />;
-}

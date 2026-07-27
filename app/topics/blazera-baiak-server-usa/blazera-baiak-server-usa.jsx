@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('blazera-baiak-server-usa');
-}
-
-export default function BlazeraBaiakServerUsaKeywordPage() {
-  return <StaticKeywordPage slug="blazera-baiak-server-usa" />;
-}

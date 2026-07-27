@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('best-nilot-ot-server');
-}
-
-export default function BestNilotOtServerKeywordPage() {
-  return <StaticKeywordPage slug="best-nilot-ot-server" />;
-}

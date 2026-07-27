@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('realera-with-discord-server-europe');
-}
-
-export default function RealeraWithDiscordServerEuropeKeywordPage() {
-  return <StaticKeywordPage slug="realera-with-discord-server-europe" />;
-}

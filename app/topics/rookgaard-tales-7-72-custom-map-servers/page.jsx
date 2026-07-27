@@ -1,8 +1,0 @@
-import RookgaardTales772CustomMapServersKeywordPage, { generateMetadata } from './rookgaard-tales-7-72-custom-map-servers';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <RookgaardTales772CustomMapServersKeywordPage />;
-}

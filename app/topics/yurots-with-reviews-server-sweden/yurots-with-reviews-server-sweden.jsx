@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('yurots-with-reviews-server-sweden');
-}
-
-export default function YurotsWithReviewsServerSwedenKeywordPage() {
-  return <StaticKeywordPage slug="yurots-with-reviews-server-sweden" />;
-}

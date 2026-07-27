@@ -94,8 +94,15 @@ const limitArg = process.argv.find((arg) => arg.startsWith('--limit='));
 const offsetArg = process.argv.find((arg) => arg.startsWith('--offset='));
 const all = process.argv.includes('--all');
 const indexableOnly = process.argv.includes('--indexable-only');
+const confirmPhysical = process.argv.includes('--confirm-physical-routes');
 const limit = all ? Number.POSITIVE_INFINITY : Number(limitArg?.split('=')[1] || defaultLimit);
 const offset = Number(offsetArg?.split('=')[1] || 0);
+
+if (!confirmPhysical) {
+  console.error('Refusing to generate physical keyword route folders without --confirm-physical-routes.');
+  console.error('Use app/topics/[slug]/page.jsx for scalable SEO rendering and sitemap discovery.');
+  process.exit(1);
+}
 
 let rows = readKeywordRows();
 if (indexableOnly) {

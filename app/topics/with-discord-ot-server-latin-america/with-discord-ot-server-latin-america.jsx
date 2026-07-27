@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('with-discord-ot-server-latin-america');
-}
-
-export default function WithDiscordOtServerLatinAmericaKeywordPage() {
-  return <StaticKeywordPage slug="with-discord-ot-server-latin-america" />;
-}

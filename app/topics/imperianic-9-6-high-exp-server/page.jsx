@@ -1,8 +1,0 @@
-import Imperianic96HighExpServerKeywordPage, { generateMetadata } from './imperianic-9-6-high-exp-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Imperianic96HighExpServerKeywordPage />;
-}

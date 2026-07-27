@@ -1,8 +1,0 @@
-import TibiaretroUptimeKeywordPage, { generateMetadata } from './tibiaretro-uptime';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <TibiaretroUptimeKeywordPage />;
-}

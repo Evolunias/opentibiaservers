@@ -1,8 +1,0 @@
-import MistOfDeath14CustomMapServerKeywordPage, { generateMetadata } from './mist-of-death-14-custom-map-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <MistOfDeath14CustomMapServerKeywordPage />;
-}

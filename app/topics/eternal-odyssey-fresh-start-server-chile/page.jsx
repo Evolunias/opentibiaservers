@@ -1,8 +1,0 @@
-import EternalOdysseyFreshStartServerChileKeywordPage, { generateMetadata } from './eternal-odyssey-fresh-start-server-chile';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <EternalOdysseyFreshStartServerChileKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import NewSeasonNostaltherRulesKeywordPage, { generateMetadata } from './new-season-nostalther-rules';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewSeasonNostaltherRulesKeywordPage />;
-}

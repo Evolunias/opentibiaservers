@@ -1,8 +1,0 @@
-import ThorniaEvoServerSouthAmericaKeywordPage, { generateMetadata } from './thornia-evo-server-south-america';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <ThorniaEvoServerSouthAmericaKeywordPage />;
-}

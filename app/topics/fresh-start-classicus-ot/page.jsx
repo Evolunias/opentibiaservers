@@ -1,8 +1,0 @@
-import FreshStartClassicusOtKeywordPage, { generateMetadata } from './fresh-start-classicus-ot';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <FreshStartClassicusOtKeywordPage />;
-}

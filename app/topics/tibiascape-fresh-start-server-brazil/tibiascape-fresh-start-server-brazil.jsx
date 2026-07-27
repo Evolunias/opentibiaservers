@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('tibiascape-fresh-start-server-brazil');
-}
-
-export default function TibiascapeFreshStartServerBrazilKeywordPage() {
-  return <StaticKeywordPage slug="tibiascape-fresh-start-server-brazil" />;
-}

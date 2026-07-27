@@ -1,8 +1,0 @@
-import NewRealestaOtKeywordPage, { generateMetadata } from './new-realesta-ot';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewRealestaOtKeywordPage />;
-}

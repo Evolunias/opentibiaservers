@@ -1,8 +1,0 @@
-import Blazera854NoResetServerKeywordPage, { generateMetadata } from './blazera-8-54-no-reset-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <Blazera854NoResetServerKeywordPage />;
-}

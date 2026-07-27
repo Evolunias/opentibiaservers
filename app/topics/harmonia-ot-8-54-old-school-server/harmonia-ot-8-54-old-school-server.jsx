@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('harmonia-ot-8-54-old-school-server');
-}
-
-export default function HarmoniaOt854OldSchoolServerKeywordPage() {
-  return <StaticKeywordPage slug="harmonia-ot-8-54-old-school-server" />;
-}

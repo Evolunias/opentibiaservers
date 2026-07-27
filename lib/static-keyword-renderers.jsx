@@ -1,9 +1,9 @@
-import KeywordTopicPage, { generateMetadata as buildTopicMetadata } from '@/app/topics/[slug]/page';
+import KeywordTopicArticle, { generateKeywordTopicMetadata } from '@/app/components/KeywordTopicArticle';
 
 export function buildStaticKeywordMetadata(slug) {
-  return buildTopicMetadata({ params: { slug } });
+  return generateKeywordTopicMetadata(slug);
 }
 
 export default function StaticKeywordPage({ slug }) {
-  return <KeywordTopicPage params={{ slug }} />;
+  return <KeywordTopicArticle slug={slug} />;
 }

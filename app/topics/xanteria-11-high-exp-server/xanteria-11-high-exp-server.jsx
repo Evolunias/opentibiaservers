@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('xanteria-11-high-exp-server');
-}
-
-export default function Xanteria11HighExpServerKeywordPage() {
-  return <StaticKeywordPage slug="xanteria-11-high-exp-server" />;
-}

@@ -1,8 +1,0 @@
-import RubinotCanadaServerKeywordPage, { generateMetadata } from './rubinot-canada-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <RubinotCanadaServerKeywordPage />;
-}

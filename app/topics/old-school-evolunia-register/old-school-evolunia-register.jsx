@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('old-school-evolunia-register');
-}
-
-export default function OldSchoolEvoluniaRegisterKeywordPage() {
-  return <StaticKeywordPage slug="old-school-evolunia-register" />;
-}

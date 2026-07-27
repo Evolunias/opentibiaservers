@@ -1,8 +1,0 @@
-import RuthlessChaosPvpeServerNorthAmericaKeywordPage, { generateMetadata } from './ruthless-chaos-pvpe-server-north-america';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <RuthlessChaosPvpeServerNorthAmericaKeywordPage />;
-}

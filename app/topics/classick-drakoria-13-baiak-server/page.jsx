@@ -1,8 +1,0 @@
-import ClassickDrakoria13BaiakServerKeywordPage, { generateMetadata } from './classick-drakoria-13-baiak-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <ClassickDrakoria13BaiakServerKeywordPage />;
-}

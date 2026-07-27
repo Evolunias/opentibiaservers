@@ -1,8 +1,0 @@
-import NewEmpirebrOtServerKeywordPage, { generateMetadata } from './new-empirebr-ot-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewEmpirebrOtServerKeywordPage />;
-}

@@ -1,8 +1,0 @@
-import WithDiscordMiracleDiscordKeywordPage, { generateMetadata } from './with-discord-miracle-discord';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <WithDiscordMiracleDiscordKeywordPage />;
-}

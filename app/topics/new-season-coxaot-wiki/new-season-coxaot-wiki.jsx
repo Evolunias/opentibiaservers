@@ -1,9 +1,0 @@
-import StaticKeywordPage, { buildStaticKeywordMetadata } from '@/lib/static-keyword-renderers';
-
-export function generateMetadata() {
-  return buildStaticKeywordMetadata('new-season-coxaot-wiki');
-}
-
-export default function NewSeasonCoxaotWikiKeywordPage() {
-  return <StaticKeywordPage slug="new-season-coxaot-wiki" />;
-}

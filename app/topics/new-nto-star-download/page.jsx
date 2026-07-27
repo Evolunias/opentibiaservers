@@ -1,8 +1,0 @@
-import NewNtoStarDownloadKeywordPage, { generateMetadata } from './new-nto-star-download';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewNtoStarDownloadKeywordPage />;
-}

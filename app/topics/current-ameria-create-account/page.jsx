@@ -1,8 +1,0 @@
-import CurrentAmeriaCreateAccountKeywordPage, { generateMetadata } from './current-ameria-create-account';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <CurrentAmeriaCreateAccountKeywordPage />;
-}

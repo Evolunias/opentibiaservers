@@ -1,8 +1,0 @@
-import WithReviewsZezeniaOnlinePrivateServerKeywordPage, { generateMetadata } from './with-reviews-zezenia-online-private-server';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <WithReviewsZezeniaOnlinePrivateServerKeywordPage />;
-}

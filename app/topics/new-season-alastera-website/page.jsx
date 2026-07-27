@@ -1,8 +1,0 @@
-import NewSeasonAlasteraWebsiteKeywordPage, { generateMetadata } from './new-season-alastera-website';
-
-export { generateMetadata };
-export const revalidate = 3600;
-
-export default function Page() {
-  return <NewSeasonAlasteraWebsiteKeywordPage />;
-}
