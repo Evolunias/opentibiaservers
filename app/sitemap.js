@@ -4,6 +4,7 @@ import { getServerPath, slugifyServerName } from '@/lib/server-paths';
 import { getCuratedPages } from '@/lib/curated-pages';
 import { getIndexableKeywordPages } from '@/lib/keyword-pages';
 import { getOtServerCuratedPages } from '@/lib/otserver-curated-pages';
+import { getOtlandServerGalaPages } from '@/lib/otland-server-gala-pages';
 import { topOtservlistServers } from '@/lib/top-otservlist-servers';
 import { getTibiaWorldPages } from '@/lib/tibia-world-pages';
 
@@ -44,6 +45,12 @@ export default async function sitemap() {
     changeFrequency: 'weekly',
     priority: 0.82,
   }));
+  const otlandServerGalaUrls = getOtlandServerGalaPages().map((server) => ({
+    url: buildAbsoluteUrl(`/${server.slug}`),
+    lastModified: server.updated_at || new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.78,
+  }));
   const keywordUrls = getIndexableKeywordPages(1000).map((page) => ({
     url: buildAbsoluteUrl(`/topics/${page.slug}`),
     lastModified: new Date(),
@@ -66,7 +73,7 @@ export default async function sitemap() {
   const supabase = getSupabaseServerClient();
   if (!supabase) {
     const seenUrls = new Set();
-    return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...tibiaWorldUrls, ...keywordUrls, ...seededExactMatchUrls, ...seededServerUrls].filter((entry) => {
+    return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...otlandServerGalaUrls, ...tibiaWorldUrls, ...keywordUrls, ...seededExactMatchUrls, ...seededServerUrls].filter((entry) => {
       if (seenUrls.has(entry.url)) return false;
       seenUrls.add(entry.url);
       return true;
@@ -112,7 +119,7 @@ export default async function sitemap() {
   ];
 
   const seenUrls = new Set();
-  return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...tibiaWorldUrls, ...keywordUrls, ...facetUrls, ...seededExactMatchUrls, ...seededServerUrls, ...serverUrls].filter((entry) => {
+  return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...otlandServerGalaUrls, ...tibiaWorldUrls, ...keywordUrls, ...facetUrls, ...seededExactMatchUrls, ...seededServerUrls, ...serverUrls].filter((entry) => {
     if (seenUrls.has(entry.url)) return false;
     seenUrls.add(entry.url);
     return true;
