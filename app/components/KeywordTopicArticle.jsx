@@ -8,7 +8,6 @@ import {
   buildKeywordJsonLd,
   buildKeywordPageDescription,
   buildKeywordPageTitle,
-  buildKeywordSeoSemantics,
   getKeywordPageBySlug,
   getRelatedKeywordPages,
   shouldIndexKeywordPage,
@@ -66,7 +65,6 @@ export default async function KeywordTopicArticle({ slug }) {
   if (!page) return null;
 
   const article = buildKeywordArticle(page);
-  const seoSemantics = buildKeywordSeoSemantics(page);
   const related = getRelatedKeywordPages(page, 12);
   const directoryData = await fetchDirectoryServers({
     page: 1,
@@ -94,7 +92,6 @@ export default async function KeywordTopicArticle({ slug }) {
               <span className="text-gray-400">/</span>
               <span className="text-gray-600">Topics</span>
             </div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-gray-500">{article.label}</p>
             <h1 className="max-w-4xl text-4xl font-bold leading-tight text-gray-950 md:text-5xl">{article.h1}</h1>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-gray-700">{article.dek}</p>
             {!article.isIndexable ? (
@@ -106,14 +103,14 @@ export default async function KeywordTopicArticle({ slug }) {
               <Link href={`/?search=${encodeURIComponent(page.seed_entity || page.keyword)}`} className="rounded bg-gray-950 px-5 py-3 text-sm font-bold text-white hover:bg-gray-800 hover:no-underline">
                 Search Live Listings
               </Link>
-              <Link href="/auth/register" className="rounded border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-900 hover:border-gray-500 hover:no-underline">
-                Register to Contribute
+              <Link href="/community" className="rounded border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-900 hover:border-gray-500 hover:no-underline">
+                Join the Discussion
               </Link>
             </div>
           </div>
 
           <aside className="rounded border border-gray-200 bg-gray-50 p-5">
-            <h2 className="mb-4 text-base font-bold text-gray-950">Keyword Facts</h2>
+            <h2 className="mb-4 text-base font-bold text-gray-950">Topic Facts</h2>
             <dl className="space-y-4">
               {article.facts.map((fact) => (
                 <div key={fact.label}>
@@ -138,7 +135,6 @@ export default async function KeywordTopicArticle({ slug }) {
             <section key={section.heading} className="border-b border-gray-200 pb-8">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">{section.eyebrow}</p>
               <h2 className="mb-4 text-2xl font-bold text-gray-950">{section.heading}</h2>
-              <h3 className="mb-3 text-xl font-bold text-gray-900">{page.keyword} player research signals</h3>
               <div className="space-y-4">
                 {section.body.map((paragraph) => (
                   <p key={paragraph} className="text-base leading-8 text-gray-700">
@@ -148,24 +144,6 @@ export default async function KeywordTopicArticle({ slug }) {
               </div>
             </section>
           ))}
-
-          <section className="border-b border-gray-200 pb-8">
-            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">{seoSemantics.eyebrow}</p>
-            <h2 className="mb-4 text-2xl font-bold text-gray-950">{seoSemantics.h2}</h2>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">{seoSemantics.h3}</h3>
-            <div className="space-y-4 text-base leading-8 text-gray-700">
-              <p>
-                <strong>{seoSemantics.keyword}</strong> is the primary search target, <em>{seoSemantics.seed}</em> is the supporting entity, and the page stays <u>{seoSemantics.underline}</u>.
-              </p>
-              <p>
-                {seoSemantics.copy} Internal paths point players toward <Link href={`/?search=${encodeURIComponent(page.seed_entity || page.keyword)}`} className="font-semibold text-blue-700">matching live listings</Link>, related keyword pages, and account/community actions.
-              </p>
-            </div>
-            <h4 className="mt-5 text-lg font-bold text-gray-950">{seoSemantics.h4}</h4>
-            <p className="mt-2 text-sm leading-7 text-gray-700">{seoSemantics.keyword}</p>
-            <h5 className="mt-4 text-base font-bold text-gray-950">{seoSemantics.h5}</h5>
-            <p className="mt-2 text-sm leading-7 text-gray-700">{seoSemantics.support}</p>
-          </section>
 
           {directoryData.servers.length ? (
             <section className="pb-8">

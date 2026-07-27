@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useAuth } from '@/app/context/AuthContext';
+import AuthModal from '@/app/components/AuthModal';
 import { supabase } from '@/lib/supabase';
 
 const badgeClass = (type) => {
@@ -62,6 +62,32 @@ function DirectoryEmptyState({ title, body, action }) {
   );
 }
 
+function buildPlayerGuide(server) {
+  const name = server.name || 'This server';
+  const client = server.version || 'an unconfirmed client version';
+  const exp = server.exp_rate ? `x${server.exp_rate}` : 'unconfirmed';
+  const location = server.location || 'an unconfirmed host location';
+  const online = Number(server.players_online || 0).toLocaleString();
+  const max = server.max_players ? Number(server.max_players).toLocaleString() : 'unknown';
+  const uptime = server.uptime_percent ? `${Number(server.uptime_percent).toFixed(2)}%` : 'unconfirmed';
+  const pvp = server.world_type || server.pvp_type || 'unconfirmed PvP rules';
+
+  return [
+    {
+      title: `What players should verify before joining ${name}`,
+      body: `${name} is listed with ${online} players online out of ${max}, ${client}, ${exp} EXP, ${pvp}, and ${location}. Before downloading a client or creating an account, players should verify the official website, current rules, Discord or forum activity, staff announcements, and whether the listed host still matches the active game world.`,
+    },
+    {
+      title: `${name} activity and stability snapshot`,
+      body: `The latest directory snapshot records ${uptime} uptime and a recent online count of ${online}. Treat this as a live-discovery signal, not a permanent guarantee. Stronger confidence comes from repeated monitor checks, recent owner updates, visible community discussion, and screenshots or changelogs from official channels.`,
+    },
+    {
+      title: `Good fit for this listing`,
+      body: `This page is most useful for players comparing ${client} servers, ${pvp} gameplay, ${exp} progression, and similar Open Tibia communities. If those signals match what you want, use the official links and community areas on this page to confirm the current launch state and ask existing players about balance, staff response, bot policy, and event cadence.`,
+    },
+  ];
+}
+
 function stringifyJson(value, fallback) {
   try {
     return JSON.stringify(value ?? fallback, null, 2);
@@ -71,7 +97,6 @@ function stringifyJson(value, fallback) {
 }
 
 export default function ServerDetailClient({ params, initialServer, serverId: explicitServerId }) {
-  const router = useRouter();
   const { user } = useAuth();
   const serverId = explicitServerId || params?.id || initialServer?.id;
   const [server, setServer] = useState(initialServer || null);
@@ -84,6 +109,8 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
   const [error, setError] = useState(null);
   const [communityError, setCommunityError] = useState(null);
   const [communityNotice, setCommunityNotice] = useState(null);
+  const [authOpen, setAuthOpen] = useState(false);
+  const [authMode, setAuthMode] = useState('login');
   const [claimForm, setClaimForm] = useState({
     claimant_role: 'owner',
     proof_type: 'website_dns',
@@ -229,7 +256,8 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
   const requireUser = () => {
     if (user) return true;
-    router.push(`/auth/login?redirect=/servers/${server.slug || serverId}`);
+    setAuthMode('login');
+    setAuthOpen(true);
     return false;
   };
 
@@ -357,6 +385,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
   const trailerHref = externalHref(server.trailer_url);
   const galleryImages = Array.isArray(server.gallery_images) ? server.gallery_images.filter(Boolean) : [];
   const hasOfficialLinks = Boolean(officialWebsiteHref || launcherHref || trailerHref || discordHref || forumHref || server.owner_email);
+  const playerGuide = buildPlayerGuide(server);
 
   const saveOwnerTemplate = async (event) => {
     event.preventDefault();
@@ -402,6 +431,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
   };
 
   return (
+    <>
     <main className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 py-8">
         <Link href="/" className="text-gray-700 hover:text-gray-950 mb-6 inline-block font-semibold">
@@ -515,19 +545,28 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
               </section>
 
               <section className="border border-gray-200 rounded p-4">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">SEO and Research</h2>
-                <InfoRow label="Keyword" value={server.keyword_primary || server.name} />
-                <InfoRow label="Slug" value={server.slug} />
-                <InfoRow label="Content Status" value={server.content_status} />
-                <InfoRow label="Official Research" value={date(server.official_last_researched_at)} />
-                <InfoRow
-                  label="Research Sources"
-                  value={Array.isArray(server.research_sources) && server.research_sources.length
-                    ? server.research_sources.map((source) => source.url || source.type).join(', ')
-                    : '-'}
-                />
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Player Verification</h2>
+                <InfoRow label="Canonical Listing" value={server.slug ? `/servers/${server.slug}` : '-'} />
+                <InfoRow label="Profile Status" value={server.content_status || 'imported'} />
+                <InfoRow label="Official Check" value={date(server.official_last_researched_at)} />
+                <InfoRow label="Claim Status" value={server.claim_status || 'unclaimed'} />
+                <p className="mt-3 text-sm leading-6 text-gray-700">
+                  Use this panel to separate live source data from owner-confirmed details. Strong listings should include a working website, current rules, Discord or forum link, screenshots, staff contact, and recent player feedback.
+                </p>
               </section>
             </div>
+
+            <section className="border border-gray-200 rounded p-4 mb-6">
+              <h2 className="text-lg font-bold text-gray-950 mb-3">Player Guide</h2>
+              <div className="grid grid-cols-1 gap-3">
+                {playerGuide.map((item) => (
+                  <div key={item.title} className="rounded border border-gray-200 bg-gray-50 p-4">
+                    <h3 className="text-base font-bold text-gray-950">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-gray-700">{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
 
             <section className="border border-gray-200 rounded p-4 mb-6">
               <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between mb-4">
@@ -915,6 +954,13 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
         ) : null}
       </div>
     </main>
+    <AuthModal
+      open={authOpen}
+      mode={authMode}
+      onClose={() => setAuthOpen(false)}
+      onSuccess={() => loadCommunity()}
+    />
+    </>
   );
 }
 

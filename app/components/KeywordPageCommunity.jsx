@@ -1,8 +1,8 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
-import Link from 'next/link';
 import { useAuth } from '@/app/context/AuthContext';
+import AuthModal from '@/app/components/AuthModal';
 import { supabase } from '@/lib/supabase';
 
 function date(value) {
@@ -18,6 +18,7 @@ export default function KeywordPageCommunity({ pageSlug, keyword }) {
   const [screenshotUrl, setScreenshotUrl] = useState('');
   const [notice, setNotice] = useState(null);
   const [error, setError] = useState(null);
+  const [authOpen, setAuthOpen] = useState(false);
 
   const loadCommunity = useCallback(async () => {
     try {
@@ -53,7 +54,7 @@ export default function KeywordPageCommunity({ pageSlug, keyword }) {
     setError(null);
     setNotice(null);
     if (!user) {
-      setError('Create an account or sign in to contribute.');
+      setAuthOpen(true);
       return;
     }
 
@@ -79,7 +80,7 @@ export default function KeywordPageCommunity({ pageSlug, keyword }) {
     setError(null);
     setNotice(null);
     if (!user) {
-      setError('Create an account or sign in to submit screenshots.');
+      setAuthOpen(true);
       return;
     }
 
@@ -101,6 +102,7 @@ export default function KeywordPageCommunity({ pageSlug, keyword }) {
   };
 
   return (
+    <>
     <section className="border-t border-gray-200 bg-white">
       <div className="mx-auto grid max-w-6xl gap-6 px-6 py-8 lg:grid-cols-2">
         <div>
@@ -110,10 +112,10 @@ export default function KeywordPageCommunity({ pageSlug, keyword }) {
           </p>
           {!user ? (
             <div className="mt-4 rounded border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700">
-              <Link href={`/auth/register?redirect=/topics/${pageSlug}`} className="font-bold text-blue-700">
-                Register
-              </Link>{' '}
-              or sign in to interact with this page.
+              <button type="button" onClick={() => setAuthOpen(true)} className="font-bold text-blue-700">
+                Sign in or register
+              </button>{' '}
+              to interact with this page.
             </div>
           ) : null}
           {notice ? <div className="mt-4 rounded border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">{notice}</div> : null}
@@ -174,5 +176,7 @@ export default function KeywordPageCommunity({ pageSlug, keyword }) {
         </div>
       </div>
     </section>
+    <AuthModal open={authOpen} mode="register" onClose={() => setAuthOpen(false)} onSuccess={() => loadCommunity()} />
+    </>
   );
 }

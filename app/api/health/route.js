@@ -1,5 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
+export const dynamic = 'force-dynamic';
+
 function firstNonEmpty(values = []) {
   return values.find((value) => typeof value === 'string' && value.trim())?.trim() || '';
 }

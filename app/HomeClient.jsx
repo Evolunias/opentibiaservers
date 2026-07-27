@@ -18,12 +18,12 @@ const defaultFilters = {
 };
 const curatedLinks = [
   { href: '/antica', label: 'Antica', detail: 'Official-world history and OT alternatives' },
-  { href: '/nova', label: 'Nova', detail: 'Fresh-start world history and OT launch intent' },
-  { href: '/otservlist', label: 'otservlist.org', detail: 'Server-list comparison and discovery intent' },
+  { href: '/nova', label: 'Nova', detail: 'Fresh-start world history and OT alternatives' },
+  { href: '/otservlist', label: 'otservlist.org', detail: 'Server-list comparison and directory context' },
   { href: '/otland', label: 'OTLand', detail: 'Community, Server Gala, and development resources' },
-  { href: '/cyntara', label: 'Cyntara', detail: 'Highrate server research and live comparisons' },
+  { href: '/cyntara', label: 'Cyntara', detail: 'Highrate server guide and live comparisons' },
   { href: '/evolunia', label: 'Evolunia', detail: 'Rules, community fit, and similar servers' },
-  { href: '/otmadness', label: 'OTMadness', detail: 'High-EXP server research and activity signals' },
+  { href: '/otmadness', label: 'OTMadness', detail: 'High-EXP server guide and activity signals' },
 ];
 
 export default function HomeClient({ initialServers = [], initialTotal = 0, initialError = null }) {
@@ -169,9 +169,9 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
       <section id="servers" className="max-w-7xl mx-auto px-6 py-6">
         <section className="mb-6 border border-gray-200 bg-white p-4">
           <div className="mb-3">
-            <h2 className="text-lg font-bold text-gray-950">Curated Open Tibia Research</h2>
+            <h2 className="text-lg font-bold text-gray-950">Featured Open Tibia Guides</h2>
             <p className="text-sm text-gray-600">
-              Exact-match guides for high-intent searches, official worlds, OT communities, and popular servers.
+              Useful pages for official worlds, OT communities, popular servers, and players comparing where to play next.
             </p>
           </div>
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
