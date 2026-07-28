@@ -88,6 +88,41 @@ function buildPlayerGuide(server) {
   ];
 }
 
+function buildIntentChecklist(server) {
+  const name = server.name || 'this server';
+  const checks = [
+    server.website_url || server.external_launch_url
+      ? `Visit the official ${name} website before downloading a client or creating an account.`
+      : `Confirm the official ${name} website before downloading any client files.`,
+    server.version
+      ? `Match your client to Tibia ${server.version}; mismatched clients are a common reason players cannot connect.`
+      : 'Confirm the active client version before trying to connect.',
+    server.world_type
+      ? `Review the ${server.world_type} rules, skull system, frag limits, and bot policy before committing time.`
+      : 'Review PvP rules, frag limits, and bot policy before committing time.',
+    server.uptime_percent
+      ? `Use the listed ${Number(server.uptime_percent).toFixed(2)}% uptime as a discovery signal, then verify recent Discord or forum activity.`
+      : 'Look for recent monitor checks, Discord activity, and owner posts to confirm the world is active.',
+    'Read player reviews and conversation updates for current balance, staff response, donations, resets, and community health.',
+  ];
+
+  return checks;
+}
+
+function buildTrustSummary(server) {
+  const signals = [
+    server.source ? `Imported from ${server.source}` : 'Imported or submitted directory record',
+    server.source_url ? 'Source record linked' : null,
+    server.website_url || server.external_launch_url ? 'Official website mapped' : null,
+    server.official_last_researched_at ? 'Official source research timestamped' : null,
+    server.claim_status ? `Claim status: ${server.claim_status}` : 'Claim status: unclaimed',
+    server.review_count ? `${Number(server.review_count).toLocaleString()} community review signals` : null,
+    server.last_monitor_checked_at ? 'Recent monitor data available' : null,
+  ].filter(Boolean);
+
+  return signals;
+}
+
 function stringifyJson(value, fallback) {
   try {
     return JSON.stringify(value ?? fallback, null, 2);
@@ -390,6 +425,8 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
     : [];
   const hasOfficialLinks = Boolean(officialWebsiteHref || launcherHref || trailerHref || discordHref || forumHref || ownerContact);
   const playerGuide = buildPlayerGuide(server);
+  const intentChecklist = buildIntentChecklist(server);
+  const trustSummary = buildTrustSummary(server);
 
   const saveOwnerTemplate = async (event) => {
     event.preventDefault();
@@ -474,11 +511,13 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             <section className="border border-gray-200 rounded p-5 mb-6 bg-gray-50">
               <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
                 <div className="max-w-3xl">
-                  <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
-                    {server.template_name || 'directory_pro'} template
-                  </p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Open Tibia server profile</p>
                   <h2 className="text-2xl font-bold text-gray-950 mb-2">{renderHeadline}</h2>
                   <p className="text-gray-700">{renderSubheadline || 'Server owners can customize this listing after claiming it.'}</p>
+                  <p className="mt-3 text-sm leading-6 text-gray-600">
+                    This page is built for players researching whether {server.name} is worth joining now. It combines live directory data,
+                    owner-manageable fields, public source references, monitor history, reviews, and community discussion in one crawlable profile.
+                  </p>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {launcherHref ? (
@@ -511,7 +550,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
               <section className="border border-gray-200 rounded p-4">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">Server Data</h2>
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Server Data for {server.name}</h2>
                 <InfoRow label="Client" value={server.version} />
                 <InfoRow label="EXP" value={server.exp_rate ? `${server.exp_rate}x` : '-'} />
                 <InfoRow label="Skill" value={server.skill_rate ? `${server.skill_rate}x` : '-'} />
@@ -561,7 +600,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             </div>
 
             <section className="border border-gray-200 rounded p-4 mb-6">
-              <h2 className="text-lg font-bold text-gray-950 mb-3">Player Guide</h2>
+              <h2 className="text-lg font-bold text-gray-950 mb-3">Player Guide for {server.name}</h2>
               <div className="grid grid-cols-1 gap-3">
                 {playerGuide.map((item) => (
                   <div key={item.title} className="rounded border border-gray-200 bg-gray-50 p-4">
@@ -572,11 +611,40 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
               </div>
             </section>
 
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+              <section className="border border-gray-200 rounded p-4">
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Before You Play {server.name}</h2>
+                <ul className="space-y-3">
+                  {intentChecklist.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm leading-6 text-gray-700">
+                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gray-900" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section className="border border-gray-200 rounded p-4">
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Trust and Freshness Signals</h2>
+                <div className="flex flex-wrap gap-2">
+                  {trustSummary.map((signal) => (
+                    <span key={signal} className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-xs font-semibold text-gray-700">
+                      {signal}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-4 text-sm leading-6 text-gray-700">
+                  Open Tibia worlds change quickly. The strongest pages are kept current by a mix of source sync, uptime checks,
+                  player feedback, screenshots, and owner-verified edits rather than static promotional copy.
+                </p>
+              </section>
+            </div>
+
             <section className="border border-gray-200 rounded p-4 mb-6">
               <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between mb-4">
                 <div>
                   <h2 className="text-lg font-bold text-gray-950">Official Links and Contact</h2>
-                  <p className="text-sm text-gray-600">Home page, launcher, community channels, and ownership contact signals for this server.</p>
+                  <p className="text-sm text-gray-600">Home page, launcher, community channels, and ownership contact signals for {server.name}.</p>
                 </div>
                 {!isOwned ? (
                   <a href="#claim-listing" className="text-sm font-semibold text-blue-700 hover:underline">
@@ -623,7 +691,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             ) : null}
 
             <section className="border border-gray-200 rounded p-4 mb-6">
-              <h2 className="text-lg font-bold text-gray-950 mb-3">Server Highlights</h2>
+              <h2 className="text-lg font-bold text-gray-950 mb-3">{server.name} Highlights</h2>
               {server.feature_bullets?.length ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {server.feature_bullets.map((feature) => (
