@@ -49,6 +49,7 @@ export default async function CuratedGuideArticle({ page }) {
   const deepDiveSections = buildDeepDiveSections(page);
   const estimatedWords = estimateCuratedPageWords(page);
   const internalLinks = buildInternalLinks(page);
+  const wikiDepth = page.wikiDepth || null;
 
   return (
     <main className="min-h-screen bg-gray-50 text-gray-950">
@@ -117,6 +118,9 @@ export default async function CuratedGuideArticle({ page }) {
             {page.type === 'server' ? (
               <p className="mt-2 text-xs text-gray-300">Estimated depth: {estimatedWords.toLocaleString()} words</p>
             ) : null}
+            {wikiDepth ? (
+              <p className="mt-2 text-xs font-semibold text-gray-200">Wiki status: {wikiDepth.statusLabel}</p>
+            ) : null}
           </aside>
         </div>
       </section>
@@ -126,6 +130,78 @@ export default async function CuratedGuideArticle({ page }) {
           {page.overview ? (
             <section className="border-b border-gray-200 pb-8">
               <p className="text-xl leading-9 text-gray-800">{page.overview}</p>
+            </section>
+          ) : null}
+
+          {wikiDepth ? (
+            <section className="border-b border-gray-200 pb-8">
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Wiki Depth Gate</p>
+              <h2 className="mb-4 text-2xl font-bold text-gray-950">
+                {page.primaryKeyword} Wiki Status and Required Research
+              </h2>
+              <div className={`mb-5 rounded border p-4 ${wikiDepth.status === 'directory-only' ? 'border-amber-200 bg-amber-50' : 'border-blue-200 bg-blue-50'}`}>
+                <h3 className="text-base font-bold text-gray-950">{wikiDepth.statusLabel}</h3>
+                <p className="mt-2 text-sm leading-7 text-gray-700">
+                  {wikiDepth.status === 'directory-only'
+                    ? 'This page has an indexable exact-match wiki shell and source queue, but it is not marked as a completed wiki article until official/wiki/community evidence fills the required gameplay fields.'
+                    : 'This page has source-backed server research, but it still remains partial until all required gameplay fields are independently filled and cited.'}
+                </p>
+                {wikiDepth.missingFields?.length ? (
+                  <p className="mt-3 text-sm font-semibold text-gray-800">
+                    Missing: {wikiDepth.missingFields.join(', ')}
+                  </p>
+                ) : null}
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                {wikiDepth.gameplayGuide.map((entry) => (
+                  <div key={entry.heading} className="rounded border border-gray-200 bg-white p-4">
+                    <h3 className="text-base font-bold text-gray-950">{entry.heading}</h3>
+                    <p className="mt-2 text-sm leading-7 text-gray-700">{entry.body}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                {Object.entries(wikiDepth.systems).map(([key, values]) => (
+                  <div key={key} className="rounded border border-gray-200 bg-white p-4">
+                    <h3 className="text-base font-bold capitalize text-gray-950">{key.replace(/([A-Z])/g, ' $1')}</h3>
+                    <ul className="mt-3 space-y-2">
+                      {values.map((value) => (
+                        <li key={value} className="text-sm leading-6 text-gray-700">
+                          {value}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 rounded border border-gray-200 bg-white p-4">
+                <h3 className="text-base font-bold text-gray-950">Source Candidate Queue</h3>
+                <p className="mt-2 text-sm leading-7 text-gray-700">{wikiDepth.sourcePolicy}</p>
+                <div className="mt-4 grid gap-3">
+                  {wikiDepth.sourceCandidates.map((source) => (
+                    <TrustedExternalLink
+                      key={`${source.type}-${source.href}`}
+                      href={source.href}
+                      label={source.label}
+                      note={source.use}
+                      allowUntrusted={source.type === 'wiki_search'}
+                      className="rounded border border-gray-200 bg-gray-50 p-4 hover:border-gray-400 hover:no-underline"
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-6 rounded border border-gray-200 bg-white p-4">
+                <h3 className="text-base font-bold text-gray-950">Editorial Research Queue</h3>
+                <ul className="mt-3 space-y-2">
+                  {wikiDepth.editorialQueue.map((item) => (
+                    <li key={item} className="text-sm leading-6 text-gray-700">{item}</li>
+                  ))}
+                </ul>
+              </div>
             </section>
           ) : null}
 
