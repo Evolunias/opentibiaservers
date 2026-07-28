@@ -3,6 +3,7 @@ import Link from 'next/link';
 const footerLinks = [
   { href: '/', label: 'Server Directory' },
   { href: '/community', label: 'Community' },
+  { href: '/resources', label: 'Resources' },
   { href: '/submit-server', label: 'Submit Server' },
   { href: '/terms', label: 'Terms' },
   { href: '/privacy', label: 'Privacy' },
@@ -41,7 +42,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-white/10 px-6 py-4">
         <p className="mx-auto max-w-7xl text-xs text-gray-400">
-          © {new Date().getFullYear()} OpenTibiaServers.com. Public source records are attributed where available; server owners can request corrections or claim listings.
+          (c) {new Date().getFullYear()} OpenTibiaServers.com. Public source records are attributed where available; server owners can request corrections or claim listings.
         </p>
       </div>
     </footer>

@@ -12,11 +12,12 @@ import {
 import { getCuratedPage } from '@/lib/curated-pages';
 import { getOtServerCuratedPage } from '@/lib/otserver-curated-pages';
 import { getOtlandServerGalaPage } from '@/lib/otland-server-gala-pages';
+import { getResourcePage } from '@/lib/resource-pages';
 import { getTibiaWorldPage } from '@/lib/tibia-world-pages';
 import { getTopOtservlistServerBySlug } from '@/lib/top-otservlist-servers';
 
 export function getExactMatchPage(slug) {
-  return getCuratedPage(slug) || getOtServerCuratedPage(slug) || getTibiaWorldPage(slug);
+  return getCuratedPage(slug) || getOtServerCuratedPage(slug) || getTibiaWorldPage(slug) || getResourcePage(slug);
 }
 
 export function getExactMatchServer(slug) {

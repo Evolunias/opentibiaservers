@@ -5,6 +5,7 @@ import { getCuratedPages } from '@/lib/curated-pages';
 import { getIndexableKeywordPages } from '@/lib/keyword-pages';
 import { getOtServerCuratedPages } from '@/lib/otserver-curated-pages';
 import { getOtlandServerGalaPages } from '@/lib/otland-server-gala-pages';
+import { getResourcePages } from '@/lib/resource-pages';
 import { topOtservlistServers } from '@/lib/top-otservlist-servers';
 import { getTibiaWorldPages } from '@/lib/tibia-world-pages';
 
@@ -26,6 +27,12 @@ export default async function sitemap() {
       changeFrequency: 'daily',
       priority: 0.7,
     },
+    {
+      url: buildAbsoluteUrl('/resources'),
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.82,
+    },
   ];
   const curatedUrls = getCuratedPages().map((page) => ({
     url: buildAbsoluteUrl(page.path),
@@ -38,6 +45,12 @@ export default async function sitemap() {
     lastModified: page.updatedAt,
     changeFrequency: 'monthly',
     priority: page.slug.includes('world') ? 0.72 : 0.76,
+  }));
+  const resourceUrls = getResourcePages().map((page) => ({
+    url: buildAbsoluteUrl(page.path),
+    lastModified: page.updatedAt,
+    changeFrequency: 'monthly',
+    priority: page.type === 'resource' ? 0.74 : 0.7,
   }));
   const generatedOtServerUrls = getOtServerCuratedPages().map((page) => ({
     url: buildAbsoluteUrl(page.path),
@@ -73,7 +86,7 @@ export default async function sitemap() {
   const supabase = getSupabaseServerClient();
   if (!supabase) {
     const seenUrls = new Set();
-    return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...otlandServerGalaUrls, ...tibiaWorldUrls, ...keywordUrls, ...seededExactMatchUrls, ...seededServerUrls].filter((entry) => {
+    return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...otlandServerGalaUrls, ...tibiaWorldUrls, ...resourceUrls, ...keywordUrls, ...seededExactMatchUrls, ...seededServerUrls].filter((entry) => {
       if (seenUrls.has(entry.url)) return false;
       seenUrls.add(entry.url);
       return true;
@@ -119,7 +132,7 @@ export default async function sitemap() {
   ];
 
   const seenUrls = new Set();
-  return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...otlandServerGalaUrls, ...tibiaWorldUrls, ...keywordUrls, ...facetUrls, ...seededExactMatchUrls, ...seededServerUrls, ...serverUrls].filter((entry) => {
+  return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...otlandServerGalaUrls, ...tibiaWorldUrls, ...resourceUrls, ...keywordUrls, ...facetUrls, ...seededExactMatchUrls, ...seededServerUrls, ...serverUrls].filter((entry) => {
     if (seenUrls.has(entry.url)) return false;
     seenUrls.add(entry.url);
     return true;
