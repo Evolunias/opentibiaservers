@@ -1,5 +1,6 @@
 import "./globals.css";
 import { AuthProvider } from "./context/AuthContext";
+import Footer from "./components/Footer";
 import { buildAbsoluteUrl, getSiteName, getSiteUrl } from '@/lib/seo';
 
 export const metadata = {
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
       <body>
         <AuthProvider>
           {children}
+          <Footer />
         </AuthProvider>
       </body>
     </html>
