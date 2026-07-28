@@ -83,7 +83,7 @@ export default function CommunityPage() {
     setNotice(null);
 
     if (!user) {
-      router.push('/auth/login?redirect=/community');
+      router.push('/?auth=login&redirect=/community');
       return;
     }
 

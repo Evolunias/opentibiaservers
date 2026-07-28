@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAuth } from '@/app/context/AuthContext';
 
 export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) {
@@ -14,10 +14,20 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
   });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const [notice, setNotice] = useState('');
+
+  useEffect(() => {
+    if (open) {
+      setActiveMode(mode);
+      setError('');
+      setNotice('');
+    }
+  }, [mode, open]);
 
   if (!open) return null;
 
   const isRegister = activeMode === 'register';
+  const isVerify = activeMode === 'verify';
 
   const submit = async (event) => {
     event.preventDefault();
@@ -37,31 +47,98 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
       return;
     }
 
+    if (isRegister) {
+      setNotice(`We created the account for ${form.email}. Check that inbox for the Supabase verification email if email confirmation is enabled.`);
+      setActiveMode('verify');
+      onSuccess?.();
+      setSubmitting(false);
+      return;
+    }
+
     onSuccess?.();
     onClose?.();
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-gray-950/70 px-4 py-6">
-      <div className="w-full max-w-md rounded border border-gray-200 bg-white shadow-2xl">
-        <div className="flex items-center justify-between border-b border-gray-200 px-5 py-4">
-          <div>
-            <h2 className="text-lg font-bold text-gray-950">{isRegister ? 'Create Account' : 'Sign In'}</h2>
-            <p className="mt-1 text-sm text-gray-600">
-              {isRegister ? 'Join as a player or server owner.' : 'Continue without leaving this page.'}
-            </p>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-gray-950/80 px-4 py-6 backdrop-blur-sm">
+      <button type="button" aria-label="Close auth dialog" className="absolute inset-0 cursor-default" onClick={onClose} />
+      <div className="relative w-full max-w-[460px] overflow-hidden rounded border border-gray-200 bg-white shadow-2xl">
+        <div className="border-b border-gray-200 bg-gray-950 px-5 py-5 text-white">
+          <div className="mb-4 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded border border-white/20 bg-white text-xs font-black text-gray-950">
+                OTS
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-gray-300">Open Tibia Servers</p>
+                <h2 className="text-xl font-bold text-white">
+                  {isVerify ? 'Verify Email' : isRegister ? 'Create Account' : 'Sign In'}
+                </h2>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={onClose}
+              className="rounded border border-white/15 px-3 py-2 text-sm font-bold text-gray-200 hover:bg-white hover:text-gray-950"
+              aria-label="Close auth dialog"
+            >
+              X
+            </button>
           </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="rounded px-3 py-2 text-sm font-bold text-gray-500 hover:bg-gray-100 hover:text-gray-950"
-            aria-label="Close auth dialog"
-          >
-            X
-          </button>
+          <div className="grid grid-cols-2 gap-2 rounded border border-white/10 bg-white/5 p-1">
+            <button
+              type="button"
+              onClick={() => {
+                setActiveMode('login');
+                setError('');
+                setNotice('');
+              }}
+              className={`rounded px-3 py-2 text-sm font-bold ${!isRegister && !isVerify ? 'bg-white text-gray-950' : 'text-gray-200 hover:bg-white/10'}`}
+            >
+              Sign in
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setActiveMode('register');
+                setError('');
+                setNotice('');
+              }}
+              className={`rounded px-3 py-2 text-sm font-bold ${isRegister || isVerify ? 'bg-white text-gray-950' : 'text-gray-200 hover:bg-white/10'}`}
+            >
+              Create account
+            </button>
+          </div>
         </div>
 
-        <form onSubmit={submit} className="space-y-4 px-5 py-5">
+        {isVerify ? (
+          <div className="px-5 py-5">
+            <div className="rounded border border-green-200 bg-green-50 p-4">
+              <h3 className="text-base font-bold text-green-950">Check your email</h3>
+              <p className="mt-2 text-sm leading-7 text-green-900">
+                {notice || `We sent the next step to ${form.email}. Verify the email address, then return here to sign in and manage reviews, claims, screenshots, and listings.`}
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setActiveMode('login');
+                setNotice('');
+              }}
+              className="mt-4 w-full rounded bg-gray-950 px-4 py-3 text-sm font-bold text-white hover:bg-gray-800"
+            >
+              Back to sign in
+            </button>
+          </div>
+        ) : (
+          <form onSubmit={submit} className="space-y-4 px-5 py-5">
+          <div>
+            <p className="text-sm leading-6 text-gray-600">
+              {isRegister
+                ? 'Join as a player, server owner, or community manager without leaving the directory.'
+                : 'Continue on this page and keep your current server research open.'}
+            </p>
+          </div>
           {error ? <div className="rounded border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">{error}</div> : null}
 
           {isRegister ? (
@@ -125,6 +202,7 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
             type="button"
             onClick={() => {
               setError('');
+              setNotice('');
               setActiveMode(isRegister ? 'login' : 'register');
             }}
             className="w-full rounded border border-gray-300 bg-white px-4 py-3 text-sm font-bold text-gray-900 hover:bg-gray-50"
@@ -132,6 +210,7 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
             {isRegister ? 'Already have an account? Sign in' : 'Need an account? Register'}
           </button>
         </form>
+        )}
       </div>
     </div>
   );

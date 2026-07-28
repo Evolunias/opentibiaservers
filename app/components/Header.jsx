@@ -1,18 +1,46 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useAuth } from '@/app/context/AuthContext';
 import AuthModal from '@/app/components/AuthModal';
 
 export default function Header() {
+  const router = useRouter();
   const { user, loading } = useAuth();
   const [authMode, setAuthMode] = useState('login');
   const [authOpen, setAuthOpen] = useState(false);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const mode = params.get('auth');
+    if (mode === 'login' || mode === 'register') {
+      setAuthMode(mode);
+      setAuthOpen(true);
+    }
+  }, []);
+
   const openAuth = (mode) => {
     setAuthMode(mode);
     setAuthOpen(true);
+  };
+
+  const closeAuth = () => {
+    setAuthOpen(false);
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('auth')) {
+      url.searchParams.delete('auth');
+      router.replace(`${url.pathname}${url.search}${url.hash}`, { scroll: false });
+    }
+  };
+
+  const authSuccess = () => {
+    const params = new URLSearchParams(window.location.search);
+    const redirect = params.get('redirect');
+    if (redirect && redirect.startsWith('/')) {
+      router.push(redirect);
+    }
   };
 
   return (
@@ -76,7 +104,7 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <AuthModal open={authOpen} mode={authMode} onClose={() => setAuthOpen(false)} />
+      <AuthModal open={authOpen} mode={authMode} onClose={closeAuth} onSuccess={authSuccess} />
     </>
   );
 }

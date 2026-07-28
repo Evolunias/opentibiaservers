@@ -4,15 +4,15 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/app/context/AuthContext';
 import { useEffect } from 'react';
 
-export function withAuth(Component, redirectTo = '/auth/login') {
+export function withAuth(Component, redirectTo = '/?auth=login') {
   return function ProtectedComponent(props) {
     const router = useRouter();
     const { user, loading } = useAuth();
 
     useEffect(() => {
       if (!loading && !user) {
-        const redirect = props.params?.id 
-          ? `${redirectTo}?redirect=/${props.pathname || ''}` 
+        const redirect = props.params?.id
+          ? `${redirectTo}${redirectTo.includes('?') ? '&' : '?'}redirect=/${props.pathname || ''}`
           : redirectTo;
         router.push(redirect);
       }

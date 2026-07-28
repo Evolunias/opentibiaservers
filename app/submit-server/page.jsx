@@ -40,7 +40,7 @@ export default function SubmitServerPage() {
 
   useEffect(() => {
     if (!loading && !user) {
-      router.push('/auth/login?redirect=/submit-server');
+      router.push('/?auth=login&redirect=/submit-server');
     }
   }, [user, loading, router]);
 
