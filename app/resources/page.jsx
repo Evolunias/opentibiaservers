@@ -101,6 +101,34 @@ export default function ResourcesPage() {
         </div>
       </section>
 
+      <section className="border-b border-gray-200 bg-gray-100">
+        <div className="mx-auto max-w-6xl px-6 py-8">
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr_1fr]">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Historical Standard</p>
+              <h2 className="mt-2 text-2xl font-bold text-gray-950">Dates are tied to surviving evidence</h2>
+              <p className="mt-3 text-sm leading-7 text-gray-700">
+                Every entry distinguishes an exact release, an earliest verified archive, a repository opening, and an uncertain community memory. A date is never made more precise than its source.
+              </p>
+            </div>
+            <div className="border-l border-gray-300 pl-5">
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Coverage</p>
+              <p className="mt-2 text-3xl font-bold text-gray-950">{resources.length}</p>
+              <p className="mt-2 text-sm leading-7 text-gray-700">
+                Canonical tools, engines, clients, account makers, libraries, editors, and historical automation projects.
+              </p>
+            </div>
+            <div className="border-l border-gray-300 pl-5">
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Page Depth</p>
+              <p className="mt-2 text-lg font-bold text-gray-950">Origin through present status</p>
+              <p className="mt-2 text-sm leading-7 text-gray-700">
+                Each guide covers lineage, milestones, trends, common uses, notable impact, compatibility, safety, and primary references.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-6 py-10">
         <div className="grid gap-6">
           {Object.entries(groups).map(([category, pages]) => (

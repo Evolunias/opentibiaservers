@@ -4,6 +4,8 @@ import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/app/context/AuthContext';
 import AuthModal from '@/app/components/AuthModal';
+import TrustedExternalLink from '@/app/components/TrustedExternalLink';
+import { assessExternalLink, normalizeExternalUrl, safeUrlOrNull } from '@/lib/external-links';
 import { supabase } from '@/lib/supabase';
 
 const badgeClass = (type) => {
@@ -41,15 +43,6 @@ function InfoRow({ label, value }) {
       <span className="text-gray-950 font-semibold text-right break-words">{value || '-'}</span>
     </div>
   );
-}
-
-function externalHref(value) {
-  if (!value) return '';
-  const text = String(value).trim();
-  if (!text) return '';
-  if (/^https?:\/\//i.test(text)) return text;
-  if (/^discord\.gg\//i.test(text)) return `https://${text}`;
-  return text.includes('.') ? `https://${text}` : '';
 }
 
 function DirectoryEmptyState({ title, body, action }) {
@@ -121,6 +114,45 @@ function buildTrustSummary(server) {
   ].filter(Boolean);
 
   return signals;
+}
+
+function buildExpectedDomains(server = {}) {
+  return [
+    server.host,
+    server.ip,
+    server.website_url,
+    server.external_launch_url,
+  ]
+    .map((value) => {
+      const href = normalizeExternalUrl(value);
+      return href ? new URL(href).hostname : String(value || '');
+    })
+    .filter(Boolean);
+}
+
+function validateEditableLinks(values, expectedDomains) {
+  const checks = [
+    ['Discord', values.contact_discord, { allowUntrusted: true }],
+    ['Launcher URL', values.launcher_url, { kind: 'download', expectedDomains }],
+    ['Trailer URL', values.trailer_url, { expectedDomains }],
+  ];
+
+  for (const [label, value, options] of checks) {
+    if (!String(value || '').trim()) continue;
+    const result = assessExternalLink(value, options);
+    if (!result.clickable) return `${label} was blocked: ${result.reason}.`;
+  }
+
+  const gallery = String(values.gallery_images || '')
+    .split('\n')
+    .map((item) => item.trim())
+    .filter(Boolean);
+  for (const image of gallery) {
+    const result = assessExternalLink(image, { kind: 'image', expectedDomains });
+    if (!result.clickable) return `Gallery URL was blocked: ${result.reason}.`;
+  }
+
+  return null;
 }
 
 function stringifyJson(value, fallback) {
@@ -413,15 +445,18 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
   const canEditListing = Boolean(user && (user.id === server.owner_user_id || user.id === server.user_id));
   const renderHeadline = server.promo_headline || server.official_facts?.headline || server.name;
   const renderSubheadline = server.promo_subheadline || server.official_summary || server.description;
-  const officialWebsiteHref = externalHref(server.website_url || server.external_launch_url);
-  const discordHref = externalHref(server.contact_discord);
-  const forumHref = externalHref(server.forum_url || server.community_url);
-  const launcherHref = externalHref(server.launcher_url);
-  const trailerHref = externalHref(server.trailer_url);
+  const expectedDomains = buildExpectedDomains(server);
+  const officialWebsiteHref = safeUrlOrNull(server.website_url || server.external_launch_url, { expectedDomains });
+  const discordHref = safeUrlOrNull(server.contact_discord, { allowUntrusted: true });
+  const forumHref = safeUrlOrNull(server.forum_url || server.community_url, { expectedDomains, allowUntrusted: true });
+  const launcherHref = safeUrlOrNull(server.launcher_url, { kind: 'download', expectedDomains });
+  const trailerHref = safeUrlOrNull(server.trailer_url, { expectedDomains, allowUntrusted: true });
   const ownerContact = server.owner_email || server.contact_email;
-  const galleryImages = Array.isArray(server.gallery_images) ? server.gallery_images.filter(Boolean) : [];
+  const galleryImages = Array.isArray(server.gallery_images)
+    ? server.gallery_images.filter((url) => assessExternalLink(url, { kind: 'image', expectedDomains }).clickable)
+    : [];
   const referenceSources = Array.isArray(server.research_sources)
-    ? server.research_sources.filter((source) => source?.url && source?.label)
+    ? server.research_sources.filter((source) => source?.url && source?.label && assessExternalLink(source.url, { expectedDomains }).clickable)
     : [];
   const hasOfficialLinks = Boolean(officialWebsiteHref || launcherHref || trailerHref || discordHref || forumHref || ownerContact);
   const playerGuide = buildPlayerGuide(server);
@@ -436,13 +471,19 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
     setCommunityNotice(null);
 
     try {
+      const linkError = validateEditableLinks(ownerEditor, expectedDomains);
+      if (linkError) {
+        setCommunityError(linkError);
+        return;
+      }
+
       const payload = {
         template_name: ownerEditor.template_name || 'directory_pro',
         promo_headline: ownerEditor.promo_headline || null,
         promo_subheadline: ownerEditor.promo_subheadline || null,
-        contact_discord: ownerEditor.contact_discord || null,
-        launcher_url: ownerEditor.launcher_url || null,
-        trailer_url: ownerEditor.trailer_url || null,
+        contact_discord: safeUrlOrNull(ownerEditor.contact_discord, { allowUntrusted: true }) || null,
+        launcher_url: safeUrlOrNull(ownerEditor.launcher_url, { kind: 'download', expectedDomains }) || null,
+        trailer_url: safeUrlOrNull(ownerEditor.trailer_url, { expectedDomains, allowUntrusted: true }) || null,
         feature_bullets: ownerEditor.feature_bullets
           .split('\n')
           .map((item) => item.trim())
@@ -450,7 +491,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
         gallery_images: ownerEditor.gallery_images
           .split('\n')
           .map((item) => item.trim())
-          .filter(Boolean),
+          .filter((item) => assessExternalLink(item, { kind: 'image', expectedDomains }).clickable),
         faq_items: ownerEditor.faq_items.trim() ? JSON.parse(ownerEditor.faq_items) : [],
         custom_sections: ownerEditor.custom_sections.trim() ? JSON.parse(ownerEditor.custom_sections) : [],
         owner_edit_updated_at: new Date().toISOString(),
@@ -571,9 +612,12 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                 <InfoRow label="Monitor Checked" value={date(server.last_monitor_checked_at)} />
                 {server.source_url ? (
                   <div className="pt-3">
-                    <a href={server.source_url} target="_blank" rel="noopener noreferrer" className="inline-flex px-3 py-2 bg-gray-950 text-white rounded text-sm font-semibold hover:opacity-85">
-                      Open source record
-                    </a>
+                    <TrustedExternalLink
+                      href={server.source_url}
+                      label="Open source record"
+                      expectedDomains={expectedDomains}
+                      className="inline-flex px-3 py-2 bg-gray-950 text-white rounded text-sm font-semibold hover:opacity-85"
+                    />
                   </div>
                 ) : null}
               </section>
@@ -675,20 +719,42 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                 <h2 className="text-lg font-bold text-gray-950 mb-3">Reference Sources</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {referenceSources.map((source) => (
-                    <a
+                    <TrustedExternalLink
                       key={`${source.type || 'source'}-${source.url}`}
                       href={source.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      label={source.label}
+                      expectedDomains={expectedDomains}
                       className="rounded border border-gray-200 bg-gray-50 px-4 py-3 text-sm hover:border-gray-400 hover:bg-white hover:no-underline"
-                    >
-                      <span className="block font-semibold text-gray-950">{source.label}</span>
-                      <span className="mt-1 block text-xs uppercase tracking-wide text-gray-500">{source.type || 'source'}</span>
-                    </a>
+                    />
                   ))}
                 </div>
               </section>
             ) : null}
+
+            <section className="border border-gray-200 rounded p-4 mb-6">
+              <h2 className="text-lg font-bold text-gray-950 mb-3">Related Open Tibia Research</h2>
+              <div className="flex flex-wrap gap-2">
+                <Link href="/" className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline">
+                  Open Tibia server directory
+                </Link>
+                <Link href="/resources" className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline">
+                  Open Tibia tools and resources
+                </Link>
+                <Link href="/otland" className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline">
+                  OTLand server launch guide
+                </Link>
+                {server.version ? (
+                  <Link href={`/servers/client/${String(server.version).replace(/\./g, '-')}`} className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline">
+                    Tibia {server.version} Open Tibia servers
+                  </Link>
+                ) : null}
+                {server.location ? (
+                  <Link href={`/servers/country/${String(server.location).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline">
+                    {server.location} Open Tibia servers
+                  </Link>
+                ) : null}
+              </div>
+            </section>
 
             <section className="border border-gray-200 rounded p-4 mb-6">
               <h2 className="text-lg font-bold text-gray-950 mb-3">{server.name} Highlights</h2>

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useAuth } from '@/app/context/AuthContext';
 import { supabase } from '@/lib/supabase';
 import { buildServerSlug } from '@/lib/server-paths';
+import { assessExternalLink, normalizeExternalUrl, safeUrlOrNull } from '@/lib/external-links';
 
 export default function SubmitServerPage() {
   const router = useRouter();
@@ -57,6 +58,39 @@ export default function SubmitServerPage() {
     return null;
   };
 
+  const expectedDomains = () => {
+    const website = normalizeExternalUrl(formData.website_url);
+    return [formData.ip, website ? new URL(website).hostname : null].filter(Boolean);
+  };
+
+  const validateLinks = () => {
+    const domains = expectedDomains();
+    const checks = [
+      ['Website URL', formData.website_url, { expectedDomains: domains }],
+      ['Discord', formData.contact_discord, { allowUntrusted: true }],
+      ['Forum URL', formData.forum_url, { expectedDomains: domains, allowUntrusted: true }],
+      ['Launcher URL', formData.launcher_url, { kind: 'download', expectedDomains: domains }],
+      ['Trailer URL', formData.trailer_url, { expectedDomains: domains, allowUntrusted: true }],
+    ];
+
+    for (const [label, value, options] of checks) {
+      if (!String(value || '').trim()) continue;
+      const result = assessExternalLink(value, options);
+      if (!result.clickable) return `${label} was blocked: ${result.reason}.`;
+    }
+
+    const gallery = formData.gallery_images
+      .split('\n')
+      .map((item) => item.trim())
+      .filter(Boolean);
+    for (const image of gallery) {
+      const result = assessExternalLink(image, { kind: 'image', expectedDomains: domains });
+      if (!result.clickable) return `Gallery URL was blocked: ${result.reason}.`;
+    }
+
+    return null;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
@@ -68,9 +102,16 @@ export default function SubmitServerPage() {
       return;
     }
 
+    const linkError = validateLinks();
+    if (linkError) {
+      setError(linkError);
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
+      const domains = expectedDomains();
       const { error: insertError } = await supabase
         .from('servers')
         .insert([
@@ -81,12 +122,12 @@ export default function SubmitServerPage() {
             version: formData.version,
             world_type: formData.world_type,
             location: formData.location,
-            website_url: formData.website_url || null,
+            website_url: safeUrlOrNull(formData.website_url, { expectedDomains: domains }) || null,
             owner_email: formData.owner_email,
-            contact_discord: formData.contact_discord || null,
-            forum_url: formData.forum_url || null,
-            launcher_url: formData.launcher_url || null,
-            trailer_url: formData.trailer_url || null,
+            contact_discord: safeUrlOrNull(formData.contact_discord, { allowUntrusted: true }) || null,
+            forum_url: safeUrlOrNull(formData.forum_url, { expectedDomains: domains, allowUntrusted: true }) || null,
+            launcher_url: safeUrlOrNull(formData.launcher_url, { kind: 'download', expectedDomains: domains }) || null,
+            trailer_url: safeUrlOrNull(formData.trailer_url, { expectedDomains: domains, allowUntrusted: true }) || null,
             description: formData.description || null,
             promo_headline: formData.promo_headline || formData.name,
             promo_subheadline: formData.description || null,
@@ -97,7 +138,7 @@ export default function SubmitServerPage() {
             gallery_images: formData.gallery_images
               .split('\n')
               .map((item) => item.trim())
-              .filter(Boolean),
+              .filter((item) => assessExternalLink(item, { kind: 'image', expectedDomains: domains }).clickable),
             faq_items: formData.faq_items.trim() ? JSON.parse(formData.faq_items) : [],
             custom_sections: formData.custom_sections.trim() ? JSON.parse(formData.custom_sections) : [],
             exp_rate: parseFloat(formData.exp_rate),

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import KeywordPageCommunity from '@/app/components/KeywordPageCommunity';
+import TrustedExternalLink from '@/app/components/TrustedExternalLink';
 import { buildServerSlug } from '@/lib/server-paths';
 import { buildCuratedJsonLd } from '@/lib/curated-pages';
 import { fetchDirectoryServers } from '@/lib/directory-data';
@@ -8,6 +9,33 @@ import { buildDeepDiveSections, estimateCuratedPageWords } from '@/lib/deep-dive
 
 function createQueryHref(query) {
   return `/?search=${encodeURIComponent(query)}`;
+}
+
+function createInternalTopicHref(query) {
+  return `/${String(query || '')
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')}`;
+}
+
+function buildInternalLinks(page) {
+  const links = [
+    { href: '/', label: 'Open Tibia server directory' },
+    { href: '/resources', label: 'Open Tibia tools and resources' },
+    { href: '/otland', label: 'OTLand server launch guide' },
+    { href: '/community', label: 'Open Tibia community boards' },
+  ];
+
+  for (const query of page.relatedServerQueries || []) {
+    const href = createInternalTopicHref(query);
+    if (href.length > 1 && !links.some((link) => link.href === href)) {
+      links.push({ href, label: query });
+    }
+    if (links.length >= 8) break;
+  }
+
+  return links;
 }
 
 export default async function CuratedGuideArticle({ page }) {
@@ -20,6 +48,7 @@ export default async function CuratedGuideArticle({ page }) {
   const jsonLd = buildCuratedJsonLd(page);
   const deepDiveSections = buildDeepDiveSections(page);
   const estimatedWords = estimateCuratedPageWords(page);
+  const internalLinks = buildInternalLinks(page);
 
   return (
     <main className="min-h-screen bg-gray-50 text-gray-950">
@@ -111,8 +140,39 @@ export default async function CuratedGuideArticle({ page }) {
                     <div>
                       <h3 className="text-base font-bold text-gray-950">{event.title}</h3>
                       <p className="mt-1 text-sm leading-7 text-gray-700">{event.text}</p>
+                      {event.sourceHref ? (
+                        <TrustedExternalLink
+                          href={event.sourceHref}
+                          label={`Source: ${event.sourceLabel || 'View supporting record'}`}
+                          className="mt-2 inline-flex text-xs font-bold text-blue-700"
+                        />
+                      ) : null}
                     </div>
                   </div>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {page.officialAccess?.length ? (
+            <section className="border-b border-gray-200 pb-8">
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Official Access</p>
+              <h2 className="mb-4 text-2xl font-bold text-gray-950">
+                {page.primaryKeyword} Official Source and Downloads
+              </h2>
+              <p className="mb-4 text-base leading-8 text-gray-700">
+                These links are limited to official project repositories, release channels, publisher domains, or moderated historical references. Historical automation entries are preserved for context and do not endorse running old binaries.
+              </p>
+              <div className="grid gap-3 md:grid-cols-2">
+                {page.officialAccess.map((entry) => (
+                  <TrustedExternalLink
+                    key={entry.href}
+                    href={entry.href}
+                    label={entry.label}
+                    note={entry.note}
+                    kind={entry.kind || 'reference'}
+                    className="rounded border border-gray-200 bg-white p-4 hover:border-gray-400 hover:no-underline"
+                  />
                 ))}
               </div>
             </section>
@@ -163,8 +223,12 @@ export default async function CuratedGuideArticle({ page }) {
 
           {page.researchNotes?.length ? (
             <section className="border-b border-gray-200 pb-8">
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Source Notes</p>
-              <h2 className="mb-4 text-2xl font-bold text-gray-950">What Public Sources Already Tell Us</h2>
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">
+                {page.type === 'resource' ? 'Evidence Notes' : 'Source Notes'}
+              </p>
+              <h2 className="mb-4 text-2xl font-bold text-gray-950">
+                {page.type === 'resource' ? 'How the Historical Record Was Verified' : 'What Public Sources Already Tell Us'}
+              </h2>
               <div className="grid gap-4">
                 {page.researchNotes.map((note) => (
                   <div key={note.label} className="rounded border border-gray-200 bg-white p-4">
@@ -185,10 +249,13 @@ export default async function CuratedGuideArticle({ page }) {
               </p>
               <div className="grid gap-3">
                 {page.mediaLeads.map((lead) => (
-                  <a key={lead.href} href={lead.href} target="_blank" rel="noopener noreferrer" className="rounded border border-gray-200 bg-white p-4 hover:border-gray-400 hover:no-underline">
-                    <h3 className="text-base font-bold text-blue-700">{lead.label}</h3>
-                    <p className="mt-2 text-sm leading-7 text-gray-700">{lead.note}</p>
-                  </a>
+                  <TrustedExternalLink
+                    key={lead.href}
+                    href={lead.href}
+                    label={lead.label}
+                    note={lead.note}
+                    className="rounded border border-gray-200 bg-white p-4 hover:border-gray-400 hover:no-underline"
+                  />
                 ))}
               </div>
             </section>
@@ -278,6 +345,21 @@ export default async function CuratedGuideArticle({ page }) {
           ) : null}
 
           <div className="rounded border border-gray-200 bg-white p-5">
+            <h2 className="mb-3 text-base font-bold text-gray-950">Related Directory Pages</h2>
+            <div className="flex flex-wrap gap-2">
+              {internalLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded border border-gray-200 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded border border-gray-200 bg-white p-5">
             <h2 className="mb-3 text-base font-bold text-gray-950">Search These Terms</h2>
             <div className="flex flex-wrap gap-2">
               {page.relatedServerQueries.map((query) => (
@@ -297,9 +379,11 @@ export default async function CuratedGuideArticle({ page }) {
             <ul className="space-y-3">
               {page.sourceLinks.map((source) => (
                 <li key={source.href}>
-                  <a href={source.href} className="text-sm font-semibold text-blue-700" rel="nofollow noopener noreferrer">
-                    {source.label}
-                  </a>
+                  <TrustedExternalLink
+                    href={source.href}
+                    label={source.label}
+                    className="text-sm font-semibold text-blue-700"
+                  />
                 </li>
               ))}
             </ul>
