@@ -84,3 +84,193 @@ input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--accent-blue);
 }
+
+.featured-server-ad {
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 219, 122, 0.38), transparent 28%),
+    linear-gradient(135deg, #0f3d3e 0%, #176b4f 42%, #b37b13 100%);
+}
+
+.featured-server-ad--top {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.featured-server-ad--inline {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(15, 61, 62, 0.18);
+}
+
+.featured-server-ad--footer {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    radial-gradient(circle at 85% 10%, rgba(255, 210, 97, 0.34), transparent 30%),
+    linear-gradient(135deg, #123f38 0%, #145f50 48%, #946112 100%);
+}
+
+.featured-server-ad__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) auto auto;
+  gap: 1rem;
+  align-items: center;
+  width: min(100%, 80rem);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.featured-server-ad--inline .featured-server-ad__inner,
+.featured-server-ad--footer .featured-server-ad__inner {
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr) auto;
+  padding: 1.35rem 1.5rem;
+}
+
+.featured-server-ad__copy h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.featured-server-ad--inline .featured-server-ad__copy h2,
+.featured-server-ad--footer .featured-server-ad__copy h2 {
+  font-size: clamp(1.35rem, 2vw, 2rem);
+}
+
+.featured-server-ad__copy p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.featured-server-ad__eyebrow {
+  margin: 0 0 0.35rem;
+  color: #ffe5a4;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.featured-server-ad__copy .featured-server-ad__eyebrow {
+  color: #ffe5a4;
+}
+
+.featured-server-ad__copy > p:last-child {
+  margin: 0.45rem 0 0;
+  max-width: 48rem;
+  font-size: 0.92rem;
+}
+
+.featured-server-ad__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  min-width: min(100%, 31rem);
+}
+
+.featured-server-ad__stat {
+  min-height: 4.6rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.featured-server-ad__stat span {
+  display: block;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.featured-server-ad__stat strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: #ffffff;
+  font-size: 0.98rem;
+  line-height: 1.15;
+}
+
+.featured-server-ad__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  min-width: 15rem;
+}
+
+.featured-server-ad__primary,
+.featured-server-ad__secondary {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.featured-server-ad__primary {
+  border: 1px solid #ffe5a4;
+  background: #ffe5a4;
+  color: #143b34;
+}
+
+.featured-server-ad__secondary {
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.featured-server-ad__primary:hover,
+.featured-server-ad__secondary:hover {
+  text-decoration: none;
+  filter: brightness(1.04);
+}
+
+@media (max-width: 980px) {
+  .featured-server-ad__inner,
+  .featured-server-ad--inline .featured-server-ad__inner,
+  .featured-server-ad--footer .featured-server-ad__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-server-ad__actions {
+    justify-content: flex-start;
+    min-width: 0;
+  }
+
+  .featured-server-ad__stats {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .featured-server-ad--inline {
+    border-radius: 0;
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+  }
+
+  .featured-server-ad__inner,
+  .featured-server-ad--inline .featured-server-ad__inner,
+  .featured-server-ad--footer .featured-server-ad__inner {
+    padding: 1rem;
+  }
+
+  .featured-server-ad__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-server-ad__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

@@ -8,6 +8,7 @@ import ServerCard from './components/ServerCard';
 import ServerList from './components/ServerList';
 import Pagination from './components/Pagination';
 import SyncStatus from './components/SyncStatus';
+import FeaturedServerAd from './components/FeaturedServerAd';
 import { fetchServers, supabase } from '@/lib/supabase';
 
 const PAGE_SIZE = 25;
@@ -167,6 +168,8 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
       </section>
 
       <section id="servers" className="max-w-7xl mx-auto px-6 py-6">
+        <FeaturedServerAd placement="inline" />
+
         <section className="mb-6 border border-gray-200 bg-white p-4">
           <div className="mb-3">
             <h2 className="text-lg font-bold text-gray-950">Featured Open Tibia Guides</h2>

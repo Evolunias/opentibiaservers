@@ -21,6 +21,17 @@ export default function Header() {
     }
   }, []);
 
+  useEffect(() => {
+    const handleOpenAuth = (event) => {
+      const mode = event.detail?.mode === 'register' ? 'register' : 'login';
+      setAuthMode(mode);
+      setAuthOpen(true);
+    };
+
+    window.addEventListener('ots:open-auth', handleOpenAuth);
+    return () => window.removeEventListener('ots:open-auth', handleOpenAuth);
+  }, []);
+
   const openAuth = (mode) => {
     setAuthMode(mode);
     setAuthOpen(true);
