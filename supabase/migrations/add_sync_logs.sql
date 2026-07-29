@@ -20,6 +20,7 @@ create index if not exists sync_logs_timestamp_idx on public.sync_logs (timestam
 alter table public.sync_logs enable row level security;
 
 -- Policy: Service role can write
+drop policy if exists "Service role can manage sync logs" on public.sync_logs;
 create policy "Service role can manage sync logs" on public.sync_logs
   as permissive
   for all
