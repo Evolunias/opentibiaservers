@@ -1,7 +1,6 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import Header from './components/Header';
 import Filters from './components/Filters';
 import ViewToggle from './components/ViewToggle';
 import ServerCard from './components/ServerCard';
@@ -112,8 +111,6 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
 
   return (
     <main className="min-h-screen bg-gray-50 text-gray-900">
-      <Header />
-
       <section className="border-b border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 items-start">

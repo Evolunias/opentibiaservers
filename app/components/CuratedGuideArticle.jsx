@@ -119,7 +119,7 @@ export default async function CuratedGuideArticle({ page }) {
               <p className="mt-2 text-xs text-gray-300">Estimated depth: {estimatedWords.toLocaleString()} words</p>
             ) : null}
             {wikiDepth ? (
-              <p className="mt-2 text-xs font-semibold text-gray-200">Wiki status: {wikiDepth.statusLabel}</p>
+              <p className="mt-2 text-xs font-semibold text-gray-200">Guide status: {wikiDepth.statusLabel}</p>
             ) : null}
           </aside>
         </div>
@@ -143,7 +143,7 @@ export default async function CuratedGuideArticle({ page }) {
                 <h3 className="text-base font-bold text-gray-950">{wikiDepth.statusLabel}</h3>
                 <p className="mt-2 text-sm leading-7 text-gray-700">
                   {wikiDepth.status === 'directory-only'
-                    ? 'This page has an indexable exact-match wiki shell and source queue, but it is not marked as a completed wiki article until official/wiki/community evidence fills the required gameplay fields.'
+                    ? 'This page has an indexable exact-match guide shell and source queue, but it is not marked as complete until official, owner, and community evidence fills the required gameplay fields.'
                     : 'This page has source-backed server research, but it still remains partial until all required gameplay fields are independently filled and cited.'}
                 </p>
                 {wikiDepth.missingFields?.length ? (

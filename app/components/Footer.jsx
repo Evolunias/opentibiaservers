@@ -4,6 +4,7 @@ import FeaturedServerAd from './FeaturedServerAd';
 const footerLinks = [
   { href: '/', label: 'Server Directory' },
   { href: '/community', label: 'Community' },
+  { href: '/knowledge', label: 'Knowledge' },
   { href: '/resources', label: 'Resources' },
   { href: '/submit-server', label: 'Submit Server' },
   { href: '/terms', label: 'Terms' },

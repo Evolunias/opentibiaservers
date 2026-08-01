@@ -9,6 +9,7 @@
     "lint": "next lint",
     "audit:links": "node scripts/audit-links.mjs",
     "audit:wiki-depth": "node scripts/audit-server-wiki-depth.mjs",
+    "audit:knowledge": "node scripts/audit-knowledge-pages.mjs",
     "submit:indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {

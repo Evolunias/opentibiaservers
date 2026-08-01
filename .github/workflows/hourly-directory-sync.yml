@@ -20,11 +20,12 @@ jobs:
       SCRAPINGBEE_API_KEY: ${{ secrets.SCRAPINGBEE_API_KEY }}
       OTSERVLIST_FETCH_MODE: scrapingbee
       OTSERVLIST_PAGE_LIMIT: '20'
-      OTSERVLIST_INCLUDE_DETAILS: 'false'
-      OTSERVLIST_DETAIL_LIMIT: '0'
+      OTSERVLIST_INCLUDE_DETAILS: 'true'
+      OTSERVLIST_DETAIL_LIMIT: '1000'
       OTSERVLIST_OFFICIAL_RESEARCH_LIMIT: '0'
       OTSERVLIST_TIMEOUT_MS: '120000'
       OTSERVLIST_PAGE_DELAY_MS: '250'
+      OTSERVLIST_DETAIL_DELAY_MS: '250'
       SUPABASE_UPSERT_CHUNK_SIZE: '100'
     steps:
       - name: Checkout repository
@@ -50,7 +51,8 @@ jobs:
           node scripts/apply-supabase-migrations.mjs \
             supabase/migrations/002_add_external_source_fields.sql \
             supabase/migrations/004_top_server_seo.sql \
-            supabase/migrations/add_sync_logs.sql
+            supabase/migrations/add_sync_logs.sql \
+            supabase/migrations/005_correct_otservlist_source_keys.sql
 
       - name: Run otservlist sync
         run: node scripts/run-otservlist-sync.mjs

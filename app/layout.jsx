@@ -2,6 +2,7 @@ import "./globals.css";
 import { AuthProvider } from "./context/AuthContext";
 import Footer from "./components/Footer";
 import FeaturedServerAd from "./components/FeaturedServerAd";
+import Header from "./components/Header";
 import { buildAbsoluteUrl, getSiteName, getSiteUrl } from '@/lib/seo';
 
 export const metadata = {
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
       <body>
         <AuthProvider>
           <FeaturedServerAd placement="top" />
+          <Header />
           {children}
           <Footer />
         </AuthProvider>

@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import Header from '@/app/components/Header';
 import { useAuth } from '@/app/context/AuthContext';
 import { supabase } from '@/lib/supabase';
 
@@ -125,8 +124,6 @@ export default function CommunityPage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <Header />
-
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between mb-6">
           <div>

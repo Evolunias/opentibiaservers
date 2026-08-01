@@ -617,7 +617,9 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                       label="Open source record"
                       expectedDomains={expectedDomains}
                       className="inline-flex px-3 py-2 bg-gray-950 text-white rounded text-sm font-semibold hover:opacity-85"
-                    />
+                    >
+                      Open source record
+                    </TrustedExternalLink>
                   </div>
                 ) : null}
               </section>

@@ -22,7 +22,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Open Tibia Resources, Tools, Editors, Engines, Bots and History',
-    description: 'A wiki-style Open Tibia resource index for tools, editors, engines, account makers, clients, and historical automation names.',
+    description: 'A source-linked Open Tibia resource index for tools, editors, engines, account makers, clients, and historical automation names.',
     url: buildAbsoluteUrl('/resources'),
     siteName: getSiteName(),
     type: 'website',
@@ -88,7 +88,7 @@ export default function ResourcesPage() {
             Open Tibia Resources
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-700">
-            A source-linked wiki for Open Tibia tools, editors, engines, clients, account makers, and historical Tibia automation names. The goal is to help players and server owners understand the ecosystem behind the listings.
+            A source-linked resource library for Open Tibia tools, editors, engines, clients, account makers, and historical Tibia automation names. The goal is to help players and server owners understand the ecosystem behind the listings.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/" className="rounded border border-gray-950 bg-gray-950 px-5 py-3 text-sm font-bold text-white hover:opacity-85 hover:no-underline">
@@ -96,6 +96,9 @@ export default function ResourcesPage() {
             </Link>
             <Link href="/otland" className="rounded border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-950 hover:bg-gray-100 hover:no-underline">
               OTLand Guide
+            </Link>
+            <Link href="/knowledge" className="rounded border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-950 hover:bg-gray-100 hover:no-underline">
+              Knowledge Base
             </Link>
           </div>
         </div>
