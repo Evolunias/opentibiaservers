@@ -629,7 +629,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
               <section className="border border-gray-200 rounded p-4">
                 <h2 className="text-lg font-bold text-gray-950 mb-3">Official Summary</h2>
                 <p className="text-gray-700 whitespace-pre-wrap">
-                  {server.official_summary || server.description || 'No official summary has been collected for this listing yet.'}
+                  {server.official_summary || server.description || 'This listing is currently using verified directory fields while the deeper owner profile is being built. Players should verify the current website, client, rules, and community channels before downloading files or creating an account.'}
                 </p>
               </section>
 
@@ -821,9 +821,9 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                 </div>
               ) : (
                 <DirectoryEmptyState
-                  title="No screenshots have been added yet"
-                  body="A modern OT directory should let players inspect the client, map, website, events, bosses, trainers, depot, and custom systems before they commit time to a server."
-                  action="Needed: homepage screenshots, gameplay images, launch graphics, trailer"
+                  title="Screenshots are waiting for verification"
+                  body="Useful server pages should show the real client, map areas, website, events, bosses, trainers, depot, and custom systems. Until media is verified, this page keeps the gallery empty instead of showing unrelated images."
+                  action="Best additions: homepage screenshots, gameplay images, launch graphics, trailer"
                 />
               )}
             </section>
@@ -1072,7 +1072,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                   <p className="text-xs text-gray-500 mt-2">{date(review.created_at)}</p>
                 </div>
               ))}
-              {!communityLoading && reviews.length === 0 ? <p className="text-sm text-gray-600">No reviews yet.</p> : null}
+              {!communityLoading && reviews.length === 0 ? <p className="text-sm text-gray-600">Player reviews will appear here after registered users share recent, specific experience with this server.</p> : null}
             </div>
           </section>
 
@@ -1099,7 +1099,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                   <p className="text-xs text-gray-500 mt-2">{date(message.created_at)}</p>
                 </div>
               ))}
-              {!communityLoading && messages.length === 0 ? <p className="text-sm text-gray-600">No conversation yet.</p> : null}
+              {!communityLoading && messages.length === 0 ? <p className="text-sm text-gray-600">Server questions, corrections, and community updates will appear here once players start the discussion.</p> : null}
             </div>
           </section>
         </div>

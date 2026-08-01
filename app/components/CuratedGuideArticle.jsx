@@ -135,9 +135,9 @@ export default async function CuratedGuideArticle({ page }) {
 
           {wikiDepth ? (
             <section className="border-b border-gray-200 pb-8">
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Wiki Depth Gate</p>
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Guide Depth Gate</p>
               <h2 className="mb-4 text-2xl font-bold text-gray-950">
-                {page.primaryKeyword} Wiki Status and Required Research
+                {page.primaryKeyword} Guide Readiness and Required Research
               </h2>
               <div className={`mb-5 rounded border p-4 ${wikiDepth.status === 'directory-only' ? 'border-amber-200 bg-amber-50' : 'border-blue-200 bg-blue-50'}`}>
                 <h3 className="text-base font-bold text-gray-950">{wikiDepth.statusLabel}</h3>

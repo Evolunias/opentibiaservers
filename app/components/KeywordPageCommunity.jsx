@@ -171,7 +171,7 @@ export default function KeywordPageCommunity({ pageSlug, keyword }) {
                 <div className="px-3 py-2 text-xs text-gray-600 break-all">{shot.image_url}</div>
               </a>
             ))}
-            {screenshots.length === 0 ? <p className="text-sm text-gray-600">No screenshots yet.</p> : null}
+            {screenshots.length === 0 ? <p className="text-sm text-gray-600">Verified screenshots will appear here after players or owners add media tied to this exact topic.</p> : null}
           </div>
         </div>
       </div>

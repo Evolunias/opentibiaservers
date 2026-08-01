@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/app/context/AuthContext';
 import AuthModal from '@/app/components/AuthModal';
+import LanguageSelector from '@/app/components/LanguageSelector';
 
 export default function Header() {
   const router = useRouter();
@@ -70,13 +71,20 @@ export default function Header() {
             </Link>
 
             {!loading ? (
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <Link
                   href="/community"
                   className="px-4 py-2 text-gray-900 font-semibold text-sm rounded hover:bg-gray-50"
                 >
                   Community
                 </Link>
+                <Link
+                  href="/knowledge"
+                  className="px-4 py-2 text-gray-900 font-semibold text-sm rounded hover:bg-gray-50"
+                >
+                  Knowledge
+                </Link>
+                <LanguageSelector />
                 {user ? (
                   <>
                     <Link

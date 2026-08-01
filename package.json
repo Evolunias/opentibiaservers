@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "audit:content": "node scripts/audit-content-quality.mjs",
     "audit:links": "node scripts/audit-links.mjs",
     "audit:wiki-depth": "node scripts/audit-server-wiki-depth.mjs",
     "audit:knowledge": "node scripts/audit-knowledge-pages.mjs",
