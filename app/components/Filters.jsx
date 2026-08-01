@@ -42,16 +42,16 @@ export default function Filters({ onFiltersChange, onSearch }) {
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded p-4 mb-6 shadow-sm">
+    <div className="filter-panel mb-6 p-4">
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between mb-4">
         <div>
-          <h2 className="text-base font-bold text-gray-900 mb-1">Find Servers</h2>
-          <p className="text-xs text-gray-500">Search by name, host, country, client, source, and live population.</p>
+          <h2 className="text-base font-bold text-white mb-1">Find Servers</h2>
+          <p className="text-xs text-slate-400">Search by name, host, country, client, source, and live population.</p>
         </div>
         <button
           type="button"
           onClick={clearFilters}
-          className="text-sm font-semibold text-gray-700 border border-gray-300 rounded px-3 py-2 hover:bg-gray-50"
+          className="btn-ghost"
         >
           Reset
         </button>
@@ -59,22 +59,22 @@ export default function Filters({ onFiltersChange, onSearch }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-7 gap-3">
         <div className="md:col-span-2">
-          <label className="block text-xs font-semibold text-gray-700 mb-1">Search</label>
+          <label className="block text-xs font-semibold text-slate-300 mb-1">Search</label>
           <input
             type="text"
             placeholder="Server name, host, or description"
             value={filters.search}
             onChange={(event) => update('search', event.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-gray-500 focus:outline-none"
+            className="form-control w-full"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-gray-700 mb-1">Source</label>
+          <label className="block text-xs font-semibold text-slate-300 mb-1">Source</label>
           <select
             value={filters.source}
             onChange={(event) => update('source', event.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-gray-500 focus:outline-none"
+            className="form-control w-full"
           >
             <option value="">All Sources</option>
             <option value="otservlist.org">otservlist.org</option>
@@ -84,11 +84,11 @@ export default function Filters({ onFiltersChange, onSearch }) {
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-gray-700 mb-1">PVP Type</label>
+          <label className="block text-xs font-semibold text-slate-300 mb-1">PVP Type</label>
           <select
             value={filters.world_type}
             onChange={(event) => update('world_type', event.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-gray-500 focus:outline-none"
+            className="form-control w-full"
           >
             <option value="">All Types</option>
             <option value="PVP">PVP</option>
@@ -99,11 +99,11 @@ export default function Filters({ onFiltersChange, onSearch }) {
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-gray-700 mb-1">Location</label>
+          <label className="block text-xs font-semibold text-slate-300 mb-1">Location</label>
           <select
             value={filters.location}
             onChange={(event) => update('location', event.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-gray-500 focus:outline-none"
+            className="form-control w-full"
           >
             <option value="">All Locations</option>
             <option value="Brazil">Brazil</option>
@@ -117,11 +117,11 @@ export default function Filters({ onFiltersChange, onSearch }) {
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-gray-700 mb-1">Client</label>
+          <label className="block text-xs font-semibold text-slate-300 mb-1">Client</label>
           <select
             value={filters.version}
             onChange={(event) => update('version', event.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-gray-500 focus:outline-none"
+            className="form-control w-full"
           >
             <option value="">Any Client</option>
             <option value="15.2">15.2</option>
@@ -135,20 +135,20 @@ export default function Filters({ onFiltersChange, onSearch }) {
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-gray-700 mb-1">Min Online</label>
+          <label className="block text-xs font-semibold text-slate-300 mb-1">Min Online</label>
           <input
             type="number"
             min="0"
             value={filters.min_players}
             onChange={(event) => update('min_players', event.target.value)}
             placeholder="0"
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-gray-500 focus:outline-none"
+            className="form-control w-full"
           />
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between mt-4 pt-4 border-t border-gray-200">
-        <label className="flex items-center gap-2 text-gray-700 cursor-pointer font-semibold text-sm">
+      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between mt-4 pt-4 border-t border-white/10">
+        <label className="flex items-center gap-2 text-slate-300 cursor-pointer font-semibold text-sm">
           <input
             type="checkbox"
             checked={filters.is_online}
@@ -159,11 +159,11 @@ export default function Filters({ onFiltersChange, onSearch }) {
         </label>
 
         <div className="flex items-center gap-2">
-          <label className="text-xs font-semibold text-gray-700">Sort</label>
+          <label className="text-xs font-semibold text-slate-300">Sort</label>
           <select
             value={filters.sort}
             onChange={(event) => update('sort', event.target.value)}
-            className="border border-gray-300 rounded px-3 py-2 text-sm focus:border-gray-500 focus:outline-none"
+            className="form-control"
           >
             <option value="players">Players online</option>
             <option value="rating">Rating</option>

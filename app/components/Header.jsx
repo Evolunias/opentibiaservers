@@ -57,16 +57,16 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm">
+      <header className="site-header sticky top-0 z-50 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-            <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <div className="w-10 h-10 bg-gray-100 border border-gray-200 rounded flex items-center justify-center font-bold text-gray-900 text-sm">
+            <Link href="/" className="brand-mark group flex items-center gap-3 hover:no-underline">
+              <div className="brand-mark__sigil w-10 h-10 rounded flex items-center justify-center font-bold text-sm">
                 OTS
               </div>
               <div>
-                <h1 className="text-lg font-bold text-gray-950 m-0">Open Tibia Servers</h1>
-                <p className="text-xs text-gray-500 m-0">Searchable Open Tibia server listings and source data.</p>
+                <h1 className="text-lg font-bold text-white m-0">Open Tibia Servers</h1>
+                <p className="text-xs text-slate-300 m-0">Live OT listings, guides, reviews, and source data.</p>
               </div>
             </Link>
 
@@ -74,13 +74,13 @@ export default function Header() {
               <div className="flex flex-wrap items-center gap-2">
                 <Link
                   href="/community"
-                  className="px-4 py-2 text-gray-900 font-semibold text-sm rounded hover:bg-gray-50"
+                  className="nav-chip"
                 >
                   Community
                 </Link>
                 <Link
                   href="/knowledge"
-                  className="px-4 py-2 text-gray-900 font-semibold text-sm rounded hover:bg-gray-50"
+                  className="nav-chip"
                 >
                   Knowledge
                 </Link>
@@ -89,13 +89,13 @@ export default function Header() {
                   <>
                     <Link
                       href="/submit-server"
-                      className="px-4 py-2 bg-gray-950 text-white font-semibold text-sm rounded hover:opacity-85"
+                      className="btn-primary"
                     >
                       Submit
                     </Link>
                     <Link
                       href="/dashboard"
-                      className="px-4 py-2 bg-white text-gray-900 font-semibold text-sm border border-gray-300 rounded hover:bg-gray-50"
+                      className="btn-ghost"
                     >
                       Dashboard
                     </Link>
@@ -105,14 +105,14 @@ export default function Header() {
                     <button
                       type="button"
                       onClick={() => openAuth('login')}
-                      className="px-4 py-2 text-gray-900 font-semibold text-sm rounded hover:bg-gray-50"
+                      className="nav-chip"
                     >
                       Sign In
                     </button>
                     <button
                       type="button"
                       onClick={() => openAuth('register')}
-                      className="px-4 py-2 bg-gray-950 text-white font-semibold text-sm rounded hover:opacity-85"
+                      className="btn-primary"
                     >
                       Register
                     </button>

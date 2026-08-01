@@ -514,23 +514,24 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
   return (
     <>
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-slate-950">
+      <div className="ambient-field" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-6 py-8">
-        <Link href="/" className="text-gray-700 hover:text-gray-950 mb-6 inline-block font-semibold">
+        <Link href="/" className="text-slate-300 hover:text-white mb-6 inline-block font-semibold">
           Back to servers
         </Link>
 
-        <article className="bg-white border border-gray-200 rounded overflow-hidden shadow-sm mb-6">
-          <header className="px-6 py-6 border-b border-gray-200 bg-gray-50">
+        <article className="glass-panel overflow-hidden mb-6">
+          <header className="server-detail-hero px-6 py-6 border-b border-white/10">
             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  {server.source_rank ? <span className="text-xs font-bold text-gray-500">Rank #{server.source_rank}</span> : null}
-                  <span className={`w-2.5 h-2.5 rounded-full ${server.is_online ? 'bg-green-600' : 'bg-red-600'}`} />
-                  <span className="text-xs font-semibold text-gray-500">{server.is_online ? 'Online' : 'Offline'}</span>
+                  {server.source_rank ? <span className="text-xs font-bold text-slate-400">Rank #{server.source_rank}</span> : null}
+                  <span className={`status-dot ${server.is_online ? 'status-dot--online' : 'status-dot--offline'}`} />
+                  <span className="text-xs font-semibold text-slate-300">{server.is_online ? 'Online' : 'Offline'}</span>
                 </div>
-                <h1 className="text-3xl font-bold text-gray-950 mb-2">{server.name}</h1>
-                <p className="text-gray-600">{server.host || server.ip}:{server.port || 7171}</p>
+                <h1 className="text-3xl md:text-5xl font-black text-white mb-2">{server.name}</h1>
+                <p className="text-slate-300">{server.host || server.ip}:{server.port || 7171}</p>
               </div>
               <div className="flex flex-wrap gap-2">
                 <span className={`px-3 py-1 rounded border text-sm font-semibold ${badgeClass(server.world_type)}`}>
@@ -549,13 +550,13 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
           </header>
 
           <div className="p-6">
-            <section className="border border-gray-200 rounded p-5 mb-6 bg-gray-50">
+            <section className="detail-feature-panel p-5 mb-6">
               <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
                 <div className="max-w-3xl">
-                  <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Open Tibia server profile</p>
-                  <h2 className="text-2xl font-bold text-gray-950 mb-2">{renderHeadline}</h2>
-                  <p className="text-gray-700">{renderSubheadline || 'Server owners can customize this listing after claiming it.'}</p>
-                  <p className="mt-3 text-sm leading-6 text-gray-600">
+                  <p className="text-xs font-bold uppercase tracking-widest text-emerald-300 mb-2">Open Tibia server profile</p>
+                  <h2 className="text-2xl font-bold text-white mb-2">{renderHeadline}</h2>
+                  <p className="text-slate-200">{renderSubheadline || 'Server owners can customize this listing after claiming it.'}</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">
                     This page is built for players researching whether {server.name} is worth joining now. It combines live directory data,
                     owner-manageable fields, public source references, monitor history, reviews, and community discussion in one crawlable profile.
                   </p>
@@ -1126,9 +1127,9 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
 function Stat({ label, value }) {
   return (
-    <div className="bg-gray-50 border border-gray-200 rounded p-4">
-      <p className="text-xs text-gray-500 uppercase font-bold mb-1">{label}</p>
-      <p className="text-2xl font-bold text-gray-950">{value}</p>
+    <div className="telemetry-tile p-4">
+      <p className="text-xs text-slate-400 uppercase font-bold mb-1">{label}</p>
+      <p className="text-2xl font-bold text-white">{value}</p>
     </div>
   );
 }

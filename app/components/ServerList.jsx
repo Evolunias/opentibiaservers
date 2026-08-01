@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { getServerPath } from '@/lib/server-paths';
 
-const statusClass = (server) => (server.is_online ? 'text-green-700' : 'text-red-700');
+const statusClass = (server) => (server.is_online ? 'text-emerald-300' : 'text-red-300');
 
 function formatPercent(value) {
   if (value === null || value === undefined) return '-';
@@ -23,70 +23,70 @@ function lastSeen(server) {
 
 export default function ServerList({ servers }) {
   return (
-    <div className="overflow-x-auto bg-white">
+    <div className="server-table-wrap overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-gray-200 bg-gray-50">
-            <th className="text-left px-4 py-3 font-semibold text-gray-900">Rank</th>
-            <th className="text-left px-4 py-3 font-semibold text-gray-900">Server</th>
-            <th className="text-left px-4 py-3 font-semibold text-gray-900">Source</th>
-            <th className="text-center px-4 py-3 font-semibold text-gray-900">Players</th>
-            <th className="text-center px-4 py-3 font-semibold text-gray-900">Peak</th>
-            <th className="text-center px-4 py-3 font-semibold text-gray-900">Points</th>
-            <th className="text-center px-4 py-3 font-semibold text-gray-900">Rating</th>
-            <th className="text-center px-4 py-3 font-semibold text-gray-900">Client</th>
-            <th className="text-center px-4 py-3 font-semibold text-gray-900">EXP</th>
-            <th className="text-center px-4 py-3 font-semibold text-gray-900">Uptime</th>
-            <th className="text-left px-4 py-3 font-semibold text-gray-900">Location</th>
-            <th className="text-left px-4 py-3 font-semibold text-gray-900">Seen</th>
+          <tr className="border-b border-white/10 bg-white/5">
+            <th className="text-left px-4 py-3 font-semibold text-slate-200">Rank</th>
+            <th className="text-left px-4 py-3 font-semibold text-slate-200">Server</th>
+            <th className="text-left px-4 py-3 font-semibold text-slate-200">Source</th>
+            <th className="text-center px-4 py-3 font-semibold text-slate-200">Players</th>
+            <th className="text-center px-4 py-3 font-semibold text-slate-200">Peak</th>
+            <th className="text-center px-4 py-3 font-semibold text-slate-200">Points</th>
+            <th className="text-center px-4 py-3 font-semibold text-slate-200">Rating</th>
+            <th className="text-center px-4 py-3 font-semibold text-slate-200">Client</th>
+            <th className="text-center px-4 py-3 font-semibold text-slate-200">EXP</th>
+            <th className="text-center px-4 py-3 font-semibold text-slate-200">Uptime</th>
+            <th className="text-left px-4 py-3 font-semibold text-slate-200">Location</th>
+            <th className="text-left px-4 py-3 font-semibold text-slate-200">Seen</th>
           </tr>
         </thead>
         <tbody>
           {servers.map((server) => (
-            <tr key={server.id} className="border-b border-gray-100 hover:bg-gray-50">
-              <td className="px-4 py-3 text-gray-600 font-semibold">
+            <tr key={server.id} className="border-b border-white/10 transition hover:bg-white/10">
+              <td className="px-4 py-3 text-slate-400 font-semibold">
                 {server.source_rank || '-'}
               </td>
               <td className="px-4 py-3 min-w-64">
                 <Link href={getServerPath(server)} className="hover:opacity-75 transition-opacity">
-                  <div className="font-semibold text-gray-900">{server.name}</div>
-                  <div className="text-xs text-gray-600">{server.host || server.ip}:{server.port || 7171}</div>
+                  <div className="font-semibold text-white">{server.name}</div>
+                  <div className="text-xs text-slate-400">{server.host || server.ip}:{server.port || 7171}</div>
                 </Link>
               </td>
               <td className="px-4 py-3">
-                <div className="text-gray-900 font-semibold">{server.source || 'submitted'}</div>
-                {server.source_id ? <div className="text-xs text-gray-500">#{server.source_id}</div> : null}
+                <div className="text-slate-200 font-semibold">{server.source || 'submitted'}</div>
+                {server.source_id ? <div className="text-xs text-slate-500">#{server.source_id}</div> : null}
               </td>
               <td className="px-4 py-3 text-center">
                 <span className={`font-bold ${statusClass(server)}`}>
                   {formatNumber(server.players_online || 0)}
                 </span>
-                <span className="text-gray-500"> / {formatNumber(server.max_players)}</span>
+                <span className="text-slate-500"> / {formatNumber(server.max_players)}</span>
               </td>
-              <td className="px-4 py-3 text-center font-semibold text-gray-900">
+              <td className="px-4 py-3 text-center font-semibold text-slate-200">
                 {formatNumber(server.players_peak || 0)}
               </td>
-              <td className="px-4 py-3 text-center font-semibold text-gray-900">
+              <td className="px-4 py-3 text-center font-semibold text-slate-200">
                 {formatNumber(server.points)}
               </td>
               <td className="px-4 py-3 text-center">
-                <div className="font-semibold text-gray-900">{Number(server.average_rating || 0).toFixed(2)}</div>
-                <div className="text-xs text-gray-500">{server.review_count || 0} reviews</div>
+                <div className="font-semibold text-slate-200">{Number(server.average_rating || 0).toFixed(2)}</div>
+                <div className="text-xs text-slate-500">{server.review_count || 0} reviews</div>
               </td>
-              <td className="px-4 py-3 text-center font-semibold text-gray-900">
+              <td className="px-4 py-3 text-center font-semibold text-slate-200">
                 {server.version || '-'}
               </td>
-              <td className="px-4 py-3 text-center text-gray-700">
+              <td className="px-4 py-3 text-center text-slate-300">
                 <span className="font-semibold">{server.exp_rate || 1}x</span>
               </td>
               <td className="px-4 py-3 text-center">
-                <span className="font-semibold text-gray-900">{formatPercent(server.uptime_percent)}</span>
+                <span className="font-semibold text-slate-200">{formatPercent(server.uptime_percent)}</span>
               </td>
-              <td className="px-4 py-3 text-gray-700">
+              <td className="px-4 py-3 text-slate-300">
                 <div>{server.location || '-'}</div>
-                <div className="text-xs text-gray-500">{server.world_type || '-'}</div>
+                <div className="text-xs text-slate-500">{server.world_type || '-'}</div>
               </td>
-              <td className="px-4 py-3 text-gray-600">
+              <td className="px-4 py-3 text-slate-400">
                 {lastSeen(server)}
               </td>
             </tr>

@@ -110,53 +110,54 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-900">
-      <section className="border-b border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-8">
+    <main className="min-h-screen bg-slate-950 text-slate-100">
+      <div className="ambient-field" aria-hidden="true" />
+      <section className="hero-shell border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-10 md:py-14">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 items-start">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
+            <div className="motion-rise">
+              <p className="text-xs font-bold uppercase tracking-widest text-emerald-300 mb-2">
                 OpenTibiaServers.com
               </p>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-950 mb-3">
-                Open Tibia server directory
+              <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">
+                The living Open Tibia server atlas
               </h1>
-              <p className="text-base text-gray-600 max-w-3xl">
-                Search active Open Tibia servers with live listing data, official home pages, owner-managed profiles,
-                screenshots, contact links, reviews, uptime history, and community discussion mapped into one database.
+              <p className="text-base md:text-lg text-slate-300 max-w-3xl">
+                Compare active Open Tibia worlds with live players, source-linked records, owner-managed profiles,
+                screenshots, uptime history, reviews, launch signals, and community discussion in one searchable hub.
               </p>
-              <div className="mt-4 grid gap-2 text-sm text-gray-700 md:grid-cols-2">
-                <div className="border border-gray-200 bg-gray-50 px-3 py-2">
-                  Public source rows become permanent, searchable server records.
+              <div className="mt-6 grid gap-3 text-sm text-slate-200 md:grid-cols-2">
+                <div className="signal-card">
+                  Live public rows become permanent, searchable server records.
                 </div>
-                <div className="border border-gray-200 bg-gray-50 px-3 py-2">
-                  Claimed listings can add websites, Discord, launchers, screenshots, FAQs, and support details.
+                <div className="signal-card">
+                  Claimed listings add websites, Discord, launchers, screenshots, FAQs, and support details.
                 </div>
               </div>
             </div>
 
-            <div className="border border-gray-200 rounded bg-gray-50 p-4">
+            <div className="dashboard-orb motion-rise motion-delay-1">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-sm font-bold text-gray-900">Data Source</span>
+                <span className="text-sm font-bold text-white">Data Source</span>
                 <SyncStatus />
               </div>
               <div className="grid grid-cols-3 gap-2 text-center">
-                <div className="bg-white border border-gray-200 rounded p-3">
-                  <div className="text-xl font-bold text-gray-950">{totalServers.toLocaleString()}</div>
-                  <div className="text-xs text-gray-500">Matched</div>
+                <div className="telemetry-tile">
+                  <div className="text-xl font-bold text-white">{totalServers.toLocaleString()}</div>
+                  <div className="text-xs text-slate-400">Matched</div>
                 </div>
-                <div className="bg-white border border-gray-200 rounded p-3">
-                  <div className="text-xl font-bold text-gray-950">{summary.visiblePlayers.toLocaleString()}</div>
-                  <div className="text-xs text-gray-500">Visible Players</div>
+                <div className="telemetry-tile">
+                  <div className="text-xl font-bold text-white">{summary.visiblePlayers.toLocaleString()}</div>
+                  <div className="text-xs text-slate-400">Visible Players</div>
                 </div>
-                <div className="bg-white border border-gray-200 rounded p-3">
-                  <div className="text-xl font-bold text-gray-950">{summary.sources}</div>
-                  <div className="text-xs text-gray-500">Sources</div>
+                <div className="telemetry-tile">
+                  <div className="text-xl font-bold text-white">{summary.sources}</div>
+                  <div className="text-xs text-slate-400">Sources</div>
                 </div>
               </div>
               {summary.topServer ? (
-                <div className="mt-3 text-xs text-gray-600">
-                  Top visible: <span className="font-semibold text-gray-900">{summary.topServer.name}</span>
+                <div className="mt-3 text-xs text-slate-400">
+                  Top visible: <span className="font-semibold text-white">{summary.topServer.name}</span>
                 </div>
               ) : null}
             </div>
@@ -164,13 +165,13 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
         </div>
       </section>
 
-      <section id="servers" className="max-w-7xl mx-auto px-6 py-6">
+      <section id="servers" className="relative z-10 max-w-7xl mx-auto px-6 py-8">
         <FeaturedServerAd placement="inline" />
 
-        <section className="mb-6 border border-gray-200 bg-white p-4">
+        <section className="glass-panel mb-6 p-4 motion-rise">
           <div className="mb-3">
-            <h2 className="text-lg font-bold text-gray-950">Featured Open Tibia Guides</h2>
-            <p className="text-sm text-gray-600">
+            <h2 className="text-lg font-bold text-white">Featured Open Tibia Guides</h2>
+            <p className="text-sm text-slate-300">
               Useful pages for official worlds, OT communities, popular servers, and players comparing where to play next.
             </p>
           </div>
@@ -179,10 +180,10 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded border border-gray-200 p-3 hover:border-gray-400 hover:no-underline"
+                className="guide-link-card"
               >
-                <div className="text-sm font-bold text-gray-950">{link.label}</div>
-                <div className="mt-1 text-xs text-gray-600">{link.detail}</div>
+                <div className="text-sm font-bold text-white">{link.label}</div>
+                <div className="mt-1 text-xs text-slate-300">{link.detail}</div>
               </a>
             ))}
           </div>
@@ -192,10 +193,10 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
 
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between mb-4">
           <div>
-            <h2 className="text-xl font-bold text-gray-950">
+            <h2 className="text-xl font-bold text-white">
               {loading ? 'Loading servers' : `${totalServers.toLocaleString()} servers found`}
             </h2>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-slate-300">
               Sorted by {filters.sort || 'players'} with {filters.is_online ? 'online servers only' : 'online and offline servers'}.
               {lastRefreshedAt ? ` Last refreshed ${lastRefreshedAt.toLocaleTimeString()}.` : ''}
             </p>
@@ -210,18 +211,18 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
         ) : null}
 
         {loading ? (
-          <div className="bg-white border border-gray-200 rounded p-10 text-center">
-            <div className="w-8 h-8 border-2 border-gray-200 border-t-gray-900 rounded-full animate-spin mx-auto mb-3" />
-            <p className="text-gray-600">Loading server records...</p>
+          <div className="glass-panel p-10 text-center">
+            <div className="shimmer-stack mx-auto mb-4" />
+            <p className="text-slate-300">Loading server records...</p>
           </div>
         ) : servers.length === 0 ? (
-          <div className="bg-white border border-gray-200 rounded p-10 text-center">
-            <p className="text-gray-900 font-semibold mb-2">No servers match these filters.</p>
-            <p className="text-gray-600 text-sm">Reset filters or run a source sync to populate new records.</p>
+          <div className="glass-panel p-10 text-center">
+            <p className="text-white font-semibold mb-2">No servers match these filters.</p>
+            <p className="text-slate-300 text-sm">Reset filters or run a source sync to populate new records.</p>
           </div>
         ) : view === 'grid' ? (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-6">
+            <div className="animated-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-6">
               {servers.map((server) => (
                 <ServerCard key={server.id} server={server} />
               ))}
@@ -235,7 +236,7 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
           </>
         ) : (
           <>
-            <div className="border border-gray-200 rounded overflow-hidden mb-6 shadow-sm">
+            <div className="glass-panel overflow-hidden mb-6">
               <ServerList servers={servers} />
             </div>
             <Pagination
