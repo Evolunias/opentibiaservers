@@ -94,11 +94,6 @@ export default async function KeywordTopicArticle({ slug }) {
             </div>
             <h1 className="max-w-4xl text-4xl font-bold leading-tight text-gray-950 md:text-5xl">{article.h1}</h1>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-gray-700">{article.dek}</p>
-            {!article.isIndexable ? (
-              <div className="mt-5 rounded border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-                This page is available for community enrichment but is marked noindex until it has enough unique value.
-              </div>
-            ) : null}
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href={`/?search=${encodeURIComponent(page.seed_entity || page.keyword)}`} className="rounded bg-gray-950 px-5 py-3 text-sm font-bold text-white hover:bg-gray-800 hover:no-underline">
                 Search Live Listings
@@ -110,7 +105,7 @@ export default async function KeywordTopicArticle({ slug }) {
           </div>
 
           <aside className="rounded border border-gray-200 bg-gray-50 p-5">
-            <h2 className="mb-4 text-base font-bold text-gray-950">Topic Facts</h2>
+            <h2 className="mb-4 text-base font-bold text-gray-950">At a glance</h2>
             <dl className="space-y-4">
               {article.facts.map((fact) => (
                 <div key={fact.label}>
@@ -118,12 +113,6 @@ export default async function KeywordTopicArticle({ slug }) {
                   <dd className="mt-1 text-sm font-semibold capitalize text-gray-900">{factLabel(fact.value)}</dd>
                 </div>
               ))}
-              <div>
-                <dt className="text-xs font-bold uppercase tracking-wide text-gray-500">Search Volume</dt>
-                <dd className="mt-1 text-sm font-semibold text-gray-900">
-                  {page.search_volume || 'Pending provider import'}
-                </dd>
-              </div>
             </dl>
           </aside>
         </div>
@@ -147,7 +136,7 @@ export default async function KeywordTopicArticle({ slug }) {
 
           {directoryData.servers.length ? (
             <section className="pb-8">
-              <h2 className="mb-4 text-2xl font-bold text-gray-950">Matching Live Listings</h2>
+              <h2 className="mb-4 text-2xl font-bold text-gray-950">Worlds connected to this topic</h2>
               <div className="grid gap-3">
                 {directoryData.servers.map((server) => (
                   <Link key={server.id || `${server.name}-${server.ip}`} href={`/servers/${buildServerSlug(server)}`} className="rounded border border-gray-200 bg-white p-4 hover:border-gray-400 hover:no-underline">
@@ -181,7 +170,7 @@ export default async function KeywordTopicArticle({ slug }) {
 
         <aside className="space-y-5">
           <div className="rounded border border-gray-200 bg-white p-5">
-            <h2 className="mb-3 text-base font-bold text-gray-950">Related Pages</h2>
+            <h2 className="mb-3 text-base font-bold text-gray-950">Continue exploring</h2>
             <div className="flex flex-wrap gap-2">
               {related.map((item) => (
                 <Link key={item.slug} href={`/topics/${item.slug}`} className="rounded border border-gray-200 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline">
@@ -192,9 +181,9 @@ export default async function KeywordTopicArticle({ slug }) {
           </div>
 
           <div className="rounded border border-gray-200 bg-white p-5">
-            <h2 className="mb-3 text-base font-bold text-gray-950">Contribution Standard</h2>
+            <h2 className="mb-3 text-base font-bold text-gray-950">Add something worth remembering</h2>
             <p className="text-sm leading-7 text-gray-700">
-              Useful contributions include official URLs, server ownership proof, screenshots, rules, launch details, uptime notes, and genuine player reviews.
+              A dated screenshot, official link, rule clarification, launch memory, or specific player story can make this page more useful to the next person who arrives here.
             </p>
           </div>
         </aside>

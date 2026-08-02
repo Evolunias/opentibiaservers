@@ -1,0 +1,79 @@
+{
+  "auditedAt": "2026-08-02T03:53:12.221Z",
+  "status": "passed",
+  "code": {
+    "files": 906,
+    "exactPageWrappers": 410,
+    "uniqueWrapperSlugs": 410
+  },
+  "sourceProseBoundary": {
+    "snapshots": 2,
+    "factualRecords": 911,
+    "importedProseFields": 0
+  },
+  "knowledge": {
+    "items": 8155,
+    "monsters": 1404,
+    "spells": 209,
+    "articles": 9768,
+    "uniqueArticleSignatures": 9768,
+    "uniqueFieldNoteSignatures": 9768,
+    "repeatedFieldBlocks": 0,
+    "minimumRenderedWords": 666,
+    "minimumFieldNoteWords": 124
+  },
+  "pageCollections": {
+    "curated": {
+      "pages": 11,
+      "uniquePageSignatures": 11,
+      "sourceBacked": 11,
+      "minimumRenderedWords": 653,
+      "minimumVoiceScore": 5
+    },
+    "resources": {
+      "pages": 31,
+      "uniquePageSignatures": 31,
+      "sourceBacked": 31,
+      "minimumRenderedWords": 1316,
+      "minimumVoiceScore": 5
+    },
+    "worlds": {
+      "pages": 71,
+      "uniquePageSignatures": 71,
+      "sourceBacked": 71,
+      "minimumRenderedWords": 857,
+      "minimumVoiceScore": 5
+    },
+    "directoryProfiles": {
+      "pages": 120,
+      "uniquePageSignatures": 120,
+      "sourceBacked": 120,
+      "minimumRenderedWords": 1924,
+      "minimumVoiceScore": 5
+    },
+    "otlandProfiles": {
+      "pages": 190,
+      "uniquePageSignatures": 190,
+      "sourceBacked": 190,
+      "minimumRenderedWords": 265,
+      "minimumVoiceScore": 5
+    }
+  },
+  "topics": {
+    "pages": 100000,
+    "indexableAfterEvidenceGate": 0,
+    "uniquePageSignatures": 100000,
+    "uniqueMetadataTitles": 100000,
+    "minimumRenderedWords": 515
+  },
+  "gates": {
+    "originalSourceBrandingBlocked": true,
+    "externalSourceProseImportBlocked": true,
+    "exactDuplicateArticlesBlocked": true,
+    "exactDuplicateFieldNotesBlocked": true,
+    "internalPublishingJargonBlocked": true,
+    "tiredPromotionalPhrasesBlocked": true,
+    "topicIndexingRequiresMeasuredDemandAndVerifiedSources": true
+  },
+  "failures": []
+}

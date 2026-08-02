@@ -4,6 +4,10 @@ const path = require("path");
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    cpus: 1,
+    workerThreads: false,
+  },
   webpack: (config, { isServer }) => {
     config.resolve.alias["@"] = path.resolve(__dirname);
 

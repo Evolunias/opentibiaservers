@@ -9,6 +9,7 @@ import { getResourcePages } from '@/lib/resource-pages';
 import { topOtservlistServers } from '@/lib/top-otservlist-servers';
 import { getTibiaWorldPages } from '@/lib/tibia-world-pages';
 import { knowledgeEntities } from '@/lib/knowledge-base';
+import { getKnowledgeCatalogSitemapEntries } from '@/lib/knowledge-catalog';
 
 function isMissingColumn(error) {
   return error?.code === '42703' || /column .* does not exist/i.test(error?.message || '');
@@ -40,6 +41,12 @@ export default async function sitemap() {
       changeFrequency: 'weekly',
       priority: 0.78,
     },
+    ...['items', 'monsters', 'spells'].map((catalog) => ({
+      url: buildAbsoluteUrl(`/knowledge/${catalog}`),
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.82,
+    })),
   ];
   const curatedUrls = getCuratedPages().map((page) => ({
     url: buildAbsoluteUrl(page.path),
@@ -59,11 +66,17 @@ export default async function sitemap() {
     changeFrequency: 'monthly',
     priority: page.type === 'resource' ? 0.74 : 0.7,
   }));
-  const knowledgeUrls = knowledgeEntities.map((entity) => ({
+  const knowledgeUrls = knowledgeEntities.filter((entity) => entity.indexable).map((entity) => ({
     url: buildAbsoluteUrl(entity.canonicalPath),
-    lastModified: new Date(),
+    lastModified: entity.reviewedAt,
     changeFrequency: 'monthly',
-    priority: 0.72,
+    priority: ['mechanics', 'progression'].includes(entity.collection) ? 0.82 : 0.76,
+  }));
+  const knowledgeCatalogUrls = getKnowledgeCatalogSitemapEntries().map((entry) => ({
+    url: buildAbsoluteUrl(entry.path),
+    lastModified: entry.reviewedAt,
+    changeFrequency: 'monthly',
+    priority: entry.type === 'monsters' || entry.type === 'spells' ? 0.74 : 0.7,
   }));
   const generatedOtServerUrls = getOtServerCuratedPages().map((page) => ({
     url: buildAbsoluteUrl(page.path),
@@ -99,7 +112,7 @@ export default async function sitemap() {
   const supabase = getSupabaseServerClient();
   if (!supabase) {
     const seenUrls = new Set();
-    return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...otlandServerGalaUrls, ...tibiaWorldUrls, ...resourceUrls, ...knowledgeUrls, ...keywordUrls, ...seededExactMatchUrls, ...seededServerUrls].filter((entry) => {
+    return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...otlandServerGalaUrls, ...tibiaWorldUrls, ...resourceUrls, ...knowledgeUrls, ...knowledgeCatalogUrls, ...keywordUrls, ...seededExactMatchUrls, ...seededServerUrls].filter((entry) => {
       if (seenUrls.has(entry.url)) return false;
       seenUrls.add(entry.url);
       return true;
@@ -145,7 +158,7 @@ export default async function sitemap() {
   ];
 
   const seenUrls = new Set();
-  return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...otlandServerGalaUrls, ...tibiaWorldUrls, ...resourceUrls, ...knowledgeUrls, ...keywordUrls, ...facetUrls, ...seededExactMatchUrls, ...seededServerUrls, ...serverUrls].filter((entry) => {
+  return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...otlandServerGalaUrls, ...tibiaWorldUrls, ...resourceUrls, ...knowledgeUrls, ...knowledgeCatalogUrls, ...keywordUrls, ...facetUrls, ...seededExactMatchUrls, ...seededServerUrls, ...serverUrls].filter((entry) => {
     if (seenUrls.has(entry.url)) return false;
     seenUrls.add(entry.url);
     return true;

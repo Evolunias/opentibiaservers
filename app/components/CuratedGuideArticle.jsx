@@ -5,7 +5,7 @@ import TrustedExternalLink from '@/app/components/TrustedExternalLink';
 import { buildServerSlug } from '@/lib/server-paths';
 import { buildCuratedJsonLd } from '@/lib/curated-pages';
 import { fetchDirectoryServers } from '@/lib/directory-data';
-import { buildDeepDiveSections, estimateCuratedPageWords } from '@/lib/deep-dive-pages';
+import { buildCuratedCoda, buildDeepDiveSections } from '@/lib/deep-dive-pages';
 
 function createQueryHref(query) {
   return `/?search=${encodeURIComponent(query)}`;
@@ -47,7 +47,7 @@ export default async function CuratedGuideArticle({ page }) {
   });
   const jsonLd = buildCuratedJsonLd(page);
   const deepDiveSections = buildDeepDiveSections(page);
-  const estimatedWords = estimateCuratedPageWords(page);
+  const curatedCoda = buildCuratedCoda(page);
   const internalLinks = buildInternalLinks(page);
   const wikiDepth = page.wikiDepth || null;
 
@@ -115,11 +115,8 @@ export default async function CuratedGuideArticle({ page }) {
               ))}
             </dl>
             <p className="mt-5 text-xs text-gray-300">Updated {page.updatedAt}</p>
-            {page.type === 'server' ? (
-              <p className="mt-2 text-xs text-gray-300">Estimated depth: {estimatedWords.toLocaleString()} words</p>
-            ) : null}
             {wikiDepth ? (
-              <p className="mt-2 text-xs font-semibold text-gray-200">Guide status: {wikiDepth.statusLabel}</p>
+              <p className="mt-2 text-xs font-semibold text-gray-200">Profile depth: {wikiDepth.statusLabel}</p>
             ) : null}
           </aside>
         </div>
@@ -135,20 +132,20 @@ export default async function CuratedGuideArticle({ page }) {
 
           {wikiDepth ? (
             <section className="border-b border-gray-200 pb-8">
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Guide Depth Gate</p>
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Profile confidence</p>
               <h2 className="mb-4 text-2xl font-bold text-gray-950">
-                {page.primaryKeyword} Guide Readiness and Required Research
+                What is known about {page.primaryKeyword}, and what still needs proof
               </h2>
               <div className={`mb-5 rounded border p-4 ${wikiDepth.status === 'directory-only' ? 'border-amber-200 bg-amber-50' : 'border-blue-200 bg-blue-50'}`}>
                 <h3 className="text-base font-bold text-gray-950">{wikiDepth.statusLabel}</h3>
                 <p className="mt-2 text-sm leading-7 text-gray-700">
                   {wikiDepth.status === 'directory-only'
-                    ? 'This page has an indexable exact-match guide shell and source queue, but it is not marked as complete until official, owner, and community evidence fills the required gameplay fields.'
-                    : 'This page has source-backed server research, but it still remains partial until all required gameplay fields are independently filled and cited.'}
+                    ? `The public directory gives ${page.primaryKeyword} a verifiable starting point, not a finished biography. Official links, owner confirmation, and detailed player evidence are still needed before uncertain gameplay claims become facts.`
+                    : `${page.primaryKeyword} already has source-backed detail, but some parts of the world remain undocumented. Those gaps stay visible until an official source, verified owner, or dated player contribution can support them.`}
                 </p>
                 {wikiDepth.missingFields?.length ? (
                   <p className="mt-3 text-sm font-semibold text-gray-800">
-                    Missing: {wikiDepth.missingFields.join(', ')}
+                    Still needed: {wikiDepth.missingFields.join(', ')}
                   </p>
                 ) : null}
               </div>
@@ -178,7 +175,7 @@ export default async function CuratedGuideArticle({ page }) {
               </div>
 
               <div className="mt-6 rounded border border-gray-200 bg-white p-4">
-                <h3 className="text-base font-bold text-gray-950">Source Candidate Queue</h3>
+                <h3 className="text-base font-bold text-gray-950">Where to verify the remaining details</h3>
                 <p className="mt-2 text-sm leading-7 text-gray-700">{wikiDepth.sourcePolicy}</p>
                 <div className="mt-4 grid gap-3">
                   {wikiDepth.sourceCandidates.map((source) => (
@@ -195,7 +192,7 @@ export default async function CuratedGuideArticle({ page }) {
               </div>
 
               <div className="mt-6 rounded border border-gray-200 bg-white p-4">
-                <h3 className="text-base font-bold text-gray-950">Editorial Research Queue</h3>
+                <h3 className="text-base font-bold text-gray-950">What the community can document next</h3>
                 <ul className="mt-3 space-y-2">
                   {wikiDepth.editorialQueue.map((item) => (
                     <li key={item} className="text-sm leading-6 text-gray-700">{item}</li>
@@ -339,10 +336,10 @@ export default async function CuratedGuideArticle({ page }) {
 
           {deepDiveSections.length ? (
             <section className="border-b border-gray-200 pb-8">
-              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Deep Dive</p>
-              <h2 className="mb-4 text-2xl font-bold text-gray-950">{page.primaryKeyword} Complete Player Guide</h2>
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Player&apos;s view</p>
+              <h2 className="mb-4 text-2xl font-bold text-gray-950">Inside {page.primaryKeyword}: pace, trust, and community</h2>
               <p className="mb-5 text-base leading-8 text-gray-700">
-                These chapters are written for players who want to explore the server before registering, downloading a client, or investing time. Each section is designed to be expanded with owner-confirmed data, screenshots, reviews, and community notes.
+                A listing can tell you that a world is online. These chapters ask the harder questions: what the first evening may feel like, which evidence deserves trust, who is likely to stay, and what memories the community has yet to preserve.
               </p>
               <div className="space-y-3">
                 {deepDiveSections.map((section, index) => (
@@ -363,6 +360,16 @@ export default async function CuratedGuideArticle({ page }) {
               </div>
             </section>
           ) : null}
+
+          <section className="border-b border-gray-200 pb-8">
+            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">{curatedCoda.eyebrow}</p>
+            <h2 className="mb-4 text-2xl font-bold text-gray-950">{curatedCoda.heading}</h2>
+            <div className="space-y-4">
+              {curatedCoda.body.map((paragraph) => (
+                <p key={paragraph} className="text-base leading-8 text-gray-700">{paragraph}</p>
+              ))}
+            </div>
+          </section>
 
           {directoryData.servers.length ? (
             <section className="pb-8">

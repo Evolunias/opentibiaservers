@@ -65,7 +65,7 @@ export default function Header() {
                 OTS
               </div>
               <div>
-                <h1 className="text-lg font-bold text-white m-0">Open Tibia Servers</h1>
+                <span className="block text-lg font-bold text-white m-0">Open Tibia Servers</span>
                 <p className="text-xs text-slate-300 m-0">Live OT listings, guides, reviews, and source data.</p>
               </div>
             </Link>

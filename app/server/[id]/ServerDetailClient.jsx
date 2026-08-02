@@ -107,7 +107,7 @@ function buildTrustSummary(server) {
     server.source ? `Imported from ${server.source}` : 'Imported or submitted directory record',
     server.source_url ? 'Source record linked' : null,
     server.website_url || server.external_launch_url ? 'Official website mapped' : null,
-    server.official_last_researched_at ? 'Official source research timestamped' : null,
+    server.official_last_researched_at ? 'Official source check timestamped' : null,
     server.claim_status ? `Claim status: ${server.claim_status}` : 'Claim status: unclaimed',
     server.review_count ? `${Number(server.review_count).toLocaleString()} community review signals` : null,
     server.last_monitor_checked_at ? 'Recent monitor data available' : null,
@@ -557,7 +557,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                   <h2 className="text-2xl font-bold text-white mb-2">{renderHeadline}</h2>
                   <p className="text-slate-200">{renderSubheadline || 'Server owners can customize this listing after claiming it.'}</p>
                   <p className="mt-3 text-sm leading-6 text-slate-300">
-                    This page is built for players researching whether {server.name} is worth joining now. It combines live directory data,
+                    This page is built for players deciding whether {server.name} is worth joining now. It combines live directory data,
                     owner-manageable fields, public source references, monitor history, reviews, and community discussion in one crawlable profile.
                   </p>
                 </div>
@@ -735,7 +735,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             ) : null}
 
             <section className="border border-gray-200 rounded p-4 mb-6">
-              <h2 className="text-lg font-bold text-gray-950 mb-3">Related Open Tibia Research</h2>
+              <h2 className="text-lg font-bold text-gray-950 mb-3">Explore similar Open Tibia worlds</h2>
               <div className="flex flex-wrap gap-2">
                 <Link href="/" className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline">
                   Open Tibia server directory

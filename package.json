@@ -7,10 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "audit:content": "node scripts/audit-content-quality.mjs",
+    "audit:content": "node scripts/audit-content-quality.mjs && node scripts/audit-editorial-quality.mjs",
+    "audit:editorial": "node scripts/audit-editorial-quality.mjs",
     "audit:links": "node scripts/audit-links.mjs",
     "audit:wiki-depth": "node scripts/audit-server-wiki-depth.mjs",
     "audit:knowledge": "node scripts/audit-knowledge-pages.mjs",
+    "audit:knowledge-catalog": "node scripts/audit-knowledge-catalog.mjs",
+    "fetch:official-knowledge": "node scripts/fetch-official-knowledge-snapshots.mjs",
+    "generate:knowledge-catalog": "node scripts/generate-knowledge-catalog.mjs",
     "submit:indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
@@ -27,6 +31,7 @@
     "@types/node": "25.5.2",
     "@types/react": "19.2.14",
     "eslint": "8.57.1",
-    "eslint-config-next": "^14.2.0"
+    "eslint-config-next": "^14.2.0",
+    "fast-xml-parser": "^5.3.6"
   }
 }

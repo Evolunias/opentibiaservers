@@ -26,7 +26,7 @@ export default function PrivacyPage() {
           heading: 'How We Use Information',
           body: [
             'We use information to display server listings, power search and filters, verify claims, prevent abuse, respond to contact requests, improve page quality, maintain source attribution, and help players compare Open Tibia servers safely.',
-            'Public listing and community content may appear on server pages, exact-match keyword pages, sitemap entries, and search-indexable pages.',
+            'Public listing and community contributions may appear on dedicated server profiles, topic pages, sitemap entries, and public discovery surfaces.',
           ],
         },
         {

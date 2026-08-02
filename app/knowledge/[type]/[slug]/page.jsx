@@ -1,17 +1,31 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { buildAbsoluteUrl, getSiteName } from '@/lib/seo';
-import { buildKnowledgeMetadata, getKnowledgeEntity, knowledgeEntities } from '@/lib/knowledge-base';
+import {
+  buildKnowledgeMetadata,
+  getKnowledgeCollection,
+  getKnowledgeEntityByPath,
+  getKnowledgeStaticParams,
+  getRelatedKnowledgeEntities,
+} from '@/lib/knowledge-base';
+
+export const dynamicParams = true;
+export const revalidate = 604800;
 
 export function generateStaticParams() {
-  return knowledgeEntities.map((entity) => ({
-    type: `${entity.entityType}s`,
-    slug: entity.slug,
-  }));
+  return getKnowledgeStaticParams();
+}
+
+function TableCellContent({ cell }) {
+  if (cell && typeof cell === 'object' && cell.href && cell.text) {
+    return <Link href={cell.href}>{cell.text}</Link>;
+  }
+  return cell;
 }
 
 export function generateMetadata({ params }) {
-  const entity = getKnowledgeEntity(params.slug);
+  const entity = getKnowledgeEntityByPath(params.type, params.slug);
   if (!entity) {
     return {
       title: `Knowledge Page Not Found | ${getSiteName()}`,
@@ -22,141 +36,298 @@ export function generateMetadata({ params }) {
   return buildKnowledgeMetadata(entity);
 }
 
-export default function KnowledgeEntityPage({ params }) {
-  const entity = getKnowledgeEntity(params.slug);
-  if (!entity || params.type !== `${entity.entityType}s`) notFound();
+function ContentBlock({ block, sectionId, index }) {
+  const key = `${sectionId}-${block.type}-${index}`;
 
-  const jsonLd = {
+  if (block.type === 'paragraph') {
+    return <p key={key} className="knowledge-prose">{block.text}</p>;
+  }
+
+  if (block.type === 'list') {
+    return (
+      <ul key={key} className="knowledge-list">
+        {block.items.map((item) => <li key={item}>{item}</li>)}
+      </ul>
+    );
+  }
+
+  if (block.type === 'steps') {
+    return (
+      <ol key={key} className="knowledge-steps">
+        {block.items.map((item, itemIndex) => (
+          <li key={`${item.title}-${itemIndex}`}>
+            <span>{String(itemIndex + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    );
+  }
+
+  if (block.type === 'formula') {
+    return (
+      <figure key={key} className="knowledge-formula">
+        <figcaption>{block.label}</figcaption>
+        <pre><code>{block.expression}</code></pre>
+        {block.variables?.length > 0 && (
+          <ul>
+            {block.variables.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+        )}
+      </figure>
+    );
+  }
+
+  if (block.type === 'table') {
+    return (
+      <div key={key} className="knowledge-table-wrap" tabIndex="0" role="region" aria-label={block.caption}>
+        <table className="knowledge-table">
+          <caption>{block.caption}</caption>
+          <thead>
+            <tr>{block.columns.map((column) => <th key={column} scope="col">{column}</th>)}</tr>
+          </thead>
+          <tbody>
+            {block.rows.map((row, rowIndex) => (
+              <tr key={`${block.caption}-${rowIndex}`}>
+                {row.map((cell, cellIndex) => (
+                  <td key={`${rowIndex}-${cellIndex}`}><TableCellContent cell={cell} /></td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
+  if (block.type === 'callout') {
+    return (
+      <aside key={key} className={`knowledge-callout knowledge-callout--${block.tone || 'info'}`}>
+        <h3>{block.title}</h3>
+        <p>{block.text}</p>
+      </aside>
+    );
+  }
+
+  return null;
+}
+
+export default function KnowledgeEntityPage({ params }) {
+  const entity = getKnowledgeEntityByPath(params.type, params.slug);
+  if (!entity) notFound();
+
+  const requestedPath = `/knowledge/${params.type}/${params.slug}`;
+  if (requestedPath !== entity.canonicalPath) permanentRedirect(entity.canonicalPath);
+
+  const collection = getKnowledgeCollection(entity.collection);
+  const relatedEntities = getRelatedKnowledgeEntities(entity);
+  const articleJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: `${entity.name} - Tibia facts and Open Tibia notes`,
+    '@type': 'TechArticle',
+    headline: entity.name,
     description: entity.summary,
     mainEntityOfPage: buildAbsoluteUrl(entity.canonicalPath),
+    dateModified: entity.reviewedAt,
+    proficiencyLevel: 'Expert',
     author: {
       '@type': 'Organization',
       name: getSiteName(),
     },
-    isPartOf: {
-      '@type': 'WebSite',
+    publisher: {
+      '@type': 'Organization',
       name: getSiteName(),
       url: buildAbsoluteUrl('/'),
     },
+    isPartOf: {
+      '@type': 'CollectionPage',
+      name: 'Tibia Knowledge Base',
+      url: buildAbsoluteUrl('/knowledge'),
+    },
     about: [
       { '@type': 'Thing', name: entity.name },
+      { '@type': 'Thing', name: collection?.label || 'Open Tibia knowledge' },
       { '@type': 'Thing', name: 'Open Tibia servers' },
     ],
     citation: entity.sources.map((source) => source.href),
   };
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Open Tibia Servers', item: buildAbsoluteUrl('/') },
+      { '@type': 'ListItem', position: 2, name: 'Knowledge', item: buildAbsoluteUrl('/knowledge') },
+      { '@type': 'ListItem', position: 3, name: collection?.label, item: buildAbsoluteUrl(entity.indexPath || `/knowledge#${entity.collection}`) },
+      { '@type': 'ListItem', position: 4, name: entity.name, item: buildAbsoluteUrl(entity.canonicalPath) },
+    ],
+  };
 
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-950">
+    <main className="knowledge-shell knowledge-shell--article">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      <section className="border-b border-gray-200 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-10">
-          <div className="mb-5 flex flex-wrap items-center gap-3 text-sm">
-            <Link href="/" className="font-semibold text-gray-700 hover:text-gray-950">Open Tibia Servers</Link>
-            <span className="text-gray-400">/</span>
-            <Link href="/resources" className="font-semibold text-gray-700 hover:text-gray-950">Resources</Link>
-            <span className="text-gray-400">/</span>
-            <span className="text-gray-600">{entity.name}</span>
+      <header className="knowledge-article-hero">
+        <Image
+          src="/images/knowledge-atlas-hero.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="knowledge-article-hero__image"
+        />
+        <div className="knowledge-article-hero__veil" aria-hidden="true" />
+        <div className="knowledge-container knowledge-article-hero__inner motion-rise">
+          <nav className="knowledge-breadcrumbs" aria-label="Breadcrumb">
+            <Link href="/">Directory</Link>
+            <span>/</span>
+            <Link href="/knowledge">Knowledge</Link>
+            <span>/</span>
+            {entity.indexPath ? <Link href={entity.indexPath}>{collection?.shortLabel}</Link> : <span>{collection?.shortLabel}</span>}
+          </nav>
+
+          <div className="knowledge-article-hero__meta">
+            <span>{collection?.label}</span>
+            <span>{entity.status.replace(/-/g, ' ')}</span>
+            <span>{entity.readingMinutes} minute read</span>
           </div>
-
-          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">
-            {entity.entityType.replace(/_/g, ' ')} reference
-          </p>
-          <h1 className="max-w-4xl text-4xl font-bold leading-tight text-gray-950 md:text-5xl">
-            {entity.name}
-          </h1>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-gray-700">
-            {entity.summary}
-          </p>
+          <h1>{entity.name}</h1>
+          <p>{entity.summary}</p>
+          <div className="knowledge-profile-bar">
+            <div>
+              <span>Reference profile</span>
+              <strong>{entity.profile}</strong>
+            </div>
+            <div>
+              <span>Reviewed</span>
+              <strong><time dateTime={entity.reviewedAt}>{entity.reviewedAt}</time></strong>
+            </div>
+            <div>
+              <span>Evidence</span>
+              <strong>{entity.sources.length} primary references</strong>
+            </div>
+          </div>
         </div>
-      </section>
+      </header>
 
-      <section className="mx-auto grid max-w-6xl gap-6 px-6 py-8 lg:grid-cols-[minmax(0,1fr)_320px]">
-        <article className="space-y-6">
-          <section className="rounded border border-gray-200 bg-white p-5">
-            <h2 className="mb-4 text-2xl font-bold text-gray-950">Quick Facts</h2>
-            <div className="grid gap-3 md:grid-cols-2">
+      <div className="knowledge-container knowledge-article-layout">
+        <article className="knowledge-article-body">
+          <section className="knowledge-facts" aria-labelledby="quick-facts-title">
+            <div className="knowledge-section-heading">
+              <div>
+                <p className="knowledge-kicker">At a glance</p>
+                <h2 id="quick-facts-title">Quick facts</h2>
+              </div>
+            </div>
+            <dl>
               {entity.facts.map((fact) => (
-                <div key={`${fact.key}-${fact.value}`} className="rounded border border-gray-200 bg-gray-50 p-4">
-                  <dt className="text-xs font-bold uppercase tracking-wide text-gray-500">{fact.key}</dt>
-                  <dd className="mt-1 text-sm font-semibold leading-6 text-gray-900">{fact.value}</dd>
+                <div key={`${fact.key}-${fact.value}`}>
+                  <dt>{fact.key}</dt>
+                  <dd>{fact.value}</dd>
                 </div>
               ))}
-            </div>
-          </section>
-
-          {entity.sections.map((section) => (
-            <section key={section.title} className="rounded border border-gray-200 bg-white p-5">
-              <h2 className="mb-3 text-2xl font-bold text-gray-950">{section.title}</h2>
-              <p className="text-base leading-8 text-gray-700">{section.body}</p>
-            </section>
-          ))}
-
-          <section className="rounded border border-gray-200 bg-white p-5">
-            <h2 className="mb-3 text-2xl font-bold text-gray-950">Open Tibia Server Relevance</h2>
-            <p className="text-base leading-8 text-gray-700">
-              This page is written for players comparing public Tibia knowledge with private-server reality.
-              Many Open Tibia servers change formulas, drops, spawns, NPC locations, quest access, and item values.
-              Use this page as a starting point, then verify the exact server page, website, rules, and player reviews.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {entity.relatedServerSearches.map((term) => (
-                <Link
-                  key={term}
-                  href={`/?search=${encodeURIComponent(term)}`}
-                  className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline"
-                >
-                  {term}
-                </Link>
-              ))}
-            </div>
-          </section>
-        </article>
-
-        <aside className="space-y-5">
-          <section className="rounded border border-gray-200 bg-white p-5">
-            <h2 className="mb-3 text-base font-bold text-gray-950">Page Status</h2>
-            <dl className="space-y-3">
-              <div>
-                <dt className="text-xs font-bold uppercase tracking-wide text-gray-500">Status</dt>
-                <dd className="mt-1 text-sm font-semibold text-gray-900">{entity.status}</dd>
-              </div>
-              <div>
-                <dt className="text-xs font-bold uppercase tracking-wide text-gray-500">Canonical</dt>
-                <dd className="mt-1 break-words text-sm font-semibold text-gray-900">{entity.canonicalPath}</dd>
-              </div>
             </dl>
           </section>
 
-          <section className="rounded border border-gray-200 bg-white p-5">
-            <h2 className="mb-3 text-base font-bold text-gray-950">Source References</h2>
-            <p className="mb-4 text-sm leading-6 text-gray-700">
-              Facts are rewritten for OpenTibiaServers.com and checked against public references where available.
+          {entity.sections.map((section, sectionIndex) => (
+            <section
+              key={section.id}
+              id={section.id}
+              className="knowledge-content-section"
+              style={{ '--section-order': sectionIndex }}
+            >
+              <div className="knowledge-content-section__number" aria-hidden="true">
+                {String(sectionIndex + 1).padStart(2, '0')}
+              </div>
+              <div className="knowledge-content-section__content">
+                <h2>{section.title}</h2>
+                {section.blocks.map((block, blockIndex) => (
+                  <ContentBlock
+                    key={`${section.id}-${block.type}-${blockIndex}`}
+                    block={block}
+                    sectionId={section.id}
+                    index={blockIndex}
+                  />
+                ))}
+              </div>
+            </section>
+          ))}
+
+          <section className="knowledge-server-context" aria-labelledby="server-context-title">
+            <p className="knowledge-kicker">Apply the guide</p>
+            <h2 id="server-context-title">Find servers using this profile</h2>
+            <p>
+              Server names, protocol labels, and map labels do not guarantee matching mechanics. Use these filters to find candidates,
+              then verify the listing, owner documentation, and deployed ruleset.
             </p>
-            <ul className="space-y-3">
+            <div>
+              {entity.relatedServerSearches.map((term) => (
+                <Link key={term} href={`/?search=${encodeURIComponent(term)}`}>{term}</Link>
+              ))}
+            </div>
+          </section>
+
+          {relatedEntities.length > 0 && (
+            <section className="knowledge-related" aria-labelledby="related-guides-title">
+              <div className="knowledge-section-heading">
+                <div>
+                  <p className="knowledge-kicker">Continue the system</p>
+                  <h2 id="related-guides-title">Related guides</h2>
+                </div>
+              </div>
+              <div className="knowledge-related__grid">
+                {relatedEntities.map((related) => (
+                  <Link key={related.canonicalPath} href={related.canonicalPath}>
+                    <span>{getKnowledgeCollection(related.collection)?.shortLabel}</span>
+                    <strong>{related.name}</strong>
+                    <small>{related.readingMinutes} min</small>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+        </article>
+
+        <aside className="knowledge-article-sidebar">
+          <nav className="knowledge-toc" aria-label="On this page">
+            <p>On this page</p>
+            <ol>
+              <li><a href="#quick-facts-title">Quick facts</a></li>
+              {entity.sections.map((section) => (
+                <li key={section.id}><a href={`#${section.id}`}>{section.title}</a></li>
+              ))}
+              <li><a href="#source-ledger">Evidence ledger</a></li>
+            </ol>
+          </nav>
+
+          <section id="source-ledger" className="knowledge-source-ledger">
+            <p className="knowledge-kicker">Evidence ledger</p>
+            <h2>Primary references</h2>
+            <p>
+              Each source establishes only the scope shown below. Private-server values remain profile-specific.
+            </p>
+            <ul>
               {entity.sources.map((source) => (
-                <li key={source.href}>
-                  <a
-                    href={source.href}
-                    target="_blank"
-                    rel="noopener noreferrer external"
-                    className="block rounded border border-gray-200 bg-gray-50 p-3 text-sm font-semibold text-gray-900 hover:border-gray-400 hover:no-underline"
-                  >
-                    <span>{source.label}</span>
-                    <span className="mt-1 block text-xs font-normal text-gray-500">{source.license}</span>
+                <li key={source.id}>
+                  <a href={source.href} target="_blank" rel="noopener noreferrer external">
+                    <strong>{source.label}</strong>
+                    <span>{source.authority}</span>
+                    <small>{source.scope}</small>
                   </a>
                 </li>
               ))}
             </ul>
           </section>
         </aside>
-      </section>
+      </div>
     </main>
   );
 }
