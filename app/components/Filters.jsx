@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 const initialFilters = {
   search: '',
-  source: '',
   world_type: '',
   location: '',
   version: '',
@@ -20,13 +19,12 @@ export default function Filters({ onFiltersChange, onSearch }) {
     setFilters(nextFilters);
     onFiltersChange({
       search: nextFilters.search || undefined,
-      source: nextFilters.source || undefined,
       world_type: nextFilters.world_type || undefined,
       location: nextFilters.location || undefined,
       version: nextFilters.version || undefined,
       min_players: nextFilters.min_players || undefined,
-      sort: nextFilters.sort || 'players',
-      is_online: nextFilters.is_online ? true : undefined,
+          sort: nextFilters.sort || 'players',
+          is_online: nextFilters.is_online ? true : undefined,
     });
   };
 
@@ -46,7 +44,7 @@ export default function Filters({ onFiltersChange, onSearch }) {
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between mb-4">
         <div>
           <h2 className="text-base font-bold text-white mb-1">Find Servers</h2>
-          <p className="text-xs text-slate-400">Search by name, host, country, client, source, and live population.</p>
+          <p className="text-xs text-slate-400">Search by name, host, country, client, and live population.</p>
         </div>
         <button
           type="button"
@@ -57,7 +55,7 @@ export default function Filters({ onFiltersChange, onSearch }) {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-7 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-3">
         <div className="md:col-span-2">
           <label className="block text-xs font-semibold text-slate-300 mb-1">Search</label>
           <input
@@ -67,20 +65,6 @@ export default function Filters({ onFiltersChange, onSearch }) {
             onChange={(event) => update('search', event.target.value)}
             className="form-control w-full"
           />
-        </div>
-
-        <div>
-          <label className="block text-xs font-semibold text-slate-300 mb-1">Source</label>
-          <select
-            value={filters.source}
-            onChange={(event) => update('source', event.target.value)}
-            className="form-control w-full"
-          >
-            <option value="">All Sources</option>
-            <option value="otservlist.org">otservlist.org</option>
-            <option value="otland.net">otland.net</option>
-            <option value="user_submission">Submitted</option>
-          </select>
         </div>
 
         <div>
@@ -167,9 +151,8 @@ export default function Filters({ onFiltersChange, onSearch }) {
           >
             <option value="players">Players online</option>
             <option value="rating">Rating</option>
-            <option value="points">Points</option>
             <option value="uptime">Uptime</option>
-            <option value="newest">Recently seen</option>
+            <option value="newest">Recently updated</option>
             <option value="name">Name</option>
           </select>
         </div>

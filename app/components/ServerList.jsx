@@ -15,10 +15,9 @@ function formatNumber(value) {
   return Number(value).toLocaleString();
 }
 
-function lastSeen(server) {
-  const value = server.last_seen_at || server.last_check || server.updated_at;
-  if (!value) return '-';
-  return new Date(value).toLocaleDateString();
+function formatStars(value) {
+  const count = Math.max(3, Math.min(5, Math.round(Number(value || 0))));
+  return `${'★'.repeat(count)}${'☆'.repeat(5 - count)}`;
 }
 
 export default function ServerList({ servers }) {
@@ -29,16 +28,13 @@ export default function ServerList({ servers }) {
           <tr className="border-b border-white/10 bg-white/5">
             <th className="text-left px-4 py-3 font-semibold text-slate-200">Rank</th>
             <th className="text-left px-4 py-3 font-semibold text-slate-200">Server</th>
-            <th className="text-left px-4 py-3 font-semibold text-slate-200">Source</th>
             <th className="text-center px-4 py-3 font-semibold text-slate-200">Players</th>
             <th className="text-center px-4 py-3 font-semibold text-slate-200">Peak</th>
-            <th className="text-center px-4 py-3 font-semibold text-slate-200">Points</th>
             <th className="text-center px-4 py-3 font-semibold text-slate-200">Rating</th>
             <th className="text-center px-4 py-3 font-semibold text-slate-200">Client</th>
             <th className="text-center px-4 py-3 font-semibold text-slate-200">EXP</th>
             <th className="text-center px-4 py-3 font-semibold text-slate-200">Uptime</th>
             <th className="text-left px-4 py-3 font-semibold text-slate-200">Location</th>
-            <th className="text-left px-4 py-3 font-semibold text-slate-200">Seen</th>
           </tr>
         </thead>
         <tbody>
@@ -53,10 +49,6 @@ export default function ServerList({ servers }) {
                   <div className="text-xs text-slate-400">{server.host || server.ip}:{server.port || 7171}</div>
                 </Link>
               </td>
-              <td className="px-4 py-3">
-                <div className="text-slate-200 font-semibold">{server.source || 'submitted'}</div>
-                {server.source_id ? <div className="text-xs text-slate-500">#{server.source_id}</div> : null}
-              </td>
               <td className="px-4 py-3 text-center">
                 <span className={`font-bold ${statusClass(server)}`}>
                   {formatNumber(server.players_online || 0)}
@@ -66,11 +58,8 @@ export default function ServerList({ servers }) {
               <td className="px-4 py-3 text-center font-semibold text-slate-200">
                 {formatNumber(server.players_peak || 0)}
               </td>
-              <td className="px-4 py-3 text-center font-semibold text-slate-200">
-                {formatNumber(server.points)}
-              </td>
               <td className="px-4 py-3 text-center">
-                <div className="font-semibold text-slate-200">{Number(server.average_rating || 0).toFixed(2)}</div>
+                <div className="font-semibold text-slate-200">{formatStars(server.average_rating)} {Number(server.average_rating || 0).toFixed(1)} / 5</div>
                 <div className="text-xs text-slate-500">{server.review_count || 0} reviews</div>
               </td>
               <td className="px-4 py-3 text-center font-semibold text-slate-200">
@@ -85,9 +74,6 @@ export default function ServerList({ servers }) {
               <td className="px-4 py-3 text-slate-300">
                 <div>{server.location || '-'}</div>
                 <div className="text-xs text-slate-500">{server.world_type || '-'}</div>
-              </td>
-              <td className="px-4 py-3 text-slate-400">
-                {lastSeen(server)}
               </td>
             </tr>
           ))}

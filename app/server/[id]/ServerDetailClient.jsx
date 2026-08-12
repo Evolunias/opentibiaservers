@@ -746,7 +746,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                   ))}
                 </div>
                 <p className="mt-4 text-sm leading-6 text-gray-700">
-                  Open Tibia worlds change quickly. The strongest pages are kept current by a mix of source sync, uptime checks,
+                  Open Tibia worlds change quickly. The strongest pages are kept current through manual research, uptime checks,
                   player feedback, screenshots, and owner-verified edits rather than static promotional copy.
                 </p>
               </section>

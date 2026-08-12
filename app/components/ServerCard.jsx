@@ -26,6 +26,11 @@ function percent(value) {
   return `${Number(value).toFixed(Number(value) % 1 === 0 ? 0 : 2)}%`;
 }
 
+function stars(value) {
+  const count = Math.max(3, Math.min(5, Math.round(Number(value || 0))));
+  return `${'★'.repeat(count)}${'☆'.repeat(5 - count)}`;
+}
+
 export default function ServerCard({ server }) {
   return (
     <Link href={getServerPath(server)} className="block h-full">
@@ -33,9 +38,6 @@ export default function ServerCard({ server }) {
         <div className="flex items-start justify-between gap-3 mb-3">
           <div className="min-w-0">
             <div className="flex items-center gap-2 mb-1">
-              {server.source_rank ? (
-                <span className="text-xs font-bold text-slate-400">#{server.source_rank}</span>
-              ) : null}
               <span className={`status-dot ${server.is_online ? 'status-dot--online' : 'status-dot--offline'}`} />
             </div>
             <h3 className="text-base font-bold text-white truncate">{server.name}</h3>
@@ -61,7 +63,7 @@ export default function ServerCard({ server }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-1 mb-3 text-xs">
+        <div className="grid grid-cols-3 gap-1 mb-3 text-xs">
           <div className="server-submetric">
             <p className="text-slate-400 font-semibold mb-1">Client</p>
             <p className="font-bold text-white">{server.version || '-'}</p>
@@ -74,16 +76,13 @@ export default function ServerCard({ server }) {
             <p className="text-slate-400 font-semibold mb-1">Uptime</p>
             <p className="font-bold text-white">{percent(server.uptime_percent)}</p>
           </div>
-          <div className="server-submetric">
-            <p className="text-slate-400 font-semibold mb-1">Pts</p>
-            <p className="font-bold text-white">{number(server.points)}</p>
-          </div>
         </div>
 
         <div className="grid grid-cols-2 gap-2 mb-3 text-xs">
           <div className="server-metric">
             <p className="text-slate-400 uppercase font-semibold mb-1">Rating</p>
-            <p className="font-bold text-white">{Number(server.average_rating || 0).toFixed(2)} / 5</p>
+            <p className="font-bold text-white">{stars(server.average_rating)} {Number(server.average_rating || 0).toFixed(1)} / 5</p>
+            <p className="text-xs text-slate-400">{number(server.review_count)} reviews</p>
           </div>
           <div className="server-metric">
             <p className="text-slate-400 uppercase font-semibold mb-1">Monitor</p>
@@ -92,11 +91,6 @@ export default function ServerCard({ server }) {
         </div>
 
         <div className="flex flex-wrap gap-1 text-xs">
-          {server.source ? (
-            <span className="server-tag">
-              {server.source}
-            </span>
-          ) : null}
           {server.location ? (
             <span className="server-tag">
               {server.location}

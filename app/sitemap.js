@@ -41,6 +41,12 @@ export default async function sitemap() {
       changeFrequency: 'weekly',
       priority: 0.78,
     },
+    {
+      url: buildAbsoluteUrl('/evomanias'),
+      lastModified: new Date('2026-08-12'),
+      changeFrequency: 'weekly',
+      priority: 0.92,
+    },
     ...['items', 'monsters', 'spells'].map((catalog) => ({
       url: buildAbsoluteUrl(`/knowledge/${catalog}`),
       lastModified: new Date(),
