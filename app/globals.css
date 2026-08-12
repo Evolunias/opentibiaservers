@@ -484,6 +484,164 @@ body {
   }
 }
 
+/* Unified site theme. Directory, editorial pages, forms, and community use the same visual language. */
+body.ots-site-theme {
+  min-height: 100vh;
+  color: #e8f4ee;
+  background: #08110f;
+}
+
+body.ots-site-theme .site-header {
+  border-color: rgba(139, 226, 181, 0.16) !important;
+  background:
+    linear-gradient(135deg, rgba(5, 22, 17, 0.97), rgba(10, 47, 35, 0.94)),
+    radial-gradient(circle at 16% 0%, rgba(67, 220, 153, 0.2), transparent 32%) !important;
+  box-shadow: 0 18px 50px rgba(1, 17, 11, 0.34) !important;
+}
+
+body.ots-site-theme footer {
+  border-color: rgba(139, 226, 181, 0.16) !important;
+  background: #07100d !important;
+}
+
+body.ots-site-theme :where(.bg-gray-50, .bg-gray-100) {
+  background-color: #0b1713 !important;
+}
+
+body.ots-site-theme :where(.bg-white) {
+  background-color: #101f1a !important;
+}
+
+body.ots-site-theme :where(.bg-gray-950, .bg-gray-900) {
+  background-color: #06130e !important;
+}
+
+body.ots-site-theme :where(.text-gray-950, .text-gray-900, .text-gray-800) {
+  color: #f1fff7 !important;
+}
+
+body.ots-site-theme :where(.text-gray-700, .text-gray-600) {
+  color: #b0c4ba !important;
+}
+
+body.ots-site-theme :where(.text-gray-500, .text-gray-400) {
+  color: #849b90 !important;
+}
+
+body.ots-site-theme :where(.text-gray-300, .text-gray-200) {
+  color: #c7d9cf !important;
+}
+
+body.ots-site-theme :where(.border-gray-200, .border-gray-300) {
+  border-color: rgba(139, 226, 181, 0.2) !important;
+}
+
+body.ots-site-theme :where(.hover\:bg-gray-50:hover, .hover\:bg-gray-100:hover) {
+  background-color: #142a22 !important;
+}
+
+body.ots-site-theme :where(.hover\:text-gray-950:hover, .hover\:text-gray-900:hover) {
+  color: #ffffff !important;
+}
+
+body.ots-site-theme :where(input, textarea, select) {
+  border-color: rgba(139, 226, 181, 0.24);
+  color: #effff6;
+  background: #091813;
+}
+
+body.ots-site-theme :where(input, textarea, select)::placeholder {
+  color: #71877c;
+}
+
+body.ots-site-theme :where(input, textarea, select):focus {
+  border-color: #63dfb2;
+  box-shadow: 0 0 0 3px rgba(99, 223, 178, 0.14);
+  outline: none;
+}
+
+body.ots-site-theme .community-shell {
+  min-height: 100vh !important;
+  color: #e9f5ef !important;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(39, 181, 111, 0.16), transparent 32%),
+    linear-gradient(180deg, #08110f 0%, #0d1715 45%, #0a100f 100%) !important;
+}
+
+body.ots-site-theme .featured-server-ad {
+  border-color: #176b4f !important;
+  color: #f2fff8 !important;
+  background:
+    radial-gradient(circle at 9% 15%, rgba(255, 224, 132, 0.26), transparent 24%),
+    radial-gradient(circle at 86% 100%, rgba(39, 181, 111, 0.28), transparent 32%),
+    linear-gradient(120deg, #08291f 0%, #0c513b 48%, #123f31 100%) !important;
+  box-shadow: 0 18px 44px rgba(9, 74, 50, 0.22) !important;
+}
+
+body.ots-site-theme .featured-server-ad--footer {
+  width: 100% !important;
+  border-radius: 0 !important;
+}
+
+body.ots-site-theme .featured-server-ad__inner,
+body.ots-site-theme .featured-server-ad__copy,
+body.ots-site-theme .featured-server-ad__actions,
+body.ots-site-theme .featured-server-ad__stats,
+body.ots-site-theme .featured-server-ad__highlights {
+  background: transparent !important;
+}
+
+body.ots-site-theme .featured-server-ad__copy h2,
+body.ots-site-theme .featured-server-ad__copy p,
+body.ots-site-theme .featured-server-ad__stat span,
+body.ots-site-theme .featured-server-ad__stat strong {
+  color: #f2fff8 !important;
+}
+
+body.ots-site-theme .featured-server-ad__eyebrow,
+body.ots-site-theme .featured-server-ad__chip {
+  color: #ffe28b !important;
+}
+
+body.ots-site-theme .featured-server-ad__stat {
+  border-color: rgba(190, 255, 218, 0.28) !important;
+  background: rgba(3, 28, 20, 0.3) !important;
+}
+
+body.ots-site-theme .featured-server-ad__primary {
+  border-color: #ffe28b !important;
+  color: #153528 !important;
+  background: linear-gradient(135deg, #ffeaa9 0%, #f4c958 100%) !important;
+}
+
+body.ots-site-theme .featured-server-ad__secondary {
+  border-color: rgba(242, 255, 248, 0.52) !important;
+  color: #f2fff8 !important;
+  background: rgba(242, 255, 248, 0.08) !important;
+}
+
+body.ots-site-theme .server-list__featured-row > td {
+  border-color: #d7a928 !important;
+  background: #fff8d9 !important;
+}
+
+body.ots-site-theme .server-list__featured-mark,
+body.ots-site-theme .server-list__featured-action {
+  background: #173328 !important;
+}
+
+body.ots-site-theme .server-list__featured-label {
+  color: #7a5600 !important;
+}
+
+body.ots-site-theme .server-list__featured-name {
+  color: #173328 !important;
+}
+
+body.ots-site-theme .server-list__featured-copy {
+  color: #5d5945 !important;
+}
+
 /* Route-specific surfaces keep their own visual systems. */
 body.ots-plain-site .community-shell {
   min-height: 100vh !important;

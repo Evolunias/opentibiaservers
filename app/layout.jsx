@@ -44,7 +44,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="ots-plain-site">
+      <body className="ots-site-theme">
         <AuthProvider>
           <Header />
           {children}
