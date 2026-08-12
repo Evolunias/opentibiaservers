@@ -151,7 +151,9 @@ export default function KnowledgeEntityPage({ params }) {
       { '@type': 'Thing', name: collection?.label || 'Open Tibia knowledge' },
       { '@type': 'Thing', name: 'Open Tibia servers' },
     ],
-    citation: entity.sources.map((source) => source.href),
+    citation: (Array.isArray(entity.sources) ? entity.sources : [])
+      .filter((source) => source && source.href)
+      .map((source) => source.href),
   };
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -212,7 +214,7 @@ export default function KnowledgeEntityPage({ params }) {
             </div>
             <div>
               <span>Evidence</span>
-              <strong>{entity.sources.length} primary references</strong>
+              <strong>{(Array.isArray(entity.sources) ? entity.sources : []).filter((source) => source && source.href).length} primary references</strong>
             </div>
           </div>
         </div>
@@ -315,15 +317,17 @@ export default function KnowledgeEntityPage({ params }) {
               Each source establishes only the scope shown below. Private-server values remain profile-specific.
             </p>
             <ul>
-              {entity.sources.map((source) => (
-                <li key={source.id}>
-                  <a href={source.href} target="_blank" rel="noopener noreferrer external">
-                    <strong>{source.label}</strong>
-                    <span>{source.authority}</span>
-                    <small>{source.scope}</small>
-                  </a>
-                </li>
-              ))}
+              {(Array.isArray(entity.sources) ? entity.sources : [])
+                .filter((source) => source && source.href && source.label)
+                .map((source) => (
+                  <li key={source.id || source.href}>
+                    <a href={source.href} target="_blank" rel="noopener noreferrer external">
+                      <strong>{source.label}</strong>
+                      <span>{source.authority}</span>
+                      <small>{source.scope}</small>
+                    </a>
+                  </li>
+                ))}
             </ul>
           </section>
         </aside>

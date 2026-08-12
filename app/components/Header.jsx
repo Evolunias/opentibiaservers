@@ -40,6 +40,7 @@ export default function Header() {
 
   const closeAuth = () => {
     setAuthOpen(false);
+    if (typeof window === 'undefined') return;
     const url = new URL(window.location.href);
     if (url.searchParams.has('auth')) {
       url.searchParams.delete('auth');
@@ -48,6 +49,7 @@ export default function Header() {
   };
 
   const authSuccess = () => {
+    if (typeof window === 'undefined') return;
     const params = new URLSearchParams(window.location.search);
     const redirect = params.get('redirect');
     if (redirect && redirect.startsWith('/')) {

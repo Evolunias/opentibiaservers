@@ -19,6 +19,27 @@ function createInternalTopicHref(query) {
     .replace(/^-+|-+$/g, '')}`;
 }
 
+function normalizeSourceLinks(page) {
+  const rawLinks = Array.isArray(page?.sourceLinks)
+    ? page.sourceLinks
+    : Array.isArray(page?.research_sources)
+      ? page.research_sources.map((source) => ({
+          href: source?.href || source?.url || '',
+          label: source?.label || source?.title || source?.href || source?.url || '',
+          note: source?.note || source?.use || '',
+          type: source?.type || 'reference',
+        }))
+      : [];
+
+  return rawLinks.filter((link) => link && link.href && link.label);
+}
+
+function normalizeWikiSourceCandidates(wikiDepth) {
+  return Array.isArray(wikiDepth?.sourceCandidates)
+    ? wikiDepth.sourceCandidates.filter((source) => source && source.href && source.label)
+    : [];
+}
+
 function buildInternalLinks(page) {
   const links = [
     { href: '/', label: 'Open Tibia server directory' },
@@ -39,6 +60,24 @@ function buildInternalLinks(page) {
 }
 
 export default async function CuratedGuideArticle({ page }) {
+  const sourceLinks = normalizeSourceLinks(page);
+  const cta = page.cta && page.cta.href
+    ? page.cta
+    : { href: '/', label: 'Browse Open Tibia servers' };
+  const facts = Array.isArray(page.facts) ? page.facts.filter(Boolean) : [];
+  const officialAccess = Array.isArray(page.officialAccess)
+    ? page.officialAccess.filter((link) => link && link.href && link.label)
+    : [];
+  const sections = Array.isArray(page.sections) ? page.sections.filter(Boolean) : [];
+  const faqs = (Array.isArray(page.faqs) ? page.faqs : Array.isArray(page.faq_items) ? page.faq_items : []).filter(Boolean);
+  const glossary = Array.isArray(page.glossary) ? page.glossary.filter(Boolean) : [];
+  const researchNotes = Array.isArray(page.researchNotes) ? page.researchNotes.filter(Boolean) : [];
+  const mediaLeads = Array.isArray(page.mediaLeads) ? page.mediaLeads.filter((lead) => lead && lead.href && lead.label) : [];
+  const evergreenAngles = Array.isArray(page.evergreenAngles) ? page.evergreenAngles.filter(Boolean) : [];
+  const infobox = Array.isArray(page.infobox) ? page.infobox.filter(Boolean) : [];
+  const timeline = Array.isArray(page.timeline) ? page.timeline.filter(Boolean) : [];
+  const relatedServerQueries = Array.isArray(page.relatedServerQueries) ? page.relatedServerQueries : [];
+
   const directoryData = await fetchDirectoryServers({
     page: 1,
     pageSize: 8,
@@ -50,6 +89,12 @@ export default async function CuratedGuideArticle({ page }) {
   const curatedCoda = buildCuratedCoda(page);
   const internalLinks = buildInternalLinks(page);
   const wikiDepth = page.wikiDepth || null;
+  const wikiSourceCandidates = normalizeWikiSourceCandidates(wikiDepth);
+  const gameplayGuide = Array.isArray(wikiDepth?.gameplayGuide) ? wikiDepth.gameplayGuide.filter(Boolean) : [];
+  const wikiSystems = wikiDepth && typeof wikiDepth.systems === 'object' && wikiDepth.systems ? wikiDepth.systems : {};
+  const editorialQueue = Array.isArray(wikiDepth?.editorialQueue) ? wikiDepth.editorialQueue.filter(Boolean) : [];
+  const curatedCodaBody = Array.isArray(curatedCoda?.body) ? curatedCoda.body.filter(Boolean) : [];
+  const directoryServers = Array.isArray(directoryData?.servers) ? directoryData.servers.filter(Boolean) : [];
 
   return (
     <main className="min-h-screen bg-gray-50 text-gray-950">
@@ -90,10 +135,10 @@ export default async function CuratedGuideArticle({ page }) {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                href={page.cta.href}
+                href={cta.href}
                 className="rounded border border-white bg-white px-5 py-3 text-sm font-bold text-gray-950 hover:bg-gray-100 hover:no-underline"
               >
-                {page.cta.label}
+                {cta.label}
               </Link>
               <Link
                 href="/submit-server"
@@ -107,7 +152,7 @@ export default async function CuratedGuideArticle({ page }) {
           <aside className="rounded border border-white/20 bg-gray-950/65 p-5 backdrop-blur">
             <h2 className="mb-4 text-base font-bold text-white">Quick Facts</h2>
             <dl className="space-y-4">
-              {page.facts.map((fact) => (
+              {facts.map((fact) => (
                 <div key={fact.label}>
                   <dt className="text-xs font-bold uppercase tracking-wide text-gray-300">{fact.label}</dt>
                   <dd className="mt-1 text-sm font-semibold text-white">{fact.value}</dd>
@@ -151,7 +196,7 @@ export default async function CuratedGuideArticle({ page }) {
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
-                {wikiDepth.gameplayGuide.map((entry) => (
+                {gameplayGuide.map((entry) => (
                   <div key={entry.heading} className="rounded border border-gray-200 bg-white p-4">
                     <h3 className="text-base font-bold text-gray-950">{entry.heading}</h3>
                     <p className="mt-2 text-sm leading-7 text-gray-700">{entry.body}</p>
@@ -160,11 +205,11 @@ export default async function CuratedGuideArticle({ page }) {
               </div>
 
               <div className="mt-6 grid gap-4 md:grid-cols-2">
-                {Object.entries(wikiDepth.systems).map(([key, values]) => (
+                {Object.entries(wikiSystems).map(([key, values]) => (
                   <div key={key} className="rounded border border-gray-200 bg-white p-4">
                     <h3 className="text-base font-bold capitalize text-gray-950">{key.replace(/([A-Z])/g, ' $1')}</h3>
                     <ul className="mt-3 space-y-2">
-                      {values.map((value) => (
+                      {(Array.isArray(values) ? values : []).filter(Boolean).map((value) => (
                         <li key={value} className="text-sm leading-6 text-gray-700">
                           {value}
                         </li>
@@ -178,7 +223,7 @@ export default async function CuratedGuideArticle({ page }) {
                 <h3 className="text-base font-bold text-gray-950">Where to verify the remaining details</h3>
                 <p className="mt-2 text-sm leading-7 text-gray-700">{wikiDepth.sourcePolicy}</p>
                 <div className="mt-4 grid gap-3">
-                  {wikiDepth.sourceCandidates.map((source) => (
+                  {wikiSourceCandidates.map((source) => (
                     <TrustedExternalLink
                       key={`${source.type}-${source.href}`}
                       href={source.href}
@@ -194,7 +239,7 @@ export default async function CuratedGuideArticle({ page }) {
               <div className="mt-6 rounded border border-gray-200 bg-white p-4">
                 <h3 className="text-base font-bold text-gray-950">What the community can document next</h3>
                 <ul className="mt-3 space-y-2">
-                  {wikiDepth.editorialQueue.map((item) => (
+                  {editorialQueue.map((item) => (
                     <li key={item} className="text-sm leading-6 text-gray-700">{item}</li>
                   ))}
                 </ul>
@@ -202,12 +247,12 @@ export default async function CuratedGuideArticle({ page }) {
             </section>
           ) : null}
 
-          {page.timeline?.length ? (
+          {timeline.length ? (
             <section className="border-b border-gray-200 pb-8">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Timeline</p>
               <h2 className="mb-5 text-2xl font-bold text-gray-950">{page.primaryKeyword} Historical Timeline</h2>
               <div className="space-y-4">
-                {page.timeline.map((event) => (
+                {timeline.map((event) => (
                   <div key={`${event.date}-${event.title}`} className="grid gap-2 border-l-2 border-gray-300 pl-4 sm:grid-cols-[120px_1fr] sm:border-l-0 sm:pl-0">
                     <div className="text-sm font-bold text-gray-950">{event.date}</div>
                     <div>
@@ -227,7 +272,7 @@ export default async function CuratedGuideArticle({ page }) {
             </section>
           ) : null}
 
-          {page.officialAccess?.length ? (
+          {officialAccess.length ? (
             <section className="border-b border-gray-200 pb-8">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Official Access</p>
               <h2 className="mb-4 text-2xl font-bold text-gray-950">
@@ -237,7 +282,7 @@ export default async function CuratedGuideArticle({ page }) {
                 These links are limited to official project repositories, release channels, publisher domains, or moderated historical references. Historical automation entries are preserved for context and do not endorse running old binaries.
               </p>
               <div className="grid gap-3 md:grid-cols-2">
-                {page.officialAccess.map((entry) => (
+                {officialAccess.map((entry) => (
                   <TrustedExternalLink
                     key={entry.href}
                     href={entry.href}
@@ -251,7 +296,7 @@ export default async function CuratedGuideArticle({ page }) {
             </section>
           ) : null}
 
-              {page.sections.map((section) => (
+          {sections.map((section) => (
             <section key={section.heading} className="border-b border-gray-200 pb-8">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">{section.eyebrow}</p>
               <h2 className="mb-4 text-2xl font-bold text-gray-950">{section.heading}</h2>
@@ -265,11 +310,11 @@ export default async function CuratedGuideArticle({ page }) {
             </section>
           ))}
 
-          {page.faqs.length ? (
+          {faqs.length ? (
             <section className="border-b border-gray-200 pb-8">
               <h2 className="mb-4 text-2xl font-bold text-gray-950">{page.primaryKeyword} FAQ</h2>
               <div className="space-y-4">
-                {page.faqs.map((faq) => (
+                {faqs.map((faq) => (
                   <details key={faq.question} className="rounded border border-gray-200 bg-white p-4">
                     <summary className="cursor-pointer text-base font-bold text-gray-950">{faq.question}</summary>
                     <p className="mt-3 text-sm leading-7 text-gray-700">{faq.answer}</p>
@@ -279,12 +324,12 @@ export default async function CuratedGuideArticle({ page }) {
             </section>
           ) : null}
 
-          {page.glossary?.length ? (
+          {glossary.length ? (
             <section className="border-b border-gray-200 pb-8">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Glossary</p>
               <h2 className="mb-4 text-2xl font-bold text-gray-950">Terms Players Should Know</h2>
               <dl className="grid gap-4">
-                {page.glossary.map((entry) => (
+                {glossary.map((entry) => (
                   <div key={entry.term} className="rounded border border-gray-200 bg-white p-4">
                     <dt className="text-base font-bold text-gray-950">{entry.term}</dt>
                     <dd className="mt-2 text-sm leading-7 text-gray-700">{entry.definition}</dd>
@@ -294,7 +339,7 @@ export default async function CuratedGuideArticle({ page }) {
             </section>
           ) : null}
 
-          {page.researchNotes?.length ? (
+          {researchNotes.length ? (
             <section className="border-b border-gray-200 pb-8">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">
                 {page.type === 'resource' ? 'Evidence Notes' : 'Source Notes'}
@@ -303,7 +348,7 @@ export default async function CuratedGuideArticle({ page }) {
                 {page.type === 'resource' ? 'How the Historical Record Was Verified' : 'What Public Sources Already Tell Us'}
               </h2>
               <div className="grid gap-4">
-                {page.researchNotes.map((note) => (
+                {researchNotes.map((note) => (
                   <div key={note.label} className="rounded border border-gray-200 bg-white p-4">
                     <h3 className="text-base font-bold text-gray-950">{note.label}</h3>
                     <p className="mt-2 text-sm leading-7 text-gray-700">{note.value}</p>
@@ -313,7 +358,7 @@ export default async function CuratedGuideArticle({ page }) {
             </section>
           ) : null}
 
-          {page.mediaLeads?.length ? (
+          {mediaLeads.length ? (
             <section className="border-b border-gray-200 pb-8">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Media Leads</p>
               <h2 className="mb-4 text-2xl font-bold text-gray-950">Public Screenshot and Media Sources</h2>
@@ -321,7 +366,7 @@ export default async function CuratedGuideArticle({ page }) {
                 These are source leads for real screenshots and community media. We link to them for attribution and verification; files should only be mirrored locally when the server owner, source license, or contributor permission allows it.
               </p>
               <div className="grid gap-3">
-                {page.mediaLeads.map((lead) => (
+                {mediaLeads.map((lead) => (
                   <TrustedExternalLink
                     key={lead.href}
                     href={lead.href}
@@ -349,7 +394,7 @@ export default async function CuratedGuideArticle({ page }) {
                       <span className="mt-1 block text-lg font-bold text-gray-950">{section.heading}</span>
                     </summary>
                     <div className="mt-4 space-y-4">
-                      {section.body.map((paragraph) => (
+                      {(Array.isArray(section.body) ? section.body : []).filter(Boolean).map((paragraph) => (
                         <p key={paragraph} className="text-sm leading-7 text-gray-700">
                           {paragraph}
                         </p>
@@ -365,17 +410,17 @@ export default async function CuratedGuideArticle({ page }) {
             <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">{curatedCoda.eyebrow}</p>
             <h2 className="mb-4 text-2xl font-bold text-gray-950">{curatedCoda.heading}</h2>
             <div className="space-y-4">
-              {curatedCoda.body.map((paragraph) => (
+              {curatedCodaBody.map((paragraph) => (
                 <p key={paragraph} className="text-base leading-8 text-gray-700">{paragraph}</p>
               ))}
             </div>
           </section>
 
-          {directoryData.servers.length ? (
+          {directoryServers.length ? (
             <section className="pb-8">
               <h2 className="mb-4 text-2xl font-bold text-gray-950">Matching Live Listings</h2>
               <div className="grid gap-3">
-                {directoryData.servers.map((server) => (
+                {directoryServers.map((server) => (
                   <Link
                     key={server.id || `${server.name}-${server.ip}`}
                     href={`/servers/${buildServerSlug(server)}`}
@@ -400,11 +445,11 @@ export default async function CuratedGuideArticle({ page }) {
         </article>
 
         <aside className="space-y-5">
-          {page.infobox?.length ? (
+          {infobox.length ? (
             <div className="rounded border border-gray-200 bg-white p-5">
               <h2 className="mb-3 text-base font-bold text-gray-950">Reference Box</h2>
               <dl className="space-y-3">
-                {page.infobox.map((item) => (
+                {infobox.map((item) => (
                   <div key={item.label}>
                     <dt className="text-xs font-bold uppercase tracking-wide text-gray-500">{item.label}</dt>
                     <dd className="mt-1 text-sm font-semibold text-gray-900">{item.value}</dd>
@@ -414,11 +459,11 @@ export default async function CuratedGuideArticle({ page }) {
             </div>
           ) : null}
 
-          {page.evergreenAngles?.length ? (
+          {evergreenAngles.length ? (
             <div className="rounded border border-gray-200 bg-white p-5">
               <h2 className="mb-3 text-base font-bold text-gray-950">Why This Page Exists</h2>
               <ul className="space-y-3">
-                {page.evergreenAngles.map((angle) => (
+                {evergreenAngles.map((angle) => (
                   <li key={angle} className="text-sm leading-6 text-gray-700">
                     {angle}
                   </li>
@@ -445,7 +490,7 @@ export default async function CuratedGuideArticle({ page }) {
           <div className="rounded border border-gray-200 bg-white p-5">
             <h2 className="mb-3 text-base font-bold text-gray-950">Search These Terms</h2>
             <div className="flex flex-wrap gap-2">
-              {page.relatedServerQueries.map((query) => (
+              {relatedServerQueries.map((query) => (
                 <Link
                   key={query}
                   href={createQueryHref(query)}
@@ -460,7 +505,7 @@ export default async function CuratedGuideArticle({ page }) {
           <div className="rounded border border-gray-200 bg-white p-5">
             <h2 className="mb-3 text-base font-bold text-gray-950">Reference Sources</h2>
             <ul className="space-y-3">
-              {page.sourceLinks.map((source) => (
+              {sourceLinks.map((source) => (
                 <li key={source.href}>
                   <TrustedExternalLink
                     href={source.href}
