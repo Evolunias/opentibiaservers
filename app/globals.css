@@ -2489,18 +2489,14 @@ body.ots-plain-site .featured-server-ad--top,
 body.ots-plain-site .featured-server-ad--inline,
 body.ots-plain-site .featured-server-ad--footer {
   color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.24) !important;
-  background:
-    radial-gradient(circle at 12% 18%, rgba(255, 219, 122, 0.38), transparent 28%) !important,
-    linear-gradient(135deg, #0f3d3e 0%, #176b4f 42%, #b37b13 100%) !important;
-  box-shadow: 0 18px 45px rgba(15, 61, 62, 0.18) !important;
+  border-color: #ffffff !important;
+  background: #000000 !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28) !important;
 }
 
 body.ots-plain-site .featured-server-ad--footer {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
-  background:
-    radial-gradient(circle at 85% 10%, rgba(255, 210, 97, 0.34), transparent 30%) !important,
-    linear-gradient(135deg, #123f38 0%, #145f50 48%, #946112 100%) !important;
+  border-bottom: 1px solid #ffffff !important;
+  background: #000000 !important;
 }
 
 body.ots-plain-site .featured-server-ad::before {
@@ -2529,19 +2525,19 @@ body.ots-plain-site .featured-server-ad__stat strong {
 }
 
 body.ots-plain-site .featured-server-ad__stat {
-  border: 1px solid rgba(255, 255, 255, 0.22) !important;
-  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid #ffffff !important;
+  background: #111111 !important;
 }
 
 body.ots-plain-site .featured-server-ad__primary {
-  border: 1px solid #ffe5a4 !important;
-  background: #ffe5a4 !important;
-  color: #143b34 !important;
+  border: 1px solid #ffffff !important;
+  background: #ffffff !important;
+  color: #000000 !important;
 }
 
 body.ots-plain-site .featured-server-ad__secondary {
-  border: 1px solid rgba(255, 255, 255, 0.42) !important;
-  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid #ffffff !important;
+  background: #000000 !important;
   color: #ffffff !important;
 }
 

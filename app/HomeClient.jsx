@@ -115,7 +115,7 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
                 <span className="text-sm font-bold text-white">At a glance</span>
                 <span className="text-xs font-bold text-white">Manual updates</span>
               </div>
-              <div className="grid grid-cols-3 gap-2 text-center">
+              <div className="grid grid-cols-2 gap-2 text-center">
                 <div className="telemetry-tile">
                   <div className="text-xl font-bold text-white">{totalServers.toLocaleString()}</div>
                   <div className="text-xs text-slate-400">Matched</div>
@@ -123,10 +123,6 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
                 <div className="telemetry-tile">
                   <div className="text-xl font-bold text-white">{summary.visiblePlayers.toLocaleString()}</div>
                   <div className="text-xs text-slate-400">Visible Players</div>
-                </div>
-                <div className="telemetry-tile">
-                  <div className="text-xl font-bold text-white">Evomanias</div>
-                  <div className="text-xs text-slate-400">evomanias.com</div>
                 </div>
               </div>
               {summary.topServer ? (
