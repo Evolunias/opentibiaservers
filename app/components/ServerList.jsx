@@ -26,7 +26,6 @@ export default function ServerList({ servers }) {
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-white/10 bg-white/5">
-            <th className="text-left px-4 py-3 font-semibold text-slate-200">Rank</th>
             <th className="text-left px-4 py-3 font-semibold text-slate-200">Server</th>
             <th className="text-center px-4 py-3 font-semibold text-slate-200">Players</th>
             <th className="text-center px-4 py-3 font-semibold text-slate-200">Peak</th>
@@ -38,11 +37,27 @@ export default function ServerList({ servers }) {
           </tr>
         </thead>
         <tbody>
+          <tr className="server-list__featured-row">
+            <td colSpan={8} className="px-4 py-3">
+              <div className="server-list__featured-content">
+                <div>
+                  <span className="server-list__featured-label">Featured #1</span>
+                  <Link href="/evomanias" className="server-list__featured-name">Evomanias.com</Link>
+                  <span className="server-list__featured-copy">Featured Open Tibia server profile</span>
+                </div>
+                <a
+                  href="https://evomanias.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="server-list__featured-action"
+                >
+                  Visit official site
+                </a>
+              </div>
+            </td>
+          </tr>
           {servers.map((server) => (
             <tr key={server.id} className="border-b border-white/10 transition hover:bg-white/10">
-              <td className="px-4 py-3 text-slate-400 font-semibold">
-                {server.source_rank || '-'}
-              </td>
               <td className="px-4 py-3 min-w-64">
                 <Link href={getServerPath(server)} className="hover:opacity-75 transition-opacity">
                   <div className="font-semibold text-white">{server.name}</div>

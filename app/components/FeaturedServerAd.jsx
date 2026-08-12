@@ -26,6 +26,8 @@ const stats = [
   { label: 'Access', value: 'Free To Play' },
 ];
 
+const highlights = ['Global OT', 'Fast Start', 'Featured Listing'];
+
 function openRegisterModal() {
   window.dispatchEvent(new CustomEvent('ots:open-auth', { detail: { mode: 'register' } }));
 }
@@ -41,6 +43,15 @@ export default function FeaturedServerAd({ placement = 'inline' }) {
           <p className="featured-server-ad__eyebrow">{copy.eyebrow}</p>
           <h2>{copy.title}</h2>
           <p>{copy.body}</p>
+          {!isCompact ? (
+            <div className="featured-server-ad__highlights" aria-label="Evomanias promotional highlights">
+              {highlights.map((item) => (
+                <span key={item} className="featured-server-ad__chip">
+                  {item}
+                </span>
+              ))}
+            </div>
+          ) : null}
         </div>
 
         {!isCompact ? (
