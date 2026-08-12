@@ -123,7 +123,7 @@ export default function CommunityPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="community-shell min-h-screen">
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between mb-6">
           <div>

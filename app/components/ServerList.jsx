@@ -40,10 +40,13 @@ export default function ServerList({ servers }) {
           <tr className="server-list__featured-row">
             <td colSpan={8} className="px-4 py-3">
               <div className="server-list__featured-content">
-                <div>
-                  <span className="server-list__featured-label">Featured #1</span>
-                  <Link href="/evomanias" className="server-list__featured-name">Evomanias.com</Link>
-                  <span className="server-list__featured-copy">Featured Open Tibia server profile</span>
+                <div className="server-list__featured-brand">
+                  <span className="server-list__featured-mark" aria-hidden="true">01</span>
+                  <div className="server-list__featured-details">
+                    <span className="server-list__featured-label">Featured listing</span>
+                    <Link href="/evomanias" className="server-list__featured-name">Evomanias.com</Link>
+                    <span className="server-list__featured-copy">A featured Open Tibia server profile</span>
+                  </div>
                 </div>
                 <a
                   href="https://evomanias.com/"
@@ -51,7 +54,8 @@ export default function ServerList({ servers }) {
                   rel="noopener noreferrer"
                   className="server-list__featured-action"
                 >
-                  Visit official site
+                  <span>Visit official site</span>
+                  <span className="server-list__featured-arrow" aria-hidden="true">-&gt;</span>
                 </a>
               </div>
             </td>
