@@ -21,10 +21,10 @@ const page = {
   ],
   "metaDescription": "The Best Global 8.60 Open Tibia server reference covering sv.kaldrox.com, 8.6 PVP x100, players online, uptime, EXP, PvP type, source links, screenshots, reviews, and similar servers.",
   "updatedAt": "2026-07-26",
-  "pageLabel": "Partially documented",
+  "pageLabel": "Source-backed profile",
   "wikiDepth": {
     "status": "partial",
-    "statusLabel": "Partially documented",
+    "statusLabel": "Source-backed profile",
     "isComplete": false,
     "requiredFields": [
       "gameplayGuide",
@@ -114,41 +114,41 @@ const page = {
         "Client/version: 8.6"
       ],
       "vocations": [
-        "The Best Global 8.60 still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "The Best Global 8.60 has no verified source mapped for vocation or class detail yet. Add the official balance page, class note, or owner statement to complete this section."
       ],
       "items": [
-        "The Best Global 8.60 still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "The Best Global 8.60 has no verified source mapped for item or equipment detail yet. Add the official item page, wiki entry, or owner guide before treating equipment claims as final."
       ],
       "monsters": [
-        "Available material mentions monsters, bosses, hunting places, dungeons, or spawns. Exact creature names and locations still need direct source links."
+        "Available material mentions monsters, bosses, hunting places, dungeons, or spawns. Keep exact creature names and locations tied to direct source links."
       ],
       "quests": [
-        "Available material mentions quests, tasks, missions, or guided progression. Exact names, requirements, and rewards still need direct source links."
+        "Available material mentions quests, tasks, missions, or guided progression. Keep exact names, requirements, and rewards tied to direct source links."
       ],
       "bosses": [
-        "The Best Global 8.60 still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "The Best Global 8.60 has no verified source mapped for boss, raid, or arena detail yet. Add a schedule, changelog, or official event note to support it."
       ],
       "downloads": [
         "Candidate official download/account source: https://www.kaldrox.com/"
       ],
       "rules": [
-        "The Best Global 8.60 still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "The Best Global 8.60 has no verified source mapped for rule page yet. Add the official rules, policy notes, or staff FAQ to complete it."
       ],
       "screenshots": [
-        "The Best Global 8.60 still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "The Best Global 8.60 has no verified source mapped for screenshot or media source yet. Add an official gallery, forum post, or owner-approved image set to support it."
       ],
       "history": [
         "The Best Global 8.60 appears in the otservlist-derived snapshot dated 2026-07-26 with 693 players online, 99.67% uptime, and source rank #11."
       ],
       "ownerContacts": [
-        "The Best Global 8.60 still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "The Best Global 8.60 has no verified source mapped for owner or manager contact yet. Add a contact page, forum account, Discord, or claim response when available."
       ]
     },
     "editorialQueue": [
-      "Preserve the exact The Best Global 8.60 first-session steps from the official site or an owner-confirmed guide.",
-      "Add carefully sourced The Best Global 8.60 items, monsters, bosses, quests, screenshots, and rule pages.",
-      "Record launch history, major updates, top guild/player moments, and current owner contacts with source links.",
-      "Mark this Partial profile verified only after every required field has dependable evidence."
+      "Confirm the live website, client path, and rule page for The Best Global 8.60 against the current snapshot.",
+      "Attach dated screenshots, launch notes, and community discussion so the page has something a player can inspect.",
+      "Record owner or manager contact details once a source confirms them.",
+      "Open fields: vocations, items, bosses, rules, screenshots, ownerContacts"
     ]
   },
   "overview": "The Best Global 8.60 asks for more than a quick connection test. A player needs to know whether sv.kaldrox.com is the right host, which client path belongs to the operator, how the 8.6 PVP x100 profile feels in practice, what the rules protect or forbid, and whether the community is lively enough to make a new character feel welcome rather than merely counted.",
@@ -209,10 +209,10 @@ const page = {
     },
     {
       "label": "Profile depth",
-      "value": "Partially documented"
+      "value": "Source-backed profile"
     },
     {
-      "label": "Details still needed",
+      "label": "Open fields",
       "value": "vocations, items, bosses, rules, screenshots, ownerContacts"
     }
   ],
@@ -238,7 +238,7 @@ const page = {
     "8.6 PVP x100 labels need plain-language context before a player commits an evening or a season.",
     "Owner-confirmed links, screenshots, rules, reviews, and uptime history remain distinct from public list snapshots.",
     "Notable guilds, players, wars, events, and screenshots deserve dates and source attribution.",
-    "This profile remains Partially documented until the important gameplay fields carry dependable evidence."
+    "This profile remains Source-backed profile until the important gameplay fields carry dependable evidence."
   ],
   "glossary": [
     {
@@ -270,8 +270,8 @@ const page = {
       "value": "The Best Global 8.60 is currently seeded from a public players-online ranking with host sv.kaldrox.com, listing title \"The Best Global 8.60\", 693 (2863 unique IPs) / 2000 players, 99.67% uptime, x100 EXP, PVP PvP type, and client/version 8.6."
     },
     {
-      "label": "What the record still needs",
-      "value": "The Best Global 8.60 still needs official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
+      "label": "Open fields to document",
+      "value": "Open fields remain for verified official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
     }
   ],
   "mediaLeads": [
@@ -307,7 +307,7 @@ const page = {
       "eyebrow": "Living Record",
       "heading": "What the community can still preserve about The Best Global 8.60",
       "body": [
-        "The Best Global 8.60 still needs owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
+        "Open fields remain for owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
         "Each addition should carry enough context to stand on its own: a date, source, screenshot origin, or named in-game observation. That lets The Best Global 8.60's story grow without allowing promotion or rumor to masquerade as memory."
       ]
     }

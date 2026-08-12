@@ -2403,3 +2403,84 @@ body {
     min-height: 0;
   }
 }
+
+body.ots-plain-site {
+  background: #fff;
+  color: #000;
+}
+
+body.ots-plain-site,
+body.ots-plain-site * {
+  border-color: #000 !important;
+}
+
+body.ots-plain-site * {
+  background-color: #fff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+  color: #000 !important;
+}
+
+body.ots-plain-site a {
+  color: #000 !important;
+  text-decoration: underline;
+}
+
+body.ots-plain-site .site-header,
+body.ots-plain-site footer,
+body.ots-plain-site .featured-server-ad,
+body.ots-plain-site .server-card,
+body.ots-plain-site .glass-panel,
+body.ots-plain-site .filter-panel,
+body.ots-plain-site .dashboard-orb,
+body.ots-plain-site .guide-link-card,
+body.ots-plain-site .telemetry-tile,
+body.ots-plain-site .signal-card {
+  background: #fff !important;
+  border-color: #000 !important;
+  box-shadow: none !important;
+  color: #000 !important;
+}
+
+body.ots-plain-site .site-header::before,
+body.ots-plain-site .site-header::after,
+body.ots-plain-site .server-card::before,
+body.ots-plain-site .featured-server-ad::before,
+body.ots-plain-site .hero-shell::after,
+body.ots-plain-site .ambient-field {
+  display: none !important;
+  content: none !important;
+}
+
+body.ots-plain-site .nav-chip,
+body.ots-plain-site .btn-primary,
+body.ots-plain-site .btn-ghost,
+body.ots-plain-site .featured-server-ad__primary,
+body.ots-plain-site .featured-server-ad__secondary,
+body.ots-plain-site .language-selector__select {
+  background: #fff !important;
+  color: #000 !important;
+  border-color: #000 !important;
+  box-shadow: none !important;
+}
+
+body.ots-plain-site .featured-server-ad__eyebrow,
+body.ots-plain-site .featured-server-ad__copy h2,
+body.ots-plain-site .featured-server-ad__copy p,
+body.ots-plain-site .featured-server-ad__stat span,
+body.ots-plain-site .featured-server-ad__stat strong {
+  color: #000 !important;
+}
+
+body.ots-plain-site .knowledge-shell,
+body.ots-plain-site .knowledge-hero,
+body.ots-plain-site .knowledge-catalog-hero,
+body.ots-plain-site .knowledge-article-hero,
+body.ots-plain-site .knowledge-catalog-card,
+body.ots-plain-site .knowledge-table,
+body.ots-plain-site .knowledge-content {
+  background: #fff !important;
+  color: #000 !important;
+}

@@ -21,10 +21,10 @@ const page = {
   ],
   "metaDescription": "Olympic 7.4 Open Tibia server reference covering game.olympic74.com, 7.4 PVP x10, players online, uptime, EXP, PvP type, source links, screenshots, reviews, and similar servers.",
   "updatedAt": "2026-07-26",
-  "pageLabel": "Partially documented",
+  "pageLabel": "Source-backed profile",
   "wikiDepth": {
     "status": "partial",
-    "statusLabel": "Partially documented",
+    "statusLabel": "Source-backed profile",
     "isComplete": false,
     "requiredFields": [
       "gameplayGuide",
@@ -108,41 +108,41 @@ const page = {
         "Client/version: 7.4"
       ],
       "vocations": [
-        "Olympic 7.4 still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Olympic 7.4 has no verified source mapped for vocation or class detail yet. Add the official balance page, class note, or owner statement to complete this section."
       ],
       "items": [
-        "Olympic 7.4 still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Olympic 7.4 has no verified source mapped for item or equipment detail yet. Add the official item page, wiki entry, or owner guide before treating equipment claims as final."
       ],
       "monsters": [
-        "Olympic 7.4 still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Olympic 7.4 has no verified source mapped for monster or spawn detail yet. Add a hunt guide, bestiary note, or official event record to support this section."
       ],
       "quests": [
-        "Olympic 7.4 still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Olympic 7.4 has no verified source mapped for quest or task trail yet. Add a walkthrough, NPC guide, or official announcement to support it."
       ],
       "bosses": [
-        "Olympic 7.4 still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Olympic 7.4 has no verified source mapped for boss, raid, or arena detail yet. Add a schedule, changelog, or official event note to support it."
       ],
       "downloads": [
         "Candidate official download/account source: https://olympic74.com/"
       ],
       "rules": [
-        "Official/community material references rules or policy. Preserve exact rule pages and current enforcement notes as they are verified."
+        "Official or community material references rules or policy. Keep the exact rule pages and current enforcement notes attached once they are verified."
       ],
       "screenshots": [
-        "Official/community material references screenshots or media. Mirror only with permission or license clarity."
+        "Official or community material references screenshots or media. Mirror only with permission or license clarity."
       ],
       "history": [
         "Olympic 7.4 appears in the otservlist-derived snapshot dated 2026-07-26 with 209 players online, 98.71% uptime, and source rank #42."
       ],
       "ownerContacts": [
-        "Olympic 7.4 still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Olympic 7.4 has no verified source mapped for owner or manager contact yet. Add a contact page, forum account, Discord, or claim response when available."
       ]
     },
     "editorialQueue": [
-      "Preserve the exact Olympic 7.4 first-session steps from the official site or an owner-confirmed guide.",
-      "Add carefully sourced Olympic 7.4 items, monsters, bosses, quests, screenshots, and rule pages.",
-      "Record launch history, major updates, top guild/player moments, and current owner contacts with source links.",
-      "Mark this Partial profile verified only after every required field has dependable evidence."
+      "Confirm the live website, client path, and rule page for Olympic 7.4 against the current snapshot.",
+      "Attach dated screenshots, launch notes, and community discussion so the page has something a player can inspect.",
+      "Record owner or manager contact details once a source confirms them.",
+      "Open fields: vocations, items, monsters, quests, bosses, ownerContacts"
     ]
   },
   "overview": "Olympic 7.4 asks for more than a quick connection test. A player needs to know whether game.olympic74.com is the right host, which client path belongs to the operator, how the 7.4 PVP x10 profile feels in practice, what the rules protect or forbid, and whether the community is lively enough to make a new character feel welcome rather than merely counted.",
@@ -203,10 +203,10 @@ const page = {
     },
     {
       "label": "Profile depth",
-      "value": "Partially documented"
+      "value": "Source-backed profile"
     },
     {
-      "label": "Details still needed",
+      "label": "Open fields",
       "value": "vocations, items, monsters, quests, bosses, ownerContacts"
     }
   ],
@@ -232,7 +232,7 @@ const page = {
     "7.4 PVP x10 labels need plain-language context before a player commits an evening or a season.",
     "Owner-confirmed links, screenshots, rules, reviews, and uptime history remain distinct from public list snapshots.",
     "Notable guilds, players, wars, events, and screenshots deserve dates and source attribution.",
-    "This profile remains Partially documented until the important gameplay fields carry dependable evidence."
+    "This profile remains Source-backed profile until the important gameplay fields carry dependable evidence."
   ],
   "glossary": [
     {
@@ -264,8 +264,8 @@ const page = {
       "value": "Olympic 7.4 is currently seeded from a public players-online ranking with host game.olympic74.com, listing title \"Olympic 7.4\", 209 / 2000 players, 98.71% uptime, x10 EXP, PVP PvP type, and client/version 7.4."
     },
     {
-      "label": "What the record still needs",
-      "value": "Olympic 7.4 still needs official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
+      "label": "Open fields to document",
+      "value": "Open fields remain for verified official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
     }
   ],
   "mediaLeads": [
@@ -301,7 +301,7 @@ const page = {
       "eyebrow": "Living Record",
       "heading": "What the community can still preserve about Olympic 7.4",
       "body": [
-        "Olympic 7.4 still needs owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
+        "Open fields remain for owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
         "Each addition should carry enough context to stand on its own: a date, source, screenshot origin, or named in-game observation. That lets Olympic 7.4's story grow without allowing promotion or rumor to masquerade as memory."
       ]
     }

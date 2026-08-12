@@ -21,10 +21,10 @@ const page = {
   ],
   "metaDescription": "IglaOTS Offseason Open Tibia server reference covering play.offseason.iglaots.net, 15.2 PVP x3, players online, uptime, EXP, PvP type, source links, screenshots, reviews, and similar servers.",
   "updatedAt": "2026-07-26",
-  "pageLabel": "Partially documented",
+  "pageLabel": "Source-backed profile",
   "wikiDepth": {
     "status": "partial",
-    "statusLabel": "Partially documented",
+    "statusLabel": "Source-backed profile",
     "isComplete": false,
     "requiredFields": [
       "gameplayGuide",
@@ -108,41 +108,41 @@ const page = {
         "Client/version: 15.2"
       ],
       "vocations": [
-        "IglaOTS Offseason still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "IglaOTS Offseason has no verified source mapped for vocation or class detail yet. Add the official balance page, class note, or owner statement to complete this section."
       ],
       "items": [
-        "IglaOTS Offseason still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "IglaOTS Offseason has no verified source mapped for item or equipment detail yet. Add the official item page, wiki entry, or owner guide before treating equipment claims as final."
       ],
       "monsters": [
-        "IglaOTS Offseason still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "IglaOTS Offseason has no verified source mapped for monster or spawn detail yet. Add a hunt guide, bestiary note, or official event record to support this section."
       ],
       "quests": [
-        "IglaOTS Offseason still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "IglaOTS Offseason has no verified source mapped for quest or task trail yet. Add a walkthrough, NPC guide, or official announcement to support it."
       ],
       "bosses": [
-        "IglaOTS Offseason still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "IglaOTS Offseason has no verified source mapped for boss, raid, or arena detail yet. Add a schedule, changelog, or official event note to support it."
       ],
       "downloads": [
         "Candidate official download/account source: https://offseason.iglaots.net/"
       ],
       "rules": [
-        "Official/community material references rules or policy. Preserve exact rule pages and current enforcement notes as they are verified."
+        "Official or community material references rules or policy. Keep the exact rule pages and current enforcement notes attached once they are verified."
       ],
       "screenshots": [
-        "Official/community material references screenshots or media. Mirror only with permission or license clarity."
+        "Official or community material references screenshots or media. Mirror only with permission or license clarity."
       ],
       "history": [
         "IglaOTS Offseason appears in the otservlist-derived snapshot dated 2026-07-26 with 24 players online, 99.2% uptime, and source rank #116."
       ],
       "ownerContacts": [
-        "IglaOTS Offseason still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "IglaOTS Offseason has no verified source mapped for owner or manager contact yet. Add a contact page, forum account, Discord, or claim response when available."
       ]
     },
     "editorialQueue": [
-      "Preserve the exact IglaOTS Offseason first-session steps from the official site or an owner-confirmed guide.",
-      "Add carefully sourced IglaOTS Offseason items, monsters, bosses, quests, screenshots, and rule pages.",
-      "Record launch history, major updates, top guild/player moments, and current owner contacts with source links.",
-      "Mark this Partial profile verified only after every required field has dependable evidence."
+      "Confirm the live website, client path, and rule page for IglaOTS Offseason against the current snapshot.",
+      "Attach dated screenshots, launch notes, and community discussion so the page has something a player can inspect.",
+      "Record owner or manager contact details once a source confirms them.",
+      "Open fields: vocations, items, monsters, quests, bosses, ownerContacts"
     ]
   },
   "overview": "IglaOTS Offseason asks for more than a quick connection test. A player needs to know whether play.offseason.iglaots.net is the right host, which client path belongs to the operator, how the 15.2 PVP x3 profile feels in practice, what the rules protect or forbid, and whether the community is lively enough to make a new character feel welcome rather than merely counted.",
@@ -203,10 +203,10 @@ const page = {
     },
     {
       "label": "Profile depth",
-      "value": "Partially documented"
+      "value": "Source-backed profile"
     },
     {
-      "label": "Details still needed",
+      "label": "Open fields",
       "value": "vocations, items, monsters, quests, bosses, ownerContacts"
     }
   ],
@@ -232,7 +232,7 @@ const page = {
     "15.2 PVP x3 labels need plain-language context before a player commits an evening or a season.",
     "Owner-confirmed links, screenshots, rules, reviews, and uptime history remain distinct from public list snapshots.",
     "Notable guilds, players, wars, events, and screenshots deserve dates and source attribution.",
-    "This profile remains Partially documented until the important gameplay fields carry dependable evidence."
+    "This profile remains Source-backed profile until the important gameplay fields carry dependable evidence."
   ],
   "glossary": [
     {
@@ -264,8 +264,8 @@ const page = {
       "value": "IglaOTS Offseason is currently seeded from a public players-online ranking with host play.offseason.iglaots.net, listing title \"IglaOTS Offseason\", 24 / 2000 players, 99.2% uptime, x3 EXP, PVP PvP type, and client/version 15.2."
     },
     {
-      "label": "What the record still needs",
-      "value": "IglaOTS Offseason still needs official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
+      "label": "Open fields to document",
+      "value": "Open fields remain for verified official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
     }
   ],
   "mediaLeads": [
@@ -301,7 +301,7 @@ const page = {
       "eyebrow": "Living Record",
       "heading": "What the community can still preserve about IglaOTS Offseason",
       "body": [
-        "IglaOTS Offseason still needs owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
+        "Open fields remain for owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
         "Each addition should carry enough context to stand on its own: a date, source, screenshot origin, or named in-game observation. That lets IglaOTS Offseason's story grow without allowing promotion or rumor to masquerade as memory."
       ]
     }

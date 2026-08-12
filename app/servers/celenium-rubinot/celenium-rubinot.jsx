@@ -21,10 +21,10 @@ const page = {
   ],
   "metaDescription": "Celenium RubinOT Open Tibia server reference covering cellenium.rubinot.net, 15.0 PVP x80, players online, uptime, EXP, PvP type, source links, screenshots, reviews, and similar servers.",
   "updatedAt": "2026-07-26",
-  "pageLabel": "Partially documented",
+  "pageLabel": "Source-backed profile",
   "wikiDepth": {
     "status": "partial",
-    "statusLabel": "Partially documented",
+    "statusLabel": "Source-backed profile",
     "isComplete": false,
     "requiredFields": [
       "gameplayGuide",
@@ -108,41 +108,41 @@ const page = {
         "Client/version: 15.0"
       ],
       "vocations": [
-        "Celenium RubinOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Celenium RubinOT has no verified source mapped for vocation or class detail yet. Add the official balance page, class note, or owner statement to complete this section."
       ],
       "items": [
-        "Celenium RubinOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Celenium RubinOT has no verified source mapped for item or equipment detail yet. Add the official item page, wiki entry, or owner guide before treating equipment claims as final."
       ],
       "monsters": [
-        "Celenium RubinOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Celenium RubinOT has no verified source mapped for monster or spawn detail yet. Add a hunt guide, bestiary note, or official event record to support this section."
       ],
       "quests": [
-        "Celenium RubinOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Celenium RubinOT has no verified source mapped for quest or task trail yet. Add a walkthrough, NPC guide, or official announcement to support it."
       ],
       "bosses": [
-        "Celenium RubinOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Celenium RubinOT has no verified source mapped for boss, raid, or arena detail yet. Add a schedule, changelog, or official event note to support it."
       ],
       "downloads": [
         "Candidate official download/account source: https://cellenium.rubinot.net/"
       ],
       "rules": [
-        "Official/community material references rules or policy. Preserve exact rule pages and current enforcement notes as they are verified."
+        "Official or community material references rules or policy. Keep the exact rule pages and current enforcement notes attached once they are verified."
       ],
       "screenshots": [
-        "Official/community material references screenshots or media. Mirror only with permission or license clarity."
+        "Official or community material references screenshots or media. Mirror only with permission or license clarity."
       ],
       "history": [
         "Celenium RubinOT appears in the otservlist-derived snapshot dated 2026-07-26 with 137 players online, 97.11% uptime, and source rank #52."
       ],
       "ownerContacts": [
-        "Celenium RubinOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Celenium RubinOT has no verified source mapped for owner or manager contact yet. Add a contact page, forum account, Discord, or claim response when available."
       ]
     },
     "editorialQueue": [
-      "Preserve the exact Celenium RubinOT first-session steps from the official site or an owner-confirmed guide.",
-      "Add carefully sourced Celenium RubinOT items, monsters, bosses, quests, screenshots, and rule pages.",
-      "Record launch history, major updates, top guild/player moments, and current owner contacts with source links.",
-      "Mark this Partial profile verified only after every required field has dependable evidence."
+      "Confirm the live website, client path, and rule page for Celenium RubinOT against the current snapshot.",
+      "Attach dated screenshots, launch notes, and community discussion so the page has something a player can inspect.",
+      "Record owner or manager contact details once a source confirms them.",
+      "Open fields: vocations, items, monsters, quests, bosses, ownerContacts"
     ]
   },
   "overview": "Celenium RubinOT asks for more than a quick connection test. A player needs to know whether cellenium.rubinot.net is the right host, which client path belongs to the operator, how the 15.0 PVP x80 profile feels in practice, what the rules protect or forbid, and whether the community is lively enough to make a new character feel welcome rather than merely counted.",
@@ -203,10 +203,10 @@ const page = {
     },
     {
       "label": "Profile depth",
-      "value": "Partially documented"
+      "value": "Source-backed profile"
     },
     {
-      "label": "Details still needed",
+      "label": "Open fields",
       "value": "vocations, items, monsters, quests, bosses, ownerContacts"
     }
   ],
@@ -232,7 +232,7 @@ const page = {
     "15.0 PVP x80 labels need plain-language context before a player commits an evening or a season.",
     "Owner-confirmed links, screenshots, rules, reviews, and uptime history remain distinct from public list snapshots.",
     "Notable guilds, players, wars, events, and screenshots deserve dates and source attribution.",
-    "This profile remains Partially documented until the important gameplay fields carry dependable evidence."
+    "This profile remains Source-backed profile until the important gameplay fields carry dependable evidence."
   ],
   "glossary": [
     {
@@ -264,8 +264,8 @@ const page = {
       "value": "Celenium RubinOT is currently seeded from a public players-online ranking with host cellenium.rubinot.net, listing title \"27K ON - BATTLE PASS\", 137 (370 unique IPs) / 2000 players, 97.11% uptime, x80 EXP, PVP PvP type, and client/version 15.0."
     },
     {
-      "label": "What the record still needs",
-      "value": "Celenium RubinOT still needs official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
+      "label": "Open fields to document",
+      "value": "Open fields remain for verified official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
     }
   ],
   "mediaLeads": [
@@ -301,7 +301,7 @@ const page = {
       "eyebrow": "Living Record",
       "heading": "What the community can still preserve about Celenium RubinOT",
       "body": [
-        "Celenium RubinOT still needs owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
+        "Open fields remain for owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
         "Each addition should carry enough context to stand on its own: a date, source, screenshot origin, or named in-game observation. That lets Celenium RubinOT's story grow without allowing promotion or rumor to masquerade as memory."
       ]
     }

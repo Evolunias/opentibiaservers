@@ -45,7 +45,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="ots-plain-site">
         <AuthProvider>
           <FeaturedServerAd placement="top" />
           <Header />

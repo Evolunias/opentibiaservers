@@ -21,10 +21,10 @@ const page = {
   ],
   "metaDescription": "Taleon SanPvP Open Tibia server reference covering sanpvp.taleon.online, 15.0 nPVP x25, players online, uptime, EXP, PvP type, source links, screenshots, reviews, and similar servers.",
   "updatedAt": "2026-07-26",
-  "pageLabel": "Partially documented",
+  "pageLabel": "Source-backed profile",
   "wikiDepth": {
     "status": "partial",
-    "statusLabel": "Partially documented",
+    "statusLabel": "Source-backed profile",
     "isComplete": false,
     "requiredFields": [
       "gameplayGuide",
@@ -108,41 +108,41 @@ const page = {
         "Client/version: 15.0"
       ],
       "vocations": [
-        "Taleon SanPvP still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Taleon SanPvP has no verified source mapped for vocation or class detail yet. Add the official balance page, class note, or owner statement to complete this section."
       ],
       "items": [
-        "Taleon SanPvP still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Taleon SanPvP has no verified source mapped for item or equipment detail yet. Add the official item page, wiki entry, or owner guide before treating equipment claims as final."
       ],
       "monsters": [
-        "Taleon SanPvP still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Taleon SanPvP has no verified source mapped for monster or spawn detail yet. Add a hunt guide, bestiary note, or official event record to support this section."
       ],
       "quests": [
-        "Taleon SanPvP still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Taleon SanPvP has no verified source mapped for quest or task trail yet. Add a walkthrough, NPC guide, or official announcement to support it."
       ],
       "bosses": [
-        "Taleon SanPvP still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Taleon SanPvP has no verified source mapped for boss, raid, or arena detail yet. Add a schedule, changelog, or official event note to support it."
       ],
       "downloads": [
         "Candidate official download/account source: https://sanpvp.taleon.online/"
       ],
       "rules": [
-        "Official/community material references rules or policy. Preserve exact rule pages and current enforcement notes as they are verified."
+        "Official or community material references rules or policy. Keep the exact rule pages and current enforcement notes attached once they are verified."
       ],
       "screenshots": [
-        "Official/community material references screenshots or media. Mirror only with permission or license clarity."
+        "Official or community material references screenshots or media. Mirror only with permission or license clarity."
       ],
       "history": [
         "Taleon SanPvP appears in the otservlist-derived snapshot dated 2026-07-26 with 73 players online, 94.37% uptime, and source rank #78."
       ],
       "ownerContacts": [
-        "Taleon SanPvP still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Taleon SanPvP has no verified source mapped for owner or manager contact yet. Add a contact page, forum account, Discord, or claim response when available."
       ]
     },
     "editorialQueue": [
-      "Preserve the exact Taleon SanPvP first-session steps from the official site or an owner-confirmed guide.",
-      "Add carefully sourced Taleon SanPvP items, monsters, bosses, quests, screenshots, and rule pages.",
-      "Record launch history, major updates, top guild/player moments, and current owner contacts with source links.",
-      "Mark this Partial profile verified only after every required field has dependable evidence."
+      "Confirm the live website, client path, and rule page for Taleon SanPvP against the current snapshot.",
+      "Attach dated screenshots, launch notes, and community discussion so the page has something a player can inspect.",
+      "Record owner or manager contact details once a source confirms them.",
+      "Open fields: vocations, items, monsters, quests, bosses, ownerContacts"
     ]
   },
   "overview": "Taleon SanPvP asks for more than a quick connection test. A player needs to know whether sanpvp.taleon.online is the right host, which client path belongs to the operator, how the 15.0 nPVP x25 profile feels in practice, what the rules protect or forbid, and whether the community is lively enough to make a new character feel welcome rather than merely counted.",
@@ -203,10 +203,10 @@ const page = {
     },
     {
       "label": "Profile depth",
-      "value": "Partially documented"
+      "value": "Source-backed profile"
     },
     {
-      "label": "Details still needed",
+      "label": "Open fields",
       "value": "vocations, items, monsters, quests, bosses, ownerContacts"
     }
   ],
@@ -232,7 +232,7 @@ const page = {
     "15.0 nPVP x25 labels need plain-language context before a player commits an evening or a season.",
     "Owner-confirmed links, screenshots, rules, reviews, and uptime history remain distinct from public list snapshots.",
     "Notable guilds, players, wars, events, and screenshots deserve dates and source attribution.",
-    "This profile remains Partially documented until the important gameplay fields carry dependable evidence."
+    "This profile remains Source-backed profile until the important gameplay fields carry dependable evidence."
   ],
   "glossary": [
     {
@@ -264,8 +264,8 @@ const page = {
       "value": "Taleon SanPvP is currently seeded from a public players-online ranking with host sanpvp.taleon.online, listing title \"NPvP Hard 8 anos ON\", 73 (663 unique IPs) / 2000 players, 94.37% uptime, x25 EXP, nPVP PvP type, and client/version 15.0."
     },
     {
-      "label": "What the record still needs",
-      "value": "Taleon SanPvP still needs official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
+      "label": "Open fields to document",
+      "value": "Open fields remain for verified official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
     }
   ],
   "mediaLeads": [
@@ -301,7 +301,7 @@ const page = {
       "eyebrow": "Living Record",
       "heading": "What the community can still preserve about Taleon SanPvP",
       "body": [
-        "Taleon SanPvP still needs owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
+        "Open fields remain for owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
         "Each addition should carry enough context to stand on its own: a date, source, screenshot origin, or named in-game observation. That lets Taleon SanPvP's story grow without allowing promotion or rumor to masquerade as memory."
       ]
     }

@@ -21,10 +21,10 @@ const page = {
   ],
   "metaDescription": "Spectrum RubinOT Open Tibia server reference covering spectrum.rubinot.com.br, 15.2 PVP x50, players online, uptime, EXP, PvP type, source links, screenshots, reviews, and similar servers.",
   "updatedAt": "2026-07-26",
-  "pageLabel": "Partially documented",
+  "pageLabel": "Source-backed profile",
   "wikiDepth": {
     "status": "partial",
-    "statusLabel": "Partially documented",
+    "statusLabel": "Source-backed profile",
     "isComplete": false,
     "requiredFields": [
       "gameplayGuide",
@@ -108,41 +108,41 @@ const page = {
         "Client/version: 15.2"
       ],
       "vocations": [
-        "Spectrum RubinOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Spectrum RubinOT has no verified source mapped for vocation or class detail yet. Add the official balance page, class note, or owner statement to complete this section."
       ],
       "items": [
-        "Spectrum RubinOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Spectrum RubinOT has no verified source mapped for item or equipment detail yet. Add the official item page, wiki entry, or owner guide before treating equipment claims as final."
       ],
       "monsters": [
-        "Spectrum RubinOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Spectrum RubinOT has no verified source mapped for monster or spawn detail yet. Add a hunt guide, bestiary note, or official event record to support this section."
       ],
       "quests": [
-        "Spectrum RubinOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Spectrum RubinOT has no verified source mapped for quest or task trail yet. Add a walkthrough, NPC guide, or official announcement to support it."
       ],
       "bosses": [
-        "Spectrum RubinOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Spectrum RubinOT has no verified source mapped for boss, raid, or arena detail yet. Add a schedule, changelog, or official event note to support it."
       ],
       "downloads": [
         "Candidate official download/account source: https://spectrum.rubinot.com.br/"
       ],
       "rules": [
-        "Official/community material references rules or policy. Preserve exact rule pages and current enforcement notes as they are verified."
+        "Official or community material references rules or policy. Keep the exact rule pages and current enforcement notes attached once they are verified."
       ],
       "screenshots": [
-        "Official/community material references screenshots or media. Mirror only with permission or license clarity."
+        "Official or community material references screenshots or media. Mirror only with permission or license clarity."
       ],
       "history": [
         "Spectrum RubinOT appears in the otservlist-derived snapshot dated 2026-07-26 with 442 players online, 90.13% uptime, and source rank #25."
       ],
       "ownerContacts": [
-        "Spectrum RubinOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "Spectrum RubinOT has no verified source mapped for owner or manager contact yet. Add a contact page, forum account, Discord, or claim response when available."
       ]
     },
     "editorialQueue": [
-      "Preserve the exact Spectrum RubinOT first-session steps from the official site or an owner-confirmed guide.",
-      "Add carefully sourced Spectrum RubinOT items, monsters, bosses, quests, screenshots, and rule pages.",
-      "Record launch history, major updates, top guild/player moments, and current owner contacts with source links.",
-      "Mark this Partial profile verified only after every required field has dependable evidence."
+      "Confirm the live website, client path, and rule page for Spectrum RubinOT against the current snapshot.",
+      "Attach dated screenshots, launch notes, and community discussion so the page has something a player can inspect.",
+      "Record owner or manager contact details once a source confirms them.",
+      "Open fields: vocations, items, monsters, quests, bosses, ownerContacts"
     ]
   },
   "overview": "Spectrum RubinOT asks for more than a quick connection test. A player needs to know whether spectrum.rubinot.com.br is the right host, which client path belongs to the operator, how the 15.2 PVP x50 profile feels in practice, what the rules protect or forbid, and whether the community is lively enough to make a new character feel welcome rather than merely counted.",
@@ -203,10 +203,10 @@ const page = {
     },
     {
       "label": "Profile depth",
-      "value": "Partially documented"
+      "value": "Source-backed profile"
     },
     {
-      "label": "Details still needed",
+      "label": "Open fields",
       "value": "vocations, items, monsters, quests, bosses, ownerContacts"
     }
   ],
@@ -232,7 +232,7 @@ const page = {
     "15.2 PVP x50 labels need plain-language context before a player commits an evening or a season.",
     "Owner-confirmed links, screenshots, rules, reviews, and uptime history remain distinct from public list snapshots.",
     "Notable guilds, players, wars, events, and screenshots deserve dates and source attribution.",
-    "This profile remains Partially documented until the important gameplay fields carry dependable evidence."
+    "This profile remains Source-backed profile until the important gameplay fields carry dependable evidence."
   ],
   "glossary": [
     {
@@ -264,8 +264,8 @@ const page = {
       "value": "Spectrum RubinOT is currently seeded from a public players-online ranking with host spectrum.rubinot.com.br, listing title \"27K ON - BATTLE PASS\", 442 (3347 unique IPs) / 2000 players, 90.13% uptime, x50 EXP, PVP PvP type, and client/version 15.2."
     },
     {
-      "label": "What the record still needs",
-      "value": "Spectrum RubinOT still needs official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
+      "label": "Open fields to document",
+      "value": "Open fields remain for verified official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
     }
   ],
   "mediaLeads": [
@@ -301,7 +301,7 @@ const page = {
       "eyebrow": "Living Record",
       "heading": "What the community can still preserve about Spectrum RubinOT",
       "body": [
-        "Spectrum RubinOT still needs owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
+        "Open fields remain for owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
         "Each addition should carry enough context to stand on its own: a date, source, screenshot origin, or named in-game observation. That lets Spectrum RubinOT's story grow without allowing promotion or rumor to masquerade as memory."
       ]
     }

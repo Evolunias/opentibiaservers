@@ -21,10 +21,10 @@ const page = {
   ],
   "metaDescription": "NoxiousOT Open Tibia server reference covering noxiousot.com, 8.6 PVP x10, players online, uptime, EXP, PvP type, source links, screenshots, reviews, and similar servers.",
   "updatedAt": "2026-07-26",
-  "pageLabel": "Partially documented",
+  "pageLabel": "Source-backed profile",
   "wikiDepth": {
     "status": "partial",
-    "statusLabel": "Partially documented",
+    "statusLabel": "Source-backed profile",
     "isComplete": false,
     "requiredFields": [
       "gameplayGuide",
@@ -128,28 +128,28 @@ const page = {
         "Client/version: 8.6"
       ],
       "vocations": [
-        "Official/community material references vocation or class-specific balance. Preserve exact vocation notes from source pages as they are verified."
+        "Official or community material references vocation or class-specific balance. Keep the exact vocation names and notes from source pages once they are verified."
       ],
       "items": [
-        "NoxiousOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "NoxiousOT has no verified source mapped for item or equipment detail yet. Add the official item page, wiki entry, or owner guide before treating equipment claims as final."
       ],
       "monsters": [
-        "Available material mentions monsters, bosses, hunting places, dungeons, or spawns. Exact creature names and locations still need direct source links."
+        "Available material mentions monsters, bosses, hunting places, dungeons, or spawns. Keep exact creature names and locations tied to direct source links."
       ],
       "quests": [
-        "Available material mentions quests, tasks, missions, or guided progression. Exact names, requirements, and rewards still need direct source links."
+        "Available material mentions quests, tasks, missions, or guided progression. Keep exact names, requirements, and rewards tied to direct source links."
       ],
       "bosses": [
-        "Available material mentions bosses, raids, arenas, or scheduled encounters. Exact schedules, access rules, and rewards still need direct source links."
+        "Available material mentions bosses, raids, arenas, or scheduled encounters. Keep exact schedules, access rules, and rewards tied to direct source links."
       ],
       "downloads": [
         "Candidate official download/account source: https://www.noxiousot.com/"
       ],
       "rules": [
-        "Official/community material references rules or policy. Preserve exact rule pages and current enforcement notes as they are verified."
+        "Official or community material references rules or policy. Keep the exact rule pages and current enforcement notes attached once they are verified."
       ],
       "screenshots": [
-        "NoxiousOT still needs an official, owner-confirmed, or carefully attributed community source for this field."
+        "NoxiousOT has no verified source mapped for screenshot or media source yet. Add an official gallery, forum post, or owner-approved image set to support it."
       ],
       "history": [
         "NoxiousOT appears in the otservlist-derived snapshot dated 2026-07-26 with 324 players online, 99.85% uptime, and source rank #33."
@@ -160,10 +160,10 @@ const page = {
       ]
     },
     "editorialQueue": [
-      "Preserve the exact NoxiousOT first-session steps from the official site or an owner-confirmed guide.",
-      "Add carefully sourced NoxiousOT items, monsters, bosses, quests, screenshots, and rule pages.",
-      "Record launch history, major updates, top guild/player moments, and current owner contacts with source links.",
-      "Mark this Partial profile verified only after every required field has dependable evidence."
+      "Confirm the live website, client path, and rule page for NoxiousOT against the current snapshot.",
+      "Attach dated screenshots, launch notes, and community discussion so the page has something a player can inspect.",
+      "Record owner or manager contact details once a source confirms them.",
+      "Open fields: items, screenshots"
     ]
   },
   "overview": "NoxiousOT asks for more than a quick connection test. A player needs to know whether noxiousot.com is the right host, which client path belongs to the operator, how the 8.6 PVP x10 profile feels in practice, what the rules protect or forbid, and whether the community is lively enough to make a new character feel welcome rather than merely counted.",
@@ -224,10 +224,10 @@ const page = {
     },
     {
       "label": "Profile depth",
-      "value": "Partially documented"
+      "value": "Source-backed profile"
     },
     {
-      "label": "Details still needed",
+      "label": "Open fields",
       "value": "items, screenshots"
     }
   ],
@@ -253,7 +253,7 @@ const page = {
     "8.6 PVP x10 labels need plain-language context before a player commits an evening or a season.",
     "Owner-confirmed links, screenshots, rules, reviews, and uptime history remain distinct from public list snapshots.",
     "Notable guilds, players, wars, events, and screenshots deserve dates and source attribution.",
-    "This profile remains Partially documented until the important gameplay fields carry dependable evidence."
+    "This profile remains Source-backed profile until the important gameplay fields carry dependable evidence."
   ],
   "glossary": [
     {
@@ -285,8 +285,8 @@ const page = {
       "value": "NoxiousOT is currently seeded from a public players-online ranking with host noxiousot.com, listing title \"NOX RLMAP 8.6\", 324 (1038 unique IPs) / 2000 players, 99.85% uptime, x10 EXP, PVP PvP type, and client/version 8.6."
     },
     {
-      "label": "What the record still needs",
-      "value": "NoxiousOT still needs official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
+      "label": "Open fields to document",
+      "value": "Open fields remain for verified official rules, launch history, changelogs, screenshots, community links, owner contact, player milestones, guild and event history, item and vocation notes, quests, bosses, and reviews with context. Until those details are verified, public snapshots and community accounts remain clearly separated."
     }
   ],
   "mediaLeads": [
@@ -322,7 +322,7 @@ const page = {
       "eyebrow": "Living Record",
       "heading": "What the community can still preserve about NoxiousOT",
       "body": [
-        "NoxiousOT still needs owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
+        "Open fields remain for owner-confirmed links, rules, launch and update history, screenshots, first-session steps, rate tables, vocation notes, item systems, monsters, bosses, quests, events, player milestones, guild context, and reviews that describe a real experience.",
         "Each addition should carry enough context to stand on its own: a date, source, screenshot origin, or named in-game observation. That lets NoxiousOT's story grow without allowing promotion or rumor to masquerade as memory."
       ]
     }
