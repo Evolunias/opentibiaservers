@@ -1,0 +1,8 @@
+import MadotOasisServerReviewPage, { generateMetadata } from './madot-oasis';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <MadotOasisServerReviewPage />;
+}

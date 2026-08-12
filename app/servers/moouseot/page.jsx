@@ -1,0 +1,8 @@
+import MoouseotServerReviewPage, { generateMetadata } from './moouseot';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <MoouseotServerReviewPage />;
+}

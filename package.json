@@ -15,6 +15,7 @@
     "audit:knowledge-catalog": "node scripts/audit-knowledge-catalog.mjs",
     "fetch:official-knowledge": "node scripts/fetch-official-knowledge-snapshots.mjs",
     "generate:knowledge-catalog": "node scripts/generate-knowledge-catalog.mjs",
+    "generate:server-review-pages": "node scripts/generate-server-review-pages.mjs",
     "submit:indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {

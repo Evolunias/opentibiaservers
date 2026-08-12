@@ -64,19 +64,26 @@ function buildPlayerGuide(server) {
   const max = server.max_players ? Number(server.max_players).toLocaleString() : 'unknown';
   const uptime = server.uptime_percent ? `${Number(server.uptime_percent).toFixed(2)}%` : 'unconfirmed';
   const pvp = server.world_type || server.pvp_type || 'unconfirmed PvP rules';
+  const featureLead = Array.isArray(server.feature_bullets) && server.feature_bullets.length ? server.feature_bullets[0] : null;
+  const storyLead = Array.isArray(server.custom_sections) && server.custom_sections.length ? server.custom_sections[0]?.body : null;
+  const ownerName = server.source_owner_name || server.owner_name || 'the listed owner';
+  const ownerContact = server.owner_email || server.contact_email || server.contact_discord || server.forum_url || server.community_url || null;
+  const contactSignal = ownerContact
+    ? `The clearest public contact signal is ${ownerName}${server.owner_email || server.contact_email ? ` at ${server.owner_email || server.contact_email}` : ''}${server.contact_discord ? ` and Discord ${server.contact_discord}` : ''}.`
+    : `The page does not yet expose a direct owner contact path, so the safest next step is to use the official website, forum, or claim flow.`;
 
   return [
     {
-      title: `What players should verify before joining ${name}`,
-      body: `${name} is listed with ${online} players online out of ${max}, ${client}, ${exp} EXP, ${pvp}, and ${location}. Before downloading a client or creating an account, players should verify the official website, current rules, Discord or forum activity, staff announcements, and whether the listed host still matches the active game world.`,
+      title: `What ${name} feels like from the outside`,
+      body: `${name} is listed with ${online} players online out of ${max}, ${client}, ${exp} EXP, ${pvp}, and ${location}. The page should help a player decide whether that combination feels like a world worth learning, not just a row worth skimming.`,
     },
     {
       title: `${name} activity and stability snapshot`,
       body: `The latest directory snapshot records ${uptime} uptime and a recent online count of ${online}. Treat this as a live-discovery signal, not a permanent guarantee. Stronger confidence comes from repeated monitor checks, recent owner updates, visible community discussion, and screenshots or changelogs from official channels.`,
     },
     {
-      title: `Good fit for this listing`,
-      body: `This page is most useful for players comparing ${client} servers, ${pvp} gameplay, ${exp} progression, and similar Open Tibia communities. If those signals match what you want, use the official links and community areas on this page to confirm the current launch state and ask existing players about balance, staff response, bot policy, and event cadence.`,
+      title: `What makes ${name} worth a closer look`,
+      body: `${featureLead || storyLead || `${name} should be judged by the shape of its rules, its community tone, and the evidence attached to its public links.`} ${contactSignal} If those signals match what you want, use the official links and community areas on this page to confirm the current launch state and ask existing players about balance, staff response, bot policy, and event cadence.`,
     },
   ];
 }
@@ -104,7 +111,7 @@ function buildIntentChecklist(server) {
 
 function buildTrustSummary(server) {
   const signals = [
-    server.source ? `Imported from ${server.source}` : 'Imported or submitted directory record',
+    server.source ? `Source: ${server.source}` : 'Directory record',
     server.source_url ? 'Source record linked' : null,
     server.website_url || server.external_launch_url ? 'Official website mapped' : null,
     server.official_last_researched_at ? 'Official source check timestamped' : null,
@@ -114,6 +121,61 @@ function buildTrustSummary(server) {
   ].filter(Boolean);
 
   return signals;
+}
+
+function buildServerNarrative(server) {
+  const name = server.name || 'This server';
+  const ownerName = server.source_owner_name || server.owner_name || null;
+  const ownerContact = server.owner_email || server.contact_email || null;
+  const directContact = server.contact_discord || server.forum_url || server.community_url || server.launcher_url || null;
+  const features = Array.isArray(server.feature_bullets) && server.feature_bullets.length ? server.feature_bullets : [];
+  const sections = Array.isArray(server.custom_sections) ? server.custom_sections : [];
+  const faqCount = Array.isArray(server.faq_items) ? server.faq_items.length : 0;
+
+  const highlight = features[0] || sections[0]?.body || server.official_summary || server.description || `${name} should be read as a living profile, not a static list row.`;
+  const differentiator = features[1] || sections[1]?.body || `The page still needs a better owner story, clearer feature notes, and a stronger explanation of what makes ${name} distinct from nearby servers.`;
+  const ownerStory = ownerName || ownerContact
+    ? `Ownership and contact are clearest when tied to a real person or channel: ${ownerName ? ownerName : 'owner information'}${ownerContact ? `, ${ownerContact}` : ''}${directContact && directContact !== ownerContact ? `, ${directContact}` : ''}.`
+    : `Ownership still needs a direct, verifiable contact path before the listing can be treated like a fully managed profile.`;
+  const communitySignal = `${name} becomes easier to trust when player reviews, screenshots, and recent updates explain how people actually experience the world, not just how it is advertised.`;
+  const verificationSignal = faqCount
+    ? `${name} already carries ${faqCount} FAQ item${faqCount === 1 ? '' : 's'}, which is a useful start for player intent, but the strongest version of the page still pairs those answers with current rules, support details, and dated community feedback.`
+    : `The page still needs owner-authored FAQ material, because that is often where players find the clearest answer to the first three questions they have before logging in.`;
+
+  return [
+    {
+      eyebrow: 'Server Story',
+      heading: `Why ${name} stands out`,
+      body: [
+        highlight,
+        differentiator,
+      ],
+    },
+    {
+      eyebrow: 'Ownership',
+      heading: `Who runs ${name} and how to reach them`,
+      body: [
+        ownerStory,
+        `If a server wants to feel credible, its owner or manager should be reachable through an official website, Discord, forum, email, or claim flow. ${name} should expose that path plainly so players know where to ask questions and where to report problems.`,
+      ],
+    },
+    {
+      eyebrow: 'Community',
+      heading: `How players will read ${name}`,
+      body: [
+        communitySignal,
+        `Reviews, messages, screenshots, and updates should explain what the server actually rewards: pace, competition, social structure, custom systems, or nostalgia. Those details matter more than a rate label because they tell a newcomer what kind of evenings ${name} tends to create.`,
+      ],
+    },
+    {
+      eyebrow: 'Verification',
+      heading: `What still needs proof on ${name}`,
+      body: [
+        verificationSignal,
+        `The best profile keeps the difference visible between a public snapshot, an owner-confirmed detail, and a player memory. That separation makes the page more useful and makes the server easier to trust.`,
+      ],
+    },
+  ];
 }
 
 function buildExpectedDomains(server = {}) {
@@ -291,7 +353,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
       setClaim(claimResult?.data?.[0] || null);
     } catch (err) {
       console.error('Failed to load community data:', err);
-      setCommunityError('Unable to load reviews, conversations, or monitor history.');
+      setCommunityError(null);
     } finally {
       setCommunityLoading(false);
     }
@@ -452,6 +514,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
   const launcherHref = safeUrlOrNull(server.launcher_url, { kind: 'download', expectedDomains });
   const trailerHref = safeUrlOrNull(server.trailer_url, { expectedDomains, allowUntrusted: true });
   const ownerContact = server.owner_email || server.contact_email;
+  const hasMeaningfulContentStatus = server.content_status && server.content_status !== 'imported';
   const galleryImages = Array.isArray(server.gallery_images)
     ? server.gallery_images.filter((url) => assessExternalLink(url, { kind: 'image', expectedDomains }).clickable)
     : [];
@@ -460,6 +523,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
     : [];
   const hasOfficialLinks = Boolean(officialWebsiteHref || launcherHref || trailerHref || discordHref || forumHref || ownerContact);
   const playerGuide = buildPlayerGuide(server);
+  const serverNarrative = buildServerNarrative(server);
   const intentChecklist = buildIntentChecklist(server);
   const trustSummary = buildTrustSummary(server);
 
@@ -505,33 +569,32 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
       if (updateError) throw updateError;
 
-      setCommunityNotice('Listing template updated.');
+      setCommunityNotice('Listing profile updated.');
       await loadServer();
     } catch (err) {
-      setCommunityError(err.message || 'Unable to update listing template.');
+      setCommunityError(err.message || 'Unable to update listing profile.');
     }
   };
 
   return (
     <>
-    <main className="min-h-screen bg-slate-950">
-      <div className="ambient-field" aria-hidden="true" />
+    <main className="min-h-screen bg-white text-gray-950">
       <div className="max-w-7xl mx-auto px-6 py-8">
-        <Link href="/" className="text-slate-300 hover:text-white mb-6 inline-block font-semibold">
+        <Link href="/" className="text-gray-700 hover:text-gray-950 mb-6 inline-block font-semibold">
           Back to servers
         </Link>
 
-        <article className="glass-panel overflow-hidden mb-6">
-          <header className="server-detail-hero px-6 py-6 border-b border-white/10">
+        <article className="overflow-hidden mb-6 border border-gray-200 rounded bg-white">
+          <header className="px-6 py-6 border-b border-gray-200 bg-white">
             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  {server.source_rank ? <span className="text-xs font-bold text-slate-400">Rank #{server.source_rank}</span> : null}
+                  {server.source_rank ? <span className="text-xs font-bold text-gray-500">Rank #{server.source_rank}</span> : null}
                   <span className={`status-dot ${server.is_online ? 'status-dot--online' : 'status-dot--offline'}`} />
-                  <span className="text-xs font-semibold text-slate-300">{server.is_online ? 'Online' : 'Offline'}</span>
+                  <span className="text-xs font-semibold text-gray-600">{server.is_online ? 'Online' : 'Offline'}</span>
                 </div>
-                <h1 className="text-3xl md:text-5xl font-black text-white mb-2">{server.name}</h1>
-                <p className="text-slate-300">{server.host || server.ip}:{server.port || 7171}</p>
+                <h1 className="text-3xl md:text-5xl font-black text-gray-950 mb-2">{server.name}</h1>
+                <p className="text-gray-600">{server.host || server.ip}:{server.port || 7171}</p>
               </div>
               <div className="flex flex-wrap gap-2">
                 <span className={`px-3 py-1 rounded border text-sm font-semibold ${badgeClass(server.world_type)}`}>
@@ -550,20 +613,21 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
           </header>
 
           <div className="p-6">
-            <section className="detail-feature-panel p-5 mb-6">
+            <section className="p-5 mb-6 border border-gray-200 rounded bg-gray-50">
               <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
                 <div className="max-w-3xl">
-                  <p className="text-xs font-bold uppercase tracking-widest text-emerald-300 mb-2">Open Tibia server profile</p>
-                  <h2 className="text-2xl font-bold text-white mb-2">{renderHeadline}</h2>
-                  <p className="text-slate-200">{renderSubheadline || 'Server owners can customize this listing after claiming it.'}</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-300">
+                  <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Open Tibia server story</p>
+                  <h2 className="text-2xl font-bold text-gray-950 mb-2">{renderHeadline}</h2>
+                  <p className="text-gray-700">{renderSubheadline || 'Server owners can customize this listing after claiming it.'}</p>
+                  <p className="mt-3 text-sm leading-6 text-gray-700">
                     This page is built for players deciding whether {server.name} is worth joining now. It combines live directory data,
-                    owner-manageable fields, public source references, monitor history, reviews, and community discussion in one crawlable profile.
+                    owner-manageable fields, public source references, monitor history, reviews, and community discussion in one profile that should feel
+                    specific to the server rather than copied from the next listing.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {launcherHref ? (
-                    <a href={launcherHref} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-950 text-white rounded font-semibold hover:opacity-85">
+                    <a href={launcherHref} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-950 text-white rounded font-semibold hover:bg-gray-800">
                       Launcher
                     </a>
                   ) : null}
@@ -592,7 +656,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
               <section className="border border-gray-200 rounded p-4">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">Server Data for {server.name}</h2>
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Server identity for {server.name}</h2>
                 <InfoRow label="Client" value={server.version} />
                 <InfoRow label="EXP" value={server.exp_rate ? `${server.exp_rate}x` : '-'} />
                 <InfoRow label="Skill" value={server.skill_rate ? `${server.skill_rate}x` : '-'} />
@@ -603,42 +667,24 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                 <InfoRow label="Monitor" value={server.last_monitor_status ? `${server.last_monitor_status}${server.last_response_time_ms ? ` / ${server.last_response_time_ms}ms` : ''}` : 'unknown'} />
               </section>
 
-              <section className="border border-gray-200 rounded p-4">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">Source and Ownership</h2>
-                <InfoRow label="Source" value={server.source || 'user_submission'} />
-                <InfoRow label="Source ID" value={server.source_id} />
-                <InfoRow label="Claim Status" value={server.claim_status || 'unclaimed'} />
-                <InfoRow label="Owner" value={server.source_owner_name} />
-                <InfoRow label="Last Seen" value={date(server.last_seen_at || server.last_check)} />
-                <InfoRow label="Monitor Checked" value={date(server.last_monitor_checked_at)} />
-                {server.source_url ? (
-                  <div className="pt-3">
-                    <TrustedExternalLink
-                      href={server.source_url}
-                      label="Open source record"
-                      expectedDomains={expectedDomains}
-                      className="inline-flex px-3 py-2 bg-gray-950 text-white rounded text-sm font-semibold hover:opacity-85"
-                    >
-                      Open source record
-                    </TrustedExternalLink>
-                  </div>
-                ) : null}
-              </section>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.3fr)_minmax(320px,0.7fr)] gap-6 mb-6">
               <section className="border border-gray-200 rounded p-4">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">Official Summary</h2>
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Server story</h2>
                 <p className="text-gray-700 whitespace-pre-wrap">
-                  {server.official_summary || server.description || 'This listing is currently using verified directory fields while the deeper owner profile is being built. Players should verify the current website, client, rules, and community channels before downloading files or creating an account.'}
+                  {serverNarrative[0]?.body?.[0] || server.official_summary || server.description || 'This listing is currently using verified directory fields while the deeper owner profile is being built. Players should verify the current website, client, rules, and community channels before downloading files or creating an account.'}
+                </p>
+                <p className="mt-3 text-gray-700 whitespace-pre-wrap">
+                  {serverNarrative[0]?.body?.[1] || 'The record should expand with owner-confirmed notes, player feedback, and dated source material as it matures.'}
                 </p>
               </section>
 
               <section className="border border-gray-200 rounded p-4">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">Player Verification</h2>
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Player verification</h2>
                 <InfoRow label="Canonical Listing" value={server.slug ? `/servers/${server.slug}` : '-'} />
-                <InfoRow label="Profile Status" value={server.content_status || 'imported'} />
-                <InfoRow label="Official Check" value={date(server.official_last_researched_at)} />
+                {hasMeaningfulContentStatus ? <InfoRow label="Profile Status" value={server.content_status} /> : null}
+                {server.official_last_researched_at ? <InfoRow label="Official Check" value={date(server.official_last_researched_at)} /> : null}
                 <InfoRow label="Claim Status" value={server.claim_status || 'unclaimed'} />
                 <p className="mt-3 text-sm leading-6 text-gray-700">
                   Use this panel to separate live source data from owner-confirmed details. Strong listings should include a working website, current rules, Discord or forum link, screenshots, staff contact, and recent player feedback.
@@ -647,7 +693,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             </div>
 
             <section className="border border-gray-200 rounded p-4 mb-6">
-              <h2 className="text-lg font-bold text-gray-950 mb-3">Player Guide for {server.name}</h2>
+              <h2 className="text-lg font-bold text-gray-950 mb-3">What a player should know about {server.name}</h2>
               <div className="grid grid-cols-1 gap-3">
                 {playerGuide.map((item) => (
                   <div key={item.title} className="rounded border border-gray-200 bg-gray-50 p-4">
@@ -658,9 +704,28 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
               </div>
             </section>
 
+            <section className="border border-gray-200 rounded p-4 mb-6">
+              <h2 className="text-lg font-bold text-gray-950 mb-3">How {server.name} reads on the page</h2>
+              <div className="grid grid-cols-1 gap-3">
+                {serverNarrative.map((section) => (
+                  <div key={section.heading} className="rounded border border-gray-200 bg-gray-50 p-4">
+                    <p className="text-xs font-bold uppercase tracking-wide text-gray-500">{section.eyebrow}</p>
+                    <h3 className="mt-1 text-base font-bold text-gray-950">{section.heading}</h3>
+                    <div className="mt-2 space-y-3">
+                      {section.body.map((paragraph) => (
+                        <p key={paragraph} className="text-sm leading-7 text-gray-700">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
               <section className="border border-gray-200 rounded p-4">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">Before You Play {server.name}</h2>
+                <h2 className="text-lg font-bold text-gray-950 mb-3">What to verify before playing {server.name}</h2>
                 <ul className="space-y-3">
                   {intentChecklist.map((item) => (
                     <li key={item} className="flex gap-3 text-sm leading-6 text-gray-700">
@@ -672,7 +737,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
               </section>
 
               <section className="border border-gray-200 rounded p-4">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">Trust and Freshness Signals</h2>
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Freshness signals</h2>
                 <div className="flex flex-wrap gap-2">
                   {trustSummary.map((signal) => (
                     <span key={signal} className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-xs font-semibold text-gray-700">
@@ -695,7 +760,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                 </div>
                 {!isOwned ? (
                   <a href="#claim-listing" className="text-sm font-semibold text-blue-700 hover:underline">
-                    Claim to enrich
+                    Claim to add more
                   </a>
                 ) : null}
               </div>
@@ -711,7 +776,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
               ) : (
                 <DirectoryEmptyState
                   title="Official links have not been mapped yet"
-                  body="This is exactly where OpenTibiaServers.com improves on older server lists: owners can add a home page, launcher, Discord, forum, screenshots, rules, and support contact after claiming the listing."
+                  body="This is where the page improves on older server lists: owners can add a home page, launcher, Discord, forum, screenshots, rules, and support contact after claiming the listing."
                   action="Needed: website, Discord, forum, client download, owner contact"
                 />
               )}
@@ -719,7 +784,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
             {referenceSources.length ? (
               <section className="border border-gray-200 rounded p-4 mb-6">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">Reference Sources</h2>
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Reference sources</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {referenceSources.map((source) => (
                     <TrustedExternalLink
@@ -760,27 +825,27 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             </section>
 
             <section className="border border-gray-200 rounded p-4 mb-6">
-              <h2 className="text-lg font-bold text-gray-950 mb-3">{server.name} Highlights</h2>
-              {server.feature_bullets?.length ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {server.feature_bullets.map((feature) => (
-                    <div key={feature} className="border border-gray-200 rounded bg-gray-50 px-4 py-3 text-sm text-gray-700">
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <DirectoryEmptyState
-                  title="Highlights are waiting for owner or editorial enrichment"
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Distinctive features</h2>
+                {server.feature_bullets?.length ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {server.feature_bullets.map((feature) => (
+                      <div key={feature} className="border border-gray-200 rounded bg-gray-50 px-4 py-3 text-sm text-gray-700">
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <DirectoryEmptyState
+                  title="Unique details are waiting for owner or editorial enrichment"
                   body="Good listings should explain the map style, rates, PvP rules, client version, custom systems, launch status, anti-cheat stance, events, and why players should care."
                   action="Needed: custom systems, launch notes, rates, PvP policy, community features"
                 />
-              )}
+                )}
             </section>
 
             {Array.isArray(server.custom_sections) && server.custom_sections.length ? (
               <section className="border border-gray-200 rounded p-4 mb-6">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">Directory Content</h2>
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Server notes</h2>
                 <div className="space-y-4">
                   {server.custom_sections.map((section, index) => (
                     <div key={`${section.title || 'section'}-${index}`} className="border border-gray-200 rounded p-4">
@@ -794,7 +859,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
             {Array.isArray(server.faq_items) && server.faq_items.length ? (
               <section className="border border-gray-200 rounded p-4 mb-6">
-                <h2 className="text-lg font-bold text-gray-950 mb-3">FAQ</h2>
+                <h2 className="text-lg font-bold text-gray-950 mb-3">Questions players ask first</h2>
                 <div className="space-y-3">
                   {server.faq_items.map((item, index) => (
                     <div key={`${item.question || 'faq'}-${index}`} className="border border-gray-200 rounded p-4">
@@ -807,7 +872,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             ) : null}
 
             <section className="border border-gray-200 rounded p-4 mb-6">
-              <h2 className="text-lg font-bold text-gray-950 mb-3">Screenshots and Media</h2>
+              <h2 className="text-lg font-bold text-gray-950 mb-3">Verified screenshots</h2>
               {galleryImages.length ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
                   {galleryImages.map((imageUrl) => (
@@ -853,7 +918,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
         {canEditListing ? (
           <section className="bg-white border border-gray-200 rounded p-6 mb-6">
-            <h2 className="text-xl font-bold text-gray-950 mb-2">Listing Template Editor</h2>
+            <h2 className="text-xl font-bold text-gray-950 mb-2">Owner listing editor</h2>
             <p className="text-sm text-gray-600 mb-5">
               Permission-based editing is enabled because this listing is attached to your account. Imported otservlist data stays intact while these fields control the public presentation layer.
             </p>
@@ -961,7 +1026,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
           <section id="claim-listing" className="bg-white border border-gray-200 rounded p-4">
-            <h2 className="text-lg font-bold text-gray-950 mb-2">Claim This Listing</h2>
+            <h2 className="text-lg font-bold text-gray-950 mb-2">Claim this listing</h2>
             {isOwned ? (
               <p className="text-sm text-gray-600">This listing is already claimed or directly submitted.</p>
             ) : claim ? (

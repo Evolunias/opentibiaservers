@@ -1,0 +1,8 @@
+import UnderwarServerReviewPage, { generateMetadata } from './underwar';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <UnderwarServerReviewPage />;
+}

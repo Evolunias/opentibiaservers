@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { getExactMatchPageData } from '../lib/exact-match-page-data.js';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const appRoot = path.join(repoRoot, 'app');
@@ -16,14 +17,22 @@ function pascalCase(slug) {
 }
 
 function componentFile(slug) {
-  return `import StaticExactMatchPage, { buildExactMatchMetadata } from '@/lib/static-page-renderers';
+  const page = getExactMatchPageData(slug);
+  if (!page) {
+    throw new Error(`No exact-match page data found for ${slug}`);
+  }
+
+  return `import CuratedGuideArticle from '@/app/components/CuratedGuideArticle';
+import { buildArticleMetadata } from '@/lib/page-metadata';
+
+const page = ${JSON.stringify(page, null, 2)};
 
 export function generateMetadata() {
-  return buildExactMatchMetadata('${slug}');
+  return buildArticleMetadata(page);
 }
 
 export default function ${pascalCase(slug)}Page() {
-  return <StaticExactMatchPage slug="${slug}" />;
+  return <CuratedGuideArticle page={page} />;
 }
 `;
 }
@@ -64,6 +73,7 @@ const uniqueSlugs = [...new Set(slugs)];
 
 for (const slug of uniqueSlugs) {
   const dir = path.join(appRoot, slug);
+  if (fs.existsSync(dir)) continue;
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, `${slug}.jsx`), componentFile(slug), 'utf8');
   fs.writeFileSync(path.join(dir, 'page.jsx'), routeFile(slug), 'utf8');

@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { getCuratedPages } from '../lib/curated-pages.js';
+import { getExactMatchPageData } from '../lib/exact-match-page-data.js';
 import { getOtServerCuratedPages } from '../lib/otserver-curated-pages.js';
 import { getTibiaWorldPages } from '../lib/tibia-world-pages.js';
 
@@ -25,15 +27,19 @@ function pascalCase(slug) {
   return /^\d/.test(value) ? `Server${value}` : value;
 }
 
-function componentFile(slug) {
-  return `import StaticExactMatchPage, { buildExactMatchMetadata } from '@/lib/static-page-renderers';
+function componentFile(page) {
+  const pageJson = JSON.stringify(page, null, 2);
+  return `import CuratedGuideArticle from '@/app/components/CuratedGuideArticle';
+import { buildArticleMetadata } from '@/lib/page-metadata';
+
+const page = ${pageJson};
 
 export function generateMetadata() {
-  return buildExactMatchMetadata('${slug}');
+  return buildArticleMetadata(page);
 }
 
-export default function ${pascalCase(slug)}Page() {
-  return <StaticExactMatchPage slug="${slug}" />;
+export default function ${pascalCase(page.slug)}Page() {
+  return <CuratedGuideArticle page={page} />;
 }
 `;
 }
@@ -56,7 +62,7 @@ function readCuratedSlugs() {
 }
 
 const pages = [
-  ...readCuratedSlugs().map((slug) => ({ slug })),
+  ...getCuratedPages(),
   ...getOtServerCuratedPages(),
   ...getTibiaWorldPages(),
 ];
@@ -67,7 +73,7 @@ const uniquePages = Array.from(new Map(pages.map((page) => [page.slug, page])).v
 for (const page of uniquePages) {
   const dir = path.join(repoRoot, 'app', page.slug);
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, `${page.slug}.jsx`), componentFile(page.slug), 'utf8');
+  fs.writeFileSync(path.join(dir, `${page.slug}.jsx`), componentFile(getExactMatchPageData(page.slug) || page), 'utf8');
   fs.writeFileSync(path.join(dir, 'page.jsx'), routeFile(page.slug), 'utf8');
 }
 

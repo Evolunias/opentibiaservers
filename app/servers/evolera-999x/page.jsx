@@ -1,0 +1,8 @@
+import Evolera999xServerReviewPage, { generateMetadata } from './evolera-999x';
+
+export { generateMetadata };
+export const revalidate = 3600;
+
+export default function Page() {
+  return <Evolera999xServerReviewPage />;
+}
