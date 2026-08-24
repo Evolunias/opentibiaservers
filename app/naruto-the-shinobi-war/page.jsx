@@ -1,8 +1,11 @@
-import NarutoTheShinobiWarPage, { generateMetadata } from './naruto-the-shinobi-war';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("naruto-the-shinobi-war");
+}
+
 export default function Page() {
-  return <NarutoTheShinobiWarPage />;
+  return <LegacyServerRoute slug="naruto-the-shinobi-war" />;
 }

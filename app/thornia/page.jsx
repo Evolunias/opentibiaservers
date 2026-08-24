@@ -1,8 +1,11 @@
-import ThorniaPage, { generateMetadata } from './thornia';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("thornia");
+}
+
 export default function Page() {
-  return <ThorniaPage />;
+  return <LegacyServerRoute slug="thornia" />;
 }

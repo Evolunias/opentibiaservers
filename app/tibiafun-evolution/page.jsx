@@ -1,8 +1,11 @@
-import TibiafunEvolutionPage, { generateMetadata } from './tibiafun-evolution';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("tibiafun-evolution");
+}
+
 export default function Page() {
-  return <TibiafunEvolutionPage />;
+  return <LegacyServerRoute slug="tibiafun-evolution" />;
 }

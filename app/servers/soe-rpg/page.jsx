@@ -1,8 +1,11 @@
-import SoeRpgServerReviewPage, { generateMetadata } from './soe-rpg';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("soe-rpg");
+}
+
 export default function Page() {
-  return <SoeRpgServerReviewPage />;
+  return <CanonicalServerRoute slug="soe-rpg" />;
 }

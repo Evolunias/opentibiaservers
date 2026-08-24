@@ -1,8 +1,11 @@
-import Grimoria3RubinotPage, { generateMetadata } from './grimoria3-rubinot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("grimoria3-rubinot");
+}
+
 export default function Page() {
-  return <Grimoria3RubinotPage />;
+  return <LegacyServerRoute slug="grimoria3-rubinot" />;
 }

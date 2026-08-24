@@ -1,8 +1,11 @@
-import BloxerOtServerReviewPage, { generateMetadata } from './bloxer-ot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("bloxer-ot");
+}
+
 export default function Page() {
-  return <BloxerOtServerReviewPage />;
+  return <CanonicalServerRoute slug="bloxer-ot" />;
 }

@@ -1,8 +1,11 @@
-import CrownotsStartOnFeb28th1800CetPage, { generateMetadata } from './crownots-start-on-feb-28th-18-00-cet';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("crownots-start-on-feb-28th-18-00-cet");
+}
+
 export default function Page() {
-  return <CrownotsStartOnFeb28th1800CetPage />;
+  return <LegacyServerRoute slug="crownots-start-on-feb-28th-18-00-cet" />;
 }

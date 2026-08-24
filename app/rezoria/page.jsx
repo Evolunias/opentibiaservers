@@ -1,8 +1,11 @@
-import RezoriaPage, { generateMetadata } from './rezoria';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("rezoria");
+}
+
 export default function Page() {
-  return <RezoriaPage />;
+  return <LegacyServerRoute slug="rezoria" />;
 }

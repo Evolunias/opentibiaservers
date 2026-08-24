@@ -1,8 +1,11 @@
-import OtmadnessPage, { generateMetadata } from './otmadness';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("otmadness");
+}
+
 export default function Page() {
-  return <OtmadnessPage />;
+  return <LegacyServerRoute slug="otmadness" />;
 }

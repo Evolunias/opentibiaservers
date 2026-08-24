@@ -1,8 +1,11 @@
-import BaiakIlusionServerReviewPage, { generateMetadata } from './baiak-ilusion';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("baiak-ilusion");
+}
+
 export default function Page() {
-  return <BaiakIlusionServerReviewPage />;
+  return <CanonicalServerRoute slug="baiak-ilusion" />;
 }

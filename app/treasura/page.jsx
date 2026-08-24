@@ -1,8 +1,11 @@
-import TreasuraPage, { generateMetadata } from './treasura';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("treasura");
+}
+
 export default function Page() {
-  return <TreasuraPage />;
+  return <LegacyServerRoute slug="treasura" />;
 }

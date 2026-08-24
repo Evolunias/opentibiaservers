@@ -1,8 +1,11 @@
-import CyntaraHighratePage, { generateMetadata } from './cyntara-highrate';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("cyntara-highrate");
+}
+
 export default function Page() {
-  return <CyntaraHighratePage />;
+  return <LegacyServerRoute slug="cyntara-highrate" />;
 }

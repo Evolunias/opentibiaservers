@@ -1,8 +1,11 @@
-import EvoliscaS3ServerReviewPage, { generateMetadata } from './evolisca-s3';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("evolisca-s3");
+}
+
 export default function Page() {
-  return <EvoliscaS3ServerReviewPage />;
+  return <CanonicalServerRoute slug="evolisca-s3" />;
 }

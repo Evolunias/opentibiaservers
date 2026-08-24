@@ -1,8 +1,11 @@
-import RunesOfSoulServerReviewPage, { generateMetadata } from './runes-of-soul';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("runes-of-soul");
+}
+
 export default function Page() {
-  return <RunesOfSoulServerReviewPage />;
+  return <CanonicalServerRoute slug="runes-of-soul" />;
 }

@@ -1,8 +1,11 @@
-import BaiakBlackServerReviewPage, { generateMetadata } from './baiak-black';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("baiak-black");
+}
+
 export default function Page() {
-  return <BaiakBlackServerReviewPage />;
+  return <CanonicalServerRoute slug="baiak-black" />;
 }

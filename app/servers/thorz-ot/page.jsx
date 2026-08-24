@@ -1,8 +1,11 @@
-import ThorzOtServerReviewPage, { generateMetadata } from './thorz-ot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("thorz-ot");
+}
+
 export default function Page() {
-  return <ThorzOtServerReviewPage />;
+  return <CanonicalServerRoute slug="thorz-ot" />;
 }

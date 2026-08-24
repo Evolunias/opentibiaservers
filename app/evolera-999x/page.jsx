@@ -1,8 +1,11 @@
-import Evolera999xPage, { generateMetadata } from './evolera-999x';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("evolera-999x");
+}
+
 export default function Page() {
-  return <Evolera999xPage />;
+  return <LegacyServerRoute slug="evolera-999x" />;
 }

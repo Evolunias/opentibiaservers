@@ -44,7 +44,23 @@ export default function ${pascalCase(page.slug)}Page() {
 `;
 }
 
-function routeFile(slug) {
+function routeFile(page) {
+  const { slug } = page;
+  if (page.type === 'server') {
+    return `import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
+
+export const revalidate = 3600;
+
+export function generateMetadata() {
+  return buildCanonicalServerMetadata(${JSON.stringify(slug)});
+}
+
+export default function Page() {
+  return <LegacyServerRoute slug=${JSON.stringify(slug)} />;
+}
+`;
+  }
+
   return `import ${pascalCase(slug)}Page, { generateMetadata } from './${slug}';
 
 export { generateMetadata };
@@ -74,7 +90,7 @@ for (const page of uniquePages) {
   const dir = path.join(repoRoot, 'app', page.slug);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, `${page.slug}.jsx`), componentFile(getExactMatchPageData(page.slug) || page), 'utf8');
-  fs.writeFileSync(path.join(dir, 'page.jsx'), routeFile(page.slug), 'utf8');
+  fs.writeFileSync(path.join(dir, 'page.jsx'), routeFile(page), 'utf8');
 }
 
 console.log(`generated_static_route_pages\t${uniquePages.length}`);

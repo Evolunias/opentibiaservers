@@ -1,8 +1,11 @@
-import TibiaOldLimboPage, { generateMetadata } from './tibia-old-limbo';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("tibia-old-limbo");
+}
+
 export default function Page() {
-  return <TibiaOldLimboPage />;
+  return <LegacyServerRoute slug="tibia-old-limbo" />;
 }

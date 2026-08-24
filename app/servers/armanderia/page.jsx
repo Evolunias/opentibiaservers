@@ -1,8 +1,11 @@
-import ArmanderiaServerReviewPage, { generateMetadata } from './armanderia';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("armanderia");
+}
+
 export default function Page() {
-  return <ArmanderiaServerReviewPage />;
+  return <CanonicalServerRoute slug="armanderia" />;
 }

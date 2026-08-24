@@ -1,8 +1,11 @@
-import ShadowArmsPage, { generateMetadata } from './shadow-arms';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("shadow-arms");
+}
+
 export default function Page() {
-  return <ShadowArmsPage />;
+  return <LegacyServerRoute slug="shadow-arms" />;
 }

@@ -1,8 +1,11 @@
-import Server12AnosOnlineServerReviewPage, { generateMetadata } from './12-anos-online';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("12-anos-online");
+}
+
 export default function Page() {
-  return <Server12AnosOnlineServerReviewPage />;
+  return <CanonicalServerRoute slug="12-anos-online" />;
 }

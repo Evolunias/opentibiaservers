@@ -1,8 +1,11 @@
-import Razorot1601CustomServerServerReviewPage, { generateMetadata } from './razorot-16-01-custom-server';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("razorot-16-01-custom-server");
+}
+
 export default function Page() {
-  return <Razorot1601CustomServerServerReviewPage />;
+  return <CanonicalServerRoute slug="razorot-16-01-custom-server" />;
 }

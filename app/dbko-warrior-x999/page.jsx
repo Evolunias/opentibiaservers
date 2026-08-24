@@ -1,8 +1,11 @@
-import DbkoWarriorX999Page, { generateMetadata } from './dbko-warrior-x999';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("dbko-warrior-x999");
+}
+
 export default function Page() {
-  return <DbkoWarriorX999Page />;
+  return <LegacyServerRoute slug="dbko-warrior-x999" />;
 }

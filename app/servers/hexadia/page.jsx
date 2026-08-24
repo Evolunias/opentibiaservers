@@ -1,8 +1,11 @@
-import HexadiaServerReviewPage, { generateMetadata } from './hexadia';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("hexadia");
+}
+
 export default function Page() {
-  return <HexadiaServerReviewPage />;
+  return <CanonicalServerRoute slug="hexadia" />;
 }

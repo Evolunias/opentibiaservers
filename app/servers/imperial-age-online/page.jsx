@@ -1,8 +1,11 @@
-import ImperialAgeOnlineServerReviewPage, { generateMetadata } from './imperial-age-online';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("imperial-age-online");
+}
+
 export default function Page() {
-  return <ImperialAgeOnlineServerReviewPage />;
+  return <CanonicalServerRoute slug="imperial-age-online" />;
 }

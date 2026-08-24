@@ -1,8 +1,11 @@
-import ArchezotRemakeServerReviewPage, { generateMetadata } from './archezot-remake';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("archezot-remake");
+}
+
 export default function Page() {
-  return <ArchezotRemakeServerReviewPage />;
+  return <CanonicalServerRoute slug="archezot-remake" />;
 }

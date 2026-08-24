@@ -1,8 +1,11 @@
-import CrownotsLowRate4funServerPage, { generateMetadata } from './crownots-low-rate-4fun-server';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("crownots-low-rate-4fun-server");
+}
+
 export default function Page() {
-  return <CrownotsLowRate4funServerPage />;
+  return <LegacyServerRoute slug="crownots-low-rate-4fun-server" />;
 }

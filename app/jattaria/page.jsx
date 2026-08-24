@@ -1,8 +1,11 @@
-import JattariaPage, { generateMetadata } from './jattaria';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("jattaria");
+}
+
 export default function Page() {
-  return <JattariaPage />;
+  return <LegacyServerRoute slug="jattaria" />;
 }

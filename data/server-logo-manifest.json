@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "policy": "Only locally archived, primary-source or explicitly user-supplied server branding is eligible. Remote images, trackers, generic icons, third-party directory marks, and unrelated promotional artwork are never used as server thumbnails.",
+  "entries": {
+    "baiak-ilusion": {
+      "src": "/images/server-logos/baiak-ilusion.jpg",
+      "alt": "Baiak Ilusion logo",
+      "kind": "logo_banner",
+      "source_type": "user_supplied",
+      "source_reference": "BAIAK ILUSION BR.jpg",
+      "width": 610,
+      "height": 320,
+      "sha256": "a90403af07967ff9b4e5ca8448715f71188ddcc257e0ffe6fb7e179bca3bb9d9",
+      "aliases": [
+        "baiak-ilusion-br"
+      ]
+    },
+    "demolidores": {
+      "src": "/images/server-logos/demolidores.png",
+      "alt": "Demolidores logo",
+      "kind": "logo",
+      "source_type": "user_supplied",
+      "source_reference": "Demolidores.png",
+      "width": 196,
+      "height": 158,
+      "sha256": "b1713ff61d5d6e144d9f3adecda7c35f5d4d55bf4b362aab3a8cd058aadc8240",
+      "aliases": []
+    },
+    "ezodus": {
+      "src": "/images/server-logos/ezodus.png",
+      "alt": "Ezodus official wordmark",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.ezodus.net/",
+      "domains": [
+        "ezodus.net"
+      ],
+      "width": 1504,
+      "height": 547,
+      "sha256": "cad58b77e83ed6ff83cc63fcb5420cf5dd91da32b01304be812e4b6b8024b1e0",
+      "aliases": [
+        "free-exercis-new-ppl",
+        "20th-february-2026-18-00"
+      ]
+    },
+    "koliseuot": {
+      "src": "/images/server-logos/koliseuot.png",
+      "alt": "KoliseuOT logo",
+      "kind": "logo",
+      "source_type": "user_supplied",
+      "source_reference": "koliseuot.png",
+      "width": 1024,
+      "height": 1024,
+      "sha256": "c9264c2275930e176c447ba276a77fb56cdbc551e2e5ea8b662b854a25fa2045",
+      "aliases": [
+        "koliseu-ot"
+      ]
+    },
+    "aqueleot": {
+      "src": "/images/server-logos/aqueleot.png",
+      "alt": "Aqueleot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://aqueleot.com/",
+      "domains": [
+        "aqueleot.com"
+      ],
+      "width": 3000,
+      "height": 2000,
+      "sha256": "bfff9518b33e9fb3c81ff9caabb0bb637429c7e5b1ab7d8025700db328aa4a62",
+      "aliases": [
+        "Aqueleot",
+        "aquele-ot",
+        "Aquele OT"
+      ]
+    },
+    "eramedieval": {
+      "src": "/images/server-logos/eramedieval.png",
+      "alt": "Eramedieval official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://eramedieval.online/",
+      "domains": [
+        "eramedieval.online"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "sha256": "4f48d74308d45b51b50f5fa75a79838a159ab4c4c35818a1462896bee5f18592",
+      "aliases": [
+        "Eramedieval"
+      ]
+    },
+    "gunzodus": {
+      "src": "/images/server-logos/gunzodus.png",
+      "alt": "Gunzodus official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.gunzodus.net/",
+      "domains": [
+        "gunzodus.net"
+      ],
+      "width": 2257,
+      "height": 666,
+      "sha256": "ac65b5e9f8c7b9341c71c4e24c1fe60e665d90531eca7e318ccda684c031178c",
+      "aliases": [
+        "Gunzodus",
+        "gunzodus"
+      ]
+    },
+    "ixodus": {
+      "src": "/images/server-logos/ixodus.png",
+      "alt": "Ixodus official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.ixodus.net/",
+      "domains": [
+        "ixodus.net"
+      ],
+      "width": 1296,
+      "height": 454,
+      "sha256": "98b3ec10839d7c6180b4e5a648dc62167eb30f261604d9d8e461dd3a133b99b9",
+      "aliases": [
+        "Ixodus",
+        "ixodus"
+      ]
+    },
+    "neprenia": {
+      "src": "/images/server-logos/neprenia.png",
+      "alt": "Neprenia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://neprenia.com/",
+      "domains": [
+        "neprenia.com"
+      ],
+      "width": 1775,
+      "height": 493,
+      "sha256": "207f1a74a39097fd98b36fd11eccdb66e8147ff0aef3fd105ece52869649146b",
+      "aliases": [
+        "Neprenia",
+        "neprenia"
+      ]
+    },
+    "realesta74": {
+      "src": "/images/server-logos/realesta74.png",
+      "alt": "Realesta74 official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://realesta74.net/",
+      "domains": [
+        "realesta74.net"
+      ],
+      "width": 300,
+      "height": 251,
+      "sha256": "b050b396a2fa52d5d0a7b726d9549719d36b411eb3072f09856dc219f9f5df8b",
+      "aliases": [
+        "Realesta74",
+        "realesta-7-4",
+        "Realesta 7.4"
+      ]
+    },
+    "rivaliaonline": {
+      "src": "/images/server-logos/rivaliaonline.png",
+      "alt": "Rivaliaonline official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://rivaliaonline.com/landing.php",
+      "domains": [
+        "rivaliaonline.com"
+      ],
+      "width": 2498,
+      "height": 948,
+      "sha256": "d29654cec037c582f2306714140e2e5d70914c8d69d2fbb1864d4d858d8648a1",
+      "aliases": [
+        "Rivaliaonline",
+        "rivalia-online",
+        "Rivalia Online"
+      ]
+    },
+    "sodb": {
+      "src": "/images/server-logos/sodb.webp",
+      "alt": "Sodb official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://sodb.pl/",
+      "domains": [
+        "sodb.pl"
+      ],
+      "width": 300,
+      "height": 300,
+      "sha256": "d762da725e2cffeb54092216408bf396d5386e5c4ecdb0add99e83b8ce138d88",
+      "aliases": [
+        "sodb-online",
+        "SODB Online"
+      ]
+    }
+  },
+  "excluded_assets": {
+    "/images/server-logos/opentibiaservers-directory.png": {
+      "reason": "site_brand_not_server_logo",
+      "preserve_for": "Site authentication and OpenTibiaServers.com brand surfaces"
+    },
+    "/images/server-logos/otservlist.jpg": {
+      "reason": "third_party_directory_brand",
+      "preserve_for": "Historical source attribution only"
+    }
+  },
+  "protected_surfaces": [
+    "/images/guides/*",
+    "app/components/FeaturedServerAd.jsx"
+  ]
+}

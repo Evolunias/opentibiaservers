@@ -1,8 +1,11 @@
-import Veylaria86ServerReviewPage, { generateMetadata } from './veylaria-8-6';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("veylaria-8-6");
+}
+
 export default function Page() {
-  return <Veylaria86ServerReviewPage />;
+  return <CanonicalServerRoute slug="veylaria-8-6" />;
 }

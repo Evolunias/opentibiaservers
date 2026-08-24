@@ -1,8 +1,11 @@
-import GunzodusPage, { generateMetadata } from './gunzodus';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("gunzodus");
+}
+
 export default function Page() {
-  return <GunzodusPage />;
+  return <LegacyServerRoute slug="gunzodus" />;
 }

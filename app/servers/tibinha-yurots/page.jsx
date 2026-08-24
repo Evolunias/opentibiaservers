@@ -1,8 +1,11 @@
-import TibinhaYurotsServerReviewPage, { generateMetadata } from './tibinha-yurots';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("tibinha-yurots");
+}
+
 export default function Page() {
-  return <TibinhaYurotsServerReviewPage />;
+  return <CanonicalServerRoute slug="tibinha-yurots" />;
 }

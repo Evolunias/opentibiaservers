@@ -1,8 +1,11 @@
-import OldevoPlPage, { generateMetadata } from './oldevo-pl';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("oldevo-pl");
+}
+
 export default function Page() {
-  return <OldevoPlPage />;
+  return <LegacyServerRoute slug="oldevo-pl" />;
 }

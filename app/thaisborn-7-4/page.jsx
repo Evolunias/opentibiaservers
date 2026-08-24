@@ -1,8 +1,11 @@
-import Thaisborn74Page, { generateMetadata } from './thaisborn-7-4';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("thaisborn-7-4");
+}
+
 export default function Page() {
-  return <Thaisborn74Page />;
+  return <LegacyServerRoute slug="thaisborn-7-4" />;
 }

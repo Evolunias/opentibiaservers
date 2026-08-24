@@ -1,8 +1,11 @@
-import MaskaotsActsIIiServerReviewPage, { generateMetadata } from './maskaots-acts-i-ii';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("maskaots-acts-i-ii");
+}
+
 export default function Page() {
-  return <MaskaotsActsIIiServerReviewPage />;
+  return <CanonicalServerRoute slug="maskaots-acts-i-ii" />;
 }

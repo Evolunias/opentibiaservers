@@ -1,8 +1,11 @@
-import CastabraPage, { generateMetadata } from './castabra';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("castabra");
+}
+
 export default function Page() {
-  return <CastabraPage />;
+  return <LegacyServerRoute slug="castabra" />;
 }

@@ -1,8 +1,11 @@
-import EuroKarmaServerReviewPage, { generateMetadata } from './euro-karma';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("euro-karma");
+}
+
 export default function Page() {
-  return <EuroKarmaServerReviewPage />;
+  return <CanonicalServerRoute slug="euro-karma" />;
 }

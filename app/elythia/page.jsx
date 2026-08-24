@@ -1,8 +1,11 @@
-import ElythiaPage, { generateMetadata } from './elythia';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("elythia");
+}
+
 export default function Page() {
-  return <ElythiaPage />;
+  return <LegacyServerRoute slug="elythia" />;
 }

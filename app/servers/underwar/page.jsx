@@ -1,8 +1,11 @@
-import UnderwarServerReviewPage, { generateMetadata } from './underwar';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("underwar");
+}
+
 export default function Page() {
-  return <UnderwarServerReviewPage />;
+  return <CanonicalServerRoute slug="underwar" />;
 }

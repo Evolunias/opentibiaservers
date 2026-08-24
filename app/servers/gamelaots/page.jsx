@@ -1,8 +1,11 @@
-import GamelaotsServerReviewPage, { generateMetadata } from './gamelaots';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("gamelaots");
+}
+
 export default function Page() {
-  return <GamelaotsServerReviewPage />;
+  return <CanonicalServerRoute slug="gamelaots" />;
 }

@@ -1,8 +1,11 @@
-import TibiaRetroServerReviewPage, { generateMetadata } from './tibia-retro';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("tibia-retro");
+}
+
 export default function Page() {
-  return <TibiaRetroServerReviewPage />;
+  return <CanonicalServerRoute slug="tibia-retro" />;
 }

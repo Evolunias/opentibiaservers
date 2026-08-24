@@ -1,8 +1,11 @@
-import ElderanOnlinePage, { generateMetadata } from './elderan-online';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("elderan-online");
+}
+
 export default function Page() {
-  return <ElderanOnlinePage />;
+  return <LegacyServerRoute slug="elderan-online" />;
 }

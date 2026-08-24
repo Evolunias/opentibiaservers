@@ -1,8 +1,11 @@
-import LoucoservPage, { generateMetadata } from './loucoserv';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("loucoserv");
+}
+
 export default function Page() {
-  return <LoucoservPage />;
+  return <LegacyServerRoute slug="loucoserv" />;
 }

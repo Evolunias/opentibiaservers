@@ -1,8 +1,11 @@
-import ValmorotsLaunch1March2026Page, { generateMetadata } from './valmorots-launch-1-march-2026';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("valmorots-launch-1-march-2026");
+}
+
 export default function Page() {
-  return <ValmorotsLaunch1March2026Page />;
+  return <LegacyServerRoute slug="valmorots-launch-1-march-2026" />;
 }

@@ -1,8 +1,11 @@
-import EvozeraServerReviewPage, { generateMetadata } from './evozera';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("evozera");
+}
+
 export default function Page() {
-  return <EvozeraServerReviewPage />;
+  return <CanonicalServerRoute slug="evozera" />;
 }

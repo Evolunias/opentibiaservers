@@ -1,8 +1,11 @@
-import Yurots76Page, { generateMetadata } from './yurots76';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("yurots76");
+}
+
 export default function Page() {
-  return <Yurots76Page />;
+  return <LegacyServerRoute slug="yurots76" />;
 }

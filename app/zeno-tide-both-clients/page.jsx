@@ -1,8 +1,11 @@
-import ZenoTideBothClientsPage, { generateMetadata } from './zeno-tide-both-clients';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("zeno-tide-both-clients");
+}
+
 export default function Page() {
-  return <ZenoTideBothClientsPage />;
+  return <LegacyServerRoute slug="zeno-tide-both-clients" />;
 }

@@ -1,8 +1,11 @@
-import DemolidoresPage, { generateMetadata } from './demolidores';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("demolidores");
+}
+
 export default function Page() {
-  return <DemolidoresPage />;
+  return <LegacyServerRoute slug="demolidores" />;
 }

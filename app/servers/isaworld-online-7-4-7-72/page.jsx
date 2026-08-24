@@ -1,8 +1,11 @@
-import IsaworldOnline74772ServerReviewPage, { generateMetadata } from './isaworld-online-7-4-7-72';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("isaworld-online-7-4-7-72");
+}
+
 export default function Page() {
-  return <IsaworldOnline74772ServerReviewPage />;
+  return <CanonicalServerRoute slug="isaworld-online-7-4-7-72" />;
 }

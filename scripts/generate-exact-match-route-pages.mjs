@@ -38,6 +38,22 @@ export default function ${pascalCase(slug)}Page() {
 }
 
 function routeFile(slug) {
+  const page = getExactMatchPageData(slug);
+  if (page?.type === 'server') {
+    return `import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
+
+export const revalidate = 3600;
+
+export function generateMetadata() {
+  return buildCanonicalServerMetadata(${JSON.stringify(slug)});
+}
+
+export default function Page() {
+  return <LegacyServerRoute slug=${JSON.stringify(slug)} />;
+}
+`;
+  }
+
   return `import ${pascalCase(slug)}Page, { generateMetadata } from './${slug}';
 
 export { generateMetadata };

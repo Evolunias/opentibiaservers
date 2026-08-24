@@ -1,8 +1,11 @@
-import CrowotPage, { generateMetadata } from './crowot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("crowot");
+}
+
 export default function Page() {
-  return <CrowotPage />;
+  return <LegacyServerRoute slug="crowot" />;
 }

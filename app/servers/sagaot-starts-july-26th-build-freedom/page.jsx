@@ -1,8 +1,11 @@
-import SagaotStartsJuly26thBuildFreedomServerReviewPage, { generateMetadata } from './sagaot-starts-july-26th-build-freedom';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("sagaot-starts-july-26th-build-freedom");
+}
+
 export default function Page() {
-  return <SagaotStartsJuly26thBuildFreedomServerReviewPage />;
+  return <CanonicalServerRoute slug="sagaot-starts-july-26th-build-freedom" />;
 }

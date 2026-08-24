@@ -1,8 +1,11 @@
-import PrestigeImperiaServerReviewPage, { generateMetadata } from './prestige-imperia';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("prestige-imperia");
+}
+
 export default function Page() {
-  return <PrestigeImperiaServerReviewPage />;
+  return <CanonicalServerRoute slug="prestige-imperia" />;
 }

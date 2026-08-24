@@ -1,8 +1,11 @@
-import CronfunPage, { generateMetadata } from './cronfun';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("cronfun");
+}
+
 export default function Page() {
-  return <CronfunPage />;
+  return <LegacyServerRoute slug="cronfun" />;
 }

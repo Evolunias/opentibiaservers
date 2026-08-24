@@ -1,8 +1,11 @@
-import OlderaServerReviewPage, { generateMetadata } from './oldera';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("oldera");
+}
+
 export default function Page() {
-  return <OlderaServerReviewPage />;
+  return <CanonicalServerRoute slug="oldera" />;
 }

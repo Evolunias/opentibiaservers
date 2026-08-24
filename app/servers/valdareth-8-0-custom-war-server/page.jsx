@@ -1,8 +1,11 @@
-import Valdareth80CustomWarServerServerReviewPage, { generateMetadata } from './valdareth-8-0-custom-war-server';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("valdareth-8-0-custom-war-server");
+}
+
 export default function Page() {
-  return <Valdareth80CustomWarServerServerReviewPage />;
+  return <CanonicalServerRoute slug="valdareth-8-0-custom-war-server" />;
 }

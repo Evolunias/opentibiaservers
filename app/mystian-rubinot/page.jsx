@@ -1,8 +1,11 @@
-import MystianRubinotPage, { generateMetadata } from './mystian-rubinot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("mystian-rubinot");
+}
+
 export default function Page() {
-  return <MystianRubinotPage />;
+  return <LegacyServerRoute slug="mystian-rubinot" />;
 }

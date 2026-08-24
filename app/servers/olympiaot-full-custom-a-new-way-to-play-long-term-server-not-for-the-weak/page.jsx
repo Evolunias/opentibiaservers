@@ -1,8 +1,11 @@
-import OlympiaotFullCustomANewWayToPlayLongTermServerNotForTheWeakServerReviewPage, { generateMetadata } from './olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak");
+}
+
 export default function Page() {
-  return <OlympiaotFullCustomANewWayToPlayLongTermServerNotForTheWeakServerReviewPage />;
+  return <CanonicalServerRoute slug="olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak" />;
 }

@@ -1,8 +1,11 @@
-import Ardera80LunarisServerReviewPage, { generateMetadata } from './ardera-8-0-lunaris';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("ardera-8-0-lunaris");
+}
+
 export default function Page() {
-  return <Ardera80LunarisServerReviewPage />;
+  return <CanonicalServerRoute slug="ardera-8-0-lunaris" />;
 }

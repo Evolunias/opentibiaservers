@@ -1,8 +1,11 @@
-import SanctumotPage, { generateMetadata } from './sanctumot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("sanctumot");
+}
+
 export default function Page() {
-  return <SanctumotPage />;
+  return <LegacyServerRoute slug="sanctumot" />;
 }

@@ -1,8 +1,11 @@
-import LightotServerReviewPage, { generateMetadata } from './lightot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("lightot");
+}
+
 export default function Page() {
-  return <LightotServerReviewPage />;
+  return <CanonicalServerRoute slug="lightot" />;
 }

@@ -1,8 +1,11 @@
-import LandoriaOtsServerReviewPage, { generateMetadata } from './landoria-ots';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("landoria-ots");
+}
+
 export default function Page() {
-  return <LandoriaOtsServerReviewPage />;
+  return <CanonicalServerRoute slug="landoria-ots" />;
 }

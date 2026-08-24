@@ -1,8 +1,11 @@
-import BelariaRubinotServerReviewPage, { generateMetadata } from './belaria-rubinot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("belaria-rubinot");
+}
+
 export default function Page() {
-  return <BelariaRubinotServerReviewPage />;
+  return <CanonicalServerRoute slug="belaria-rubinot" />;
 }

@@ -1,8 +1,11 @@
-import GloberaPage, { generateMetadata } from './globera';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("globera");
+}
+
 export default function Page() {
-  return <GloberaPage />;
+  return <LegacyServerRoute slug="globera" />;
 }

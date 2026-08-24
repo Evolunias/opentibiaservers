@@ -1,8 +1,11 @@
-import RelicariaotServerReviewPage, { generateMetadata } from './relicariaot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("relicariaot");
+}
+
 export default function Page() {
-  return <RelicariaotServerReviewPage />;
+  return <CanonicalServerRoute slug="relicariaot" />;
 }

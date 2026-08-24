@@ -1,8 +1,11 @@
-import ResetwarFusionPage, { generateMetadata } from './resetwar-fusion';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("resetwar-fusion");
+}
+
 export default function Page() {
-  return <ResetwarFusionPage />;
+  return <LegacyServerRoute slug="resetwar-fusion" />;
 }

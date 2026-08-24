@@ -1,8 +1,11 @@
-import VeneriaOnlineModernEvoPage, { generateMetadata } from './veneria-online-modern-evo';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("veneria-online-modern-evo");
+}
+
 export default function Page() {
-  return <VeneriaOnlineModernEvoPage />;
+  return <LegacyServerRoute slug="veneria-online-modern-evo" />;
 }

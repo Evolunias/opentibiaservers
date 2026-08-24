@@ -1,8 +1,11 @@
-import FreeOtPage, { generateMetadata } from './free-ot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("free-ot");
+}
+
 export default function Page() {
-  return <FreeOtPage />;
+  return <LegacyServerRoute slug="free-ot" />;
 }

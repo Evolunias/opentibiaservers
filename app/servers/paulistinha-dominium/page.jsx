@@ -1,8 +1,11 @@
-import PaulistinhaDominiumServerReviewPage, { generateMetadata } from './paulistinha-dominium';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("paulistinha-dominium");
+}
+
 export default function Page() {
-  return <PaulistinhaDominiumServerReviewPage />;
+  return <CanonicalServerRoute slug="paulistinha-dominium" />;
 }

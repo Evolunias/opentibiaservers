@@ -1,8 +1,11 @@
-import OtpieceComServerReviewPage, { generateMetadata } from './otpiece-com';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("otpiece-com");
+}
+
 export default function Page() {
-  return <OtpieceComServerReviewPage />;
+  return <CanonicalServerRoute slug="otpiece-com" />;
 }

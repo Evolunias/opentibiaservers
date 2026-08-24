@@ -1,8 +1,11 @@
-import RezoriaEuServerReviewPage, { generateMetadata } from './rezoria-eu';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("rezoria-eu");
+}
+
 export default function Page() {
-  return <RezoriaEuServerReviewPage />;
+  return <CanonicalServerRoute slug="rezoria-eu" />;
 }

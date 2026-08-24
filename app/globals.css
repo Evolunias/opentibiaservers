@@ -654,6 +654,18 @@ body.ots-directory-light .server-tag {
   object-fit: contain;
 }
 
+.server-logo__generated {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.server-logo--fallback {
+  border-color: rgba(15, 23, 42, 0.18);
+  padding: 0;
+  background: #0f172a;
+}
+
 .server-logo--row {
   width: 132px;
   height: 92px;
@@ -670,6 +682,16 @@ body.ots-directory-light .server-tag {
   border-radius: 10px 10px 0 0;
   padding: 10px;
   background: #f8fafc;
+}
+
+.server-logo--profile {
+  width: 180px;
+  height: 120px;
+  padding: 8px;
+}
+
+.server-logo--profile.server-logo--fallback {
+  padding: 0;
 }
 
 .server-directory-list__items {
@@ -691,8 +713,10 @@ body.ots-directory-light .server-tag {
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
-  cursor: pointer;
+  cursor: default;
 }
+
+.directory-row.has-excerpt { cursor: pointer; }
 
 .directory-row:hover {
   border-color: #b9c5d4;
@@ -722,6 +746,16 @@ body.ots-directory-light .server-tag {
   color: #1d4ed8 !important;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.directory-row__excerpt-hint {
+  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
+  color: #0f766e;
+  background: #ecfdf5;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
 .directory-row__status {
@@ -832,19 +866,39 @@ body.ots-directory-light .server-tag {
 }
 
 .directory-row__excerpt p {
-  border-top: 1px solid #e2e8f0;
-  padding-top: 1rem;
+  margin-top: 0.45rem;
   color: #475569;
-  font-size: 0.86rem;
-  line-height: 1.65;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
-.directory-row__excerpt a {
-  display: inline-flex;
+.directory-row__excerpt > div {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+}
+
+.directory-row__excerpt-label {
+  color: #64748b;
+  font-size: 0.67rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.directory-row__excerpt-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
   margin-top: 0.7rem;
+}
+
+.directory-row__excerpt-sources a {
+  display: inline-flex;
   color: #0f766e !important;
   font-size: 0.78rem;
   font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* Keep the original featured Evomanias row distinct from ordinary directory cards. */

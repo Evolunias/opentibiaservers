@@ -1,8 +1,11 @@
-import Miracle74ServerReviewPage, { generateMetadata } from './miracle-7-4';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("miracle-7-4");
+}
+
 export default function Page() {
-  return <Miracle74ServerReviewPage />;
+  return <CanonicalServerRoute slug="miracle-7-4" />;
 }

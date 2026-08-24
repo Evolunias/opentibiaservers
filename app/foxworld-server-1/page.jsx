@@ -1,8 +1,11 @@
-import FoxworldServer1Page, { generateMetadata } from './foxworld-server-1';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("foxworld-server-1");
+}
+
 export default function Page() {
-  return <FoxworldServer1Page />;
+  return <LegacyServerRoute slug="foxworld-server-1" />;
 }

@@ -1,8 +1,11 @@
-import VbestPvpWowServerReviewPage, { generateMetadata } from './vbest-pvp-wow';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("vbest-pvp-wow");
+}
+
 export default function Page() {
-  return <VbestPvpWowServerReviewPage />;
+  return <CanonicalServerRoute slug="vbest-pvp-wow" />;
 }

@@ -1,8 +1,11 @@
-import ZenoTideBothClientsServerReviewPage, { generateMetadata } from './zeno-tide-both-clients';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("zeno-tide-both-clients");
+}
+
 export default function Page() {
-  return <ZenoTideBothClientsServerReviewPage />;
+  return <CanonicalServerRoute slug="zeno-tide-both-clients" />;
 }

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "policy": "Corrections require a primary server page or a current indexed listing that ties the old host to the replacement host. These overrides repair malformed or obsolete directory addresses without inventing a brand.",
+  "hosts": {
+    "game.archlightonline-aba...": {
+      "host": "game.archlightonline-abaldar.com",
+      "name": "Archlight Abaldar",
+      "slug": "archlight-abaldar",
+      "evidence_url": "https://abaldar.archlightonline.com/login",
+      "evidence_type": "official_website"
+    },
+    "game.archlightonline-leg...": {
+      "host": "game.archlightonline-legacy.com",
+      "name": "Legacy Archlight",
+      "slug": "legacy-archlight",
+      "evidence_url": "https://custom.otservlist.org/ots/1658361",
+      "evidence_type": "current_indexed_server_record"
+    },
+    "game.archlightonline-leg": {
+      "host": "game.archlightonline-legacy.com",
+      "name": "Legacy Archlight",
+      "slug": "legacy-archlight",
+      "evidence_url": "https://custom.otservlist.org/ots/1658361",
+      "evidence_type": "current_indexed_server_record"
+    },
+    "toproste.pl": {
+      "host": "armia.toproste.pl",
+      "name": "Armia Toproste",
+      "slug": "armia-toproste",
+      "evidence_url": "https://armia.toproste.pl/",
+      "evidence_type": "official_website"
+    },
+    "armia.toproste.pl": {
+      "host": "armia.toproste.pl",
+      "name": "Armia Toproste",
+      "slug": "armia-toproste",
+      "evidence_url": "https://armia.toproste.pl/",
+      "evidence_type": "official_website"
+    }
+  }
+}

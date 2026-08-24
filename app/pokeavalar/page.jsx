@@ -1,8 +1,11 @@
-import PokeavalarPage, { generateMetadata } from './pokeavalar';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("pokeavalar");
+}
+
 export default function Page() {
-  return <PokeavalarPage />;
+  return <LegacyServerRoute slug="pokeavalar" />;
 }

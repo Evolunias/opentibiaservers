@@ -1,8 +1,11 @@
-import ValeriaotPage, { generateMetadata } from './valeriaot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("valeriaot");
+}
+
 export default function Page() {
-  return <ValeriaotPage />;
+  return <LegacyServerRoute slug="valeriaot" />;
 }

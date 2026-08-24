@@ -1,8 +1,11 @@
-import ForgeOfElementsMultiWorld87ServerReviewPage, { generateMetadata } from './forge-of-elements-multi-world-8-7';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("forge-of-elements-multi-world-8-7");
+}
+
 export default function Page() {
-  return <ForgeOfElementsMultiWorld87ServerReviewPage />;
+  return <CanonicalServerRoute slug="forge-of-elements-multi-world-8-7" />;
 }

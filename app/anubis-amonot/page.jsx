@@ -1,8 +1,11 @@
-import AnubisAmonotPage, { generateMetadata } from './anubis-amonot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("anubis-amonot");
+}
+
 export default function Page() {
-  return <AnubisAmonotPage />;
+  return <LegacyServerRoute slug="anubis-amonot" />;
 }

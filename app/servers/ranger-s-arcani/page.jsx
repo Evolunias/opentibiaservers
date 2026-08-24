@@ -1,8 +1,11 @@
-import RangerSArcaniServerReviewPage, { generateMetadata } from './ranger-s-arcani';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("ranger-s-arcani");
+}
+
 export default function Page() {
-  return <RangerSArcaniServerReviewPage />;
+  return <CanonicalServerRoute slug="ranger-s-arcani" />;
 }

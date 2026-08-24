@@ -1,8 +1,11 @@
-import RexiaPage, { generateMetadata } from './rexia';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("rexia");
+}
+
 export default function Page() {
-  return <RexiaPage />;
+  return <LegacyServerRoute slug="rexia" />;
 }

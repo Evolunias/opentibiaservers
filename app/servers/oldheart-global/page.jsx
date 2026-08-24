@@ -1,8 +1,11 @@
-import OldheartGlobalServerReviewPage, { generateMetadata } from './oldheart-global';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("oldheart-global");
+}
+
 export default function Page() {
-  return <OldheartGlobalServerReviewPage />;
+  return <CanonicalServerRoute slug="oldheart-global" />;
 }

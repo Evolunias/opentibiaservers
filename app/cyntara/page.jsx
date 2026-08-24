@@ -1,8 +1,11 @@
-import CyntaraPage, { generateMetadata } from './cyntara';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("cyntara");
+}
+
 export default function Page() {
-  return <CyntaraPage />;
+  return <LegacyServerRoute slug="cyntara" />;
 }

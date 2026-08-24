@@ -1,8 +1,11 @@
-import PbotwarsServerReviewPage, { generateMetadata } from './pbotwars';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("pbotwars");
+}
+
 export default function Page() {
-  return <PbotwarsServerReviewPage />;
+  return <CanonicalServerRoute slug="pbotwars" />;
 }

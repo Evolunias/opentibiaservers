@@ -1,8 +1,11 @@
-import Realesta74ServerReviewPage, { generateMetadata } from './realesta-7-4';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("realesta-7-4");
+}
+
 export default function Page() {
-  return <Realesta74ServerReviewPage />;
+  return <CanonicalServerRoute slug="realesta-7-4" />;
 }

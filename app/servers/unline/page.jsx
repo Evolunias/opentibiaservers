@@ -1,8 +1,11 @@
-import UnlineServerReviewPage, { generateMetadata } from './unline';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("unline");
+}
+
 export default function Page() {
-  return <UnlineServerReviewPage />;
+  return <CanonicalServerRoute slug="unline" />;
 }

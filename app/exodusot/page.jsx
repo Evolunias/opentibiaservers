@@ -1,8 +1,11 @@
-import ExodusotPage, { generateMetadata } from './exodusot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("exodusot");
+}
+
 export default function Page() {
-  return <ExodusotPage />;
+  return <LegacyServerRoute slug="exodusot" />;
 }

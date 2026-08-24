@@ -1,8 +1,11 @@
-import DemoraOnlinePage, { generateMetadata } from './demora-online';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("demora-online");
+}
+
 export default function Page() {
-  return <DemoraOnlinePage />;
+  return <LegacyServerRoute slug="demora-online" />;
 }

@@ -1,8 +1,11 @@
-import FossilEarlyAlphaPage, { generateMetadata } from './fossil-early-alpha';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("fossil-early-alpha");
+}
+
 export default function Page() {
-  return <FossilEarlyAlphaPage />;
+  return <LegacyServerRoute slug="fossil-early-alpha" />;
 }

@@ -1,8 +1,11 @@
-import Mythera74Page, { generateMetadata } from './mythera-7-4';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("mythera-7-4");
+}
+
 export default function Page() {
-  return <Mythera74Page />;
+  return <LegacyServerRoute slug="mythera-7-4" />;
 }

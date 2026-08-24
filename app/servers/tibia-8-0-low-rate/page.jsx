@@ -1,8 +1,11 @@
-import Tibia80LowRateServerReviewPage, { generateMetadata } from './tibia-8-0-low-rate';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("tibia-8-0-low-rate");
+}
+
 export default function Page() {
-  return <Tibia80LowRateServerReviewPage />;
+  return <CanonicalServerRoute slug="tibia-8-0-low-rate" />;
 }

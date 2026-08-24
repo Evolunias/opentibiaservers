@@ -1,8 +1,11 @@
-import Oblema74ServerPage, { generateMetadata } from './oblema-7-4-server';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("oblema-7-4-server");
+}
+
 export default function Page() {
-  return <Oblema74ServerPage />;
+  return <LegacyServerRoute slug="oblema-7-4-server" />;
 }

@@ -1,8 +1,11 @@
-import AmonotBaiakServerReviewPage, { generateMetadata } from './amonot-baiak';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("amonot-baiak");
+}
+
 export default function Page() {
-  return <AmonotBaiakServerReviewPage />;
+  return <CanonicalServerRoute slug="amonot-baiak" />;
 }

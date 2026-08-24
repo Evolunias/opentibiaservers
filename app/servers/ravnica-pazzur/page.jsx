@@ -1,8 +1,11 @@
-import RavnicaPazzurServerReviewPage, { generateMetadata } from './ravnica-pazzur';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("ravnica-pazzur");
+}
+
 export default function Page() {
-  return <RavnicaPazzurServerReviewPage />;
+  return <CanonicalServerRoute slug="ravnica-pazzur" />;
 }

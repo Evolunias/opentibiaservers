@@ -1,8 +1,11 @@
-import TheBestGlobal860ServerReviewPage, { generateMetadata } from './the-best-global-8-60';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("the-best-global-8-60");
+}
+
 export default function Page() {
-  return <TheBestGlobal860ServerReviewPage />;
+  return <CanonicalServerRoute slug="the-best-global-8-60" />;
 }

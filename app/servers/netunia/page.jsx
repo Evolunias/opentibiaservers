@@ -1,8 +1,11 @@
-import NetuniaServerReviewPage, { generateMetadata } from './netunia';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("netunia");
+}
+
 export default function Page() {
-  return <NetuniaServerReviewPage />;
+  return <CanonicalServerRoute slug="netunia" />;
 }

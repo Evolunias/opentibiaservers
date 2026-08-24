@@ -1,8 +1,11 @@
-import AlmyriaOnlinePage, { generateMetadata } from './almyria-online';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("almyria-online");
+}
+
 export default function Page() {
-  return <AlmyriaOnlinePage />;
+  return <LegacyServerRoute slug="almyria-online" />;
 }

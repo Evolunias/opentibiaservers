@@ -1,8 +1,11 @@
-import NostalriusPage, { generateMetadata } from './nostalrius';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("nostalrius");
+}
+
 export default function Page() {
-  return <NostalriusPage />;
+  return <LegacyServerRoute slug="nostalrius" />;
 }

@@ -1,8 +1,11 @@
-import IkaseraWarLaunch28FebruaryServerReviewPage, { generateMetadata } from './ikasera-war-launch-28-february';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("ikasera-war-launch-28-february");
+}
+
 export default function Page() {
-  return <IkaseraWarLaunch28FebruaryServerReviewPage />;
+  return <CanonicalServerRoute slug="ikasera-war-launch-28-february" />;
 }

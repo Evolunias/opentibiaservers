@@ -1,8 +1,11 @@
-import LongTermPage, { generateMetadata } from './long-term';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("long-term");
+}
+
 export default function Page() {
-  return <LongTermPage />;
+  return <LegacyServerRoute slug="long-term" />;
 }

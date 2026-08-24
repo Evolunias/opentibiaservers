@@ -1,8 +1,11 @@
-import PrimotServerReviewPage, { generateMetadata } from './primot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("primot");
+}
+
 export default function Page() {
-  return <PrimotServerReviewPage />;
+  return <CanonicalServerRoute slug="primot" />;
 }

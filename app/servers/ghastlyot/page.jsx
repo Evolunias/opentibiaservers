@@ -1,8 +1,11 @@
-import GhastlyotServerReviewPage, { generateMetadata } from './ghastlyot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("ghastlyot");
+}
+
 export default function Page() {
-  return <GhastlyotServerReviewPage />;
+  return <CanonicalServerRoute slug="ghastlyot" />;
 }

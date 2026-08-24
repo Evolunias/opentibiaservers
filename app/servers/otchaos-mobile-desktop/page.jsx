@@ -1,8 +1,11 @@
-import OtchaosMobileDesktopServerReviewPage, { generateMetadata } from './otchaos-mobile-desktop';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("otchaos-mobile-desktop");
+}
+
 export default function Page() {
-  return <OtchaosMobileDesktopServerReviewPage />;
+  return <CanonicalServerRoute slug="otchaos-mobile-desktop" />;
 }

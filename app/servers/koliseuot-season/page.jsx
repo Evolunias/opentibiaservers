@@ -1,8 +1,11 @@
-import KoliseuotSeasonServerReviewPage, { generateMetadata } from './koliseuot-season';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("koliseuot-season");
+}
+
 export default function Page() {
-  return <KoliseuotSeasonServerReviewPage />;
+  return <CanonicalServerRoute slug="koliseuot-season" />;
 }

@@ -1,8 +1,11 @@
-import DragoraOnline792FreshStartMay15ServerReviewPage, { generateMetadata } from './dragora-online-7-92-fresh-start-may-15';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("dragora-online-7-92-fresh-start-may-15");
+}
+
 export default function Page() {
-  return <DragoraOnline792FreshStartMay15ServerReviewPage />;
+  return <CanonicalServerRoute slug="dragora-online-7-92-fresh-start-may-15" />;
 }

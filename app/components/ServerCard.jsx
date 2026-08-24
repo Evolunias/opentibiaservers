@@ -47,14 +47,10 @@ export default function ServerCard({ server }) {
           </span>
         </div>
 
-        <div className="grid grid-cols-3 gap-2 mb-3 text-xs">
+        <div className="grid grid-cols-2 gap-2 mb-3 text-xs">
           <div className="server-metric">
             <p className="text-slate-400 uppercase font-semibold mb-1">Highest</p>
             <p className="text-lg font-bold text-white">{number(server.players_peak || server.players_online || 0)}</p>
-          </div>
-          <div className="server-metric">
-            <p className="text-slate-400 uppercase font-semibold mb-1">Max</p>
-            <p className="text-lg font-bold text-white">{number(server.max_players)}</p>
           </div>
           <div className="server-metric">
             <p className="text-slate-400 uppercase font-semibold mb-1">Recorded</p>
@@ -77,15 +73,11 @@ export default function ServerCard({ server }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 mb-3 text-xs">
+        <div className="grid grid-cols-1 gap-2 mb-3 text-xs">
           <div className="server-metric">
             <p className="text-slate-400 uppercase font-semibold mb-1">Rating</p>
             <p className="font-bold text-white">{stars(server.average_rating)} {Number(server.average_rating || 0).toFixed(1)} / 5</p>
             <p className="text-xs text-slate-400">{number(server.review_count)} reviews</p>
-          </div>
-          <div className="server-metric">
-            <p className="text-slate-400 uppercase font-semibold mb-1">Monitor</p>
-            <p className="font-bold text-white">{server.last_monitor_status || 'unknown'}</p>
           </div>
         </div>
 

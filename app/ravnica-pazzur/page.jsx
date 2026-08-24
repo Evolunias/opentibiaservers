@@ -1,8 +1,11 @@
-import RavnicaPazzurPage, { generateMetadata } from './ravnica-pazzur';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("ravnica-pazzur");
+}
+
 export default function Page() {
-  return <RavnicaPazzurPage />;
+  return <LegacyServerRoute slug="ravnica-pazzur" />;
 }

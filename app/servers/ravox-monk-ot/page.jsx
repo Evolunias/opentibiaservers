@@ -1,8 +1,11 @@
-import RavoxMonkOtServerReviewPage, { generateMetadata } from './ravox-monk-ot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("ravox-monk-ot");
+}
+
 export default function Page() {
-  return <RavoxMonkOtServerReviewPage />;
+  return <CanonicalServerRoute slug="ravox-monk-ot" />;
 }

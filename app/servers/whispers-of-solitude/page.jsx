@@ -1,8 +1,11 @@
-import WhispersOfSolitudeServerReviewPage, { generateMetadata } from './whispers-of-solitude';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("whispers-of-solitude");
+}
+
 export default function Page() {
-  return <WhispersOfSolitudeServerReviewPage />;
+  return <CanonicalServerRoute slug="whispers-of-solitude" />;
 }

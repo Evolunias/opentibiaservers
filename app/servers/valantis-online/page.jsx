@@ -1,8 +1,11 @@
-import ValantisOnlineServerReviewPage, { generateMetadata } from './valantis-online';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("valantis-online");
+}
+
 export default function Page() {
-  return <ValantisOnlineServerReviewPage />;
+  return <CanonicalServerRoute slug="valantis-online" />;
 }

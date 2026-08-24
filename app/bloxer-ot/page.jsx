@@ -1,8 +1,11 @@
-import BloxerOtPage, { generateMetadata } from './bloxer-ot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("bloxer-ot");
+}
+
 export default function Page() {
-  return <BloxerOtPage />;
+  return <LegacyServerRoute slug="bloxer-ot" />;
 }

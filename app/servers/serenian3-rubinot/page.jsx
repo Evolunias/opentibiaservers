@@ -1,8 +1,11 @@
-import Serenian3RubinotServerReviewPage, { generateMetadata } from './serenian3-rubinot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("serenian3-rubinot");
+}
+
 export default function Page() {
-  return <Serenian3RubinotServerReviewPage />;
+  return <CanonicalServerRoute slug="serenian3-rubinot" />;
 }

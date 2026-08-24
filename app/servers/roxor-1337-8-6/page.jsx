@@ -1,8 +1,11 @@
-import Roxor133786ServerReviewPage, { generateMetadata } from './roxor-1337-8-6';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("roxor-1337-8-6");
+}
+
 export default function Page() {
-  return <Roxor133786ServerReviewPage />;
+  return <CanonicalServerRoute slug="roxor-1337-8-6" />;
 }

@@ -1,8 +1,11 @@
-import BanicjaPage, { generateMetadata } from './banicja';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("banicja");
+}
+
 export default function Page() {
-  return <BanicjaPage />;
+  return <LegacyServerRoute slug="banicja" />;
 }

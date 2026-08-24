@@ -1,8 +1,11 @@
-import OtMobileResetsServerReviewPage, { generateMetadata } from './ot-mobile-resets';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("ot-mobile-resets");
+}
+
 export default function Page() {
-  return <OtMobileResetsServerReviewPage />;
+  return <CanonicalServerRoute slug="ot-mobile-resets" />;
 }

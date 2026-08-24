@@ -1,8 +1,11 @@
-import BaiakGoServerReviewPage, { generateMetadata } from './baiak-go';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("baiak-go");
+}
+
 export default function Page() {
-  return <BaiakGoServerReviewPage />;
+  return <CanonicalServerRoute slug="baiak-go" />;
 }

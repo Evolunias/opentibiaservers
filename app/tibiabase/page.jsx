@@ -1,8 +1,11 @@
-import TibiabasePage, { generateMetadata } from './tibiabase';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("tibiabase");
+}
+
 export default function Page() {
-  return <TibiabasePage />;
+  return <LegacyServerRoute slug="tibiabase" />;
 }

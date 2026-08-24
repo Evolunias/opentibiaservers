@@ -1,8 +1,11 @@
-import VenoriaOnlinePage, { generateMetadata } from './venoria-online';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("venoria-online");
+}
+
 export default function Page() {
-  return <VenoriaOnlinePage />;
+  return <LegacyServerRoute slug="venoria-online" />;
 }

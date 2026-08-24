@@ -1,8 +1,11 @@
-import NtoStarNewNarutibiaPage, { generateMetadata } from './nto-star-new-narutibia';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("nto-star-new-narutibia");
+}
+
 export default function Page() {
-  return <NtoStarNewNarutibiaPage />;
+  return <LegacyServerRoute slug="nto-star-new-narutibia" />;
 }

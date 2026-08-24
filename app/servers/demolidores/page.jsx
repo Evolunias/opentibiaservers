@@ -1,8 +1,11 @@
-import DemolidoresServerReviewPage, { generateMetadata } from './demolidores';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("demolidores");
+}
+
 export default function Page() {
-  return <DemolidoresServerReviewPage />;
+  return <CanonicalServerRoute slug="demolidores" />;
 }

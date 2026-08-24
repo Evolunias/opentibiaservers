@@ -1,8 +1,11 @@
-import OldschoolWodboIsBack03102025NoPay2winDragonBallServerReviewPage, { generateMetadata } from './oldschool-wodbo-is-back-03-10-2025-no-pay2win-dragon-ball';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("oldschool-wodbo-is-back-03-10-2025-no-pay2win-dragon-ball");
+}
+
 export default function Page() {
-  return <OldschoolWodboIsBack03102025NoPay2winDragonBallServerReviewPage />;
+  return <CanonicalServerRoute slug="oldschool-wodbo-is-back-03-10-2025-no-pay2win-dragon-ball" />;
 }

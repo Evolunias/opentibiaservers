@@ -1,8 +1,11 @@
-import ZathrothPage, { generateMetadata } from './zathroth';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("zathroth");
+}
+
 export default function Page() {
-  return <ZathrothPage />;
+  return <LegacyServerRoute slug="zathroth" />;
 }

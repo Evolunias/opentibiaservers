@@ -1,8 +1,11 @@
-import ArcanthoriaPage, { generateMetadata } from './arcanthoria';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("arcanthoria");
+}
+
 export default function Page() {
-  return <ArcanthoriaPage />;
+  return <LegacyServerRoute slug="arcanthoria" />;
 }

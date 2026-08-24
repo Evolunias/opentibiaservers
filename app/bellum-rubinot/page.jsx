@@ -1,8 +1,11 @@
-import BellumRubinotPage, { generateMetadata } from './bellum-rubinot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("bellum-rubinot");
+}
+
 export default function Page() {
-  return <BellumRubinotPage />;
+  return <LegacyServerRoute slug="bellum-rubinot" />;
 }

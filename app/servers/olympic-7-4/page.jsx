@@ -1,8 +1,11 @@
-import Olympic74ServerReviewPage, { generateMetadata } from './olympic-7-4';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("olympic-7-4");
+}
+
 export default function Page() {
-  return <Olympic74ServerReviewPage />;
+  return <CanonicalServerRoute slug="olympic-7-4" />;
 }

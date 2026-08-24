@@ -1,8 +1,11 @@
-import ChilleraServerReviewPage, { generateMetadata } from './chillera';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("chillera");
+}
+
 export default function Page() {
-  return <ChilleraServerReviewPage />;
+  return <CanonicalServerRoute slug="chillera" />;
 }

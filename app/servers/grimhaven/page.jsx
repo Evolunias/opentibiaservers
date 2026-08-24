@@ -1,8 +1,11 @@
-import GrimhavenServerReviewPage, { generateMetadata } from './grimhaven';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("grimhaven");
+}
+
 export default function Page() {
-  return <GrimhavenServerReviewPage />;
+  return <CanonicalServerRoute slug="grimhaven" />;
 }

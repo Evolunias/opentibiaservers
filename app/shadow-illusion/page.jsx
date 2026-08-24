@@ -1,8 +1,11 @@
-import ShadowIllusionPage, { generateMetadata } from './shadow-illusion';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("shadow-illusion");
+}
+
 export default function Page() {
-  return <ShadowIllusionPage />;
+  return <LegacyServerRoute slug="shadow-illusion" />;
 }

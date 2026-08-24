@@ -1,8 +1,11 @@
-import TheNexusWorldANewEraPage, { generateMetadata } from './the-nexus-world-a-new-era';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("the-nexus-world-a-new-era");
+}
+
 export default function Page() {
-  return <TheNexusWorldANewEraPage />;
+  return <LegacyServerRoute slug="the-nexus-world-a-new-era" />;
 }

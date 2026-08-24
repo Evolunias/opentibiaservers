@@ -1,8 +1,11 @@
-import RookgaardTalesServerReviewPage, { generateMetadata } from './rookgaard-tales';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("rookgaard-tales");
+}
+
 export default function Page() {
-  return <RookgaardTalesServerReviewPage />;
+  return <CanonicalServerRoute slug="rookgaard-tales" />;
 }

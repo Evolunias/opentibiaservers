@@ -1,8 +1,11 @@
-import MysteriaServerReviewPage, { generateMetadata } from './mysteria';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("mysteria");
+}
+
 export default function Page() {
-  return <MysteriaServerReviewPage />;
+  return <CanonicalServerRoute slug="mysteria" />;
 }

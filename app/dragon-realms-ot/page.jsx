@@ -1,8 +1,11 @@
-import DragonRealmsOtPage, { generateMetadata } from './dragon-realms-ot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("dragon-realms-ot");
+}
+
 export default function Page() {
-  return <DragonRealmsOtPage />;
+  return <LegacyServerRoute slug="dragon-realms-ot" />;
 }

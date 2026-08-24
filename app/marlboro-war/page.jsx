@@ -1,8 +1,11 @@
-import MarlboroWarPage, { generateMetadata } from './marlboro-war';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("marlboro-war");
+}
+
 export default function Page() {
-  return <MarlboroWarPage />;
+  return <LegacyServerRoute slug="marlboro-war" />;
 }

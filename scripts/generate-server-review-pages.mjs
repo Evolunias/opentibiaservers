@@ -38,13 +38,16 @@ export default function ${pascalCase(page.slug)}ServerReviewPage() {
 }
 
 function routeFile(page) {
-  return `import ${pascalCase(page.slug)}ServerReviewPage, { generateMetadata } from './${page.slug}';
+  return `import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata(${JSON.stringify(page.slug)});
+}
+
 export default function Page() {
-  return <${pascalCase(page.slug)}ServerReviewPage />;
+  return <CanonicalServerRoute slug=${JSON.stringify(page.slug)} />;
 }
 `;
 }

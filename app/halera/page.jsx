@@ -1,8 +1,11 @@
-import HaleraPage, { generateMetadata } from './halera';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("halera");
+}
+
 export default function Page() {
-  return <HaleraPage />;
+  return <LegacyServerRoute slug="halera" />;
 }

@@ -1,8 +1,11 @@
-import IglaotsOffseasonServerReviewPage, { generateMetadata } from './iglaots-offseason';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("iglaots-offseason");
+}
+
 export default function Page() {
-  return <IglaotsOffseasonServerReviewPage />;
+  return <CanonicalServerRoute slug="iglaots-offseason" />;
 }

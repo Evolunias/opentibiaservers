@@ -1,8 +1,11 @@
-import TibiascapeServerReviewPage, { generateMetadata } from './tibiascape';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("tibiascape");
+}
+
 export default function Page() {
-  return <TibiascapeServerReviewPage />;
+  return <CanonicalServerRoute slug="tibiascape" />;
 }

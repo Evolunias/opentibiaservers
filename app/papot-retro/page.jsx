@@ -1,8 +1,11 @@
-import PapotRetroPage, { generateMetadata } from './papot-retro';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("papot-retro");
+}
+
 export default function Page() {
-  return <PapotRetroPage />;
+  return <LegacyServerRoute slug="papot-retro" />;
 }

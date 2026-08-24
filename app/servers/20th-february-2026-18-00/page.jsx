@@ -1,8 +1,11 @@
-import Server20thFebruary20261800ServerReviewPage, { generateMetadata } from './20th-february-2026-18-00';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("20th-february-2026-18-00");
+}
+
 export default function Page() {
-  return <Server20thFebruary20261800ServerReviewPage />;
+  return <CanonicalServerRoute slug="20th-february-2026-18-00" />;
 }

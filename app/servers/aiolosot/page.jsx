@@ -1,8 +1,11 @@
-import AiolosotServerReviewPage, { generateMetadata } from './aiolosot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("aiolosot");
+}
+
 export default function Page() {
-  return <AiolosotServerReviewPage />;
+  return <CanonicalServerRoute slug="aiolosot" />;
 }

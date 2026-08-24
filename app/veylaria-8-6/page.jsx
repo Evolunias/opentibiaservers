@@ -1,8 +1,11 @@
-import Veylaria86Page, { generateMetadata } from './veylaria-8-6';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("veylaria-8-6");
+}
+
 export default function Page() {
-  return <Veylaria86Page />;
+  return <LegacyServerRoute slug="veylaria-8-6" />;
 }

@@ -1,8 +1,11 @@
-import OriginalLegendOfBleachPage, { generateMetadata } from './original-legend-of-bleach';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("original-legend-of-bleach");
+}
+
 export default function Page() {
-  return <OriginalLegendOfBleachPage />;
+  return <LegacyServerRoute slug="original-legend-of-bleach" />;
 }

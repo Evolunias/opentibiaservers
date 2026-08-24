@@ -1,8 +1,11 @@
-import MelhorotServerReviewPage, { generateMetadata } from './melhorot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("melhorot");
+}
+
 export default function Page() {
-  return <MelhorotServerReviewPage />;
+  return <CanonicalServerRoute slug="melhorot" />;
 }

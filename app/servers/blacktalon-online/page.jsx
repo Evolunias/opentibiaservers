@@ -1,8 +1,11 @@
-import BlacktalonOnlineServerReviewPage, { generateMetadata } from './blacktalon-online';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("blacktalon-online");
+}
+
 export default function Page() {
-  return <BlacktalonOnlineServerReviewPage />;
+  return <CanonicalServerRoute slug="blacktalon-online" />;
 }

@@ -1,8 +1,11 @@
-import MithycalGlobalServerReviewPage, { generateMetadata } from './mithycal-global';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("mithycal-global");
+}
+
 export default function Page() {
-  return <MithycalGlobalServerReviewPage />;
+  return <CanonicalServerRoute slug="mithycal-global" />;
 }

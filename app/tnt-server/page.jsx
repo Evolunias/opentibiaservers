@@ -1,8 +1,11 @@
-import TntServerPage, { generateMetadata } from './tnt-server';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("tnt-server");
+}
+
 export default function Page() {
-  return <TntServerPage />;
+  return <LegacyServerRoute slug="tnt-server" />;
 }

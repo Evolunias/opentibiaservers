@@ -1,0 +1,637 @@
+{
+  "version": 1,
+  "instructions": "Place downloaded files inside data/server-logo-downloads or public/images/server-logos, record primary-source provenance here, then run the ingestion script in dry-run mode before using --write.",
+  "candidates": [
+    {
+      "slug": "aqueleot",
+      "downloaded_path": "data/server-logo-downloads/aqueleot.png",
+      "alt": "Aqueleot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://aqueleot.com/",
+      "image_source_url": "https://aqueleot.com/img/logo_original.png",
+      "domains": [
+        "aqueleot.com"
+      ],
+      "aliases": [
+        "Aqueleot",
+        "aquele-ot",
+        "Aquele OT"
+      ]
+    },
+    {
+      "slug": "baiak-ilusion",
+      "downloaded_path": "public/images/server-logos/baiak-ilusion.jpg",
+      "alt": "Baiak Ilusion logo",
+      "kind": "logo_banner",
+      "source_type": "user_supplied",
+      "source_reference": "BAIAK ILUSION BR.jpg",
+      "aliases": [
+        "baiak-ilusion-br"
+      ]
+    },
+    {
+      "slug": "blackfun",
+      "downloaded_path": "data/server-logo-downloads/blackfun.png",
+      "alt": "Blackfun official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://blackfun.net/",
+      "image_source_url": "https://blackfun.net/images/gallery/8.png",
+      "domains": [
+        "blackfun.net"
+      ],
+      "aliases": [
+        "Blackfun",
+        "blackfun"
+      ]
+    },
+    {
+      "slug": "casteleia",
+      "downloaded_path": "data/server-logo-downloads/casteleia.jpg",
+      "alt": "Casteleia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://casteleia.eu/",
+      "image_source_url": "https://casteleia.eu/layouts/tibiacom/images/global/header/background-artwork.jpg",
+      "domains": [
+        "casteleia.eu"
+      ],
+      "aliases": [
+        "Casteleia"
+      ]
+    },
+    {
+      "slug": "chillera",
+      "downloaded_path": "data/server-logo-downloads/chillera.jpg",
+      "alt": "Chillera official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://chillera.net/",
+      "image_source_url": "https://chillera.net/og-image.jpg",
+      "domains": [
+        "chillera.net"
+      ],
+      "aliases": [
+        "chillera",
+        "CHILLERA"
+      ]
+    },
+    {
+      "slug": "coxaot",
+      "downloaded_path": "data/server-logo-downloads/coxaot.jpg",
+      "alt": "Coxaot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://coxaot.com/",
+      "image_source_url": "https://coxaot.com/assets/img/arte-global.jpg",
+      "domains": [
+        "coxaot.com"
+      ],
+      "aliases": [
+        "Coxaot"
+      ]
+    },
+    {
+      "slug": "demolidores",
+      "downloaded_path": "public/images/server-logos/demolidores.png",
+      "alt": "Demolidores logo",
+      "kind": "logo",
+      "source_type": "user_supplied",
+      "source_reference": "Demolidores.png",
+      "aliases": []
+    },
+    {
+      "slug": "eramedieval",
+      "downloaded_path": "data/server-logo-downloads/eramedieval.png",
+      "alt": "Eramedieval official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://eramedieval.online/",
+      "image_source_url": "https://eramedieval.online/assets/img/logo.png",
+      "domains": [
+        "eramedieval.online"
+      ],
+      "aliases": [
+        "Eramedieval"
+      ]
+    },
+    {
+      "slug": "ezodus",
+      "downloaded_path": "public/images/server-logos/ezodus.png",
+      "alt": "Ezodus official wordmark",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.ezodus.net/",
+      "domains": [
+        "ezodus.net"
+      ],
+      "aliases": [
+        "free-exercis-new-ppl",
+        "20th-february-2026-18-00"
+      ]
+    },
+    {
+      "slug": "ghalkorot",
+      "downloaded_path": "data/server-logo-downloads/ghalkorot.webp",
+      "alt": "Ghalkorot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://ghalkorot.com/",
+      "image_source_url": "https://ghalkorot.com/templates/tibiacom/images/header/og-share.webp",
+      "domains": [
+        "ghalkorot.com"
+      ],
+      "aliases": [
+        "Ghalkorot"
+      ]
+    },
+    {
+      "slug": "gloryidle",
+      "downloaded_path": "data/server-logo-downloads/gloryidle.jpg",
+      "alt": "Gloryidle official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://gloryidle.com/",
+      "image_source_url": "https://gloryidle.com/images/tlofejs.jpg",
+      "domains": [
+        "gloryidle.com"
+      ],
+      "aliases": [
+        "Gloryidle"
+      ]
+    },
+    {
+      "slug": "gunzodus",
+      "downloaded_path": "data/server-logo-downloads/gunzodus.png",
+      "alt": "Gunzodus official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.gunzodus.net/",
+      "image_source_url": "https://www.gunzodus.net/layouts/gunzodus/img/logo_new5.png",
+      "domains": [
+        "gunzodus.net"
+      ],
+      "aliases": [
+        "Gunzodus",
+        "gunzodus"
+      ]
+    },
+    {
+      "slug": "halera",
+      "downloaded_path": "data/server-logo-downloads/halera.png",
+      "alt": "Halera official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://halera.net/landing.php",
+      "image_source_url": "https://halera.net/images/halera-hero.png",
+      "domains": [
+        "halera.net"
+      ],
+      "aliases": [
+        "halera",
+        "Halera"
+      ]
+    },
+    {
+      "slug": "infernian",
+      "downloaded_path": "data/server-logo-downloads/infernian.jpg",
+      "alt": "Infernian official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://infernian.com/",
+      "image_source_url": "https://infernian.com/theme/hero.jpg",
+      "domains": [
+        "infernian.com"
+      ],
+      "aliases": [
+        "Infernian",
+        "infernian"
+      ]
+    },
+    {
+      "slug": "ixodus",
+      "downloaded_path": "data/server-logo-downloads/ixodus.png",
+      "alt": "Ixodus official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.ixodus.net/",
+      "image_source_url": "https://www.ixodus.net/layouts/gunzodus/img/logo_new4.png",
+      "domains": [
+        "ixodus.net"
+      ],
+      "aliases": [
+        "Ixodus",
+        "ixodus"
+      ]
+    },
+    {
+      "slug": "koliseuot",
+      "downloaded_path": "public/images/server-logos/koliseuot.png",
+      "alt": "KoliseuOT logo",
+      "kind": "logo",
+      "source_type": "user_supplied",
+      "source_reference": "koliseuot.png",
+      "aliases": [
+        "koliseu-ot"
+      ]
+    },
+    {
+      "slug": "mellorox",
+      "downloaded_path": "data/server-logo-downloads/mellorox.jpg",
+      "alt": "Mellorox official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://mellorox.com/",
+      "image_source_url": "https://mellorox.com/layouts/tibiacom/images/global/header/background-artwork.jpg",
+      "domains": [
+        "mellorox.com"
+      ],
+      "aliases": [
+        "Mellorox"
+      ]
+    },
+    {
+      "slug": "midhem",
+      "downloaded_path": "data/server-logo-downloads/midhem.png",
+      "alt": "Midhem official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://midhem.com/",
+      "image_source_url": "https://midhem.com/img/screenshots/12.png",
+      "domains": [
+        "midhem.com"
+      ],
+      "aliases": [
+        "Midhem",
+        "midhem",
+        "midhem-online",
+        "Midhem Online"
+      ]
+    },
+    {
+      "slug": "mistofdeath",
+      "downloaded_path": "data/server-logo-downloads/mistofdeath.jpg",
+      "alt": "Mistofdeath official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://mistofdeath.com/",
+      "image_source_url": "https://mistofdeath.com/templates/mistlegacy/images/header/background-artwork.jpg",
+      "domains": [
+        "mistofdeath.com"
+      ],
+      "aliases": [
+        "Mistofdeath",
+        "mist-of-death-reset",
+        "Mist of Death Reset"
+      ]
+    },
+    {
+      "slug": "mysteria74",
+      "downloaded_path": "data/server-logo-downloads/mysteria74.png",
+      "alt": "Mysteria74 official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://mysteria74.com/",
+      "image_source_url": "https://mysteria74.com/images/WebsiteBanner.png",
+      "domains": [
+        "mysteria74.com"
+      ],
+      "aliases": [
+        "mysteria",
+        "Mysteria"
+      ]
+    },
+    {
+      "slug": "mythera74",
+      "downloaded_path": "data/server-logo-downloads/mythera74.png",
+      "alt": "Mythera74 official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://mythera74.com/splash",
+      "image_source_url": "https://mythera74.com/og-image.png",
+      "domains": [
+        "mythera74.com"
+      ],
+      "aliases": [
+        "mythera-7-4",
+        "Mythera 7.4"
+      ]
+    },
+    {
+      "slug": "neprenia",
+      "downloaded_path": "data/server-logo-downloads/neprenia.png",
+      "alt": "Neprenia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://neprenia.com/",
+      "image_source_url": "https://neprenia.com/templates/tibiacom/images/header/main_logo_neprenia.png",
+      "domains": [
+        "neprenia.com"
+      ],
+      "aliases": [
+        "Neprenia",
+        "neprenia"
+      ]
+    },
+    {
+      "slug": "newpbot",
+      "downloaded_path": "data/server-logo-downloads/newpbot.png",
+      "alt": "Newpbot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://newpbot.com/",
+      "image_source_url": "https://newpbot.com/layouts/tibiarl/images/themeboxes/capafacebook.png",
+      "domains": [
+        "newpbot.com"
+      ],
+      "aliases": [
+        "Newpbot"
+      ]
+    },
+    {
+      "slug": "noxiousot",
+      "downloaded_path": "data/server-logo-downloads/noxiousot.png",
+      "alt": "NoxiousOT official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.noxiousot.com/",
+      "image_source_url": "https://www.noxiousot.com/site_wide.png",
+      "domains": [
+        "noxiousot.com"
+      ],
+      "aliases": [
+        "NoxiousOT",
+        "noxiousot"
+      ]
+    },
+    {
+      "slug": "ntsw",
+      "downloaded_path": "data/server-logo-downloads/ntsw.jpg",
+      "alt": "Ntsw official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://ntsw.pl/",
+      "image_source_url": "https://ntsw.pl/public/images/og.jpg",
+      "domains": [
+        "ntsw.pl"
+      ],
+      "aliases": [
+        "naruto-the-shinobi-war",
+        "Naruto the Shinobi War"
+      ]
+    },
+    {
+      "slug": "oxygenot",
+      "downloaded_path": "data/server-logo-downloads/oxygenot.png",
+      "alt": "OxygenOT official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://oxygenot.live/",
+      "image_source_url": "https://oxygenot.live/images/global/og-image.png",
+      "domains": [
+        "oxygenot.live"
+      ],
+      "aliases": [
+        "OxygenOT",
+        "oxygenot"
+      ]
+    },
+    {
+      "slug": "pelegot",
+      "downloaded_path": "data/server-logo-downloads/pelegot.jpg",
+      "alt": "Pelegot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://pelegot.online/",
+      "image_source_url": "https://pelegot.online/images/og-cover.jpg",
+      "domains": [
+        "pelegot.online"
+      ],
+      "aliases": [
+        "Pelegot"
+      ]
+    },
+    {
+      "slug": "realesta74",
+      "downloaded_path": "data/server-logo-downloads/realesta74.png",
+      "alt": "Realesta74 official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://realesta74.net/",
+      "image_source_url": "https://realesta74.net/realesta_logo_big.png",
+      "domains": [
+        "realesta74.net"
+      ],
+      "aliases": [
+        "Realesta74",
+        "realesta-7-4",
+        "Realesta 7.4"
+      ]
+    },
+    {
+      "slug": "rearmonia",
+      "downloaded_path": "data/server-logo-downloads/rearmonia.png",
+      "alt": "Rearmonia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://rearmonia.org/",
+      "image_source_url": "https://rearmonia.org/images/og_image.png",
+      "domains": [
+        "rearmonia.org"
+      ],
+      "aliases": [
+        "rearmonia",
+        "ReArmonia"
+      ]
+    },
+    {
+      "slug": "revolt80",
+      "downloaded_path": "data/server-logo-downloads/revolt80.png",
+      "alt": "Revolt80 official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://revolt80.online/",
+      "image_source_url": "https://revolt80.online/images/revolt80-share.png",
+      "domains": [
+        "revolt80.online"
+      ],
+      "aliases": [
+        "Revolt80"
+      ]
+    },
+    {
+      "slug": "rexia",
+      "downloaded_path": "data/server-logo-downloads/rexia.png",
+      "alt": "Rexia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://rexia.pl/",
+      "image_source_url": "https://rexia.pl/images/fbicon.png",
+      "domains": [
+        "rexia.pl"
+      ],
+      "aliases": [
+        "Rexia",
+        "rexia"
+      ]
+    },
+    {
+      "slug": "rivaliaonline",
+      "downloaded_path": "data/server-logo-downloads/rivaliaonline.png",
+      "alt": "Rivaliaonline official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://rivaliaonline.com/landing.php",
+      "image_source_url": "https://rivaliaonline.com/Rivalia%20Branding/rivalia-main-logo.png",
+      "domains": [
+        "rivaliaonline.com"
+      ],
+      "aliases": [
+        "Rivaliaonline",
+        "rivalia-online",
+        "Rivalia Online"
+      ]
+    },
+    {
+      "slug": "rookgaard",
+      "downloaded_path": "data/server-logo-downloads/rookgaard.png",
+      "alt": "Rookgaard official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.rookgaard.pl/",
+      "image_source_url": "https://usa.michal.es/rookgaard/images/bg.png",
+      "domains": [
+        "rookgaard.pl"
+      ],
+      "aliases": [
+        "Rookgaard",
+        "rookgaard"
+      ]
+    },
+    {
+      "slug": "rustya",
+      "downloaded_path": "data/server-logo-downloads/rustya.png",
+      "alt": "Rustya official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://rustya.com/",
+      "image_source_url": "https://rustya.com/assets/images/icon.png",
+      "domains": [
+        "rustya.com"
+      ],
+      "aliases": [
+        "Rustya"
+      ]
+    },
+    {
+      "slug": "shadowovia",
+      "downloaded_path": "data/server-logo-downloads/shadowovia.png",
+      "alt": "Shadowovia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://shadowovia.pl/",
+      "image_source_url": "https://shadowovia.pl//images/Alpha/shadowovia-clienticon.png",
+      "domains": [
+        "shadowovia.pl"
+      ],
+      "aliases": [
+        "Shadowovia"
+      ]
+    },
+    {
+      "slug": "sodb",
+      "downloaded_path": "data/server-logo-downloads/sodb.webp",
+      "alt": "Sodb official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://sodb.pl/",
+      "image_source_url": "https://sodb.pl/skins/global/images/logo.webp",
+      "domains": [
+        "sodb.pl"
+      ],
+      "aliases": [
+        "sodb-online",
+        "SODB Online"
+      ]
+    },
+    {
+      "slug": "theotserver",
+      "downloaded_path": "data/server-logo-downloads/theotserver.jpg",
+      "alt": "Theotserver official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://theotserver.com/",
+      "image_source_url": "https://theotserver.com/assets/brand/og-image.jpg",
+      "domains": [
+        "theotserver.com"
+      ],
+      "aliases": [
+        "Theotserver",
+        "theotserver"
+      ]
+    },
+    {
+      "slug": "tibiahydra",
+      "downloaded_path": "data/server-logo-downloads/tibiahydra.jpg",
+      "alt": "Tibiahydra official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://tibiahydra.com/",
+      "image_source_url": "https://tibiahydra.com/images/og-image.jpg",
+      "domains": [
+        "tibiahydra.com"
+      ],
+      "aliases": [
+        "Tibiahydra"
+      ]
+    },
+    {
+      "slug": "tibiaidle",
+      "downloaded_path": "data/server-logo-downloads/tibiaidle.png",
+      "alt": "Tibiaidle official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://tibiaidle.com/",
+      "image_source_url": "https://tibiaidle.com/images/logofejs.png",
+      "domains": [
+        "tibiaidle.com"
+      ],
+      "aliases": [
+        "Tibiaidle"
+      ]
+    },
+    {
+      "slug": "tibiara",
+      "downloaded_path": "data/server-logo-downloads/tibiara.png",
+      "alt": "Tibiara official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.tibiara.com/",
+      "image_source_url": "https://www.tibiara.com/assets/favicon/icon-64.png",
+      "domains": [
+        "tibiara.com"
+      ],
+      "aliases": [
+        "Tibiara",
+        "tibiara"
+      ]
+    },
+    {
+      "slug": "wolfz",
+      "downloaded_path": "data/server-logo-downloads/wolfz.png",
+      "alt": "Wolfz official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://wolfz.tech/",
+      "image_source_url": "https://wolfz.tech/templates/tibiacom/images/wolfz-og-banner.png",
+      "domains": [
+        "wolfz.tech"
+      ],
+      "aliases": [
+        "Wolfz"
+      ]
+    }
+  ],
+  "generated_at": "2026-08-24T18:05:22.848Z"
+}

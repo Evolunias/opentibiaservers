@@ -1,8 +1,11 @@
-import RivaliaOnlinePage, { generateMetadata } from './rivalia-online';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("rivalia-online");
+}
+
 export default function Page() {
-  return <RivaliaOnlinePage />;
+  return <LegacyServerRoute slug="rivalia-online" />;
 }

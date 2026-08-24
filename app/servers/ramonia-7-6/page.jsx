@@ -1,8 +1,11 @@
-import Ramonia76ServerReviewPage, { generateMetadata } from './ramonia-7-6';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("ramonia-7-6");
+}
+
 export default function Page() {
-  return <Ramonia76ServerReviewPage />;
+  return <CanonicalServerRoute slug="ramonia-7-6" />;
 }

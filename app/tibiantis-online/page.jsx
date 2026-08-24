@@ -1,8 +1,11 @@
-import TibiantisOnlinePage, { generateMetadata } from './tibiantis-online';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("tibiantis-online");
+}
+
 export default function Page() {
-  return <TibiantisOnlinePage />;
+  return <LegacyServerRoute slug="tibiantis-online" />;
 }

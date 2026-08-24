@@ -1,8 +1,11 @@
-import AlzeriaPage, { generateMetadata } from './alzeria';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("alzeria");
+}
+
 export default function Page() {
-  return <AlzeriaPage />;
+  return <LegacyServerRoute slug="alzeria" />;
 }

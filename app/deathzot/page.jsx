@@ -1,8 +1,11 @@
-import DeathzotPage, { generateMetadata } from './deathzot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("deathzot");
+}
+
 export default function Page() {
-  return <DeathzotPage />;
+  return <LegacyServerRoute slug="deathzot" />;
 }

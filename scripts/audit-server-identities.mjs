@@ -3,7 +3,8 @@ import { getServerReviewPages } from '../lib/server-review-pages.js';
 import { collapseCanonicalServers, deriveServerIdentity } from '../lib/server-identity.js';
 
 function pageHost(page = {}) {
-  return page.host || page.ip || (page.facts || []).find((fact) => fact?.label === 'Listed host')?.value || '';
+  const listedHost = (page.facts || []).find((fact) => fact?.label === 'Listed host')?.value || '';
+  return page.host || page.ip || (/^(pending|unknown|n\/?a|-)$/i.test(listedHost) ? '' : listedHost);
 }
 
 const sourceRecords = [

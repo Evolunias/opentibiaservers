@@ -1,8 +1,11 @@
-import BaiakspServerReviewPage, { generateMetadata } from './baiaksp';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("baiaksp");
+}
+
 export default function Page() {
-  return <BaiakspServerReviewPage />;
+  return <CanonicalServerRoute slug="baiaksp" />;
 }

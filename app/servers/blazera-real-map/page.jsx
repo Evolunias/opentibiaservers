@@ -1,8 +1,11 @@
-import BlazeraRealMapServerReviewPage, { generateMetadata } from './blazera-real-map';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("blazera-real-map");
+}
+
 export default function Page() {
-  return <BlazeraRealMapServerReviewPage />;
+  return <CanonicalServerRoute slug="blazera-real-map" />;
 }

@@ -1,8 +1,11 @@
-import Titania74ServerReviewPage, { generateMetadata } from './titania-7-4';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("titania-7-4");
+}
+
 export default function Page() {
-  return <Titania74ServerReviewPage />;
+  return <CanonicalServerRoute slug="titania-7-4" />;
 }

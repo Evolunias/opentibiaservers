@@ -1,8 +1,11 @@
-import ClassickDrakoriaStartsFriday17thPage, { generateMetadata } from './classick-drakoria-starts-friday-17th';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("classick-drakoria-starts-friday-17th");
+}
+
 export default function Page() {
-  return <ClassickDrakoriaStartsFriday17thPage />;
+  return <LegacyServerRoute slug="classick-drakoria-starts-friday-17th" />;
 }

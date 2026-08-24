@@ -1,8 +1,11 @@
-import AegisExordionServerReviewPage, { generateMetadata } from './aegis-exordion';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("aegis-exordion");
+}
+
 export default function Page() {
-  return <AegisExordionServerReviewPage />;
+  return <CanonicalServerRoute slug="aegis-exordion" />;
 }

@@ -1,8 +1,11 @@
-import ChaosRebornPage, { generateMetadata } from './chaos-reborn';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("chaos-reborn");
+}
+
 export default function Page() {
-  return <ChaosRebornPage />;
+  return <LegacyServerRoute slug="chaos-reborn" />;
 }

@@ -1,8 +1,11 @@
-import OsirisHorusbrServerReviewPage, { generateMetadata } from './osiris-horusbr';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("osiris-horusbr");
+}
+
 export default function Page() {
-  return <OsirisHorusbrServerReviewPage />;
+  return <CanonicalServerRoute slug="osiris-horusbr" />;
 }

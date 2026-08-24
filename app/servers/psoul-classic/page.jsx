@@ -1,8 +1,11 @@
-import PsoulClassicServerReviewPage, { generateMetadata } from './psoul-classic';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("psoul-classic");
+}
+
 export default function Page() {
-  return <PsoulClassicServerReviewPage />;
+  return <CanonicalServerRoute slug="psoul-classic" />;
 }

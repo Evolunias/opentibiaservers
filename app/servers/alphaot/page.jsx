@@ -1,8 +1,11 @@
-import AlphaotServerReviewPage, { generateMetadata } from './alphaot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("alphaot");
+}
+
 export default function Page() {
-  return <AlphaotServerReviewPage />;
+  return <CanonicalServerRoute slug="alphaot" />;
 }

@@ -1,8 +1,11 @@
-import SolarianRubinotPage, { generateMetadata } from './solarian-rubinot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("solarian-rubinot");
+}
+
 export default function Page() {
-  return <SolarianRubinotPage />;
+  return <LegacyServerRoute slug="solarian-rubinot" />;
 }

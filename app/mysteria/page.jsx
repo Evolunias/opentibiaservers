@@ -1,8 +1,11 @@
-import MysteriaPage, { generateMetadata } from './mysteria';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("mysteria");
+}
+
 export default function Page() {
-  return <MysteriaPage />;
+  return <LegacyServerRoute slug="mysteria" />;
 }

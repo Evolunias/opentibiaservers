@@ -1,8 +1,11 @@
-import ElderaCalmeraPage, { generateMetadata } from './eldera-calmera';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("eldera-calmera");
+}
+
 export default function Page() {
-  return <ElderaCalmeraPage />;
+  return <LegacyServerRoute slug="eldera-calmera" />;
 }

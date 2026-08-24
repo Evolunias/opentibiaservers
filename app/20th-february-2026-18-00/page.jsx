@@ -1,8 +1,11 @@
-import Exact20thFebruary20261800Page, { generateMetadata } from './20th-february-2026-18-00';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("20th-february-2026-18-00");
+}
+
 export default function Page() {
-  return <Exact20thFebruary20261800Page />;
+  return <LegacyServerRoute slug="20th-february-2026-18-00" />;
 }

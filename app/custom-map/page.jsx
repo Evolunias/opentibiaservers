@@ -1,8 +1,11 @@
-import CustomMapPage, { generateMetadata } from './custom-map';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("custom-map");
+}
+
 export default function Page() {
-  return <CustomMapPage />;
+  return <LegacyServerRoute slug="custom-map" />;
 }

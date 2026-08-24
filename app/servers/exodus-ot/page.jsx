@@ -1,8 +1,11 @@
-import ExodusOtServerReviewPage, { generateMetadata } from './exodus-ot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("exodus-ot");
+}
+
 export default function Page() {
-  return <ExodusOtServerReviewPage />;
+  return <CanonicalServerRoute slug="exodus-ot" />;
 }

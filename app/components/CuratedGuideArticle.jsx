@@ -2,12 +2,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { permanentRedirect } from 'next/navigation';
 import KeywordPageCommunity from '@/app/components/KeywordPageCommunity';
+import ServerLogo from '@/app/components/ServerLogo';
 import TrustedExternalLink from '@/app/components/TrustedExternalLink';
 import { buildServerSlug } from '@/lib/server-paths';
 import { buildCuratedJsonLd } from '@/lib/curated-pages';
 import { fetchDirectoryServers } from '@/lib/directory-data';
 import { buildCuratedCoda, buildDeepDiveSections } from '@/lib/deep-dive-pages';
 import { deriveServerIdentity } from '@/lib/server-identity';
+import { getServerExcerpt, getServerExcerptSources, isGenericServerCopy } from '@/lib/server-excerpts';
 
 const literalKeys = new Set(['href', 'src', 'url', 'path', 'canonicalPath']);
 const displayReplacements = [
@@ -97,13 +99,29 @@ function buildInternalLinks(page) {
 
 export default async function CuratedGuideArticle({ page: sourcePage }) {
   if (sourcePage?.type === 'server') {
-    const listedHost = (sourcePage.facts || []).find((fact) => fact?.label === 'Listed host')?.value;
+    const listedHostValue = (sourcePage.facts || []).find((fact) => fact?.label === 'Listed host')?.value;
+    const listedHost = /^(pending|unknown|n\/?a|-)$/i.test(listedHostValue || '') ? '' : listedHostValue;
     const identity = deriveServerIdentity({ ...sourcePage, host: sourcePage.host || sourcePage.ip || listedHost });
     const canonicalPath = identity.slug ? `/servers/${identity.slug}` : null;
     if (canonicalPath && sourcePage.path !== canonicalPath) permanentRedirect(canonicalPath);
   }
 
   const page = sanitizeDisplayCopy(sourcePage);
+  const isServerProfile = page.type === 'server';
+  const profileExcerpt = isServerProfile ? getServerExcerpt(page) : null;
+  const profileSources = isServerProfile ? getServerExcerptSources(page) : [];
+  const communityExperiences = isServerProfile && Array.isArray(page.community_excerpts)
+    ? page.community_excerpts.filter((post) => post?.author && post?.excerpt).slice(0, 3)
+    : [];
+  const sourceFeatures = isServerProfile && Array.isArray(page.source_features)
+    ? page.source_features.filter((feature) => typeof feature === 'string' && feature.trim()).slice(0, 10)
+    : [];
+  const profileDek = isServerProfile && (isGenericServerCopy(page.dek) || page.dek === profileExcerpt) ? null : page.dek;
+  const profileOverview = isServerProfile && (
+    !page.overview ||
+    isGenericServerCopy(page.overview) ||
+    page.overview === profileExcerpt
+  ) ? null : page.overview;
   const sourceLinks = normalizeSourceLinks(page);
   const cta = page.cta && page.cta.href
     ? page.cta
@@ -112,14 +130,30 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
   const officialAccess = Array.isArray(page.officialAccess)
     ? page.officialAccess.filter((link) => link && link.href && link.label)
     : [];
-  const sections = Array.isArray(page.sections) ? page.sections.filter(Boolean) : [];
-  const faqs = (Array.isArray(page.faqs) ? page.faqs : Array.isArray(page.faq_items) ? page.faq_items : []).filter(Boolean);
-  const glossary = Array.isArray(page.glossary) ? page.glossary.filter(Boolean) : [];
-  const researchNotes = Array.isArray(page.researchNotes) ? page.researchNotes.filter(Boolean) : [];
+  const sections = (Array.isArray(page.sections) ? page.sections : [])
+    .filter(Boolean)
+    .map((section) => ({
+      ...section,
+      body: (Array.isArray(section.body) ? section.body : [])
+        .filter(Boolean)
+        .filter((paragraph) => !isServerProfile || (!isGenericServerCopy(paragraph) && paragraph !== profileExcerpt)),
+    }))
+    .filter((section) => section.body.length);
+  const faqs = (Array.isArray(page.faqs) ? page.faqs : Array.isArray(page.faq_items) ? page.faq_items : [])
+    .filter(Boolean)
+    .filter((faq) => !isServerProfile || (!isGenericServerCopy(faq.answer) && faq.answer !== profileExcerpt));
+  const glossary = isServerProfile ? [] : (Array.isArray(page.glossary) ? page.glossary.filter(Boolean) : []);
+  const researchNotes = (Array.isArray(page.researchNotes) ? page.researchNotes : [])
+    .filter(Boolean)
+    .filter((note) => !isServerProfile || !isGenericServerCopy(note.value));
   const mediaLeads = Array.isArray(page.mediaLeads) ? page.mediaLeads.filter((lead) => lead && lead.href && lead.label) : [];
-  const evergreenAngles = Array.isArray(page.evergreenAngles) ? page.evergreenAngles.filter(Boolean) : [];
+  const evergreenAngles = (Array.isArray(page.evergreenAngles) ? page.evergreenAngles : [])
+    .filter(Boolean)
+    .filter((angle) => !isServerProfile || !isGenericServerCopy(angle));
   const infobox = Array.isArray(page.infobox) ? page.infobox.filter(Boolean) : [];
-  const timeline = Array.isArray(page.timeline) ? page.timeline.filter(Boolean) : [];
+  const timeline = (Array.isArray(page.timeline) ? page.timeline : [])
+    .filter(Boolean)
+    .filter((event) => !isServerProfile || !isGenericServerCopy(`${event.title || ''} ${event.text || ''}`));
   const relatedServerQueries = Array.isArray(page.relatedServerQueries) ? page.relatedServerQueries : [];
 
   const directoryData = await fetchDirectoryServers({
@@ -129,7 +163,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
     onlineOnly: false,
   });
   const jsonLd = buildCuratedJsonLd(page);
-  const deepDiveSections = buildDeepDiveSections(page);
+  const deepDiveSections = isServerProfile ? [] : buildDeepDiveSections(page);
   const curatedCoda = buildCuratedCoda(page);
   const internalLinks = buildInternalLinks(page);
   const wikiDepth = page.wikiDepth || null;
@@ -137,7 +171,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
   const gameplayGuide = Array.isArray(wikiDepth?.gameplayGuide) ? wikiDepth.gameplayGuide.filter(Boolean) : [];
   const wikiSystems = wikiDepth && typeof wikiDepth.systems === 'object' && wikiDepth.systems ? wikiDepth.systems : {};
   const editorialQueue = Array.isArray(wikiDepth?.editorialQueue) ? wikiDepth.editorialQueue.filter(Boolean) : [];
-  const curatedCodaBody = Array.isArray(curatedCoda?.body) ? curatedCoda.body.filter(Boolean) : [];
+  const curatedCodaBody = isServerProfile ? [] : (Array.isArray(curatedCoda?.body) ? curatedCoda.body.filter(Boolean) : []);
   const directoryServers = Array.isArray(directoryData?.servers) ? directoryData.servers.filter(Boolean) : [];
 
   return (
@@ -163,9 +197,11 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
             <h1 className="mb-4 max-w-4xl text-4xl font-bold leading-tight text-black md:text-6xl">
               {page.h1}
             </h1>
-            <p className="max-w-3xl text-lg leading-8 text-black">
-              {page.dek}
-            </p>
+            {profileDek ? (
+              <p className="max-w-3xl text-lg leading-8 text-black">
+                {profileDek}
+              </p>
+            ) : null}
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 href={cta.href}
@@ -183,6 +219,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
           </div>
 
           <aside className="space-y-4">
+            {isServerProfile ? <ServerLogo server={page} size="profile" /> : null}
             {page.heroImage ? (
               <figure className="overflow-hidden border border-black bg-white">
                 <div className="relative aspect-[4/3] w-full">
@@ -222,13 +259,70 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
 
       <section className="mx-auto grid max-w-6xl gap-8 px-6 py-8 lg:grid-cols-[minmax(0,1fr)_300px]">
         <article className="space-y-8">
-          {page.overview ? (
-            <section className="border-b border-gray-200 pb-8">
-              <p className="text-xl leading-9 text-gray-800">{page.overview}</p>
+          {profileExcerpt ? (
+            <section className="rounded-xl border border-emerald-200 bg-emerald-50 p-6 shadow-sm">
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-emerald-800">Source-backed overview</p>
+              <h2 className="text-2xl font-bold text-gray-950">What attributed sources say</h2>
+              <p className="mt-3 text-base leading-8 text-gray-800">{profileExcerpt}</p>
+              {profileSources.length ? (
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {profileSources.map((source) => (
+                    <TrustedExternalLink
+                      key={source.url}
+                      href={source.url}
+                      label={source.label}
+                      className="inline-flex rounded border border-emerald-800 bg-white px-3 py-2 text-sm font-bold text-emerald-900 hover:no-underline"
+                    />
+                  ))}
+                </div>
+              ) : null}
+              {sourceFeatures.length ? (
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {sourceFeatures.map((feature) => (
+                    <span key={feature} className="rounded border border-emerald-200 bg-white px-2 py-1 text-xs font-semibold text-emerald-950">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
             </section>
           ) : null}
 
-          {wikiDepth ? (
+          {communityExperiences.length ? (
+            <section className="border-b border-gray-200 pb-8">
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-black">Attributed discussion</p>
+              <h2 className="mb-2 text-2xl font-bold text-black">What OtLand users posted</h2>
+              <p className="mb-5 text-sm leading-7 text-gray-700">
+                Short excerpts from people other than the thread owner, with direct links back to the original context.
+              </p>
+              <div className="space-y-3">
+                {communityExperiences.map((post, index) => (
+                  <blockquote key={`${post.source_url || post.author}-${index}`} className="rounded border border-gray-200 bg-gray-50 p-4">
+                    <p className="text-sm leading-7 text-gray-900">“{post.excerpt}”</p>
+                    <footer className="mt-3 flex flex-wrap items-center gap-2 text-xs font-semibold text-gray-600">
+                      <span>{post.author}</span>
+                      {post.posted_at_label ? <span>· {post.posted_at_label}</span> : null}
+                      {post.source_url ? (
+                        <TrustedExternalLink
+                          href={post.source_url}
+                          label="View original post"
+                          className="font-bold text-black underline"
+                        />
+                      ) : null}
+                    </footer>
+                  </blockquote>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {profileOverview ? (
+            <section className="border-b border-gray-200 pb-8">
+              <p className="text-xl leading-9 text-gray-800">{profileOverview}</p>
+            </section>
+          ) : null}
+
+          {wikiDepth && !isServerProfile ? (
             <section className="border-b border-gray-200 pb-8">
                   <p className="mb-2 text-xs font-bold uppercase tracking-widest text-black">Source coverage</p>
                   <h2 className="mb-4 text-2xl font-bold text-gray-950">
@@ -332,7 +426,9 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
                 {page.primaryKeyword} Official Source and Downloads
               </h2>
               <p className="mb-4 text-base leading-8 text-black">
-                These links are limited to official project repositories, release channels, publisher domains, or moderated historical references. Historical automation entries are preserved for context and do not endorse running old binaries.
+                {isServerProfile
+                  ? 'These are the official and community pages used to support this server profile. Check their dates when comparing launch information, rules, downloads, and current systems.'
+                  : 'These links are limited to official project repositories, release channels, publisher domains, or moderated historical references. Historical automation entries are preserved for context and do not endorse running old binaries.'}
               </p>
               <div className="grid gap-3 md:grid-cols-2">
                 {officialAccess.map((entry) => (
@@ -459,7 +555,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
             </section>
           ) : null}
 
-          <section className="border-b border-gray-200 pb-8">
+          {curatedCodaBody.length ? <section className="border-b border-gray-200 pb-8">
             <p className="mb-2 text-xs font-bold uppercase tracking-widest text-black">{curatedCoda.eyebrow}</p>
             <h2 className="mb-4 text-2xl font-bold text-black">{curatedCoda.heading}</h2>
             <div className="space-y-4">
@@ -467,7 +563,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
                 <p key={paragraph} className="text-base leading-8 text-black">{paragraph}</p>
               ))}
             </div>
-          </section>
+          </section> : null}
 
           {directoryServers.length ? (
             <section className="pb-8">
@@ -555,7 +651,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
             </div>
           </div>
 
-          <div className="rounded border border-gray-200 bg-white p-5">
+          {sourceLinks.length ? <div className="rounded border border-gray-200 bg-white p-5">
             <h2 className="mb-3 text-base font-bold text-black">Source trail</h2>
             <ul className="space-y-3">
               {sourceLinks.map((source) => (
@@ -568,7 +664,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> : null}
         </aside>
       </section>
 

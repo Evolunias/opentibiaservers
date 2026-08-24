@@ -1,8 +1,11 @@
-import MediviaOnlinePage, { generateMetadata } from './medivia-online';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("medivia-online");
+}
+
 export default function Page() {
-  return <MediviaOnlinePage />;
+  return <LegacyServerRoute slug="medivia-online" />;
 }

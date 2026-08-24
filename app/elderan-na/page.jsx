@@ -1,8 +1,11 @@
-import ElderanNaPage, { generateMetadata } from './elderan-na';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("elderan-na");
+}
+
 export default function Page() {
-  return <ElderanNaPage />;
+  return <LegacyServerRoute slug="elderan-na" />;
 }

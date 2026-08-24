@@ -1,8 +1,11 @@
-import TaleonAurapvpPage, { generateMetadata } from './taleon-aurapvp';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("taleon-aurapvp");
+}
+
 export default function Page() {
-  return <TaleonAurapvpPage />;
+  return <LegacyServerRoute slug="taleon-aurapvp" />;
 }

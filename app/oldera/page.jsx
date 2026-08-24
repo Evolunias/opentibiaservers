@@ -1,8 +1,11 @@
-import OlderaPage, { generateMetadata } from './oldera';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("oldera");
+}
+
 export default function Page() {
-  return <OlderaPage />;
+  return <LegacyServerRoute slug="oldera" />;
 }

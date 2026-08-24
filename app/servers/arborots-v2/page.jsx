@@ -1,8 +1,11 @@
-import ArborotsV2ServerReviewPage, { generateMetadata } from './arborots-v2';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("arborots-v2");
+}
+
 export default function Page() {
-  return <ArborotsV2ServerReviewPage />;
+  return <CanonicalServerRoute slug="arborots-v2" />;
 }

@@ -1,8 +1,11 @@
-import DawnPortPage, { generateMetadata } from './dawn-port';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("dawn-port");
+}
+
 export default function Page() {
-  return <DawnPortPage />;
+  return <LegacyServerRoute slug="dawn-port" />;
 }

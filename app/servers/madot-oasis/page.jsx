@@ -1,8 +1,11 @@
-import MadotOasisServerReviewPage, { generateMetadata } from './madot-oasis';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("madot-oasis");
+}
+
 export default function Page() {
-  return <MadotOasisServerReviewPage />;
+  return <CanonicalServerRoute slug="madot-oasis" />;
 }

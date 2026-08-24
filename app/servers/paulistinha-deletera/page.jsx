@@ -1,8 +1,11 @@
-import PaulistinhaDeleteraServerReviewPage, { generateMetadata } from './paulistinha-deletera';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("paulistinha-deletera");
+}
+
 export default function Page() {
-  return <PaulistinhaDeleteraServerReviewPage />;
+  return <CanonicalServerRoute slug="paulistinha-deletera" />;
 }

@@ -1,8 +1,11 @@
-import SymikotPage, { generateMetadata } from './symikot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("symikot");
+}
+
 export default function Page() {
-  return <SymikotPage />;
+  return <LegacyServerRoute slug="symikot" />;
 }

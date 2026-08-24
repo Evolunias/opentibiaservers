@@ -1,8 +1,11 @@
-import HeroservServerReviewPage, { generateMetadata } from './heroserv';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("heroserv");
+}
+
 export default function Page() {
-  return <HeroservServerReviewPage />;
+  return <CanonicalServerRoute slug="heroserv" />;
 }

@@ -1,8 +1,11 @@
-import PatagoniaOnlinePage, { generateMetadata } from './patagonia-online';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("patagonia-online");
+}
+
 export default function Page() {
-  return <PatagoniaOnlinePage />;
+  return <LegacyServerRoute slug="patagonia-online" />;
 }

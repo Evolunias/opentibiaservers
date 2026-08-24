@@ -1,8 +1,11 @@
-import ShadowOfTheCrownServerReviewPage, { generateMetadata } from './shadow-of-the-crown';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("shadow-of-the-crown");
+}
+
 export default function Page() {
-  return <ShadowOfTheCrownServerReviewPage />;
+  return <CanonicalServerRoute slug="shadow-of-the-crown" />;
 }

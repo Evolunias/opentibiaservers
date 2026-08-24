@@ -1,8 +1,11 @@
-import MazeotPage, { generateMetadata } from './mazeot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("mazeot");
+}
+
 export default function Page() {
-  return <MazeotPage />;
+  return <LegacyServerRoute slug="mazeot" />;
 }

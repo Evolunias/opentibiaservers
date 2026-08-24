@@ -1,8 +1,11 @@
-import LunarianRubinotServerReviewPage, { generateMetadata } from './lunarian-rubinot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("lunarian-rubinot");
+}
+
 export default function Page() {
-  return <LunarianRubinotServerReviewPage />;
+  return <CanonicalServerRoute slug="lunarian-rubinot" />;
 }

@@ -1,8 +1,11 @@
-import MazeotServerReviewPage, { generateMetadata } from './mazeot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("mazeot");
+}
+
 export default function Page() {
-  return <MazeotServerReviewPage />;
+  return <CanonicalServerRoute slug="mazeot" />;
 }

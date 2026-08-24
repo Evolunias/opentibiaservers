@@ -1,8 +1,11 @@
-import ImperiaArcanaotServerReviewPage, { generateMetadata } from './imperia-arcanaot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("imperia-arcanaot");
+}
+
 export default function Page() {
-  return <ImperiaArcanaotServerReviewPage />;
+  return <CanonicalServerRoute slug="imperia-arcanaot" />;
 }

@@ -1,8 +1,11 @@
-import NostalriusServerReviewPage, { generateMetadata } from './nostalrius';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("nostalrius");
+}
+
 export default function Page() {
-  return <NostalriusServerReviewPage />;
+  return <CanonicalServerRoute slug="nostalrius" />;
 }

@@ -1,8 +1,11 @@
-import MythibiaV2ServerReviewPage, { generateMetadata } from './mythibia-v2';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("mythibia-v2");
+}
+
 export default function Page() {
-  return <MythibiaV2ServerReviewPage />;
+  return <CanonicalServerRoute slug="mythibia-v2" />;
 }

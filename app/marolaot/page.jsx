@@ -1,8 +1,11 @@
-import MarolaotPage, { generateMetadata } from './marolaot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("marolaot");
+}
+
 export default function Page() {
-  return <MarolaotPage />;
+  return <LegacyServerRoute slug="marolaot" />;
 }

@@ -1,8 +1,11 @@
-import Drakoria80ServerReviewPage, { generateMetadata } from './drakoria-80';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("drakoria-80");
+}
+
 export default function Page() {
-  return <Drakoria80ServerReviewPage />;
+  return <CanonicalServerRoute slug="drakoria-80" />;
 }

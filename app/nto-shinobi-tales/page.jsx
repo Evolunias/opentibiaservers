@@ -1,8 +1,11 @@
-import NtoShinobiTalesPage, { generateMetadata } from './nto-shinobi-tales';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("nto-shinobi-tales");
+}
+
 export default function Page() {
-  return <NtoShinobiTalesPage />;
+  return <LegacyServerRoute slug="nto-shinobi-tales" />;
 }

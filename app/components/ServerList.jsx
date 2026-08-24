@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { getServerPath } from '@/lib/server-paths';
+import { getServerExcerpt, getServerExcerptSources } from '@/lib/server-excerpts';
 import ServerLogo from './ServerLogo';
 
 function formatPercent(value) {
@@ -57,18 +58,33 @@ export default function ServerList({ servers }) {
         </table>
       </div>
       <div className="server-directory-list__items">
-        {servers.map((server) => (
+        {servers.map((server) => {
+          const rowId = server.id || server.canonical_slug || server.slug || server.name;
+          const excerptId = `server-excerpt-${String(rowId).replace(/[^a-zA-Z0-9_-]/g, '-')}`;
+          const excerpt = getServerExcerpt(server, { maxLength: 520 });
+          const excerptSources = getServerExcerptSources(server);
+          const expanded = expandedId === rowId;
+
+          return (
           <article
-            key={server.id}
-            className={`directory-row ${expandedId === server.id ? 'is-expanded' : ''}`}
-            onClick={() => toggleServer(server.id)}
+            key={rowId}
+            className={`directory-row ${expanded ? 'is-expanded' : ''} ${excerpt ? 'has-excerpt' : ''}`}
+            onClick={excerpt ? () => toggleServer(rowId) : undefined}
           >
             <ServerLogo server={server} />
             <div className="directory-row__main">
               <div className="directory-row__titleline">
-                <button type="button" className="directory-row__name" aria-expanded={expandedId === server.id}>
-                  {server.name}
-                </button>
+                {excerpt ? (
+                  <button
+                    type="button"
+                    className="directory-row__name"
+                    aria-expanded={expanded}
+                    aria-controls={excerptId}
+                  >
+                    {server.name}
+                  </button>
+                ) : <span className="directory-row__name">{server.name}</span>}
+                {excerpt ? <span className="directory-row__excerpt-hint">{expanded ? 'Hide details' : 'Read excerpt'}</span> : null}
               </div>
               <div className="directory-row__rating" aria-label={`${Number(server.average_rating || 0).toFixed(1)} out of 5 stars`}>
                 <span>{formatStars(server.average_rating)}</span>
@@ -89,18 +105,31 @@ export default function ServerList({ servers }) {
               <div><dt>Uptime</dt><dd>{formatPercent(server.uptime_percent)}</dd></div>
             </dl>
             <Link href={getServerPath(server)} onClick={(event) => event.stopPropagation()} className="directory-row__action">View profile <span aria-hidden="true">→</span></Link>
-            <div className="directory-row__excerpt" aria-hidden={expandedId !== server.id}>
+            {excerpt ? <div id={excerptId} className="directory-row__excerpt" aria-hidden={!expanded}>
               <div>
-                <p>{server.official_summary || server.description || 'No verified server excerpt is available yet.'}</p>
-                {server.source_url ? (
-                  <a href={server.source_url} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}>
-                    View verified source
-                  </a>
+                <span className="directory-row__excerpt-label">Source-backed excerpt</span>
+                <p>{excerpt}</p>
+                {excerptSources.length ? (
+                  <div className="directory-row__excerpt-sources">
+                    {excerptSources.map((source) => (
+                      <a
+                        key={source.url}
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        tabIndex={expanded ? 0 : -1}
+                        onClick={(event) => event.stopPropagation()}
+                      >
+                        {source.label}
+                      </a>
+                    ))}
+                  </div>
                 ) : null}
               </div>
-            </div>
+            </div> : null}
           </article>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

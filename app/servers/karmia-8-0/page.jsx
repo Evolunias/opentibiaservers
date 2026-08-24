@@ -1,8 +1,11 @@
-import Karmia80ServerReviewPage, { generateMetadata } from './karmia-8-0';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("karmia-8-0");
+}
+
 export default function Page() {
-  return <Karmia80ServerReviewPage />;
+  return <CanonicalServerRoute slug="karmia-8-0" />;
 }

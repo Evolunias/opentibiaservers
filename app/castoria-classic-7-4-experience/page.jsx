@@ -1,8 +1,11 @@
-import CastoriaClassic74ExperiencePage, { generateMetadata } from './castoria-classic-7-4-experience';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("castoria-classic-7-4-experience");
+}
+
 export default function Page() {
-  return <CastoriaClassic74ExperiencePage />;
+  return <LegacyServerRoute slug="castoria-classic-7-4-experience" />;
 }

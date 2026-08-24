@@ -1,8 +1,11 @@
-import VitoxOts86Page, { generateMetadata } from './vitox-ots-8-6';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("vitox-ots-8-6");
+}
+
 export default function Page() {
-  return <VitoxOts86Page />;
+  return <LegacyServerRoute slug="vitox-ots-8-6" />;
 }

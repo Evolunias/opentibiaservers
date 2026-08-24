@@ -1,8 +1,11 @@
-import MistOfDeathResetPage, { generateMetadata } from './mist-of-death-reset';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("mist-of-death-reset");
+}
+
 export default function Page() {
-  return <MistOfDeathResetPage />;
+  return <LegacyServerRoute slug="mist-of-death-reset" />;
 }

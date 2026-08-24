@@ -1,8 +1,11 @@
-import EloriaServerReviewPage, { generateMetadata } from './eloria';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("eloria");
+}
+
 export default function Page() {
-  return <EloriaServerReviewPage />;
+  return <CanonicalServerRoute slug="eloria" />;
 }

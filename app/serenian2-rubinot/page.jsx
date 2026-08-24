@@ -1,8 +1,11 @@
-import Serenian2RubinotPage, { generateMetadata } from './serenian2-rubinot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("serenian2-rubinot");
+}
+
 export default function Page() {
-  return <Serenian2RubinotPage />;
+  return <LegacyServerRoute slug="serenian2-rubinot" />;
 }

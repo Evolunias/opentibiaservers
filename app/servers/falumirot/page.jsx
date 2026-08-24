@@ -1,8 +1,11 @@
-import FalumirotServerReviewPage, { generateMetadata } from './falumirot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("falumirot");
+}
+
 export default function Page() {
-  return <FalumirotServerReviewPage />;
+  return <CanonicalServerRoute slug="falumirot" />;
 }

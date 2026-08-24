@@ -1,8 +1,11 @@
-import MortusOnlineServerReviewPage, { generateMetadata } from './mortus-online';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("mortus-online");
+}
+
 export default function Page() {
-  return <MortusOnlineServerReviewPage />;
+  return <CanonicalServerRoute slug="mortus-online" />;
 }

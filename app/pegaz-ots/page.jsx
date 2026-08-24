@@ -1,8 +1,11 @@
-import PegazOtsPage, { generateMetadata } from './pegaz-ots';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("pegaz-ots");
+}
+
 export default function Page() {
-  return <PegazOtsPage />;
+  return <LegacyServerRoute slug="pegaz-ots" />;
 }

@@ -1,8 +1,11 @@
-import ExordionLegacyPage, { generateMetadata } from './exordion-legacy';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("exordion-legacy");
+}
+
 export default function Page() {
-  return <ExordionLegacyPage />;
+  return <LegacyServerRoute slug="exordion-legacy" />;
 }

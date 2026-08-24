@@ -1,8 +1,11 @@
-import OnlyFortressOnlineServerReviewPage, { generateMetadata } from './only-fortress-online';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("only-fortress-online");
+}
+
 export default function Page() {
-  return <OnlyFortressOnlineServerReviewPage />;
+  return <CanonicalServerRoute slug="only-fortress-online" />;
 }

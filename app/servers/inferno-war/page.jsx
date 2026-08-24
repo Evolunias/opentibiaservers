@@ -1,8 +1,11 @@
-import InfernoWarServerReviewPage, { generateMetadata } from './inferno-war';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("inferno-war");
+}
+
 export default function Page() {
-  return <InfernoWarServerReviewPage />;
+  return <CanonicalServerRoute slug="inferno-war" />;
 }

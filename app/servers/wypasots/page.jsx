@@ -1,8 +1,11 @@
-import WypasotsServerReviewPage, { generateMetadata } from './wypasots';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("wypasots");
+}
+
 export default function Page() {
-  return <WypasotsServerReviewPage />;
+  return <CanonicalServerRoute slug="wypasots" />;
 }

@@ -1,8 +1,11 @@
-import ElenorWotserverServerReviewPage, { generateMetadata } from './elenor-wotserver';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("elenor-wotserver");
+}
+
 export default function Page() {
-  return <ElenorWotserverServerReviewPage />;
+  return <CanonicalServerRoute slug="elenor-wotserver" />;
 }

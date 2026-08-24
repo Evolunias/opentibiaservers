@@ -1,8 +1,11 @@
-import Tibiaorigins20ServerReviewPage, { generateMetadata } from './tibiaorigins-2-0';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("tibiaorigins-2-0");
+}
+
 export default function Page() {
-  return <Tibiaorigins20ServerReviewPage />;
+  return <CanonicalServerRoute slug="tibiaorigins-2-0" />;
 }

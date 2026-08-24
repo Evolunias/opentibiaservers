@@ -1,8 +1,11 @@
-import DraconiaotPage, { generateMetadata } from './draconiaot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("draconiaot");
+}
+
 export default function Page() {
-  return <DraconiaotPage />;
+  return <LegacyServerRoute slug="draconiaot" />;
 }

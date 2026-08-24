@@ -1,8 +1,11 @@
-import DuraPage, { generateMetadata } from './dura';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("dura");
+}
+
 export default function Page() {
-  return <DuraPage />;
+  return <LegacyServerRoute slug="dura" />;
 }

@@ -1,8 +1,11 @@
-import ValeriaotServerReviewPage, { generateMetadata } from './valeriaot';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("valeriaot");
+}
+
 export default function Page() {
-  return <ValeriaotServerReviewPage />;
+  return <CanonicalServerRoute slug="valeriaot" />;
 }

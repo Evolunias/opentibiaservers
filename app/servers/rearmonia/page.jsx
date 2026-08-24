@@ -1,8 +1,11 @@
-import RearmoniaServerReviewPage, { generateMetadata } from './rearmonia';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("rearmonia");
+}
+
 export default function Page() {
-  return <RearmoniaServerReviewPage />;
+  return <CanonicalServerRoute slug="rearmonia" />;
 }

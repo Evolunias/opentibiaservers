@@ -1,8 +1,11 @@
-import RookhavenServerReviewPage, { generateMetadata } from './rookhaven';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("rookhaven");
+}
+
 export default function Page() {
-  return <RookhavenServerReviewPage />;
+  return <CanonicalServerRoute slug="rookhaven" />;
 }

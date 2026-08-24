@@ -1,8 +1,11 @@
-import NightmareServerPage, { generateMetadata } from './nightmare-server';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("nightmare-server");
+}
+
 export default function Page() {
-  return <NightmareServerPage />;
+  return <LegacyServerRoute slug="nightmare-server" />;
 }

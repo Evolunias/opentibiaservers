@@ -1,8 +1,11 @@
-import Exact1412QumorasRookValleyPage, { generateMetadata } from './14-12-qumoras-rook-valley';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("14-12-qumoras-rook-valley");
+}
+
 export default function Page() {
-  return <Exact1412QumorasRookValleyPage />;
+  return <LegacyServerRoute slug="14-12-qumoras-rook-valley" />;
 }

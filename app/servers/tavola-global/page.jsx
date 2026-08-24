@@ -1,8 +1,11 @@
-import TavolaGlobalServerReviewPage, { generateMetadata } from './tavola-global';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("tavola-global");
+}
+
 export default function Page() {
-  return <TavolaGlobalServerReviewPage />;
+  return <CanonicalServerRoute slug="tavola-global" />;
 }

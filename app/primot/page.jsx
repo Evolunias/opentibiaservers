@@ -1,8 +1,11 @@
-import PrimotPage, { generateMetadata } from './primot';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("primot");
+}
+
 export default function Page() {
-  return <PrimotPage />;
+  return <LegacyServerRoute slug="primot" />;
 }

@@ -1,8 +1,11 @@
-import RoadToShinigamiPage, { generateMetadata } from './road-to-shinigami';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("road-to-shinigami");
+}
+
 export default function Page() {
-  return <RoadToShinigamiPage />;
+  return <LegacyServerRoute slug="road-to-shinigami" />;
 }

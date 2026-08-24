@@ -1,8 +1,11 @@
-import RafideaV5Page, { generateMetadata } from './rafidea-v5';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("rafidea-v5");
+}
+
 export default function Page() {
-  return <RafideaV5Page />;
+  return <LegacyServerRoute slug="rafidea-v5" />;
 }

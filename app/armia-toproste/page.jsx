@@ -1,8 +1,11 @@
-import ArmiaToprostePage, { generateMetadata } from './armia-toproste';
+import { LegacyServerRoute, buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("armia-toproste");
+}
+
 export default function Page() {
-  return <ArmiaToprostePage />;
+  return <LegacyServerRoute slug="armia-toproste" />;
 }

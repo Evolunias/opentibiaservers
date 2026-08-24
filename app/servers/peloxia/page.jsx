@@ -1,8 +1,11 @@
-import PeloxiaServerReviewPage, { generateMetadata } from './peloxia';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("peloxia");
+}
+
 export default function Page() {
-  return <PeloxiaServerReviewPage />;
+  return <CanonicalServerRoute slug="peloxia" />;
 }

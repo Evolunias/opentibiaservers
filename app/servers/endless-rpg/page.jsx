@@ -1,8 +1,11 @@
-import EndlessRpgServerReviewPage, { generateMetadata } from './endless-rpg';
+import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
-export { generateMetadata };
 export const revalidate = 3600;
 
+export function generateMetadata() {
+  return buildCanonicalServerMetadata("endless-rpg");
+}
+
 export default function Page() {
-  return <EndlessRpgServerReviewPage />;
+  return <CanonicalServerRoute slug="endless-rpg" />;
 }
