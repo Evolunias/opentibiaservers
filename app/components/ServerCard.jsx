@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { getServerPath } from '@/lib/server-paths';
+import ServerLogo from './ServerLogo';
 
 const typeClass = (type) => {
   switch (type) {
@@ -35,6 +36,7 @@ export default function ServerCard({ server }) {
   return (
     <Link href={getServerPath(server)} className="block h-full">
       <article className="server-card group cursor-pointer h-full">
+        <ServerLogo server={server} size="card" />
         <div className="flex items-start justify-between gap-3 mb-3">
           <div className="min-w-0">
             <div className="flex items-center gap-2 mb-1">
