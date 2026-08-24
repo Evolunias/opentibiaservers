@@ -68,18 +68,12 @@ export default function Header() {
               </div>
               <div>
                 <span className="block text-lg font-bold text-white m-0">Open Tibia Servers</span>
-                <p className="text-xs text-slate-300 m-0">Live OT listings, guides, reviews, and source data.</p>
+                <p className="text-xs text-slate-300 m-0">Polled OT records, guides, reviews, and source data.</p>
               </div>
             </Link>
 
             {!loading ? (
               <div className="flex flex-wrap items-center gap-2">
-                <Link
-                  href="/community"
-                  className="nav-chip"
-                >
-                  Community
-                </Link>
                 <Link
                   href="/knowledge"
                   className="nav-chip"

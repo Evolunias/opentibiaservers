@@ -52,9 +52,6 @@ export default function ContactPage() {
             <Link href="/submit-server" className="rounded bg-gray-950 px-4 py-3 text-center text-sm font-bold text-white hover:opacity-85 hover:no-underline">
               Submit or Claim a Server
             </Link>
-            <Link href="/community" className="rounded border border-gray-300 px-4 py-3 text-center text-sm font-bold text-gray-900 hover:bg-gray-50 hover:no-underline">
-              Visit Community
-            </Link>
           </div>
         </aside>
       </section>

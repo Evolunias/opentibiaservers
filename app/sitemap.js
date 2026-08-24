@@ -24,12 +24,6 @@ export default async function sitemap() {
       priority: 1,
     },
     {
-      url: buildAbsoluteUrl('/community'),
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.7,
-    },
-    {
       url: buildAbsoluteUrl('/resources'),
       lastModified: new Date(),
       changeFrequency: 'weekly',

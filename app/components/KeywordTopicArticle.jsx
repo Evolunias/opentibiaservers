@@ -98,9 +98,6 @@ export default async function KeywordTopicArticle({ slug }) {
               <Link href={`/?search=${encodeURIComponent(page.seed_entity || page.keyword)}`} className="rounded bg-gray-950 px-5 py-3 text-sm font-bold text-white hover:bg-gray-800 hover:no-underline">
                 Search Live Listings
               </Link>
-              <Link href="/community" className="rounded border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-900 hover:border-gray-500 hover:no-underline">
-                Join the Discussion
-              </Link>
             </div>
           </div>
 

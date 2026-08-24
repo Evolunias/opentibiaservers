@@ -3,7 +3,6 @@ import FeaturedServerAd from './FeaturedServerAd';
 
 const footerLinks = [
   { href: '/', label: 'Server Directory' },
-  { href: '/community', label: 'Community' },
   { href: '/knowledge', label: 'Knowledge' },
   { href: '/resources', label: 'Resources' },
   { href: '/submit-server', label: 'Submit Server' },
@@ -14,7 +13,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-gray-950 text-white">
+    <footer className="ots-site-footer border-t border-gray-200 bg-gray-950 text-white">
       <FeaturedServerAd placement="footer" />
       <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div>

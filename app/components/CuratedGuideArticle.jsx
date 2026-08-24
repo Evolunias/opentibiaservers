@@ -80,7 +80,6 @@ function buildInternalLinks(page) {
     { href: '/', label: 'Open Tibia server directory' },
     { href: '/resources', label: 'Open Tibia tools and resources' },
     { href: '/otland', label: 'OTLand server launch guide' },
-    { href: '/community', label: 'Open Tibia community boards' },
   ];
 
   for (const query of page.relatedServerQueries || []) {

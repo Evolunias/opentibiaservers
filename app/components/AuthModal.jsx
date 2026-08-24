@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { useAuth } from '@/app/context/AuthContext';
 
 export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) {
@@ -60,18 +61,24 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-gray-950/80 px-4 py-6 backdrop-blur-sm">
+    <div className="auth-modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-gray-950/80 px-4 py-6 backdrop-blur-sm">
       <button type="button" aria-label="Close auth dialog" className="absolute inset-0 cursor-default" onClick={onClose} />
-      <div className="relative w-full max-w-[460px] overflow-hidden rounded border border-gray-200 bg-white shadow-2xl">
-        <div className="border-b border-gray-200 bg-gray-950 px-5 py-5 text-white">
+      <div className="auth-modal relative w-full max-w-[500px] overflow-hidden rounded border border-gray-200 bg-white shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+        <div className="auth-modal__header border-b border-gray-200 bg-gray-950 px-5 py-5 text-white">
           <div className="mb-4 flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded border border-white/20 bg-white text-xs font-black text-gray-950">
-                OTS
+              <div className="auth-modal__logo">
+                <Image
+                  src="/images/server-logos/opentibiaservers-directory.png"
+                  alt="OpenTibiaServers.com"
+                  width={144}
+                  height={100}
+                  priority
+                />
               </div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-gray-300">Open Tibia Servers</p>
-                <h2 className="text-xl font-bold text-white">
+                <h2 id="auth-modal-title" className="text-xl font-bold text-white">
                   {isVerify ? 'Verify Email' : isRegister ? 'Create Account' : 'Sign In'}
                 </h2>
               </div>
@@ -79,13 +86,13 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
             <button
               type="button"
               onClick={onClose}
-              className="rounded border border-white/15 px-3 py-2 text-sm font-bold text-gray-200 hover:bg-white hover:text-gray-950"
+              className="auth-modal__close rounded border border-white/15 px-3 py-2 text-sm font-bold text-gray-200 hover:bg-white hover:text-gray-950"
               aria-label="Close auth dialog"
             >
               X
             </button>
           </div>
-          <div className="grid grid-cols-2 gap-2 rounded border border-white/10 bg-white/5 p-1">
+          <div className="auth-modal__tabs grid grid-cols-2 gap-2 rounded border border-white/10 bg-white/5 p-1">
             <button
               type="button"
               onClick={() => {
@@ -131,7 +138,7 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
             </button>
           </div>
         ) : (
-          <form onSubmit={submit} className="space-y-4 px-5 py-5">
+          <form onSubmit={submit} className="auth-modal__form space-y-4 px-5 py-5">
           <div>
             <p className="text-sm leading-6 text-gray-600">
               {isRegister
@@ -148,7 +155,7 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
                 <input
                   value={form.username}
                   onChange={(event) => setForm((current) => ({ ...current, username: event.target.value }))}
-                  className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+                  className="auth-modal__control w-full rounded border border-gray-300 px-3 py-2 text-sm"
                   required
                 />
               </div>
@@ -157,7 +164,7 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
                 <select
                   value={form.account_type}
                   onChange={(event) => setForm((current) => ({ ...current, account_type: event.target.value }))}
-                  className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+                  className="auth-modal__control w-full rounded border border-gray-300 px-3 py-2 text-sm"
                 >
                   <option value="player">Player</option>
                   <option value="server_owner">Server owner</option>
@@ -173,7 +180,7 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
               type="email"
               value={form.email}
               onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              className="auth-modal__control w-full rounded border border-gray-300 px-3 py-2 text-sm"
               required
             />
           </div>
@@ -184,7 +191,7 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
               type="password"
               value={form.password}
               onChange={(event) => setForm((current) => ({ ...current, password: event.target.value }))}
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              className="auth-modal__control w-full rounded border border-gray-300 px-3 py-2 text-sm"
               minLength={6}
               required
             />
@@ -193,7 +200,7 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
           <button
             type="submit"
             disabled={submitting}
-            className="w-full rounded bg-gray-950 px-4 py-3 text-sm font-bold text-white hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-60"
+            className="auth-modal__primary w-full rounded bg-gray-950 px-4 py-3 text-sm font-bold text-white hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {submitting ? 'Please wait...' : isRegister ? 'Create Account' : 'Sign In'}
           </button>
@@ -205,7 +212,7 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
               setNotice('');
               setActiveMode(isRegister ? 'login' : 'register');
             }}
-            className="w-full rounded border border-gray-300 bg-white px-4 py-3 text-sm font-bold text-gray-900 hover:bg-gray-50"
+            className="auth-modal__secondary w-full rounded border border-gray-300 bg-white px-4 py-3 text-sm font-bold text-gray-900 hover:bg-gray-50"
           >
             {isRegister ? 'Already have an account? Sign in' : 'Need an account? Register'}
           </button>

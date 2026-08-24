@@ -39,9 +39,7 @@ export default function ServerCard({ server }) {
         <ServerLogo server={server} size="card" />
         <div className="flex items-start justify-between gap-3 mb-3">
           <div className="min-w-0">
-            <div className="flex items-center gap-2 mb-1">
-              <span className={`status-dot ${server.is_online ? 'status-dot--online' : 'status-dot--offline'}`} />
-            </div>
+            <div className="mb-1 text-xs font-bold uppercase tracking-wide text-slate-400">Polling record</div>
             <h3 className="text-base font-bold text-white truncate">{server.name}</h3>
             <p className="text-xs text-slate-400 truncate">{server.host || server.ip}:{server.port || 7171}</p>
           </div>
@@ -52,16 +50,16 @@ export default function ServerCard({ server }) {
 
         <div className="grid grid-cols-3 gap-2 mb-3 text-xs">
           <div className="server-metric">
-            <p className="text-slate-400 uppercase font-semibold mb-1">Online</p>
-            <p className="text-lg font-bold text-white">{number(server.players_online || 0)}</p>
+            <p className="text-slate-400 uppercase font-semibold mb-1">Highest</p>
+            <p className="text-lg font-bold text-white">{number(server.players_peak || server.players_online || 0)}</p>
           </div>
           <div className="server-metric">
             <p className="text-slate-400 uppercase font-semibold mb-1">Max</p>
             <p className="text-lg font-bold text-white">{number(server.max_players)}</p>
           </div>
           <div className="server-metric">
-            <p className="text-slate-400 uppercase font-semibold mb-1">Peak</p>
-            <p className="text-lg font-bold text-white">{number(server.players_peak || 0)}</p>
+            <p className="text-slate-400 uppercase font-semibold mb-1">Recorded</p>
+            <p className="text-lg font-bold text-white">Polled</p>
           </div>
         </div>
 

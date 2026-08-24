@@ -8,8 +8,7 @@ const initialFilters = {
   location: '',
   version: '',
   min_players: '',
-  sort: 'players',
-  is_online: true,
+  sort: 'peak',
 };
 
 export default function Filters({ onFiltersChange, onSearch }) {
@@ -23,8 +22,7 @@ export default function Filters({ onFiltersChange, onSearch }) {
       location: nextFilters.location || undefined,
       version: nextFilters.version || undefined,
       min_players: nextFilters.min_players || undefined,
-          sort: nextFilters.sort || 'players',
-          is_online: nextFilters.is_online ? true : undefined,
+          sort: nextFilters.sort || 'peak',
     });
   };
 
@@ -44,7 +42,7 @@ export default function Filters({ onFiltersChange, onSearch }) {
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between mb-4">
         <div>
           <h2 className="text-base font-bold text-white mb-1">Find Servers</h2>
-          <p className="text-xs text-slate-400">Search by name, host, country, client, and live population.</p>
+          <p className="text-xs text-slate-400">Search by name, host, country, client, and highest recorded player count.</p>
         </div>
         <button
           type="button"
@@ -119,7 +117,7 @@ export default function Filters({ onFiltersChange, onSearch }) {
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-slate-300 mb-1">Min Online</label>
+          <label className="block text-xs font-semibold text-slate-300 mb-1">Min Highest Count</label>
           <input
             type="number"
             min="0"
@@ -132,16 +130,6 @@ export default function Filters({ onFiltersChange, onSearch }) {
       </div>
 
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between mt-4 pt-4 border-t border-white/10">
-        <label className="flex items-center gap-2 text-slate-300 cursor-pointer font-semibold text-sm">
-          <input
-            type="checkbox"
-            checked={filters.is_online}
-            onChange={(event) => update('is_online', event.target.checked)}
-            className="w-4 h-4"
-          />
-          <span>Online only</span>
-        </label>
-
         <div className="flex items-center gap-2">
           <label className="text-xs font-semibold text-slate-300">Sort</label>
           <select
@@ -149,7 +137,7 @@ export default function Filters({ onFiltersChange, onSearch }) {
             onChange={(event) => update('sort', event.target.value)}
             className="form-control"
           >
-            <option value="players">Players online</option>
+            <option value="peak">Highest player count</option>
             <option value="rating">Rating</option>
             <option value="uptime">Uptime</option>
             <option value="newest">Recently updated</option>

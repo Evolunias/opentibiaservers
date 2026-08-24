@@ -12,8 +12,7 @@ import { prioritizeFeaturedServer } from '@/lib/presentation-metrics';
 
 const PAGE_SIZE = 25;
 const defaultFilters = {
-  is_online: true,
-  sort: 'players',
+  sort: 'peak',
 };
 
 export default function HomeClient({ initialServers = [], initialTotal = 0, initialError = null }) {
@@ -28,8 +27,13 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
   const displayServers = useMemo(() => prioritizeFeaturedServer(servers), [servers]);
 
   const summary = useMemo(() => {
-    const visiblePlayers = displayServers.reduce((sum, server) => sum + Number(server.players_online || 0), 0);
-    const topServer = displayServers[0];
+    const highestPlayerCount = displayServers.reduce(
+      (highest, server) => Math.max(highest, Number(server.players_peak || server.players_online || 0)),
+      0
+    );
+    const topServer = [...displayServers].sort(
+      (a, b) => Number(b.players_peak || b.players_online || 0) - Number(a.players_peak || a.players_online || 0)
+    )[0];
     const featuredServer = displayServers.find((server) => {
       const haystack = [server.slug, server.name, server.host, server.website_url, server.external_launch_url]
         .filter(Boolean)
@@ -39,7 +43,7 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
     }) || null;
 
     return {
-      visiblePlayers,
+      highestPlayerCount,
       topServer,
       featuredServer,
     };
@@ -97,23 +101,15 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
                 The living Open Tibia server atlas
               </h1>
               <p className="text-base md:text-lg text-slate-300 max-w-3xl">
-                Compare active Open Tibia worlds with current players, owner-managed profiles, screenshots,
-                uptime history, launch signals, reviews, and community discussion in one searchable hub.
+                Compare Open Tibia worlds by their highest recorded player count, owner-managed profiles,
+                screenshots, uptime history, reviews, and community discussion in one searchable hub.
               </p>
-              <div className="mt-6 grid gap-3 text-sm text-slate-200 md:grid-cols-2">
-                <div className="signal-card">
-                  Searchable directory records stay visible.
-                </div>
-                <div className="signal-card">
-                  Evomanias is highlighted as the featured server.
-                </div>
-              </div>
             </div>
 
             <div className="dashboard-orb motion-rise motion-delay-1">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-sm font-bold text-white">At a glance</span>
-                <span className="text-xs font-bold text-white">Manual updates</span>
+                <span className="text-xs font-bold text-white">Polled records</span>
               </div>
               <div className="grid grid-cols-2 gap-2 text-center">
                 <div className="telemetry-tile">
@@ -121,13 +117,13 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
                   <div className="text-xs text-slate-400">Matched</div>
                 </div>
                 <div className="telemetry-tile">
-                  <div className="text-xl font-bold text-white">{summary.visiblePlayers.toLocaleString()}</div>
-                  <div className="text-xs text-slate-400">Visible Players</div>
+                  <div className="text-xl font-bold text-white">{summary.highestPlayerCount.toLocaleString()}</div>
+                  <div className="text-xs text-slate-400">Highest Player Count</div>
                 </div>
               </div>
               {summary.topServer ? (
                 <div className="mt-3 text-xs text-slate-400">
-                  Top visible: <span className="font-semibold text-white">{summary.topServer.name}</span>
+                  Highest recorded: <span className="font-semibold text-white">{summary.topServer.name}</span>
                 </div>
               ) : null}
             </div>
@@ -146,8 +142,8 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
               {loading ? 'Loading servers' : `${totalServers.toLocaleString()} servers found`}
             </h2>
             <p className="text-sm text-slate-300">
-              Sorted by {filters.sort || 'players'} with {filters.is_online ? 'online servers only' : 'online and offline servers'}.
-              {lastRefreshedAt ? ` Last refreshed ${lastRefreshedAt.toLocaleTimeString()}.` : ''}
+              Sorted by highest recorded player count.
+              {lastRefreshedAt ? ` Last polled ${lastRefreshedAt.toLocaleTimeString()}.` : ''}
             </p>
           </div>
           <ViewToggle view={view} onViewChange={setView} />

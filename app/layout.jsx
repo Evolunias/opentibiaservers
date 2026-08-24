@@ -10,7 +10,7 @@ export const metadata = {
     default: `${getSiteName()} | Open Tibia Server Directory`,
     template: `%s | ${getSiteName()}`,
   },
-  description: "Browse, compare, review, and monitor Open Tibia servers. Find live player counts, uptime, rates, server details, and owner-managed listings.",
+  description: "Browse, compare, and review Open Tibia servers by highest recorded player count, uptime, rates, server details, and owner-managed listings.",
   keywords: [
     "open tibia servers",
     "ot server list",

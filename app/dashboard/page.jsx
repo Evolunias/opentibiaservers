@@ -124,9 +124,6 @@ export default function DashboardPage() {
             <Link href="/submit-server" className="px-4 py-2 bg-gray-950 text-white font-semibold rounded hover:opacity-85">
               Submit Server
             </Link>
-            <Link href="/community" className="px-4 py-2 bg-white text-gray-900 font-semibold border border-gray-300 rounded hover:bg-gray-50">
-              Community
-            </Link>
             <button
               type="button"
               onClick={handleSignOut}

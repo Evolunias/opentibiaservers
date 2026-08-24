@@ -6,8 +6,8 @@ import { getServerPath } from '@/lib/server-paths';
 export const revalidate = 900;
 
 export async function generateMetadata() {
-  const title = `${getSiteName()} | Open Tibia Servers, OT Server List and Live Player Counts`;
-  const description = 'Browse live Open Tibia servers by player count, version, country, PvP type, uptime, rates, and reviews. Updated from public otservlist data.';
+  const title = `${getSiteName()} | Open Tibia Servers and Highest Player Counts`;
+  const description = 'Browse Open Tibia servers by highest recorded player count, version, country, PvP type, uptime, rates, and reviews.';
 
   return {
     title,
@@ -31,7 +31,7 @@ export async function generateMetadata() {
 }
 
 export default async function HomePage() {
-  const initialData = await fetchDirectoryServers({ page: 1, pageSize: 25, onlineOnly: true });
+  const initialData = await fetchDirectoryServers({ page: 1, pageSize: 25, onlineOnly: false });
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',

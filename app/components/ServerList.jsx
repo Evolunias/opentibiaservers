@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { getServerPath } from '@/lib/server-paths';
 import ServerLogo from './ServerLogo';
 
-const statusClass = (server) => (server.is_online ? 'text-emerald-300' : 'text-red-300');
-
 function formatPercent(value) {
   if (value === null || value === undefined) return '-';
   return `${Number(value).toFixed(Number(value) % 1 === 0 ? 0 : 2)}%`;
@@ -60,9 +58,7 @@ export default function ServerList({ servers }) {
             <div className="directory-row__main">
               <div className="directory-row__titleline">
                 <Link href={getServerPath(server)} className="directory-row__name">{server.name}</Link>
-                <span className={`directory-row__status ${server.is_online ? 'is-online' : 'is-offline'}`}>
-                  {server.is_online ? 'Online' : 'Offline'}
-                </span>
+                <span className="directory-row__status is-online">Polled</span>
               </div>
               <div className="directory-row__rating" aria-label={`${Number(server.average_rating || 0).toFixed(1)} out of 5 stars`}>
                 <span>{formatStars(server.average_rating)}</span>
@@ -78,8 +74,8 @@ export default function ServerList({ servers }) {
               </div>
             </div>
             <dl className="directory-row__metrics">
-              <div><dt>Players</dt><dd className={statusClass(server)}>{formatNumber(server.players_online || 0)}</dd><small>of {formatNumber(server.max_players)}</small></div>
-              <div><dt>Peak</dt><dd>{formatNumber(server.players_peak || 0)}</dd></div>
+              <div><dt>Highest players</dt><dd>{formatNumber(server.players_peak || server.players_online || 0)}</dd></div>
+              <div><dt>Capacity</dt><dd>{formatNumber(server.max_players)}</dd></div>
               <div><dt>Uptime</dt><dd>{formatPercent(server.uptime_percent)}</dd></div>
             </dl>
             <Link href={getServerPath(server)} className="directory-row__action">View profile <span aria-hidden="true">→</span></Link>

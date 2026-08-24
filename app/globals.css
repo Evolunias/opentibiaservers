@@ -800,10 +800,320 @@ body.ots-directory-light .server-tag {
   background: #eff6ff;
 }
 
+/* Keep the original featured Evomanias row distinct from ordinary directory cards. */
+body.ots-directory-light .server-list__featured-row {
+  border: 0;
+  background: #fff8d9;
+}
+
+body.ots-directory-light .server-list__featured-row > td {
+  overflow: hidden;
+  border-top: 1px solid #d7a928;
+  border-bottom: 1px solid #d7a928;
+  background: linear-gradient(90deg, rgba(255, 229, 121, 0.42), transparent 32%), #fff8d9;
+  box-shadow: inset 5px 0 0 #d7a928, inset 0 -1px 0 rgba(255, 255, 255, 0.75);
+}
+
+body.ots-directory-light .server-list__featured-content {
+  display: flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.1rem 0.15rem 0.1rem 0.35rem;
+}
+
+body.ots-directory-light .server-list__featured-brand {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+body.ots-directory-light .server-list__featured-mark {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 2.35rem;
+  height: 2.35rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #b28512;
+  border-radius: 50%;
+  color: #ffe58a;
+  background: #173328;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  box-shadow: 0 3px 0 rgba(122, 86, 0, 0.2);
+}
+
+body.ots-directory-light .server-list__featured-details {
+  display: grid;
+  grid-template-columns: auto auto;
+  min-width: 0;
+  align-items: baseline;
+  column-gap: 0.65rem;
+}
+
+body.ots-directory-light .server-list__featured-label {
+  color: #7a5600;
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+body.ots-directory-light .server-list__featured-name {
+  color: #173328 !important;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+body.ots-directory-light .server-list__featured-copy {
+  grid-column: 1 / -1;
+  margin-top: 0.18rem;
+  color: #5d5945;
+  font-size: 0.75rem;
+}
+
+body.ots-directory-light .server-list__featured-action {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid #173328;
+  border-radius: 7px;
+  padding: 0.62rem 0.82rem 0.62rem 0.95rem;
+  color: #fff4bf !important;
+  background: #173328;
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 3px 0 rgba(23, 51, 40, 0.16);
+}
+
+body.ots-directory-light .server-list__featured-action:hover {
+  color: #fff4bf !important;
+  background: #0c513b;
+  transform: translateY(-2px);
+}
+
+body.ots-directory-light .server-list__featured-arrow {
+  color: #ffe58a;
+  font-size: 1rem;
+}
+
 body.ots-directory-light footer {
   border-color: var(--directory-line) !important;
   color: #475569;
   background: #f8fafc !important;
+}
+
+body.ots-directory-light footer.ots-site-footer {
+  border-top: 1px solid #243247 !important;
+  color: #f8fafc;
+  background: #0f172a !important;
+}
+
+body.ots-directory-light footer.ots-site-footer > div:not(.featured-server-ad),
+body.ots-directory-light footer.ots-site-footer > div:not(.featured-server-ad) p,
+body.ots-directory-light footer.ots-site-footer > div:not(.featured-server-ad) h2,
+body.ots-directory-light footer.ots-site-footer > div:not(.featured-server-ad) span {
+  color: #d9e2ef !important;
+}
+
+body.ots-directory-light footer.ots-site-footer > div:not(.featured-server-ad) h2,
+body.ots-directory-light footer.ots-site-footer > div:not(.featured-server-ad) .font-bold {
+  color: #ffffff !important;
+}
+
+body.ots-directory-light footer.ots-site-footer > div:not(.featured-server-ad) a {
+  color: #e8eef7 !important;
+}
+
+body.ots-directory-light footer.ots-site-footer > div:not(.featured-server-ad) a:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.ots-directory-light footer.ots-site-footer > div:last-child {
+  border-color: #334155 !important;
+  background: #0b1220;
+}
+
+/* Shared sign-in and registration dialog */
+.auth-modal-backdrop {
+  background: rgba(9, 18, 32, 0.78) !important;
+  backdrop-filter: blur(8px);
+}
+
+body.ots-directory-light .auth-modal {
+  border: 1px solid #cbd5e1;
+  border-radius: 18px;
+  color: #17202a;
+  background: #ffffff;
+  box-shadow: 0 32px 90px rgba(2, 12, 27, 0.34);
+}
+
+body.ots-directory-light .auth-modal__header {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #dce5ec;
+  color: #17202a;
+  background: linear-gradient(145deg, #f8fbfc 0%, #ffffff 58%, #edf7f6 100%);
+}
+
+body.ots-directory-light .auth-modal__header::after {
+  content: '';
+  position: absolute;
+  inset: auto -4rem -5rem auto;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
+  background: rgba(13, 148, 136, 0.08);
+  pointer-events: none;
+}
+
+body.ots-directory-light .auth-modal__logo {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 86px;
+  height: 62px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #d8e2ea;
+  border-radius: 12px;
+  padding: 4px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
+body.ots-directory-light .auth-modal__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+body.ots-directory-light .auth-modal__header h2,
+body.ots-directory-light .auth-modal__header p {
+  color: #17202a !important;
+}
+
+body.ots-directory-light .auth-modal__header p {
+  color: #0f766e !important;
+}
+
+body.ots-directory-light .auth-modal__close {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-color: #d5dee7;
+  border-radius: 50%;
+  padding: 0;
+  color: #475569 !important;
+  background: #ffffff;
+}
+
+body.ots-directory-light .auth-modal__close:hover {
+  border-color: #94a3b8;
+  color: #0f172a !important;
+  background: #f1f5f9;
+}
+
+body.ots-directory-light .auth-modal__tabs {
+  position: relative;
+  z-index: 1;
+  border-color: #dbe3eb;
+  border-radius: 11px;
+  background: #edf2f6;
+}
+
+body.ots-directory-light .auth-modal__tabs button {
+  min-height: 42px;
+  border-radius: 8px;
+  color: #526172 !important;
+  background: transparent;
+  transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+body.ots-directory-light .auth-modal__tabs button.bg-white {
+  color: #0f172a !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.11);
+}
+
+body.ots-directory-light .auth-modal__form {
+  padding: 1.65rem;
+}
+
+body.ots-directory-light .auth-modal__form > div:first-child p {
+  color: #526172 !important;
+}
+
+body.ots-directory-light .auth-modal__form label {
+  margin-bottom: 0.45rem;
+  color: #334155 !important;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+body.ots-directory-light .auth-modal__control {
+  min-height: 46px;
+  border: 1px solid #c7d2df;
+  border-radius: 9px;
+  color: #17202a;
+  background: #ffffff;
+}
+
+body.ots-directory-light .auth-modal__control:focus {
+  border-color: #0f766e;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.12);
+}
+
+body.ots-directory-light .auth-modal__primary {
+  min-height: 48px;
+  border: 1px solid #0f5f58;
+  border-radius: 9px;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #0f766e, #115e59) !important;
+  box-shadow: 0 8px 18px rgba(15, 118, 110, 0.2);
+}
+
+body.ots-directory-light .auth-modal__primary:hover {
+  background: linear-gradient(135deg, #0d6760, #0f514d) !important;
+  transform: translateY(-1px);
+}
+
+body.ots-directory-light .auth-modal__secondary {
+  min-height: 46px;
+  border-color: #cbd5e1;
+  border-radius: 9px;
+  color: #334155 !important;
+  background: #ffffff !important;
+}
+
+body.ots-directory-light .auth-modal__secondary:hover {
+  border-color: #0f766e;
+  color: #0f766e !important;
+  background: #f0fdfa !important;
+}
+
+@media (max-width: 560px) {
+  body.ots-directory-light .auth-modal { border-radius: 14px; }
+  body.ots-directory-light .auth-modal__header { padding: 1rem; }
+  body.ots-directory-light .auth-modal__logo { width: 72px; height: 54px; }
+  body.ots-directory-light .auth-modal__form { padding: 1.15rem; }
 }
 
 @media (max-width: 1000px) {
@@ -820,6 +1130,9 @@ body.ots-directory-light footer {
   .server-logo--row { width: 82px; height: 72px; padding: 5px; }
   .directory-row__metrics { grid-column: 1 / -1; }
   .directory-row__action { grid-column: 1 / -1; }
+  body.ots-directory-light .server-list__featured-content { align-items: flex-start; flex-direction: column; gap: 0.9rem; }
+  body.ots-directory-light .server-list__featured-details { display: block; }
+  body.ots-directory-light .server-list__featured-action { width: 100%; justify-content: center; }
 }
 
 /* Unified site theme. Directory, editorial pages, forms, and community use the same visual language. */
@@ -2718,6 +3031,11 @@ body.ots-plain-site .knowledge-shell {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(233, 185, 73, 0.18);
   background: #0b1011;
+}
+
+.knowledge-band--catalogs .knowledge-section-heading h2,
+.knowledge-band--catalogs .knowledge-section-heading > p {
+  color: #ffffff !important;
 }
 
 .knowledge-catalog-portals {
