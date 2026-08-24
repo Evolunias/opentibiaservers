@@ -7,6 +7,7 @@ import AuthModal from '@/app/components/AuthModal';
 import TrustedExternalLink from '@/app/components/TrustedExternalLink';
 import { assessExternalLink, normalizeExternalUrl, safeUrlOrNull } from '@/lib/external-links';
 import { supabase } from '@/lib/supabase';
+import { applyServerIdentity } from '@/lib/server-identity';
 
 const badgeClass = (type) => {
   switch (type) {
@@ -279,7 +280,8 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
       if (fetchError) {
         setError('Server not found.');
       } else {
-        setServer(data);
+        const canonicalServer = applyServerIdentity(data);
+        setServer(canonicalServer);
         setOwnerEditor({
           template_name: data.template_name || 'directory_pro',
           promo_headline: data.promo_headline || '',

@@ -109,7 +109,7 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
             <div className="dashboard-orb motion-rise motion-delay-1">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-sm font-bold text-white">At a glance</span>
-                <span className="text-xs font-bold text-white">Polled records</span>
+                <span className="text-xs font-bold text-white">Directory records</span>
               </div>
               <div className="grid grid-cols-2 gap-2 text-center">
                 <div className="telemetry-tile">
@@ -121,11 +121,6 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
                   <div className="text-xs text-slate-400">Highest Player Count</div>
                 </div>
               </div>
-              {summary.topServer ? (
-                <div className="mt-3 text-xs text-slate-400">
-                  Highest recorded: <span className="font-semibold text-white">{summary.topServer.name}</span>
-                </div>
-              ) : null}
             </div>
           </div>
         </div>
@@ -143,7 +138,7 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
             </h2>
             <p className="text-sm text-slate-300">
               Sorted by highest recorded player count.
-              {lastRefreshedAt ? ` Last polled ${lastRefreshedAt.toLocaleTimeString()}.` : ''}
+              {lastRefreshedAt ? ` Last updated ${lastRefreshedAt.toLocaleTimeString()}.` : ''}
             </p>
           </div>
           <ViewToggle view={view} onViewChange={setView} />

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/app/context/AuthContext';
 import { supabase } from '@/lib/supabase';
-import { buildServerSlug } from '@/lib/server-paths';
+import { deriveServerIdentity } from '@/lib/server-identity';
 import { assessExternalLink, normalizeExternalUrl, safeUrlOrNull } from '@/lib/external-links';
 
 export default function SubmitServerPage() {
@@ -112,17 +112,20 @@ export default function SubmitServerPage() {
 
     try {
       const domains = expectedDomains();
+      const websiteUrl = safeUrlOrNull(formData.website_url, { expectedDomains: domains }) || null;
+      const identity = deriveServerIdentity({ host: formData.ip, website_url: websiteUrl, name: formData.name });
       const { error: insertError } = await supabase
         .from('servers')
         .insert([
           {
-            name: formData.name,
+            name: identity.name,
+            legacy_name: formData.name,
             ip: formData.ip,
             port: parseInt(formData.port),
             version: formData.version,
             world_type: formData.world_type,
             location: formData.location,
-            website_url: safeUrlOrNull(formData.website_url, { expectedDomains: domains }) || null,
+            website_url: websiteUrl,
             owner_email: formData.owner_email,
             contact_discord: safeUrlOrNull(formData.contact_discord, { allowUntrusted: true }) || null,
             forum_url: safeUrlOrNull(formData.forum_url, { expectedDomains: domains, allowUntrusted: true }) || null,
@@ -148,11 +151,13 @@ export default function SubmitServerPage() {
             owner_user_id: user.id,
             source: 'user_submission',
             host: formData.ip,
-            slug: buildServerSlug({ name: formData.name }),
-            canonical_path: `/servers/${buildServerSlug({ name: formData.name })}`,
-            keyword_primary: formData.name,
-            seo_title: `${formData.name} | Open Tibia Server Listing | OpenTibiaServers.com`,
-            seo_description: `${formData.name}. ${formData.version} Open Tibia server. ${formData.world_type} world hosted in ${formData.location}.`.slice(0, 158),
+            slug: identity.slug,
+            canonical_slug: identity.slug,
+            root_domain: identity.rootDomain,
+            canonical_path: `/servers/${identity.slug}`,
+            keyword_primary: identity.name,
+            seo_title: `${identity.name} | Open Tibia Server Listing | OpenTibiaServers.com`,
+            seo_description: `${identity.name}. ${formData.version} Open Tibia server. ${formData.world_type} world hosted in ${formData.location}.`.slice(0, 158),
             claim_status: 'claimed',
             claimed_at: new Date().toISOString(),
             verification_status: 'pending',

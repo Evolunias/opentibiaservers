@@ -533,6 +533,14 @@ body.ots-directory-light main:not(.featured-server-ad *) {
   color: var(--directory-ink);
 }
 
+/* Knowledge pages own a dark, high-contrast reading surface. Keep the global
+   directory light-theme rule from turning that surface white underneath its
+   intentionally light article typography. */
+body.ots-directory-light main.knowledge-shell {
+  background: #080b0c !important;
+  color: #f6f2e8;
+}
+
 body.ots-directory-light :where(.text-white, .text-slate-100, .text-slate-200):not(.featured-server-ad *) {
   color: #17202a !important;
 }
@@ -683,6 +691,7 @@ body.ots-directory-light .server-tag {
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  cursor: pointer;
 }
 
 .directory-row:hover {
@@ -699,10 +708,14 @@ body.ots-directory-light .server-tag {
 }
 
 .directory-row__name {
+  border: 0;
+  padding: 0;
   color: #17202a !important;
   font-size: 1.08rem;
   font-weight: 800;
   line-height: 1.25;
+  text-align: left;
+  background: transparent;
 }
 
 .directory-row__name:hover {
@@ -798,6 +811,40 @@ body.ots-directory-light .server-tag {
   border-color: #2563eb;
   color: #1d4ed8 !important;
   background: #eff6ff;
+}
+
+.directory-row__excerpt {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 220ms ease, opacity 180ms ease, margin-top 220ms ease;
+}
+
+.directory-row__excerpt > div {
+  overflow: hidden;
+}
+
+.directory-row.is-expanded .directory-row__excerpt {
+  grid-template-rows: 1fr;
+  margin-top: 0.25rem;
+  opacity: 1;
+}
+
+.directory-row__excerpt p {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+  color: #475569;
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.directory-row__excerpt a {
+  display: inline-flex;
+  margin-top: 0.7rem;
+  color: #0f766e !important;
+  font-size: 0.78rem;
+  font-weight: 800;
 }
 
 /* Keep the original featured Evomanias row distinct from ordinary directory cards. */

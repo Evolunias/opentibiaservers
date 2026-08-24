@@ -3,8 +3,7 @@ import { getSupabaseServerClient } from '@/lib/supabase-server';
 import { getServerPath, slugifyServerName } from '@/lib/server-paths';
 import { getCuratedPages } from '@/lib/curated-pages';
 import { getIndexableKeywordPages } from '@/lib/keyword-pages';
-import { getOtServerCuratedPages } from '@/lib/otserver-curated-pages';
-import { getOtlandServerGalaPages } from '@/lib/otland-server-gala-pages';
+import { getServerReviewPages } from '@/lib/server-review-pages';
 import { getResourcePages } from '@/lib/resource-pages';
 import { topOtservlistServers } from '@/lib/top-otservlist-servers';
 import { getTibiaWorldPages } from '@/lib/tibia-world-pages';
@@ -78,17 +77,11 @@ export default async function sitemap() {
     changeFrequency: 'monthly',
     priority: entry.type === 'monsters' || entry.type === 'spells' ? 0.74 : 0.7,
   }));
-  const generatedOtServerUrls = getOtServerCuratedPages().map((page) => ({
-    url: buildAbsoluteUrl(page.path),
-    lastModified: page.updatedAt,
+  const serverReviewUrls = getServerReviewPages().map((server) => ({
+    url: buildAbsoluteUrl(`/servers/${server.slug}`),
+    lastModified: server.updatedAt || server.updated_at || new Date(),
     changeFrequency: 'weekly',
     priority: 0.82,
-  }));
-  const otlandServerGalaUrls = getOtlandServerGalaPages().map((server) => ({
-    url: buildAbsoluteUrl(`/${server.slug}`),
-    lastModified: server.updated_at || new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.78,
   }));
   const keywordUrls = getIndexableKeywordPages(1000).map((page) => ({
     url: buildAbsoluteUrl(`/topics/${page.slug}`),
@@ -102,17 +95,10 @@ export default async function sitemap() {
     changeFrequency: 'hourly',
     priority: server.source_rank <= 25 ? 0.88 : 0.82,
   }));
-  const seededExactMatchUrls = topOtservlistServers.map((server) => ({
-    url: buildAbsoluteUrl(`/${server.slug}`),
-    lastModified: server.updated_at || new Date(),
-    changeFrequency: 'hourly',
-    priority: server.source_rank <= 25 ? 0.9 : 0.84,
-  }));
-
   const supabase = getSupabaseServerClient();
   if (!supabase) {
     const seenUrls = new Set();
-    return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...otlandServerGalaUrls, ...tibiaWorldUrls, ...resourceUrls, ...knowledgeUrls, ...knowledgeCatalogUrls, ...keywordUrls, ...seededExactMatchUrls, ...seededServerUrls].filter((entry) => {
+    return [...staticUrls, ...curatedUrls, ...serverReviewUrls, ...tibiaWorldUrls, ...resourceUrls, ...knowledgeUrls, ...knowledgeCatalogUrls, ...keywordUrls, ...seededServerUrls].filter((entry) => {
       if (seenUrls.has(entry.url)) return false;
       seenUrls.add(entry.url);
       return true;
@@ -121,14 +107,14 @@ export default async function sitemap() {
 
   let { data, error } = await supabase
     .from('servers')
-    .select('id,slug,updated_at,last_seen_at')
+    .select('id,name,slug,canonical_slug,root_domain,host,ip,website_url,external_launch_url,location,version,updated_at,last_seen_at')
     .order('updated_at', { ascending: false })
     .limit(5000);
 
   if (error && isMissingColumn(error)) {
     const fallback = await supabase
       .from('servers')
-      .select('id,name,ip,updated_at,last_check')
+      .select('id,name,slug,host,ip,website_url,external_launch_url,location,version,updated_at,last_check')
       .order('players_online', { ascending: false, nullsFirst: false })
       .limit(5000);
     data = fallback.data || [];
@@ -158,7 +144,7 @@ export default async function sitemap() {
   ];
 
   const seenUrls = new Set();
-  return [...staticUrls, ...curatedUrls, ...generatedOtServerUrls, ...otlandServerGalaUrls, ...tibiaWorldUrls, ...resourceUrls, ...knowledgeUrls, ...knowledgeCatalogUrls, ...keywordUrls, ...facetUrls, ...seededExactMatchUrls, ...seededServerUrls, ...serverUrls].filter((entry) => {
+  return [...staticUrls, ...curatedUrls, ...serverReviewUrls, ...tibiaWorldUrls, ...resourceUrls, ...knowledgeUrls, ...knowledgeCatalogUrls, ...keywordUrls, ...facetUrls, ...seededServerUrls, ...serverUrls].filter((entry) => {
     if (seenUrls.has(entry.url)) return false;
     seenUrls.add(entry.url);
     return true;

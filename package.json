@@ -10,6 +10,7 @@
     "audit:content": "node scripts/audit-content-quality.mjs && node scripts/audit-editorial-quality.mjs",
     "audit:editorial": "node scripts/audit-editorial-quality.mjs",
     "audit:links": "node scripts/audit-links.mjs",
+    "audit:identities": "node scripts/audit-server-identities.mjs",
     "audit:wiki-depth": "node scripts/audit-server-wiki-depth.mjs",
     "audit:knowledge": "node scripts/audit-knowledge-pages.mjs",
     "audit:knowledge-catalog": "node scripts/audit-knowledge-catalog.mjs",

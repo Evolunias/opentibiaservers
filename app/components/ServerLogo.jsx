@@ -3,6 +3,7 @@
 import Image from 'next/image';
 
 const logoRules = [
+  { match: /(^|\s|[/.-])ezodus([\s/.:_-]|$)/i, src: '/images/server-logos/ezodus.png', alt: 'Ezodus official logo' },
   { match: /baiak[\s-]*ilusion/i, src: '/images/server-logos/baiak-ilusion.jpg', alt: 'Baiak Ilusion logo' },
   { match: /demolidores/i, src: '/images/server-logos/demolidores.png', alt: 'Demolidores logo' },
   { match: /koliseu\s*ot/i, src: '/images/server-logos/koliseuot.png', alt: 'KoliseuOT logo' },

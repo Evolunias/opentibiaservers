@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { permanentRedirect } from 'next/navigation';
 import KeywordPageCommunity from '@/app/components/KeywordPageCommunity';
 import TrustedExternalLink from '@/app/components/TrustedExternalLink';
 import { buildServerSlug } from '@/lib/server-paths';
 import { buildCuratedJsonLd } from '@/lib/curated-pages';
 import { fetchDirectoryServers } from '@/lib/directory-data';
 import { buildCuratedCoda, buildDeepDiveSections } from '@/lib/deep-dive-pages';
+import { deriveServerIdentity } from '@/lib/server-identity';
 
 const literalKeys = new Set(['href', 'src', 'url', 'path', 'canonicalPath']);
 const displayReplacements = [
@@ -94,6 +96,13 @@ function buildInternalLinks(page) {
 }
 
 export default async function CuratedGuideArticle({ page: sourcePage }) {
+  if (sourcePage?.type === 'server') {
+    const listedHost = (sourcePage.facts || []).find((fact) => fact?.label === 'Listed host')?.value;
+    const identity = deriveServerIdentity({ ...sourcePage, host: sourcePage.host || sourcePage.ip || listedHost });
+    const canonicalPath = identity.slug ? `/servers/${identity.slug}` : null;
+    if (canonicalPath && sourcePage.path !== canonicalPath) permanentRedirect(canonicalPath);
+  }
+
   const page = sanitizeDisplayCopy(sourcePage);
   const sourceLinks = normalizeSourceLinks(page);
   const cta = page.cta && page.cta.href

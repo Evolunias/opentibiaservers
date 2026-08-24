@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { getServerPath } from '@/lib/server-paths';
 import ServerLogo from './ServerLogo';
@@ -20,6 +21,10 @@ function formatStars(value) {
 }
 
 export default function ServerList({ servers }) {
+  const [expandedId, setExpandedId] = useState(null);
+
+  const toggleServer = (id) => setExpandedId((current) => current === id ? null : id);
+
   return (
     <div className="server-directory-list">
       <div className="server-table-wrap overflow-x-auto">
@@ -53,12 +58,17 @@ export default function ServerList({ servers }) {
       </div>
       <div className="server-directory-list__items">
         {servers.map((server) => (
-          <article key={server.id} className="directory-row">
+          <article
+            key={server.id}
+            className={`directory-row ${expandedId === server.id ? 'is-expanded' : ''}`}
+            onClick={() => toggleServer(server.id)}
+          >
             <ServerLogo server={server} />
             <div className="directory-row__main">
               <div className="directory-row__titleline">
-                <Link href={getServerPath(server)} className="directory-row__name">{server.name}</Link>
-                <span className="directory-row__status is-online">Polled</span>
+                <button type="button" className="directory-row__name" aria-expanded={expandedId === server.id}>
+                  {server.name}
+                </button>
               </div>
               <div className="directory-row__rating" aria-label={`${Number(server.average_rating || 0).toFixed(1)} out of 5 stars`}>
                 <span>{formatStars(server.average_rating)}</span>
@@ -78,7 +88,17 @@ export default function ServerList({ servers }) {
               <div><dt>Capacity</dt><dd>{formatNumber(server.max_players)}</dd></div>
               <div><dt>Uptime</dt><dd>{formatPercent(server.uptime_percent)}</dd></div>
             </dl>
-            <Link href={getServerPath(server)} className="directory-row__action">View profile <span aria-hidden="true">→</span></Link>
+            <Link href={getServerPath(server)} onClick={(event) => event.stopPropagation()} className="directory-row__action">View profile <span aria-hidden="true">→</span></Link>
+            <div className="directory-row__excerpt" aria-hidden={expandedId !== server.id}>
+              <div>
+                <p>{server.official_summary || server.description || 'No verified server excerpt is available yet.'}</p>
+                {server.source_url ? (
+                  <a href={server.source_url} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}>
+                    View verified source
+                  </a>
+                ) : null}
+              </div>
+            </div>
           </article>
         ))}
       </div>
