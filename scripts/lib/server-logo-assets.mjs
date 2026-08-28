@@ -6,7 +6,7 @@ const ALLOWED_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif', '.
 const ALLOWED_KINDS = new Set(['logo', 'wordmark', 'logo_banner']);
 const ALLOWED_SOURCE_TYPES = new Set(['official_website', 'owner_thread', 'user_supplied']);
 const REJECTED_FILENAME = /(?:^|[-_.])(favicon|apple-touch-icon|icon(?:[-_.]|\d)|pixel|tracker|tracking|beacon|spacer|clear|loading|spinner|avatar|placeholder|default|sprite|screenshot|background)(?:[-_.]|$)/i;
-const REJECTED_REMOTE_ARTWORK = /(?:background|artwork|screenshot|hero|cover|og[-_]?image|og[-_]?cover|og[-_]?banner|share(?:\.|-)|fbicon|favicon|clienticon|site[_-]?wide|capa(?:facebook)?|tlofejs|logofejs|\/bg\.)/i;
+const REJECTED_REMOTE_ARTWORK = /(?:background|screenshot|hero|cover|og[-_]?image|og[-_]?cover|og[-_]?banner|share(?:\.|-)|fbicon|favicon|clienticon|site[_-]?wide|capa(?:facebook)?|tlofejs|logofejs|\/bg\.)/i;
 const LOGO_REMOTE_SIGNAL = /(?:logo|wordmark|branding|brand[-_])/i;
 
 function uint24LE(buffer, offset) {
@@ -39,7 +39,7 @@ function jpegDimensions(buffer) {
 function svgDimensions(buffer) {
   const source = buffer.toString('utf8', 0, Math.min(buffer.length, 128000));
   if (/<(?:script|foreignObject|iframe|object|embed)\b/i.test(source)) return { unsafe: 'active_svg_content' };
-  if (/\son[a-z]+\s*=|(?:href|src)\s*=\s*["']\s*(?:https?:|\/\/|data:)/i.test(source)) return { unsafe: 'external_or_event_svg_content' };
+  if (/\son[a-z]+\s*=|(?:href|src)\s*=\s*["']\s*(?:https?:|\/\/|data:(?!image\/(?:png|jpe?g|webp|gif);base64,))/i.test(source)) return { unsafe: 'external_or_event_svg_content' };
 
   const width = Number(source.match(/\bwidth=["']([0-9.]+)/i)?.[1]);
   const height = Number(source.match(/\bheight=["']([0-9.]+)/i)?.[1]);
@@ -122,6 +122,19 @@ function provenanceReason(candidate) {
     : 'official_source_domain_mismatch';
 }
 
+function hasLogoRemoteSignal(candidate) {
+  const source = String(candidate.image_source_url || '');
+  if (LOGO_REMOTE_SIGNAL.test(source)) return true;
+  let pathname = '';
+  try {
+    pathname = new URL(source).pathname.toLowerCase();
+  } catch {
+    return false;
+  }
+  const slug = String(candidate.slug || '').toLowerCase();
+  return Boolean(slug && pathname.includes(slug));
+}
+
 export function validateLogoCandidate(candidate, { repoRoot }) {
   const reasons = [];
   const slug = String(candidate.slug || '');
@@ -133,7 +146,7 @@ export function validateLogoCandidate(candidate, { repoRoot }) {
   if (provenance) reasons.push(provenance);
   if (candidate.source_type === 'official_website' && candidate.image_source_url) {
     if (REJECTED_REMOTE_ARTWORK.test(candidate.image_source_url)) reasons.push('promotional_artwork_not_logo');
-    if (!LOGO_REMOTE_SIGNAL.test(candidate.image_source_url)) reasons.push('remote_asset_lacks_logo_signal');
+    if (!hasLogoRemoteSignal(candidate)) reasons.push('remote_asset_lacks_logo_signal');
   }
 
   const filePath = path.resolve(repoRoot, String(candidate.downloaded_path || ''));
