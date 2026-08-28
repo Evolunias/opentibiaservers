@@ -372,7 +372,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-gray-50">
+      <main className="cyntara-wiki min-h-screen bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <Link href="/" className="text-gray-700 hover:text-gray-950 mb-6 inline-block font-semibold">
             Back to servers
@@ -388,7 +388,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
   if (error || !server) {
     return (
-      <main className="min-h-screen bg-gray-50">
+      <main className="cyntara-wiki min-h-screen bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <Link href="/" className="text-gray-700 hover:text-gray-950 mb-6 inline-block font-semibold">
             Back to servers
@@ -499,13 +499,13 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
   return (
     <>
-    <main className="min-h-screen bg-white text-gray-950">
+    <main className="cyntara-wiki min-h-screen bg-white text-gray-950">
       <div className="max-w-7xl mx-auto px-6 py-8">
         <Link href="/" className="text-gray-700 hover:text-gray-950 mb-6 inline-block font-semibold">
           Back to servers
         </Link>
 
-        <article className="overflow-hidden mb-6 border border-gray-200 rounded bg-white">
+        <article className="cyntara-wiki__content overflow-hidden mb-6 border border-gray-200 rounded bg-white">
           <header className="px-6 py-6 border-b border-gray-200 bg-white">
             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
