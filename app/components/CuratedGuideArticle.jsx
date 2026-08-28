@@ -175,7 +175,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
   const directoryServers = Array.isArray(directoryData?.servers) ? directoryData.servers.filter(Boolean) : [];
 
   return (
-    <main className="min-h-screen bg-white text-black">
+    <main className={isServerProfile ? 'cyntara-wiki min-h-screen' : 'min-h-screen bg-white text-black'}>
       {jsonLd.map((entry, index) => (
         <script
           key={index}
@@ -184,8 +184,8 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
         />
       ))}
 
-      <section className="border-b border-black bg-white text-black">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 lg:grid-cols-[1fr_320px] lg:items-start">
+      <section className={isServerProfile ? 'cyntara-wiki__hero border-b border-black bg-white text-black' : 'border-b border-black bg-white text-black'}>
+        <div className={isServerProfile ? 'cyntara-wiki__header mx-auto grid max-w-6xl gap-8 px-6 py-10 lg:grid-cols-[1fr_320px] lg:items-start' : 'mx-auto grid max-w-6xl gap-8 px-6 py-10 lg:grid-cols-[1fr_320px] lg:items-start'}>
           <div className="pb-6">
             <div className="mb-6 flex flex-wrap items-center gap-3 text-sm">
               <Link href="/" className="font-semibold text-black">
@@ -197,6 +197,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
             <h1 className="mb-4 max-w-4xl text-4xl font-bold leading-tight text-black md:text-6xl">
               {page.h1}
             </h1>
+            {isServerProfile ? <small className="cyntara-wiki__attribution">From OpenTibiaServers Wiki, the primary open tibia server directory</small> : null}
             {profileDek ? (
               <p className="max-w-3xl text-lg leading-8 text-black">
                 {profileDek}
@@ -257,8 +258,8 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-8 px-6 py-8 lg:grid-cols-[minmax(0,1fr)_300px]">
-        <article className="space-y-8">
+      <section className={isServerProfile ? 'cyntara-wiki__grid mx-auto max-w-6xl gap-8 px-6 py-8' : 'mx-auto grid max-w-6xl gap-8 px-6 py-8 lg:grid-cols-[minmax(0,1fr)_300px]'}>
+        <article className={isServerProfile ? 'cyntara-wiki__content space-y-8' : 'space-y-8'}>
           {profileExcerpt ? (
             <section className="rounded-xl border border-emerald-200 bg-emerald-50 p-6 shadow-sm">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-emerald-800">Source-backed overview</p>
@@ -593,7 +594,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
           ) : null}
         </article>
 
-        <aside className="space-y-5">
+        <aside className={isServerProfile ? 'cyntara-wiki__sidebar space-y-5' : 'space-y-5'}>
           {infobox.length ? (
             <div className="rounded border border-gray-200 bg-white p-5">
               <h2 className="mb-3 text-base font-bold text-black">Reference Box</h2>
