@@ -34,7 +34,7 @@ export default function ExordionWikiPage() {
             <p className="mt-4 max-w-3xl text-lg leading-8 text-black">A researched guide to Exordion’s Bravora world, 7.4 identity, custom systems, raids, client, rules, and current verification path.</p>
             <div className="mt-6 flex flex-wrap gap-3"><a href="/?search=Bravora%20Exordion" className="rounded border border-black bg-white px-5 py-3 text-sm font-bold text-black hover:bg-gray-100 hover:no-underline">Compare Bravora Exordion Alternatives</a><a href="/submit-server" className="rounded border border-black bg-white px-5 py-3 text-sm font-bold text-black hover:bg-gray-100 hover:no-underline">Claim or Submit a Listing</a></div>
           </div>
-          <aside className="space-y-4"><ServerLogo server={{ name: 'Exordion', slug: 'exordion', host: 'exordion.com.br' }} size="profile" /><div className="cyntara-wiki__infobox"><div className="cyntara-wiki__infobox-header">Quick Facts</div><table><tbody><tr><th>World</th><td>Bravora</td></tr><tr><th>Protocol</th><td>Tibia 7.4</td></tr><tr><th>Map</th><td>Global + custom</td></tr><tr><th>Client</th><td>Enhanced Client</td></tr><tr><th>Launch</th><td>11 March 2026</td></tr><tr><th>Rates / PvP</th><td>Verify current official pages</td></tr><tr><th>Profile depth</th><td>Source-backed profile</td></tr></tbody></table></div></aside>
+          <aside className="space-y-4"><ServerLogo server={{ name: 'Exordion', slug: 'exordion', host: 'exordion.com.br' }} size="profile" /><div className="cyntara-wiki__infobox"><div className="cyntara-wiki__infobox-header">Quick Facts</div><table><tbody><tr><th>Listed host</th><td>bravora.exordion.com.br:7171</td></tr><tr><th>World</th><td>Bravora</td></tr><tr><th>Protocol</th><td>Tibia 7.4</td></tr><tr><th>Players snapshot</th><td>383 / 2,000 capacity</td></tr><tr><th>Uptime snapshot</th><td>99.94%</td></tr><tr><th>Map</th><td>Global + custom</td></tr><tr><th>Client</th><td>Enhanced Client</td></tr><tr><th>Launch</th><td>11 March 2026</td></tr><tr><th>Rates / PvP</th><td>x1 / PVP listing signal; verify official rules</td></tr><tr><th>Updated</th><td>26 July 2026</td></tr><tr><th>Profile depth</th><td>Source-backed profile</td></tr></tbody></table></div></aside>
         </div>
       </section>
 
@@ -122,6 +122,7 @@ export default function ExordionWikiPage() {
               <SourceLink href="https://bravora.exordion.com.br/?features" label="Official features" />
               <SourceLink href="https://bravora.exordion.com.br/?rules" label="Official rules" />
               <SourceLink href="https://bravora.exordion.com.br/?downloadclient" label="Official client download" />
+              <SourceLink href="https://otservlist.org/list-server_players_online-desc.html" label="Live directory listing" />
             </div>
           </section>
 
