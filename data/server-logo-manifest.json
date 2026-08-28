@@ -193,6 +193,338 @@
         "sodb-online",
         "SODB Online"
       ]
+    },
+    "casteleia": {
+      "src": "/images/server-logos/casteleia.png",
+      "alt": "Casteleia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://casteleia.eu/",
+      "domains": [
+        "casteleia.eu"
+      ],
+      "width": 203,
+      "height": 158,
+      "sha256": "328dff16c5636bee506e3de95dce8035b5ef2324d680b253fecf0ecb47d4767f",
+      "aliases": [
+        "Casteleia"
+      ]
+    },
+    "chillera": {
+      "src": "/images/server-logos/chillera.png",
+      "alt": "Chillera official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://chillera.net/",
+      "domains": [
+        "chillera.net"
+      ],
+      "width": 425,
+      "height": 120,
+      "sha256": "2af49c6be3d66974dbf79e077851ad1dc78cc1bb4414f501f272e9fcf00f4646",
+      "aliases": [
+        "chillera",
+        "CHILLERA"
+      ]
+    },
+    "ghalkorot": {
+      "src": "/images/server-logos/ghalkorot.webp",
+      "alt": "Ghalkorot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://ghalkorot.com/",
+      "domains": [
+        "ghalkorot.com"
+      ],
+      "width": 800,
+      "height": 354,
+      "sha256": "3a453c1cd0f14e3ee7505ad87b509c3c48ae4a83109d973579f5061db1778048",
+      "aliases": [
+        "Ghalkorot"
+      ]
+    },
+    "gloryidle": {
+      "src": "/images/server-logos/gloryidle.png",
+      "alt": "Gloryidle official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://gloryidle.com/",
+      "domains": [
+        "gloryidle.com"
+      ],
+      "width": 642,
+      "height": 233,
+      "sha256": "b61a24ae059b8c27fa71347c6a9b9abc00be3e489eefe8d5d7159b8ad04977be",
+      "aliases": [
+        "Gloryidle"
+      ]
+    },
+    "infernian": {
+      "src": "/images/server-logos/infernian.webp",
+      "alt": "Infernian official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://infernian.com/",
+      "domains": [
+        "infernian.com"
+      ],
+      "width": 880,
+      "height": 376,
+      "sha256": "8b57aac6bd8a7203b5e05558ca5f1ed5b7e10cb650aad8d8a12e8f2421a9e780",
+      "aliases": [
+        "Infernian",
+        "infernian"
+      ]
+    },
+    "mellorox": {
+      "src": "/images/server-logos/mellorox.png",
+      "alt": "Mellorox official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://mellorox.com/",
+      "domains": [
+        "mellorox.com"
+      ],
+      "width": 1694,
+      "height": 1190,
+      "sha256": "6c467e78d341dd0e16d4d4eee18374659d98918db66569935c75ee27573d52d0",
+      "aliases": [
+        "Mellorox"
+      ]
+    },
+    "midhem": {
+      "src": "/images/server-logos/midhem.png",
+      "alt": "Midhem official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://midhem.com/",
+      "domains": [
+        "midhem.com"
+      ],
+      "width": 521,
+      "height": 141,
+      "sha256": "6c4fbd772381d955d7c8af632c2e24df830cdcbe91e2853a16bdb5435aad225f",
+      "aliases": [
+        "Midhem",
+        "midhem",
+        "midhem-online",
+        "Midhem Online"
+      ]
+    },
+    "mistofdeath": {
+      "src": "/images/server-logos/mistofdeath.png",
+      "alt": "Mistofdeath official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://mistofdeath.com/",
+      "domains": [
+        "mistofdeath.com"
+      ],
+      "width": 1068,
+      "height": 252,
+      "sha256": "134b2f852e9a0413443047ed7ef81706ff2a6d31da9ffc394587162a01d2d7a7",
+      "aliases": [
+        "Mistofdeath",
+        "mist-of-death-reset",
+        "Mist of Death Reset"
+      ]
+    },
+    "mythera74": {
+      "src": "/images/server-logos/mythera74.svg",
+      "alt": "Mythera74 official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://mythera74.com/splash",
+      "domains": [
+        "mythera74.com"
+      ],
+      "width": 543,
+      "height": 220,
+      "sha256": "25709b83702d06ffd1515ef54b84d4865b2cc59af54d3406fbfd6de72905606d",
+      "aliases": [
+        "mythera-7-4",
+        "Mythera 7.4"
+      ]
+    },
+    "ntsw": {
+      "src": "/images/server-logos/ntsw.png",
+      "alt": "Ntsw official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://ntsw.pl/",
+      "domains": [
+        "ntsw.pl"
+      ],
+      "width": 355,
+      "height": 150,
+      "sha256": "c26996a2d7b3a71190af455f50a9866169ebaf62ce86f6c1ebd8d11f020f5c78",
+      "aliases": [
+        "naruto-the-shinobi-war",
+        "Naruto the Shinobi War"
+      ]
+    },
+    "pelegot": {
+      "src": "/images/server-logos/pelegot.png",
+      "alt": "Pelegot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://pelegot.online/",
+      "domains": [
+        "pelegot.online"
+      ],
+      "width": 480,
+      "height": 190,
+      "sha256": "8c41927efa5192695ac68ded4091224431f9899182ce191a912ada446eeccbe3",
+      "aliases": [
+        "Pelegot"
+      ]
+    },
+    "revolt80": {
+      "src": "/images/server-logos/revolt80.svg",
+      "alt": "Revolt80 official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://revolt80.online/",
+      "domains": [
+        "revolt80.online"
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "be39fe5605cb98c70f33f58ce9031bab63b5dab2e0075d660c37560cb536f3eb",
+      "aliases": [
+        "Revolt80"
+      ]
+    },
+    "rexia": {
+      "src": "/images/server-logos/rexia.png",
+      "alt": "Rexia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://rexia.pl/",
+      "domains": [
+        "rexia.pl"
+      ],
+      "width": 226,
+      "height": 78,
+      "sha256": "09cec9cd5c3480b1c95259786293cfd510cc3eef8c8fa87c69f620cde43a3965",
+      "aliases": [
+        "Rexia",
+        "rexia"
+      ]
+    },
+    "rustya": {
+      "src": "/images/server-logos/rustya.png",
+      "alt": "Rustya official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://rustya.com/",
+      "domains": [
+        "rustya.com"
+      ],
+      "width": 196,
+      "height": 158,
+      "sha256": "5ad4d27c9e66bffa38d59fb2e9a6c80fa13195b8a3c88dcb8f749b02109f74de",
+      "aliases": [
+        "Rustya"
+      ]
+    },
+    "shadowovia": {
+      "src": "/images/server-logos/shadowovia.png",
+      "alt": "Shadowovia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://shadowovia.pl/",
+      "domains": [
+        "shadowovia.pl"
+      ],
+      "width": 1612,
+      "height": 976,
+      "sha256": "911944e91959c0b498840cbf32f4418d9bb403c12b3e1c57167de64ac1b3fd9c",
+      "aliases": [
+        "Shadowovia"
+      ]
+    },
+    "theotserver": {
+      "src": "/images/server-logos/theotserver.png",
+      "alt": "Theotserver official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://theotserver.com/",
+      "domains": [
+        "theotserver.com"
+      ],
+      "width": 884,
+      "height": 240,
+      "sha256": "6c7ca6545145dacc100d3e7c291e09946b36696d76220f1cedd8f73ea96afb42",
+      "aliases": [
+        "Theotserver",
+        "theotserver"
+      ]
+    },
+    "tibiahydra": {
+      "src": "/images/server-logos/tibiahydra.png",
+      "alt": "Tibiahydra official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://tibiahydra.com/",
+      "domains": [
+        "tibiahydra.com"
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "2f231192394927524390f6938a6e75c547696357dc51429fc34c7295f65cfa17",
+      "aliases": [
+        "Tibiahydra"
+      ]
+    },
+    "tibiaidle": {
+      "src": "/images/server-logos/tibiaidle.png",
+      "alt": "Tibiaidle official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://tibiaidle.com/",
+      "domains": [
+        "tibiaidle.com"
+      ],
+      "width": 689,
+      "height": 208,
+      "sha256": "b3e209ddb8e266c6a95234dc0ac437cc26a61f129a86c9dc02ede90883dc049c",
+      "aliases": [
+        "Tibiaidle"
+      ]
+    },
+    "tibiara": {
+      "src": "/images/server-logos/tibiara.png",
+      "alt": "Tibiara official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.tibiara.com/",
+      "domains": [
+        "tibiara.com"
+      ],
+      "width": 1413,
+      "height": 871,
+      "sha256": "92028e6de87875998f2331c0bfe4b8291ad10c17bb44d1169b110063a005e096",
+      "aliases": [
+        "Tibiara",
+        "tibiara"
+      ]
+    },
+    "wolfz": {
+      "src": "/images/server-logos/wolfz.png",
+      "alt": "Wolfz official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://wolfz.tech/",
+      "domains": [
+        "wolfz.tech"
+      ],
+      "width": 520,
+      "height": 227,
+      "sha256": "58c8cb9ea704d69d8a92997fa0e9df1801ce4f46a9bf9e1726c17f55c5f325cc",
+      "aliases": [
+        "Wolfz"
+      ]
     }
   },
   "excluded_assets": {

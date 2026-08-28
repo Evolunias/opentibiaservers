@@ -48,12 +48,12 @@
     },
     {
       "slug": "casteleia",
-      "downloaded_path": "data/server-logo-downloads/casteleia.jpg",
+      "downloaded_path": "data/server-logo-downloads/casteleia.png",
       "alt": "Casteleia official logo",
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://casteleia.eu/",
-      "image_source_url": "https://casteleia.eu/layouts/tibiacom/images/global/header/background-artwork.jpg",
+      "image_source_url": "https://casteleia.eu/layouts/tibiacom/images/tibia-logo-artwork-top1.png",
       "domains": [
         "casteleia.eu"
       ],
@@ -63,12 +63,12 @@
     },
     {
       "slug": "chillera",
-      "downloaded_path": "data/server-logo-downloads/chillera.jpg",
+      "downloaded_path": "data/server-logo-downloads/chillera.png",
       "alt": "Chillera official logo",
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://chillera.net/",
-      "image_source_url": "https://chillera.net/og-image.jpg",
+      "image_source_url": "https://chillera.net/images/logo.png",
       "domains": [
         "chillera.net"
       ],
@@ -138,7 +138,7 @@
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://ghalkorot.com/",
-      "image_source_url": "https://ghalkorot.com/templates/tibiacom/images/header/og-share.webp",
+      "image_source_url": "https://ghalkorot.com/templates/tibiacom/images/logo.webp",
       "domains": [
         "ghalkorot.com"
       ],
@@ -148,12 +148,12 @@
     },
     {
       "slug": "gloryidle",
-      "downloaded_path": "data/server-logo-downloads/gloryidle.jpg",
+      "downloaded_path": "data/server-logo-downloads/gloryidle.png",
       "alt": "Gloryidle official logo",
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://gloryidle.com/",
-      "image_source_url": "https://gloryidle.com/images/tlofejs.jpg",
+      "image_source_url": "https://gloryidle.com/images/logo3.png",
       "domains": [
         "gloryidle.com"
       ],
@@ -195,12 +195,12 @@
     },
     {
       "slug": "infernian",
-      "downloaded_path": "data/server-logo-downloads/infernian.jpg",
+      "downloaded_path": "data/server-logo-downloads/infernian.webp",
       "alt": "Infernian official logo",
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://infernian.com/",
-      "image_source_url": "https://infernian.com/theme/hero.jpg",
+      "image_source_url": "https://infernian.com/theme/logo.webp",
       "domains": [
         "infernian.com"
       ],
@@ -238,12 +238,12 @@
     },
     {
       "slug": "mellorox",
-      "downloaded_path": "data/server-logo-downloads/mellorox.jpg",
+      "downloaded_path": "data/server-logo-downloads/mellorox.png",
       "alt": "Mellorox official logo",
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://mellorox.com/",
-      "image_source_url": "https://mellorox.com/layouts/tibiacom/images/global/header/background-artwork.jpg",
+      "image_source_url": "https://mellorox.com/layouts/tibiacom/images/Mellorox1.png",
       "domains": [
         "mellorox.com"
       ],
@@ -258,7 +258,7 @@
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://midhem.com/",
-      "image_source_url": "https://midhem.com/img/screenshots/12.png",
+      "image_source_url": "https://midhem.com/img/logo.png",
       "domains": [
         "midhem.com"
       ],
@@ -271,12 +271,12 @@
     },
     {
       "slug": "mistofdeath",
-      "downloaded_path": "data/server-logo-downloads/mistofdeath.jpg",
+      "downloaded_path": "data/server-logo-downloads/mistofdeath.png",
       "alt": "Mistofdeath official logo",
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://mistofdeath.com/",
-      "image_source_url": "https://mistofdeath.com/templates/mistlegacy/images/header/background-artwork.jpg",
+      "image_source_url": "https://mistofdeath.com/templates/mistlegacy/images/header/mod-logo-only.png",
       "domains": [
         "mistofdeath.com"
       ],
@@ -304,12 +304,12 @@
     },
     {
       "slug": "mythera74",
-      "downloaded_path": "data/server-logo-downloads/mythera74.png",
+      "downloaded_path": "data/server-logo-downloads/mythera74.svg",
       "alt": "Mythera74 official logo",
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://mythera74.com/splash",
-      "image_source_url": "https://mythera74.com/og-image.png",
+      "image_source_url": "https://mythera74.com/logo/logo-principal.svg",
       "domains": [
         "mythera74.com"
       ],
@@ -367,12 +367,12 @@
     },
     {
       "slug": "ntsw",
-      "downloaded_path": "data/server-logo-downloads/ntsw.jpg",
+      "downloaded_path": "data/server-logo-downloads/ntsw.png",
       "alt": "Ntsw official logo",
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://ntsw.pl/",
-      "image_source_url": "https://ntsw.pl/public/images/og.jpg",
+      "image_source_url": "https://ntsw.pl/templates/ntsw/img/logo.png",
       "domains": [
         "ntsw.pl"
       ],
@@ -399,12 +399,12 @@
     },
     {
       "slug": "pelegot",
-      "downloaded_path": "data/server-logo-downloads/pelegot.jpg",
+      "downloaded_path": "data/server-logo-downloads/pelegot.png",
       "alt": "Pelegot official logo",
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://pelegot.online/",
-      "image_source_url": "https://pelegot.online/images/og-cover.jpg",
+      "image_source_url": "https://pelegot.online/images/logo.png",
       "domains": [
         "pelegot.online"
       ],
@@ -447,12 +447,12 @@
     },
     {
       "slug": "revolt80",
-      "downloaded_path": "data/server-logo-downloads/revolt80.png",
+      "downloaded_path": "data/server-logo-downloads/revolt80.svg",
       "alt": "Revolt80 official logo",
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://revolt80.online/",
-      "image_source_url": "https://revolt80.online/images/revolt80-share.png",
+      "image_source_url": "https://revolt80.online/templates/revolt80/assets/logo-rNEW.svg",
       "domains": [
         "revolt80.online"
       ],
@@ -467,7 +467,7 @@
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://rexia.pl/",
-      "image_source_url": "https://rexia.pl/images/fbicon.png",
+      "image_source_url": "https://rexia.pl/layouts/val/images/moblogo.png",
       "domains": [
         "rexia.pl"
       ],
@@ -516,7 +516,7 @@
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://rustya.com/",
-      "image_source_url": "https://rustya.com/assets/images/icon.png",
+      "image_source_url": "https://rustya.com/assets/tibiarl/images/header/rustya-logo-artwork-top.png",
       "domains": [
         "rustya.com"
       ],
@@ -531,7 +531,7 @@
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://shadowovia.pl/",
-      "image_source_url": "https://shadowovia.pl//images/Alpha/shadowovia-clienticon.png",
+      "image_source_url": "https://shadowovia.pl/plugins/golden-baiak-war/themes/golden-baiak-war/images/shadowovia-logo.png",
       "domains": [
         "shadowovia.pl"
       ],
@@ -557,12 +557,12 @@
     },
     {
       "slug": "theotserver",
-      "downloaded_path": "data/server-logo-downloads/theotserver.jpg",
+      "downloaded_path": "data/server-logo-downloads/theotserver.png",
       "alt": "Theotserver official logo",
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://theotserver.com/",
-      "image_source_url": "https://theotserver.com/assets/brand/og-image.jpg",
+      "image_source_url": "https://theotserver.com/assets/brand/logo/theotserver-footer-lockup.png",
       "domains": [
         "theotserver.com"
       ],
@@ -573,12 +573,12 @@
     },
     {
       "slug": "tibiahydra",
-      "downloaded_path": "data/server-logo-downloads/tibiahydra.jpg",
+      "downloaded_path": "data/server-logo-downloads/tibiahydra.png",
       "alt": "Tibiahydra official logo",
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://tibiahydra.com/",
-      "image_source_url": "https://tibiahydra.com/images/og-image.jpg",
+      "image_source_url": "https://tibiahydra.com/templates/tibiacom/images/header/logo.png",
       "domains": [
         "tibiahydra.com"
       ],
@@ -593,7 +593,7 @@
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://tibiaidle.com/",
-      "image_source_url": "https://tibiaidle.com/images/logofejs.png",
+      "image_source_url": "https://tibiaidle.com/images/logo2.png",
       "domains": [
         "tibiaidle.com"
       ],
@@ -608,7 +608,7 @@
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://www.tibiara.com/",
-      "image_source_url": "https://www.tibiara.com/assets/favicon/icon-64.png",
+      "image_source_url": "https://www.tibiara.com/assets/media/main-logo.png",
       "domains": [
         "tibiara.com"
       ],
@@ -624,7 +624,7 @@
       "kind": "logo_banner",
       "source_type": "official_website",
       "source_url": "https://wolfz.tech/",
-      "image_source_url": "https://wolfz.tech/templates/tibiacom/images/wolfz-og-banner.png",
+      "image_source_url": "https://wolfz.tech/templates/tibiacom/images/wolfz/logo/wolfz-logo.png",
       "domains": [
         "wolfz.tech"
       ],
