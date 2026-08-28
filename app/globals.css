@@ -1265,6 +1265,7 @@ body.ots-directory-light .auth-modal__secondary:hover {
 .cyntara-wiki__table th { background: #eaecef; }
 .cyntara-wiki__infobox { padding: 12px; border: 1px solid #a2a9b1; border-radius: 2px; background: #f8f9fa; font-size: 0.9rem; }
 .cyntara-wiki__infobox-header { margin-bottom: 8px; padding: 6px; border: 1px solid #a2a9b1; background: #cef2e0; font-size: 1.1rem; font-weight: 700; text-align: center; }
+.cyntara-wiki__logo { display: block; max-width: 100%; height: 84px; margin: 0 auto 10px; object-fit: contain; }
 .cyntara-wiki__infobox table { width: 100%; border-collapse: collapse; }
 .cyntara-wiki__infobox th, .cyntara-wiki__infobox td { padding: 6px; border-bottom: 1px solid #eaecf0; text-align: left; vertical-align: top; }
 .cyntara-wiki__infobox th { width: 40%; }
