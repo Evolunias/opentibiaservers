@@ -1253,10 +1253,12 @@ body.ots-directory-light .auth-modal__secondary:hover {
 .cyntara-wiki__header small, .cyntara-wiki__attribution { color: #54595d; }
 .cyntara-wiki__grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 24px; }
 .cyntara-wiki__hero { border-bottom-color: #a2a9b1 !important; }
-.cyntara-wiki__content > section { scroll-margin-top: 90px; border-bottom-color: #a2a9b1 !important; border-radius: 0 !important; box-shadow: none !important; }
+.cyntara-wiki__content > section { scroll-margin-top: 90px; margin-bottom: 32px !important; padding: 0 0 32px !important; border: 0 !important; border-bottom: 1px solid #a2a9b1 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; }
 .cyntara-wiki__content > section h2 { color: #202122; font-size: 1.5rem; font-weight: 400; }
 .cyntara-wiki__content > section > p:first-child { color: #54595d; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.cyntara-wiki__sidebar > div { border-color: #a2a9b1 !important; border-radius: 2px !important; }
+.cyntara-wiki__content > section.cyntara-wiki__callout { margin: 20px 0 32px !important; padding: 15px !important; border: 0 !important; border-left: 4px solid #36c !important; background: #eaf3ff !important; }
+.cyntara-wiki__content > section.cyntara-wiki__callout > p:first-child { color: #202122; font-size: 1rem; letter-spacing: normal; text-transform: none; }
+.cyntara-wiki__sidebar > div { padding: 16px !important; border-color: #a2a9b1 !important; border-radius: 2px !important; background: #f8f9fa !important; }
 .cyntara-wiki__sidebar h2 { font-weight: 400; }
 .cyntara-wiki__section { padding: 0 0 24px; border: 0 !important; border-bottom: 1px solid #a2a9b1 !important; border-radius: 0 !important; background: transparent !important; }
 .cyntara-wiki__section h2 { color: #202122; font-size: 1.5rem; font-weight: 400; }
