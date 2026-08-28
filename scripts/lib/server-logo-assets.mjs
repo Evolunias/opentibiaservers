@@ -112,7 +112,7 @@ function provenanceReason(candidate) {
   }
 
   if (candidate.source_type === 'owner_thread') {
-    return hostname === 'otland.net' || hostname.endsWith('.otland.net') ? null : 'owner_thread_not_on_otland';
+    return hostname === 'community_archive.net' || hostname.endsWith('.community_archive.net') ? null : 'owner_thread_not_on_community_archive';
   }
 
   const domains = (candidate.domains || []).map((domain) => String(domain).replace(/^www\./, '').toLowerCase());

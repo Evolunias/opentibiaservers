@@ -17,7 +17,7 @@ const page = {
     "Tibia worlds",
     "Tibia server list",
     "Tibia private servers",
-    "OTLand",
+    "community_archive",
     "OTServlist"
   ],
   "metaDescription": "Tibia guide for players comparing official Tibia, Open Tibia servers, OT server lists, worlds, clients, safe downloads, forums, and active communities.",
@@ -69,7 +69,7 @@ const page = {
     },
     {
       "label": "Community sources",
-      "value": "Tibia.com, OTLand, OTServlist, server websites, Discords, forums"
+      "value": "Tibia.com, community_archive, OTServlist, server websites, Discords, forums"
     }
   ],
   "timeline": [
@@ -86,7 +86,7 @@ const page = {
     {
       "date": "Server-list era",
       "title": "Directories and forums become essential verification sources",
-      "text": "Players increasingly rely on OTServlist, OTLand Server Gala, official server websites, Discords, and community threads to verify whether a server is active, safe, and worth playing."
+      "text": "Players increasingly rely on OTServlist, community_archive server launch archive, official server websites, Discords, and community threads to verify whether a server is active, safe, and worth playing."
     },
     {
       "date": "OpenTibiaServers.com",
@@ -98,7 +98,7 @@ const page = {
     "Tibia is both an official-game name and the parent intent behind Open Tibia server discovery.",
     "Players searching broad Tibia terms need routing: official game, worlds, servers, clients, guides, forums, screenshots, and safe download checks.",
     "The page should help users avoid unsafe downloads by pushing them toward official sites, known community threads, and owner-claimed listings.",
-    "A strong Tibia hub can connect dedicated server pages, official worlds, OTLand discoveries, OTServlist records, and player reviews in one durable resource."
+    "A strong Tibia hub can connect dedicated server pages, official worlds, community_archive discoveries, OTServlist records, and player reviews in one durable resource."
   ],
   "glossary": [
     {
@@ -114,8 +114,8 @@ const page = {
       "definition": "A long-running public Open Tibia server list that players use to compare online counts, uptime, versions, rates, and server hosts."
     },
     {
-      "term": "OTLand Server Gala",
-      "definition": "An OtLand forum board where server owners advertise Open Tibia launches, updates, seasons, screenshots, rules, and community discussion."
+      "term": "community_archive server launch archive",
+      "definition": "An community_archive forum board where server owners advertise Open Tibia launches, updates, seasons, screenshots, rules, and community discussion."
     },
     {
       "term": "Client version",
@@ -132,8 +132,8 @@ const page = {
       "href": "https://www.tibia.com/gameguides/?section=world&subtopic=manual"
     },
     {
-      "label": "OtLand Server Gala",
-      "href": "https://otland.net/forums/server-gala.43/"
+      "label": "community_archive server launch archive",
+      "href": "https://opentibiaservers.com/"
     },
     {
       "label": "OTServlist players-online ranking",
@@ -146,7 +146,7 @@ const page = {
     "OT servers",
     "Tibia 8.6 servers",
     "Tibia 7.4 servers",
-    "OTLand Server Gala",
+    "community_archive server launch archive",
     "OTServlist",
     "Tibia worlds"
   ],
@@ -156,7 +156,7 @@ const page = {
       "heading": "Why Tibia needs a dedicated page on OpenTibiaServers.com",
       "body": [
         "A broad search for Tibia can mean several different things. One player may want the official game website, another may want a specific world like Antica or Nova, another may want a modern high-rate OT server, and another may be trying to verify whether a private server client is safe to download.",
-        "That mixed intent is exactly why this page exists. It routes the player toward official Tibia context, active Open Tibia server listings, OTLand launch threads, OTServlist snapshots, world-history pages, and claimable server profiles without pretending those sources are interchangeable."
+        "That mixed intent is exactly why this page exists. It routes the player toward official Tibia context, active Open Tibia server listings, community_archive launch threads, OTServlist snapshots, world-history pages, and claimable server profiles without pretending those sources are interchangeable."
       ]
     },
     {
@@ -180,7 +180,7 @@ const page = {
       "heading": "How OpenTibiaServers.com should serve Tibia players",
       "body": [
         "The best directory is not a table clone. It should preserve live server-list data, but then expand each listing into a useful page: official links, launch history, rates, PvP rules, screenshots, reviews, forum context, Discord signals, uptime checks, and owner-verified corrections.",
-        "For broad Tibia visitors, the directory should make it easy to move from a general idea to a dedicated page: Antica, Nova, Cyntara, Evolunia, NoxiousOT, OxygenOT, Kaldrox, Miracle 7.4, OTLand, OTServlist, and newly discovered Server Gala listings."
+        "For broad Tibia visitors, the directory should make it easy to move from a general idea to a dedicated page: Antica, Nova, Cyntara, Evolunia, NoxiousOT, OxygenOT, Kaldrox, Miracle 7.4, community_archive, OTServlist, and newly discovered server launch archive listings."
       ]
     },
     {
@@ -207,7 +207,7 @@ const page = {
     },
     {
       "question": "Where do new Open Tibia servers get discovered?",
-      "answer": "Common discovery sources include OTServlist, OtLand Server Gala, server websites, Discord communities, forum posts, and player recommendations."
+      "answer": "Common discovery sources include OTServlist, community_archive server launch archive, server websites, Discord communities, forum posts, and player recommendations."
     }
   ],
   "researchNotes": [
@@ -217,7 +217,7 @@ const page = {
     },
     {
       "label": "Community-source boundary",
-      "value": "OtLand Server Gala threads are useful public launch and discussion records. They should be treated as source leads that require owner or live-server verification before being considered complete listings."
+      "value": "community_archive server launch archive threads are useful public launch and discussion records. They should be treated as source leads that require owner or live-server verification before being considered complete listings."
     }
   ],
   "mediaLeads": [
@@ -227,8 +227,8 @@ const page = {
       "note": "Use official pages for official-game context and avoid mirroring copyrighted material unless permission or license allows it."
     },
     {
-      "label": "OtLand Server Gala screenshots in source threads",
-      "href": "https://otland.net/forums/server-gala.43/",
+      "label": "community_archive server launch archive screenshots in source threads",
+      "href": "https://opentibiaservers.com/",
       "note": "Server owners often post launch graphics and gameplay screenshots in their threads; link to source threads unless permission allows local reuse."
     }
   ]

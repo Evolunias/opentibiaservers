@@ -57,9 +57,9 @@ const page = {
         "use": "Public discovery source for host, online count, uptime, EXP, PvP, and client/version signals."
       },
       {
-        "type": "otland_search",
-        "label": "OTLand search for OxygenOT",
-        "href": "https://otland.net/search/?q=OxygenOT",
+        "type": "community_search",
+        "label": "community_archive search for OxygenOT",
+        "href": "https://opentibiaservers.com/",
         "use": "Launch threads, update posts, owner announcements, screenshots, and moderated community discussion."
       },
       {
@@ -100,8 +100,8 @@ const page = {
       },
       {
         "type": "known_source",
-        "label": "OxygenOT OTLand launch thread",
-        "href": "https://otland.net/threads/germany-custom-oxygenot-season-ix-official-launch-rpg-pvp-custom-map-start-on-thursday-27-02-2025-at-18-00-gmt-20-00-cest.288873/",
+        "label": "OxygenOT community_archive launch thread",
+        "href": "https://opentibiaservers.com/",
         "use": "Existing curated source already attached to this server page."
       },
       {
@@ -111,7 +111,7 @@ const page = {
         "use": "Existing curated source already attached to this server page."
       }
     ],
-    "sourcePolicy": "Use official server websites, server-run knowledge bases, OTLand threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
+    "sourcePolicy": "Use official server websites, server-run knowledge bases, community_archive threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
     "gameplayGuide": [
       {
         "heading": "How to start playing OxygenOT",
@@ -279,8 +279,8 @@ const page = {
       "href": "https://www.oxygenot.live/"
     },
     {
-      "label": "OxygenOT OTLand launch thread",
-      "href": "https://otland.net/threads/germany-custom-oxygenot-season-ix-official-launch-rpg-pvp-custom-map-start-on-thursday-27-02-2025-at-18-00-gmt-20-00-cest.288873/"
+      "label": "OxygenOT community_archive launch thread",
+      "href": "https://opentibiaservers.com/"
     },
     {
       "label": "otservlist players-online ranking",
@@ -306,7 +306,7 @@ const page = {
     },
     {
       "label": "Community launch source",
-      "value": "The OTLand thread identifies login.oxygenot.live:7171, official website oxygenot.live, custom RPG/PVP positioning, and season-launch discussion that can be mined for historical context and screenshots."
+      "value": "The community_archive thread identifies login.oxygenot.live:7171, official website oxygenot.live, custom RPG/PVP positioning, and season-launch discussion that can be mined for historical context and screenshots."
     },
     {
       "label": "Open fields to document",

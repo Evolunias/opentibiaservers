@@ -372,7 +372,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-gray-50">
+      <main className="cyntara-wiki min-h-screen bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <Link href="/" className="text-gray-700 hover:text-gray-950 mb-6 inline-block font-semibold">
             Back to servers
@@ -388,7 +388,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
   if (error || !server) {
     return (
-      <main className="min-h-screen bg-gray-50">
+      <main className="cyntara-wiki min-h-screen bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <Link href="/" className="text-gray-700 hover:text-gray-950 mb-6 inline-block font-semibold">
             Back to servers
@@ -499,13 +499,13 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
   return (
     <>
-    <main className="min-h-screen bg-white text-gray-950">
+    <main className="cyntara-wiki min-h-screen bg-white text-gray-950">
       <div className="max-w-7xl mx-auto px-6 py-8">
         <Link href="/" className="text-gray-700 hover:text-gray-950 mb-6 inline-block font-semibold">
           Back to servers
         </Link>
 
-        <article className="overflow-hidden mb-6 border border-gray-200 rounded bg-white">
+        <article className="cyntara-wiki__content overflow-hidden mb-6 border border-gray-200 rounded bg-white">
           <header className="px-6 py-6 border-b border-gray-200 bg-white">
             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -545,7 +545,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                   {renderSubheadline ? (
                     <p className="text-gray-700">{renderSubheadline}</p>
                   ) : (
-                    <p className="text-gray-600">No official description or attributed OtLand excerpt is attached to this record yet.</p>
+                    <p className="text-gray-600">No official description or attributed community_archive excerpt is attached to this record yet.</p>
                   )}
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -600,12 +600,12 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                 ) : (
                   <DirectoryEmptyState
                     title="Research pending"
-                    body="No official metadata or attributable OtLand post has been verified for this server."
+                    body="No official metadata or attributable community_archive post has been verified for this server."
                   />
                 )}
                 {ownerExcerpt && ownerExcerpt !== profileExcerpt ? (
                   <blockquote className="mt-4 border-l-2 border-gray-300 pl-4 text-sm leading-6 text-gray-700">
-                    <span className="mb-1 block text-xs font-bold uppercase tracking-wide text-gray-500">Owner-published OtLand post</span>
+                    <span className="mb-1 block text-xs font-bold uppercase tracking-wide text-gray-500">Owner-published community_archive post</span>
                     {ownerExcerpt}
                   </blockquote>
                 ) : null}
@@ -658,7 +658,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
 
             {communityExperiences.length ? (
               <section className="mb-6 rounded border border-gray-200 p-4">
-                <h2 className="text-lg font-bold text-gray-950">Attributed OtLand discussion</h2>
+                <h2 className="text-lg font-bold text-gray-950">Attributed community_archive discussion</h2>
                 <p className="mt-1 text-sm text-gray-600">
                   Relevant posts from people other than the thread owner, kept short and linked to their original context.
                 </p>
@@ -719,8 +719,8 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                 <Link href="/resources" className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline">
                   Open Tibia tools and resources
                 </Link>
-                <Link href="/otland" className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline">
-                  OTLand server launch guide
+                <Link href="/community_archive" className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline">
+                  community_archive server launch guide
                 </Link>
                 {server.version ? (
                   <Link href={`/servers/client/${String(server.version).replace(/\./g, '-')}`} className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline">

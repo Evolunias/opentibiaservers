@@ -1,20 +1,20 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { collapseCanonicalServers, deriveServerIdentity } from '../lib/server-identity.js';
-import { rankOtlandCandidates, selectOtlandCandidate } from '../lib/otland-source-candidate.js';
+import { rankcommunity_archiveCandidates, selectcommunity_archiveCandidate } from '../lib/community_archive-source-candidate.js';
 
 const repoRoot = process.cwd();
 const inventory = JSON.parse(fs.readFileSync(path.join(repoRoot, 'data', 'live-server-inventory.json'), 'utf8'));
-const existing = JSON.parse(fs.readFileSync(path.join(repoRoot, 'data', 'otland-server-gala-servers.json'), 'utf8'));
+const existing = JSON.parse(fs.readFileSync(path.join(repoRoot, 'data', 'community-archive-servers.json'), 'utf8'));
 const excerptManifestPath = path.join(repoRoot, 'data', 'server-excerpt-manifest.json');
 const excerptManifest = fs.existsSync(excerptManifestPath)
   ? JSON.parse(fs.readFileSync(excerptManifestPath, 'utf8'))
   : {};
-const outputPath = path.join(repoRoot, 'data', 'discovered-otland-server-sources.json');
+const outputPath = path.join(repoRoot, 'data', 'discovered-community_archive-server-sources.json');
 const previous = fs.existsSync(outputPath) ? JSON.parse(fs.readFileSync(outputPath, 'utf8')) : { records: [] };
 const concurrency = Math.max(1, Math.min(5, Number(process.env.DISCOVERY_CONCURRENCY || 4)));
 const timeoutMs = Math.max(3000, Math.min(30000, Number(process.env.DISCOVERY_TIMEOUT_MS || 12000)));
-const searchProvider = 'OtLand native forum search v4 exact-domain';
+const searchProvider = 'community_archive native forum search v4 exact-domain';
 
 function decodeXml(value = '') {
   return String(value)
@@ -30,7 +30,7 @@ function nativeSearchItems(html = '') {
   for (const block of blocks) {
     const match = block.match(/contentRow-title[\s\S]*?<a href="(\/threads\/[^"]+)"[^>]*>([\s\S]*?)<\/a>/i);
     if (!match) continue;
-    const resultUrl = new URL(decodeXml(match[1]), 'https://otland.net');
+    const resultUrl = new URL(decodeXml(match[1]), 'https://opentibiaservers.com/');
     resultUrl.pathname = resultUrl.pathname.replace(/\/post-\d+\/?$/, '/');
     resultUrl.hash = '';
     const url = resultUrl.href;
@@ -57,18 +57,18 @@ async function nativeSearch(term, { titleOnly = true } = {}) {
   const timer = setTimeout(() => controller.abort(), Math.max(timeoutMs, 20000));
   try {
     const headers = { 'user-agent': 'Mozilla/5.0 (compatible; OpenTibiaServersResearch/1.0)' };
-    const searchPage = await fetch(`https://otland.net/search/?q=${encodeURIComponent(term)}`, {
+    const searchPage = await fetch(`https://opentibiaservers.com/`, {
       signal: controller.signal,
       headers,
     });
-    if (!searchPage.ok) throw new Error(`OtLand search form failed with HTTP ${searchPage.status}`);
+    if (!searchPage.ok) throw new Error(`community_archive search form failed with HTTP ${searchPage.status}`);
     const formHtml = await searchPage.text();
     const token = decodeXml(formHtml.match(/name="_xfToken" value="([^"]+)"/i)?.[1] || '');
-    if (!token) throw new Error('OtLand search form did not expose a CSRF token');
+    if (!token) throw new Error('community_archive search form did not expose a CSRF token');
 
     const form = new URLSearchParams({ keywords: term, order: 'relevance', _xfToken: token });
     if (titleOnly) form.set('c[title_only]', '1');
-    const response = await fetch('https://otland.net/search/search', {
+    const response = await fetch('https://opentibiaservers.com/', {
       method: 'POST',
       signal: controller.signal,
       redirect: 'follow',
@@ -79,7 +79,7 @@ async function nativeSearch(term, { titleOnly = true } = {}) {
       },
       body: form,
     });
-    if (!response.ok) throw new Error(`OtLand native search failed with HTTP ${response.status}`);
+    if (!response.ok) throw new Error(`community_archive native search failed with HTTP ${response.status}`);
     return nativeSearchItems(await response.text());
   } finally {
     clearTimeout(timer);
@@ -123,8 +123,8 @@ await mapLimit(targets, concurrency, async (server, index) => {
   } catch (error) {
     searchError = error instanceof Error ? error.message : String(error);
   }
-  const candidates = rankOtlandCandidates(searchResults, server, 5);
-  const selected = selectOtlandCandidate(candidates);
+  const candidates = rankcommunity_archiveCandidates(searchResults, server, 5);
+  const selected = selectcommunity_archiveCandidate(candidates);
 
   previousBySlug.set(server.slug, {
     canonical_slug: server.slug,
@@ -134,7 +134,7 @@ await mapLimit(targets, concurrency, async (server, index) => {
     search_provider: searchProvider,
     search_error: searchError,
     searched_at: new Date().toISOString(),
-    selection_policy: 'exact canonical brand or exact root domain in the matched post, plus Server Gala owner-profile evidence or explicit player-experience evidence; development, support, trade, and ambiguous matches are retained only as rejected provenance',
+    selection_policy: 'exact canonical brand or exact root domain in the matched post, plus server launch archive owner-profile evidence or explicit player-experience evidence; development, support, trade, and ambiguous matches are retained only as rejected provenance',
     candidates,
     selected_url: selected?.url || null,
     selected_title: selected?.title || null,
@@ -158,7 +158,7 @@ const output = {
   records,
   stats: {
     live_canonical_servers: canonicalServers.length,
-    already_in_otland_archive: archivedCount,
+    already_in_community_archive_archive: archivedCount,
     searched: records.length,
     with_candidate: records.filter((record) => record.selected_url).length,
     rejected_candidate_records: records.filter((record) => !record.selected_url && record.candidates?.length).length,

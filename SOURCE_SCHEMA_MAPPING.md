@@ -1,6 +1,6 @@
 # Source Schema Mapping
 
-OpenTibiaServers.com stores imported listings in `public.servers`. The table is source-aware so otservlist.org and future OTLand imports can share the same browsing UI without losing source-specific data.
+OpenTibiaServers.com stores imported listings in `public.servers`. The table is source-aware so otservlist.org and future community archive imports can share the same browsing UI without losing source-specific data.
 
 ## Required Migrations
 
@@ -69,11 +69,11 @@ Environment variables:
 | Description | `description` | Detail page description |
 | All parsed source values | `source_payload` | JSONB raw mapping for audit/remapping |
 
-## Future OTLand Mapping
+## Future community archive Mapping
 
 Use the same columns:
 
-| OTLand field | `servers` column |
+| community archive field | `servers` column |
 | --- | --- |
 | Thread ID | `source_id` |
 | Thread URL | `source_url` |
@@ -83,4 +83,4 @@ Use the same columns:
 | Client/version tags | `version`, `tags` |
 | Parsed post body | `description`, `source_payload` |
 
-OTLand parsing should be added as a second importer that writes `source = 'otland.net'`.
+community archive parsing should be added as a second importer that writes `source = 'community archive'`.

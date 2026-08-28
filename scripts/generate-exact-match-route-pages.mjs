@@ -5,7 +5,7 @@ import { getExactMatchPageData } from '../lib/exact-match-page-data.js';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const appRoot = path.join(repoRoot, 'app');
-const otlandPath = path.join(repoRoot, 'data', 'otland-server-gala-servers.json');
+const community_archivePath = path.join(repoRoot, 'data', 'community-archive-servers.json');
 
 function pascalCase(slug) {
   const value = slug
@@ -65,13 +65,13 @@ export default function Page() {
 `;
 }
 
-function readOtlandSlugs() {
-  if (!fs.existsSync(otlandPath)) return [];
-  const dataset = JSON.parse(fs.readFileSync(otlandPath, 'utf8'));
+function readcommunity_archiveSlugs() {
+  if (!fs.existsSync(community_archivePath)) return [];
+  const dataset = JSON.parse(fs.readFileSync(community_archivePath, 'utf8'));
   return (dataset.records || []).map((record) => record.slug).filter(Boolean);
 }
 
-const includeOtland = process.argv.includes('--otland');
+const includecommunity_archive = process.argv.includes('--community_archive');
 const slugsArg = process.argv.find((arg) => arg.startsWith('--slugs='));
 const confirm = process.argv.includes('--confirm-physical-routes');
 
@@ -82,7 +82,7 @@ if (!confirm) {
 
 const slugs = [
   ...(slugsArg ? slugsArg.split('=')[1].split(',').map((slug) => slug.trim()).filter(Boolean) : []),
-  ...(includeOtland ? readOtlandSlugs() : []),
+  ...(includecommunity_archive ? readcommunity_archiveSlugs() : []),
 ];
 
 const uniqueSlugs = [...new Set(slugs)];

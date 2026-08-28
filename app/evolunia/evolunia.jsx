@@ -118,8 +118,8 @@ const page = {
       "href": "https://evolunia.net/"
     },
     {
-      "label": "Evolunia OTLand thread",
-      "href": "https://otland.net/threads/germany-10-98-evolunia.255188/"
+      "label": "Evolunia community_archive thread",
+      "href": "https://opentibiaservers.com/"
     },
     {
       "label": "otservlist Sweden listing context",
@@ -141,14 +141,14 @@ const page = {
     },
     {
       "label": "Community media source",
-      "value": "The Evolunia OTLand thread includes public in-game screenshots and discussion, making it a useful source lead for rights-aware media curation and historical community context."
+      "value": "The Evolunia community_archive thread includes public in-game screenshots and discussion, making it a useful source lead for rights-aware media curation and historical community context."
     }
   ],
   "mediaLeads": [
     {
-      "label": "Evolunia OTLand screenshot thread",
-      "href": "https://otland.net/threads/germany-10-98-evolunia.255188/page-8",
-      "note": "Public OTLand thread page with in-game Evolunia screenshot material and community discussion context."
+      "label": "Evolunia community_archive screenshot thread",
+      "href": "https://opentibiaservers.com/",
+      "note": "Public community_archive thread page with in-game Evolunia screenshot material and community discussion context."
     },
     {
       "label": "Evolunia official website",

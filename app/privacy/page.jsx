@@ -19,7 +19,7 @@ export default function PrivacyPage() {
           heading: 'Information We Collect',
           body: [
             'We may collect account information such as email address, authentication identifiers, display name, server claims, submitted listings, reviews, comments, screenshots, contact messages, and owner verification details.',
-            'We also process public server information from sources such as server-list pages, OtLand threads, official server websites, public Discord/server pages, uptime checks, and owner-submitted details.',
+            'We also process public server information from sources such as server-list pages, community_archive threads, official server websites, public Discord/server pages, uptime checks, and owner-submitted details.',
           ],
         },
         {

@@ -151,7 +151,7 @@ for (const term of seeds.ecosystem_terms) {
       cluster: 'ecosystem',
       seed: term,
       source: 'seed_ecosystem',
-      priority_score: /otservlist|otland|open tibia servers/i.test(term) ? 96 : 82,
+      priority_score: /otservlist|community_archive|open tibia servers/i.test(term) ? 96 : 82,
     });
   }
 }

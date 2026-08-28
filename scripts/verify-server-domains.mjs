@@ -20,7 +20,7 @@ const timeoutMs = Math.max(5000, Math.min(30000, Number(process.env.DOMAIN_CHECK
 
 const DIRECTORY_DOMAINS = new Set([
   'discord.com', 'discord.gg', 'facebook.com', 'github.com', 'instagram.com', 'linkedin.com',
-  'opentibiabr.com', 'opentibiaservers.com', 'otland.net', 'otservlist.org', 'reddit.com',
+  'opentibiabr.com', 'opentibiaservers.com', 'community_archive.net', 'otservlist.org', 'reddit.com',
   'opentibiaserver.com', 'ots-list.org', 'otserv.com.br', 'otservers.online', 'tibiaking.com',
   'tibia.com', 'tibiaotlist.com', 'twitch.tv', 'x.com', 'youtube.com',
 ]);

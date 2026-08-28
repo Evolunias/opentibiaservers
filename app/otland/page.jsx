@@ -1,8 +1,8 @@
-import OtlandPage, { generateMetadata } from './otland';
+import CommunityArchivePage, { generateMetadata } from './community-archive';
 
 export { generateMetadata };
 export const revalidate = 3600;
 
 export default function Page() {
-  return <OtlandPage />;
+  return <CommunityArchivePage />;
 }

@@ -1236,6 +1236,56 @@ body.ots-directory-light .auth-modal__secondary:hover {
   body.ots-directory-light .server-list__featured-action { width: 100%; justify-content: center; }
 }
 
+.cyntara-wiki {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #202122;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.cyntara-wiki p { margin: 0 0 1rem; color: #202122; font-size: 1rem; }
+.cyntara-wiki a { color: #36c; text-decoration: underline; text-underline-offset: 2px; }
+.cyntara-wiki code { padding: 0.1em 0.3em; background: #f8f9fa; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+.cyntara-wiki__header { border-bottom: 1px solid #a2a9b1; margin-bottom: 20px; padding-bottom: 8px; }
+.cyntara-wiki__header h1 { margin: 0; color: #202122; font-size: 2.2rem; font-weight: 400; }
+.cyntara-wiki__header small, .cyntara-wiki__attribution { color: #54595d; }
+.cyntara-wiki__grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 24px; }
+.cyntara-wiki__hero { border-bottom-color: #a2a9b1 !important; }
+.cyntara-wiki__content > section { scroll-margin-top: 90px; border-bottom-color: #a2a9b1 !important; border-radius: 0 !important; box-shadow: none !important; }
+.cyntara-wiki__content > section h2 { color: #202122; font-size: 1.5rem; font-weight: 400; }
+.cyntara-wiki__content > section > p:first-child { color: #54595d; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.cyntara-wiki__sidebar > div { border-color: #a2a9b1 !important; border-radius: 2px !important; }
+.cyntara-wiki__sidebar h2 { font-weight: 400; }
+.cyntara-wiki__toc { display: inline-block; min-width: 240px; margin: 15px 0; padding: 12px 20px; border: 1px solid #a2a9b1; background: #f8f9fa; }
+.cyntara-wiki__toc h2 { margin: 0 0 8px; color: #202122; font-size: 1rem; text-align: center; }
+.cyntara-wiki__toc ol { margin: 0; padding-left: 20px; }
+.cyntara-wiki__section-heading { margin-top: 30px; padding-bottom: 4px; border-bottom: 1px solid #a2a9b1; }
+.cyntara-wiki__section-heading h2 { margin: 0; color: #202122; font-size: 1.5rem; font-weight: 400; }
+.cyntara-wiki li { margin: 0.4rem 0; }
+.cyntara-wiki__table-wrap { overflow-x: auto; }
+.cyntara-wiki__table { width: 100%; margin: 15px 0; border-collapse: collapse; }
+.cyntara-wiki__table th, .cyntara-wiki__table td { padding: 8px 12px; border: 1px solid #a2a9b1; text-align: left; vertical-align: top; }
+.cyntara-wiki__table th { background: #eaecef; }
+.cyntara-wiki__infobox { padding: 12px; border: 1px solid #a2a9b1; border-radius: 2px; background: #f8f9fa; font-size: 0.9rem; }
+.cyntara-wiki__infobox-header { margin-bottom: 8px; padding: 6px; border: 1px solid #a2a9b1; background: #cef2e0; font-size: 1.1rem; font-weight: 700; text-align: center; }
+.cyntara-wiki__logo { display: block; max-width: 100%; height: 84px; margin: 0 auto 10px; object-fit: contain; }
+.cyntara-wiki__infobox table { width: 100%; border-collapse: collapse; }
+.cyntara-wiki__infobox th, .cyntara-wiki__infobox td { padding: 6px; border-bottom: 1px solid #eaecf0; text-align: left; vertical-align: top; }
+.cyntara-wiki__infobox th { width: 40%; }
+.cyntara-wiki__callout { margin: 20px 0; padding: 15px; border-left: 4px solid #36c; background: #eaf3ff; }
+.cyntara-wiki__callout p { margin: 5px 0 0; }
+.cyntara-wiki__recommended { margin: 25px 0; padding: 16px; border: 1px solid #ffe58f; border-left: 4px solid #faad14; border-radius: 4px; background: #fff9e6; }
+.cyntara-wiki__recommended h3 { margin: 0 0 8px; color: #202122; font-size: 1.2rem; }
+.cyntara-wiki__button { display: inline-block; margin-top: 8px; padding: 8px 16px; border-radius: 4px; color: #fff !important; background: #36c; font-weight: 700; text-decoration: none !important; }
+.cyntara-wiki__button:hover { color: #fff !important; background: #2a4b8d; }
+
+@media (max-width: 768px) {
+  .cyntara-wiki__grid { grid-template-columns: 1fr; }
+  .cyntara-wiki__sidebar { order: -1; }
+}
+
 /* Unified site theme. Directory, editorial pages, forms, and community use the same visual language. */
 body.ots-site-theme {
   min-height: 100vh;
