@@ -1,4 +1,6 @@
-import ServerLogo from '@/app/components/ServerLogo';
+import Image from 'next/image';
+
+const REALERA_LOGO_SRC = 'https://cdn.builder.io/api/v1/image/assets%2Fc85938fda2fe4a1c97cfe093e9f077bb%2Fa27c034e7ef44c0388e5db38271e69f1?format=webp&width=800&height=1200';
 
 const contents = [
   ['overview', 'Overview & World Identity'],
@@ -200,7 +202,7 @@ export default function RealeraWikiPage() {
         <aside className="cyntara-wiki__sidebar">
           <div className="cyntara-wiki__infobox">
             <div className="cyntara-wiki__infobox-header">Realera</div>
-            <ServerLogo server={{ name: 'Realera', slug: 'realera', host: 'realera.org' }} size="profile" />
+            <Image className="cyntara-wiki__logo" src={REALERA_LOGO_SRC} alt="Realera dragon logo" width={800} height={1200} sizes="(max-width: 768px) 100vw, 280px" />
             <table><tbody>
               <tr><th>Host</th><td><code>realera.org:7290</code></td></tr>
               <tr><th>Region</th><td>USA signal</td></tr>
