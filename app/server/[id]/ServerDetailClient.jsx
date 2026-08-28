@@ -50,7 +50,7 @@ function InfoRow({ label, value }) {
 
 function DirectoryEmptyState({ title, body, action }) {
   return (
-    <div className="rounded border border-dashed border-gray-300 bg-gray-50 p-4">
+    <div className="cyntara-wiki__infobox rounded border border-dashed border-gray-300 bg-gray-50 p-4">
       <h3 className="text-sm font-bold text-gray-950">{title}</h3>
       <p className="mt-1 text-sm text-gray-600">{body}</p>
       {action ? <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-gray-500">{action}</p> : null}
@@ -505,8 +505,8 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
           Back to servers
         </Link>
 
-        <article className="cyntara-wiki__content overflow-hidden mb-6 border border-gray-200 rounded bg-white">
-          <header className="px-6 py-6 border-b border-gray-200 bg-white">
+        <article className="cyntara-wiki__content overflow-hidden mb-6 bg-white">
+          <header className="cyntara-wiki__header px-6 py-6 bg-white">
             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <ServerLogo server={server} size="profile" />
@@ -537,7 +537,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
           </header>
 
           <div className="p-6">
-            <section className="p-5 mb-6 border border-gray-200 rounded bg-gray-50">
+            <section className="cyntara-wiki__callout p-5 mb-6 border border-gray-200 rounded bg-gray-50">
               <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
                 <div className="max-w-3xl">
                   <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Source-backed server profile</p>
@@ -578,7 +578,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-              <section className="border border-gray-200 rounded p-4">
+              <section className="cyntara-wiki__infobox border border-gray-200 rounded p-4">
                 <h2 className="text-lg font-bold text-gray-950 mb-3">Server identity for {server.name}</h2>
                 <InfoRow label="Client" value={server.version} />
                 <InfoRow label="EXP" value={server.exp_rate ? `${server.exp_rate}x` : '-'} />
@@ -593,7 +593,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.3fr)_minmax(320px,0.7fr)] gap-6 mb-6">
-              <section className="border border-gray-200 rounded p-4">
+              <section className="cyntara-wiki__infobox border border-gray-200 rounded p-4">
                 <h2 className="text-lg font-bold text-gray-950 mb-3">Source-backed overview</h2>
                 {profileExcerpt ? (
                   <p className="text-gray-700 whitespace-pre-wrap">{profileExcerpt}</p>
@@ -637,7 +637,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                 ) : null}
               </section>
 
-              <section className="border border-gray-200 rounded p-4">
+              <section className="cyntara-wiki__infobox border border-gray-200 rounded p-4">
                 <h2 className="text-lg font-bold text-gray-950 mb-3">Research record</h2>
                 <InfoRow label="Canonical Listing" value={server.slug ? `/servers/${server.slug}` : '-'} />
                 {hasMeaningfulContentStatus ? <InfoRow label="Profile Status" value={server.content_status} /> : null}
@@ -657,7 +657,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             </div>
 
             {communityExperiences.length ? (
-              <section className="mb-6 rounded border border-gray-200 p-4">
+              <section className="cyntara-wiki__section mb-6 rounded border border-gray-200 p-4">
                 <h2 className="text-lg font-bold text-gray-950">Attributed community_archive discussion</h2>
                 <p className="mt-1 text-sm text-gray-600">
                   Relevant posts from people other than the thread owner, kept short and linked to their original context.
@@ -681,7 +681,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
               </section>
             ) : null}
 
-            <section className="border border-gray-200 rounded p-4 mb-6">
+            <section className="cyntara-wiki__section border border-gray-200 rounded p-4 mb-6">
               <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between mb-4">
                 <div>
                   <h2 className="text-lg font-bold text-gray-950">Official Links and Contact</h2>
@@ -710,7 +710,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
               )}
             </section>
 
-            <section className="border border-gray-200 rounded p-4 mb-6">
+            <section className="cyntara-wiki__section border border-gray-200 rounded p-4 mb-6">
               <h2 className="text-lg font-bold text-gray-950 mb-3">Explore similar Open Tibia worlds</h2>
               <div className="flex flex-wrap gap-2">
                 <Link href="/" className="rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-400 hover:no-underline">
@@ -735,7 +735,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
               </div>
             </section>
 
-            {sourcedFeatures.length ? <section className="border border-gray-200 rounded p-4 mb-6">
+            {sourcedFeatures.length ? <section className="cyntara-wiki__section border border-gray-200 rounded p-4 mb-6">
                 <h2 className="text-lg font-bold text-gray-950 mb-3">Distinctive features</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {sourcedFeatures.map((feature) => (
@@ -747,7 +747,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             </section> : null}
 
             {sourcedSections.length ? (
-              <section className="border border-gray-200 rounded p-4 mb-6">
+              <section className="cyntara-wiki__section border border-gray-200 rounded p-4 mb-6">
                 <h2 className="text-lg font-bold text-gray-950 mb-3">Server notes</h2>
                 <div className="space-y-4">
                   {sourcedSections.map((section, index) => (
@@ -761,7 +761,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             ) : null}
 
             {sourcedFaqs.length ? (
-              <section className="border border-gray-200 rounded p-4 mb-6">
+              <section className="cyntara-wiki__section border border-gray-200 rounded p-4 mb-6">
                 <h2 className="text-lg font-bold text-gray-950 mb-3">Questions players ask first</h2>
                 <div className="space-y-3">
                   {sourcedFaqs.map((item, index) => (
@@ -774,7 +774,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
               </section>
             ) : null}
 
-            {galleryImages.length ? <section className="border border-gray-200 rounded p-4 mb-6">
+            {galleryImages.length ? <section className="cyntara-wiki__section border border-gray-200 rounded p-4 mb-6">
               <h2 className="text-lg font-bold text-gray-950 mb-3">Verified screenshots</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
                 {galleryImages.map((imageUrl) => (
@@ -790,14 +790,14 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             </section> : null}
 
             {distinctDescription ? (
-              <section className="border border-gray-200 rounded p-4 mb-6">
+              <section className="cyntara-wiki__section border border-gray-200 rounded p-4 mb-6">
                 <h2 className="text-lg font-bold text-gray-950 mb-3">Description</h2>
                 <p className="text-gray-700 whitespace-pre-wrap">{distinctDescription}</p>
               </section>
             ) : null}
 
             {server.tags?.length ? (
-              <section className="border border-gray-200 rounded p-4 mb-6">
+              <section className="cyntara-wiki__section border border-gray-200 rounded p-4 mb-6">
                 <h2 className="text-lg font-bold text-gray-950 mb-3">Tags</h2>
                 <div className="flex flex-wrap gap-2">
                   {server.tags.map((tag) => (
@@ -812,7 +812,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
         </article>
 
         {canEditListing ? (
-          <section className="bg-white border border-gray-200 rounded p-6 mb-6">
+          <section className="cyntara-wiki__section bg-white border border-gray-200 rounded p-6 mb-6">
             <h2 className="text-xl font-bold text-gray-950 mb-2">Owner listing editor</h2>
             <p className="text-sm text-gray-600 mb-5">
               Permission-based editing is enabled because this listing is attached to your account. Imported otservlist data stays intact while these fields control the public presentation layer.
@@ -920,7 +920,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
         {communityError ? <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded mb-4">{communityError}</div> : null}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-          <section id="claim-listing" className="bg-white border border-gray-200 rounded p-4">
+          <section id="claim-listing" className="cyntara-wiki__section bg-white border border-gray-200 rounded p-4">
             <h2 className="text-lg font-bold text-gray-950 mb-2">Claim this listing</h2>
             {isOwned ? (
               <p className="text-sm text-gray-600">This listing is already claimed or directly submitted.</p>
@@ -968,7 +968,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             )}
           </section>
 
-          <section className="bg-white border border-gray-200 rounded p-4 lg:col-span-2">
+          <section className="cyntara-wiki__section bg-white border border-gray-200 rounded p-4 lg:col-span-2">
             <h2 className="text-lg font-bold text-gray-950 mb-2">Uptime Monitor</h2>
             {uptimeChecks.length === 0 ? (
               <p className="text-sm text-gray-600">No monitor checks recorded yet.</p>
@@ -989,7 +989,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <section className="bg-white border border-gray-200 rounded p-4">
+          <section className="cyntara-wiki__section bg-white border border-gray-200 rounded p-4">
             <h2 className="text-lg font-bold text-gray-950 mb-3">Reviews</h2>
             <form onSubmit={submitReview} className="space-y-3 mb-5">
               <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-3">
@@ -1037,7 +1037,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
             </div>
           </section>
 
-          <section className="bg-white border border-gray-200 rounded p-4">
+          <section className="cyntara-wiki__section bg-white border border-gray-200 rounded p-4">
             <h2 className="text-lg font-bold text-gray-950 mb-3">Conversation</h2>
             <form onSubmit={submitMessage} className="space-y-3 mb-5">
               <textarea
@@ -1066,7 +1066,7 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
         </div>
 
         {server.source_payload && Object.keys(server.source_payload).length > 0 ? (
-          <details className="bg-white border border-gray-200 rounded p-4 mt-6">
+          <details className="cyntara-wiki__section bg-white border border-gray-200 rounded p-4 mt-6">
             <summary className="cursor-pointer text-lg font-bold text-gray-950">Raw Source Payload</summary>
             <pre className="mt-4 text-xs bg-gray-950 text-gray-100 rounded p-4 overflow-auto max-h-96">
               {JSON.stringify(server.source_payload, null, 2)}

@@ -525,6 +525,40 @@
       "aliases": [
         "Wolfz"
       ]
+    },
+    "rubinot": {
+      "src": "/images/server-logos/rubinot.png",
+      "alt": "RubinOT official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://rubinot.com/",
+      "domains": [
+        "rubinot.com"
+      ],
+      "width": 3118,
+      "height": 1382,
+      "sha256": "ad1b417d9e6b60a174f252357bdfa8ece5cf4174e2247cf5ebba5d6cd1b8eba8",
+      "aliases": [
+        "RubinOT",
+        "rubinot"
+      ]
+    },
+    "exordion": {
+      "src": "/images/server-logos/exordion.png",
+      "alt": "Exordion official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://exordion.com.br/",
+      "domains": [
+        "exordion.com.br"
+      ],
+      "width": 777,
+      "height": 252,
+      "sha256": "d6f30a1ea02acf5562db0e11f7ea45ccab8a57ad9607a7f1c216ed22dfcd3db8",
+      "aliases": [
+        "Exordion",
+        "exordion"
+      ]
     }
   },
   "excluded_assets": {
