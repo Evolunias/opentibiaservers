@@ -25,20 +25,23 @@ const features = [
 export default function ExordionWikiPage() {
   return (
     <main className="cyntara-wiki min-h-screen" data-server-slug="exordion">
-      <header className="cyntara-wiki__header">
-        <h1>Exordion</h1>
-        <small>From OpenTibiaServers Wiki, the primary open tibia server directory</small>
-      </header>
+      <section className="cyntara-wiki__hero border-b border-black bg-white text-black">
+        <div className="cyntara-wiki__header mx-auto grid max-w-6xl gap-8 px-6 py-10 lg:grid-cols-[1fr_320px] lg:items-start">
+          <div className="pb-6">
+            <div className="mb-6 flex flex-wrap items-center gap-3 text-sm"><a href="/" className="font-semibold text-black">Open Tibia Servers</a><span>/</span><span>Exordion</span></div>
+            <h1 className="mb-4 max-w-4xl text-4xl font-bold leading-tight text-black md:text-6xl">Exordion: server status, how to play, and community</h1>
+            <small>From OpenTibiaServers Wiki, the primary open tibia server directory</small>
+            <p className="mt-4 max-w-3xl text-lg leading-8 text-black">A researched guide to Exordion’s Bravora world, 7.4 identity, custom systems, raids, client, rules, and current verification path.</p>
+            <div className="mt-6 flex flex-wrap gap-3"><a href="/?search=Bravora%20Exordion" className="rounded border border-black bg-white px-5 py-3 text-sm font-bold text-black hover:bg-gray-100 hover:no-underline">Compare Bravora Exordion Alternatives</a><a href="/submit-server" className="rounded border border-black bg-white px-5 py-3 text-sm font-bold text-black hover:bg-gray-100 hover:no-underline">Claim or Submit a Listing</a></div>
+          </div>
+          <aside className="space-y-4"><ServerLogo server={{ name: 'Exordion', slug: 'exordion', host: 'exordion.com.br' }} size="profile" /><div className="cyntara-wiki__infobox"><div className="cyntara-wiki__infobox-header">Quick Facts</div><table><tbody><tr><th>World</th><td>Bravora</td></tr><tr><th>Protocol</th><td>Tibia 7.4</td></tr><tr><th>Map</th><td>Global + custom</td></tr><tr><th>Client</th><td>Enhanced Client</td></tr><tr><th>Launch</th><td>11 March 2026</td></tr><tr><th>Rates / PvP</th><td>Verify current official pages</td></tr><tr><th>Profile depth</th><td>Source-backed profile</td></tr></tbody></table></div></aside>
+        </div>
+      </section>
 
       <div className="cyntara-wiki__grid">
         <article className="cyntara-wiki__content">
-          <div className="flex flex-col gap-6 md:flex-row md:items-start">
-            <div className="min-w-0 flex-1">
-              <p><strong>Exordion</strong> is a custom Tibia 7.4 server whose current world, Bravora, combines an old-school foundation with custom map content, new areas, exclusive systems, an Enhanced Client, and frequent updates.</p>
-              <p>The official pages describe Bravora as started on 11 March 2026 at 17:00 BRT / 21:00 CET. This profile keeps launch announcements and temporary events separate from permanent rules, because rates, schedules, and available content can change.</p>
-            </div>
-            <div className="w-full shrink-0 md:w-64"><ServerLogo server={{ name: 'Exordion', slug: 'exordion', host: 'exordion.com.br' }} size="profile" /></div>
-          </div>
+          <p><strong>Exordion</strong> is a custom Tibia 7.4 server whose current world, Bravora, combines an old-school foundation with custom map content, new areas, exclusive systems, an Enhanced Client, and frequent updates.</p>
+          <p>The official pages describe Bravora as started on 11 March 2026 at 17:00 BRT / 21:00 CET. This profile keeps launch announcements and temporary events separate from permanent rules, because rates, schedules, and available content can change.</p>
 
           <nav className="cyntara-wiki__toc" aria-label="Table of Contents">
             <h2>Contents</h2>
@@ -137,9 +140,9 @@ export default function ExordionWikiPage() {
 
         <aside className="cyntara-wiki__sidebar">
           <div className="cyntara-wiki__infobox">
-            <div className="cyntara-wiki__infobox-header">Exordion</div>
-            <ServerLogo server={{ name: 'Exordion', slug: 'exordion', host: 'exordion.com.br' }} size="profile" />
+            <div className="cyntara-wiki__infobox-header">Reference Box</div>
             <table><tbody>
+              <tr><th>Server</th><td>Exordion</td></tr>
               <tr><th>World</th><td>Bravora</td></tr>
               <tr><th>Protocol</th><td>Tibia 7.4</td></tr>
               <tr><th>Map</th><td>Global + custom</td></tr>
