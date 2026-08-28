@@ -83,7 +83,7 @@ function buildInternalLinks(page) {
   const links = [
     { href: '/', label: 'Open Tibia server directory' },
     { href: '/resources', label: 'Open Tibia tools and resources' },
-    { href: '/otland', label: 'OTLand server launch guide' },
+    { href: '/community_archive', label: 'community_archive server launch guide' },
   ];
 
   for (const query of page.relatedServerQueries || []) {
@@ -291,7 +291,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
           {communityExperiences.length ? (
             <section className="border-b border-gray-200 pb-8">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-black">Attributed discussion</p>
-              <h2 className="mb-2 text-2xl font-bold text-black">What OtLand users posted</h2>
+              <h2 className="mb-2 text-2xl font-bold text-black">What community_archive users posted</h2>
               <p className="mb-5 text-sm leading-7 text-gray-700">
                 Short excerpts from people other than the thread owner, with direct links back to the original context.
               </p>

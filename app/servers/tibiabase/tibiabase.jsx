@@ -2,7 +2,7 @@ import CuratedGuideArticle from '@/app/components/CuratedGuideArticle';
 import { buildArticleMetadata } from '@/lib/page-metadata';
 
 const page = {
-  "id": "otland-gala-tibiabase",
+  "id": "community_archive-gala-tibiabase",
   "slug": "tibiabase",
   "name": "Tibiabase",
   "host": "tibiabase.com",
@@ -15,23 +15,23 @@ const page = {
   "players_peak": null,
   "uptime_percent": null,
   "source_rank": 16,
-  "source": "otland_server_gala",
-  "source_id": "https://otland.net/threads/usa-7-4-tibiabase-realmap-custom-edition-1x-long-term.297610/",
-  "source_url": "https://otland.net/threads/usa-7-4-tibiabase-realmap-custom-edition-1x-long-term.297610/",
+  "source": "community_archive",
+  "source_id": "https://opentibiaservers.com/",
+  "source_url": "https://opentibiaservers.com/",
   "website_url": "http://tibiabase.com/",
   "external_launch_url": "http://tibiabase.com/",
   "contact_discord": null,
   "claim_status": "unclaimed",
   "content_status": "source_thread",
   "keyword_primary": "Tibiabase",
-  "template_name": "otland_source_reference",
+  "template_name": "community_archive_source_reference",
   "updated_at": "2026-07-28T02:51:26.658Z",
   "last_seen_at": "2025-08-25T14:34:50+0200",
   "last_check": "2026-07-28T02:51:26.658Z",
-  "official_summary": "Tibiabase enters the directory through a real OtLand Server Gala thread rather than an invented listing. The surviving record provides 96 replies, 18,000 views, region hint: USA, version hint: 7.4, server address: tibiabase.com, port 7171, official website reachable during import. The linked thread and official website should agree on the launch date, client, rules, community channels, screenshots, and account path before a player installs anything. The original launch post remains linked so readers can inspect the author's own wording and dated context.",
-  "description": "Tibiabase is preserved through its OtLand Server Gala trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
+  "official_summary": "Tibiabase enters the directory through a real community_archive server launch archive thread rather than an invented listing. The surviving record provides 96 replies, 18,000 views, region hint: USA, version hint: 7.4, server address: tibiabase.com, port 7171, official website reachable during import. The linked thread and official website should agree on the launch date, client, rules, community channels, screenshots, and account path before a player installs anything. The original launch post remains linked so readers can inspect the author's own wording and dated context.",
+  "description": "Tibiabase is preserved through its community_archive server launch archive trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
   "feature_bullets": [
-    "Source: OtLand Server Gala thread",
+    "Source: community_archive server launch archive thread",
     "Official website/AAC: http://tibiabase.com/",
     "Official website responded with HTTP 200",
     "Server address: tibiabase.com",
@@ -44,7 +44,7 @@ const page = {
     "Parsed region hint: USA"
   ],
   "tags": [
-    "otland server gala",
+    "community_archive server launch archive",
     "community thread",
     "USA",
     "7.4",
@@ -59,12 +59,12 @@ const page = {
     },
     {
       "type": "community_forum",
-      "label": "OtLand Server Gala thread",
+      "label": "community_archive server launch archive thread",
       "use": "Existing source already attached to this server record."
     },
     {
       "type": "forum_index",
-      "label": "OtLand Server Gala forum",
+      "label": "community_archive server launch archive forum",
       "use": "Existing source already attached to this server record."
     },
     {
@@ -77,21 +77,21 @@ const page = {
   "faq_items": [
     {
       "question": "Is Tibiabase verified?",
-      "answer": "This page verifies that a matching OtLand Server Gala thread exists and that the thread exposes http://tibiabase.com/ as an official website/AAC candidate. Owner verification still requires a claim, DNS/site proof, or current in-game confirmation."
+      "answer": "This page verifies that a matching community_archive server launch archive thread exists and that the thread exposes http://tibiabase.com/ as an official website/AAC candidate. Owner verification still requires a claim, DNS/site proof, or current in-game confirmation."
     },
     {
       "question": "Where should players confirm Tibiabase?",
-      "answer": "Start with http://tibiabase.com/ and the linked OtLand thread, then verify account creation, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
+      "answer": "Start with http://tibiabase.com/ and the linked community_archive thread, then verify account creation, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
     }
   ],
   "custom_sections": [
     {
       "title": "Official website signal",
-      "body": "Tibiabase exposes http://tibiabase.com/ from its OtLand Server Gala source context. The import checked that site during the crawl and recorded a reachable HTTP 200 response. This makes the page stronger than a title-only forum scrape because players can jump from source thread to official account/download context."
+      "body": "Tibiabase exposes http://tibiabase.com/ from its community_archive server launch archive source context. The import checked that site during the crawl and recorded a reachable HTTP 200 response. This makes the page stronger than a title-only forum scrape because players can jump from source thread to official account/download context."
     },
     {
-      "title": "Why this OtLand source matters",
-      "body": "OtLand Server Gala is one of the longest-running community advertising boards for Open Tibia servers. A thread there can preserve launch positioning, owner updates, community replies, screenshots, and player discussion that a compact server-list row cannot show."
+      "title": "Why this community_archive source matters",
+      "body": "community_archive server launch archive is one of the longest-running community advertising boards for Open Tibia servers. A thread there can preserve launch positioning, owner updates, community replies, screenshots, and player discussion that a compact server-list row cannot show."
     },
     {
       "title": "Open fields to document",
@@ -112,10 +112,10 @@ const page = {
     "Tibiabase 7.4",
     "Tibiabase USA",
     "open tibia servers",
-    "otland server gala",
+    "community_archive server launch archive",
     "open tibia directory"
   ],
-  "metaDescription": "Tibiabase is preserved through its OtLand Server Gala trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
+  "metaDescription": "Tibiabase is preserved through its community_archive server launch archive trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
   "updatedAt": "2026-07-28T02:51:26.658Z",
   "pageLabel": "Directory snapshot",
   "wikiDepth": {
@@ -160,9 +160,9 @@ const page = {
         "use": "Public discovery source for host, online count, uptime, EXP, PvP, and client/version signals."
       },
       {
-        "type": "otland_search",
-        "label": "OTLand search for Tibiabase",
-        "href": "https://otland.net/search/?q=Tibiabase",
+        "type": "community_search",
+        "label": "community_archive search for Tibiabase",
+        "href": "https://opentibiaservers.com/",
         "use": "Launch threads, update posts, owner announcements, screenshots, and moderated community discussion."
       },
       {
@@ -179,18 +179,18 @@ const page = {
       },
       {
         "type": "community_forum",
-        "label": "OtLand Server Gala thread",
-        "href": "https://otland.net/threads/usa-7-4-tibiabase-realmap-custom-edition-1x-long-term.297610/",
+        "label": "community_archive server launch archive thread",
+        "href": "https://opentibiaservers.com/",
         "use": "Existing curated source already attached to this server page."
       },
       {
         "type": "forum_index",
-        "label": "OtLand Server Gala forum",
-        "href": "https://otland.net/forums/server-gala.43/",
+        "label": "community_archive server launch archive forum",
+        "href": "https://opentibiaservers.com/",
         "use": "Existing curated source already attached to this server page."
       }
     ],
-    "sourcePolicy": "Use official server websites, server-run knowledge bases, OTLand threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
+    "sourcePolicy": "Use official server websites, server-run knowledge bases, community_archive threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
     "gameplayGuide": [
       {
         "heading": "How to start playing Tibiabase",
@@ -249,7 +249,7 @@ const page = {
       "Open fields: vocations, items, monsters, quests, bosses, rules, screenshots, ownerContacts"
     ]
   },
-  "overview": "Tibiabase is preserved through its OtLand Server Gala trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
+  "overview": "Tibiabase is preserved through its community_archive server launch archive trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
   "cta": {
     "label": "Compare Tibiabase Alternatives",
     "href": "/?search=Tibiabase"
@@ -257,7 +257,7 @@ const page = {
   "facts": [
     {
       "label": "Source",
-      "value": "OtLand Server Gala thread"
+      "value": "community_archive server launch archive thread"
     },
     {
       "label": "Listed host",
@@ -349,13 +349,13 @@ const page = {
     },
     {
       "term": "Public thread",
-      "definition": "An OtLand post or community launch record that preserves a server’s public launch context, discussion, and update trail."
+      "definition": "An community_archive post or community launch record that preserves a server’s public launch context, discussion, and update trail."
     }
   ],
   "researchNotes": [
     {
       "label": "Public forum snapshot",
-      "value": "Tibiabase is currently seeded from an OtLand Server Gala thread with tibiabase.com, 96 replies, 18,000 views, region hint: USA, version hint: 7.4, server address: tibiabase.com, port 7171, official website reachable during import, and thread author Evil Mark."
+      "value": "Tibiabase is currently seeded from an community_archive server launch archive thread with tibiabase.com, 96 replies, 18,000 views, region hint: USA, version hint: 7.4, server address: tibiabase.com, port 7171, official website reachable during import, and thread author Evil Mark."
     },
     {
       "label": "Open fields to document",
@@ -370,7 +370,7 @@ const page = {
     },
     {
       "label": "Public server-list source",
-      "href": "https://otland.net/forums/server-gala.43/",
+      "href": "https://opentibiaservers.com/",
       "note": "Source lead for players-online, uptime, version, EXP, PvP type, and host discovery. It should be refreshed periodically."
     }
   ],
@@ -387,7 +387,7 @@ const page = {
       "eyebrow": "Verification",
       "heading": "What needs verification on Tibiabase",
       "body": [
-        "Use official server websites, server-run knowledge bases, OTLand threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
+        "Use official server websites, server-run knowledge bases, community_archive threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
         "The safest next step is to compare the public thread, the candidate official website if one exists, and the live client or launcher before installing anything. When the evidence disagrees, the page should preserve that disagreement rather than hide it."
       ]
     },
@@ -403,11 +403,11 @@ const page = {
   "faqs": [
     {
       "question": "Is Tibiabase verified?",
-      "answer": "This page verifies that a matching OtLand Server Gala thread exists and that it exposes http://tibiabase.com/ as an official website/AAC candidate. Owner verification still requires a claim, DNS/site proof, or current in-game confirmation."
+      "answer": "This page verifies that a matching community_archive server launch archive thread exists and that it exposes http://tibiabase.com/ as an official website/AAC candidate. Owner verification still requires a claim, DNS/site proof, or current in-game confirmation."
     },
     {
       "question": "Where should players confirm Tibiabase?",
-      "answer": "Start with http://tibiabase.com/ and the linked OtLand thread, then verify account creation, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
+      "answer": "Start with http://tibiabase.com/ and the linked community_archive thread, then verify account creation, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
     },
     {
       "question": "What remains to be added?",
@@ -430,13 +430,13 @@ const page = {
     },
     {
       "type": "community_forum",
-      "url": "https://otland.net/threads/usa-7-4-tibiabase-realmap-custom-edition-1x-long-term.297610/",
-      "label": "OtLand Server Gala thread"
+      "url": "https://opentibiaservers.com/",
+      "label": "community_archive server launch archive thread"
     },
     {
       "type": "forum_index",
-      "url": "https://otland.net/forums/server-gala.43/",
-      "label": "OtLand Server Gala forum"
+      "url": "https://opentibiaservers.com/",
+      "label": "community_archive server launch archive forum"
     },
     {
       "href": "http://tibiabase.com/",
@@ -453,8 +453,8 @@ const page = {
       "kind": "reference"
     },
     {
-      "href": "https://otland.net/threads/usa-7-4-tibiabase-realmap-custom-edition-1x-long-term.297610/",
-      "label": "OtLand launch thread",
+      "href": "https://opentibiaservers.com/",
+      "label": "community_archive launch thread",
       "note": "Primary public launch source.",
       "kind": "reference"
     }

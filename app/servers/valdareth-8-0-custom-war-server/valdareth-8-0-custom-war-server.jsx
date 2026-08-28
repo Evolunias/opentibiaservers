@@ -2,7 +2,7 @@ import CuratedGuideArticle from '@/app/components/CuratedGuideArticle';
 import { buildArticleMetadata } from '@/lib/page-metadata';
 
 const page = {
-  "id": "otland-gala-valdareth-8-0-custom-war-server",
+  "id": "community_archive-gala-valdareth-8-0-custom-war-server",
   "slug": "valdareth-8-0-custom-war-server",
   "name": "Valdareth 8.0 Custom WAR Server",
   "host": null,
@@ -15,23 +15,23 @@ const page = {
   "players_peak": null,
   "uptime_percent": null,
   "source_rank": 165,
-  "source": "otland_server_gala",
-  "source_id": "https://otland.net/threads/usa-valdareth-feb-6th-3-pm-est-8-0-custom-war-server.303804/",
-  "source_url": "https://otland.net/threads/usa-valdareth-feb-6th-3-pm-est-8-0-custom-war-server.303804/",
-  "website_url": "https://otland.net/threads/usa-valdareth-feb-6th-3-pm-est-8-0-custom-war-server.303804/",
-  "external_launch_url": "https://otland.net/threads/usa-valdareth-feb-6th-3-pm-est-8-0-custom-war-server.303804/",
+  "source": "community_archive",
+  "source_id": "https://opentibiaservers.com/",
+  "source_url": "https://opentibiaservers.com/",
+  "website_url": "https://opentibiaservers.com/",
+  "external_launch_url": "https://opentibiaservers.com/",
   "contact_discord": null,
   "claim_status": "unclaimed",
   "content_status": "source_thread",
   "keyword_primary": "Valdareth 8.0 Custom WAR Server",
-  "template_name": "otland_source_reference",
+  "template_name": "community_archive_source_reference",
   "updated_at": "2026-07-28T02:51:27.652Z",
   "last_seen_at": "2026-02-01T22:40:52+0100",
   "last_check": "2026-07-28T02:51:27.652Z",
-  "official_summary": "Valdareth 8.0 Custom WAR Server enters the directory through a real OtLand Server Gala thread rather than an invented listing. The surviving record provides 0 replies, 282 views, region hint: USA. The linked thread and official website should agree on the launch date, client, rules, community channels, screenshots, and account path before a player installs anything.",
-  "description": "Valdareth 8.0 Custom WAR Server is preserved through its OtLand Server Gala trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
+  "official_summary": "Valdareth 8.0 Custom WAR Server enters the directory through a real community_archive server launch archive thread rather than an invented listing. The surviving record provides 0 replies, 282 views, region hint: USA. The linked thread and official website should agree on the launch date, client, rules, community channels, screenshots, and account path before a player installs anything.",
+  "description": "Valdareth 8.0 Custom WAR Server is preserved through its community_archive server launch archive trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
   "feature_bullets": [
-    "Source: OtLand Server Gala thread",
+    "Source: community_archive server launch archive thread",
     "Thread author: Rhagel",
     "Original post date: 2/2/2026",
     "Forum discussion: 0 replies",
@@ -39,7 +39,7 @@ const page = {
     "Parsed region hint: USA"
   ],
   "tags": [
-    "otland server gala",
+    "community_archive server launch archive",
     "community thread",
     "USA",
     "USA",
@@ -48,29 +48,29 @@ const page = {
   "research_sources": [
     {
       "type": "community_forum",
-      "label": "OtLand Server Gala thread",
+      "label": "community_archive server launch archive thread",
       "use": "Existing source already attached to this server record."
     },
     {
       "type": "forum_index",
-      "label": "OtLand Server Gala forum",
+      "label": "community_archive server launch archive forum",
       "use": "Existing source already attached to this server record."
     }
   ],
   "faq_items": [
     {
       "question": "Is Valdareth 8.0 Custom WAR Server verified?",
-      "answer": "This page verifies that a matching OtLand Server Gala thread exists and preserves its public forum metadata. It does not claim owner verification until an official site, server owner claim, or current in-game listing confirms the active server details."
+      "answer": "This page verifies that a matching community_archive server launch archive thread exists and preserves its public forum metadata. It does not claim owner verification until an official site, server owner claim, or current in-game listing confirms the active server details."
     },
     {
       "question": "Where should players confirm Valdareth 8.0 Custom WAR Server?",
-      "answer": "Start with the linked OtLand thread, then verify the official website, account creation path, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
+      "answer": "Start with the linked community_archive thread, then verify the official website, account creation path, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
     }
   ],
   "custom_sections": [
     {
-      "title": "Why this OtLand source matters",
-      "body": "OtLand Server Gala is one of the longest-running community advertising boards for Open Tibia servers. A thread there can preserve launch positioning, owner updates, community replies, screenshots, and player discussion that a compact server-list row cannot show."
+      "title": "Why this community_archive source matters",
+      "body": "community_archive server launch archive is one of the longest-running community advertising boards for Open Tibia servers. A thread there can preserve launch positioning, owner updates, community replies, screenshots, and player discussion that a compact server-list row cannot show."
     },
     {
       "title": "Open fields to document",
@@ -90,10 +90,10 @@ const page = {
     "Valdareth 8.0 Custom WAR Server Open Tibia",
     "Valdareth 8.0 Custom WAR Server USA",
     "open tibia servers",
-    "otland server gala",
+    "community_archive server launch archive",
     "open tibia directory"
   ],
-  "metaDescription": "Valdareth 8.0 Custom WAR Server is preserved through its OtLand Server Gala trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
+  "metaDescription": "Valdareth 8.0 Custom WAR Server is preserved through its community_archive server launch archive trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
   "updatedAt": "2026-07-28T02:51:27.652Z",
   "pageLabel": "Directory snapshot",
   "wikiDepth": {
@@ -128,7 +128,7 @@ const page = {
       {
         "type": "official_website",
         "label": "Valdareth 8.0 Custom WAR Server official website candidate",
-        "href": "https://otland.net/threads/usa-valdareth-feb-6th-3-pm-est-8-0-custom-war-server.303804/",
+        "href": "https://opentibiaservers.com/",
         "use": "Downloads, account creation, rules, screenshots, changelogs, support contacts, and official system descriptions."
       },
       {
@@ -138,9 +138,9 @@ const page = {
         "use": "Public discovery source for host, online count, uptime, EXP, PvP, and client/version signals."
       },
       {
-        "type": "otland_search",
-        "label": "OTLand search for Valdareth 8.0 Custom WAR Server",
-        "href": "https://otland.net/search/?q=Valdareth%208.0%20Custom%20WAR%20Server",
+        "type": "community_search",
+        "label": "community_archive search for Valdareth 8.0 Custom WAR Server",
+        "href": "https://opentibiaservers.com/",
         "use": "Launch threads, update posts, owner announcements, screenshots, and moderated community discussion."
       },
       {
@@ -151,18 +151,18 @@ const page = {
       },
       {
         "type": "community_forum",
-        "label": "OtLand Server Gala thread",
-        "href": "https://otland.net/threads/usa-valdareth-feb-6th-3-pm-est-8-0-custom-war-server.303804/",
+        "label": "community_archive server launch archive thread",
+        "href": "https://opentibiaservers.com/",
         "use": "Existing curated source already attached to this server page."
       },
       {
         "type": "forum_index",
-        "label": "OtLand Server Gala forum",
-        "href": "https://otland.net/forums/server-gala.43/",
+        "label": "community_archive server launch archive forum",
+        "href": "https://opentibiaservers.com/",
         "use": "Existing curated source already attached to this server page."
       }
     ],
-    "sourcePolicy": "Use official server websites, server-run knowledge bases, OTLand threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
+    "sourcePolicy": "Use official server websites, server-run knowledge bases, community_archive threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
     "gameplayGuide": [
       {
         "heading": "How to start playing Valdareth 8.0 Custom WAR Server",
@@ -199,7 +199,7 @@ const page = {
         "Valdareth 8.0 Custom WAR Server has no verified source mapped for boss, raid, or arena detail yet. Add a schedule, changelog, or official event note to support it."
       ],
       "downloads": [
-        "Candidate official download/account source: https://otland.net/threads/usa-valdareth-feb-6th-3-pm-est-8-0-custom-war-server.303804/"
+        "Candidate official download/account source: https://opentibiaservers.com/"
       ],
       "rules": [
         "Valdareth 8.0 Custom WAR Server has no verified source mapped for rule page yet. Add the official rules, policy notes, or staff FAQ to complete it."
@@ -221,7 +221,7 @@ const page = {
       "Open fields: vocations, items, monsters, quests, bosses, rules, screenshots, ownerContacts"
     ]
   },
-  "overview": "Valdareth 8.0 Custom WAR Server is preserved through its OtLand Server Gala trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
+  "overview": "Valdareth 8.0 Custom WAR Server is preserved through its community_archive server launch archive trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
   "cta": {
     "label": "Compare Valdareth 8.0 Custom WAR Server Alternatives",
     "href": "/?search=Valdareth%208.0%20Custom%20WAR%20Server"
@@ -229,7 +229,7 @@ const page = {
   "facts": [
     {
       "label": "Source",
-      "value": "OtLand Server Gala thread"
+      "value": "community_archive server launch archive thread"
     },
     {
       "label": "Listed host",
@@ -321,13 +321,13 @@ const page = {
     },
     {
       "term": "Public thread",
-      "definition": "An OtLand post or community launch record that preserves a server’s public launch context, discussion, and update trail."
+      "definition": "An community_archive post or community launch record that preserves a server’s public launch context, discussion, and update trail."
     }
   ],
   "researchNotes": [
     {
       "label": "Public forum snapshot",
-      "value": "Valdareth 8.0 Custom WAR Server is currently seeded from an OtLand Server Gala thread with no host recorded, 0 replies, 282 views, region hint: USA, and thread author Rhagel."
+      "value": "Valdareth 8.0 Custom WAR Server is currently seeded from an community_archive server launch archive thread with no host recorded, 0 replies, 282 views, region hint: USA, and thread author Rhagel."
     },
     {
       "label": "Open fields to document",
@@ -337,7 +337,7 @@ const page = {
   "mediaLeads": [
     {
       "label": "Public server-list source",
-      "href": "https://otland.net/forums/server-gala.43/",
+      "href": "https://opentibiaservers.com/",
       "note": "Source lead for players-online, uptime, version, EXP, PvP type, and host discovery. It should be refreshed periodically."
     }
   ],
@@ -354,7 +354,7 @@ const page = {
       "eyebrow": "Verification",
       "heading": "What needs verification on Valdareth 8.0 Custom WAR Server",
       "body": [
-        "Use official server websites, server-run knowledge bases, OTLand threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
+        "Use official server websites, server-run knowledge bases, community_archive threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
         "The safest next step is to compare the public thread, the candidate official website if one exists, and the live client or launcher before installing anything. When the evidence disagrees, the page should preserve that disagreement rather than hide it."
       ]
     },
@@ -370,11 +370,11 @@ const page = {
   "faqs": [
     {
       "question": "Is Valdareth 8.0 Custom WAR Server verified?",
-      "answer": "This page verifies that a matching OtLand Server Gala thread exists and preserves its public forum metadata. It does not claim owner verification until an official site, server owner claim, or current in-game listing confirms the active server details."
+      "answer": "This page verifies that a matching community_archive server launch archive thread exists and preserves its public forum metadata. It does not claim owner verification until an official site, server owner claim, or current in-game listing confirms the active server details."
     },
     {
       "question": "Where should players confirm Valdareth 8.0 Custom WAR Server?",
-      "answer": "Start with the linked OtLand thread, then verify the official website, account creation path, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
+      "answer": "Start with the linked community_archive thread, then verify the official website, account creation path, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
     },
     {
       "question": "What remains to be added?",
@@ -390,19 +390,19 @@ const page = {
   "sourceLinks": [
     {
       "type": "community_forum",
-      "url": "https://otland.net/threads/usa-valdareth-feb-6th-3-pm-est-8-0-custom-war-server.303804/",
-      "label": "OtLand Server Gala thread"
+      "url": "https://opentibiaservers.com/",
+      "label": "community_archive server launch archive thread"
     },
     {
       "type": "forum_index",
-      "url": "https://otland.net/forums/server-gala.43/",
-      "label": "OtLand Server Gala forum"
+      "url": "https://opentibiaservers.com/",
+      "label": "community_archive server launch archive forum"
     }
   ],
   "officialAccess": [
     {
-      "href": "https://otland.net/threads/usa-valdareth-feb-6th-3-pm-est-8-0-custom-war-server.303804/",
-      "label": "OtLand launch thread",
+      "href": "https://opentibiaservers.com/",
+      "label": "community_archive launch thread",
       "note": "Primary public launch source.",
       "kind": "reference"
     }

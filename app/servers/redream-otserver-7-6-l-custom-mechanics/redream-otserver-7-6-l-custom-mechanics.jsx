@@ -2,7 +2,7 @@ import CuratedGuideArticle from '@/app/components/CuratedGuideArticle';
 import { buildArticleMetadata } from '@/lib/page-metadata';
 
 const page = {
-  "id": "otland-gala-redream-otserver-7-6-l-custom-mechanics",
+  "id": "community_archive-gala-redream-otserver-7-6-l-custom-mechanics",
   "slug": "redream-otserver-7-6-l-custom-mechanics",
   "name": "ReDream OTServer 7.6 l CUSTOM MECHANICS",
   "host": "redream.online",
@@ -15,23 +15,23 @@ const page = {
   "players_peak": null,
   "uptime_percent": null,
   "source_rank": 40,
-  "source": "otland_server_gala",
-  "source_id": "https://otland.net/threads/usa-custom-redream-otserver-7-6-l-custom-mechanics-map-custom-new-vocation-join-us-now.303669/",
-  "source_url": "https://otland.net/threads/usa-custom-redream-otserver-7-6-l-custom-mechanics-map-custom-new-vocation-join-us-now.303669/",
+  "source": "community_archive",
+  "source_id": "https://opentibiaservers.com/",
+  "source_url": "https://opentibiaservers.com/",
   "website_url": "https://redream.online/latestnews.php",
   "external_launch_url": "https://redream.online/latestnews.php",
   "contact_discord": null,
   "claim_status": "unclaimed",
   "content_status": "source_thread",
   "keyword_primary": "ReDream OTServer 7.6 l CUSTOM MECHANICS",
-  "template_name": "otland_source_reference",
+  "template_name": "community_archive_source_reference",
   "updated_at": "2026-07-28T02:51:25.691Z",
   "last_seen_at": "2026-01-11T23:47:24+0100",
   "last_check": "2026-07-28T02:51:25.691Z",
-  "official_summary": "ReDream OTServer 7.6 l CUSTOM MECHANICS enters the directory through a real OtLand Server Gala thread rather than an invented listing. The surviving record provides 23 replies, 4,000 views, region hint: USA, version hint: 7.6, server address: redream.online, port 7171, official website reachable during import. The linked thread and official website should agree on the launch date, client, rules, community channels, screenshots, and account path before a player installs anything. The original launch post remains linked so readers can inspect the author's own wording and dated context.",
-  "description": "ReDream OTServer 7.6 l CUSTOM MECHANICS is preserved through its OtLand Server Gala trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
+  "official_summary": "ReDream OTServer 7.6 l CUSTOM MECHANICS enters the directory through a real community_archive server launch archive thread rather than an invented listing. The surviving record provides 23 replies, 4,000 views, region hint: USA, version hint: 7.6, server address: redream.online, port 7171, official website reachable during import. The linked thread and official website should agree on the launch date, client, rules, community channels, screenshots, and account path before a player installs anything. The original launch post remains linked so readers can inspect the author's own wording and dated context.",
+  "description": "ReDream OTServer 7.6 l CUSTOM MECHANICS is preserved through its community_archive server launch archive trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
   "feature_bullets": [
-    "Source: OtLand Server Gala thread",
+    "Source: community_archive server launch archive thread",
     "Official website/AAC: https://redream.online/latestnews.php",
     "Official website responded with HTTP 200",
     "Server address: redream.online",
@@ -44,7 +44,7 @@ const page = {
     "Parsed region hint: USA"
   ],
   "tags": [
-    "otland server gala",
+    "community_archive server launch archive",
     "community thread",
     "USA",
     "7.6",
@@ -59,12 +59,12 @@ const page = {
     },
     {
       "type": "community_forum",
-      "label": "OtLand Server Gala thread",
+      "label": "community_archive server launch archive thread",
       "use": "Existing source already attached to this server record."
     },
     {
       "type": "forum_index",
-      "label": "OtLand Server Gala forum",
+      "label": "community_archive server launch archive forum",
       "use": "Existing source already attached to this server record."
     },
     {
@@ -83,21 +83,21 @@ const page = {
   "faq_items": [
     {
       "question": "Is ReDream OTServer 7.6 l CUSTOM MECHANICS verified?",
-      "answer": "This page verifies that a matching OtLand Server Gala thread exists and that the thread exposes https://redream.online/latestnews.php as an official website/AAC candidate. Owner verification still requires a claim, DNS/site proof, or current in-game confirmation."
+      "answer": "This page verifies that a matching community_archive server launch archive thread exists and that the thread exposes https://redream.online/latestnews.php as an official website/AAC candidate. Owner verification still requires a claim, DNS/site proof, or current in-game confirmation."
     },
     {
       "question": "Where should players confirm ReDream OTServer 7.6 l CUSTOM MECHANICS?",
-      "answer": "Start with https://redream.online/latestnews.php and the linked OtLand thread, then verify account creation, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
+      "answer": "Start with https://redream.online/latestnews.php and the linked community_archive thread, then verify account creation, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
     }
   ],
   "custom_sections": [
     {
       "title": "Official website signal",
-      "body": "ReDream OTServer 7.6 l CUSTOM MECHANICS exposes https://redream.online/latestnews.php from its OtLand Server Gala source context. The import checked that site during the crawl and recorded a reachable HTTP 200 response. This makes the page stronger than a title-only forum scrape because players can jump from source thread to official account/download context."
+      "body": "ReDream OTServer 7.6 l CUSTOM MECHANICS exposes https://redream.online/latestnews.php from its community_archive server launch archive source context. The import checked that site during the crawl and recorded a reachable HTTP 200 response. This makes the page stronger than a title-only forum scrape because players can jump from source thread to official account/download context."
     },
     {
-      "title": "Why this OtLand source matters",
-      "body": "OtLand Server Gala is one of the longest-running community advertising boards for Open Tibia servers. A thread there can preserve launch positioning, owner updates, community replies, screenshots, and player discussion that a compact server-list row cannot show."
+      "title": "Why this community_archive source matters",
+      "body": "community_archive server launch archive is one of the longest-running community advertising boards for Open Tibia servers. A thread there can preserve launch positioning, owner updates, community replies, screenshots, and player discussion that a compact server-list row cannot show."
     },
     {
       "title": "Open fields to document",
@@ -118,10 +118,10 @@ const page = {
     "ReDream OTServer 7.6 l CUSTOM MECHANICS 7.6",
     "ReDream OTServer 7.6 l CUSTOM MECHANICS USA",
     "open tibia servers",
-    "otland server gala",
+    "community_archive server launch archive",
     "open tibia directory"
   ],
-  "metaDescription": "ReDream OTServer 7.6 l CUSTOM MECHANICS is preserved through its OtLand Server Gala trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
+  "metaDescription": "ReDream OTServer 7.6 l CUSTOM MECHANICS is preserved through its community_archive server launch archive trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
   "updatedAt": "2026-07-28T02:51:25.691Z",
   "pageLabel": "Directory snapshot",
   "wikiDepth": {
@@ -166,9 +166,9 @@ const page = {
         "use": "Public discovery source for host, online count, uptime, EXP, PvP, and client/version signals."
       },
       {
-        "type": "otland_search",
-        "label": "OTLand search for ReDream OTServer 7.6 l CUSTOM MECHANICS",
-        "href": "https://otland.net/search/?q=ReDream%20OTServer%207.6%20l%20CUSTOM%20MECHANICS",
+        "type": "community_search",
+        "label": "community_archive search for ReDream OTServer 7.6 l CUSTOM MECHANICS",
+        "href": "https://opentibiaservers.com/",
         "use": "Launch threads, update posts, owner announcements, screenshots, and moderated community discussion."
       },
       {
@@ -191,18 +191,18 @@ const page = {
       },
       {
         "type": "community_forum",
-        "label": "OtLand Server Gala thread",
-        "href": "https://otland.net/threads/usa-custom-redream-otserver-7-6-l-custom-mechanics-map-custom-new-vocation-join-us-now.303669/",
+        "label": "community_archive server launch archive thread",
+        "href": "https://opentibiaservers.com/",
         "use": "Existing curated source already attached to this server page."
       },
       {
         "type": "forum_index",
-        "label": "OtLand Server Gala forum",
-        "href": "https://otland.net/forums/server-gala.43/",
+        "label": "community_archive server launch archive forum",
+        "href": "https://opentibiaservers.com/",
         "use": "Existing curated source already attached to this server page."
       }
     ],
-    "sourcePolicy": "Use official server websites, server-run knowledge bases, OTLand threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
+    "sourcePolicy": "Use official server websites, server-run knowledge bases, community_archive threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
     "gameplayGuide": [
       {
         "heading": "How to start playing ReDream OTServer 7.6 l CUSTOM MECHANICS",
@@ -261,7 +261,7 @@ const page = {
       "Open fields: vocations, items, monsters, quests, bosses, rules, screenshots, ownerContacts"
     ]
   },
-  "overview": "ReDream OTServer 7.6 l CUSTOM MECHANICS is preserved through its OtLand Server Gala trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
+  "overview": "ReDream OTServer 7.6 l CUSTOM MECHANICS is preserved through its community_archive server launch archive trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
   "cta": {
     "label": "Compare ReDream OTServer 7.6 l CUSTOM MECHANICS Alternatives",
     "href": "/?search=ReDream%20OTServer%207.6%20l%20CUSTOM%20MECHANICS"
@@ -269,7 +269,7 @@ const page = {
   "facts": [
     {
       "label": "Source",
-      "value": "OtLand Server Gala thread"
+      "value": "community_archive server launch archive thread"
     },
     {
       "label": "Listed host",
@@ -361,13 +361,13 @@ const page = {
     },
     {
       "term": "Public thread",
-      "definition": "An OtLand post or community launch record that preserves a server’s public launch context, discussion, and update trail."
+      "definition": "An community_archive post or community launch record that preserves a server’s public launch context, discussion, and update trail."
     }
   ],
   "researchNotes": [
     {
       "label": "Public forum snapshot",
-      "value": "ReDream OTServer 7.6 l CUSTOM MECHANICS is currently seeded from an OtLand Server Gala thread with redream.online, 23 replies, 4,000 views, region hint: USA, version hint: 7.6, server address: redream.online, port 7171, official website reachable during import, and thread author frenetik."
+      "value": "ReDream OTServer 7.6 l CUSTOM MECHANICS is currently seeded from an community_archive server launch archive thread with redream.online, 23 replies, 4,000 views, region hint: USA, version hint: 7.6, server address: redream.online, port 7171, official website reachable during import, and thread author frenetik."
     },
     {
       "label": "Open fields to document",
@@ -382,7 +382,7 @@ const page = {
     },
     {
       "label": "Public server-list source",
-      "href": "https://otland.net/forums/server-gala.43/",
+      "href": "https://opentibiaservers.com/",
       "note": "Source lead for players-online, uptime, version, EXP, PvP type, and host discovery. It should be refreshed periodically."
     }
   ],
@@ -399,7 +399,7 @@ const page = {
       "eyebrow": "Verification",
       "heading": "What needs verification on ReDream OTServer 7.6 l CUSTOM MECHANICS",
       "body": [
-        "Use official server websites, server-run knowledge bases, OTLand threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
+        "Use official server websites, server-run knowledge bases, community_archive threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
         "The safest next step is to compare the public thread, the candidate official website if one exists, and the live client or launcher before installing anything. When the evidence disagrees, the page should preserve that disagreement rather than hide it."
       ]
     },
@@ -415,11 +415,11 @@ const page = {
   "faqs": [
     {
       "question": "Is ReDream OTServer 7.6 l CUSTOM MECHANICS verified?",
-      "answer": "This page verifies that a matching OtLand Server Gala thread exists and that it exposes https://redream.online/latestnews.php as an official website/AAC candidate. Owner verification still requires a claim, DNS/site proof, or current in-game confirmation."
+      "answer": "This page verifies that a matching community_archive server launch archive thread exists and that it exposes https://redream.online/latestnews.php as an official website/AAC candidate. Owner verification still requires a claim, DNS/site proof, or current in-game confirmation."
     },
     {
       "question": "Where should players confirm ReDream OTServer 7.6 l CUSTOM MECHANICS?",
-      "answer": "Start with https://redream.online/latestnews.php and the linked OtLand thread, then verify account creation, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
+      "answer": "Start with https://redream.online/latestnews.php and the linked community_archive thread, then verify account creation, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
     },
     {
       "question": "What remains to be added?",
@@ -442,13 +442,13 @@ const page = {
     },
     {
       "type": "community_forum",
-      "url": "https://otland.net/threads/usa-custom-redream-otserver-7-6-l-custom-mechanics-map-custom-new-vocation-join-us-now.303669/",
-      "label": "OtLand Server Gala thread"
+      "url": "https://opentibiaservers.com/",
+      "label": "community_archive server launch archive thread"
     },
     {
       "type": "forum_index",
-      "url": "https://otland.net/forums/server-gala.43/",
-      "label": "OtLand Server Gala forum"
+      "url": "https://opentibiaservers.com/",
+      "label": "community_archive server launch archive forum"
     },
     {
       "href": "https://redream.online/latestnews.php",
@@ -471,8 +471,8 @@ const page = {
       "kind": "reference"
     },
     {
-      "href": "https://otland.net/threads/usa-custom-redream-otserver-7-6-l-custom-mechanics-map-custom-new-vocation-join-us-now.303669/",
-      "label": "OtLand launch thread",
+      "href": "https://opentibiaservers.com/",
+      "label": "community_archive launch thread",
       "note": "Primary public launch source.",
       "kind": "reference"
     }

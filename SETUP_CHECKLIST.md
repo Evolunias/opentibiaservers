@@ -55,4 +55,4 @@ curl -X POST "http://localhost:3000/api/sync-servers" \
 
 ## Source Mapping
 
-See `SOURCE_SCHEMA_MAPPING.md` for the otservlist.org field mapping and the planned OTLand mapping.
+See `SOURCE_SCHEMA_MAPPING.md` for the otservlist.org field mapping and the planned community archive mapping.

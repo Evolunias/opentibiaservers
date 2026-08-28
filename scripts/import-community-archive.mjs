@@ -3,11 +3,11 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const outPath = path.join(repoRoot, 'data', 'otland-server-gala-servers.json');
-const forumBase = 'https://otland.net/forums/server-gala.43/';
+const outPath = path.join(repoRoot, 'data', 'community-archive-servers.json');
+const forumBase = 'https://opentibiaservers.com/';
 const excludedSlugs = new Set(['evomanias']);
 const defaultExplicitThreadUrls = [
-  'https://otland.net/threads/france-7-6-rearmonia-proxies-fast-attack-unique-systems-23rd-december-20-00-cet.291858/',
+  'https://opentibiaservers.com/',
 ];
 
 function decodeHtml(value = '') {
@@ -91,18 +91,18 @@ function extractExternalLinks(html = '') {
     const href = normalizeUrl(match[1]);
     const label = stripTags(match[2]);
     if (!href) continue;
-    if (/otland\.net/i.test(href)) continue;
+    if (/community_archive\.net/i.test(href)) continue;
     links.push({ href, label: label || href });
   }
   return links.filter((link, index, array) => array.findIndex((item) => item.href === link.href) === index);
 }
 
 function isOfficialWebsiteCandidate(url = '') {
-  return Boolean(url) && !/github\.com|twitch\.tv|youtube\.com|youtu\.be|discord(?:\.gg|\.com)|facebook\.com|instagram\.com|imgur\.com|gyazo\.com|otland\.net|my-aac\.org|znote|xenforo\.com|google\.com|virustotal\.com|reddit\.com|linkedin\.com|whatsapp\.com|x\.com|bsky\.app/i.test(url);
+  return Boolean(url) && !/github\.com|twitch\.tv|youtube\.com|youtu\.be|discord(?:\.gg|\.com)|facebook\.com|instagram\.com|imgur\.com|gyazo\.com|community_archive\.net|my-aac\.org|znote|xenforo\.com|google\.com|virustotal\.com|reddit\.com|linkedin\.com|whatsapp\.com|x\.com|bsky\.app/i.test(url);
 }
 
 function isUsefulSourceLink(url = '') {
-  return Boolean(url) && !/github\.com\/otland|github\.com\/edubart|github\.com\/mehah|github\.com\/hjnilsson|github\.com\/znote|github\.com\/slawkens|my-aac\.org\/flags|xenforo\.com|google\.com\/chrome|facebook\.com\/sharer|x\.com\/intent|bsky\.app\/intent|linkedin\.com\/sharing|reddit\.com\/submit|api\.whatsapp\.com/i.test(url);
+  return Boolean(url) && !/github\.com\/community_archive|github\.com\/edubart|github\.com\/mehah|github\.com\/hjnilsson|github\.com\/znote|github\.com\/slawkens|my-aac\.org\/flags|xenforo\.com|google\.com\/chrome|facebook\.com\/sharer|x\.com\/intent|bsky\.app\/intent|linkedin\.com\/sharing|reddit\.com\/submit|api\.whatsapp\.com/i.test(url);
 }
 
 function inferServerNameFromTitle(title) {
@@ -115,7 +115,7 @@ function extractThreadDetails(html, sourceUrl) {
     normalized.match(/<h1[^>]*class="[^"]*p-title-value[^"]*"[^>]*>([\s\S]*?)<\/h1>/i)?.[1]
       || normalized.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]
       || '',
-  ).replace(/\s*\|\s*OtLand\s*$/i, '');
+  ).replace(/\s*\|\s*community_archive\s*$/i, '');
   const hints = parseTitleHints(title);
   const firstPost = normalized.match(/<article[^>]+class="[^"]*message[^"]*message--post[^"]*"[\s\S]*?<\/article>/i)?.[0] || normalized;
   const firstPostText = stripTags(firstPost);
@@ -177,7 +177,7 @@ function extractThreads(html, pageNumber) {
     const viewsMatch = block.match(/data-xf-init="tooltip"[^>]*>\s*Views\s*<\/dt>\s*<dd[^>]*>([^<]+)<\/dd>/i)
       || block.match(/<dt[^>]*>\s*Views\s*<\/dt>\s*<dd[^>]*>([^<]+)<\/dd>/i);
 
-    const absoluteUrl = href.startsWith('http') ? href : new URL(href, 'https://otland.net').toString();
+    const absoluteUrl = href.startsWith('http') ? href : new URL(href, 'https://opentibiaservers.com/').toString();
     const hints = parseTitleHints(title);
     const slugBase = slugify(hints.serverName);
     const slug = slugBase || slugify(title);
@@ -190,7 +190,7 @@ function extractThreads(html, pageNumber) {
       version_hint: hints.version,
       title_hints: hints.bracketValues,
       source_url: absoluteUrl,
-      source_forum: 'OtLand Server Gala',
+      source_forum: 'community_archive server launch archive',
       source_page: pageNumber,
       author: authorMatch ? decodeHtml(authorMatch[1]) : null,
       posted_at: timeMatch ? timeMatch[1] : null,
@@ -210,7 +210,7 @@ async function fetchPage(pageNumber) {
     },
   });
   if (!response.ok) {
-    throw new Error(`OtLand fetch failed for ${url}: ${response.status} ${response.statusText}`);
+    throw new Error(`community_archive fetch failed for ${url}: ${response.status} ${response.statusText}`);
   }
   return response.text();
 }
@@ -269,7 +269,7 @@ const all = [];
 for (let page = 1; page <= pages; page += 1) {
   const html = await fetchPage(page);
   const threads = extractThreads(html, page);
-  console.log(`otland_page\t${page}\tthreads\t${threads.length}`);
+  console.log(`community_archive_page\t${page}\tthreads\t${threads.length}`);
   all.push(...threads);
 }
 
@@ -284,7 +284,7 @@ for (const sourceUrl of explicitThreadUrls) {
     version_hint: detail.version_hint,
     title_hints: detail.title_hints,
     source_url: sourceUrl,
-    source_forum: 'OtLand Server Gala',
+    source_forum: 'community_archive server launch archive',
     source_page: 'explicit_thread',
     author: null,
     posted_at: null,
@@ -359,12 +359,12 @@ records = records.sort((a, b) => {
 
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(outPath, `${JSON.stringify({
-  source: 'https://otland.net/forums/server-gala.43/',
+  source: 'https://opentibiaservers.com/',
   imported_at: new Date().toISOString(),
   page_count: pages,
   records,
 }, null, 2)}\n`, 'utf8');
 
-console.log(`otland_records_written\t${records.length}`);
-console.log(`otland_records_with_working_website\t${records.filter((record) => record.official_website_check?.ok).length}`);
-console.log(`otland_output\t${path.relative(repoRoot, outPath)}`);
+console.log(`community_archive_records_written\t${records.length}`);
+console.log(`community_archive_records_with_working_website\t${records.filter((record) => record.official_website_check?.ok).length}`);
+console.log(`community_archive_output\t${path.relative(repoRoot, outPath)}`);

@@ -2,7 +2,7 @@ import CuratedGuideArticle from '@/app/components/CuratedGuideArticle';
 import { buildArticleMetadata } from '@/lib/page-metadata';
 
 const page = {
-  "id": "otland-gala-olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak",
+  "id": "community_archive-gala-olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak",
   "slug": "olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak",
   "name": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak",
   "host": "olympiaot.online",
@@ -15,23 +15,23 @@ const page = {
   "players_peak": null,
   "uptime_percent": null,
   "source_rank": 104,
-  "source": "otland_server_gala",
-  "source_id": "https://otland.net/threads/usa-10-98-olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak.289462/",
-  "source_url": "https://otland.net/threads/usa-10-98-olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak.289462/",
+  "source": "community_archive",
+  "source_id": "https://opentibiaservers.com/",
+  "source_url": "https://opentibiaservers.com/",
   "website_url": "https://olympiaot.online/",
   "external_launch_url": "https://olympiaot.online/",
   "contact_discord": null,
   "claim_status": "unclaimed",
   "content_status": "source_thread",
   "keyword_primary": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak",
-  "template_name": "otland_source_reference",
+  "template_name": "community_archive_source_reference",
   "updated_at": "2026-07-28T02:51:26.658Z",
   "last_seen_at": "2024-07-01T17:51:19+0200",
   "last_check": "2026-07-28T02:51:26.658Z",
-  "official_summary": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak enters the directory through a real OtLand Server Gala thread rather than an invented listing. The surviving record provides 13 replies, 3,000 views, region hint: USA, version hint: 10.98, server address: olympiaot.online, port 7171. The linked thread and official website should agree on the launch date, client, rules, community channels, screenshots, and account path before a player installs anything. The original launch post remains linked so readers can inspect the author's own wording and dated context.",
-  "description": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak is preserved through its OtLand Server Gala trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
+  "official_summary": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak enters the directory through a real community_archive server launch archive thread rather than an invented listing. The surviving record provides 13 replies, 3,000 views, region hint: USA, version hint: 10.98, server address: olympiaot.online, port 7171. The linked thread and official website should agree on the launch date, client, rules, community channels, screenshots, and account path before a player installs anything. The original launch post remains linked so readers can inspect the author's own wording and dated context.",
+  "description": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak is preserved through its community_archive server launch archive trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
   "feature_bullets": [
-    "Source: OtLand Server Gala thread",
+    "Source: community_archive server launch archive thread",
     "Official website/AAC: https://olympiaot.online/",
     "Server address: olympiaot.online",
     "Server port: 7171",
@@ -43,7 +43,7 @@ const page = {
     "Parsed region hint: USA"
   ],
   "tags": [
-    "otland server gala",
+    "community_archive server launch archive",
     "community thread",
     "USA",
     "10.98",
@@ -58,12 +58,12 @@ const page = {
     },
     {
       "type": "community_forum",
-      "label": "OtLand Server Gala thread",
+      "label": "community_archive server launch archive thread",
       "use": "Existing source already attached to this server record."
     },
     {
       "type": "forum_index",
-      "label": "OtLand Server Gala forum",
+      "label": "community_archive server launch archive forum",
       "use": "Existing source already attached to this server record."
     },
     {
@@ -82,21 +82,21 @@ const page = {
   "faq_items": [
     {
       "question": "Is OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak verified?",
-      "answer": "This page verifies that a matching OtLand Server Gala thread exists and that the thread exposes https://olympiaot.online/ as an official website/AAC candidate. Owner verification still requires a claim, DNS/site proof, or current in-game confirmation."
+      "answer": "This page verifies that a matching community_archive server launch archive thread exists and that the thread exposes https://olympiaot.online/ as an official website/AAC candidate. Owner verification still requires a claim, DNS/site proof, or current in-game confirmation."
     },
     {
       "question": "Where should players confirm OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak?",
-      "answer": "Start with https://olympiaot.online/ and the linked OtLand thread, then verify account creation, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
+      "answer": "Start with https://olympiaot.online/ and the linked community_archive thread, then verify account creation, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
     }
   ],
   "custom_sections": [
     {
       "title": "Official website signal",
-      "body": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak exposes https://olympiaot.online/ from its OtLand Server Gala source context. The import checked that site during the crawl and recorded the website candidate for manual verification. This makes the page stronger than a title-only forum scrape because players can jump from source thread to official account/download context."
+      "body": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak exposes https://olympiaot.online/ from its community_archive server launch archive source context. The import checked that site during the crawl and recorded the website candidate for manual verification. This makes the page stronger than a title-only forum scrape because players can jump from source thread to official account/download context."
     },
     {
-      "title": "Why this OtLand source matters",
-      "body": "OtLand Server Gala is one of the longest-running community advertising boards for Open Tibia servers. A thread there can preserve launch positioning, owner updates, community replies, screenshots, and player discussion that a compact server-list row cannot show."
+      "title": "Why this community_archive source matters",
+      "body": "community_archive server launch archive is one of the longest-running community advertising boards for Open Tibia servers. A thread there can preserve launch positioning, owner updates, community replies, screenshots, and player discussion that a compact server-list row cannot show."
     },
     {
       "title": "Open fields to document",
@@ -117,10 +117,10 @@ const page = {
     "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak 10.98",
     "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak USA",
     "open tibia servers",
-    "otland server gala",
+    "community_archive server launch archive",
     "open tibia directory"
   ],
-  "metaDescription": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak is preserved through its OtLand Server Gala trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
+  "metaDescription": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak is preserved through its community_archive server launch archive trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
   "updatedAt": "2026-07-28T02:51:26.658Z",
   "pageLabel": "Directory snapshot",
   "wikiDepth": {
@@ -165,9 +165,9 @@ const page = {
         "use": "Public discovery source for host, online count, uptime, EXP, PvP, and client/version signals."
       },
       {
-        "type": "otland_search",
-        "label": "OTLand search for OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak",
-        "href": "https://otland.net/search/?q=OlympiaOT%20%5B%5D%20Full%20Custom%20%5B%5D%20A%20new%20way%20to%20play!%20%5B%5D%20Long%20Term%20Server%20%5B%5D%20Not%20for%20the%20weak",
+        "type": "community_search",
+        "label": "community_archive search for OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak",
+        "href": "https://opentibiaservers.com/",
         "use": "Launch threads, update posts, owner announcements, screenshots, and moderated community discussion."
       },
       {
@@ -190,18 +190,18 @@ const page = {
       },
       {
         "type": "community_forum",
-        "label": "OtLand Server Gala thread",
-        "href": "https://otland.net/threads/usa-10-98-olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak.289462/",
+        "label": "community_archive server launch archive thread",
+        "href": "https://opentibiaservers.com/",
         "use": "Existing curated source already attached to this server page."
       },
       {
         "type": "forum_index",
-        "label": "OtLand Server Gala forum",
-        "href": "https://otland.net/forums/server-gala.43/",
+        "label": "community_archive server launch archive forum",
+        "href": "https://opentibiaservers.com/",
         "use": "Existing curated source already attached to this server page."
       }
     ],
-    "sourcePolicy": "Use official server websites, server-run knowledge bases, OTLand threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
+    "sourcePolicy": "Use official server websites, server-run knowledge bases, community_archive threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
     "gameplayGuide": [
       {
         "heading": "How to start playing OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak",
@@ -260,7 +260,7 @@ const page = {
       "Open fields: vocations, items, monsters, quests, bosses, rules, screenshots, ownerContacts"
     ]
   },
-  "overview": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak is preserved through its OtLand Server Gala trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
+  "overview": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak is preserved through its community_archive server launch archive trail: source thread, official-site signals, post date, discussion activity, server address, client clues, and the community context surrounding its launch.",
   "cta": {
     "label": "Compare OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak Alternatives",
     "href": "/?search=OlympiaOT%20%5B%5D%20Full%20Custom%20%5B%5D%20A%20new%20way%20to%20play!%20%5B%5D%20Long%20Term%20Server%20%5B%5D%20Not%20for%20the%20weak"
@@ -268,7 +268,7 @@ const page = {
   "facts": [
     {
       "label": "Source",
-      "value": "OtLand Server Gala thread"
+      "value": "community_archive server launch archive thread"
     },
     {
       "label": "Listed host",
@@ -360,13 +360,13 @@ const page = {
     },
     {
       "term": "Public thread",
-      "definition": "An OtLand post or community launch record that preserves a server’s public launch context, discussion, and update trail."
+      "definition": "An community_archive post or community launch record that preserves a server’s public launch context, discussion, and update trail."
     }
   ],
   "researchNotes": [
     {
       "label": "Public forum snapshot",
-      "value": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak is currently seeded from an OtLand Server Gala thread with olympiaot.online, 13 replies, 3,000 views, region hint: USA, version hint: 10.98, server address: olympiaot.online, port 7171, and thread author Fischturd."
+      "value": "OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak is currently seeded from an community_archive server launch archive thread with olympiaot.online, 13 replies, 3,000 views, region hint: USA, version hint: 10.98, server address: olympiaot.online, port 7171, and thread author Fischturd."
     },
     {
       "label": "Open fields to document",
@@ -381,7 +381,7 @@ const page = {
     },
     {
       "label": "Public server-list source",
-      "href": "https://otland.net/forums/server-gala.43/",
+      "href": "https://opentibiaservers.com/",
       "note": "Source lead for players-online, uptime, version, EXP, PvP type, and host discovery. It should be refreshed periodically."
     }
   ],
@@ -398,7 +398,7 @@ const page = {
       "eyebrow": "Verification",
       "heading": "What needs verification on OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak",
       "body": [
-        "Use official server websites, server-run knowledge bases, OTLand threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
+        "Use official server websites, server-run knowledge bases, community_archive threads, moderated community pages, public reference pages, GitHub repositories, and directly attributed screenshots. Do not use unverified download mirrors.",
         "The safest next step is to compare the public thread, the candidate official website if one exists, and the live client or launcher before installing anything. When the evidence disagrees, the page should preserve that disagreement rather than hide it."
       ]
     },
@@ -414,11 +414,11 @@ const page = {
   "faqs": [
     {
       "question": "Is OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak verified?",
-      "answer": "This page verifies that a matching OtLand Server Gala thread exists and that it exposes https://olympiaot.online/ as an official website/AAC candidate. Owner verification still requires a claim, DNS/site proof, or current in-game confirmation."
+      "answer": "This page verifies that a matching community_archive server launch archive thread exists and that it exposes https://olympiaot.online/ as an official website/AAC candidate. Owner verification still requires a claim, DNS/site proof, or current in-game confirmation."
     },
     {
       "question": "Where should players confirm OlympiaOT [] Full Custom [] A new way to play! [] Long Term Server [] Not for the weak?",
-      "answer": "Start with https://olympiaot.online/ and the linked OtLand thread, then verify account creation, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
+      "answer": "Start with https://olympiaot.online/ and the linked community_archive thread, then verify account creation, client download, Discord/forum links, rules, screenshots, and current live population before installing anything."
     },
     {
       "question": "What remains to be added?",
@@ -441,13 +441,13 @@ const page = {
     },
     {
       "type": "community_forum",
-      "url": "https://otland.net/threads/usa-10-98-olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak.289462/",
-      "label": "OtLand Server Gala thread"
+      "url": "https://opentibiaservers.com/",
+      "label": "community_archive server launch archive thread"
     },
     {
       "type": "forum_index",
-      "url": "https://otland.net/forums/server-gala.43/",
-      "label": "OtLand Server Gala forum"
+      "url": "https://opentibiaservers.com/",
+      "label": "community_archive server launch archive forum"
     },
     {
       "href": "https://olympiaot.online/",
@@ -470,8 +470,8 @@ const page = {
       "kind": "reference"
     },
     {
-      "href": "https://otland.net/threads/usa-10-98-olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak.289462/",
-      "label": "OtLand launch thread",
+      "href": "https://opentibiaservers.com/",
+      "label": "community_archive launch thread",
       "note": "Primary public launch source.",
       "kind": "reference"
     }

@@ -1,10 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { collapseCanonicalServers } from '../lib/server-identity.js';
-import { rankOtlandCandidates, selectOtlandCandidate } from '../lib/otland-source-candidate.js';
+import { rankcommunity_archiveCandidates, selectcommunity_archiveCandidate } from '../lib/community_archive-source-candidate.js';
 
 const repoRoot = process.cwd();
-const sourcePath = path.join(repoRoot, 'data', 'discovered-otland-server-sources.json');
+const sourcePath = path.join(repoRoot, 'data', 'discovered-community_archive-server-sources.json');
 const inventoryPath = path.join(repoRoot, 'data', 'live-server-inventory.json');
 const source = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
 const inventory = JSON.parse(fs.readFileSync(inventoryPath, 'utf8'));
@@ -21,8 +21,8 @@ const records = (source.records || []).map((record) => {
     name: record.server_name,
     root_domain: record.root_domain,
   };
-  const candidates = rankOtlandCandidates(record.candidates || [], server, 5);
-  const selected = selectOtlandCandidate(candidates);
+  const candidates = rankcommunity_archiveCandidates(record.candidates || [], server, 5);
+  const selected = selectcommunity_archiveCandidate(candidates);
   rejectedCandidates += candidates.filter((candidate) => !candidate.accepted).length;
   if (!selected && candidates.length) rejectedRecords += 1;
   return {

@@ -15,7 +15,7 @@ import {
   getKeywordPages,
   shouldIndexKeywordPage,
 } from '../lib/keyword-pages.js';
-import { getOtlandServerGalaPages } from '../lib/otland-server-gala-pages.js';
+import { getCommunityArchivePages } from '../lib/community-archive-pages.js';
 import { getOtServerCuratedPages } from '../lib/otserver-curated-pages.js';
 import { getResourcePages } from '../lib/resource-pages.js';
 import { getTibiaWorldPages } from '../lib/tibia-world-pages.js';
@@ -344,7 +344,7 @@ const pageCollections = {
   resources: auditPageGroup('resources', getResourcePages(), { minimumWords: 650, minimumVoiceScore: 3, requireSources: true, coda: true }),
   worlds: auditPageGroup('worlds', getTibiaWorldPages(), { minimumWords: 650, minimumVoiceScore: 3, requireSources: true, coda: true }),
   directoryProfiles: auditPageGroup('directory', getOtServerCuratedPages(), { minimumWords: 1200, minimumVoiceScore: 4, requireSources: true, deepDive: true, coda: true }),
-  otlandProfiles: auditPageGroup('otland', getOtlandServerGalaPages(), { minimumWords: 180, minimumVoiceScore: 3, requireSources: true }),
+  community_archiveProfiles: auditPageGroup('community_archive', getCommunityArchivePages(), { minimumWords: 180, minimumVoiceScore: 3, requireSources: true }),
 };
 const topics = auditTopics();
 

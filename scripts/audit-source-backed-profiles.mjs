@@ -19,8 +19,8 @@ for (const [slug, expectedSignals] of Object.entries(requiredExamples)) {
 
   if (!page) failures.push(`${slug}: profile not found`);
   if (page?.content_status !== 'source_backed') failures.push(`${slug}: not marked source_backed`);
-  if (!page?.sourceLinks?.some((link) => /otland\.net/i.test(link.href || link.url || ''))) {
-    failures.push(`${slug}: missing attributed OtLand source`);
+  if (!page?.sourceLinks?.some((link) => /community_archive\.net/i.test(link.href || link.url || ''))) {
+    failures.push(`${slug}: missing attributed community_archive source`);
   }
   if (genericPattern.test(content)) failures.push(`${slug}: old directory template copy remains`);
   for (const signal of expectedSignals) {

@@ -107,6 +107,6 @@ Start with:
 
 - servers: Evolunia, Cyntara, OTMadness
 - official worlds: Antica, Nova
-- ecosystem: otservlist, OTLand
+- ecosystem: otservlist, community archive
 
 Expand this list manually with pages that can receive genuinely useful research, sources, screenshots, community interaction, and internal links.

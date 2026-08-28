@@ -14,12 +14,12 @@ const excerptManifestPath = path.join(repoRoot, 'data', 'server-excerpt-manifest
 const previousResearch = fs.existsSync(outputPath)
   ? JSON.parse(fs.readFileSync(outputPath, 'utf8'))
   : { servers: [] };
-const otlandData = JSON.parse(fs.readFileSync(path.join(repoRoot, 'data', 'otland-server-gala-servers.json'), 'utf8'));
+const community_archiveData = JSON.parse(fs.readFileSync(path.join(repoRoot, 'data', 'community-archive-servers.json'), 'utf8'));
 const liveInventoryPath = path.join(repoRoot, 'data', 'live-server-inventory.json');
 const liveInventory = fs.existsSync(liveInventoryPath)
   ? JSON.parse(fs.readFileSync(liveInventoryPath, 'utf8'))
   : { servers: [] };
-const discoveredPath = path.join(repoRoot, 'data', 'discovered-otland-server-sources.json');
+const discoveredPath = path.join(repoRoot, 'data', 'discovered-community_archive-server-sources.json');
 const discovered = fs.existsSync(discoveredPath)
   ? JSON.parse(fs.readFileSync(discoveredPath, 'utf8'))
   : { records: [] };
@@ -161,15 +161,15 @@ function addToGroup(groups, raw, kind) {
     name: identity.name,
     root_domain: identity.rootDomain || null,
     aliases: [],
-    otland_threads: [],
+    community_archive_threads: [],
     official_pages: [],
     directory_summaries: [],
   };
   entry.aliases.push(raw.slug, raw.name, raw.server_name);
-  if (kind === 'otland') entry.otland_threads.push(raw);
+  if (kind === 'community_archive') entry.community_archive_threads.push(raw);
   if (raw.website_url) entry.official_pages.push({
     url: raw.website_url,
-    candidate_source: kind === 'otland' ? 'otland_owner_record' : 'directory_listing',
+    candidate_source: kind === 'community_archive' ? 'community_archive_owner_record' : 'directory_listing',
   });
   if (kind === 'directory' && raw.official_summary && !/currently needs owner-confirmed|verified starting point instead of a blank page/i.test(raw.official_summary)) {
     entry.directory_summaries.push(raw.official_summary);
@@ -179,7 +179,7 @@ function addToGroup(groups, raw, kind) {
 
 async function fetchText(url, { forceProxy = false, renderJs = false } = {}) {
   const targetUrl = String(url || '').replace(/#.*$/, '');
-  const useScrapingBee = scrapingBeeKey && (forceProxy || /^https?:\/\/(?:www\.)?otland\.net\//i.test(targetUrl));
+  const useScrapingBee = scrapingBeeKey && (forceProxy || /^https?:\/\/(?:www\.)?community_archive\.net\//i.test(targetUrl));
   const requestUrl = useScrapingBee
     ? (() => {
         const endpoint = new URL('https://app.scrapingbee.com/api/v1');
@@ -236,14 +236,14 @@ async function mapLimit(items, limit, worker) {
 const groups = new Map();
 for (const server of liveInventory.servers || []) addToGroup(groups, server, 'directory');
 for (const server of topOtservlistServers) addToGroup(groups, server, 'directory');
-for (const record of otlandData.records || []) {
+for (const record of community_archiveData.records || []) {
   addToGroup(groups, {
     ...record,
     name: record.server_name,
     website_url: record.official_website_url,
     host: sourceHost(record),
     thread_role: 'owner_launch',
-  }, 'otland');
+  }, 'community_archive');
 }
 for (const [slug, record] of Object.entries(verifiedSources)) {
   addToGroup(groups, {
@@ -251,7 +251,7 @@ for (const [slug, record] of Object.entries(verifiedSources)) {
     slug,
     server_name: record.name,
     thread_role: 'owner_launch',
-  }, 'otland');
+  }, 'community_archive');
 }
 for (const record of discovered.records || []) {
   if (!record.selected_url) continue;
@@ -268,14 +268,14 @@ for (const record of discovered.records || []) {
     thread_role: record.selected_role || 'owner_launch',
     host: record.root_domain,
     imported_at: record.searched_at,
-  }, 'otland');
+  }, 'community_archive');
 }
 
 const entries = [...groups.values()].sort((a, b) => a.name.localeCompare(b.name));
 const previousBySlug = new Map((previousResearch.servers || []).map((entry) => [entry.slug, entry]));
 for (const entry of entries) {
   entry.aliases = [...new Set(entry.aliases.filter(Boolean))];
-  entry.otland_threads = [...new Map(entry.otland_threads
+  entry.community_archive_threads = [...new Map(entry.community_archive_threads
     .filter((thread) => thread.source_url)
     .map((thread) => [thread.source_url, thread])).values()]
     .sort((a, b) => String(b.posted_at || '').localeCompare(String(a.posted_at || '')))
@@ -304,8 +304,8 @@ for (const entry of entries) {
     .slice(0, 3);
 
   const prior = previousBySlug.get(entry.slug);
-  const priorThreads = new Map((prior?.otland_threads || []).map((thread) => [threadKey(thread.source_url), thread]));
-  entry.otland_threads = entry.otland_threads.map((thread) => {
+  const priorThreads = new Map((prior?.community_archive_threads || []).map((thread) => [threadKey(thread.source_url), thread]));
+  entry.community_archive_threads = entry.community_archive_threads.map((thread) => {
     const cached = priorThreads.get(threadKey(thread.source_url));
     return cached ? { ...thread, posts: cached.posts || [], fetch_status: cached.fetch_status ?? null, fetch_provider: cached.fetch_provider || null } : thread;
   });
@@ -321,7 +321,7 @@ for (const entry of entries) {
 
 if (shouldFetch) {
   const threadJobs = fetchThreadPages
-    ? entries.flatMap((entry) => entry.otland_threads.slice(0, 2)
+    ? entries.flatMap((entry) => entry.community_archive_threads.slice(0, 2)
       .filter((thread) => thread.fetch_status !== 200)
       .map((thread) => ({ entry, thread })))
     : [];
@@ -330,7 +330,7 @@ if (shouldFetch) {
     thread.posts = result ? parsePosts(result.html, thread.source_url) : [];
     thread.fetch_status = result?.status || null;
     thread.fetch_provider = result?.fetched_via || null;
-    if ((index + 1) % 20 === 0) console.log(`otland\t${index + 1}/${threadJobs.length}`);
+    if ((index + 1) % 20 === 0) console.log(`community_archive\t${index + 1}/${threadJobs.length}`);
   });
 
   const officialJobs = fetchOfficialPages
@@ -360,14 +360,14 @@ if (shouldFetch) {
 
 for (const entry of entries) {
   entry.official_pages = entry.official_pages.map((page) => applyOfficialMetadataAssessment(page, entry));
-  const ownerThreads = entry.otland_threads.filter((thread) => thread.thread_role !== 'community_discussion');
+  const ownerThreads = entry.community_archive_threads.filter((thread) => thread.thread_role !== 'community_discussion');
   const ownerThreadAuthors = new Set(ownerThreads
     .map((thread) => thread.author || thread.posts?.[0]?.author)
     .filter(Boolean));
   entry.owner_excerpt = ownerThreads
     .flatMap((thread) => (thread.posts?.length ? thread.posts : [normalizedArchivedPost(thread)].filter(Boolean)))
     .find((post) => ownerThreadAuthors.has(post.author)) || null;
-  const communityPosts = entry.otland_threads.flatMap((thread) => {
+  const communityPosts = entry.community_archive_threads.flatMap((thread) => {
     const posts = thread.posts || [];
     if (thread.thread_role === 'community_discussion') return posts;
     const owner = thread.author || posts[0]?.author;
@@ -383,7 +383,7 @@ for (const entry of entries) {
     .slice(0, 3);
   entry.source_signals = [...new Set(signalsFor([
     ...entry.official_pages.map((page) => page.description || ''),
-    ...entry.otland_threads.flatMap((thread) => [
+    ...entry.community_archive_threads.flatMap((thread) => [
       thread.title || '',
       thread.first_post_excerpt || '',
       ...(thread.posts || []).map((post) => post.excerpt || ''),
@@ -402,11 +402,11 @@ for (const entry of entries) {
 
 const output = {
   generated_at: new Date().toISOString(),
-  policy: 'Official metadata and attributed OtLand posts only. No unsourced claims or synthetic player experiences.',
+  policy: 'Official metadata and attributed community_archive posts only. No unsourced claims or synthetic player experiences.',
   stats: {
     canonical_servers: entries.length,
     with_summary: entries.filter((entry) => entry.summary).length,
-    with_owner_thread: entries.filter((entry) => entry.otland_threads.some((thread) => thread.thread_role !== 'community_discussion')).length,
+    with_owner_thread: entries.filter((entry) => entry.community_archive_threads.some((thread) => thread.thread_role !== 'community_discussion')).length,
     with_community_excerpts: entries.filter((entry) => entry.community_excerpts.length).length,
     with_official_metadata: entries.filter((entry) => entry.official_pages.some((page) => page.description)).length,
     insufficient: entries.filter((entry) => entry.source_status === 'insufficient').length,
@@ -417,21 +417,21 @@ const output = {
 if (!dryRun) fs.writeFileSync(outputPath, `${JSON.stringify(output, null, 2)}\n`, 'utf8');
 const excerptManifest = Object.fromEntries(entries.map((entry) => {
   const official = entry.official_pages.find((page) => page.description);
-  const ownerThread = entry.otland_threads.find((thread) => thread.thread_role !== 'community_discussion');
-  const thread = ownerThread || entry.otland_threads[0];
+  const ownerThread = entry.community_archive_threads.find((thread) => thread.thread_role !== 'community_discussion');
+  const thread = ownerThread || entry.community_archive_threads[0];
   const owner = entry.owner_excerpt;
   const community = entry.community_excerpts[0];
   const researchSources = [
     official?.url ? { type: 'official_website', url: official.url, label: `${entry.name} official website` } : null,
-    ...entry.otland_threads.slice(0, 3).map((item) => item.source_url ? {
+    ...entry.community_archive_threads.slice(0, 3).map((item) => item.source_url ? {
       type: item.thread_role === 'community_discussion' ? 'community_forum' : 'owner_thread',
       url: item.source_url,
-      label: item.thread_role === 'community_discussion' ? `${entry.name} OtLand discussion` : `${entry.name} owner thread on OtLand`,
+      label: item.thread_role === 'community_discussion' ? `${entry.name} community_archive discussion` : `${entry.name} owner thread on community_archive`,
     } : null),
     ...entry.community_excerpts.map((post) => post.source_url ? {
       type: 'community_post',
       url: post.source_url,
-      label: `OtLand post by ${post.author}`,
+      label: `community_archive post by ${post.author}`,
     } : null),
   ].filter(Boolean).filter((source, index, all) => all.findIndex((candidate) => candidate.url === source.url) === index);
   return [entry.slug, {

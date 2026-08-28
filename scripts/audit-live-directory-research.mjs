@@ -10,9 +10,9 @@ const researchPath = path.join(repoRoot, 'data', 'server-source-research.json');
 const logoManifestPath = path.join(repoRoot, 'data', 'server-logo-manifest.json');
 
 const GENERIC_PATTERNS = [
-  ['owner-thread sentence shell', /\bis presented in an owner-posted OtLand Server Gala thread(?:\s+as\b|\.)/i],
+  ['owner-thread sentence shell', /\bis presented in an owner-posted community_archive server launch archive thread(?:\s+as\b|\.)/i],
   ['quick connection template', /\basks for more than a quick connection test\b/i],
-  ['directory-entry template', /\benters the directory through a real OtLand Server Gala thread\b/i],
+  ['directory-entry template', /\benters the directory through a real community_archive server launch archive thread\b/i],
   ['living-profile template', /\bshould be read as a living profile\b/i],
   ['missing-owner template', /\b(?:page still needs|needs owner-confirmed|currently needs owner-confirmed|ownership still needs)\b/i],
   ['open-fields template', /\bopen fields remain\b/i],
@@ -245,17 +245,17 @@ function hasOwnerThread(entry) {
   return Boolean(
     text(owner?.author)
     && text(owner?.excerpt).length >= 20
-    && isHttpUrl(owner?.source_url, 'otland.net')
+    && isHttpUrl(owner?.source_url, 'community_archive.net')
   );
 }
 
 function validCommunityExcerpts(entry) {
-  const ownerNames = new Set((entry?.otland_threads || []).map((thread) => text(thread?.author).toLowerCase()).filter(Boolean));
+  const ownerNames = new Set((entry?.community_archive_threads || []).map((thread) => text(thread?.author).toLowerCase()).filter(Boolean));
   return (entry?.community_excerpts || []).filter((excerpt) => (
     text(excerpt?.author)
     && !ownerNames.has(text(excerpt.author).toLowerCase())
     && text(excerpt?.excerpt).length >= 20
-    && isHttpUrl(excerpt?.source_url, 'otland.net')
+    && isHttpUrl(excerpt?.source_url, 'community_archive.net')
   ));
 }
 
@@ -375,14 +375,14 @@ const genericManifestEvidence = manifestEntries.flatMap(([slug, entry]) => ['off
 }));
 
 const unattributedResearchCommunity = researchRows.flatMap((entry) => {
-  const ownerNames = new Set((entry.otland_threads || []).map((thread) => text(thread?.author).toLowerCase()).filter(Boolean));
+  const ownerNames = new Set((entry.community_archive_threads || []).map((thread) => text(thread?.author).toLowerCase()).filter(Boolean));
   return (entry.community_excerpts || []).flatMap((excerpt, index) => {
     const problems = [];
     const author = text(excerpt?.author);
     if (!author) problems.push('missing author');
     if (author && ownerNames.has(author.toLowerCase())) problems.push('owner post classified as community experience');
     if (text(excerpt?.excerpt).length < 20) problems.push('missing or unusably short excerpt');
-    if (!isHttpUrl(excerpt?.source_url, 'otland.net')) problems.push('missing direct OtLand source URL');
+    if (!isHttpUrl(excerpt?.source_url, 'community_archive.net')) problems.push('missing direct community_archive source URL');
     return problems.length ? [{ slug: entry.slug, index, author: author || null, source_url: excerpt?.source_url || null, problems }] : [];
   });
 });
@@ -391,13 +391,13 @@ const unprovenManifestClaims = manifestEntries.flatMap(([slug, entry]) => {
   const issues = [];
   const sources = Array.isArray(entry?.research_sources) ? entry.research_sources : [];
   const validSources = sources.filter((source) => isHttpUrl(source?.url));
-  const forumSources = validSources.filter((source) => /^(?:community_forum|community_post)$/.test(source?.type) && isHttpUrl(source.url, 'otland.net'));
+  const forumSources = validSources.filter((source) => /^(?:community_forum|community_post)$/.test(source?.type) && isHttpUrl(source.url, 'community_archive.net'));
   const officialSources = validSources.filter((source) => source?.type === 'official_website');
   if (text(entry?.official_summary) && validSources.length === 0) issues.push('summary has no source URL');
   if (text(entry?.official_excerpt) && officialSources.length === 0 && !isHttpUrl(entry?.website_url)) issues.push('official excerpt has no official website source');
   if (text(entry?.community_excerpt)) {
     if (!text(entry?.community_excerpt_author) && !/^[^:]{1,80}:\s*[“"]/.test(text(entry.community_excerpt))) issues.push('community excerpt has no named author');
-    if (forumSources.length === 0) issues.push('community excerpt has no OtLand provenance URL');
+    if (forumSources.length === 0) issues.push('community excerpt has no community_archive provenance URL');
   }
   return issues.length ? [{ slug, issues }] : [];
 });
@@ -428,7 +428,7 @@ const calculatedStats = {
 const generatorStats = {
   canonical_servers: researchRows.length,
   with_summary: researchRows.filter((entry) => text(entry.summary)).length,
-  with_owner_thread: researchRows.filter((entry) => (entry.otland_threads || []).some((thread) => thread.thread_role !== 'community_discussion')).length,
+  with_owner_thread: researchRows.filter((entry) => (entry.community_archive_threads || []).some((thread) => thread.thread_role !== 'community_discussion')).length,
   with_community_excerpts: researchRows.filter((entry) => (entry.community_excerpts || []).length > 0).length,
   with_official_metadata: researchRows.filter((entry) => (entry.official_pages || []).some((page) => text(page.description))).length,
   insufficient: researchRows.filter((entry) => entry.source_status === 'insufficient').length,

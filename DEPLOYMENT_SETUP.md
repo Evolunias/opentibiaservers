@@ -5,7 +5,7 @@
 - Frontend: Next.js 14
 - Database: Supabase PostgreSQL
 - Primary source: otservlist.org
-- Future source: OTLand launch threads
+- Future source: community archive launch threads
 - Sync endpoint: `POST /api/sync-servers`
 
 ## Database Setup

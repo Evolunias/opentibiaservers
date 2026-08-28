@@ -5,7 +5,7 @@ import { buildArticleMetadata } from '@/lib/page-metadata';
 import { getExactMatchPageData } from '@/lib/exact-match-page-data';
 import { getCuratedPages } from '@/lib/curated-pages';
 import { getOtServerCuratedPages } from '@/lib/otserver-curated-pages';
-import { getOtlandServerGalaPages } from '@/lib/otland-server-gala-pages';
+import { getCommunityArchivePages } from '@/lib/community-archive-pages';
 import { getServerReviewPage } from '@/lib/server-review-pages';
 import { getTibiaWorldPages } from '@/lib/tibia-world-pages';
 
@@ -16,7 +16,7 @@ export function generateStaticParams() {
   const params = [
     ...getCuratedPages().map((page) => ({ slug: page.slug })),
     ...getOtServerCuratedPages().map((page) => ({ slug: page.slug })),
-    ...getOtlandServerGalaPages().map((page) => ({ slug: page.slug })),
+    ...getCommunityArchivePages().map((page) => ({ slug: page.slug })),
     ...getTibiaWorldPages().map((page) => ({ slug: page.slug })),
   ];
   return Array.from(new Map(params.map((param) => [param.slug, param])).values());

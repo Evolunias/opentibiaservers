@@ -87,7 +87,7 @@ function classifyLinks(links = []) {
     if (/(contact|support|help|staff|admin|owner|report|ticket)/i.test(haystack)) {
       contact.push(link.href);
     }
-    if (/(forum|community|otland|facebook|instagram|youtube|wiki|docs|rules)/i.test(haystack)) {
+    if (/(forum|community|community_archive|facebook|instagram|youtube|wiki|docs|rules)/i.test(haystack)) {
       community.push(link.href);
     }
   }

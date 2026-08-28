@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 const contactTopics = [
-  ['Claim a server', 'Send the server name, official website, OtLand or OTServlist source, and proof that you own or manage the listing.'],
+  ['Claim a server', 'Send the server name, official website, community_archive or OTServlist source, and proof that you own or manage the listing.'],
   ['Correct a listing', 'Send the page URL, what is wrong, and the official source that verifies the correction.'],
   ['Report abuse or unsafe links', 'Send the page URL and describe the issue, especially malware mirrors, impersonation, phishing, or deceptive download links.'],
   ['Privacy request', 'Send the affected page or account context and the specific data you want reviewed.'],

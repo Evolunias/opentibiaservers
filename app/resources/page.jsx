@@ -94,8 +94,8 @@ export default function ResourcesPage() {
             <Link href="/" className="rounded border border-gray-950 bg-gray-950 px-5 py-3 text-sm font-bold text-white hover:opacity-85 hover:no-underline">
               Browse Servers
             </Link>
-            <Link href="/otland" className="rounded border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-950 hover:bg-gray-100 hover:no-underline">
-              OTLand Guide
+            <Link href="/community_archive" className="rounded border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-950 hover:bg-gray-100 hover:no-underline">
+              community_archive Guide
             </Link>
             <Link href="/knowledge" className="rounded border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-950 hover:bg-gray-100 hover:no-underline">
               Knowledge Base

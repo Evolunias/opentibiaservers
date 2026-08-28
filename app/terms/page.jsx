@@ -18,14 +18,14 @@ export default function TermsPage() {
         {
           heading: 'Independent Directory',
           body: [
-            'OpenTibiaServers.com is an independent Open Tibia server directory. We are not affiliated with, endorsed by, or sponsored by CipSoft GmbH, Tibia.com, OtLand, OTServlist, or any listed server unless explicitly stated.',
+            'OpenTibiaServers.com is an independent Open Tibia server directory. We are not affiliated with, endorsed by, or sponsored by CipSoft GmbH, Tibia.com, community_archive, OTServlist, or any listed server unless explicitly stated.',
             'Tibia and related marks belong to their respective owners. References are used for community identification, search, comparison, historical context, and directory purposes.',
           ],
         },
         {
           heading: 'Listings and Source Data',
           body: [
-            'Directory pages may include public server-list data, OtLand thread data, owner-submitted content, public official website details, uptime checks, screenshots, reviews, and community discussion.',
+            'Directory pages may include public server-list data, community_archive thread data, owner-submitted content, public official website details, uptime checks, screenshots, reviews, and community discussion.',
             'Public data can change quickly. Online count, uptime, rates, client versions, launch dates, and official links should be verified with the server owner or official source before downloading files, donating, or creating an account.',
           ],
         },

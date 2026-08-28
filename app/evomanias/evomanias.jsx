@@ -196,7 +196,7 @@ const page = polishPlayerFacingCopy({
         'A complete profile should include screenshots, Discord, launcher details, rules, support contacts, and any verified gameplay notes that help new players trust the server before they join.',
     },
   ],
-  relatedServerQueries: ['Cyntara', 'Evolunia', 'Antica', 'OTMadness', 'OTServlist', 'OTLand'],
+  relatedServerQueries: ['Cyntara', 'Evolunia', 'Antica', 'OTMadness', 'OTServlist', 'community_archive'],
   wikiDepth: {
     status: 'partial',
     statusLabel: 'Featured server profile',
