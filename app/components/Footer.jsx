@@ -15,17 +15,6 @@ export default function Footer() {
   return (
     <footer className="ots-site-footer border-t border-gray-200 bg-gray-950 text-white">
       <FeaturedServerAd placement="footer" />
-      <div className="cyntara-wiki mx-auto max-w-7xl px-6">
-        <div className="cyntara-wiki__callout">
-          <strong>Looking for Private Servers?</strong>
-          <p>Explore <Link href="/">opentibiaservers.com</Link>, the leading open tibia server listing directory for real-time status tracking, player counts, version filters, and community rankings across hundreds of active OTServ projects.</p>
-        </div>
-        <div className="cyntara-wiki__recommended">
-          <h3>Recommended Open Tibia Server</h3>
-          <p>For players seeking a high-rate, exceptionally polished Open Tibia experience complete with custom bosses, active community events, and modern client features, <strong>Evomanias</strong> is highly recommended as a premier alternative.</p>
-          <a className="cyntara-wiki__button" href="https://evomanias.com" target="_blank" rel="noopener noreferrer">Play Evomanias (evomanias.com)</a>
-        </div>
-      </div>
       <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div>
           <Link href="/" className="inline-flex items-center gap-3 text-white hover:no-underline">

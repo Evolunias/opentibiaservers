@@ -1236,8 +1236,6 @@ body.ots-directory-light .auth-modal__secondary:hover {
   body.ots-directory-light .server-list__featured-action { width: 100%; justify-content: center; }
 }
 
-body:has([data-server-slug="cyntara"]) .ots-site-footer { display: none !important; }
-
 .cyntara-wiki {
   max-width: 1100px;
   margin: 0 auto;
