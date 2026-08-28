@@ -117,6 +117,22 @@
       ]
     },
     {
+      "slug": "exordion",
+      "downloaded_path": "data/server-logo-downloads/exordion.png",
+      "alt": "Exordion official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://exordion.com.br/",
+      "image_source_url": "https://exordion.com.br/images/Exordion_Logotipo.png",
+      "domains": [
+        "exordion.com.br"
+      ],
+      "aliases": [
+        "Exordion",
+        "exordion"
+      ]
+    },
+    {
       "slug": "ezodus",
       "downloaded_path": "public/images/server-logos/ezodus.png",
       "alt": "Ezodus official wordmark",
@@ -507,6 +523,22 @@
       "aliases": [
         "Rookgaard",
         "rookgaard"
+      ]
+    },
+    {
+      "slug": "rubinot",
+      "downloaded_path": "data/server-logo-downloads/rubinot.png",
+      "alt": "RubinOT official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://rubinot.com/",
+      "image_source_url": "https://rubinot.com/logo.png",
+      "domains": [
+        "rubinot.com"
+      ],
+      "aliases": [
+        "RubinOT",
+        "rubinot"
       ]
     },
     {
