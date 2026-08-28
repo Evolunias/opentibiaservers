@@ -17,14 +17,9 @@ export default function Footer() {
       <FeaturedServerAd placement="footer" />
       <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div>
-          <Link href="/" className="inline-flex items-center gap-3 text-white hover:no-underline">
-            <span className="flex h-10 w-10 items-center justify-center rounded border border-white/20 bg-white text-sm font-bold text-gray-950">
-              OTS
-            </span>
-            <span>
-              <span className="block text-base font-bold">Open Tibia Servers</span>
-              <span className="block text-sm text-gray-300">Independent Open Tibia server directory and community records.</span>
-            </span>
+          <Link href="/" className="inline-flex flex-col text-white hover:no-underline">
+            <span className="block text-base font-bold">Open Tibia Servers</span>
+            <span className="block text-sm text-gray-300">Independent Open Tibia server directory and community records.</span>
           </Link>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-300">
             OpenTibiaServers.com aggregates public server-list data, owner-submitted details, community discussion, and source-backed server pages for players comparing Open Tibia servers. Tibia is a trademark of CipSoft GmbH; this site is an independent community directory and is not affiliated with CipSoft.
