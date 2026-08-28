@@ -177,7 +177,10 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
   const directoryServers = Array.isArray(directoryData?.servers) ? directoryData.servers.filter(Boolean) : [];
 
   return (
-    <main className={isServerProfile ? 'cyntara-wiki min-h-screen' : 'min-h-screen bg-white text-black'}>
+    <main
+      className={isServerProfile ? 'cyntara-wiki min-h-screen' : 'min-h-screen bg-white text-black'}
+      data-server-slug={isServerProfile ? page.slug : undefined}
+    >
       {jsonLd.map((entry, index) => (
         <script
           key={index}
