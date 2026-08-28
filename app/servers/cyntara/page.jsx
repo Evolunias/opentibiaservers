@@ -1,5 +1,7 @@
 import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
+import CyntaraWikiPage from '@/app/components/CyntaraWikiPage';
+
 export const revalidate = 3600;
 
 export function generateMetadata() {
@@ -7,5 +9,5 @@ export function generateMetadata() {
 }
 
 export default function Page() {
-  return <CanonicalServerRoute slug="cyntara" />;
+  return <CyntaraWikiPage />;
 }
