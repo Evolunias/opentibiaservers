@@ -1,156 +1,104 @@
 import ServerLogo from '@/app/components/ServerLogo';
 
 const contents = [
-  ['overview', 'Overview'],
-  ['at-a-glance', 'At a glance'],
-  ['worlds', 'Worlds and history'],
-  ['start', 'How to start'],
-  ['progression', 'Progression'],
-  ['systems', 'Core systems'],
-  ['endgame', 'Raids and endgame'],
-  ['areas', 'World and hunting areas'],
-  ['client', 'Client and tools'],
-  ['community', 'Community'],
+  ['overview', 'Overview & identity'],
+  ['facts', 'At-a-glance facts'],
+  ['worlds', 'Worlds & history'],
+  ['start', 'How to start playing'],
+  ['progression', 'Progression & vocations'],
+  ['systems', 'Custom systems'],
+  ['endgame', 'Raids, bosses & elites'],
+  ['world', 'Map & hunting areas'],
+  ['client', 'Client & quality of life'],
+  ['rules', 'Rules & player safety'],
+  ['community', 'Community & services'],
+  ['ecosystem', 'The Open Tibia ecosystem'],
   ['external-links', 'External links'],
 ];
 
 const systems = [
-  {
-    title: 'Rarity system',
-    label: 'Items',
-    body: 'Equipment rarity, Item Power, fragments, Special Orbs, and the Orb Machine add a second progression layer to familiar 7.4 equipment.',
-  },
-  {
-    title: 'Crafting',
-    label: 'Items',
-    body: 'The official wiki has a dedicated Crafting page. Recipes, materials, stations, and success rules should be checked there before committing resources.',
-  },
-  {
-    title: 'Elite monsters',
-    label: 'Hunting',
-    body: 'Elite versions use Green Skull, Red Skull, and Black Skull tiers with exclusive drops documented through the official update record.',
-  },
-  {
-    title: 'Bestiary',
-    label: 'Hunting',
-    body: 'The Bestiary and Hunting Guide are linked as first-party references for creature discovery, hunt planning, and the wider monster catalogue.',
-  },
-  {
-    title: 'Tasks',
-    label: 'Progression',
-    body: 'Task slots, task scrolls, rewards, and group task progression give party play a structured objective beyond ordinary hunting.',
-  },
-  {
-    title: 'Dungeons',
-    label: 'Progression',
-    body: 'Dungeon summons scale with the selected dungeon level or difficulty. Rookgaard also has a documented level 65 dungeon.',
-  },
-  {
-    title: 'Daily rewards',
-    label: 'Routine',
-    body: 'Daily Reward, Bonus Exp, Safe Zone, Stamina, and Blessings are all exposed as gameplay or system pages in the official wiki navigation.',
-  },
-  {
-    title: 'Casino Island',
-    label: 'Social',
-    body: 'Casino Games and Casino Island are named parts of the project, giving characters an activity hub outside the normal hunt-and-level loop.',
-  },
+  ['Rarity System', 'Equipment can have rarity and Item Power layers beyond the base 7.4 item. Fragments, Special Orbs, the Orb Machine, and the Rarity Market are all named in the official system index.'],
+  ['Crafting', 'Crafting is a dedicated official wiki topic. Use the live guide for recipes, materials, stations, and costs instead of assuming that classic item values apply.'],
+  ['Elite Monsters', 'Selected creatures can appear as Elite versions with Green Skull, Red Skull, or Black Skull tiers and exclusive drop pools.'],
+  ['Bestiary', 'The Bestiary and Hunting Guide provide a first-party route into creature discovery and hunt planning as the custom map expands.'],
+  ['Tasks System', 'Tasks, extra task slots, task scrolls, and task rewards create goals beyond ordinary experience farming.'],
+  ['Dungeons', 'Dungeon summons scale with the dungeon level or difficulty. A Rookgaard level 65 dungeon is specifically named in the update record.'],
+  ['Sacrifice System', 'Sacrifice uses Exordion Coins to initiate or affect raid content. Cooldowns and event discounts should be checked against current announcements.'],
+  ['Daily Reward & Bonus EXP', 'Daily Reward, Bonus Exp, Stamina, Safe Zone, Training, and Blessings are separate official wiki topics for routine progression and protection.'],
+  ['Casino Island', 'Casino Games and Casino Island add a social activity space outside the usual hunt, task, and boss loops.'],
+  ['Boss Reward System', 'A dedicated Boss Reward System is listed in the wiki, alongside Daily Bosses and Elite Raids, for repeatable endgame rewards.'],
+];
+
+const vocationRows = [
+  ['Knight', 'Classic frontline vocation', 'Confirm current spells, weapon scaling, defensive formulas, and whether any custom balance applies.'],
+  ['Paladin', 'Classic ranged vocation', 'Confirm ammunition, distance scaling, healing, and any custom progression rules.'],
+  ['Sorcerer', 'Classic offensive magic vocation', 'Confirm spell list, Spirit interaction, magic-level pacing, and custom damage changes.'],
+  ['Druid', 'Classic support and elemental vocation', 'Confirm healing, ice magic, Spirit interaction, and party utility.'],
 ];
 
 const raidRows = [
-  ['Raid Cooldown', 'Each raid tracks its own cooldown after execution; the client module exposes availability, requirements, city, location, and filters.'],
-  ['Boss Raids', 'Starting and Alive states are displayed, with level requirements for skull tiers. A boss cooldown begins after the boss dies.'],
-  ['Rookgaard rotation', 'Named entries include Young Yeti, The Broodmother, and Zhaumor, alongside creature raids such as Spiders, Dwarves, Cyclops, Orc Land, and Wyverns.'],
+  ['Raid Cooldown', 'The client module tracks individual raid cooldowns and exposes available raids, minimum levels, cities, locations, and filters.'],
+  ['Boss Raid states', 'Boss encounters can show Starting or Alive states. The boss cooldown begins after the boss is killed, not simply when the raid begins.'],
+  ['Rookgaard bosses', 'Young Yeti, The Broodmother, and Zhaumor are named Boss Raid entries in the public update trail.'],
+  ['Rookgaard raids', 'Named creature or area rotations include Spiders, Snakes, Larvas, Chakoyas, Cathedral Bandits, Dwarves, Cyclops, Orc Land, and Wyverns.'],
   ['Daily Boss 200+', 'The Black Mire is located in Dawncrest and is described as a higher-level daily challenge with exclusive rewards.'],
-  ['Sacrifice', 'The Sacrifice System uses Exordion Coins to initiate or affect raids. Historical notes mention a standard 30-minute cooldown; event values are temporary.'],
-  ['Ghazbaran', 'Ghazbaran enters the Sacrifice boss rotation once the server top level reaches 500. This is a progression gate, not a base-rate claim.'],
+  ['Sacrifice rotation', 'Ghazbaran enters the Sacrifice boss rotation when the server top level reaches 500.'],
 ];
 
 const areaRows = [
   ['Rookgaard', 'Dark Cathedral, Cyclops island, Orc castle, Wyvern respawn, Dwarven Mines, Iron Camp, Sandshins, and Falcon island/Bastion.'],
-  ['Mainland', 'Edron, Stonehome, Dawncrest, Ankrahmun, Carlin, and Thais, with custom hunts and raid content layered over the global map.'],
-  ['Insectoids Island', 'Reached through Captain Marlow east of Edron in Stonehome. The update names Insectoid Worker, Waspoid, Crawler, Spidris, and Kollos.'],
-  ['Dark Cathedral', 'A redesigned Rookgaard hunting area with Dark Monks, Assassins, Ghouls, Beholders, Zombies, Vampires, Necromancers, and Heroes.'],
-  ['Falcon content', 'Falcon Squire, Falcon Knight, and Falcon Paladin are named in the update record, with Falcon Medal and Bastion Backpack among referenced rewards.'],
-  ['Dawncrest', 'The setting for The Black Mire, the documented Daily Boss 200+ encounter.'],
+  ['Mainland', 'Edron, Stonehome, Dawncrest, Ankrahmun, Carlin, and Thais, with custom hunts, dungeons, and raid locations layered onto the global map.'],
+  ['Insectoids Island', 'Captain Marlow provides access east of Edron in Stonehome. Named creatures include Insectoid Worker, Waspoid, Crawler, Spidris, and Kollos.'],
+  ['Dark Cathedral', 'The redesigned Rookgaard floors include Dark Monks, Assassins, Ghouls, Beholders, Zombies, Vampires, Necromancers, and Heroes.'],
+  ['Falcon content', 'Falcon Squire, Falcon Knight, and Falcon Paladin are named alongside the Falcon Medal and Bastion Backpack.'],
+  ['Dawncrest', 'The Black Mire Daily Boss 200+ encounter is associated with this area.'],
 ];
 
 const clientRows = [
-  ['Enhanced Client', 'The project advertises an Enhanced Client built around a classic 7.4 foundation and modern quality-of-life features.'],
-  ['New Launcher', 'The newer launcher surfaces news and online streamers, links social channels, can close while the game continues, and is required for some later updates.'],
-  ['Raid module', 'Browse raids by Rookgaard/Mainland and normal/boss type, see minimum levels and cooldowns, and center the minimap on a raid location.'],
-  ['Hunting Guide', 'An in-game guide and updated minimap help players discover the expanded map and identify activity beyond the original client experience.'],
-  ['Combat feedback', 'Server Log damage/healing messages and animated colored healing and mana text are called out in the update history.'],
-  ['Autoloot and trainer', 'Auto Loot, Trainer, Practice Scrolls, Loot Seller, and Autoloot Money to Bank appear in the official system and store navigation.'],
+  ['Enhanced Client', 'A modern client layer built around the project’s classic 7.4 identity.'],
+  ['New Launcher', 'Shows current news and online streamers, links social channels, can close while the game continues, and is required for some later updates.'],
+  ['Raid module', 'Filters raids by Rookgaard/Mainland and normal/boss type, then displays requirements, cooldowns, cities, and minimap locations.'],
+  ['Hunting Guide', 'Helps players discover hunts and navigate the expanded world alongside an updated Minimap.'],
+  ['Auto Loot', 'Auto Loot, Loot Seller, Autoloot Money to Bank, and extra bag slots appear in the official client or store navigation.'],
+  ['Trainer & Practice Scrolls', 'Training tools and 6-, 12-, and 24-hour Practice Scrolls are named in the current store-cost update.'],
+  ['Combat feedback', 'Server Log damage/healing messages plus animated colored healing and mana text are documented quality-of-life changes.'],
 ];
 
 const timeline = [
-  ['24 Aug 2024', 'Legacy begins', 'The official world selector identifies Legacy as the earliest of the three named worlds.'],
-  ['11 Aug 2025', 'Aegis begins', 'Aegis is presented as a later competitive era and a separate progression cycle in the shared Exordion universe.'],
-  ['11 Mar 2026', 'Bravora opens', 'The launch countdown and launch-day ticker place Bravora at 17:00 BRT / 21:00 CET.'],
-  ['Jun–Aug 2026', 'Systems expand', 'Official changelog titles cover new hunts, Falcons, Insectoids Island, Elite Drops, Golden Elites, raids, and launcher updates.'],
+  ['24 August 2024', 'Legacy opens', 'The official world selector presents Legacy as the earliest named Exordion world.'],
+  ['11 August 2025', 'Aegis opens', 'Aegis is described as a newer competitive era and a separate progression cycle.'],
+  ['11 March 2026', 'Bravora opens', 'The launch trail places the opening at 17:00 BRT / 21:00 CET.'],
+  ['June–August 2026', 'Custom systems expand', 'Public update titles cover new hunts, Falcons, Insectoids Island, Elite Drops, Golden Elites, raids, and launcher improvements.'],
 ];
 
-const socialLinks = [
-  ['Discord', 'https://discord.gg/K9RF9pCfvC'],
-  ['WhatsApp', 'https://chat.whatsapp.com/DFzXDDqaOe2GGKmzKsKnig'],
-  ['Instagram', 'https://instagram.com/exordion7.4/'],
-  ['YouTube', 'https://youtube.com/@Exordion'],
-  ['TikTok', 'https://tiktok.com/@exordion'],
-  ['Roadmap', 'https://trello.com/b/lxIq3Jyc/exordion-roadmap'],
+const externalLinks = [
+  ['Bravora official website', 'https://bravora.exordion.com.br/'],
+  ['Bravora client download', 'https://bravora.exordion.com.br/?downloadclient'],
+  ['Bravora rules', 'https://bravora.exordion.com.br/?rules'],
+  ['Exordion official wiki', 'https://exordion.gitbook.io/exordion-wiki'],
+  ['Exordion Discord', 'https://discord.gg/K9RF9pCfvC'],
+  ['Exordion roadmap', 'https://trello.com/b/lxIq3Jyc/exordion-roadmap'],
 ];
 
 export default function ExordionWikiPage() {
   return (
-    <main className="cyntara-wiki min-h-screen" data-server-slug="exordion">
-      <section className="cyntara-wiki__hero border-b border-black bg-white text-black">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 lg:grid-cols-[minmax(0,1fr)_310px] lg:items-start">
-          <div className="cyntara-wiki__header mb-0 pb-7">
-            <div className="mb-6 flex flex-wrap items-center gap-3 text-sm">
-              <a href="/" className="font-semibold text-black">Open Tibia Servers</a>
-              <span>/</span>
-              <span>Server wiki</span>
-              <span>/</span>
-              <span>Exordion</span>
+    <main className="cyntara-wiki" data-server-slug="exordion">
+      <header className="cyntara-wiki__header">
+        <h1>Exordion</h1>
+        <small>From OpenTibiaServers Wiki, the primary open tibia server directory</small>
+      </header>
+
+      <div className="cyntara-wiki__grid">
+        <article className="cyntara-wiki__content">
+          <div className="flex flex-col gap-6 md:flex-row md:items-start">
+            <div className="min-w-0 flex-1">
+              <p><strong>Exordion</strong> is a custom Open Tibia project focused on the old-school 7.4 experience while adding a modern client, custom map content, new monsters, structured raids, item rarity, crafting, bestiary progression, and quality-of-life systems. The current public profile centers on the Bravora world.</p>
+              <p>Exordion is best understood as a classic foundation with a custom service layer. Familiar Tibia geography and four-vocation expectations are combined with dungeons, tasks, elite monsters, daily bosses, raid cooldowns, Sacrifice, a Rarity Market, and an official player wiki.</p>
             </div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-gray-600">OpenTibiaServers Wiki · Bravora field guide</p>
-            <h1 className="mb-4 max-w-4xl text-4xl font-bold leading-tight text-black md:text-6xl">Exordion: server status, how to play, and community</h1>
-            <p className="mb-4 max-w-3xl text-lg leading-8 text-black">A detailed reference for Exordion’s Bravora world: its 7.4 identity, custom systems, named areas, raids, client tools, community links, and the facts players should verify before they begin.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href="https://bravora.exordion.com.br/" target="_blank" rel="nofollow noopener noreferrer" className="rounded border border-black bg-black px-5 py-3 text-sm font-bold text-white hover:bg-gray-800 hover:no-underline">Visit Bravora</a>
-              <a href="https://exordion.gitbook.io/exordion-wiki" target="_blank" rel="nofollow noopener noreferrer" className="rounded border border-black bg-white px-5 py-3 text-sm font-bold text-black hover:bg-gray-100 hover:no-underline">Open official wiki</a>
-              <a href="/?search=Exordion" className="rounded border border-black bg-white px-5 py-3 text-sm font-bold text-black hover:bg-gray-100 hover:no-underline">Compare listings</a>
+            <div className="w-full shrink-0 md:w-64">
+              <ServerLogo server={{ name: 'Exordion', slug: 'exordion', host: 'bravora.exordion.com.br' }} size="profile" />
             </div>
           </div>
-
-          <aside className="space-y-4">
-            <div className="cyntara-wiki__infobox">
-              <ServerLogo server={{ name: 'Exordion', slug: 'exordion', host: 'bravora.exordion.com.br' }} size="profile" />
-              <div className="cyntara-wiki__infobox-header">Exordion · Bravora</div>
-              <table><tbody>
-                <tr><th>Status</th><td><span className="status-dot status-dot--online mr-2 inline-block" />Active snapshot</td></tr>
-                <tr><th>Host</th><td><code>bravora.exordion.com.br:7171</code></td></tr>
-                <tr><th>Protocol</th><td>Exordion / Tibia 7.4</td></tr>
-                <tr><th>Players</th><td>383 (3,129 unique IPs) / 2,000</td></tr>
-                <tr><th>Uptime</th><td>99.94%</td></tr>
-                <tr><th>EXP / PvP</th><td>x1 / PVP listing</td></tr>
-                <tr><th>Country signal</th><td>USA directory signal; Brazilian project</td></tr>
-                <tr><th>Launch</th><td>11 March 2026</td></tr>
-                <tr><th>Updated</th><td>26 July 2026</td></tr>
-              </tbody></table>
-            </div>
-            <div className="cyntara-wiki__callout m-0">
-              <strong>Quick reading</strong>
-              <p>Think “classic 7.4 skeleton, modern service layer.” Bravora keeps the old-school reference point while adding custom map content, rarity, crafting, raids, dungeons, and client tools.</p>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <div className="cyntara-wiki__grid mx-auto max-w-6xl px-6 py-8">
-        <article className="cyntara-wiki__content">
-          <p><strong>Exordion</strong> is a custom Open Tibia project organized around the Bravora, Aegis, and Legacy worlds. Its current public identity is a custom 7.4 experience: global-map familiarity, new areas and monsters, persistent characters, and a layer of systems designed to make a long-running world more active.</p>
-          <p>The most useful distinction is between <em>standing systems</em> and <em>dated announcements</em>. Rarity, crafting, bestiary, task, raid, dungeon, and client pages describe the shape of the game; a double boost, festival, or temporary cooldown change describes a moment in its calendar.</p>
 
           <nav className="cyntara-wiki__toc" aria-label="Table of Contents">
             <h2>Contents</h2>
@@ -158,166 +106,141 @@ export default function ExordionWikiPage() {
           </nav>
 
           <section id="overview">
-            <SectionHeading>Overview</SectionHeading>
-            <p>Exordion’s stated goal is to preserve the feel of classic Tibia while removing some of the friction players associate with a historical client. The official description names exclusive systems, new areas, new monsters, anti-bot protection, a global proxy, low-ping access, an Enhanced Client, and a no-reset philosophy.</p>
-            <p>Bravora is the current chapter of that project. The official launch trail places its opening on 11 March 2026 at 17:00 BRT / 21:00 CET. The project’s older community launch material uses an 8.0 label; this page records that as historical context rather than silently merging it with the current 7.4 profile.</p>
-            <div className="cyntara-wiki__callout">
-              <strong>What is confirmed, and what is not</strong>
-              <p>The official pages clearly confirm the project identity, named worlds, client/wiki ecosystem, launch trail, custom content, and many systems. A complete permanent rate table, full PvP ruleset, detailed vocation balance, and full item/quest catalogue are not exposed in the reviewed source material.</p>
-            </div>
+            <SectionHeading>Overview &amp; Server Identity</SectionHeading>
+            <p>Exordion’s official positioning is “classic Tibia, improved for today.” The project advertises an Enhanced Client, anti-bot protection, a global proxy, low-ping access, frequent updates, a global plus custom map, and a no-reset philosophy. These claims describe the project’s direction; exact rules and technical behavior belong to the current client, website, and Discord.</p>
+            <p>Bravora is the current 7.4 world presented by the official service. The public launch trail says it opened on 11 March 2026 at 17:00 BRT / 21:00 CET. Aegis and Legacy remain part of the wider Exordion world family, so players should choose a world rather than treating every historical announcement as a Bravora rule.</p>
+            <div className="cyntara-wiki__callout"><strong>Classic base, custom depth</strong><p>Players looking for a strict 7.4 replica should expect more than the original ruleset here. Rarity, crafting, elite tiers, dungeons, boss rotations, and client modules are central parts of the current Exordion identity.</p></div>
           </section>
 
-          <section id="at-a-glance">
-            <SectionHeading>At a glance</SectionHeading>
-            <div className="cyntara-wiki__table-wrap">
-              <table className="cyntara-wiki__table"><thead><tr><th>Field</th><th>Profile value</th><th>How to read it</th></tr></thead><tbody>
-                <tr><th>Category</th><td>Old-school custom Open Tibia</td><td>7.4 is the current Bravora identity; the map and systems are not a pure historical replica.</td></tr>
-                <tr><th>Connection</th><td><code>bravora.exordion.com.br:7171</code></td><td>Directory snapshot for the Bravora world. Confirm the active client and host on the official site.</td></tr>
-                <tr><th>Activity</th><td>383 / 2,000; 3,129 unique IPs</td><td>Time-sensitive directory snapshot captured 26 July 2026, not a guaranteed live count.</td></tr>
-                <tr><th>Uptime</th><td>99.94%</td><td>Directory monitor signal; it measures availability, not game quality or community fit.</td></tr>
-                <tr><th>Rates</th><td>x1 EXP listing</td><td>The public list says x1, while official pages also mention staged experience and event boosts. Verify the permanent table.</td></tr>
-                <tr><th>PvP</th><td>PVP listing signal</td><td>The exact skull, protection, war, and unjustified-kill rules require the current official rules page.</td></tr>
-                <tr><th>Map</th><td>Global + custom</td><td>Familiar cities are joined by new areas, hunts, islands, dungeons, and raid locations.</td></tr>
-                <tr><th>Reset policy</th><td>No reset advertised</td><td>A project claim about persistence; it does not mean every world shares the same progression cycle.</td></tr>
-              </tbody></table>
-            </div>
+          <section id="facts">
+            <SectionHeading>At-a-glance facts</SectionHeading>
+            <div className="cyntara-wiki__table-wrap"><table className="cyntara-wiki__table"><thead><tr><th>Field</th><th>Exordion profile</th><th>Player context</th></tr></thead><tbody>
+              <tr><th>World</th><td>Bravora</td><td>The current chapter and the world represented by the listed host below.</td></tr>
+              <tr><th>Connection</th><td><code>bravora.exordion.com.br:7171</code></td><td>Confirm the current client and account path on the official world site.</td></tr>
+              <tr><th>Protocol</th><td>Exordion / Tibia 7.4</td><td>Custom systems and map content mean this is not a pure historical replica.</td></tr>
+              <tr><th>Players</th><td>383 (3129 unique IPs) / 2000</td><td>Directory snapshot; online counts change continuously.</td></tr>
+              <tr><th>Uptime</th><td>99.94%</td><td>Monitor signal from the public listing, not a gameplay or community rating.</td></tr>
+              <tr><th>EXP / PvP</th><td>x1 / PVP listing</td><td>Owner material also references staged experience. Read the current rules for exact PvP behavior.</td></tr>
+              <tr><th>Location signal</th><td>USA listing / Brazilian project</td><td>The public directory and owner/community history use different location signals.</td></tr>
+              <tr><th>Map and reset</th><td>Global + custom / no reset advertised</td><td>Classic cities are extended with new areas, hunts, dungeons, and raids.</td></tr>
+            </tbody></table></div>
           </section>
 
           <section id="worlds">
-            <SectionHeading>Worlds and history</SectionHeading>
-            <p>Exordion’s world selector presents three chapters rather than three unrelated servers. Legacy is the established record, Aegis is described as a newer competitive era, and Bravora is the current/new chapter. Exact population and world-specific rate differences should be read from each official world page.</p>
-            <div className="cyntara-wiki__table-wrap">
-              <table className="cyntara-wiki__table"><thead><tr><th>World</th><th>Public history</th><th>Profile in the Exordion network</th></tr></thead><tbody>
-                <tr><th>Bravora</th><td>11 March 2026 · 17:00 BRT / 21:00 CET</td><td>Current 7.4 world with the most visible new-area, raid, elite, and launcher updates.</td></tr>
-                <tr><th>Aegis</th><td>11 August 2025</td><td>Presented by the official site as a competitive era and a separate progression cycle.</td></tr>
-                <tr><th>Legacy</th><td>24 August 2024</td><td>The earliest named world in the current selector; positioned as a living record of player journeys.</td></tr>
-              </tbody></table>
-            </div>
-            <div className="mt-5 grid gap-4 md:grid-cols-2">
-              {timeline.map(([date, title, body]) => <div key={date} className="border-l-4 border-gray-300 bg-gray-50 p-4"><p className="mb-1 text-xs font-bold uppercase tracking-widest text-gray-500">{date}</p><h3 className="mb-1 text-base font-bold text-black">{title}</h3><p className="mb-0 text-sm leading-7 text-gray-700">{body}</p></div>)}
-            </div>
+            <SectionHeading>Worlds &amp; History</SectionHeading>
+            <p>Exordion has a network identity rather than a single launch date. The official world selector describes Legacy, Aegis, and Bravora as different stages of the same universe. Population, active events, and world-specific progression can change, so use the official world page for the current choice.</p>
+            <div className="cyntara-wiki__table-wrap"><table className="cyntara-wiki__table"><thead><tr><th>World</th><th>Public date</th><th>How it is positioned</th></tr></thead><tbody>
+              <tr><th>Bravora</th><td>11 March 2026</td><td>Current 7.4 chapter with the most visible public updates for new areas, raids, elite creatures, and the launcher.</td></tr>
+              <tr><th>Aegis</th><td>11 August 2025</td><td>A newer competitive era and separate progression cycle in the shared universe.</td></tr>
+              <tr><th>Legacy</th><td>24 August 2024</td><td>The earliest named world, presented as a living record of player journeys.</td></tr>
+            </tbody></table></div>
+            <div className="mt-5 grid gap-4 md:grid-cols-2">{timeline.map(([date, title, body]) => <div key={date} className="border-l-4 border-gray-300 bg-gray-50 p-4"><p className="mb-1 text-xs font-bold uppercase tracking-widest text-gray-500">{date}</p><h3 className="mb-1 text-base font-bold text-black">{title}</h3><p className="mb-0 text-sm leading-7 text-gray-700">{body}</p></div>)}</div>
           </section>
 
           <section id="start">
-            <SectionHeading>How to start playing</SectionHeading>
-            <p>The safest onboarding path is intentionally straightforward. Use the official world page and wiki for the current client, then use the directory only as an independent activity check.</p>
+            <SectionHeading>How to Start Playing Exordion</SectionHeading>
+            <p>A good first session is less about guessing the perfect build and more about using the correct official path. The client, rules, wiki, and community announcements can change faster than a directory listing.</p>
             <ol>
-              <li><strong>Choose the world.</strong> Start with Bravora if you want the current 7.4 chapter; compare Aegis and Legacy if an older progression cycle better fits your group.</li>
-              <li><strong>Read the current rules.</strong> PvP type, automation, multi-clienting, account sharing, naming, punishments, and store policy are not fully reproduced here.</li>
-              <li><strong>Download from the official page.</strong> Use the Bravora <a href="https://bravora.exordion.com.br/?downloadclient" target="_blank" rel="nofollow noopener noreferrer">client download</a> or the launcher link shown by the current site, never an unverified mirror.</li>
-              <li><strong>Open the official wiki.</strong> Check Spells, Runes, Spirit, Training, Blessings, Stamina, Tasks, Dungeons, and the client guides before spending currency or rare materials.</li>
-              <li><strong>Join the community.</strong> Discord is the best place to confirm launch notices, maintenance, temporary boosts, and questions that the static wiki cannot answer.</li>
-              <li><strong>Re-check dated events.</strong> Global boosts, festivals, party multipliers, Golden Elites, and cooldown changes are event records, not permanent rates.</li>
+              <li><strong>Pick a world.</strong> Bravora is the current 7.4 chapter; compare Aegis and Legacy if your group is already established in another progression cycle.</li>
+              <li><strong>Read the rules.</strong> The public listing says PVP, but skull behavior, protection, frags, wars, automation, multi-clienting, account sharing, and punishments require the current official rules.</li>
+              <li><strong>Create an account and download safely.</strong> Use the official <a href="https://bravora.exordion.com.br/?downloadclient" target="_blank" rel="nofollow noopener noreferrer">Bravora client download</a>, not an unverified mirror.</li>
+              <li><strong>Learn the systems before spending.</strong> Read the official pages for Crafting, Rarity, Tasks, Dungeons, Daily Bosses, and the client tools before using rare items or Exordion Coins.</li>
+              <li><strong>Start with a practical loop.</strong> Combine ordinary hunting with tasks, Bestiary discovery, daily rewards, and party play. Move into dungeons and raids once requirements are clear.</li>
+              <li><strong>Check live news.</strong> Double boosts, party bonuses, Golden Elites, festivals, and cooldown changes are dated events, not permanent rates.</li>
             </ol>
           </section>
 
           <section id="progression">
-            <SectionHeading>Progression and character building</SectionHeading>
-            <p>Bravora’s progression is not only “level until the next hunt.” The source trail describes several overlapping loops: character levels and tasks, party bonuses, item power and rarity, crafting materials, dungeon difficulty, bestiary discovery, and repeatable boss/raid activity.</p>
-            <div className="cyntara-wiki__table-wrap">
-              <table className="cyntara-wiki__table"><thead><tr><th>Loop</th><th>What the sources show</th><th>Player question to verify</th></tr></thead><tbody>
-                <tr><th>Levels and rates</th><td>x1 EXP is the directory signal; owner material also mentions staged experience.</td><td>What are the permanent stages, skill/magic/loot rates, and stamina rules?</td></tr>
-                <tr><th>Tasks</th><td>Tasks, additional task slots, task scrolls, and task rewards are named. Party members can receive 0.5 task credit in the cited event context.</td><td>Which NPCs, limits, points, rewards, and solo/group rules apply now?</td></tr>
-                <tr><th>Parties</th><td>Temporary Party x3 and Party x4 bonuses were documented at 80% and 120% in a ten-day event.</td><td>What is the normal shared-experience range and which bonuses are live?</td></tr>
-                <tr><th>Equipment</th><td>Rarity, Item Power, fragments, Orbs, upgrades, and crafting extend the equipment hunt.</td><td>Which rarity tiers, recipes, costs, and upgrade outcomes are active?</td></tr>
-                <tr><th>Endgame</th><td>Elite monsters, boss raids, Daily Boss 120/200+, dungeons, Sacrifice, and bestiary systems create repeatable goals.</td><td>What level, party size, cooldown, and reward requirements apply to each encounter?</td></tr>
-              </tbody></table>
-            </div>
-            <p>Vocation names and balance details are not exposed in the reviewed wiki navigation. Players should use the official Spells and Informations pages rather than assuming that classic 7.4 formulas remain unchanged.</p>
+            <SectionHeading>Progression &amp; Vocation Planning</SectionHeading>
+            <p>Exordion keeps the classic four-vocation vocabulary, but the reviewed official wiki index does not publish a complete custom vocation balance table. That makes the official Spells, Spirit, Informations, Training, and Blessings pages the correct place to confirm formulas before planning a long-term character.</p>
+            <div className="cyntara-wiki__table-wrap"><table className="cyntara-wiki__table"><thead><tr><th>Vocation</th><th>Classic role</th><th>What to verify on Exordion</th></tr></thead><tbody>{vocationRows.map(([name, role, note]) => <tr key={name}><th>{name}</th><td>{role}</td><td>{note}</td></tr>)}</tbody></table></div>
+            <p>Progression is broader than level gain. Tasks create objectives, party bonuses change group efficiency, Item Power and rarity affect loot decisions, crafting uses resources, and Bestiary or dungeon discovery can become a long-term route. Public update notes mention Party x3 and Party x4 event bonuses of 80% and 120%, but these were temporary and should not be read as base settings.</p>
+            <div className="cyntara-wiki__callout"><strong>Rate terminology matters</strong><p>The directory snapshot displays x1 EXP, while older owner material mentions staged experience. No complete permanent experience, skill, magic, loot, spawn, or stamina table was available in the reviewed sources.</p></div>
           </section>
 
           <section id="systems">
-            <SectionHeading>Core systems</SectionHeading>
-            <p>The official wiki navigation is unusually useful as a systems index even when its landing pages are not reproduced here. These are the systems most likely to change how a new character plans time, loot, and equipment.</p>
-            <div className="grid gap-4 md:grid-cols-2">{systems.map((system) => <div key={system.title} className="border border-gray-300 bg-white p-4"><div className="mb-2 flex items-center justify-between gap-3"><h3 className="text-base font-bold text-black">{system.title}</h3><span className="text-[0.68rem] font-bold uppercase tracking-widest text-gray-500">{system.label}</span></div><p className="mb-0 text-sm leading-7 text-gray-700">{system.body}</p></div>)}</div>
-            <div className="cyntara-wiki__callout mt-6">
-              <strong>Rarity is not just a loot adjective</strong>
-              <p>Exordion’s update history connects rarity to Item Power, Elite Drops, Special Orbs, fragments, and the Rarity Market. Treat rare equipment as part of an economy and crafting loop, not as a simple replacement for a Tibia 7.4 item.</p>
-            </div>
+            <SectionHeading>Custom Systems</SectionHeading>
+            <p>The systems below are named by Exordion’s official website, player wiki, or update trail. Exact costs, item lists, cooldowns, and requirements belong to the live first-party pages.</p>
+            <div className="grid gap-4 md:grid-cols-2">{systems.map(([name, description]) => <div key={name} className="rounded border border-black bg-white p-4"><h3 className="text-base font-bold text-black">{name}</h3><p className="mt-2 text-sm leading-7 text-black">{description}</p></div>)}</div>
           </section>
 
           <section id="endgame">
-            <SectionHeading>Raids, bosses, and endgame</SectionHeading>
-            <p>Raids are one of the clearest examples of Exordion’s modern layer. The official changelog describes a dedicated client module, location filters, level requirements, availability states, and cooldown tracking instead of a single static boss schedule.</p>
-            <div className="cyntara-wiki__table-wrap">
-              <table className="cyntara-wiki__table"><thead><tr><th>Content</th><th>Documented behavior</th></tr></thead><tbody>{raidRows.map(([name, body]) => <tr key={name}><th>{name}</th><td>{body}</td></tr>)}</tbody></table>
-            </div>
-            <h3 className="mt-6 text-lg font-bold text-black">Elite tiers and named drops</h3>
-            <p>Elite Drops are attached to selected monsters in their Elite versions. The update record names Green, Red, and Black Skull categories. Examples range from Demon Legs and Falcon Medal at Green to items such as Bone Fiddle, Dragon Scale Helmet, Nightmare Shield, Amazon Armor, Beholder Spellbook, and Native Armor across higher tiers.</p>
-            <p>Golden Elites are described as an event-specific tier between Red and Black Skull: harder, aggressive, without traditional loot, and able to drop Special Orb fragments. Their availability and Item Power rules belong to the dated event record.</p>
-            <div className="cyntara-wiki__callout">
-              <strong>Plan around cooldowns, not rumors</strong>
-              <p>The raid system explicitly aims to distribute boss access and stabilize the item economy. Check the client module or current official news for a raid’s state, minimum level, city, and cooldown before assembling a group.</p>
-            </div>
+            <SectionHeading>Raids, Bosses &amp; Elite Monsters</SectionHeading>
+            <p>Endgame activity is organized around repeatable encounters rather than a single final quest. Raid cooldown tracking, level filters, boss states, elite drop tiers, and Sacrifice progression make scheduling and group composition important.</p>
+            <div className="cyntara-wiki__table-wrap"><table className="cyntara-wiki__table"><thead><tr><th>Content</th><th>Documented behavior</th></tr></thead><tbody>{raidRows.map(([name, description]) => <tr key={name}><th>{name}</th><td>{description}</td></tr>)}</tbody></table></div>
+            <h3 className="mt-6 text-lg font-bold text-black">Elite drops and Golden Elites</h3>
+            <p>Elite Drops are associated with selected Elite versions of creatures. Green, Red, and Black Skull categories are named in the update record. Referenced drops include Demon Legs, Falcon Medal, Bone Fiddle, Dragon Scale Helmet, Nightmare Shield, Amazon Armor, Beholder Spellbook, and Native Armor.</p>
+            <p>Golden Elites are described as an event-specific tier between Red and Black Skull: more aggressive, harder to defeat, without traditional loot, and able to drop Special Orb fragments. Item Power thresholds and event availability should be checked in the dated announcement before forming a hunt.</p>
           </section>
 
-          <section id="areas">
-            <SectionHeading>World and hunting areas</SectionHeading>
-            <p>The world is advertised as global plus custom. That means classic geography remains useful for orientation, but the hunt catalogue is not limited to historical 7.4 spawns.</p>
-            <div className="cyntara-wiki__table-wrap">
-              <table className="cyntara-wiki__table"><thead><tr><th>Area or region</th><th>Named content in the public update trail</th></tr></thead><tbody>{areaRows.map(([name, body]) => <tr key={name}><th>{name}</th><td>{body}</td></tr>)}</tbody></table>
-            </div>
-            <p>For a new character, the official Hunting Guide, Bestiary, and updated Minimap are more reliable than a copied spawn list. They can reflect changes that a static directory page cannot.</p>
+          <section id="world">
+            <SectionHeading>Map &amp; Hunting Areas</SectionHeading>
+            <p>“Global + custom map” is one of the most useful descriptions of Exordion. Existing Tibia geography helps experienced players orient themselves, while new islands, hunts, dungeons, and raid locations provide reasons to explore beyond the original client map.</p>
+            <div className="cyntara-wiki__table-wrap"><table className="cyntara-wiki__table"><thead><tr><th>Area</th><th>Known public details</th></tr></thead><tbody>{areaRows.map(([name, description]) => <tr key={name}><th>{name}</th><td>{description}</td></tr>)}</tbody></table></div>
+            <p>Use the official Hunting Guide, Bestiary, and Minimap for current spawn information. A static list can miss balance changes, new monsters, limited raids, and altered dungeon summons.</p>
           </section>
 
           <section id="client">
-            <SectionHeading>Client, launcher, and quality of life</SectionHeading>
-            <p>Exordion’s service layer is deliberately visible. The project positions the client and launcher as part of the game rather than a thin login wrapper, with tools for discovering hunts, reading raids, and reducing routine friction.</p>
-            <div className="cyntara-wiki__table-wrap">
-              <table className="cyntara-wiki__table"><thead><tr><th>Tool or feature</th><th>Publicly documented purpose</th></tr></thead><tbody>{clientRows.map(([name, body]) => <tr key={name}><th>{name}</th><td>{body}</td></tr>)}</tbody></table>
-            </div>
-            <p>Anti-bot protection and a global proxy are official claims, but the reviewed pages do not specify detection behavior, supported operating systems, proxy locations, or an exhaustive prohibited-software policy. Those details belong to the current rules and launcher release notes.</p>
+            <SectionHeading>Client &amp; Quality of Life</SectionHeading>
+            <p>The client is part of the Exordion experience. Its tools are intended to preserve the look and pacing of a classic world while making discovery, combat feedback, and routine account management easier.</p>
+            <div className="cyntara-wiki__table-wrap"><table className="cyntara-wiki__table"><thead><tr><th>Feature</th><th>Player benefit</th></tr></thead><tbody>{clientRows.map(([name, description]) => <tr key={name}><th>{name}</th><td>{description}</td></tr>)}</tbody></table></div>
+            <p>Anti-bot protection and a global proxy are official project claims. The reviewed public pages do not explain the detection model, proxy locations, supported operating systems, or every prohibited program, so those details should be taken from the latest rules and launcher notice.</p>
+          </section>
+
+          <section id="rules">
+            <SectionHeading>Rules, PvP &amp; Player Safety</SectionHeading>
+            <p>The directory classifies Bravora as PVP, but the exact combat rules are not reproduced in this reference. Before investing in a character, confirm the official rules for skulls, unjustified kills, protection zones, war declarations, death loss, multi-clienting, automation, account sharing, names, and appeals.</p>
+            <ul>
+              <li>Download the client only from the official Bravora website or its current launcher.</li>
+              <li>Keep the launcher and client updated; later releases may require the new launcher.</li>
+              <li>Do not treat a historical event multiplier or community comment as a permanent rule.</li>
+              <li>Use the official Discord or wiki to resolve conflicting advice about tasks, items, raids, and store services.</li>
+              <li>Check donation, Bazaar, refund, and account-recovery policies on the live service before making a purchase.</li>
+            </ul>
           </section>
 
           <section id="community">
-            <SectionHeading>Community and official services</SectionHeading>
-            <p>Beyond chat channels, the official site exposes a wide set of community-facing services: Characters, Who Is Online, Highscores, Kill Statistics, Latest Deaths, Player Bans, Houses, Guilds, Live Casting, and Streamers. These pages make the world legible before a player logs in and provide a useful activity check alongside the directory snapshot.</p>
-            <div className="grid gap-4 md:grid-cols-2">
-              <div className="border border-gray-300 bg-gray-50 p-4"><h3 className="mb-2 text-base font-bold text-black">Account and economy</h3><p className="mb-0 text-sm leading-7 text-gray-700">The site navigation includes account recovery, Edit Character, Store, Donate Points, Character Bazaar, Houses, and store history. Exact prices, refunds, trade restrictions, and payment policy should be read on the live service.</p></div>
-              <div className="border border-gray-300 bg-gray-50 p-4"><h3 className="mb-2 text-base font-bold text-black">Community signals</h3><p className="mb-0 text-sm leading-7 text-gray-700">Discord, WhatsApp, Instagram, YouTube, TikTok, the roadmap, live casts, and streamers are all linked by the official project. Activity is a useful signal, but never a substitute for the current rules or client download.</p></div>
-            </div>
-            <div className="mt-5 flex flex-wrap gap-2">{socialLinks.map(([label, href]) => <a key={label} href={href} target="_blank" rel="nofollow noopener noreferrer" className="rounded border border-gray-300 bg-white px-3 py-2 text-sm font-semibold text-gray-800 hover:border-gray-500 hover:no-underline">{label}</a>)}</div>
+            <SectionHeading>Community &amp; Official Services</SectionHeading>
+            <p>Exordion’s official website exposes more than a login form. Characters, Who Is Online, Highscores, Kill Statistics, Latest Deaths, Player Bans, Houses, Guilds, Live Casting, Streamers, Character Bazaar, Store, and account recovery all contribute to the public life of the world.</p>
+            <div className="grid gap-4 md:grid-cols-2"><div className="rounded border border-black bg-white p-4"><h3 className="text-base font-bold text-black">Community channels</h3><p className="mt-2 text-sm leading-7 text-black">Discord, WhatsApp, Instagram, YouTube, and TikTok are linked by the project. Use those channels for launch notices, maintenance, event windows, and practical onboarding.</p><div className="mt-3 flex flex-wrap gap-2"><a href="https://discord.gg/K9RF9pCfvC" target="_blank" rel="nofollow noopener noreferrer">Discord</a><a href="https://chat.whatsapp.com/DFzXDDqaOe2GGKmzKsKnig" target="_blank" rel="nofollow noopener noreferrer">WhatsApp</a></div></div><div className="rounded border border-black bg-white p-4"><h3 className="text-base font-bold text-black">Account and economy</h3><p className="mt-2 text-sm leading-7 text-black">The Store, Donate Points, Character Bazaar, Houses, and store history make economy rules important. Verify prices, restrictions, and eligibility on the current official site.</p><div className="mt-3 flex flex-wrap gap-2"><a href="https://bravora.exordion.com.br/" target="_blank" rel="nofollow noopener noreferrer">Bravora website</a><a href="https://trello.com/b/lxIq3Jyc/exordion-roadmap" target="_blank" rel="nofollow noopener noreferrer">Roadmap</a></div></div></div>
+          </section>
+
+          <section id="ecosystem">
+            <SectionHeading>The Open Tibia Ecosystem</SectionHeading>
+            <p>Open Tibia covers a wide range of experiences, from strict low-rate replicas to heavily customized RPG worlds. Exordion sits between those poles: the 7.4 label matters, but the server’s defining choices are its persistent world, custom content, item systems, structured endgame, and modern client.</p>
+            <div className="cyntara-wiki__callout"><strong>Looking for Private Servers?</strong><p>Explore <a href="/">opentibiaservers.com</a>, the leading open tibia server listing directory for real-time status tracking, player counts, version filters, and community rankings across active OTServ projects.</p></div>
+            <div className="cyntara-wiki__recommended"><h3>Recommended Open Tibia Server</h3><p>For players seeking a polished Open Tibia experience with custom bosses, active community events, and modern client features, <strong>Evomanias</strong> is a recommended alternative.</p><a className="cyntara-wiki__button" href="https://evomanias.com/" target="_blank" rel="noopener noreferrer">Play Evomanias</a></div>
           </section>
 
           <section id="external-links">
-            <SectionHeading>External links</SectionHeading>
+            <SectionHeading>External Links</SectionHeading>
+            <ul>{externalLinks.map(([label, href]) => <li key={href}><a href={href} target="_blank" rel="nofollow noopener noreferrer">{label}</a></li>)}</ul>
             <ul>
-              <li><a href="https://bravora.exordion.com.br/?downloadclient" target="_blank" rel="nofollow noopener noreferrer">Bravora client download</a></li>
-              <li><a href="https://bravora.exordion.com.br/?rules" target="_blank" rel="nofollow noopener noreferrer">Bravora rules</a></li>
-              <li><a href="https://exordion.gitbook.io/exordion-wiki" target="_blank" rel="nofollow noopener noreferrer">Exordion official player wiki</a></li>
-              <li><a href="https://discord.gg/K9RF9pCfvC" target="_blank" rel="nofollow noopener noreferrer">Exordion Discord</a></li>
-              <li><a href="https://trello.com/b/lxIq3Jyc/exordion-roadmap" target="_blank" rel="nofollow noopener noreferrer">Exordion roadmap</a></li>
-              <li><a href="/">Open Tibia Servers directory</a></li>
-              <li><a href="/?search=7.4" >Compare 7.4 servers</a></li>
+              <li><a href="/">OpenTibiaServers - Open Tibia Directory</a></li>
+              <li><a href="https://evomanias.com/" target="_blank" rel="noopener noreferrer">Play Evomanias</a></li>
             </ul>
-            <div className="cyntara-wiki__recommended">
-              <h3>Explore Exordion</h3>
-              <p>Use the official wiki for the latest rules, recipes, quest details, and system changes.</p>
-              <a className="cyntara-wiki__button" href="https://exordion.gitbook.io/exordion-wiki" target="_blank" rel="nofollow noopener noreferrer">Open official wiki</a>
-            </div>
           </section>
         </article>
 
         <aside className="cyntara-wiki__sidebar">
           <div className="cyntara-wiki__infobox">
-            <div className="cyntara-wiki__infobox-header">Wiki index</div>
-            <p className="text-sm">Exordion 7.4 · Bravora</p>
-            <ol className="m-0 pl-5 text-sm">{contents.slice(0, 9).map(([id, label]) => <li key={id} className="my-1"><a href={`#${id}`}>{label}</a></li>)}</ol>
+            <div className="cyntara-wiki__infobox-header">Exordion</div>
+            <ServerLogo server={{ name: 'Exordion', slug: 'exordion', host: 'bravora.exordion.com.br' }} size="profile" />
+            <table><tbody>
+              <tr><th>World</th><td>Bravora</td></tr>
+              <tr><th>Website</th><td><a href="https://bravora.exordion.com.br/" target="_blank" rel="nofollow noopener noreferrer">bravora.exordion.com.br</a></td></tr>
+              <tr><th>Wiki</th><td><a href="https://exordion.gitbook.io/exordion-wiki" target="_blank" rel="nofollow noopener noreferrer">Official wiki</a></td></tr>
+              <tr><th>Protocol</th><td>7.4 custom</td></tr>
+              <tr><th>Map</th><td>Global + custom</td></tr>
+              <tr><th>EXP / PvP</th><td>x1 / PVP listing</td></tr>
+              <tr><th>Players</th><td>383 / 2000 snapshot</td></tr>
+              <tr><th>Systems</th><td>Rarity, crafting, raids, dungeons</td></tr>
+              <tr><th>Status</th><td>Verify current official status</td></tr>
+            </tbody></table>
           </div>
-          <div className="cyntara-wiki__infobox">
-            <div className="cyntara-wiki__infobox-header">Player checklist</div>
-            <ul className="m-0 pl-5 text-sm"><li>Confirm world and host</li><li>Read current rules</li><li>Download the official client</li><li>Check permanent rates</li><li>Join the Discord</li><li>Verify dated events</li></ul>
-          </div>
-          <div className="cyntara-wiki__callout">
-            <strong>Official start path</strong>
-            <p>Bravora’s site is the source of truth for account creation, rules, news, and the current client.</p>
-            <a href="https://bravora.exordion.com.br/" target="_blank" rel="nofollow noopener noreferrer">Open Bravora site</a>
-          </div>
-          <div className="cyntara-wiki__recommended">
-            <h3>Directory context</h3>
-            <p>The activity snapshot is useful for comparison, while the official wiki explains how the world actually plays.</p>
-            <a className="cyntara-wiki__button" href="/?search=Exordion">Browse related listings</a>
-          </div>
+          <div className="cyntara-wiki__infobox"><div className="cyntara-wiki__infobox-header">Wiki index</div><ol className="m-0 pl-5 text-sm">{contents.slice(0, 10).map(([id, label]) => <li key={id} className="my-1"><a href={`#${id}`}>{label}</a></li>)}</ol></div>
+          <div className="cyntara-wiki__callout"><strong>Before downloading</strong><p>Confirm the world, rules, client, and current announcements on the official Bravora site.</p><a href="https://bravora.exordion.com.br/?downloadclient" target="_blank" rel="nofollow noopener noreferrer">Open client download</a></div>
+          <div className="cyntara-wiki__recommended"><h3>Explore the directory</h3><p>Compare Exordion with other Open Tibia worlds by live status, protocol, location, and community signals.</p><a className="cyntara-wiki__button" href="/">Browse server listings</a></div>
         </aside>
       </div>
     </main>
