@@ -4,6 +4,14 @@ const path = require("path");
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.builder.io',
+      },
+    ],
+  },
   experimental: {
     cpus: 1,
     workerThreads: false,
