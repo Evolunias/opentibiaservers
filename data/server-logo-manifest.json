@@ -559,6 +559,22 @@
         "Exordion",
         "exordion"
       ]
+    },
+    "realera": {
+      "src": "https://cdn.builder.io/api/v1/image/assets%2Fc85938fda2fe4a1c97cfe093e9f077bb%2Fa27c034e7ef44c0388e5db38271e69f1?format=webp&width=800&height=1200",
+      "alt": "Realera dragon logo",
+      "kind": "logo",
+      "source_type": "user_supplied",
+      "source_reference": "image.png",
+      "domains": [
+        "realera.org"
+      ],
+      "width": 200,
+      "height": 200,
+      "aliases": [
+        "Realera",
+        "realera"
+      ]
     }
   },
   "excluded_assets": {
