@@ -88,15 +88,8 @@ export default function RealeraWikiPage() {
 
       <div className="cyntara-wiki__grid">
         <main className="cyntara-wiki__content">
-          <div className="flex flex-col gap-6 md:flex-row md:items-start">
-            <div className="min-w-0 flex-1">
-              <p><strong>Realera</strong> is an 8.0 custom Open Tibia world built around old-school real-map progression, enforced PvP, tournaments, guild wars, custom content, staged experience, 4x spawns, stamina, and daily siege activity. Its current public world names are Spectrum and Warfare.</p>
-              <p>The project is aimed at players who want a familiar 8.0 foundation with more competitive reasons to keep playing. This page gathers Realera’s server identity, historical PvP settings, named systems, world structure, and the official pages players should check before connecting.</p>
-            </div>
-            <div className="w-full shrink-0 md:w-64">
-              <ServerLogo server={{ name: 'Realera', slug: 'realera', host: 'realera.org' }} size="profile" />
-            </div>
-          </div>
+          <p><strong>Realera</strong> is an 8.0 custom Open Tibia world built around old-school real-map progression, enforced PvP, tournaments, guild wars, custom content, staged experience, 4x spawns, stamina, and daily siege activity. Its current public world names are Spectrum and Warfare.</p>
+          <p>The project is aimed at players who want a familiar 8.0 foundation with more competitive reasons to keep playing. This page gathers Realera’s server identity, historical PvP settings, named systems, world structure, and the official pages players should check before connecting.</p>
 
           <nav className="cyntara-wiki__toc" aria-label="Table of Contents">
             <h2>Contents</h2>
