@@ -10,6 +10,7 @@ import { fetchDirectoryServers } from '@/lib/directory-data';
 import { buildCuratedCoda, buildDeepDiveSections } from '@/lib/deep-dive-pages';
 import { deriveServerIdentity } from '@/lib/server-identity';
 import { getServerExcerpt, getServerExcerptSources, isGenericServerCopy } from '@/lib/server-excerpts';
+import { getServerResearchProfile } from '@/lib/server-research-profiles';
 
 const literalKeys = new Set(['href', 'src', 'url', 'path', 'canonicalPath']);
 const displayReplacements = [
@@ -108,6 +109,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
 
   const page = sanitizeDisplayCopy(sourcePage);
   const isServerProfile = page.type === 'server';
+  const researchProfile = isServerProfile ? getServerResearchProfile(page.slug) : null;
   const profileExcerpt = isServerProfile ? getServerExcerpt(page) : null;
   const profileSources = isServerProfile ? getServerExcerptSources(page) : [];
   const communityExperiences = isServerProfile && Array.isArray(page.community_excerpts)
@@ -320,6 +322,22 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
           {profileOverview ? (
             <section className="border-b border-gray-200 pb-8">
               <p className="text-xl leading-9 text-gray-800">{profileOverview}</p>
+            </section>
+          ) : null}
+
+          {researchProfile ? (
+            <section className="border-b border-gray-200 pb-8">
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-black">Independent research</p>
+              <h2 className="mb-4 text-2xl font-bold text-black">{page.primaryKeyword} Wiki Profile</h2>
+              <p className="text-base leading-8 text-black">{researchProfile.summary}</p>
+              <ul className="mt-4 space-y-2">
+                {researchProfile.features.map((feature) => <li key={feature} className="text-sm leading-7 text-black">{feature}</li>)}
+              </ul>
+              <div className="mt-5 flex flex-wrap gap-3">
+                {researchProfile.sources.map((source) => (
+                  <TrustedExternalLink key={source.href} href={source.href} label={source.label} className="inline-flex rounded border border-black bg-white px-3 py-2 text-sm font-bold text-black hover:no-underline" />
+                ))}
+              </div>
             </section>
           ) : null}
 
