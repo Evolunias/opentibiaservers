@@ -7,6 +7,7 @@ import RealeraWikiPage from '@/app/components/RealeraWikiPage';
 import AureraGlobalWikiPage from '@/app/components/AureraGlobalWikiPage';
 import KaldroxWikiPage from '@/app/components/KaldroxWikiPage';
 import DemolidoresWikiPage from '@/app/components/DemolidoresWikiPage';
+import IxodusWikiPage from '@/app/components/IxodusWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
@@ -34,5 +35,6 @@ export default async function ServerSlugPage({ params }) {
   if (slug === 'realera') return <RealeraWikiPage />;
   if (slug === 'aurera-global') return <AureraGlobalWikiPage />;
   if (slug === 'kaldrox') return <KaldroxWikiPage />;
+  if (slug === 'ixodus') return <IxodusWikiPage />;
   return <CanonicalServerRoute slug={slug} />;
 }
