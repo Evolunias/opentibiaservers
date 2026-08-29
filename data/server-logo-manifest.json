@@ -26,6 +26,16 @@
       "sha256": "b1713ff61d5d6e144d9f3adecda7c35f5d4d55bf4b362aab3a8cd058aadc8240",
       "aliases": []
     },
+    "underwar": {
+      "src": "https://cdn.builder.io/api/v1/image/assets%2F592400cedd2c4292a737c1a4374ac616%2F27c8d8f22df6476aa6275f1ebcf4a0e2?format=webp&width=800&height=1200",
+      "alt": "UnderWar 2.0 dragon logo",
+      "kind": "logo",
+      "source_type": "user_supplied",
+      "source_reference": "underwar.png",
+      "width": 560,
+      "height": 512,
+      "aliases": []
+    },
     "ezodus": {
       "src": "/images/server-logos/ezodus.png",
       "alt": "Ezodus official wordmark",
