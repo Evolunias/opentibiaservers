@@ -7,7 +7,6 @@ import RealeraWikiPage from '@/app/components/RealeraWikiPage';
 import AureraGlobalWikiPage from '@/app/components/AureraGlobalWikiPage';
 import KaldroxWikiPage from '@/app/components/KaldroxWikiPage';
 import DemolidoresWikiPage from '@/app/components/DemolidoresWikiPage';
-import CyleriaWikiPage from '@/app/components/CyleriaWikiPage';
 import IxodusWikiPage from '@/app/components/IxodusWikiPage';
 
 export async function generateMetadata({ params }) {
@@ -23,16 +22,6 @@ export async function generateMetadata({ params }) {
       description: 'A wiki-style Kaldrox guide covering the 8.60 Global Map profile, staged rates, PvP, systems, client verification, and current source notes.',
     };
   }
-  if (params.slug === 'cyleria') {
-    const metadata = buildCanonicalServerMetadata(params.slug);
-    return {
-      ...metadata,
-      title: 'Cyleria 8.60 Open Tibia Server | Mobile, Rates, Events & PvP Wiki',
-      description: 'Cyleria 8.60 Wiki covering the Polish Open Tibia server, PC and Android client, EXP stages, Open PvP rules, Tower Siege, events, Cyleriopedia, and no-reset progression.',
-      keywords: ['Cyleria', 'Cyleria 8.60', 'Cyleria server', 'Cyleria OTS', 'Cyleria mobile client', 'Cyleria rates', 'Cyleria Tower Siege'],
-      alternates: { canonical: '/servers/cyleria' },
-    };
-  }
   return buildCanonicalServerMetadata(params.slug);
 }
 
@@ -40,7 +29,6 @@ export default async function ServerSlugPage({ params }) {
   const slug = String(params.slug || '').toLowerCase();
 
   if (slug === 'demolidores') return <DemolidoresWikiPage />;
-  if (slug === 'cyleria') return <CyleriaWikiPage />;
   if (slug === 'ezodus') return <EzodusWikiPage />;
   if (slug === 'rubinot') return <RubinotWikiPage />;
   if (slug === 'exordion') return <ExordionWikiPage />;
