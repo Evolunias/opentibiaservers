@@ -1,5 +1,3 @@
-import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
-
 import BaiakIcewarWikiPage from '@/app/components/BaiakIcewarWikiPage';
 import { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
