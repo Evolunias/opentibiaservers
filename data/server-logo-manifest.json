@@ -124,6 +124,22 @@
         "ixodus"
       ]
     },
+    "underwar": {
+      "src": "/images/server-logos/underwar.png",
+      "alt": "Underwar server logo",
+      "kind": "logo_banner",
+      "source_type": "user_supplied",
+      "source_reference": "underwar.png",
+      "width": 560,
+      "height": 448,
+      "aliases": [
+        "UnderWar",
+        "Underwar"
+      ],
+      "domains": [
+        "underwar.org"
+      ]
+    },
     "neprenia": {
       "src": "/images/server-logos/neprenia.png",
       "alt": "Neprenia official logo",
