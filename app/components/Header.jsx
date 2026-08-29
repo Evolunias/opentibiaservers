@@ -11,7 +11,7 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const { user, loading } = useAuth();
-  const showAureraLogo = pathname === '/' || pathname === '/servers/aurera-global' || pathname === '/listings';
+  const showAureraLogo = pathname === '/servers/aurera-global' || pathname === '/listings';
   const [authMode, setAuthMode] = useState('login');
   const [authOpen, setAuthOpen] = useState(false);
 
