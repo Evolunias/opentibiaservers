@@ -1,11 +1,12 @@
-import CanonicalServerRoute, { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
+import DemolidoresWikiPage from '@/app/components/DemolidoresWikiPage';
+import { buildCanonicalServerMetadata } from '@/app/components/CanonicalServerRoute';
 
 export const revalidate = 3600;
 
 export function generateMetadata() {
-  return buildCanonicalServerMetadata("demolidores");
+  return buildCanonicalServerMetadata('demolidores');
 }
 
 export default function Page() {
-  return <CanonicalServerRoute slug="demolidores" />;
+  return <DemolidoresWikiPage />;
 }
