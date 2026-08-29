@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import DirectoryRecommendation from '@/app/components/DirectoryRecommendation';
 import { permanentRedirect } from 'next/navigation';
 import KeywordPageCommunity from '@/app/components/KeywordPageCommunity';
 import ServerLogo from '@/app/components/ServerLogo';
@@ -583,6 +584,8 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
               ))}
             </div>
           </section> : null}
+
+          {isServerProfile ? <DirectoryRecommendation /> : null}
 
           {directoryServers.length ? (
             <section className="pb-8">

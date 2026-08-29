@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useAuth } from '@/app/context/AuthContext';
 import AuthModal from '@/app/components/AuthModal';
 import ServerLogo from '@/app/components/ServerLogo';
+import DirectoryRecommendation from '@/app/components/DirectoryRecommendation';
 import { assessExternalLink, normalizeExternalUrl, safeUrlOrNull } from '@/lib/external-links';
 import { supabase } from '@/lib/supabase';
 import { applyServerIdentity } from '@/lib/server-identity';
@@ -795,6 +796,8 @@ export default function ServerDetailClient({ params, initialServer, serverId: ex
                 <p className="text-gray-700 whitespace-pre-wrap">{distinctDescription}</p>
               </section>
             ) : null}
+
+            <DirectoryRecommendation />
 
             {server.tags?.length ? (
               <section className="cyntara-wiki__section border border-gray-200 rounded p-4 mb-6">

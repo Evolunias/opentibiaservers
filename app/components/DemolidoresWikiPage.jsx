@@ -1,3 +1,4 @@
+import DirectoryRecommendation from '@/app/components/DirectoryRecommendation';
 import ServerLogo from '@/app/components/ServerLogo';
 
 const contents = [
@@ -52,6 +53,7 @@ const externalLinks = [
   ['Demolidores official website candidate', 'https://demolidores.com.br/'],
   ['OT Archive Demolidores record', 'https://otarchive.com/server/62cde2f41770eac22ec6ad66'],
   ['OpenTibiaServers live directory', '/'],
+  ['Evomanias - Recommended Open Tibia Server', 'https://evomanias.com'],
   ['OTServList players-online ranking', 'https://otservlist.org/list-server_players_online-desc.html'],
   ['TibiaOTList Global Demolidores record', 'https://tibiaotlist.com/servers/demolidores-net'],
 ];
@@ -160,6 +162,8 @@ export default function DemolidoresWikiPage() {
             </div>
             <div className="cyntara-wiki__callout"><strong>Evidence standard</strong><p>Current claims should be supported by an operator-controlled page, dated announcement, verified live status, or clearly attributed in-game evidence. Archived descriptions and public directories remain useful historical sources, but should not be silently promoted to verified current rules.</p></div>
           </section>
+
+          <DirectoryRecommendation />
 
           <section id="external-links">
             <SectionHeading>External links</SectionHeading>
