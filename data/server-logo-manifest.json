@@ -2,6 +2,26 @@
   "version": 1,
   "policy": "Only locally archived, primary-source or explicitly user-supplied server branding is eligible. Remote images, trackers, generic icons, third-party directory marks, and unrelated promotional artwork are never used as server thumbnails.",
   "entries": {
+    "cyleria": {
+      "src": "https://cdn.builder.io/api/v1/image/assets%2F583ddde8ecdb40288d7067991d318a6f%2F403ff79fe20641969a80da2ef69869aa?format=webp&width=800&height=1200",
+      "alt": "Cyleria Open Tibia Server logo",
+      "kind": "logo_banner",
+      "source_type": "user_supplied",
+      "source_reference": "cyleria.jpg",
+      "width": 800,
+      "height": 1200,
+      "aliases": []
+    },
+    "baiak-icewar": {
+      "src": "https://cdn.builder.io/api/v1/image/assets%2F583ddde8ecdb40288d7067991d318a6f%2F1db8b3a703a0487c978c774c5c44be3e?format=webp&width=800&height=1200",
+      "alt": "Baiak Icewar Nova Temporada logo",
+      "kind": "logo_banner",
+      "source_type": "user_supplied",
+      "source_reference": "baiak-icewar.png",
+      "width": 800,
+      "height": 1200,
+      "aliases": []
+    },
     "baiak-ilusion": {
       "src": "/images/server-logos/baiak-ilusion.jpg",
       "alt": "Baiak Ilusion logo",

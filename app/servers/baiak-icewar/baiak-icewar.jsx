@@ -20,7 +20,7 @@ const page = {
     "Baiak IceWar review"
   ],
   "metaDescription": "Baiak IceWar Open Tibia server reference covering sv.baiak-icewar.com, 8.6 PVP x900, players online, uptime, EXP, PvP type, source links, screenshots, reviews, and similar servers.",
-  "updatedAt": "2026-07-26",
+  "updatedAt": "2026-08-29",
   "pageLabel": "Source-backed profile",
   "wikiDepth": {
     "status": "partial",
@@ -165,11 +165,11 @@ const page = {
     },
     {
       "label": "Players snapshot",
-      "value": "211 (1366 unique IPs) / 1500"
+      "value": "166 / 1,500"
     },
     {
       "label": "Uptime snapshot",
-      "value": "98.64%"
+      "value": "100.00%"
     },
     {
       "label": "EXP / PvP / version",
@@ -214,7 +214,7 @@ const page = {
     {
       "date": "Public snapshot",
       "title": "Baiak IceWar appears among active directory listings",
-      "text": "Baiak IceWar is represented by sv.baiak-icewar.com with 211 (1366 unique IPs) / 1500 players, 98.64% uptime, x900 EXP, PVP PvP type, and 8.6 client context at the time of capture."
+      "text": "Baiak IceWar is represented by sv.baiak-icewar.com with 166 / 1,500 players, 100.00% uptime, x900 EXP, Open PvP type, and 8.6 client context in the 29 August 2026 listing check."
     },
     {
       "date": "Source trail",
@@ -261,7 +261,7 @@ const page = {
   "researchNotes": [
     {
       "label": "Public list snapshot",
-      "value": "Baiak IceWar is currently seeded from a public players-online ranking with host sv.baiak-icewar.com, listing title \"Abriu 06-02 HOST BR\", 211 (1366 unique IPs) / 1500 players, 98.64% uptime, x900 EXP, PVP PvP type, and client/version 8.6."
+      "value": "A public listing check dated 29 August 2026 records host sv.baiak-icewar.com:7171, 166 / 1,500 players, 100.00% uptime, 900× EXP, Open PvP, client 8.6, Brazil, and owner field kowal676. OT Archive separately records the historical host baiak-icewar.com:7171 and owner field Thor."
     },
     {
       "label": "Open fields to document",
@@ -293,7 +293,7 @@ const page = {
       "eyebrow": "Activity Signals",
       "heading": "How to read the Baiak IceWar listing snapshot",
       "body": [
-        "The current snapshot shows 211 (1366 unique IPs) / 1500 players, 98.64% uptime, x900 EXP, PVP PvP type, and 8.6 version context. Those fields are useful, but none of them alone proves quality.",
+        "The 29 August 2026 listing check shows 166 / 1,500 players, 100.00% uptime, 900× EXP, Open PvP, and 8.6 version context. Those fields are useful, but none of them alone proves quality.",
         "Players should compare the snapshot with official news, rules, download links, Discord/forum activity, real screenshots, and recent player reviews."
       ]
     },
