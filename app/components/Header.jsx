@@ -2,14 +2,16 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '@/app/context/AuthContext';
 import AuthModal from '@/app/components/AuthModal';
 import LanguageSelector from '@/app/components/LanguageSelector';
 
 export default function Header() {
   const router = useRouter();
+  const pathname = usePathname();
   const { user, loading } = useAuth();
+  const showAureraLogo = pathname === '/servers/aurera-global' || pathname === '/listings';
   const [authMode, setAuthMode] = useState('login');
   const [authOpen, setAuthOpen] = useState(false);
 
@@ -63,13 +65,23 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <Link href="/" className="brand-mark group flex items-center gap-3 hover:no-underline">
-              <div className="brand-mark__sigil w-10 h-10 rounded flex items-center justify-center font-bold text-sm">
-                OTS
-              </div>
-              <div>
-                <span className="block text-lg font-bold text-white m-0">Open Tibia Servers</span>
-                <p className="text-xs text-slate-300 m-0">OT server records, guides, reviews, and source data.</p>
-              </div>
+              {showAureraLogo ? (
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F1d2cd06444d64f5aae6a6cb23ba0be77%2F3d9fb8fdaec4431b851211fbec4d4616?format=webp&width=800&height=1200"
+                  alt="Aurera Global"
+                  className="h-12 w-auto object-contain"
+                />
+              ) : (
+                <>
+                  <div className="brand-mark__sigil w-10 h-10 rounded flex items-center justify-center font-bold text-sm">
+                    OTS
+                  </div>
+                  <div>
+                    <span className="block text-lg font-bold text-white m-0">Open Tibia Servers</span>
+                    <p className="text-xs text-slate-300 m-0">OT server records, guides, reviews, and source data.</p>
+                  </div>
+                </>
+              )}
             </Link>
 
             {!loading ? (
