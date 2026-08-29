@@ -575,6 +575,38 @@
         "Realera",
         "realera"
       ]
+    },
+    "aurera-global": {
+      "src": "https://cdn.builder.io/api/v1/image/assets%2F1d2cd06444d64f5aae6a6cb23ba0be77%2F561df372a1224eea88ec775fa396496b?format=webp&width=800&height=1200",
+      "alt": "Aurera Global logo",
+      "kind": "logo",
+      "source_type": "user_supplied",
+      "source_reference": "image.png",
+      "domains": [
+        "aurera-global.com"
+      ],
+      "width": 800,
+      "height": 1200,
+      "aliases": [
+        "Aurera Global",
+        "aurera global"
+      ]
+    },
+    "kaldrox": {
+      "src": "https://cdn.builder.io/api/v1/image/assets%2F1d2cd06444d64f5aae6a6cb23ba0be77%2Fa86152e1cca2414da1923d7bad4c9b87?format=webp&width=800&height=1200",
+      "alt": "Kaldrox logo",
+      "kind": "logo",
+      "source_type": "user_supplied",
+      "source_reference": "kaldrox.jpg",
+      "domains": [
+        "kaldrox.com"
+      ],
+      "width": 800,
+      "height": 1200,
+      "aliases": [
+        "Kaldrox",
+        "kaldrox"
+      ]
     }
   },
   "excluded_assets": {
