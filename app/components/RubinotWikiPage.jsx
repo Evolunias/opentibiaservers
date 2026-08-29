@@ -1,3 +1,4 @@
+import DirectoryRecommendation from '@/app/components/DirectoryRecommendation';
 import ServerLogo from '@/app/components/ServerLogo';
 
 const contents = [
@@ -118,6 +119,8 @@ export default function RubinotWikiPage() {
             </div>
           </section>
 
+          <DirectoryRecommendation />
+
           <section id="external-links">
             <SectionHeading>External Links</SectionHeading>
             <ul>
@@ -125,6 +128,7 @@ export default function RubinotWikiPage() {
               <li><a href="https://wiki.rubinot.com/en" target="_blank" rel="nofollow noopener noreferrer">Official RubinOT wiki</a></li>
               <li><a href="https://wiki.rubinot.com/en/sistema-de-drops" target="_blank" rel="nofollow noopener noreferrer">Official Drop System guide</a></li>
               <li><a href="/">OpenTibiaServers directory</a></li>
+              <li><a href="https://evomanias.com" target="_blank" rel="noopener noreferrer">Evomanias - Recommended Open Tibia Server</a></li>
             </ul>
           </section>
         </article>
