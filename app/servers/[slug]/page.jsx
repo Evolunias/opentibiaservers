@@ -6,6 +6,7 @@ import ExordionWikiPage from '@/app/components/ExordionWikiPage';
 import RealeraWikiPage from '@/app/components/RealeraWikiPage';
 import AureraGlobalWikiPage from '@/app/components/AureraGlobalWikiPage';
 import KaldroxWikiPage from '@/app/components/KaldroxWikiPage';
+import DemolidoresWikiPage from '@/app/components/DemolidoresWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
@@ -24,11 +25,14 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function ServerSlugPage({ params }) {
-  if (params.slug === 'ezodus') return <EzodusWikiPage />;
-  if (params.slug === 'rubinot') return <RubinotWikiPage />;
-  if (params.slug === 'exordion') return <ExordionWikiPage />;
-  if (params.slug === 'realera') return <RealeraWikiPage />;
-  if (params.slug === 'aurera-global') return <AureraGlobalWikiPage />;
-  if (params.slug === 'kaldrox') return <KaldroxWikiPage />;
-  return <CanonicalServerRoute slug={params.slug} />;
+  const slug = String(params.slug || '').toLowerCase();
+
+  if (slug === 'demolidores') return <DemolidoresWikiPage />;
+  if (slug === 'ezodus') return <EzodusWikiPage />;
+  if (slug === 'rubinot') return <RubinotWikiPage />;
+  if (slug === 'exordion') return <ExordionWikiPage />;
+  if (slug === 'realera') return <RealeraWikiPage />;
+  if (slug === 'aurera-global') return <AureraGlobalWikiPage />;
+  if (slug === 'kaldrox') return <KaldroxWikiPage />;
+  return <CanonicalServerRoute slug={slug} />;
 }
