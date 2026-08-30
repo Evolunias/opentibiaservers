@@ -10,6 +10,7 @@ import DemolidoresWikiPage from '@/app/components/DemolidoresWikiPage';
 import IxodusWikiPage from '@/app/components/IxodusWikiPage';
 import Miracle74WikiPage from '@/app/components/Miracle74WikiPage';
 import NoxiousOTWikiPage from '@/app/components/NoxiousOTWikiPage';
+import AmonotWikiPage from '@/app/components/AmonotWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
@@ -36,6 +37,12 @@ export async function generateMetadata({ params }) {
       description: 'An evidence-led NoxiousOT 8.60 guide covering staged rates, PvP events, custom islands, magic items, official clients, rules, activity, and sources.',
     };
   }
+  if (params.slug === 'amonot') {
+    return {
+      title: 'AmonOT Server Guide: Horus Rates, PvP, Client & Systems',
+      description: 'An evidence-led AmonOT guide covering Horus staged rates, Retro Open PvP, tasks, addons, VIP, loyalty, bazaar, official client downloads, and world verification.',
+    };
+  }
   return buildCanonicalServerMetadata(params.slug);
 }
 
@@ -52,5 +59,6 @@ export default async function ServerSlugPage({ params }) {
   if (slug === 'ixodus') return <IxodusWikiPage />;
   if (slug === 'miracle74') return <Miracle74WikiPage />;
   if (slug === 'noxiousot') return <NoxiousOTWikiPage />;
+  if (slug === 'amonot') return <AmonotWikiPage />;
   return <CanonicalServerRoute slug={slug} />;
 }
