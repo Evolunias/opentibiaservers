@@ -11,6 +11,7 @@ import IxodusWikiPage from '@/app/components/IxodusWikiPage';
 import Miracle74WikiPage from '@/app/components/Miracle74WikiPage';
 import NoxiousOTWikiPage from '@/app/components/NoxiousOTWikiPage';
 import AmonotWikiPage from '@/app/components/AmonotWikiPage';
+import ServerDirectoryWikiPage from '@/app/components/ServerDirectoryWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
@@ -43,6 +44,14 @@ export async function generateMetadata({ params }) {
       description: 'An evidence-led AmonOT guide covering Horus staged rates, Retro Open PvP, tasks, addons, VIP, loyalty, bazaar, official client downloads, and world verification.',
     };
   }
+  const wikiSlugs = ['iglaots', 'oxygenot', 'rexia', 'calmera', 'paulistinhaot', 'sandots', 'nostalrius', 'taleon'];
+  if (wikiSlugs.includes(String(params.slug || '').toLowerCase())) {
+    const name = String(params.slug).replace(/-/g, ' ');
+    return {
+      title: `${name.replace(/\b\w/g, (letter) => letter.toUpperCase())} Server Guide | OpenTibiaServers Wiki`,
+      description: `Wiki-style ${name} guide covering server rates, client information, systems, activity, official sources, and how to start.`,
+    };
+  }
   return buildCanonicalServerMetadata(params.slug);
 }
 
@@ -60,5 +69,8 @@ export default async function ServerSlugPage({ params }) {
   if (slug === 'miracle74') return <Miracle74WikiPage />;
   if (slug === 'noxiousot') return <NoxiousOTWikiPage />;
   if (slug === 'amonot') return <AmonotWikiPage />;
+  if (['iglaots', 'oxygenot', 'rexia', 'calmera', 'paulistinhaot', 'sandots', 'nostalrius', 'taleon'].includes(slug)) {
+    return <ServerDirectoryWikiPage slug={slug} />;
+  }
   return <CanonicalServerRoute slug={slug} />;
 }
