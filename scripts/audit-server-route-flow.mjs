@@ -6,6 +6,18 @@ import { getServerReviewPage, getServerReviewPages } from '../lib/server-review-
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const appRoot = path.join(repoRoot, 'app');
+const dedicatedNestedRoutes = new Set([
+  'baiak-icewar',
+  'baiak-ilusion',
+  'cyntara',
+  'cyleria',
+  'demolidores',
+  'exordion',
+  'gunzodus',
+  'noxiousot',
+  'realera',
+  'underwar',
+]);
 const shouldWrite = process.argv.includes('--write');
 const rawPages = getServerReviewPages({ canonical: false });
 const serverSlugs = new Set(rawPages.map((page) => page.slug));
@@ -76,10 +88,14 @@ const representativeFailures = [...representativeAliases].filter(
 );
 
 const expected = [
-  ...nested.map((route) => ({ ...route, expected: nestedRouteFile(route.slug), kind: 'canonical' })),
+  ...nested.map((route) => ({
+    ...route,
+    expected: dedicatedNestedRoutes.has(route.slug) ? null : nestedRouteFile(route.slug),
+    kind: dedicatedNestedRoutes.has(route.slug) ? 'dedicated' : 'canonical',
+  })),
   ...topLevel.map((route) => ({ ...route, expected: legacyRouteFile(route.slug), kind: 'legacy' })),
 ];
-const stale = expected.filter(({ routePath, expected: contents }) => fs.readFileSync(routePath, 'utf8') !== contents);
+const stale = expected.filter(({ routePath, expected: contents }) => contents && fs.readFileSync(routePath, 'utf8') !== contents);
 
 if (shouldWrite) {
   for (const { routePath, expected: contents } of stale) fs.writeFileSync(routePath, contents, 'utf8');
