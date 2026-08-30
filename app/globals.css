@@ -703,7 +703,7 @@ body.ots-directory-light .server-tag {
 
 .directory-row {
   display: grid;
-  grid-template-columns: 132px minmax(220px, 1fr) minmax(250px, 0.65fr) auto;
+  grid-template-columns: 132px minmax(220px, 1fr) minmax(180px, 0.5fr) auto;
   gap: 20px;
   align-items: center;
   min-height: 124px;
@@ -806,7 +806,7 @@ body.ots-directory-light .server-tag {
 
 .directory-row__metrics {
   display: grid;
-  grid-template-columns: repeat(3, minmax(68px, 1fr));
+  grid-template-columns: repeat(2, minmax(88px, 1fr));
   overflow: hidden;
   border: 1px solid #e2e8f0;
   border-radius: 9px;
