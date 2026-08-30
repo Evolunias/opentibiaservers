@@ -10,6 +10,8 @@ import DemolidoresWikiPage from '@/app/components/DemolidoresWikiPage';
 import IxodusWikiPage from '@/app/components/IxodusWikiPage';
 import Miracle74WikiPage from '@/app/components/Miracle74WikiPage';
 import NoxiousOTWikiPage from '@/app/components/NoxiousOTWikiPage';
+import AmonotWikiPage from '@/app/components/AmonotWikiPage';
+import NostalriusWikiPage from '@/app/components/NostalriusWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
@@ -36,6 +38,26 @@ export async function generateMetadata({ params }) {
       description: 'An evidence-led NoxiousOT 8.60 guide covering staged rates, PvP events, custom islands, magic items, official clients, rules, activity, and sources.',
     };
   }
+  if (params.slug === 'amonot') {
+    return {
+      title: 'AmonOT Server Guide: Horus Rates, PvP, Client & Systems',
+      description: 'An evidence-led AmonOT guide covering Horus staged rates, Retro Open PvP, tasks, addons, VIP, loyalty, bazaar, official client downloads, and world verification.',
+    };
+  }
+  if (params.slug === 'nostalrius') {
+    return {
+      title: 'Nostalrius 7.4 Server Wiki: Rates, PvP, Systems & Client',
+      description: 'An evidence-led Nostalrius 7.4 Wiki guide covering Retro Open PvP, staged rates, stamina, Forge, Tier systems, bosses, events, rules, and official downloads.',
+    };
+  }
+  const wikiSlugs = ['iglaots', 'oxygenot', 'rexia', 'calmera', 'paulistinhaot', 'sandots', 'nostalrius', 'taleon'];
+  if (wikiSlugs.includes(String(params.slug || '').toLowerCase())) {
+    const name = String(params.slug).replace(/-/g, ' ');
+    return {
+      title: `${name.replace(/\b\w/g, (letter) => letter.toUpperCase())} Server Guide | OpenTibiaServers Wiki`,
+      description: `Wiki-style ${name} guide covering server rates, client information, systems, activity, official sources, and how to start.`,
+    };
+  }
   return buildCanonicalServerMetadata(params.slug);
 }
 
@@ -52,5 +74,7 @@ export default async function ServerSlugPage({ params }) {
   if (slug === 'ixodus') return <IxodusWikiPage />;
   if (slug === 'miracle74') return <Miracle74WikiPage />;
   if (slug === 'noxiousot') return <NoxiousOTWikiPage />;
+  if (slug === 'amonot') return <AmonotWikiPage />;
+  if (slug === 'nostalrius') return <NostalriusWikiPage />;
   return <CanonicalServerRoute slug={slug} />;
 }
