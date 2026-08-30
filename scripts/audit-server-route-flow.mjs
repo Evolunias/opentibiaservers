@@ -12,6 +12,7 @@ const dedicatedNestedRoutes = new Set([
   'cyntara',
   'cyleria',
   'demolidores',
+  'evolunia',
   'exordion',
   'gunzodus',
   'noxiousot',
