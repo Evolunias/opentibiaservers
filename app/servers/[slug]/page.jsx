@@ -8,6 +8,8 @@ import AureraGlobalWikiPage from '@/app/components/AureraGlobalWikiPage';
 import KaldroxWikiPage from '@/app/components/KaldroxWikiPage';
 import DemolidoresWikiPage from '@/app/components/DemolidoresWikiPage';
 import IxodusWikiPage from '@/app/components/IxodusWikiPage';
+import Miracle74WikiPage from '@/app/components/Miracle74WikiPage';
+import NoxiousOTWikiPage from '@/app/components/NoxiousOTWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
@@ -20,6 +22,18 @@ export async function generateMetadata({ params }) {
     return {
       title: 'Kaldrox | OpenTibiaServers Wiki',
       description: 'A wiki-style Kaldrox guide covering the 8.60 Global Map profile, staged rates, PvP, systems, client verification, and current source notes.',
+    };
+  }
+  if (params.slug === 'miracle74') {
+    return {
+      title: 'Miracle 7.4 Server Guide: Rates, Mechanics, Client & Launch History',
+      description: 'An evidence-led Miracle 7.4 guide covering 1x rates, PvP, classic mechanics, custom systems, client safety, sources, and the May 2024 launch record.',
+    };
+  }
+  if (params.slug === 'noxiousot') {
+    return {
+      title: 'NoxiousOT Server Guide: Rates, Rules, Clients & PvP Features',
+      description: 'An evidence-led NoxiousOT 8.60 guide covering staged rates, PvP events, custom islands, magic items, official clients, rules, activity, and sources.',
     };
   }
   return buildCanonicalServerMetadata(params.slug);
@@ -36,5 +50,7 @@ export default async function ServerSlugPage({ params }) {
   if (slug === 'aurera-global') return <AureraGlobalWikiPage />;
   if (slug === 'kaldrox') return <KaldroxWikiPage />;
   if (slug === 'ixodus') return <IxodusWikiPage />;
+  if (slug === 'miracle74') return <Miracle74WikiPage />;
+  if (slug === 'noxiousot') return <NoxiousOTWikiPage />;
   return <CanonicalServerRoute slug={slug} />;
 }
