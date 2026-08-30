@@ -11,7 +11,6 @@ import IxodusWikiPage from '@/app/components/IxodusWikiPage';
 import Miracle74WikiPage from '@/app/components/Miracle74WikiPage';
 import NoxiousOTWikiPage from '@/app/components/NoxiousOTWikiPage';
 import AmonotWikiPage from '@/app/components/AmonotWikiPage';
-import ServerDirectoryWikiPage from '@/app/components/ServerDirectoryWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
@@ -69,8 +68,5 @@ export default async function ServerSlugPage({ params }) {
   if (slug === 'miracle74') return <Miracle74WikiPage />;
   if (slug === 'noxiousot') return <NoxiousOTWikiPage />;
   if (slug === 'amonot') return <AmonotWikiPage />;
-  if (['iglaots', 'oxygenot', 'rexia', 'calmera', 'paulistinhaot', 'sandots', 'nostalrius', 'taleon'].includes(slug)) {
-    return <ServerDirectoryWikiPage slug={slug} />;
-  }
   return <CanonicalServerRoute slug={slug} />;
 }
