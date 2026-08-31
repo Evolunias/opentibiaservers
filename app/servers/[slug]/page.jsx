@@ -12,6 +12,7 @@ import Miracle74WikiPage from '@/app/components/Miracle74WikiPage';
 import NoxiousOTWikiPage from '@/app/components/NoxiousOTWikiPage';
 import AmonotWikiPage from '@/app/components/AmonotWikiPage';
 import NostalriusWikiPage from '@/app/components/NostalriusWikiPage';
+import SandotsWikiPage from '@/app/components/SandotsWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
@@ -50,7 +51,13 @@ export async function generateMetadata({ params }) {
       description: 'An evidence-led Nostalrius 7.4 Wiki guide covering Retro Open PvP, staged rates, stamina, Forge, Tier systems, bosses, events, rules, and official downloads.',
     };
   }
-  const wikiSlugs = ['iglaots', 'oxygenot', 'rexia', 'calmera', 'paulistinhaot', 'sandots', 'nostalrius', 'taleon'];
+  if (params.slug === 'sandots') {
+    return {
+      title: 'SandOTS Server Guide: Rates, Reborn, PvP, Tasks & Client',
+      description: 'SandOTS server guide covering its 8.6 PVP listing, x500 snapshot, Reborn system, tasks, dungeons, PvP rules, safe client path, and official sources.',
+    };
+  }
+  const wikiSlugs = ['iglaots', 'oxygenot', 'rexia', 'calmera', 'paulistinhaot', 'nostalrius', 'taleon'];
   if (wikiSlugs.includes(String(params.slug || '').toLowerCase())) {
     const name = String(params.slug).replace(/-/g, ' ');
     return {
@@ -76,5 +83,6 @@ export default async function ServerSlugPage({ params }) {
   if (slug === 'noxiousot') return <NoxiousOTWikiPage />;
   if (slug === 'amonot') return <AmonotWikiPage />;
   if (slug === 'nostalrius') return <NostalriusWikiPage />;
+  if (slug === 'sandots') return <SandotsWikiPage />;
   return <CanonicalServerRoute slug={slug} />;
 }
