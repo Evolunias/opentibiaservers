@@ -13,6 +13,7 @@ import NoxiousOTWikiPage from '@/app/components/NoxiousOTWikiPage';
 import AmonotWikiPage from '@/app/components/AmonotWikiPage';
 import NostalriusWikiPage from '@/app/components/NostalriusWikiPage';
 import SandotsWikiPage from '@/app/components/SandotsWikiPage';
+import PaulistinhaotWikiPage from '@/app/components/PaulistinhaotWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
@@ -57,7 +58,13 @@ export async function generateMetadata({ params }) {
       description: 'SandOTS server guide covering its 8.6 PVP listing, x500 snapshot, Reborn system, tasks, dungeons, PvP rules, safe client path, and official sources.',
     };
   }
-  const wikiSlugs = ['iglaots', 'oxygenot', 'rexia', 'calmera', 'paulistinhaot', 'nostalrius', 'taleon'];
+  if (params.slug === 'paulistinhaot') {
+    return {
+      title: 'PaulistinhaOT Server Guide: Worlds, PvP, Updates & Client',
+      description: 'PaulistinhaOT server guide covering Deletera, Lordebra and Arkadia worlds, PvP modes, 15.30 updates, task systems, Targuna, safe client links, and live listing context.',
+    };
+  }
+  const wikiSlugs = ['iglaots', 'oxygenot', 'rexia', 'calmera', 'nostalrius', 'taleon'];
   if (wikiSlugs.includes(String(params.slug || '').toLowerCase())) {
     const name = String(params.slug).replace(/-/g, ' ');
     return {
@@ -84,5 +91,6 @@ export default async function ServerSlugPage({ params }) {
   if (slug === 'amonot') return <AmonotWikiPage />;
   if (slug === 'nostalrius') return <NostalriusWikiPage />;
   if (slug === 'sandots') return <SandotsWikiPage />;
+  if (slug === 'paulistinhaot') return <PaulistinhaotWikiPage />;
   return <CanonicalServerRoute slug={slug} />;
 }
