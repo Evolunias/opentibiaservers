@@ -14,6 +14,7 @@ import AmonotWikiPage from '@/app/components/AmonotWikiPage';
 import NostalriusWikiPage from '@/app/components/NostalriusWikiPage';
 import SandotsWikiPage from '@/app/components/SandotsWikiPage';
 import PaulistinhaotWikiPage from '@/app/components/PaulistinhaotWikiPage';
+import CalmeraWikiPage from '@/app/components/CalmeraWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
@@ -64,7 +65,13 @@ export async function generateMetadata({ params }) {
       description: 'PaulistinhaOT server guide covering Deletera, Lordebra and Arkadia worlds, PvP modes, 15.30 updates, task systems, Targuna, safe client links, and live listing context.',
     };
   }
-  const wikiSlugs = ['iglaots', 'oxygenot', 'rexia', 'calmera', 'nostalrius', 'taleon'];
+  if (params.slug === 'calmera') {
+    return {
+      title: 'Calmera Server Guide: Worlds, Rates, PvP, Client & Activity',
+      description: 'Calmera server guide covering Anthera and Emporium, 300x rates, Optional PvP, instances, the CTC Launcher, dated directory activity, safe source links, and community context.',
+    };
+  }
+  const wikiSlugs = ['iglaots', 'oxygenot', 'rexia', 'nostalrius', 'taleon'];
   if (wikiSlugs.includes(String(params.slug || '').toLowerCase())) {
     const name = String(params.slug).replace(/-/g, ' ');
     return {
@@ -92,5 +99,6 @@ export default async function ServerSlugPage({ params }) {
   if (slug === 'nostalrius') return <NostalriusWikiPage />;
   if (slug === 'sandots') return <SandotsWikiPage />;
   if (slug === 'paulistinhaot') return <PaulistinhaotWikiPage />;
+  if (slug === 'calmera') return <CalmeraWikiPage />;
   return <CanonicalServerRoute slug={slug} />;
 }
