@@ -16,6 +16,7 @@ import SandotsWikiPage from '@/app/components/SandotsWikiPage';
 import PaulistinhaotWikiPage from '@/app/components/PaulistinhaotWikiPage';
 import CalmeraWikiPage from '@/app/components/CalmeraWikiPage';
 import RexiaWikiPage from '@/app/components/RexiaWikiPage';
+import OxygenotWikiPage from '@/app/components/OxygenotWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
@@ -78,7 +79,13 @@ export async function generateMetadata({ params }) {
       description: 'Rexia 8.60 server guide covering official staged rates, Reborn requirements, level-200k PvP, tasks, instances, systems, markets, safe client links, activity, and community sources.',
     };
   }
-  const wikiSlugs = ['iglaots', 'oxygenot', 'nostalrius', 'taleon'];
+  if (params.slug === 'oxygenot') {
+    return {
+      title: 'OxygenOT Server Guide: PvP-E, Systems, Client & Activity',
+      description: 'OxygenOT server guide covering Open PvP, weekly PvP-E, client updates, quests, dungeons, bosses, daily tasks, attributes, Hunt Analyzer, safe downloads, activity, and sources.',
+    };
+  }
+  const wikiSlugs = ['iglaots', 'nostalrius', 'taleon'];
   if (wikiSlugs.includes(String(params.slug || '').toLowerCase())) {
     const name = String(params.slug).replace(/-/g, ' ');
     return {
@@ -108,5 +115,6 @@ export default async function ServerSlugPage({ params }) {
   if (slug === 'paulistinhaot') return <PaulistinhaotWikiPage />;
   if (slug === 'calmera') return <CalmeraWikiPage />;
   if (slug === 'rexia') return <RexiaWikiPage />;
+  if (slug === 'oxygenot') return <OxygenotWikiPage />;
   return <CanonicalServerRoute slug={slug} />;
 }
