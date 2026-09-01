@@ -12,6 +12,12 @@ import Miracle74WikiPage from '@/app/components/Miracle74WikiPage';
 import NoxiousOTWikiPage from '@/app/components/NoxiousOTWikiPage';
 import AmonotWikiPage from '@/app/components/AmonotWikiPage';
 import NostalriusWikiPage from '@/app/components/NostalriusWikiPage';
+import SandotsWikiPage from '@/app/components/SandotsWikiPage';
+import PaulistinhaotWikiPage from '@/app/components/PaulistinhaotWikiPage';
+import CalmeraWikiPage from '@/app/components/CalmeraWikiPage';
+import RexiaWikiPage from '@/app/components/RexiaWikiPage';
+import OxygenotWikiPage from '@/app/components/OxygenotWikiPage';
+import IglaotsWikiPage from '@/app/components/IglaotsWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
@@ -50,7 +56,43 @@ export async function generateMetadata({ params }) {
       description: 'An evidence-led Nostalrius 7.4 Wiki guide covering Retro Open PvP, staged rates, stamina, Forge, Tier systems, bosses, events, rules, and official downloads.',
     };
   }
-  const wikiSlugs = ['iglaots', 'oxygenot', 'rexia', 'calmera', 'paulistinhaot', 'sandots', 'nostalrius', 'taleon'];
+  if (params.slug === 'sandots') {
+    return {
+      title: 'SandOTS Server Guide: Rates, Reborn, PvP, Tasks & Client',
+      description: 'SandOTS server guide covering its 8.6 PVP listing, x500 snapshot, Reborn system, tasks, dungeons, PvP rules, safe client path, and official sources.',
+    };
+  }
+  if (params.slug === 'paulistinhaot') {
+    return {
+      title: 'PaulistinhaOT Server Guide: Worlds, PvP, Updates & Client',
+      description: 'PaulistinhaOT server guide covering Deletera, Lordebra and Arkadia worlds, PvP modes, 15.30 updates, task systems, Targuna, safe client links, and live listing context.',
+    };
+  }
+  if (params.slug === 'calmera') {
+    return {
+      title: 'Calmera Server Guide: Worlds, Rates, PvP, Client & Activity',
+      description: 'Calmera server guide covering Anthera and Emporium, 300x rates, Optional PvP, instances, the CTC Launcher, dated directory activity, safe source links, and community context.',
+    };
+  }
+  if (params.slug === 'rexia') {
+    return {
+      title: 'Rexia 8.60 Server Guide: Rates, Reborn, PvP, Systems & Client',
+      description: 'Rexia 8.60 server guide covering official staged rates, Reborn requirements, level-200k PvP, tasks, instances, systems, markets, safe client links, activity, and community sources.',
+    };
+  }
+  if (params.slug === 'oxygenot') {
+    return {
+      title: 'OxygenOT Server Guide: PvP-E, Systems, Client & Activity',
+      description: 'OxygenOT server guide covering Open PvP, weekly PvP-E, client updates, quests, dungeons, bosses, daily tasks, attributes, Hunt Analyzer, safe downloads, activity, and sources.',
+    };
+  }
+  if (params.slug === 'iglaots') {
+    return {
+      title: 'IglaOTS Server Guide: 15.30 PvP, Task Board, Forge & Client',
+      description: 'IglaOTS 15.30 server guide covering Retro PvP, Season, Offseason, Lowrate, Task Board, Forge, Enchanting, bosses, charms, client safety, activity, and official wiki sources.',
+    };
+  }
+  const wikiSlugs = ['nostalrius', 'taleon'];
   if (wikiSlugs.includes(String(params.slug || '').toLowerCase())) {
     const name = String(params.slug).replace(/-/g, ' ');
     return {
@@ -76,5 +118,11 @@ export default async function ServerSlugPage({ params }) {
   if (slug === 'noxiousot') return <NoxiousOTWikiPage />;
   if (slug === 'amonot') return <AmonotWikiPage />;
   if (slug === 'nostalrius') return <NostalriusWikiPage />;
+  if (slug === 'sandots') return <SandotsWikiPage />;
+  if (slug === 'paulistinhaot') return <PaulistinhaotWikiPage />;
+  if (slug === 'calmera') return <CalmeraWikiPage />;
+  if (slug === 'rexia') return <RexiaWikiPage />;
+  if (slug === 'oxygenot') return <OxygenotWikiPage />;
+  if (slug === 'iglaots') return <IglaotsWikiPage />;
   return <CanonicalServerRoute slug={slug} />;
 }

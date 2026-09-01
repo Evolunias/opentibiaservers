@@ -32,7 +32,7 @@ export default function ServerList({ servers }) {
         <table className="w-full text-sm">
           <tbody>
           <tr className="server-list__featured-row">
-            <td colSpan={8} className="px-4 py-3">
+            <td colSpan={7} className="px-4 py-3">
               <div className="server-list__featured-content">
                 <div className="server-list__featured-brand">
                   <span className="server-list__featured-mark" aria-hidden="true">01</span>
@@ -101,7 +101,6 @@ export default function ServerList({ servers }) {
             </div>
             <dl className="directory-row__metrics">
               <div><dt>Highest players</dt><dd>{formatNumber(server.players_peak || server.players_online || 0)}</dd></div>
-              <div><dt>Capacity</dt><dd>{formatNumber(server.max_players)}</dd></div>
               <div><dt>Uptime</dt><dd>{formatPercent(server.uptime_percent)}</dd></div>
             </dl>
             <Link href={getServerPath(server)} onClick={(event) => event.stopPropagation()} className="directory-row__action">View profile <span aria-hidden="true">→</span></Link>
