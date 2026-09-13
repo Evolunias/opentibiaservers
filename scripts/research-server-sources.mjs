@@ -101,6 +101,15 @@ function threadKey(url = '') {
   return String(url).match(/\/threads\/[^/]*\.(\d+)/i)?.[1] || String(url).replace(/#.*$/, '').replace(/\/$/, '');
 }
 
+function isDirectCommunityThreadUrl(value = '') {
+  try {
+    const url = new URL(value);
+    return url.hostname.replace(/^www\./, '') === 'community_archive.net' && /\/threads\//i.test(url.pathname);
+  } catch {
+    return false;
+  }
+}
+
 function officialPageKey(url = '') {
   try {
     return new URL(url).hostname.replace(/^www\./, '').toLowerCase();
@@ -360,14 +369,15 @@ if (shouldFetch) {
 
 for (const entry of entries) {
   entry.official_pages = entry.official_pages.map((page) => applyOfficialMetadataAssessment(page, entry));
-  const ownerThreads = entry.community_archive_threads.filter((thread) => thread.thread_role !== 'community_discussion');
+  const attributableThreads = entry.community_archive_threads.filter((thread) => isDirectCommunityThreadUrl(thread.source_url));
+  const ownerThreads = attributableThreads.filter((thread) => thread.thread_role !== 'community_discussion');
   const ownerThreadAuthors = new Set(ownerThreads
     .map((thread) => thread.author || thread.posts?.[0]?.author)
     .filter(Boolean));
   entry.owner_excerpt = ownerThreads
     .flatMap((thread) => (thread.posts?.length ? thread.posts : [normalizedArchivedPost(thread)].filter(Boolean)))
     .find((post) => ownerThreadAuthors.has(post.author)) || null;
-  const communityPosts = entry.community_archive_threads.flatMap((thread) => {
+  const communityPosts = attributableThreads.flatMap((thread) => {
     const posts = thread.posts || [];
     if (thread.thread_role === 'community_discussion') return posts;
     const owner = thread.author || posts[0]?.author;
@@ -383,7 +393,7 @@ for (const entry of entries) {
     .slice(0, 3);
   entry.source_signals = [...new Set(signalsFor([
     ...entry.official_pages.map((page) => page.description || ''),
-    ...entry.community_archive_threads.flatMap((thread) => [
+    ...attributableThreads.flatMap((thread) => [
       thread.title || '',
       thread.first_post_excerpt || '',
       ...(thread.posts || []).map((post) => post.excerpt || ''),
@@ -406,7 +416,7 @@ const output = {
   stats: {
     canonical_servers: entries.length,
     with_summary: entries.filter((entry) => entry.summary).length,
-    with_owner_thread: entries.filter((entry) => entry.community_archive_threads.some((thread) => thread.thread_role !== 'community_discussion')).length,
+    with_owner_thread: entries.filter((entry) => entry.owner_excerpt).length,
     with_community_excerpts: entries.filter((entry) => entry.community_excerpts.length).length,
     with_official_metadata: entries.filter((entry) => entry.official_pages.some((page) => page.description)).length,
     insufficient: entries.filter((entry) => entry.source_status === 'insufficient').length,
@@ -417,13 +427,14 @@ const output = {
 if (!dryRun) fs.writeFileSync(outputPath, `${JSON.stringify(output, null, 2)}\n`, 'utf8');
 const excerptManifest = Object.fromEntries(entries.map((entry) => {
   const official = entry.official_pages.find((page) => page.description);
-  const ownerThread = entry.community_archive_threads.find((thread) => thread.thread_role !== 'community_discussion');
-  const thread = ownerThread || entry.community_archive_threads[0];
+  const attributableThreads = entry.community_archive_threads.filter((thread) => isDirectCommunityThreadUrl(thread.source_url));
+  const ownerThread = attributableThreads.find((thread) => thread.thread_role !== 'community_discussion');
+  const thread = ownerThread || attributableThreads[0];
   const owner = entry.owner_excerpt;
   const community = entry.community_excerpts[0];
   const researchSources = [
     official?.url ? { type: 'official_website', url: official.url, label: `${entry.name} official website` } : null,
-    ...entry.community_archive_threads.slice(0, 3).map((item) => item.source_url ? {
+    ...attributableThreads.slice(0, 3).map((item) => item.source_url ? {
       type: item.thread_role === 'community_discussion' ? 'community_forum' : 'owner_thread',
       url: item.source_url,
       label: item.thread_role === 'community_discussion' ? `${entry.name} community_archive discussion` : `${entry.name} owner thread on community_archive`,

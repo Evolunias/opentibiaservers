@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-09-13T00:00:00.000Z",
+  "policy": "Only server-specific marks survive visual review. Promotional cards, screenshots, scenery, client-platform icons, generic Tibia/CipSoft artwork, and another server's branding remain placeholders.",
+  "rejected_sources": [
+    {
+      "slug": "brazzinot",
+      "url": "https://brazzinot.com.br/templates/tibiacom/images/features/ps5_brazzinot.png",
+      "reason": "promotional_card_not_logo"
+    },
+    {
+      "slug": "drakorya",
+      "url": "http://drakorya.com.br/plugins/start-countdown/logo.png",
+      "reason": "image_brands_zabojca_not_drakorya"
+    },
+    {
+      "slug": "elfenserver",
+      "url": "https://elfenserver.com/templates/pokecroc/images/logo.png",
+      "reason": "image_brands_pokecroc_not_elfenserver"
+    },
+    {
+      "slug": "endless",
+      "url": "https://endless.com.mx/layout/images/pageloader/dragon_logo_by_alex.gif",
+      "reason": "image_brands_obbia_not_endless"
+    },
+    {
+      "slug": "fantasydream",
+      "url": "https://fantasydream.com.br/assets/lunary-logo.png",
+      "reason": "image_brands_lunary_not_fantasydream"
+    },
+    {
+      "slug": "grimhold",
+      "url": "https://grimhold.servegame.com/plugins/theme-canary/themes/grimhold/images/header/tibia-logo-artwork-top.gif",
+      "reason": "generic_tibia_cipsoft_artwork"
+    },
+    {
+      "slug": "madot",
+      "url": "https://oasis.madot.com.br/templates/tibiacom/images/android_logo.png",
+      "reason": "android_platform_mark_not_server_logo"
+    },
+    {
+      "slug": "marolaot",
+      "url": "https://marolaot.com.br/images/marolaot-bg.jpg",
+      "reason": "scenery_background_not_logo"
+    },
+    {
+      "slug": "tibinha",
+      "url": "https://www.tibinha.com/layout/images/logo.png",
+      "reason": "gameplay_banner_not_logo"
+    },
+    {
+      "slug": "vagosclub",
+      "url": "https://vagosclub.cl/plugins/theme-aldora/themes/aldora/images/logo.png",
+      "reason": "image_brands_aldora_not_vagosclub"
+    }
+  ]
+}

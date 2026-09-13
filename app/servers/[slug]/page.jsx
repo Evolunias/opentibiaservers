@@ -18,18 +18,19 @@ import CalmeraWikiPage from '@/app/components/CalmeraWikiPage';
 import RexiaWikiPage from '@/app/components/RexiaWikiPage';
 import OxygenotWikiPage from '@/app/components/OxygenotWikiPage';
 import IglaotsWikiPage from '@/app/components/IglaotsWikiPage';
+import TaleonWikiPage from '@/app/components/TaleonWikiPage';
 
 export async function generateMetadata({ params }) {
   if (params.slug === 'aurera-global') {
     return {
       title: 'Aurera Global | OpenTibiaServers Wiki',
-      description: 'A wiki-style Aurera Global guide covering worlds, Retro-PvP, rates, events, rules, client paths, and current verification.',
+      description: 'A detailed Aurera Global guide covering worlds, Retro-PvP, rates, events, rules, client paths, and current verification.',
     };
   }
   if (params.slug === 'kaldrox') {
     return {
       title: 'Kaldrox | OpenTibiaServers Wiki',
-      description: 'A wiki-style Kaldrox guide covering the 8.60 Global Map profile, staged rates, PvP, systems, client verification, and current source notes.',
+      description: 'A detailed Kaldrox guide covering the 8.60 Global Map profile, staged rates, PvP, systems, client verification, and current source notes.',
     };
   }
   if (params.slug === 'miracle74') {
@@ -92,12 +93,26 @@ export async function generateMetadata({ params }) {
       description: 'IglaOTS 15.30 server guide covering Retro PvP, Season, Offseason, Lowrate, Task Board, Forge, Enchanting, bosses, charms, client safety, activity, and official wiki sources.',
     };
   }
-  const wikiSlugs = ['nostalrius', 'taleon'];
+  if (params.slug === 'taleon') {
+    return {
+      title: 'Taleon Server Guide: SAN vs Aura, Rates, Client & Systems',
+      description: 'Taleon server guide comparing SAN and Aura, current rates and client signals, quests, bosses, custom systems, safe downloads, history, and FAQs.',
+      keywords: ['Taleon', 'Taleon server', 'Taleon SAN', 'Taleon Aura', 'Taleon rates', 'Taleon download', 'Taleon client', 'Open Tibia server'],
+      alternates: { canonical: '/servers/taleon' },
+      openGraph: {
+        title: 'Taleon Server Guide: SAN vs Aura, Rates, Client & Systems',
+        description: 'Compare Taleon SAN and Aura, understand rates, clients, systems, downloads, and world differences before joining.',
+        url: '/servers/taleon',
+        type: 'article',
+      },
+    };
+  }
+  const wikiSlugs = ['nostalrius'];
   if (wikiSlugs.includes(String(params.slug || '').toLowerCase())) {
     const name = String(params.slug).replace(/-/g, ' ');
     return {
       title: `${name.replace(/\b\w/g, (letter) => letter.toUpperCase())} Server Guide | OpenTibiaServers Wiki`,
-      description: `Wiki-style ${name} guide covering server rates, client information, systems, activity, official sources, and how to start.`,
+      description: `Detailed ${name} guide covering server rates, client information, systems, activity, official sources, and how to start.`,
     };
   }
   return buildCanonicalServerMetadata(params.slug);
@@ -124,5 +139,6 @@ export default async function ServerSlugPage({ params }) {
   if (slug === 'rexia') return <RexiaWikiPage />;
   if (slug === 'oxygenot') return <OxygenotWikiPage />;
   if (slug === 'iglaots') return <IglaotsWikiPage />;
+  if (slug === 'taleon') return <TaleonWikiPage />;
   return <CanonicalServerRoute slug={slug} />;
 }

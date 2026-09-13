@@ -52,7 +52,6 @@ const externalLinks = [
   ['Evolunia official rules', 'https://evolunia.net/?subtopic=rules'],
   ['Evolunia official Server Info', 'https://evolunia.net/?subtopic=serverinfo'],
   ['OTLand launch thread: Germany 10.98 Evolunia', 'https://otland.net/threads/germany-10-98-evolunia.255188/'],
-  ['Evolunia reference wiki', 'https://evolunia.fandom.com/wiki/Evolunia_Wiki%3AEvolunia_Wiki'],
   ['TibiaOTList public record', 'https://tibiaotlist.com/servers/status-evolunia-net'],
   ['OT Archive equipment reference', 'https://otarchive.com/server/62cde2f41770eac22ec6ad5b'],
   ['OpenTibiaServers directory', '/'],

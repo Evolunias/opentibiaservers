@@ -1,10 +1,10 @@
 {
-  "auditedAt": "2026-08-02T03:53:12.221Z",
+  "auditedAt": "2026-09-13T09:27:10.615Z",
   "status": "passed",
   "code": {
-    "files": 906,
-    "exactPageWrappers": 410,
-    "uniqueWrapperSlugs": 410
+    "files": 1549,
+    "exactPageWrappers": 124,
+    "uniqueWrapperSlugs": 124
   },
   "sourceProseBoundary": {
     "snapshots": 2,
@@ -27,7 +27,7 @@
       "pages": 11,
       "uniquePageSignatures": 11,
       "sourceBacked": 11,
-      "minimumRenderedWords": 653,
+      "minimumRenderedWords": 674,
       "minimumVoiceScore": 5
     },
     "resources": {
@@ -45,17 +45,17 @@
       "minimumVoiceScore": 5
     },
     "directoryProfiles": {
-      "pages": 120,
-      "uniquePageSignatures": 120,
-      "sourceBacked": 120,
-      "minimumRenderedWords": 1924,
+      "pages": 119,
+      "uniquePageSignatures": 119,
+      "sourceBacked": 119,
+      "minimumRenderedWords": 1925,
       "minimumVoiceScore": 5
     },
-    "communityArchiveProfiles": {
+    "community_archiveProfiles": {
       "pages": 190,
       "uniquePageSignatures": 190,
       "sourceBacked": 190,
-      "minimumRenderedWords": 265,
+      "minimumRenderedWords": 1001,
       "minimumVoiceScore": 5
     }
   },

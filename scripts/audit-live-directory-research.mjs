@@ -314,7 +314,10 @@ for (const [slug, entry] of logoManifestEntries) {
   if (entry.source_type === 'official_website' && isHttpUrl(entry.source_url) && liveBySlug.get(slug)?.root_domain) {
     const sourceHost = new URL(entry.source_url).hostname.replace(/^www\./, '');
     const expectedRoot = liveBySlug.get(slug).root_domain;
-    if (sourceHost !== expectedRoot && !sourceHost.endsWith(`.${expectedRoot}`)) problems.push(`official logo source does not match canonical root domain ${expectedRoot}`);
+    const declaredDomains = new Set((entry.domains || []).map((domain) => text(domain).replace(/^www\./, '').toLowerCase()));
+    if (sourceHost !== expectedRoot && !sourceHost.endsWith(`.${expectedRoot}`) && !declaredDomains.has(expectedRoot)) {
+      problems.push(`official logo source does not match canonical root domain ${expectedRoot}`);
+    }
   }
   if (entry.source_type === 'user_supplied' && !text(entry.source_reference)) problems.push('user_supplied logo lacks source_reference');
   if (!Number.isFinite(Number(entry.width)) || Number(entry.width) <= 0 || !Number.isFinite(Number(entry.height)) || Number(entry.height) <= 0) problems.push('invalid intrinsic dimensions');
@@ -428,8 +431,8 @@ const calculatedStats = {
 const generatorStats = {
   canonical_servers: researchRows.length,
   with_summary: researchRows.filter((entry) => text(entry.summary)).length,
-  with_owner_thread: researchRows.filter((entry) => (entry.community_archive_threads || []).some((thread) => thread.thread_role !== 'community_discussion')).length,
-  with_community_excerpts: researchRows.filter((entry) => (entry.community_excerpts || []).length > 0).length,
+  with_owner_thread: researchRows.filter(hasOwnerThread).length,
+  with_community_excerpts: researchRows.filter((entry) => validCommunityExcerpts(entry).length > 0).length,
   with_official_metadata: researchRows.filter((entry) => (entry.official_pages || []).some((page) => text(page.description))).length,
   insufficient: researchRows.filter((entry) => entry.source_status === 'insufficient').length,
 };

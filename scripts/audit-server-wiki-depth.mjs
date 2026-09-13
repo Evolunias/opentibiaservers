@@ -20,6 +20,7 @@ const REQUIRED_FIELDS = [
 
 const failures = [];
 const statusCounts = new Map();
+const dynamicRouteSource = fs.readFileSync(path.join('app', 'servers', '[slug]', 'page.jsx'), 'utf8');
 
 for (const server of topOtservlistServers) {
   const page = getOtServerCuratedPage(server.slug);
@@ -31,7 +32,8 @@ for (const server of topOtservlistServers) {
   }
 
   const routePath = path.join('app', server.slug, `${server.slug}.jsx`);
-  if (!fs.existsSync(routePath)) {
+  const hasDedicatedDynamicPage = dynamicRouteSource.includes(`slug === '${server.slug}'`);
+  if (!fs.existsSync(routePath) && !hasDedicatedDynamicPage) {
     failures.push(`${server.slug}: missing physical exact-match route ${routePath}`);
   }
 

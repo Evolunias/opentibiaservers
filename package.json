@@ -23,6 +23,7 @@
     "discover:community": "node scripts/discover-community-sources.mjs",
     "rescore:community": "node scripts/rescore-community-sources.mjs",
     "audit:wiki-depth": "node scripts/audit-server-wiki-depth.mjs",
+    "audit:listings": "node scripts/audit-listing-publication-quality.mjs",
     "audit:knowledge": "node scripts/audit-knowledge-pages.mjs",
     "audit:knowledge-catalog": "node scripts/audit-knowledge-catalog.mjs",
     "fetch:official-knowledge": "node scripts/fetch-official-knowledge-snapshots.mjs",
@@ -30,7 +31,8 @@
     "generate:server-review-pages": "node scripts/generate-server-review-pages.mjs",
     "wiki:migrate": "tsx scripts/wiki-migration.ts",
     "typecheck:wiki": "tsc --noEmit --project tsconfig.wiki.json",
-    "submit:indexnow": "node scripts/submit-indexnow.mjs"
+    "submit:indexnow": "node scripts/submit-indexnow.mjs",
+    "discover:official-logos": "node scripts/discover-official-server-logos.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.105.1",

@@ -3,23 +3,25 @@
   "policy": "Only locally archived, primary-source or explicitly user-supplied server branding is eligible. Remote images, trackers, generic icons, third-party directory marks, and unrelated promotional artwork are never used as server thumbnails.",
   "entries": {
     "cyleria": {
-      "src": "https://cdn.builder.io/api/v1/image/assets%2F11d85985aefc4e3faaeb7a165a6ce799%2F94002ff5c8c24c2c96536bec39e61b3e?format=webp&width=800&height=1200",
+      "src": "/images/server-logos/cyleria.webp",
       "alt": "Cyleria Open Tibia Server logo",
       "kind": "logo_banner",
       "source_type": "user_supplied",
       "source_reference": "user-uploaded cylerias.png",
-      "width": 800,
-      "height": 1200,
+      "width": 782,
+      "height": 432,
+      "sha256": "7feee8df136b6aabd05478a3905eaad3c8321c634c0d211b3dfdb49286a26a78",
       "aliases": []
     },
     "baiak-icewar": {
-      "src": "https://cdn.builder.io/api/v1/image/assets%2F11d85985aefc4e3faaeb7a165a6ce799%2Feef05f6adf434c598fcd8c5c31112ffd?format=webp&width=800&height=1200",
+      "src": "/images/server-logos/baiak-icewar.webp",
       "alt": "Baiak Icewar logo",
       "kind": "logo_banner",
       "source_type": "user_supplied",
       "source_reference": "user-uploaded Baiak Icewar logo",
-      "width": 800,
-      "height": 1200,
+      "width": 196,
+      "height": 158,
+      "sha256": "2dfc9a92d84aa2d2713dcc629c9b5185ac78ceeac5a8fc2eead0d3cd0331cdd5",
       "aliases": []
     },
     "baiak-ilusion": {
@@ -47,28 +49,34 @@
       "aliases": []
     },
     "miracle-7-4": {
-      "src": "https://cdn.builder.io/api/v1/image/assets%2F11d85985aefc4e3faaeb7a165a6ce799%2F443094e3b4db431ba48d034e6634f91b?format=webp&width=800&height=1200",
+      "src": "/images/server-logos/miracle-7-4.webp",
       "alt": "Miracle 7.4 old school server logo",
       "kind": "logo_banner",
       "source_type": "user_supplied",
       "source_reference": "user-uploaded Miracle74 logo",
-      "width": 800,
-      "height": 1200,
+      "width": 380,
+      "height": 260,
+      "sha256": "23d4c547f0e06c7703a93988201cc4578e7684b0f7d060831098fffd2eb970a7",
       "aliases": [
-        "miracle74",
-        "Miracle74",
         "Miracle 7.4"
       ]
     },
     "underwar": {
-      "src": "https://cdn.builder.io/api/v1/image/assets%2F592400cedd2c4292a737c1a4374ac616%2F27c8d8f22df6476aa6275f1ebcf4a0e2?format=webp&width=800&height=1200",
-      "alt": "UnderWar 2.0 dragon logo",
-      "kind": "logo",
+      "src": "/images/server-logos/underwar.webp",
+      "alt": "Underwar server logo",
+      "kind": "logo_banner",
       "source_type": "user_supplied",
       "source_reference": "underwar.png",
-      "width": 560,
-      "height": 512,
-      "aliases": []
+      "domains": [
+        "underwar.org"
+      ],
+      "width": 549,
+      "height": 455,
+      "sha256": "a6a67edaac9d35328dccb395c87e5e54244a6abeb936a7eedc7f05bc0639a961",
+      "aliases": [
+        "UnderWar",
+        "Underwar"
+      ]
     },
     "ezodus": {
       "src": "/images/server-logos/ezodus.png",
@@ -85,6 +93,26 @@
       "aliases": [
         "free-exercis-new-ppl",
         "20th-february-2026-18-00"
+      ]
+    },
+    "taleon": {
+      "src": "/images/server-logos/taleon.png",
+      "alt": "Taleon Online official community logo",
+      "kind": "logo",
+      "source_type": "official_website",
+      "source_url": "https://www.taleon.online/",
+      "image_source_url": "https://cdn.discordapp.com/icons/328238359275241483/bc12d03653d6a44702b0f306255a39be.png?size=256&asset=taleon-logo",
+      "domains": [
+        "taleon.online"
+      ],
+      "width": 180,
+      "height": 180,
+      "sha256": "517722c0a0a8d06dcf564ccb4089040d1c539870cb23b774dbb1169d156bd513",
+      "aliases": [
+        "Taleon",
+        "Taleon Online",
+        "taleon-sanpvp",
+        "taleon-aurapvp"
       ]
     },
     "koliseuot": {
@@ -166,22 +194,6 @@
       "aliases": [
         "Ixodus",
         "ixodus"
-      ]
-    },
-    "underwar": {
-      "src": "/images/server-logos/underwar.png",
-      "alt": "Underwar server logo",
-      "kind": "logo_banner",
-      "source_type": "user_supplied",
-      "source_reference": "underwar.png",
-      "width": 560,
-      "height": 448,
-      "aliases": [
-        "UnderWar",
-        "Underwar"
-      ],
-      "domains": [
-        "underwar.org"
       ]
     },
     "neprenia": {
@@ -400,7 +412,7 @@
       ],
       "width": 543,
       "height": 220,
-      "sha256": "25709b83702d06ffd1515ef54b84d4865b2cc59af54d3406fbfd6de72905606d",
+      "sha256": "b605f2bd9b188a93e92d0c38feb00b41d24b9bdc097f7d59666a165ccf6ec697",
       "aliases": [
         "mythera-7-4",
         "Mythera 7.4"
@@ -450,7 +462,7 @@
       ],
       "width": 1024,
       "height": 1024,
-      "sha256": "be39fe5605cb98c70f33f58ce9031bab63b5dab2e0075d660c37560cb536f3eb",
+      "sha256": "22e6ff1efda56dd240c7fccbdd84c514c4f8f539be810424b2da2585c1002efc",
       "aliases": [
         "Revolt80"
       ]
@@ -468,8 +480,7 @@
       "height": 78,
       "sha256": "09cec9cd5c3480b1c95259786293cfd510cc3eef8c8fa87c69f620cde43a3965",
       "aliases": [
-        "Rexia",
-        "rexia"
+        "Rexia"
       ]
     },
     "rustya": {
@@ -593,7 +604,8 @@
       "source_type": "official_website",
       "source_url": "https://rubinot.com/",
       "domains": [
-        "rubinot.com"
+        "rubinot.com",
+        "rubinot.net"
       ],
       "width": 3118,
       "height": 1382,
@@ -621,7 +633,7 @@
       ]
     },
     "realera": {
-      "src": "https://cdn.builder.io/api/v1/image/assets%2Fc85938fda2fe4a1c97cfe093e9f077bb%2Fa27c034e7ef44c0388e5db38271e69f1?format=webp&width=800&height=1200",
+      "src": "/images/server-logos/realera.webp",
       "alt": "Realera dragon logo",
       "kind": "logo",
       "source_type": "user_supplied",
@@ -629,15 +641,16 @@
       "domains": [
         "realera.org"
       ],
-      "width": 200,
-      "height": 200,
+      "width": 208,
+      "height": 193,
+      "sha256": "0e9afcc75e65ff6605532e2721678af43d0b98673f51e204da2cf354d9c5dee1",
       "aliases": [
         "Realera",
         "realera"
       ]
     },
     "aurera-global": {
-      "src": "https://cdn.builder.io/api/v1/image/assets%2F1d2cd06444d64f5aae6a6cb23ba0be77%2F561df372a1224eea88ec775fa396496b?format=webp&width=800&height=1200",
+      "src": "/images/server-logos/aurera-global.webp",
       "alt": "Aurera Global logo",
       "kind": "logo",
       "source_type": "user_supplied",
@@ -645,15 +658,16 @@
       "domains": [
         "aurera-global.com"
       ],
-      "width": 800,
-      "height": 1200,
+      "width": 324,
+      "height": 195,
+      "sha256": "3b93eaa9ea5697a7bbe078ed11f27960605ab542f58ada6d536707094cabf457",
       "aliases": [
         "Aurera Global",
         "aurera global"
       ]
     },
     "kaldrox": {
-      "src": "https://cdn.builder.io/api/v1/image/assets%2F1d2cd06444d64f5aae6a6cb23ba0be77%2Fa86152e1cca2414da1923d7bad4c9b87?format=webp&width=800&height=1200",
+      "src": "/images/server-logos/kaldrox.webp",
       "alt": "Kaldrox logo",
       "kind": "logo",
       "source_type": "user_supplied",
@@ -661,11 +675,961 @@
       "domains": [
         "kaldrox.com"
       ],
-      "width": 800,
-      "height": 1200,
+      "width": 505,
+      "height": 396,
+      "sha256": "7fcdb824101b22ca9561f9a42e9eaa7c53491a609d86543aabfc75cee8898a47",
       "aliases": [
         "Kaldrox",
         "kaldrox"
+      ]
+    },
+    "alastera": {
+      "src": "/images/server-logos/alastera.png",
+      "alt": "Alastera official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://alastera.com/",
+      "domains": [
+        "alastera.com"
+      ],
+      "width": 189,
+      "height": 165,
+      "sha256": "81f1938dffab743aad16a57ed0848d95268a670242928be3ce599ef8a09aa612",
+      "aliases": [
+        "Alastera"
+      ]
+    },
+    "alzeria": {
+      "src": "/images/server-logos/alzeria.png",
+      "alt": "Alzeria official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://alzeria.org/",
+      "domains": [
+        "alzeria.org"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "sha256": "f68662c1859663767f9da06c603987ac8eb9a842925a11ee7bf924f139e0d2bf",
+      "aliases": [
+        "Alzeria"
+      ]
+    },
+    "amonot": {
+      "src": "/images/server-logos/amonot.png",
+      "alt": "Amonot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://amonot.online/",
+      "domains": [
+        "amonot.online"
+      ],
+      "width": 366,
+      "height": 369,
+      "sha256": "9fe4c51898fe98358a5bc032c6028f3f444a08c2a84647a25e9d1d0ff21b4146",
+      "aliases": [
+        "Amonot"
+      ]
+    },
+    "arguelis": {
+      "src": "/images/server-logos/arguelis.png",
+      "alt": "Arguelis official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://arguelis.online/",
+      "domains": [
+        "arguelis.online"
+      ],
+      "width": 439,
+      "height": 338,
+      "sha256": "8789627fdd762ead626d06b1989faeea194c8b62bed306f090b2d3329e02b646",
+      "aliases": [
+        "Arguelis"
+      ]
+    },
+    "avaloriumot": {
+      "src": "/images/server-logos/avaloriumot.png",
+      "alt": "Avaloriumot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://avaloriumot.com/",
+      "domains": [
+        "avaloriumot.com"
+      ],
+      "width": 2048,
+      "height": 2048,
+      "sha256": "05c7f29af24c9a6e5c6f36c8ce110c01bca77556a0db61591113f45c3b1ff3fd",
+      "aliases": [
+        "Avaloriumot"
+      ]
+    },
+    "babek": {
+      "src": "/images/server-logos/babek.png",
+      "alt": "Babek official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://babek.live/",
+      "domains": [
+        "babek.live"
+      ],
+      "width": 500,
+      "height": 500,
+      "sha256": "e677aca76323926d07d80d458849c10f7aa8e482d95bae520d418a6d34cc8de9",
+      "aliases": [
+        "Babek"
+      ]
+    },
+    "baiak-go": {
+      "src": "/images/server-logos/baiak-go.png",
+      "alt": "Baiak Go official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://baiak-go.com/",
+      "domains": [
+        "baiak-go.com"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "sha256": "607b6cba5e8e405576b9f803c0e0410eb32dcde15988ffd31ee12f94026b442f",
+      "aliases": [
+        "Baiak Go"
+      ]
+    },
+    "baiakeiros": {
+      "src": "/images/server-logos/baiakeiros.png",
+      "alt": "Baiakeiros official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://baiakeiros.com.br/",
+      "domains": [
+        "baiakeiros.com.br"
+      ],
+      "width": 500,
+      "height": 500,
+      "sha256": "00b8dde45249a7d18135e1773ea04cce12dadcc83b6d218af98fc7dcf0538c28",
+      "aliases": [
+        "Baiakeiros"
+      ]
+    },
+    "bestserverot": {
+      "src": "/images/server-logos/bestserverot.png",
+      "alt": "Bestserverot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://bestserverot.com.br/",
+      "domains": [
+        "bestserverot.com.br"
+      ],
+      "width": 420,
+      "height": 280,
+      "sha256": "c562ef52208886c41f71eb8e0fbae90b61209d085815978bdc664b150479dc13",
+      "aliases": [
+        "Bestserverot"
+      ]
+    },
+    "champeon": {
+      "src": "/images/server-logos/champeon.png",
+      "alt": "Champeon official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://champeon.net/",
+      "domains": [
+        "champeon.net"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "sha256": "93b98bb5ace43dad85a6f19e223e58e75cbc48198bc5ef0edabff66c2b4b45b7",
+      "aliases": [
+        "Champeon"
+      ]
+    },
+    "cyntara": {
+      "src": "/images/server-logos/cyntara.png",
+      "alt": "Cyntara official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://cyntara.org/",
+      "domains": [
+        "cyntara.org"
+      ],
+      "width": 226,
+      "height": 272,
+      "sha256": "c0a23f11d47e417e8bab218b885680c6ede0e496cb42cebb515ea6fda9aa60cd",
+      "aliases": [
+        "Cyntara"
+      ]
+    },
+    "daikan": {
+      "src": "/images/server-logos/daikan.png",
+      "alt": "Daikan official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://daikan.pl/",
+      "domains": [
+        "daikan.pl"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "1d9cef60f03310c317019f5285d626c25756a347e2e20a551f03d49a1adc0302",
+      "aliases": [
+        "Daikan"
+      ],
+      "allow_shared_brand": true
+    },
+    "dajkan": {
+      "src": "/images/server-logos/dajkan.png",
+      "alt": "Dajkan official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://dajkan.com/",
+      "domains": [
+        "dajkan.com"
+      ],
+      "width": 1672,
+      "height": 941,
+      "sha256": "1d9cef60f03310c317019f5285d626c25756a347e2e20a551f03d49a1adc0302",
+      "aliases": [
+        "Dajkan"
+      ],
+      "allow_shared_brand": true
+    },
+    "dragora": {
+      "src": "/images/server-logos/dragora.png",
+      "alt": "Dragora official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://dragora.online/",
+      "domains": [
+        "dragora.online"
+      ],
+      "width": 200,
+      "height": 158,
+      "sha256": "b25404b303c1a6eba99048c49b79478c8985b0fdef64064ac66058660a4de2fc",
+      "aliases": [
+        "Dragora"
+      ]
+    },
+    "drakoria80": {
+      "src": "/images/server-logos/drakoria80.png",
+      "alt": "Drakoria80 official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://drakoria80.online/landing.php",
+      "domains": [
+        "drakoria80.online"
+      ],
+      "width": 960,
+      "height": 640,
+      "sha256": "b1b1e4d73c7c542416c74c8322f4bf3999fc270ccaa10329f7855aec72584f39",
+      "aliases": [
+        "Drakoria80"
+      ]
+    },
+    "eldoria-global": {
+      "src": "/images/server-logos/eldoria-global.webp",
+      "alt": "Eldoria Global official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://eldoria-global.com.br/",
+      "domains": [
+        "eldoria-global.com.br"
+      ],
+      "width": 290,
+      "height": 100,
+      "sha256": "9dd7ea4985c8821fda1068a33a9706e3e1c527308a13a21d866f4aca15234692",
+      "aliases": [
+        "Eldoria Global"
+      ]
+    },
+    "eloria": {
+      "src": "/images/server-logos/eloria.png",
+      "alt": "Eloria official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://eloria.pl/",
+      "domains": [
+        "eloria.pl"
+      ],
+      "width": 1254,
+      "height": 1254,
+      "sha256": "753c0a12d6ad073996666959bcb3bb27e80b6df4a18b4e36dfa453a26e6ed1dc",
+      "aliases": [
+        "Eloria"
+      ]
+    },
+    "elysium-mmo": {
+      "src": "/images/server-logos/elysium-mmo.png",
+      "alt": "Elysium Mmo official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://elysium-mmo.com/",
+      "domains": [
+        "elysium-mmo.com"
+      ],
+      "width": 800,
+      "height": 800,
+      "sha256": "b03e98bb32f8c392b23c9e921570443f69c713f724e3700ee841aab8a43dac91",
+      "aliases": [
+        "Elysium Mmo"
+      ]
+    },
+    "elythion": {
+      "src": "/images/server-logos/elythion.png",
+      "alt": "Elythion official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://elythion.net/",
+      "domains": [
+        "elythion.net"
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "933b1e637b8d82d07a3a25cde1d1b06b3560258280d85bc212fa944e9eb96d97",
+      "aliases": [
+        "Elythion"
+      ]
+    },
+    "faloria": {
+      "src": "/images/server-logos/faloria.png",
+      "alt": "Faloria official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://faloria.online/",
+      "domains": [
+        "faloria.online"
+      ],
+      "width": 200,
+      "height": 44,
+      "sha256": "5d3611d6e0312c8f92b505add86625bc5d7d12b568b149cd0ea38f6865e624e9",
+      "aliases": [
+        "Faloria"
+      ]
+    },
+    "forgora": {
+      "src": "/images/server-logos/forgora.png",
+      "alt": "Forgora official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://forgora.com.br/",
+      "domains": [
+        "forgora.com.br"
+      ],
+      "width": 500,
+      "height": 500,
+      "sha256": "199d2e434d7485e6ea811debb0f18952a0c9905c832e8e5498e70eb3026446f4",
+      "aliases": [
+        "Forgora"
+      ]
+    },
+    "fortisot": {
+      "src": "/images/server-logos/fortisot.png",
+      "alt": "Fortisot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://fortisot.com/",
+      "domains": [
+        "fortisot.com"
+      ],
+      "width": 1254,
+      "height": 1254,
+      "sha256": "4f67bde3ef967855471cba1c667ebc2343052c36a53410da54aa908afe9c14e1",
+      "aliases": [
+        "Fortisot"
+      ]
+    },
+    "goesot": {
+      "src": "/images/server-logos/goesot.png",
+      "alt": "Goesot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://goesot.com.br/",
+      "domains": [
+        "goesot.com.br"
+      ],
+      "width": 1207,
+      "height": 850,
+      "sha256": "1581b1703def1f8999750db0016b2bc1c83a0bec900100e248459816086595a4",
+      "aliases": [
+        "Goesot"
+      ]
+    },
+    "grimvale76": {
+      "src": "/images/server-logos/grimvale76.png",
+      "alt": "Grimvale76 official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://grimvale76.com.br/",
+      "domains": [
+        "grimvale76.com.br"
+      ],
+      "width": 360,
+      "height": 240,
+      "sha256": "fd1501276c280ee0eaeb4e6c575f8128a81e7e5f55bb1c7b624e08f336d88917",
+      "aliases": [
+        "Grimvale76"
+      ]
+    },
+    "horusbr": {
+      "src": "/images/server-logos/horusbr.png",
+      "alt": "Horusbr official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://horusbr.online/",
+      "domains": [
+        "horusbr.online"
+      ],
+      "width": 196,
+      "height": 158,
+      "sha256": "86287a6449769cb84ce3dbca95f6737a865006ae19cd23a233809446f14dfff2",
+      "aliases": [
+        "Horusbr"
+      ]
+    },
+    "inovaot": {
+      "src": "/images/server-logos/inovaot.png",
+      "alt": "Inovaot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://inovaot.com/",
+      "domains": [
+        "inovaot.com"
+      ],
+      "width": 612,
+      "height": 408,
+      "sha256": "af65bab5bf2ac8f98f53c7a15300e62b54203278575ec418e78b4ef62cf326f5",
+      "aliases": [
+        "Inovaot"
+      ]
+    },
+    "karmaot": {
+      "src": "/images/server-logos/karmaot.png",
+      "alt": "Karmaot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://karmaot.com/",
+      "domains": [
+        "karmaot.com"
+      ],
+      "width": 705,
+      "height": 354,
+      "sha256": "0ea2f915bf1d2583e7f8b0d9e117b5ea7f1443565d9d26a65531b9da0fa97942",
+      "aliases": [
+        "Karmaot"
+      ]
+    },
+    "kingdomageonline": {
+      "src": "/images/server-logos/kingdomageonline.png",
+      "alt": "Kingdomageonline official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.kingdomageonline.com/",
+      "domains": [
+        "kingdomageonline.com"
+      ],
+      "width": 400,
+      "height": 200,
+      "sha256": "ecf5eb98492f5ac3603baf0684d86edb1e716a59e8e8502af7314a1624fb61a0",
+      "aliases": [
+        "Kingdomageonline"
+      ]
+    },
+    "landoriaots": {
+      "src": "/images/server-logos/landoriaots.png",
+      "alt": "Landoriaots official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.landoriaots.pl/",
+      "domains": [
+        "landoriaots.pl"
+      ],
+      "width": 960,
+      "height": 200,
+      "sha256": "5d7966eaa45927026231a1840c0817ebd601586f25d9287ae619e23d90328a55",
+      "aliases": [
+        "Landoriaots"
+      ]
+    },
+    "luzmora": {
+      "src": "/images/server-logos/luzmora.png",
+      "alt": "Luzmora official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://luzmora.servegame.com/",
+      "domains": [
+        "luzmora.servegame.com"
+      ],
+      "width": 196,
+      "height": 158,
+      "sha256": "c48b72050f3d22746c051f172f37611f4891732bf4e4de348ae07f9b61ff4586",
+      "aliases": [
+        "Luzmora"
+      ]
+    },
+    "mazeot": {
+      "src": "/images/server-logos/mazeot.png",
+      "alt": "Mazeot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://mazeot.com/",
+      "domains": [
+        "mazeot.com"
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "d0e1074104e2efddb92bbd7aefb9cd4f0ec6a14f8d107f45d45bfc3b317d6d27",
+      "aliases": [
+        "Mazeot"
+      ]
+    },
+    "medievalonline": {
+      "src": "/images/server-logos/medievalonline.png",
+      "alt": "Medievalonline official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://medievalonline.com.br/",
+      "domains": [
+        "medievalonline.com.br"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "sha256": "706f900d36fcf08f3eaf9fda6554a3f4bb8056f318eb0eb428b87a453fede674",
+      "aliases": [
+        "Medievalonline"
+      ]
+    },
+    "megabaiak": {
+      "src": "/images/server-logos/megabaiak.png",
+      "alt": "Megabaiak official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://megabaiak.com/",
+      "domains": [
+        "megabaiak.com"
+      ],
+      "width": 1169,
+      "height": 360,
+      "sha256": "d3d045840a956dc7baf3bb1fe19af83802bdcee206f2af109dbc143fa2ffca66",
+      "aliases": [
+        "Megabaiak"
+      ]
+    },
+    "miracle74": {
+      "src": "/images/server-logos/miracle74.png",
+      "alt": "Miracle74 official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://miracle74.com/",
+      "domains": [
+        "miracle74.com"
+      ],
+      "width": 380,
+      "height": 260,
+      "sha256": "0e490065885aede3f1b76850667f50c98f2931bdecf772626542068e9cc0364b",
+      "aliases": [
+        "Miracle74"
+      ]
+    },
+    "morgarot": {
+      "src": "/images/server-logos/morgarot.png",
+      "alt": "Morgarot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://morgarot.com/",
+      "domains": [
+        "morgarot.com"
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "6e44b74a1bc24f84c7568f2376e82c41caa67360caf3cd16146bca9620f34d62",
+      "aliases": [
+        "Morgarot"
+      ]
+    },
+    "netunia": {
+      "src": "/images/server-logos/netunia.png",
+      "alt": "Netunia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://netunia.net/",
+      "domains": [
+        "netunia.net"
+      ],
+      "width": 191,
+      "height": 165,
+      "sha256": "7e9f3ecb1916febff1b315f113c342c67a7159bbf4cb267158e11827b04e4fa0",
+      "aliases": [
+        "Netunia"
+      ]
+    },
+    "nocthar": {
+      "src": "/images/server-logos/nocthar.png",
+      "alt": "Nocthar official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://nocthar.com/",
+      "domains": [
+        "nocthar.com"
+      ],
+      "width": 1333,
+      "height": 742,
+      "sha256": "d6f16e02fe124d2dfd02a28fdfc9dfd496922e3ee76d76dd76283a91f37a3986",
+      "aliases": [
+        "Nocthar"
+      ]
+    },
+    "old-ot": {
+      "src": "/images/server-logos/old-ot.webp",
+      "alt": "Old OT official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://old-ot.com/",
+      "domains": [
+        "old-ot.com"
+      ],
+      "width": 582,
+      "height": 429,
+      "sha256": "cbd6285d5d7b4cf14c8ae5d04ac24fb43ef351f8f1cb60f926825f25c2a505f4",
+      "aliases": [
+        "Old OT"
+      ]
+    },
+    "pbotwars": {
+      "src": "/images/server-logos/pbotwars.webp",
+      "alt": "PBotWars official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://pbotwars.com.br/",
+      "domains": [
+        "pbotwars.com.br"
+      ],
+      "width": 328,
+      "height": 197,
+      "sha256": "5cbe0e9d5baf69209ba150f0a9915e3b7517eb8f0e57d520c4a11d1dd329e7a2",
+      "aliases": [
+        "PBotWars"
+      ]
+    },
+    "pokehub": {
+      "src": "/images/server-logos/pokehub.png",
+      "alt": "Pokehub official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://pokehub.cl/",
+      "domains": [
+        "pokehub.cl"
+      ],
+      "width": 398,
+      "height": 308,
+      "sha256": "66a339173792a58915d3e3cff0832f923b8517ad4c1ddf273012cb4e800630a0",
+      "aliases": [
+        "Pokehub"
+      ]
+    },
+    "prestige-imperia": {
+      "src": "/images/server-logos/prestige-imperia.gif",
+      "alt": "Prestige Imperia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://prestige-imperia.sytes.net/",
+      "domains": [
+        "prestige-imperia.sytes.net"
+      ],
+      "width": 1072,
+      "height": 100,
+      "sha256": "fa60d44864858e1b45c2aca60e5208422b6770bd63ed00e98d6c071c061f232d",
+      "aliases": [
+        "Prestige Imperia"
+      ]
+    },
+    "ramonia": {
+      "src": "/images/server-logos/ramonia.png",
+      "alt": "Ramonia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://ramonia.net/",
+      "domains": [
+        "ramonia.net"
+      ],
+      "width": 392,
+      "height": 222,
+      "sha256": "ae10d01f3ff8999a8200ba9119385b8014ada1fe9f607be4e8649b9a0b083b54",
+      "aliases": [
+        "Ramonia"
+      ]
+    },
+    "relicariaot": {
+      "src": "/images/server-logos/relicariaot.png",
+      "alt": "Relicariaot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://relicariaot.com.br/",
+      "domains": [
+        "relicariaot.com.br"
+      ],
+      "width": 500,
+      "height": 500,
+      "sha256": "cac6cdb5ae32848f72274a9109b1e200cdb3348e7727a4c41b2f1d8731789d73",
+      "aliases": [
+        "Relicariaot"
+      ]
+    },
+    "revoria": {
+      "src": "/images/server-logos/revoria.png",
+      "alt": "Revoria official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.revoria.online/",
+      "domains": [
+        "revoria.online"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "sha256": "693ed6b370b87602371d3307b6bf0ea89699acbf4b4dfd62a920199b15fa1f91",
+      "aliases": [
+        "Revoria"
+      ]
+    },
+    "rookaria": {
+      "src": "/images/server-logos/rookaria.png",
+      "alt": "Rookaria official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://rookaria.online/",
+      "domains": [
+        "rookaria.online"
+      ],
+      "width": 1468,
+      "height": 570,
+      "sha256": "53842fe473a0de1e52718559be96d43555049e65846f0d6a4c45a9b065b52121",
+      "aliases": [
+        "Rookaria"
+      ]
+    },
+    "seriousot": {
+      "src": "/images/server-logos/seriousot.png",
+      "alt": "Seriousot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://seriousot.com/",
+      "domains": [
+        "seriousot.com"
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "d33694e47ceb2f82ef8a344f8238b4f01fc026d0f0c08da3b8ed01b669cfb185",
+      "aliases": [
+        "Seriousot"
+      ]
+    },
+    "siriuz": {
+      "src": "/images/server-logos/siriuz.png",
+      "alt": "Siriuz official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://siriuz.online/",
+      "domains": [
+        "siriuz.online"
+      ],
+      "width": 1033,
+      "height": 727,
+      "sha256": "97bf661cabe3ee2f56c88cd5c50dd32b9019f94610cd25dfa88b9da4d2f0711c",
+      "aliases": [
+        "Siriuz"
+      ]
+    },
+    "spider-server": {
+      "src": "/images/server-logos/spider-server.png",
+      "alt": "Spider Server official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://spider-server.com/",
+      "domains": [
+        "spider-server.com"
+      ],
+      "width": 495,
+      "height": 346,
+      "sha256": "8f764ec093f742c263d1e06e214ea8078f8480b5e6b5f36d204bd2f470fa05b9",
+      "aliases": [
+        "Spider Server"
+      ]
+    },
+    "thornia": {
+      "src": "/images/server-logos/thornia.png",
+      "alt": "Thornia official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://thornia.online/",
+      "domains": [
+        "thornia.online"
+      ],
+      "width": 500,
+      "height": 706,
+      "sha256": "d6763f221cd5d5d0897256793e5222e43e22af91ac50dfeb4c13f46fb2b06da6",
+      "aliases": [
+        "Thornia"
+      ]
+    },
+    "thunderot": {
+      "src": "/images/server-logos/thunderot.png",
+      "alt": "Thunderot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://thunderot.com/",
+      "domains": [
+        "thunderot.com"
+      ],
+      "width": 160,
+      "height": 96,
+      "sha256": "204604d6c7bf075ade1fef9b5189e8909725f49e2fcc867b26c194c507cd3df9",
+      "aliases": [
+        "Thunderot"
+      ]
+    },
+    "tibiaorigins": {
+      "src": "/images/server-logos/tibiaorigins.png",
+      "alt": "Tibiaorigins official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://tibiaorigins.com/",
+      "domains": [
+        "tibiaorigins.com"
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "9549ef373d13210d9bb72b374aea7aa3b71df697c68b951dffbdafebeefe604c",
+      "aliases": [
+        "Tibiaorigins"
+      ]
+    },
+    "underold": {
+      "src": "/images/server-logos/underold.png",
+      "alt": "Underold official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://underold.com/",
+      "domains": [
+        "underold.com"
+      ],
+      "width": 196,
+      "height": 158,
+      "sha256": "8925336aeb02c4d909736b3e36f3796c20cac5f22718c4fc065657f8f365112d",
+      "aliases": [
+        "Underold"
+      ]
+    },
+    "universeot": {
+      "src": "/images/server-logos/universeot.png",
+      "alt": "Universeot official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://universeot.com/",
+      "domains": [
+        "universeot.com"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "sha256": "678a683b607b595bcaabb5fdc9c06a427802de621e89d0d259f69f2976f65061",
+      "aliases": [
+        "Universeot"
+      ]
+    },
+    "valerion": {
+      "src": "/images/server-logos/valerion.png",
+      "alt": "Valerion official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://valerion.online/",
+      "domains": [
+        "valerion.online"
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "26e661c94efe9bdb4de41d1b4e8822c7990360d55cd9ab3adf8e8847d44e4c8c",
+      "aliases": [
+        "Valerion"
+      ]
+    },
+    "venerix": {
+      "src": "/images/server-logos/venerix.png",
+      "alt": "Venerix official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://venerix.eu/",
+      "domains": [
+        "venerix.eu"
+      ],
+      "width": 1017,
+      "height": 795,
+      "sha256": "01fe76526059b8d5aa91716c6d8af1cc7e7f8375036dcc1596ce3d26fcc32f31",
+      "aliases": [
+        "Venerix"
+      ]
+    },
+    "wiki-ots": {
+      "src": "/images/server-logos/wiki-ots.png",
+      "alt": "Wiki Ots official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://wiki-ots.com/",
+      "domains": [
+        "wiki-ots.com"
+      ],
+      "width": 625,
+      "height": 243,
+      "sha256": "c801acf87f506f4b40b4528861264ebd5df537183ae72c2a84bf4ae577b94354",
+      "aliases": [
+        "Wiki Ots"
+      ]
+    },
+    "xandebra": {
+      "src": "/images/server-logos/xandebra.png",
+      "alt": "Xandebra official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://xandebra.com.br/",
+      "domains": [
+        "xandebra.com.br"
+      ],
+      "width": 640,
+      "height": 640,
+      "sha256": "20f43209d345bbb177055c464b4476510f4fbf9eefc8b3401a287595ff6db9f9",
+      "aliases": [
+        "Xandebra"
+      ]
+    },
+    "iglaots": {
+      "src": "/images/server-logos/iglaots.png",
+      "alt": "IglaOTS official logo",
+      "kind": "logo",
+      "source_type": "official_website",
+      "source_url": "https://iglaots.net/",
+      "domains": [
+        "iglaots.net"
+      ],
+      "width": 581,
+      "height": 583,
+      "sha256": "1a2a68967f7edc4a94edd3e5541f11ff9aa11f9332b85f0b1a7b64e0de074043",
+      "aliases": [
+        "IglaOTS",
+        "Iglaots",
+        "iglaots"
+      ]
+    },
+    "noxiousot": {
+      "src": "/images/server-logos/noxiousot.gif",
+      "alt": "NoxiousOT official logo",
+      "kind": "logo_banner",
+      "source_type": "official_website",
+      "source_url": "https://www.noxiousot.com/",
+      "domains": [
+        "noxiousot.com"
+      ],
+      "width": 196,
+      "height": 158,
+      "sha256": "3d2873092625f9ca4493469cef577c64dc6691d42a31ca6c022437aeafb5a574",
+      "aliases": [
+        "NoxiousOT",
+        "noxiousot"
       ]
     }
   },

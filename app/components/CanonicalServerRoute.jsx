@@ -1,10 +1,11 @@
 import { notFound, permanentRedirect } from 'next/navigation';
 import CuratedGuideArticle from '@/app/components/CuratedGuideArticle';
-import ServerDetailClient from '@/app/server/[id]/ServerDetailClient';
 import { buildArticleMetadata } from '@/lib/page-metadata';
+import { buildOtServerCuratedPage } from '@/lib/otserver-curated-pages';
 import { getServerExcerpt } from '@/lib/server-excerpts';
 import { getServerReviewPage } from '@/lib/server-review-pages';
 import { getServerRecordBySlug } from '@/lib/server-records';
+import { buildSourceBackedServerProfile } from '@/lib/source-backed-server-profile';
 
 export async function buildCanonicalServerMetadata(slug) {
   const page = getServerReviewPage(slug);
@@ -23,12 +24,8 @@ export async function buildCanonicalServerMetadata(slug) {
 
   const server = await getServerRecordBySlug(slug);
   if (!server) return {};
-  const excerpt = getServerExcerpt(server, { maxLength: 160 });
-  return {
-    title: `${server.name} Open Tibia Server`,
-    description: excerpt || undefined,
-    alternates: { canonical: `/servers/${server.slug}` },
-  };
+  const livePage = buildSourceBackedServerProfile(buildOtServerCuratedPage(server));
+  return buildArticleMetadata({ ...livePage, path: `/servers/${server.slug}` });
 }
 
 export default async function CanonicalServerRoute({ slug }) {
@@ -41,7 +38,8 @@ export default async function CanonicalServerRoute({ slug }) {
   const server = await getServerRecordBySlug(slug);
   if (!server) notFound();
   if (server.slug !== slug) permanentRedirect(`/servers/${server.slug}`);
-  return <ServerDetailClient initialServer={server} serverId={server.id} />;
+  const livePage = buildSourceBackedServerProfile(buildOtServerCuratedPage(server));
+  return <CuratedGuideArticle page={{ ...livePage, path: `/servers/${server.slug}` }} />;
 }
 
 export async function LegacyServerRoute({ slug }) {

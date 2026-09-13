@@ -75,6 +75,50 @@ function normalizeSourceLinks(page) {
   return rawLinks.filter((link) => link && link.href && link.label);
 }
 
+function isPublishableServerSource(source) {
+  try {
+    const url = new URL(source?.href || source?.url || '');
+    const host = url.hostname.replace(/^www\./, '').toLowerCase();
+    if (host === 'opentibiaservers.com' || host === 'google.com') return false;
+    return /^https?:$/.test(url.protocol);
+  } catch {
+    return false;
+  }
+}
+
+function factValue(page, label, fallback) {
+  return (page.facts || []).find((fact) => fact?.label === label)?.value || fallback;
+}
+
+function buildDefaultServerFaqs(page) {
+  const name = page.primaryKeyword;
+  const host = factValue(page, 'Listed host', 'the listed connection address');
+  const profile = factValue(page, 'EXP / PvP / version', 'rates, PvP rules, and client version shown in the reference box');
+  const activity = factValue(page, 'Players snapshot', 'the latest directory snapshot');
+  return [
+    {
+      question: `What is ${name}?`,
+      answer: `${name} is an independently operated Open Tibia server represented in this directory by ${host}. Its page combines the latest listing snapshot with operator-controlled information and clearly marked research gaps.`,
+    },
+    {
+      question: `What client, rates, and PvP type does ${name} use?`,
+      answer: `The captured profile records ${profile}. Confirm these settings on the official server website before starting because worlds, seasons, and rate stages can change.`,
+    },
+    {
+      question: `How active is ${name}?`,
+      answer: `The current reference point is ${activity}. Treat that number as a dated snapshot and compare it with several times of day, recent deaths, guild activity, market movement, and the server's community channels.`,
+    },
+    {
+      question: `Where should I download the ${name} client?`,
+      answer: `Use only the operator-controlled website or launcher linked from this profile. Avoid third-party mirrors, confirm the required client version, and check the server's current rules and support channel before installing anything.`,
+    },
+    {
+      question: `How can I decide whether ${name} suits me?`,
+      answer: `Compare its version, progression speed, PvP rules, region, reset policy, automation rules, activity pattern, and documented systems with the time and play style you want to commit.`,
+    },
+  ];
+}
+
 function normalizeWikiSourceCandidates(wikiDepth) {
   return Array.isArray(wikiDepth?.sourceCandidates)
     ? wikiDepth.sourceCandidates.filter((source) => source && source.href && source.label)
@@ -112,8 +156,8 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
   const isServerProfile = page.type === 'server';
   const researchProfile = isServerProfile ? getServerResearchProfile(page.slug) : null;
   const profileExcerpt = isServerProfile ? getServerExcerpt(page) : null;
-  const profileSources = isServerProfile ? getServerExcerptSources(page) : [];
-  const communityExperiences = isServerProfile && Array.isArray(page.community_excerpts)
+  const profileSources = isServerProfile ? getServerExcerptSources(page).filter(isPublishableServerSource) : [];
+  const communityExperiences = !isServerProfile && Array.isArray(page.community_excerpts)
     ? page.community_excerpts.filter((post) => post?.author && post?.excerpt).slice(0, 3)
     : [];
   const sourceFeatures = isServerProfile && Array.isArray(page.source_features)
@@ -125,7 +169,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
     isGenericServerCopy(page.overview) ||
     page.overview === profileExcerpt
   ) ? null : page.overview;
-  const sourceLinks = normalizeSourceLinks(page);
+  const sourceLinks = normalizeSourceLinks(page).filter((source) => !isServerProfile || isPublishableServerSource(source));
   const cta = page.cta && page.cta.href
     ? page.cta
     : { href: '/', label: 'Browse Open Tibia servers' };
@@ -142,9 +186,10 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
         .filter((paragraph) => !isServerProfile || (!isGenericServerCopy(paragraph) && paragraph !== profileExcerpt)),
     }))
     .filter((section) => section.body.length);
-  const faqs = (Array.isArray(page.faqs) ? page.faqs : Array.isArray(page.faq_items) ? page.faq_items : [])
+  const suppliedFaqs = (Array.isArray(page.faqs) ? page.faqs : Array.isArray(page.faq_items) ? page.faq_items : [])
     .filter(Boolean)
     .filter((faq) => !isServerProfile || (!isGenericServerCopy(faq.answer) && faq.answer !== profileExcerpt));
+  const faqs = suppliedFaqs.length || !isServerProfile ? suppliedFaqs : buildDefaultServerFaqs(page);
   const glossary = isServerProfile ? [] : (Array.isArray(page.glossary) ? page.glossary.filter(Boolean) : []);
   const researchNotes = (Array.isArray(page.researchNotes) ? page.researchNotes : [])
     .filter(Boolean)
@@ -166,15 +211,16 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
     onlineOnly: false,
   });
   const jsonLd = buildCuratedJsonLd(page);
-  const deepDiveSections = isServerProfile ? [] : buildDeepDiveSections(page);
+  const deepDiveSections = buildDeepDiveSections(page);
   const curatedCoda = buildCuratedCoda(page);
   const internalLinks = buildInternalLinks(page);
   const wikiDepth = page.wikiDepth || null;
-  const wikiSourceCandidates = normalizeWikiSourceCandidates(wikiDepth);
+  const wikiSourceCandidates = normalizeWikiSourceCandidates(wikiDepth)
+    .filter((source) => !isServerProfile || isPublishableServerSource(source));
   const gameplayGuide = Array.isArray(wikiDepth?.gameplayGuide) ? wikiDepth.gameplayGuide.filter(Boolean) : [];
   const wikiSystems = wikiDepth && typeof wikiDepth.systems === 'object' && wikiDepth.systems ? wikiDepth.systems : {};
   const editorialQueue = Array.isArray(wikiDepth?.editorialQueue) ? wikiDepth.editorialQueue.filter(Boolean) : [];
-  const curatedCodaBody = isServerProfile ? [] : (Array.isArray(curatedCoda?.body) ? curatedCoda.body.filter(Boolean) : []);
+  const curatedCodaBody = Array.isArray(curatedCoda?.body) ? curatedCoda.body.filter(Boolean) : [];
   const directoryServers = Array.isArray(directoryData?.servers) ? directoryData.servers.filter(Boolean) : [];
 
   return (
@@ -204,6 +250,11 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
             {profileDek ? (
               <p className="max-w-3xl text-lg leading-8 text-black">
                 {profileDek}
+              </p>
+            ) : null}
+            {isServerProfile ? (
+              <p className="mt-5 max-w-3xl text-base leading-8 text-black">
+                <strong><em><u>{page.primaryKeyword}</u></em></strong> is documented here as a player-focused Open Tibia server guide. The page separates current listing facts, operator-controlled links, archived claims, and details that still require confirmation.
               </p>
             ) : null}
             <div className="mt-6 flex flex-wrap gap-3">
@@ -263,8 +314,23 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
 
       <section className={isServerProfile ? 'cyntara-wiki__grid mx-auto max-w-6xl gap-8 px-6 py-8' : 'mx-auto grid max-w-6xl gap-8 px-6 py-8 lg:grid-cols-[minmax(0,1fr)_300px]'}>
         <article className={isServerProfile ? 'cyntara-wiki__content space-y-8' : 'space-y-8'}>
+          {isServerProfile ? (
+            <nav className="rounded border border-gray-300 bg-gray-50 p-5" aria-label={`${page.primaryKeyword} guide contents`}>
+              <p className="text-xs font-bold uppercase tracking-widest text-black">Contents</p>
+              <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+                <a href="#server-evidence">Known facts</a>
+                <a href="#server-systems">Rates and systems</a>
+                <a href="#server-player-guide">Player guide</a>
+                <a href="#server-faq">FAQ</a>
+                <Link href="/">Directory</Link>
+                <Link href="/knowledge">Knowledge guides</Link>
+                <Link href="/resources">Tools and resources</Link>
+              </div>
+            </nav>
+          ) : null}
+
           {profileExcerpt ? (
-            <section className="rounded-xl border border-emerald-200 bg-emerald-50 p-6 shadow-sm">
+            <section id="server-evidence" className="rounded-xl border border-emerald-200 bg-emerald-50 p-6 shadow-sm">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-emerald-800">Source-backed overview</p>
               <h2 className="text-2xl font-bold text-gray-950">What attributed sources say</h2>
               <p className="mt-3 text-base leading-8 text-gray-800">{profileExcerpt}</p>
@@ -342,8 +408,8 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
             </section>
           ) : null}
 
-          {wikiDepth && !isServerProfile ? (
-            <section className="border-b border-gray-200 pb-8">
+          {wikiDepth ? (
+            <section id="server-systems" className="border-b border-gray-200 pb-8">
                   <p className="mb-2 text-xs font-bold uppercase tracking-widest text-black">Source coverage</p>
                   <h2 className="mb-4 text-2xl font-bold text-gray-950">
                   What is known about {page.primaryKeyword}
@@ -480,7 +546,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
           ))}
 
           {faqs.length ? (
-            <section className="border-b border-gray-200 pb-8">
+            <section id="server-faq" className="border-b border-gray-200 pb-8">
                 <h2 className="mb-4 text-2xl font-bold text-black">{page.primaryKeyword} FAQ</h2>
                 <div className="space-y-4">
                   {faqs.map((faq) => (
@@ -549,27 +615,25 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
           ) : null}
 
           {deepDiveSections.length ? (
-            <section className="border-b border-gray-200 pb-8">
+            <section id="server-player-guide" className="border-b border-gray-200 pb-8">
               <p className="mb-2 text-xs font-bold uppercase tracking-widest text-black">Player&apos;s view</p>
               <h2 className="mb-4 text-2xl font-bold text-black">Inside {page.primaryKeyword}: pace, trust, and community</h2>
               <p className="mb-5 text-base leading-8 text-black">
                 A listing can tell you that a world is online. These chapters ask the harder questions: what the first evening may feel like, which evidence deserves trust, who is likely to stay, and what memories the community has yet to preserve.
               </p>
-              <div className="space-y-3">
+              <div className="space-y-8">
                 {deepDiveSections.map((section, index) => (
-                  <details key={`${section.heading}-${index}`} className="rounded border border-black bg-white p-4" open={index < 3}>
-                    <summary className="cursor-pointer">
-                      <span className="block text-xs font-bold uppercase tracking-widest text-black">{section.eyebrow}</span>
-                      <span className="mt-1 block text-lg font-bold text-black">{section.heading}</span>
-                    </summary>
+                  <section key={`${section.heading}-${index}`} className="border-l-2 border-gray-300 pl-5">
+                    <span className="block text-xs font-bold uppercase tracking-widest text-black">{section.eyebrow}</span>
+                    <h3 className="mt-1 text-xl font-bold text-black">{section.heading}</h3>
                     <div className="mt-4 space-y-4">
                       {(Array.isArray(section.body) ? section.body : []).filter(Boolean).map((paragraph) => (
-                        <p key={paragraph} className="text-sm leading-7 text-black">
+                        <p key={paragraph} className="text-base leading-8 text-black">
                           {paragraph}
                         </p>
                       ))}
                     </div>
-                  </details>
+                  </section>
                 ))}
               </div>
             </section>
