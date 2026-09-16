@@ -7,7 +7,7 @@ import { getServerPath } from '@/lib/server-paths';
 export const revalidate = 900;
 
 export async function generateMetadata() {
-  const title = 'Open Tibia Server Directory — Peak Players, Ratings & Votes';
+  const title = 'Open Tibia Server Directory - Peak Players, Ratings & Votes';
   const description =
     'Browse the top Open Tibia servers ranked by highest recorded player count, community ratings, and daily votes. Filter by version, location, PvP type, and uptime.';
 
