@@ -41,6 +41,12 @@ export default async function sitemap() {
       priority: 0.92,
     },
     {
+      url: buildAbsoluteUrl('/directory'),
+      lastModified: new Date(),
+      changeFrequency: 'hourly',
+      priority: 0.96,
+    },
+    {
       url: buildAbsoluteUrl('/rankings'),
       lastModified: new Date(),
       changeFrequency: 'hourly',

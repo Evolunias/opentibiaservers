@@ -1,7 +1,8 @@
-import "./globals.css";
+﻿import "./globals.css";
 import { AuthProvider } from "./context/AuthContext";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import EmailCaptureModal from "./components/EmailCaptureModal";
 import { buildAbsoluteUrl, getSiteName, getSiteUrl } from '@/lib/seo';
 
 const siteName = getSiteName();
@@ -97,6 +98,7 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
           <Footer />
+          <EmailCaptureModal />
         </AuthProvider>
       </body>
     </html>

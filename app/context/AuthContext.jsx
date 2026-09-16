@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
@@ -67,6 +67,22 @@ export function AuthProvider({ children }) {
       });
 
       if (signUpError) throw signUpError;
+
+      try {
+        if (email) {
+          fetch('/api/newsletter/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email,
+              name: username || profileData?.display_name || profileData?.full_name || undefined,
+              source: 'registration',
+            }),
+          }).catch(() => {});
+        }
+      } catch {
+        /* ignore newsletter errors */
+      }
 
       if (newUser) {
         const { error: profileError } = await supabase
