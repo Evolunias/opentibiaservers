@@ -61,7 +61,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="site-header sticky top-0 z-50 border-b border-white/10">
+      <header className="site-header site-header--enterprise sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <Link href="/" className="brand-mark group flex items-center gap-3 hover:no-underline">
@@ -77,8 +77,8 @@ export default function Header() {
                     OTS
                   </div>
                   <div>
-                    <span className="block text-lg font-bold text-white m-0">Open Tibia Servers</span>
-                    <p className="text-xs text-slate-300 m-0">OT server records, guides, reviews, and source data.</p>
+                    <span className="block text-lg font-bold text-slate-900 m-0">OpenTibiaServers.com</span>
+                    <p className="text-xs text-slate-500 m-0">Ranked OT listings, reviews, votes, and server data.</p>
                   </div>
                 </>
               )}
@@ -119,14 +119,14 @@ export default function Header() {
                     <button
                       type="button"
                       onClick={() => openAuth('login')}
-                      className="nav-chip"
+                      className="auth-btn auth-btn--signin"
                     >
                       Sign In
                     </button>
                     <button
                       type="button"
                       onClick={() => openAuth('register')}
-                      className="btn-primary"
+                      className="auth-btn auth-btn--register"
                     >
                       Register
                     </button>

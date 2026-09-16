@@ -35,29 +35,6 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
   const [lastRefreshedAt, setLastRefreshedAt] = useState(null);
   const displayServers = useMemo(() => prioritizeFeaturedServer(servers), [servers]);
 
-  const summary = useMemo(() => {
-    const highestPlayerCount = displayServers.reduce(
-      (highest, server) => Math.max(highest, Number(server.players_peak || server.players_online || 0)),
-      0
-    );
-    const topServer = [...displayServers].sort(
-      (a, b) => Number(b.players_peak || b.players_online || 0) - Number(a.players_peak || a.players_online || 0)
-    )[0];
-    const featuredServer = displayServers.find((server) => {
-      const haystack = [server.slug, server.name, server.host, server.website_url, server.external_launch_url]
-        .filter(Boolean)
-        .join(' ')
-        .toLowerCase();
-      return haystack.includes('evomanias');
-    }) || null;
-
-    return {
-      highestPlayerCount,
-      topServer,
-      featuredServer,
-    };
-  }, [displayServers]);
-
   const loadServers = useCallback(async ({ silent = false } = {}) => {
     if (!silent) setLoading(true);
     setError(null);
@@ -97,55 +74,30 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
   };
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="ambient-field" aria-hidden="true" />
-      <section className="hero-shell border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-10 md:py-14">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 items-start">
-            <div className="motion-rise">
-              <p className="text-xs font-bold uppercase tracking-widest text-emerald-300 mb-2">
-                OpenTibiaServers.com
-              </p>
-              <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">
-                The living Open Tibia server atlas
-              </h1>
-              <p className="text-base md:text-lg text-slate-300 max-w-3xl">
-                Compare Open Tibia worlds by their highest recorded player count, owner-managed profiles,
-                screenshots, uptime history, reviews, and community discussion in one searchable hub.
-              </p>
-            </div>
+    <main className="directory-shell min-h-screen">
+      <div className="directory-shell__glow" aria-hidden="true" />
 
-            <div className="dashboard-orb motion-rise motion-delay-1">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-sm font-bold text-white">At a glance</span>
-                <span className="text-xs font-bold text-white">Directory records</span>
-              </div>
-              <div className="grid grid-cols-2 gap-2 text-center">
-                <div className="telemetry-tile">
-                  <div className="text-xl font-bold text-white">{totalServers.toLocaleString()}</div>
-                  <div className="text-xs text-slate-400">Matched</div>
-                </div>
-                <div className="telemetry-tile">
-                  <div className="text-xl font-bold text-white">{summary.highestPlayerCount.toLocaleString()}</div>
-                  <div className="text-xs text-slate-400">Highest Player Count</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section className="relative z-10 max-w-7xl mx-auto px-6 pt-8 pb-4">
+        <header className="directory-masthead mb-6">
+          <p className="directory-masthead__eyebrow">Open Tibia server directory</p>
+          <h1 className="directory-masthead__title">Open Tibia Servers</h1>
+          <p className="directory-masthead__dek">
+            Find and compare OT servers by peak players, client version, location, uptime, ratings, and votes.
+          </p>
+        </header>
+
+        <FeaturedServerAd placement="inline" />
       </section>
 
-      <section id="servers" className="relative z-10 max-w-7xl mx-auto px-6 py-8">
-        <FeaturedServerAd placement="inline" />
-
+      <section id="servers" className="relative z-10 max-w-7xl mx-auto px-6 pb-10">
         <Filters onFiltersChange={handleFiltersChange} onSearch={() => {}} />
 
-        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between mb-4">
+        <div className="directory-toolbar flex flex-col gap-3 md:flex-row md:items-center md:justify-between mb-4 mt-2">
           <div>
-            <h2 className="text-xl font-bold text-white">
+            <h2 className="text-xl font-bold tracking-tight">
               {loading ? 'Loading servers' : `${totalServers.toLocaleString()} servers found`}
             </h2>
-            <p className="text-sm text-slate-300">
+            <p className="text-sm directory-toolbar__meta">
               Sorted by {sortLabels[filters.sort] || 'highest recorded player count'}.
               {lastRefreshedAt ? ` Last updated ${lastRefreshedAt.toLocaleTimeString()}.` : ''}
             </p>
@@ -154,24 +106,24 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
         </div>
 
         {error ? (
-          <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded mb-4 text-sm">
+          <div className="directory-alert directory-alert--error mb-4 text-sm">
             {error}
           </div>
         ) : null}
 
         {loading ? (
           <div className="glass-panel p-10 text-center">
-            <div className="shimmer-stack mx-auto mb-4" />
-            <p className="text-slate-300">Loading server records...</p>
+            <div className="pulse-bar mx-auto mb-4" />
+            <p className="directory-toolbar__meta">Loading server records...</p>
           </div>
-        ) : servers.length === 0 ? (
+        ) : displayServers.length === 0 ? (
           <div className="glass-panel p-10 text-center">
-            <p className="text-white font-semibold mb-2">No servers match these filters.</p>
-            <p className="text-slate-300 text-sm">Reset filters or add records manually to populate new entries.</p>
+            <p className="font-semibold mb-2">No servers match these filters.</p>
+            <p className="directory-toolbar__meta text-sm">Reset filters or broaden your search to see more listings.</p>
           </div>
         ) : view === 'grid' ? (
           <>
-            <div className="animated-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-6">
+            <div className="directory-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-6">
               {displayServers.map((server) => (
                 <ServerCard key={server.id} server={server} />
               ))}

@@ -100,7 +100,7 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
                 setError('');
                 setNotice('');
               }}
-              className={`rounded px-3 py-2 text-sm font-bold ${!isRegister && !isVerify ? 'bg-white text-gray-950' : 'text-gray-200 hover:bg-white/10'}`}
+              className={`auth-mode-tab ${!isRegister && !isVerify ? 'auth-mode-tab--active' : ''}`}
             >
               Sign in
             </button>
@@ -111,7 +111,7 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
                 setError('');
                 setNotice('');
               }}
-              className={`rounded px-3 py-2 text-sm font-bold ${isRegister || isVerify ? 'bg-white text-gray-950' : 'text-gray-200 hover:bg-white/10'}`}
+              className={`auth-mode-tab ${isRegister || isVerify ? 'auth-mode-tab--active' : ''}`}
             >
               Create account
             </button>
@@ -200,7 +200,7 @@ export default function AuthModal({ open, mode = 'login', onClose, onSuccess }) 
           <button
             type="submit"
             disabled={submitting}
-            className="auth-modal__primary w-full rounded bg-gray-950 px-4 py-3 text-sm font-bold text-white hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-60"
+            className="auth-btn auth-btn--register w-full disabled:opacity-60"
           >
             {submitting ? 'Please wait...' : isRegister ? 'Create Account' : 'Sign In'}
           </button>
