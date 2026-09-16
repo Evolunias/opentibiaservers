@@ -21,7 +21,7 @@ const parser = new XMLParser({
 });
 
 const SOURCE_TAG = 'v1.6';
-const TFS_GITHUB_ROOT = `https://opentibiaservers.com//forgottenserver/blob/${SOURCE_TAG}`;
+const TFS_GITHUB_ROOT = `https://github.com/otland/forgottenserver/blob/${SOURCE_TAG}`;
 
 function asArray(value) {
   if (value === undefined || value === null) return [];

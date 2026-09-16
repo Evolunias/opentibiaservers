@@ -53,7 +53,7 @@ function createQueryHref(query) {
 }
 
 function createInternalTopicHref(query) {
-  return `/${String(query || '')
+  return `/topics/${String(query || '')
     .toLowerCase()
     .replace(/&/g, 'and')
     .replace(/[^a-z0-9]+/g, '-')

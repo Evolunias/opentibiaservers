@@ -91,6 +91,7 @@ export default function ServerList({ servers }) {
                 <strong>{Number(server.average_rating || 0).toFixed(1)}</strong>
                 <small>{server.review_count || 0} reviews</small>
               </div>
+                  <div className="directory-row__votes text-xs text-slate-400" title="All-time votes">{Number(server.vote_count || 0)} votes</div>
               <p className="directory-row__address">{server.host || server.ip}:{server.port || 7171}</p>
               <div className="directory-row__tags">
                 <span>{server.world_type || 'PVP'}</span>

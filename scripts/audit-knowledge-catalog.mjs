@@ -69,7 +69,7 @@ for (const item of items) {
   itemSlugs.add(item.slug);
   addError(errors, item.canonicalPath === (item.slug === 'magic-plate-armor' ? '/knowledge/equipment/magic-plate-armor' : `/knowledge/items/${item.slug}`), `Incorrect item canonical path: ${item.slug}`);
   addError(errors, Array.isArray(item.variants) && item.variants.length > 0, `${item.slug}: item has no variants`);
-  addError(errors, item.sourceUrl.startsWith('https://opentibiaservers.com//forgottenserver/'), `${item.slug}: item source is not primary TFS data`);
+  addError(errors, item.sourceUrl.startsWith('https://github.com/otland/forgottenserver/'), `${item.slug}: item source is not primary TFS data`);
   addError(errors, item.category, `${item.slug}: item category is missing`);
   addError(errors, Array.isArray(item.officialLootSources), `${item.slug}: official loot-source relationship array is missing`);
   let recordIdentifiers = 0;
@@ -97,7 +97,7 @@ for (const monster of monsters) {
   const expectedPath = ['dragon', 'demon'].includes(monster.slug) ? `/knowledge/bestiary/${monster.slug}` : `/knowledge/monsters/${monster.slug}`;
   addError(errors, monster.canonicalPath === expectedPath, `${monster.slug}: incorrect monster canonical path`);
   if (monster.sourceProfile === 'tfs') {
-    addError(errors, monster.sourcePath?.startsWith('data/monster/monsters/') && monster.sourceUrl.startsWith('https://opentibiaservers.com//forgottenserver/'), `${monster.slug}: TFS monster source is invalid`);
+    addError(errors, monster.sourcePath?.startsWith('data/monster/monsters/') && monster.sourceUrl.startsWith('https://github.com/otland/forgottenserver/'), `${monster.slug}: TFS monster source is invalid`);
   } else {
     addError(errors, monster.sourceProfile === 'official' && monster.sourceUrl.startsWith('https://www.tibia.com/library/'), `${monster.slug}: official monster source is invalid`);
   }
@@ -135,7 +135,7 @@ for (const spell of spells) {
     addError(errors, !String(variant.script || '').startsWith('monster/'), `${spell.slug}: monster-only ability leaked into player spell pages`);
     if (variant.sourceProfile !== 'official') {
       addError(errors, variant.signals?.sourceFound === true, `${spell.slug}: bound spell script was not found: ${variant.script}`);
-      addError(errors, variant.signals?.sourceUrl?.startsWith('https://opentibiaservers.com//forgottenserver/'), `${spell.slug}: spell script source URL is invalid`);
+      addError(errors, variant.signals?.sourceUrl?.startsWith('https://github.com/otland/forgottenserver/'), `${spell.slug}: spell script source URL is invalid`);
     }
   }
   for (const itemPath of spell.itemPaths) {

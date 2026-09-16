@@ -14,6 +14,15 @@ const PAGE_SIZE = 25;
 const defaultFilters = {
   sort: 'peak',
 };
+const sortLabels = {
+  peak: 'highest recorded player count',
+  votes: 'most votes',
+  votes_today: 'votes today',
+  rating: 'rating',
+  uptime: 'uptime',
+  newest: 'recently updated',
+  name: 'name',
+};
 
 export default function HomeClient({ initialServers = [], initialTotal = 0, initialError = null }) {
   const [servers, setServers] = useState(initialServers);
@@ -137,7 +146,7 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
               {loading ? 'Loading servers' : `${totalServers.toLocaleString()} servers found`}
             </h2>
             <p className="text-sm text-slate-300">
-              Sorted by highest recorded player count.
+              Sorted by {sortLabels[filters.sort] || 'highest recorded player count'}.
               {lastRefreshedAt ? ` Last updated ${lastRefreshedAt.toLocaleTimeString()}.` : ''}
             </p>
           </div>

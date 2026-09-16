@@ -92,6 +92,12 @@ export default function Header() {
                 >
                   Knowledge
                 </Link>
+                <Link
+                  href="/rankings"
+                  className="nav-chip"
+                >
+                  Rankings
+                </Link>
                 <LanguageSelector />
                 {user ? (
                   <>
