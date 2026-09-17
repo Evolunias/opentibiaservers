@@ -1,0 +1,46 @@
+{{Infobox research
+| name = Open Tibia Server Directory
+| source = https://opentibiaservers.com/directory
+| path = /directory
+| type = directory
+| collection = site
+| key = directory
+| contact = support@opentibiaservers.com
+}}
+
+'''Open Tibia Server Directory''' is an independent research wiki article covering https://opentibiaservers.com/directory on [[OpenTibiaServers.com]].
+
+== Abstract ==
+Research dossier for the live Open Tibia server directory used to compare rates, population, uptime, and world types.
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+| Title || Open Tibia Server Directory
+|-
+| Source URL || https://opentibiaservers.com/directory
+|-
+| Path || /directory
+|-
+| Type || directory
+|-
+| Collection || site
+|}
+
+== Research notes ==
+* Independent research dossier for sitemap coverage and gradual external publishing.
+* Keep attribution and a backlink to the canonical OpenTibiaServers.com URL.
+* Do not spam unrelated wikis (Wikipedia family, Bulbapedia, SCP, TV Tropes, etc.).
+
+== Internal links ==
+* [https://opentibiaservers.com/ OpenTibiaServers homepage]
+* [https://opentibiaservers.com/directory Server directory]
+* [https://opentibiaservers.com/knowledge Knowledge hub]
+* [https://opentibiaservers.com/wiki Wiki library]
+
+== Citation ==
+OpenTibiaServers Research Wiki (2026-09-17). Source: https://opentibiaservers.com/directory. Contact: support@opentibiaservers.com.
+
+[[Category:OpenTibiaServers Research]]
+[[Category:site]]
+[[Category:directory]]

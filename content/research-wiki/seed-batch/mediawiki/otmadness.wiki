@@ -1,0 +1,48 @@
+{{Infobox research
+| name = Otmadness
+| source = https://opentibiaservers.com/otmadness
+| path = /otmadness
+| type = server
+| collection = server
+| key = otmadness
+| contact = support@opentibiaservers.com
+}}
+
+'''Otmadness''' is an independent research wiki article covering https://opentibiaservers.com/otmadness on [[OpenTibiaServers.com]].
+
+== Abstract ==
+Independent research summary for the Open Tibia private server “Otmadness”, cross-linked to its live listing and wiki materials on OpenTibiaServers.com.
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+| Title || Otmadness
+|-
+| Source URL || https://opentibiaservers.com/otmadness
+|-
+| Path || /otmadness
+|-
+| Type || server
+|-
+| Collection || server
+|}
+
+== Research notes ==
+* Independent research dossier for sitemap coverage and gradual external publishing.
+* Keep attribution and a backlink to the canonical OpenTibiaServers.com URL.
+* Do not spam unrelated wikis (Wikipedia family, Bulbapedia, SCP, TV Tropes, etc.).
+
+== Internal links ==
+* [https://opentibiaservers.com/wiki/otmadness Server wiki]
+* [https://opentibiaservers.com/otmadness Live listing]
+* [https://opentibiaservers.com/ OpenTibiaServers homepage]
+* [https://opentibiaservers.com/directory Server directory]
+* [https://opentibiaservers.com/knowledge Knowledge hub]
+* [https://opentibiaservers.com/wiki Wiki library]
+
+== Citation ==
+OpenTibiaServers Research Wiki (2026-09-17). Source: https://opentibiaservers.com/otmadness. Contact: support@opentibiaservers.com.
+
+[[Category:OpenTibiaServers Research]]
+[[Category:server]]
+[[Category:server]]

@@ -1,0 +1,48 @@
+{{Infobox research
+| name = Calmera
+| source = https://opentibiaservers.com/calmera
+| path = /calmera
+| type = server
+| collection = server
+| key = calmera
+| contact = support@opentibiaservers.com
+}}
+
+'''Calmera''' is an independent research wiki article covering https://opentibiaservers.com/calmera on [[OpenTibiaServers.com]].
+
+== Abstract ==
+Independent research summary for the Open Tibia private server “Calmera”, cross-linked to its live listing and wiki materials on OpenTibiaServers.com.
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+| Title || Calmera
+|-
+| Source URL || https://opentibiaservers.com/calmera
+|-
+| Path || /calmera
+|-
+| Type || server
+|-
+| Collection || server
+|}
+
+== Research notes ==
+* Independent research dossier for sitemap coverage and gradual external publishing.
+* Keep attribution and a backlink to the canonical OpenTibiaServers.com URL.
+* Do not spam unrelated wikis (Wikipedia family, Bulbapedia, SCP, TV Tropes, etc.).
+
+== Internal links ==
+* [https://opentibiaservers.com/wiki/calmera Server wiki]
+* [https://opentibiaservers.com/calmera Live listing]
+* [https://opentibiaservers.com/ OpenTibiaServers homepage]
+* [https://opentibiaservers.com/directory Server directory]
+* [https://opentibiaservers.com/knowledge Knowledge hub]
+* [https://opentibiaservers.com/wiki Wiki library]
+
+== Citation ==
+OpenTibiaServers Research Wiki (2026-09-17). Source: https://opentibiaservers.com/calmera. Contact: support@opentibiaservers.com.
+
+[[Category:OpenTibiaServers Research]]
+[[Category:server]]
+[[Category:server]]

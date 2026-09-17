@@ -1,0 +1,48 @@
+{{Infobox research
+| name = 12 Anos Online
+| source = https://opentibiaservers.com/12-anos-online
+| path = /12-anos-online
+| type = server
+| collection = server
+| key = 12-anos-online
+| contact = support@opentibiaservers.com
+}}
+
+'''12 Anos Online''' is an independent research wiki article covering https://opentibiaservers.com/12-anos-online on [[OpenTibiaServers.com]].
+
+== Abstract ==
+Independent research summary for the Open Tibia private server “12 Anos Online”, cross-linked to its live listing and wiki materials on OpenTibiaServers.com.
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+| Title || 12 Anos Online
+|-
+| Source URL || https://opentibiaservers.com/12-anos-online
+|-
+| Path || /12-anos-online
+|-
+| Type || server
+|-
+| Collection || server
+|}
+
+== Research notes ==
+* Independent research dossier for sitemap coverage and gradual external publishing.
+* Keep attribution and a backlink to the canonical OpenTibiaServers.com URL.
+* Do not spam unrelated wikis (Wikipedia family, Bulbapedia, SCP, TV Tropes, etc.).
+
+== Internal links ==
+* [https://opentibiaservers.com/wiki/12-anos-online Server wiki]
+* [https://opentibiaservers.com/12-anos-online Live listing]
+* [https://opentibiaservers.com/ OpenTibiaServers homepage]
+* [https://opentibiaservers.com/directory Server directory]
+* [https://opentibiaservers.com/knowledge Knowledge hub]
+* [https://opentibiaservers.com/wiki Wiki library]
+
+== Citation ==
+OpenTibiaServers Research Wiki (2026-09-17). Source: https://opentibiaservers.com/12-anos-online. Contact: support@opentibiaservers.com.
+
+[[Category:OpenTibiaServers Research]]
+[[Category:server]]
+[[Category:server]]

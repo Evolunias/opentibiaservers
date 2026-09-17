@@ -1,0 +1,48 @@
+{{Infobox research
+| name = Rexia
+| source = https://opentibiaservers.com/rexia
+| path = /rexia
+| type = server
+| collection = server
+| key = rexia
+| contact = support@opentibiaservers.com
+}}
+
+'''Rexia''' is an independent research wiki article covering https://opentibiaservers.com/rexia on [[OpenTibiaServers.com]].
+
+== Abstract ==
+Independent research summary for the Open Tibia private server “Rexia”, cross-linked to its live listing and wiki materials on OpenTibiaServers.com.
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+| Title || Rexia
+|-
+| Source URL || https://opentibiaservers.com/rexia
+|-
+| Path || /rexia
+|-
+| Type || server
+|-
+| Collection || server
+|}
+
+== Research notes ==
+* Independent research dossier for sitemap coverage and gradual external publishing.
+* Keep attribution and a backlink to the canonical OpenTibiaServers.com URL.
+* Do not spam unrelated wikis (Wikipedia family, Bulbapedia, SCP, TV Tropes, etc.).
+
+== Internal links ==
+* [https://opentibiaservers.com/wiki/rexia Server wiki]
+* [https://opentibiaservers.com/rexia Live listing]
+* [https://opentibiaservers.com/ OpenTibiaServers homepage]
+* [https://opentibiaservers.com/directory Server directory]
+* [https://opentibiaservers.com/knowledge Knowledge hub]
+* [https://opentibiaservers.com/wiki Wiki library]
+
+== Citation ==
+OpenTibiaServers Research Wiki (2026-09-17). Source: https://opentibiaservers.com/rexia. Contact: support@opentibiaservers.com.
+
+[[Category:OpenTibiaServers Research]]
+[[Category:server]]
+[[Category:server]]

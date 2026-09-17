@@ -1,0 +1,46 @@
+{{Infobox research
+| name = Open Tibia Knowledge Hub
+| source = https://opentibiaservers.com/knowledge
+| path = /knowledge
+| type = knowledge-index
+| collection = knowledge
+| key = knowledge
+| contact = support@opentibiaservers.com
+}}
+
+'''Open Tibia Knowledge Hub''' is an independent research wiki article covering https://opentibiaservers.com/knowledge on [[OpenTibiaServers.com]].
+
+== Abstract ==
+Independent research dossier for https://opentibiaservers.com/knowledge on OpenTibiaServers.com (knowledge/knowledge-index).
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+| Title || Open Tibia Knowledge Hub
+|-
+| Source URL || https://opentibiaservers.com/knowledge
+|-
+| Path || /knowledge
+|-
+| Type || knowledge-index
+|-
+| Collection || knowledge
+|}
+
+== Research notes ==
+* Independent research dossier for sitemap coverage and gradual external publishing.
+* Keep attribution and a backlink to the canonical OpenTibiaServers.com URL.
+* Do not spam unrelated wikis (Wikipedia family, Bulbapedia, SCP, TV Tropes, etc.).
+
+== Internal links ==
+* [https://opentibiaservers.com/ OpenTibiaServers homepage]
+* [https://opentibiaservers.com/directory Server directory]
+* [https://opentibiaservers.com/knowledge Knowledge hub]
+* [https://opentibiaservers.com/wiki Wiki library]
+
+== Citation ==
+OpenTibiaServers Research Wiki (2026-09-17). Source: https://opentibiaservers.com/knowledge. Contact: support@opentibiaservers.com.
+
+[[Category:OpenTibiaServers Research]]
+[[Category:knowledge]]
+[[Category:knowledge-index]]

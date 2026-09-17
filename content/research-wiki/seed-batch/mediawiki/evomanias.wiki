@@ -1,0 +1,46 @@
+{{Infobox research
+| name = Evomanias Featured Partner Profile
+| source = https://opentibiaservers.com/evomanias
+| path = /evomanias
+| type = partner
+| collection = partner
+| key = evomanias
+| contact = support@opentibiaservers.com
+}}
+
+'''Evomanias Featured Partner Profile''' is an independent research wiki article covering https://opentibiaservers.com/evomanias on [[OpenTibiaServers.com]].
+
+== Abstract ==
+Featured-partner research page for Evomanias on OpenTibiaServers.com, including public offer CTAs and directory profile links.
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+| Title || Evomanias Featured Partner Profile
+|-
+| Source URL || https://opentibiaservers.com/evomanias
+|-
+| Path || /evomanias
+|-
+| Type || partner
+|-
+| Collection || partner
+|}
+
+== Research notes ==
+* Independent research dossier for sitemap coverage and gradual external publishing.
+* Keep attribution and a backlink to the canonical OpenTibiaServers.com URL.
+* Do not spam unrelated wikis (Wikipedia family, Bulbapedia, SCP, TV Tropes, etc.).
+
+== Internal links ==
+* [https://opentibiaservers.com/ OpenTibiaServers homepage]
+* [https://opentibiaservers.com/directory Server directory]
+* [https://opentibiaservers.com/knowledge Knowledge hub]
+* [https://opentibiaservers.com/wiki Wiki library]
+
+== Citation ==
+OpenTibiaServers Research Wiki (2026-09-17). Source: https://opentibiaservers.com/evomanias. Contact: support@opentibiaservers.com.
+
+[[Category:OpenTibiaServers Research]]
+[[Category:partner]]
+[[Category:partner]]

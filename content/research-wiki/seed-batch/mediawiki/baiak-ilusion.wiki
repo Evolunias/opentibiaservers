@@ -1,0 +1,48 @@
+{{Infobox research
+| name = Baiak Ilusion
+| source = https://opentibiaservers.com/baiak-ilusion
+| path = /baiak-ilusion
+| type = server
+| collection = server
+| key = baiak-ilusion
+| contact = support@opentibiaservers.com
+}}
+
+'''Baiak Ilusion''' is an independent research wiki article covering https://opentibiaservers.com/baiak-ilusion on [[OpenTibiaServers.com]].
+
+== Abstract ==
+Independent research summary for the Open Tibia private server “Baiak Ilusion”, cross-linked to its live listing and wiki materials on OpenTibiaServers.com.
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+| Title || Baiak Ilusion
+|-
+| Source URL || https://opentibiaservers.com/baiak-ilusion
+|-
+| Path || /baiak-ilusion
+|-
+| Type || server
+|-
+| Collection || server
+|}
+
+== Research notes ==
+* Independent research dossier for sitemap coverage and gradual external publishing.
+* Keep attribution and a backlink to the canonical OpenTibiaServers.com URL.
+* Do not spam unrelated wikis (Wikipedia family, Bulbapedia, SCP, TV Tropes, etc.).
+
+== Internal links ==
+* [https://opentibiaservers.com/wiki/baiak-ilusion Server wiki]
+* [https://opentibiaservers.com/baiak-ilusion Live listing]
+* [https://opentibiaservers.com/ OpenTibiaServers homepage]
+* [https://opentibiaservers.com/directory Server directory]
+* [https://opentibiaservers.com/knowledge Knowledge hub]
+* [https://opentibiaservers.com/wiki Wiki library]
+
+== Citation ==
+OpenTibiaServers Research Wiki (2026-09-17). Source: https://opentibiaservers.com/baiak-ilusion. Contact: support@opentibiaservers.com.
+
+[[Category:OpenTibiaServers Research]]
+[[Category:server]]
+[[Category:server]]

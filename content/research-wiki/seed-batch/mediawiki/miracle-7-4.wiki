@@ -1,0 +1,48 @@
+{{Infobox research
+| name = Miracle 7 4
+| source = https://opentibiaservers.com/miracle-7-4
+| path = /miracle-7-4
+| type = server
+| collection = server
+| key = miracle-7-4
+| contact = support@opentibiaservers.com
+}}
+
+'''Miracle 7 4''' is an independent research wiki article covering https://opentibiaservers.com/miracle-7-4 on [[OpenTibiaServers.com]].
+
+== Abstract ==
+Independent research summary for the Open Tibia private server “Miracle 7 4”, cross-linked to its live listing and wiki materials on OpenTibiaServers.com.
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+| Title || Miracle 7 4
+|-
+| Source URL || https://opentibiaservers.com/miracle-7-4
+|-
+| Path || /miracle-7-4
+|-
+| Type || server
+|-
+| Collection || server
+|}
+
+== Research notes ==
+* Independent research dossier for sitemap coverage and gradual external publishing.
+* Keep attribution and a backlink to the canonical OpenTibiaServers.com URL.
+* Do not spam unrelated wikis (Wikipedia family, Bulbapedia, SCP, TV Tropes, etc.).
+
+== Internal links ==
+* [https://opentibiaservers.com/wiki/miracle-7-4 Server wiki]
+* [https://opentibiaservers.com/miracle-7-4 Live listing]
+* [https://opentibiaservers.com/ OpenTibiaServers homepage]
+* [https://opentibiaservers.com/directory Server directory]
+* [https://opentibiaservers.com/knowledge Knowledge hub]
+* [https://opentibiaservers.com/wiki Wiki library]
+
+== Citation ==
+OpenTibiaServers Research Wiki (2026-09-17). Source: https://opentibiaservers.com/miracle-7-4. Contact: support@opentibiaservers.com.
+
+[[Category:OpenTibiaServers Research]]
+[[Category:server]]
+[[Category:server]]

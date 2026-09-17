@@ -1,0 +1,46 @@
+{{Infobox research
+| name = Contact OpenTibiaServers.Com
+| source = https://opentibiaservers.com/contact
+| path = /contact
+| type = contact
+| collection = site
+| key = contact
+| contact = support@opentibiaservers.com
+}}
+
+'''Contact OpenTibiaServers.Com''' is an independent research wiki article covering https://opentibiaservers.com/contact on [[OpenTibiaServers.com]].
+
+== Abstract ==
+Independent research dossier for https://opentibiaservers.com/contact on OpenTibiaServers.com (site/contact).
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+| Title || Contact OpenTibiaServers.Com
+|-
+| Source URL || https://opentibiaservers.com/contact
+|-
+| Path || /contact
+|-
+| Type || contact
+|-
+| Collection || site
+|}
+
+== Research notes ==
+* Independent research dossier for sitemap coverage and gradual external publishing.
+* Keep attribution and a backlink to the canonical OpenTibiaServers.com URL.
+* Do not spam unrelated wikis (Wikipedia family, Bulbapedia, SCP, TV Tropes, etc.).
+
+== Internal links ==
+* [https://opentibiaservers.com/ OpenTibiaServers homepage]
+* [https://opentibiaservers.com/directory Server directory]
+* [https://opentibiaservers.com/knowledge Knowledge hub]
+* [https://opentibiaservers.com/wiki Wiki library]
+
+== Citation ==
+OpenTibiaServers Research Wiki (2026-09-17). Source: https://opentibiaservers.com/contact. Contact: support@opentibiaservers.com.
+
+[[Category:OpenTibiaServers Research]]
+[[Category:site]]
+[[Category:contact]]

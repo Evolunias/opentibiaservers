@@ -6,3 +6,7 @@ build/
 .env.local.example
 *.log
 .DS_Store
+
+# Unpacked research wiki (huge; keep archive only)
+content/research-wiki/_unpacked/
+
