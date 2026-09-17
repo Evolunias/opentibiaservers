@@ -1,103 +1,110 @@
-'use client'
+'use client';
 
-import { useCallback, useEffect, useId, useRef, useState } from 'react'
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 
-const STORAGE_KEY = 'ots_email_capture_hide_until'
-const SHOW_DELAY_MS = 3000
-const HIDE_MS = 24 * 60 * 60 * 1000
+const STORAGE_KEY = 'ots_email_capture_hide_until';
+const SHOW_DELAY_MS = 3000;
+const HIDE_MS = 24 * 60 * 60 * 1000;
 
 function readHideUntil() {
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY)
-    if (!raw) return 0
-    const n = Number(raw)
-    return Number.isFinite(n) ? n : 0
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return 0;
+    const n = Number(raw);
+    return Number.isFinite(n) ? n : 0;
   } catch {
-    return 0
+    return 0;
   }
 }
 
 function writeHideUntil(untilMs) {
   try {
-    window.localStorage.setItem(STORAGE_KEY, String(untilMs))
+    window.localStorage.setItem(STORAGE_KEY, String(untilMs));
   } catch {
-    /* ignore quota / private mode */
+    /* ignore */
   }
 }
 
 export default function EmailCaptureModal() {
-  const titleId = useId()
-  const descId = useId()
-  const [open, setOpen] = useState(false)
-  const [email, setEmail] = useState('')
-  const [name, setName] = useState('')
-  const [dontShow24h, setDontShow24h] = useState(false)
-  const [submitting, setSubmitting] = useState(false)
-  const [error, setError] = useState(null)
-  const [done, setDone] = useState(false)
-  const sessionHiddenRef = useRef(false)
-  const emailRef = useRef(null)
+  const titleId = useId();
+  const descId = useId();
+  const [mounted, setMounted] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [dontShow24h, setDontShow24h] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+  const [done, setDone] = useState(false);
+  const sessionHiddenRef = useRef(false);
+  const emailRef = useRef(null);
+  const prevOverflowRef = useRef('');
 
   useEffect(() => {
-    if (typeof window === 'undefined') return
-    if (readHideUntil() > Date.now()) return
-    if (sessionHiddenRef.current) return
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+    if (readHideUntil() > Date.now()) return undefined;
+    if (sessionHiddenRef.current) return undefined;
 
     const timer = window.setTimeout(() => {
-      if (sessionHiddenRef.current) return
-      if (readHideUntil() > Date.now()) return
-      setOpen(true)
-    }, SHOW_DELAY_MS)
+      if (sessionHiddenRef.current) return;
+      if (readHideUntil() > Date.now()) return;
+      setOpen(true);
+    }, SHOW_DELAY_MS);
 
-    return () => window.clearTimeout(timer)
-  }, [])
+    return () => window.clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
-    if (!open) return
-    const t = window.setTimeout(() => emailRef.current?.focus(), 50)
-    const prevOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
+    if (!open || typeof document === 'undefined') return undefined;
+
+    prevOverflowRef.current = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const t = window.setTimeout(() => emailRef.current?.focus(), 40);
+
     return () => {
-      window.clearTimeout(t)
-      document.body.style.overflow = prevOverflow
-    }
-  }, [open])
+      window.clearTimeout(t);
+      document.body.style.overflow = prevOverflowRef.current || '';
+    };
+  }, [open]);
 
   const closeForSessionOnly = useCallback(() => {
-    sessionHiddenRef.current = true
-    setOpen(false)
-  }, [])
+    sessionHiddenRef.current = true;
+    setOpen(false);
+  }, []);
 
   const closeWith24hIfChecked = useCallback(() => {
-    if (dontShow24h) {
-      writeHideUntil(Date.now() + HIDE_MS)
-    }
-    sessionHiddenRef.current = true
-    setOpen(false)
-  }, [dontShow24h])
+    if (dontShow24h) writeHideUntil(Date.now() + HIDE_MS);
+    sessionHiddenRef.current = true;
+    setOpen(false);
+  }, [dontShow24h]);
 
   useEffect(() => {
-    if (!open) return
+    if (!open) return undefined;
     const onKey = (e) => {
-      if (e.key !== 'Escape') return
-      // Escape = this page view only unless checkbox checked
-      if (dontShow24h) closeWith24hIfChecked()
-      else closeForSessionOnly()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [open, dontShow24h, closeForSessionOnly, closeWith24hIfChecked])
+      if (e.key !== 'Escape') return;
+      if (dontShow24h) closeWith24hIfChecked();
+      else closeForSessionOnly();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open, dontShow24h, closeForSessionOnly, closeWith24hIfChecked]);
 
   const onSubmit = async (e) => {
-    e.preventDefault()
-    setError(null)
-    const trimmed = email.trim()
+    e.preventDefault();
+    setError(null);
+    const trimmed = email.trim();
     if (!trimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
-      setError('Please enter a valid email address.')
-      return
+      setError('Please enter a valid email address.');
+      return;
     }
 
-    setSubmitting(true)
+    setSubmitting(true);
     try {
       const res = await fetch('/api/newsletter/subscribe', {
         method: 'POST',
@@ -107,35 +114,34 @@ export default function EmailCaptureModal() {
           name: name.trim() || undefined,
           source: 'popup',
         }),
-      })
-      const data = await res.json().catch(() => ({}))
+      });
+      const data = await res.json().catch(() => ({}));
       if (!res.ok || data?.success === false) {
-        throw new Error(data?.error || 'Something went wrong. Please try again.')
+        throw new Error(data?.error || 'Something went wrong. Please try again.');
       }
-      writeHideUntil(Date.now() + HIDE_MS)
-      setDone(true)
+      writeHideUntil(Date.now() + HIDE_MS);
+      setDone(true);
       window.setTimeout(() => {
-        sessionHiddenRef.current = true
-        setOpen(false)
-      }, 1200)
+        sessionHiddenRef.current = true;
+        setOpen(false);
+      }, 1200);
     } catch (err) {
-      setError(err?.message || 'Subscription failed.')
+      setError(err?.message || 'Subscription failed.');
     } finally {
-      setSubmitting(false)
+      setSubmitting(false);
     }
-  }
+  };
 
-  if (!open) return null
+  if (!mounted || !open) return null;
 
-  return (
+  return createPortal(
     <div
       className="email-capture-overlay"
       role="presentation"
       onMouseDown={(e) => {
-        if (e.target === e.currentTarget) {
-          if (dontShow24h) closeWith24hIfChecked()
-          else closeForSessionOnly()
-        }
+        if (e.target !== e.currentTarget) return;
+        if (dontShow24h) closeWith24hIfChecked();
+        else closeForSessionOnly();
       }}
     >
       <div
@@ -150,21 +156,20 @@ export default function EmailCaptureModal() {
           className="email-capture-close"
           aria-label="Close"
           onClick={() => {
-            if (dontShow24h) closeWith24hIfChecked()
-            else closeForSessionOnly()
+            if (dontShow24h) closeWith24hIfChecked();
+            else closeForSessionOnly();
           }}
         >
-          ×
+          x
         </button>
 
         {done ? (
           <div className="email-capture-body">
             <h2 id={titleId} className="email-capture-title">
-              You&apos;re on the list
+              You are on the list
             </h2>
             <p id={descId} className="email-capture-copy">
-              Thanks — we&apos;ll share OT server launches, ranking moves, and forum
-              highlights. No spam.
+              Thanks — we will share OT server launches, ranking moves, and forum highlights. No spam.
             </p>
           </div>
         ) : (
@@ -174,8 +179,7 @@ export default function EmailCaptureModal() {
               Stay ahead of new OT launches
             </h2>
             <p id={descId} className="email-capture-copy">
-              Occasional updates on server launches, live rankings, and forum
-              highlights — built for players and owners. Unsubscribe anytime.
+              Occasional updates on server launches, live rankings, and forum highlights. Unsubscribe anytime.
             </p>
 
             <label className="email-capture-label" htmlFor="email-capture-name">
@@ -183,7 +187,7 @@ export default function EmailCaptureModal() {
             </label>
             <input
               id="email-capture-name"
-              className="email-capture-input form-control"
+              className="email-capture-input"
               type="text"
               autoComplete="name"
               value={name}
@@ -197,7 +201,7 @@ export default function EmailCaptureModal() {
             <input
               id="email-capture-email"
               ref={emailRef}
-              className="email-capture-input form-control"
+              className="email-capture-input"
               type="email"
               required
               autoComplete="email"
@@ -212,12 +216,8 @@ export default function EmailCaptureModal() {
               </p>
             ) : null}
 
-            <button
-              type="submit"
-              className="email-capture-submit auth-btn"
-              disabled={submitting}
-            >
-              {submitting ? 'Subscribing…' : 'Subscribe'}
+            <button type="submit" className="email-capture-submit" disabled={submitting}>
+              {submitting ? 'Subscribing...' : 'Subscribe'}
             </button>
 
             <label className="email-capture-checkbox-row">
@@ -226,7 +226,7 @@ export default function EmailCaptureModal() {
                 checked={dontShow24h}
                 onChange={(e) => setDontShow24h(e.target.checked)}
               />
-              <span>Don&apos;t show this again for 24 hours</span>
+              <span>Do not show this again for 24 hours</span>
             </label>
 
             <button
@@ -245,6 +245,7 @@ export default function EmailCaptureModal() {
           </form>
         )}
       </div>
-    </div>
-  )
+    </div>,
+    document.body
+  );
 }

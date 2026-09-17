@@ -1,6 +1,7 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SiteModeTabs from '@/app/components/SiteModeTabs';
+import ForumReplyComposer from '@/app/components/ForumReplyComposer';
 import { getTopicBySlugs } from '@/lib/forum-data';
 import { buildAbsoluteUrl } from '@/lib/seo';
 
@@ -10,7 +11,7 @@ export async function generateMetadata({ params }) {
   const { board, topic } = await getTopicBySlugs(params.board, params.topic);
   if (!topic) return { title: 'Topic not found' };
   return {
-    title: `${topic.title} — ${board?.name || 'Forum'}`,
+    title: `${topic.title} - ${board?.name || 'Forum'}`,
     description: String(topic.body || topic.title || '').slice(0, 158),
     alternates: { canonical: buildAbsoluteUrl(`/forum/${params.board}/${params.topic}`) },
   };
@@ -60,6 +61,13 @@ export default async function ForumTopicPage({ params }) {
               <div className="forum-empty"><p>No posts in this thread yet.</p></div>
             ) : null}
           </div>
+          <ForumReplyComposer
+            boardSlug={board.slug}
+            topicSlug={topic.slug}
+            topicId={topic.id}
+            locked={board.is_locked === true || topic.status === 'locked'}
+          />
+
           <div className="forum-topic-page__actions">
             <Link href={`/forum/${board.slug}`} className="auth-btn auth-btn--signin">Back to board</Link>
             <Link href={`/forum/${board.slug}/new`} className="auth-btn auth-btn--register">New thread</Link>
