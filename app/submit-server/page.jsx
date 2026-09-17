@@ -605,7 +605,7 @@ export default function SubmitServerPage() {
             <h2 className="text-xl font-semibold text-gray-900 mb-2 mt-4">Player metrics (optional)</h2>
             <p className="text-sm text-gray-600 mb-4">
               Provide a public HTTPS JSON endpoint you host with metrics only — no emails, no scrapes.
-              Expected shape: {"players_online": 42, "players_peak": 120, "is_online": true}
+              Expected shape: &#123;"players_online": 42, "players_peak": 120, "is_online": true&#125;
             </p>
             <label htmlFor="status_endpoint_url" className="block text-sm font-medium text-gray-700 mb-2">
               Status endpoint URL
