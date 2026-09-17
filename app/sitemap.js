@@ -10,6 +10,7 @@ import { getTibiaWorldPages } from '@/lib/tibia-world-pages';
 import { knowledgeEntities } from '@/lib/knowledge-base';
 import { getKnowledgeCatalogSitemapEntries } from '@/lib/knowledge-catalog';
 import { getStaticAppRoutes, getStaticServerNameRoutes } from '@/lib/static-app-routes';
+import { listServerWikiSlugs } from '@/lib/server-wiki-markdown';
 
 function isMissingColumn(error) {
   return error?.code === '42703' || /column .* does not exist/i.test(error?.message || '');
@@ -26,6 +27,19 @@ function dedupe(entries) {
 
 export default async function sitemap() {
   const staticAppRoutes = getStaticAppRoutes();
+  const wikiIndexUrl = {
+    url: buildAbsoluteUrl('/wiki'),
+    lastModified: new Date(),
+    changeFrequency: 'daily',
+    priority: 0.9,
+  };
+  const wikiPageUrls = listServerWikiSlugs().map((slug) => ({
+    url: buildAbsoluteUrl(`/wiki/${slug}`),
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.88,
+  }));
+
   const filesystemServerUrls = getStaticServerNameRoutes().map((route) => ({
     url: buildAbsoluteUrl(route.path),
     lastModified: new Date(),
@@ -111,6 +125,8 @@ export default async function sitemap() {
   if (!supabase) {
     return dedupe([
       ...staticUrls,
+      ...[wikiIndexUrl],
+      ...wikiPageUrls,
       ...filesystemServerUrls,
       ...curatedUrls,
       ...serverReviewUrls,
@@ -164,7 +180,9 @@ export default async function sitemap() {
 
   return dedupe([
     ...staticUrls,
-    ...filesystemServerUrls,
+    ...[wikiIndexUrl],
+      ...wikiPageUrls,
+      ...filesystemServerUrls,
     ...curatedUrls,
     ...serverReviewUrls,
     ...tibiaWorldUrls,
