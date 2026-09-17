@@ -6,6 +6,7 @@ const footerLinks = [
   { href: '/knowledge', label: 'Knowledge' },
   { href: '/resources', label: 'Resources' },
   { href: '/wiki', label: 'Wiki' },
+  { href: '/research', label: 'Research' },
   { href: '/submit-server', label: 'Submit Server' },
   { href: '/terms', label: 'Terms' },
   { href: '/privacy', label: 'Privacy' },

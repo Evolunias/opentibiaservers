@@ -27,6 +27,12 @@ function dedupe(entries) {
 
 export default async function sitemap() {
   const staticAppRoutes = getStaticAppRoutes();
+  const researchIndexUrl = {
+    url: buildAbsoluteUrl('/research'),
+    lastModified: new Date(),
+    changeFrequency: 'daily',
+    priority: 0.9,
+  };
   const wikiIndexUrl = {
     url: buildAbsoluteUrl('/wiki'),
     lastModified: new Date(),
@@ -125,7 +131,8 @@ export default async function sitemap() {
   if (!supabase) {
     return dedupe([
       ...staticUrls,
-      ...[wikiIndexUrl],
+      researchIndexUrl,
+    ...[wikiIndexUrl],
       ...wikiPageUrls,
       ...filesystemServerUrls,
       ...curatedUrls,

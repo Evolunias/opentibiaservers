@@ -1,0 +1,29 @@
+{
+  "generated": "2026-09-17",
+  "urlCount": 10801,
+  "byType": {
+    "home": 1,
+    "directory": 1,
+    "rankings": 1,
+    "resources": 1,
+    "knowledge-index": 1,
+    "partner": 1,
+    "contact": 1,
+    "knowledge": 6,
+    "server": 937,
+    "mechanics": 6,
+    "progression": 3,
+    "bestiary": 2,
+    "equipment": 2,
+    "item": 8154,
+    "monster": 1402,
+    "spell": 209,
+    "country-facet": 30,
+    "client-facet": 43
+  },
+  "contact": "support@opentibiaservers.com",
+  "formats": [
+    "markdown",
+    "mediawiki"
+  ]
+}

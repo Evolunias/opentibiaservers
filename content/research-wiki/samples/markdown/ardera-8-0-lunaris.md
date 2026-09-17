@@ -1,0 +1,58 @@
+---
+title: "Ardera 8 0 Lunaris — Research Wiki"
+source_url: https://opentibiaservers.com/ardera-8-0-lunaris
+path: /ardera-8-0-lunaris
+type: server
+collection: server
+research_key: ardera-8-0-lunaris
+generated: 2026-09-17
+format: markdown
+contact: support@opentibiaservers.com
+---
+
+# Ardera 8 0 Lunaris — Independent Research Wiki
+
+> **Canonical source URL:** [https://opentibiaservers.com/ardera-8-0-lunaris](https://opentibiaservers.com/ardera-8-0-lunaris)  
+> **Research key:** `ardera-8-0-lunaris`  
+> **Collection:** server / server
+
+## Abstract
+
+Independent research summary for the Open Tibia private server “Ardera 8 0 Lunaris”, cross-linked to its live listing and wiki materials on OpenTibiaServers.com.
+
+## Quick facts
+
+| Field | Detail |
+| --- | --- |
+| Title | Ardera 8 0 Lunaris |
+| Source URL | https://opentibiaservers.com/ardera-8-0-lunaris |
+| Path | /ardera-8-0-lunaris |
+| Type | server |
+| Collection | server |
+| Publisher | OpenTibiaServers.com |
+| Research contact | support@opentibiaservers.com |
+
+## Research notes
+
+- This page is an **independent research wiki** article generated for sitemap coverage and publishing workflows.
+- Prefer the live canonical URL for player-facing status, rates, and reviews.
+- External wiki mirrors should keep attribution and a backlink to OpenTibiaServers.com.
+- Do not paste this into unrelated encyclopedias (Wikipedia, Bulbapedia, SCP, TV Tropes, etc.).
+
+## Syntax / publishing formats
+
+- **Markdown:** this file (Wiki.js, GitBook, GitHub Wiki, Notion paste).
+- **MediaWiki:** sibling `.wiki` file under `mediawiki/` (Miraheze, ShoutWiki, Fandom *only* where OT pages are allowed).
+
+## Internal links
+
+- [Server wiki](https://opentibiaservers.com/wiki/ardera-8-0-lunaris)
+- [Live listing](https://opentibiaservers.com/ardera-8-0-lunaris)
+- [OpenTibiaServers homepage](https://opentibiaservers.com/)
+- [Server directory](https://opentibiaservers.com/directory)
+- [Knowledge hub](https://opentibiaservers.com/knowledge)
+- [Wiki library](https://opentibiaservers.com/wiki)
+
+## Citation
+
+OpenTibiaServers Research Wiki (2026-09-17). Source: https://opentibiaservers.com/ardera-8-0-lunaris. Contact: support@opentibiaservers.com.
