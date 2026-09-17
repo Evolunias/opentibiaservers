@@ -2,6 +2,7 @@
 | name = Hellgate Global
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/hellgate-global
+| wiki = https://opentibiaservers.com/wiki/hellgate-global
 | host = list.hellgate-global.com.br:7171
 | version = 15.1
 | location = Brazil
@@ -13,6 +14,7 @@
 '''Hellgate Global''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/hellgate-global Hellgate Global on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/hellgate-global Hellgate Global wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Hellgate Global
 |-
 | Directory profile || [https://opentibiaservers.com/hellgate-global https://opentibiaservers.com/hellgate-global]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/hellgate-global https://opentibiaservers.com/wiki/hellgate-global]
 |-
 | Host || list.hellgate-global.com.br:7171
 |-
@@ -42,30 +46,47 @@
 
 Meet Hellgate Global beyond the list row: verify list.hellgate-global.com.br, understand its 15.1 PVP x9999 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Hellgate Global''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/hellgate-global Hellgate Global server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/hellgate-global Hellgate Global server profile]
+# [https://opentibiaservers.com/wiki/hellgate-global Hellgate Global wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''9999x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''48'''
+* Client / protocol: '''15.1'''
+* Location: '''Brazil'''
+Always re-check the [https://opentibiaservers.com/hellgate-global live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Hellgate Global''': [https://opentibiaservers.com/hellgate-global https://opentibiaservers.com/hellgate-global]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/hellgate-global https://opentibiaservers.com/wiki/hellgate-global]
 
 == External links ==
 
 * [https://opentibiaservers.com/hellgate-global Hellgate Global — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/hellgate-global Hellgate Global — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://hellgate-global.com.br/ Official Hellgate Global website]
+
+== Disclaimer ==
+
+Hellgate Global is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Hellgate Global]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/hellgate-global -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/hellgate-global -->

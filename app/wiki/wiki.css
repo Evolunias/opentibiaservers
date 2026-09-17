@@ -1,0 +1,99 @@
+
+/* ===== Server wiki library ===== */
+.server-wiki {
+  width: min(100%, 52rem);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  color: #17202a;
+}
+.server-wiki__header {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #dfe5ec;
+}
+.server-wiki__eyebrow {
+  margin: 0 0 0.35rem;
+  color: #0f766e;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.server-wiki__header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.15;
+}
+.server-wiki__lede {
+  margin: 0.75rem 0 0;
+  color: #475569;
+}
+.server-wiki__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.server-wiki__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 6px;
+  background: #0f766e;
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+.server-wiki__button--ghost {
+  background: #fff;
+  color: #0f766e !important;
+  border: 1px solid #99d5cb;
+}
+.server-wiki__content :is(h1,h2,h3,h4) {
+  margin-top: 1.6rem;
+  margin-bottom: 0.55rem;
+}
+.server-wiki__content p,
+.server-wiki__content li {
+  line-height: 1.65;
+  color: #1f2937;
+}
+.server-wiki__content a {
+  color: #0f766e;
+  font-weight: 600;
+}
+.server-wiki__content blockquote {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid #0f766e;
+  background: #f0fdfa;
+}
+.server-wiki__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+.server-wiki__table th,
+.server-wiki__table td {
+  border: 1px solid #dbe3ea;
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+}
+.server-wiki__table th {
+  background: #f8fafc;
+}
+.server-wiki__index-list {
+  columns: 2;
+  gap: 1.5rem;
+  padding-left: 1.1rem;
+}
+.server-wiki__index-list li {
+  break-inside: avoid;
+  margin: 0.35rem 0;
+}
+@media (max-width: 720px) {
+  .server-wiki__index-list { columns: 1; }
+}

@@ -105,6 +105,7 @@ export default function Header() {
                 >
                   Rankings
                 </Link>
+          <Link href="/wiki" className="nav-chip">Wiki</Link>
                 <ThemeSelector />
                 <LanguageSelector />
                 {user ? (

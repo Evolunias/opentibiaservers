@@ -2,6 +2,7 @@
 | name = Visionot
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/visionot
+| wiki = https://opentibiaservers.com/wiki/visionot
 | host = play.visionot.online:7171
 | location = Canada
 | pvp = nPVP
@@ -12,6 +13,7 @@
 '''Visionot''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/visionot Visionot on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/visionot Visionot wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -21,6 +23,8 @@
 | Server name || Visionot
 |-
 | Directory profile || [https://opentibiaservers.com/visionot https://opentibiaservers.com/visionot]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/visionot https://opentibiaservers.com/wiki/visionot]
 |-
 | Host || play.visionot.online:7171
 |-
@@ -39,30 +43,46 @@
 
 Meet Visionot beyond the list row: verify play.visionot.online, understand its nPVP x1 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Visionot''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/visionot Visionot server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/visionot Visionot server profile]
+# [https://opentibiaservers.com/wiki/visionot Visionot wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''1x'''
+* World type: '''nPVP'''
+* Players online (snapshot): '''108'''
+* Location: '''Canada'''
+Always re-check the [https://opentibiaservers.com/visionot live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Visionot''': [https://opentibiaservers.com/visionot https://opentibiaservers.com/visionot]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/visionot https://opentibiaservers.com/wiki/visionot]
 
 == External links ==
 
 * [https://opentibiaservers.com/visionot Visionot — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/visionot Visionot — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://visionot.online/ Official Visionot website]
+
+== Disclaimer ==
+
+Visionot is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Visionot]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/visionot -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/visionot -->

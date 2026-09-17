@@ -2,12 +2,14 @@
 | name = Dragora
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/dragora
+| wiki = https://opentibiaservers.com/wiki/dragora
 | host = dragora.online
 }}
 
 '''Dragora''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/dragora Dragora on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/dragora Dragora wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -18,6 +20,8 @@
 |-
 | Directory profile || [https://opentibiaservers.com/dragora https://opentibiaservers.com/dragora]
 |-
+| On-site wiki || [https://opentibiaservers.com/wiki/dragora https://opentibiaservers.com/wiki/dragora]
+|-
 | Host || dragora.online
 |-
 | Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
@@ -27,29 +31,41 @@
 
 We are thrilled to officially introduce our brand-new daily automated feature: the Last Man Standing (LMS) event. This is an all-out battle royale where PvP skills, spatial awareness, and raw endurance meet. Below is everything you need to know about how the engine works, the arena mechanics, and how you can claim ultimate victory. This wording comes from the recorded official website metadata.
 
-Players searching for '''Dragora''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/dragora Dragora server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/dragora Dragora server profile]
+# [https://opentibiaservers.com/wiki/dragora Dragora wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+See the [https://opentibiaservers.com/dragora live listing] for current rates and activity.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Dragora''': [https://opentibiaservers.com/dragora https://opentibiaservers.com/dragora]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/dragora https://opentibiaservers.com/wiki/dragora]
 
 == External links ==
 
 * [https://opentibiaservers.com/dragora Dragora — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/dragora Dragora — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
+
+== Disclaimer ==
+
+Dragora is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Dragora]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/dragora -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/dragora -->

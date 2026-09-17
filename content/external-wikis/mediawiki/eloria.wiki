@@ -2,6 +2,7 @@
 | name = Eloria
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/eloria
+| wiki = https://opentibiaservers.com/wiki/eloria
 | host = eloria.pl:7171
 | version = 15.0
 | location = Poland
@@ -13,6 +14,7 @@
 '''Eloria''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/eloria Eloria on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/eloria Eloria wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Eloria
 |-
 | Directory profile || [https://opentibiaservers.com/eloria https://opentibiaservers.com/eloria]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/eloria https://opentibiaservers.com/wiki/eloria]
 |-
 | Host || eloria.pl:7171
 |-
@@ -42,30 +46,47 @@
 
 Eloria.pl | Evolution OTS 15.11 | Monk, Dungeons, Fate Quest, Acts, Custom Outfits & 100+ Features This wording comes from the recorded official website metadata.
 
-Players searching for '''Eloria''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/eloria Eloria server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/eloria Eloria server profile]
+# [https://opentibiaservers.com/wiki/eloria Eloria wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''500x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''39'''
+* Client / protocol: '''15.0'''
+* Location: '''Poland'''
+Always re-check the [https://opentibiaservers.com/eloria live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Eloria''': [https://opentibiaservers.com/eloria https://opentibiaservers.com/eloria]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/eloria https://opentibiaservers.com/wiki/eloria]
 
 == External links ==
 
 * [https://opentibiaservers.com/eloria Eloria — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/eloria Eloria — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://eloria.pl/ Official Eloria website]
+
+== Disclaimer ==
+
+Eloria is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Eloria]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/eloria -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/eloria -->

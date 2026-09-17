@@ -2,6 +2,7 @@
 title: "Runesofsoul Open Tibia Server"
 slug: runesofsoul
 canonical: https://opentibiaservers.com/runesofsoul
+wiki: https://opentibiaservers.com/wiki/runesofsoul
 directory: https://opentibiaservers.com
 generated: 2026-09-17
 format: markdown
@@ -12,6 +13,7 @@ format: markdown
 **Runesofsoul** is an Open Tibia (OTServ) private server tracked by the [Open Tibia Servers](https://opentibiaservers.com) directory.
 
 > **Live listing:** [Runesofsoul on OpenTibiaServers.com](https://opentibiaservers.com/runesofsoul)  
+> **Server wiki:** [Runesofsoul wiki page](https://opentibiaservers.com/wiki/runesofsoul)  
 > **Browse all servers:** [Open Tibia server list](https://opentibiaservers.com/directory)
 
 ## Quick facts
@@ -20,6 +22,7 @@ format: markdown
 | --- | --- |
 | Server name | Runesofsoul |
 | Directory profile | [https://opentibiaservers.com/runesofsoul](https://opentibiaservers.com/runesofsoul) |
+| On-site wiki | [https://opentibiaservers.com/wiki/runesofsoul](https://opentibiaservers.com/wiki/runesofsoul) |
 | Host | runesofsoul.servegame.com |
 | Status & rankings | [opentibiaservers.com](https://opentibiaservers.com) |
 
@@ -27,11 +30,18 @@ format: markdown
 
 Meet Runesofsoul beyond the list row: verify runesofsoul.servegame.com, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
 
-Players searching for **Runesofsoul** usually want the official website, client download path, rules, rates, and whether the world is still active. The directory profile keeps those signals in one place:
+## Getting started
 
-- [Runesofsoul server profile](https://opentibiaservers.com/runesofsoul)
-- [Open Tibia Servers homepage](https://opentibiaservers.com)
-- [Full directory / filters](https://opentibiaservers.com/directory)
+Players searching for **Runesofsoul** usually want the official website, client download path, rules, rates, and whether the world is still active. Start here:
+
+1. Open the exact-match listing: [Runesofsoul server profile](https://opentibiaservers.com/runesofsoul)
+2. Read this wiki summary: [Runesofsoul wiki](https://opentibiaservers.com/wiki/runesofsoul)
+3. Compare filters in the [full directory](https://opentibiaservers.com/directory)
+4. Confirm client version / host details before downloading a third-party client
+
+## Rates, world type, and activity
+
+Rate and PvP details for **Runesofsoul** are maintained on the [live listing](https://opentibiaservers.com/runesofsoul). Snapshots in this article are only as fresh as the last directory sync.
 
 ## Why use OpenTibiaServers.com
 
@@ -40,17 +50,28 @@ Players searching for **Runesofsoul** usually want the official website, client 
 1. Open the exact-match page for **Runesofsoul**: [https://opentibiaservers.com/runesofsoul](https://opentibiaservers.com/runesofsoul)
 2. Compare nearby OT servers by players online, version, and location
 3. Verify listing context before downloading a client from third-party mirrors
+4. Share the wiki page: [https://opentibiaservers.com/wiki/runesofsoul](https://opentibiaservers.com/wiki/runesofsoul)
 
-## External / see also
+## Related links
 
 - [Runesofsoul — Open Tibia Servers listing](https://opentibiaservers.com/runesofsoul)
+- [Runesofsoul — on-site wiki](https://opentibiaservers.com/wiki/runesofsoul)
 - [Open Tibia server directory](https://opentibiaservers.com/directory)
+- [All wiki pages](https://opentibiaservers.com/wiki)
 - [OpenTibiaServers.com](https://opentibiaservers.com)
+
+## Sources
+
+- review-page
 
 ## Categories
 
 Open Tibia servers · OTServ · Runesofsoul · Tibia private servers · MMORPG directories
 
+## Disclaimer
+
+Runesofsoul is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH. Verify rules, donations, and downloads on the server's own channels.
+
 ---
 
-*This page was generated for external wiki publishing. Canonical player-facing listing: [https://opentibiaservers.com/runesofsoul](https://opentibiaservers.com/runesofsoul).*
+*Generated 2026-09-17 for on-site and external wiki publishing. Canonical listing: [https://opentibiaservers.com/runesofsoul](https://opentibiaservers.com/runesofsoul).*

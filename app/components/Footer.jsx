@@ -5,6 +5,7 @@ const footerLinks = [
   { href: '/', label: 'Server Directory' },
   { href: '/knowledge', label: 'Knowledge' },
   { href: '/resources', label: 'Resources' },
+  { href: '/wiki', label: 'Wiki' },
   { href: '/submit-server', label: 'Submit Server' },
   { href: '/terms', label: 'Terms' },
   { href: '/privacy', label: 'Privacy' },
@@ -40,6 +41,24 @@ export default function Footer() {
       <div className="border-t border-white/10 px-6 py-4">
         <p className="mx-auto max-w-7xl text-xs text-gray-400">
           (c) {new Date().getFullYear()} OpenTibiaServers.com. Public source records are attributed where available; server owners can request corrections or claim listings.
+        </p>
+        <p className="ots-footer-partner mx-auto mt-2 max-w-7xl text-xs text-gray-300">
+          Featured partner:{' '}
+          <a href="https://evomanias.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">
+            Evomanias
+          </a>
+          {' '}— Plus Plan $200/yr (was $360, save $160) ·{' '}
+          <a href="https://evomanias.com/downloads" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">
+            free download
+          </a>
+          {' '}· 500 points ·{' '}
+          <a href="https://discord.gg/wj4D48Jj5W" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">
+            Discord backpack
+          </a>
+          {' '}·{' '}
+          <Link href="/evomanias" className="underline hover:text-white">
+            profile
+          </Link>
         </p>
       </div>
     </footer>

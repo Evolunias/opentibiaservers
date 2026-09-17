@@ -2,11 +2,13 @@
 | name = Landoria Ots
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/landoria-ots
+| wiki = https://opentibiaservers.com/wiki/landoria-ots
 }}
 
 '''Landoria Ots''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/landoria-ots Landoria Ots on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/landoria-ots Landoria Ots wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -17,6 +19,8 @@
 |-
 | Directory profile || [https://opentibiaservers.com/landoria-ots https://opentibiaservers.com/landoria-ots]
 |-
+| On-site wiki || [https://opentibiaservers.com/wiki/landoria-ots https://opentibiaservers.com/wiki/landoria-ots]
+|-
 | Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
 |}
 
@@ -24,29 +28,41 @@
 
 Landoria Ots is listed in the Open Tibia Servers database so players can compare live status, player counts, rates, and related Open Tibia projects before creating an account.
 
-Players searching for '''Landoria Ots''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/landoria-ots Landoria Ots server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/landoria-ots Landoria Ots server profile]
+# [https://opentibiaservers.com/wiki/landoria-ots Landoria Ots wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+See the [https://opentibiaservers.com/landoria-ots live listing] for current rates and activity.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Landoria Ots''': [https://opentibiaservers.com/landoria-ots https://opentibiaservers.com/landoria-ots]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/landoria-ots https://opentibiaservers.com/wiki/landoria-ots]
 
 == External links ==
 
 * [https://opentibiaservers.com/landoria-ots Landoria Ots — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/landoria-ots Landoria Ots — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
+
+== Disclaimer ==
+
+Landoria Ots is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Landoria Ots]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/landoria-ots -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/landoria-ots -->

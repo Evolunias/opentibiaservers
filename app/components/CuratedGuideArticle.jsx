@@ -246,6 +246,18 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
             <h1 className="mb-4 max-w-4xl text-4xl font-bold leading-tight text-black md:text-6xl">
               {page.h1}
             </h1>
+
+      /* OTS_SERVER_WIKI_LINK */
+      {page?.type === 'server' && page?.slug ? (
+        <p className="curated-guide__server-wiki">
+          <Link href={`/wiki/${page.slug}`}>Server wiki</Link>
+          {' · '}
+          <Link href={`/${page.slug}`}>Live listing</Link>
+          {' · '}
+          <Link href="/directory">Directory</Link>
+        </p>
+      ) : null}
+
             {isServerProfile ? <small className="cyntara-wiki__attribution">From OpenTibiaServers Wiki, the primary open tibia server directory</small> : null}
             {profileDek ? (
               <p className="max-w-3xl text-lg leading-8 text-black">

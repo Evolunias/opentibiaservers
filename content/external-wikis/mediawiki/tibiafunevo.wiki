@@ -2,6 +2,7 @@
 | name = Tibiafunevo
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/tibiafunevo
+| wiki = https://opentibiaservers.com/wiki/tibiafunevo
 | host = tibiafunevo.hopto.org:7171
 | version = 7.6
 | location = Poland
@@ -13,6 +14,7 @@
 '''Tibiafunevo''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/tibiafunevo Tibiafunevo on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/tibiafunevo Tibiafunevo wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Tibiafunevo
 |-
 | Directory profile || [https://opentibiaservers.com/tibiafunevo https://opentibiaservers.com/tibiafunevo]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/tibiafunevo https://opentibiaservers.com/wiki/tibiafunevo]
 |-
 | Host || tibiafunevo.hopto.org:7171
 |-
@@ -42,30 +46,47 @@
 
 Meet Tibiafunevo beyond the list row: verify tibiafunevo.hopto.org, understand its 7.6 PVP x100 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Tibiafunevo''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/tibiafunevo Tibiafunevo server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/tibiafunevo Tibiafunevo server profile]
+# [https://opentibiaservers.com/wiki/tibiafunevo Tibiafunevo wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''100x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''76'''
+* Client / protocol: '''7.6'''
+* Location: '''Poland'''
+Always re-check the [https://opentibiaservers.com/tibiafunevo live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Tibiafunevo''': [https://opentibiaservers.com/tibiafunevo https://opentibiaservers.com/tibiafunevo]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/tibiafunevo https://opentibiaservers.com/wiki/tibiafunevo]
 
 == External links ==
 
 * [https://opentibiaservers.com/tibiafunevo Tibiafunevo — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/tibiafunevo Tibiafunevo — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://tibiafunevo.hopto.org/ Official Tibiafunevo website]
+
+== Disclaimer ==
+
+Tibiafunevo is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Tibiafunevo]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/tibiafunevo -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/tibiafunevo -->

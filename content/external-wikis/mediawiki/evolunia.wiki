@@ -2,6 +2,7 @@
 | name = Evolunia
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/evolunia
+| wiki = https://opentibiaservers.com/wiki/evolunia
 | host = evolunia.net
 | version = 10.98
 | location = Sweden
@@ -13,6 +14,7 @@
 '''Evolunia''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/evolunia Evolunia on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/evolunia Evolunia wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Evolunia
 |-
 | Directory profile || [https://opentibiaservers.com/evolunia https://opentibiaservers.com/evolunia]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/evolunia https://opentibiaservers.com/wiki/evolunia]
 |-
 | Host || evolunia.net
 |-
@@ -42,30 +46,47 @@
 
 A player-focused Evolunia reference page for exploring rules, client version, online activity, progression fit, community expectations, and similar Open Tibia servers.
 
-Players searching for '''Evolunia''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/evolunia Evolunia server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/evolunia Evolunia server profile]
+# [https://opentibiaservers.com/wiki/evolunia Evolunia wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''100x'''
+* World type: '''PVPe'''
+* Players online (snapshot): '''210'''
+* Client / protocol: '''10.98'''
+* Location: '''Sweden'''
+Always re-check the [https://opentibiaservers.com/evolunia live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Evolunia''': [https://opentibiaservers.com/evolunia https://opentibiaservers.com/evolunia]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/evolunia https://opentibiaservers.com/wiki/evolunia]
 
 == External links ==
 
 * [https://opentibiaservers.com/evolunia Evolunia — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/evolunia Evolunia — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://evolunia.net/ Official Evolunia website]
+
+== Disclaimer ==
+
+Evolunia is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Evolunia]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/evolunia -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/evolunia -->

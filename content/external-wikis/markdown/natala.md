@@ -2,6 +2,7 @@
 title: "Natala Open Tibia Server"
 slug: natala
 canonical: https://opentibiaservers.com/natala
+wiki: https://opentibiaservers.com/wiki/natala
 directory: https://opentibiaservers.com
 generated: 2026-09-17
 format: markdown
@@ -12,6 +13,7 @@ format: markdown
 **Natala** is an Open Tibia (OTServ) private server tracked by the [Open Tibia Servers](https://opentibiaservers.com) directory.
 
 > **Live listing:** [Natala on OpenTibiaServers.com](https://opentibiaservers.com/natala)  
+> **Server wiki:** [Natala wiki page](https://opentibiaservers.com/wiki/natala)  
 > **Browse all servers:** [Open Tibia server list](https://opentibiaservers.com/directory)
 
 ## Quick facts
@@ -20,17 +22,25 @@ format: markdown
 | --- | --- |
 | Server name | Natala |
 | Directory profile | [https://opentibiaservers.com/natala](https://opentibiaservers.com/natala) |
+| On-site wiki | [https://opentibiaservers.com/wiki/natala](https://opentibiaservers.com/wiki/natala) |
 | Status & rankings | [opentibiaservers.com](https://opentibiaservers.com) |
 
 ## Overview
 
 Natala is listed in the Open Tibia Servers database so players can compare live status, player counts, rates, and related Open Tibia projects before creating an account.
 
-Players searching for **Natala** usually want the official website, client download path, rules, rates, and whether the world is still active. The directory profile keeps those signals in one place:
+## Getting started
 
-- [Natala server profile](https://opentibiaservers.com/natala)
-- [Open Tibia Servers homepage](https://opentibiaservers.com)
-- [Full directory / filters](https://opentibiaservers.com/directory)
+Players searching for **Natala** usually want the official website, client download path, rules, rates, and whether the world is still active. Start here:
+
+1. Open the exact-match listing: [Natala server profile](https://opentibiaservers.com/natala)
+2. Read this wiki summary: [Natala wiki](https://opentibiaservers.com/wiki/natala)
+3. Compare filters in the [full directory](https://opentibiaservers.com/directory)
+4. Confirm client version / host details before downloading a third-party client
+
+## Rates, world type, and activity
+
+Rate and PvP details for **Natala** are maintained on the [live listing](https://opentibiaservers.com/natala). Snapshots in this article are only as fresh as the last directory sync.
 
 ## Why use OpenTibiaServers.com
 
@@ -39,17 +49,28 @@ Players searching for **Natala** usually want the official website, client downl
 1. Open the exact-match page for **Natala**: [https://opentibiaservers.com/natala](https://opentibiaservers.com/natala)
 2. Compare nearby OT servers by players online, version, and location
 3. Verify listing context before downloading a client from third-party mirrors
+4. Share the wiki page: [https://opentibiaservers.com/wiki/natala](https://opentibiaservers.com/wiki/natala)
 
-## External / see also
+## Related links
 
 - [Natala — Open Tibia Servers listing](https://opentibiaservers.com/natala)
+- [Natala — on-site wiki](https://opentibiaservers.com/wiki/natala)
 - [Open Tibia server directory](https://opentibiaservers.com/directory)
+- [All wiki pages](https://opentibiaservers.com/wiki)
 - [OpenTibiaServers.com](https://opentibiaservers.com)
+
+## Sources
+
+- static-route
 
 ## Categories
 
 Open Tibia servers · OTServ · Natala · Tibia private servers · MMORPG directories
 
+## Disclaimer
+
+Natala is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH. Verify rules, donations, and downloads on the server's own channels.
+
 ---
 
-*This page was generated for external wiki publishing. Canonical player-facing listing: [https://opentibiaservers.com/natala](https://opentibiaservers.com/natala).*
+*Generated 2026-09-17 for on-site and external wiki publishing. Canonical listing: [https://opentibiaservers.com/natala](https://opentibiaservers.com/natala).*

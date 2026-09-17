@@ -28,6 +28,14 @@ export default function ServerList({ servers }) {
 
   return (
     <div className="server-directory-list">
+      <p className="directory-evomanias-note">
+        Looking for a free-to-play OT start? <strong>Evomanias</strong> offers a free download,
+        Plus Plan <strong>$200/year</strong> (was $360, save $160), 500 free donation points, and a Discord store backpack.
+        {' '}<a href="https://evomanias.com/downloads" target="_blank" rel="noopener noreferrer">Download</a>
+        {' · '}<a href="https://discord.gg/wj4D48Jj5W" target="_blank" rel="noopener noreferrer">Discord</a>
+        {' · '}<a href="/evomanias">Full profile</a>
+      </p>
+
       <div className="server-table-wrap overflow-x-auto">
         <table className="w-full text-sm">
           <tbody>
@@ -39,7 +47,7 @@ export default function ServerList({ servers }) {
                   <div className="server-list__featured-details">
                     <span className="server-list__featured-label">Featured listing</span>
                     <Link href="/evomanias" className="server-list__featured-name">Evomanias.com</Link>
-                    <span className="server-list__featured-copy">A featured Open Tibia server profile</span>
+                    <span className="server-list__featured-copy">Free download · Plus Plan $200/yr (save $160) · 500 points · Discord backpack</span>
                   </div>
                 </div>
                 <a
@@ -48,7 +56,7 @@ export default function ServerList({ servers }) {
                   rel="noopener noreferrer"
                   className="server-list__featured-action"
                 >
-                  <span>Visit official site</span>
+                  <span>Play Evomanias</span>
                   <span className="server-list__featured-arrow" aria-hidden="true">-&gt;</span>
                 </a>
               </div>

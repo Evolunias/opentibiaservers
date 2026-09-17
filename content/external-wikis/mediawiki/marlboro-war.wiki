@@ -2,6 +2,7 @@
 | name = Marlboro War
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/marlboro-war
+| wiki = https://opentibiaservers.com/wiki/marlboro-war
 | host = login.marlboro-war.net:7171
 | version = 8.6
 | location = Mexico
@@ -13,6 +14,7 @@
 '''Marlboro War''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/marlboro-war Marlboro War on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/marlboro-war Marlboro War wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Marlboro War
 |-
 | Directory profile || [https://opentibiaservers.com/marlboro-war https://opentibiaservers.com/marlboro-war]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/marlboro-war https://opentibiaservers.com/wiki/marlboro-war]
 |-
 | Host || login.marlboro-war.net:7171
 |-
@@ -42,30 +46,47 @@
 
 Meet Marlboro War beyond the list row: verify login.marlboro-war.net, understand its 8.6 WAR x999 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Marlboro War''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/marlboro-war Marlboro War server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/marlboro-war Marlboro War server profile]
+# [https://opentibiaservers.com/wiki/marlboro-war Marlboro War wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''999x'''
+* World type: '''WAR'''
+* Players online (snapshot): '''71'''
+* Client / protocol: '''8.6'''
+* Location: '''Mexico'''
+Always re-check the [https://opentibiaservers.com/marlboro-war live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Marlboro War''': [https://opentibiaservers.com/marlboro-war https://opentibiaservers.com/marlboro-war]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/marlboro-war https://opentibiaservers.com/wiki/marlboro-war]
 
 == External links ==
 
 * [https://opentibiaservers.com/marlboro-war Marlboro War — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/marlboro-war Marlboro War — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://marlboro-war.net/ Official Marlboro War website]
+
+== Disclaimer ==
+
+Marlboro War is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Marlboro War]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/marlboro-war -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/marlboro-war -->

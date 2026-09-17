@@ -2,6 +2,7 @@
 | name = Draconiaot
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/draconiaot
+| wiki = https://opentibiaservers.com/wiki/draconiaot
 | host = sv.draconiaot.com:7171
 | version = 8.6
 | location = Venezuela
@@ -13,6 +14,7 @@
 '''Draconiaot''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/draconiaot Draconiaot on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/draconiaot Draconiaot wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Draconiaot
 |-
 | Directory profile || [https://opentibiaservers.com/draconiaot https://opentibiaservers.com/draconiaot]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/draconiaot https://opentibiaservers.com/wiki/draconiaot]
 |-
 | Host || sv.draconiaot.com:7171
 |-
@@ -42,30 +46,47 @@
 
 Draconia OT (DraconiaOT) es un servidor Tibia 8.60 con PvP, eventos y comercio de personajes. Únete gratis y juega ahora. This wording comes from the recorded official website metadata.
 
-Players searching for '''Draconiaot''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/draconiaot Draconiaot server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/draconiaot Draconiaot server profile]
+# [https://opentibiaservers.com/wiki/draconiaot Draconiaot wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''40x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''90'''
+* Client / protocol: '''8.6'''
+* Location: '''Venezuela'''
+Always re-check the [https://opentibiaservers.com/draconiaot live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Draconiaot''': [https://opentibiaservers.com/draconiaot https://opentibiaservers.com/draconiaot]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/draconiaot https://opentibiaservers.com/wiki/draconiaot]
 
 == External links ==
 
 * [https://opentibiaservers.com/draconiaot Draconiaot — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/draconiaot Draconiaot — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://draconiaot.com/ Official Draconiaot website]
+
+== Disclaimer ==
+
+Draconiaot is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Draconiaot]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/draconiaot -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/draconiaot -->

@@ -2,6 +2,7 @@
 | name = Demolidores
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/demolidores
+| wiki = https://opentibiaservers.com/wiki/demolidores
 | host = sv.demolidores.com.br:7171
 | version = 8.6
 | location = Brazil
@@ -13,6 +14,7 @@
 '''Demolidores''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/demolidores Demolidores on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/demolidores Demolidores wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Demolidores
 |-
 | Directory profile || [https://opentibiaservers.com/demolidores https://opentibiaservers.com/demolidores]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/demolidores https://opentibiaservers.com/wiki/demolidores]
 |-
 | Host || sv.demolidores.com.br:7171
 |-
@@ -42,30 +46,47 @@
 
 Meet Demolidores beyond the list row: verify sv.demolidores.com.br, understand its 8.6 PVP x999 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Demolidores''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/demolidores Demolidores server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/demolidores Demolidores server profile]
+# [https://opentibiaservers.com/wiki/demolidores Demolidores wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''999x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''695'''
+* Client / protocol: '''8.6'''
+* Location: '''Brazil'''
+Always re-check the [https://opentibiaservers.com/demolidores live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Demolidores''': [https://opentibiaservers.com/demolidores https://opentibiaservers.com/demolidores]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/demolidores https://opentibiaservers.com/wiki/demolidores]
 
 == External links ==
 
 * [https://opentibiaservers.com/demolidores Demolidores — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/demolidores Demolidores — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://demolidores.com.br/ Official Demolidores website]
+
+== Disclaimer ==
+
+Demolidores is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Demolidores]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/demolidores -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/demolidores -->

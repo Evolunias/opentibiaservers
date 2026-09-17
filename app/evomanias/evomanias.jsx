@@ -21,7 +21,7 @@ const page = polishPlayerFacingCopy({
     'free to play OT server',
   ],
   metaDescription:
-    'Evomanias Open Tibia server guide: free download, Plus Plan $200/yr (save $160), 500 free donation points, Discord free store backpack, official site links, and player-facing onboarding notes.',
+    'Evomanias on OpenTibiaServers: free download, Plus Plan $200/yr (was $360, save $160), 500 free donation points, and a free Discord store backpack. Official site, downloads, and Discord linked.',
   updatedAt: '2026-09-17',
   pageLabel: 'Featured Server',
   sourceLinks: [

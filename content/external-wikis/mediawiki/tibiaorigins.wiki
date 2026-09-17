@@ -2,12 +2,14 @@
 | name = Tibiaorigins
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/tibiaorigins
+| wiki = https://opentibiaservers.com/wiki/tibiaorigins
 | host = tibiaorigins.com
 }}
 
 '''Tibiaorigins''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/tibiaorigins Tibiaorigins on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/tibiaorigins Tibiaorigins wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -18,6 +20,8 @@
 |-
 | Directory profile || [https://opentibiaservers.com/tibiaorigins https://opentibiaservers.com/tibiaorigins]
 |-
+| On-site wiki || [https://opentibiaservers.com/wiki/tibiaorigins https://opentibiaservers.com/wiki/tibiaorigins]
+|-
 | Host || tibiaorigins.com
 |-
 | Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
@@ -27,29 +31,41 @@
 
 In TibiaOrigins, every level rewards you with Attribute Points to invest in unique stats, letting you build characters beyond vocation limits. Extra attribute points can be obtained finishing quests, gaining skills, making runes, etc! This wording comes from the recorded official website metadata.
 
-Players searching for '''Tibiaorigins''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/tibiaorigins Tibiaorigins server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/tibiaorigins Tibiaorigins server profile]
+# [https://opentibiaservers.com/wiki/tibiaorigins Tibiaorigins wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+See the [https://opentibiaservers.com/tibiaorigins live listing] for current rates and activity.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Tibiaorigins''': [https://opentibiaservers.com/tibiaorigins https://opentibiaservers.com/tibiaorigins]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/tibiaorigins https://opentibiaservers.com/wiki/tibiaorigins]
 
 == External links ==
 
 * [https://opentibiaservers.com/tibiaorigins Tibiaorigins — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/tibiaorigins Tibiaorigins — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
+
+== Disclaimer ==
+
+Tibiaorigins is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Tibiaorigins]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/tibiaorigins -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/tibiaorigins -->

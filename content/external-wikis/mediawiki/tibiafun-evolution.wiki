@@ -2,11 +2,13 @@
 | name = TibiaFun Evolution
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/tibiafun-evolution
+| wiki = https://opentibiaservers.com/wiki/tibiafun-evolution
 }}
 
 '''TibiaFun Evolution''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/tibiafun-evolution TibiaFun Evolution on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/tibiafun-evolution TibiaFun Evolution wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -17,6 +19,8 @@
 |-
 | Directory profile || [https://opentibiaservers.com/tibiafun-evolution https://opentibiaservers.com/tibiafun-evolution]
 |-
+| On-site wiki || [https://opentibiaservers.com/wiki/tibiafun-evolution https://opentibiaservers.com/wiki/tibiafun-evolution]
+|-
 | Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
 |}
 
@@ -24,29 +28,41 @@
 
 Meet TibiaFun Evolution beyond the list row: verify its host, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
 
-Players searching for '''TibiaFun Evolution''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/tibiafun-evolution TibiaFun Evolution server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/tibiafun-evolution TibiaFun Evolution server profile]
+# [https://opentibiaservers.com/wiki/tibiafun-evolution TibiaFun Evolution wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+See the [https://opentibiaservers.com/tibiafun-evolution live listing] for current rates and activity.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''TibiaFun Evolution''': [https://opentibiaservers.com/tibiafun-evolution https://opentibiaservers.com/tibiafun-evolution]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/tibiafun-evolution https://opentibiaservers.com/wiki/tibiafun-evolution]
 
 == External links ==
 
 * [https://opentibiaservers.com/tibiafun-evolution TibiaFun Evolution — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/tibiafun-evolution TibiaFun Evolution — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
+
+== Disclaimer ==
+
+TibiaFun Evolution is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:TibiaFun Evolution]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/tibiafun-evolution -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/tibiafun-evolution -->

@@ -2,12 +2,14 @@
 | name = Madot
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/madot
+| wiki = https://opentibiaservers.com/wiki/madot
 | host = oasis.madot.com.br:7171
 }}
 
 '''Madot''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/madot Madot on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/madot Madot wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -18,6 +20,8 @@
 |-
 | Directory profile || [https://opentibiaservers.com/madot https://opentibiaservers.com/madot]
 |-
+| On-site wiki || [https://opentibiaservers.com/wiki/madot https://opentibiaservers.com/wiki/madot]
+|-
 | Host || oasis.madot.com.br:7171
 |-
 | Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
@@ -27,29 +31,41 @@
 
 Os grandes chefes do Tibia temem este fim de semana.. O Double Boss Loot Weekend comeca na Sexta 21/08 as 21:00 e vai ate a Segunda 24/08 as 21:00. This wording comes from the recorded official website metadata.
 
-Players searching for '''Madot''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/madot Madot server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/madot Madot server profile]
+# [https://opentibiaservers.com/wiki/madot Madot wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+See the [https://opentibiaservers.com/madot live listing] for current rates and activity.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Madot''': [https://opentibiaservers.com/madot https://opentibiaservers.com/madot]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/madot https://opentibiaservers.com/wiki/madot]
 
 == External links ==
 
 * [https://opentibiaservers.com/madot Madot — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/madot Madot — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
+
+== Disclaimer ==
+
+Madot is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Madot]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/madot -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/madot -->

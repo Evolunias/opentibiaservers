@@ -2,6 +2,7 @@
 | name = Baiak Icewar
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/baiak-icewar
+| wiki = https://opentibiaservers.com/wiki/baiak-icewar
 | host = sv.baiak-icewar.com:7171
 | version = 8.6
 | location = Brazil
@@ -13,6 +14,7 @@
 '''Baiak Icewar''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/baiak-icewar Baiak Icewar on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/baiak-icewar Baiak Icewar wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Baiak Icewar
 |-
 | Directory profile || [https://opentibiaservers.com/baiak-icewar https://opentibiaservers.com/baiak-icewar]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/baiak-icewar https://opentibiaservers.com/wiki/baiak-icewar]
 |-
 | Host || sv.baiak-icewar.com:7171
 |-
@@ -42,30 +46,47 @@
 
 Meet Baiak Icewar beyond the list row: verify sv.baiak-icewar.com, understand its 8.6 PVP x900 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Baiak Icewar''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/baiak-icewar Baiak Icewar server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/baiak-icewar Baiak Icewar server profile]
+# [https://opentibiaservers.com/wiki/baiak-icewar Baiak Icewar wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''900x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''211'''
+* Client / protocol: '''8.6'''
+* Location: '''Brazil'''
+Always re-check the [https://opentibiaservers.com/baiak-icewar live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Baiak Icewar''': [https://opentibiaservers.com/baiak-icewar https://opentibiaservers.com/baiak-icewar]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/baiak-icewar https://opentibiaservers.com/wiki/baiak-icewar]
 
 == External links ==
 
 * [https://opentibiaservers.com/baiak-icewar Baiak Icewar — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/baiak-icewar Baiak Icewar — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://baiak-icewar.com/ Official Baiak Icewar website]
+
+== Disclaimer ==
+
+Baiak Icewar is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Baiak Icewar]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/baiak-icewar -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/baiak-icewar -->

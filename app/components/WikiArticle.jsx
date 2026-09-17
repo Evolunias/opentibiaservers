@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 export default function WikiArticle({ page }) {
+  const listingHref = page.slug ? `/${page.slug}` : '/directory';
   return (
     <main className="server-wiki">
       <header className="server-wiki__header">
@@ -8,12 +9,14 @@ export default function WikiArticle({ page }) {
         <h1>{page.title.replace(/ Open Tibia Server$/i, '')}</h1>
         <p className="server-wiki__lede">
           Canonical listing:{' '}
+          <Link href={listingHref}>{`https://opentibiaservers.com${listingHref}`}</Link>
+          {' · '}
           <a href={page.canonical} rel="noopener noreferrer">
-            {page.canonical}
+            open canonical
           </a>
         </p>
         <div className="server-wiki__actions">
-          <Link href={page.canonical.replace('https://opentibiaservers.com', '') || '/'} className="server-wiki__button">
+          <Link href={listingHref} className="server-wiki__button">
             View live listing
           </Link>
           <Link href="/directory" className="server-wiki__button server-wiki__button--ghost">
@@ -28,6 +31,13 @@ export default function WikiArticle({ page }) {
         className="server-wiki__content"
         dangerouslySetInnerHTML={{ __html: page.html }}
       />
+      <footer className="server-wiki__footer-nav">
+        <Link href={listingHref}>← Back to /{page.slug} listing</Link>
+        {' · '}
+        <Link href="/directory">Directory</Link>
+        {' · '}
+        <Link href="/wiki">Wiki index</Link>
+      </footer>
     </main>
   );
 }

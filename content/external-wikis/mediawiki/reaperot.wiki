@@ -2,6 +2,7 @@
 | name = Reaperot
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/reaperot
+| wiki = https://opentibiaservers.com/wiki/reaperot
 | host = sv1.reaperot.org:7171
 | version = 8.6
 | location = Brazil
@@ -13,6 +14,7 @@
 '''Reaperot''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/reaperot Reaperot on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/reaperot Reaperot wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Reaperot
 |-
 | Directory profile || [https://opentibiaservers.com/reaperot https://opentibiaservers.com/reaperot]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/reaperot https://opentibiaservers.com/wiki/reaperot]
 |-
 | Host || sv1.reaperot.org:7171
 |-
@@ -42,30 +46,47 @@
 
 Meet Reaperot beyond the list row: verify sv1.reaperot.org, understand its 8.6 PVP x15 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Reaperot''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/reaperot Reaperot server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/reaperot Reaperot server profile]
+# [https://opentibiaservers.com/wiki/reaperot Reaperot wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''15x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''39'''
+* Client / protocol: '''8.6'''
+* Location: '''Brazil'''
+Always re-check the [https://opentibiaservers.com/reaperot live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Reaperot''': [https://opentibiaservers.com/reaperot https://opentibiaservers.com/reaperot]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/reaperot https://opentibiaservers.com/wiki/reaperot]
 
 == External links ==
 
 * [https://opentibiaservers.com/reaperot Reaperot — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/reaperot Reaperot — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://sv1.reaperot.org/ Official Reaperot website]
+
+== Disclaimer ==
+
+Reaperot is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Reaperot]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/reaperot -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/reaperot -->

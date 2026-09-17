@@ -2,6 +2,7 @@
 title: "Cyleria Open Tibia Server"
 slug: cyleria
 canonical: https://opentibiaservers.com/cyleria
+wiki: https://opentibiaservers.com/wiki/cyleria
 directory: https://opentibiaservers.com
 generated: 2026-09-17
 format: markdown
@@ -12,6 +13,7 @@ format: markdown
 **Cyleria** is an Open Tibia (OTServ) private server tracked by the [Open Tibia Servers](https://opentibiaservers.com) directory.
 
 > **Live listing:** [Cyleria on OpenTibiaServers.com](https://opentibiaservers.com/cyleria)  
+> **Server wiki:** [Cyleria wiki page](https://opentibiaservers.com/wiki/cyleria)  
 > **Browse all servers:** [Open Tibia server list](https://opentibiaservers.com/directory)
 
 ## Quick facts
@@ -20,6 +22,7 @@ format: markdown
 | --- | --- |
 | Server name | Cyleria |
 | Directory profile | [https://opentibiaservers.com/cyleria](https://opentibiaservers.com/cyleria) |
+| On-site wiki | [https://opentibiaservers.com/wiki/cyleria](https://opentibiaservers.com/wiki/cyleria) |
 | Host | go.cyleria.pl |
 | Client / version | 8.6 |
 | Location | Poland |
@@ -33,11 +36,26 @@ format: markdown
 
 A source-backed Cyleria reference page for players exploring the Polish OTS, mobile/PC client, no-reset progression, events, Discord community, screenshots, and similar servers.
 
-Players searching for **Cyleria** usually want the official website, client download path, rules, rates, and whether the world is still active. The directory profile keeps those signals in one place:
+## Getting started
 
-- [Cyleria server profile](https://opentibiaservers.com/cyleria)
-- [Open Tibia Servers homepage](https://opentibiaservers.com)
-- [Full directory / filters](https://opentibiaservers.com/directory)
+Players searching for **Cyleria** usually want the official website, client download path, rules, rates, and whether the world is still active. Start here:
+
+1. Open the exact-match listing: [Cyleria server profile](https://opentibiaservers.com/cyleria)
+2. Read this wiki summary: [Cyleria wiki](https://opentibiaservers.com/wiki/cyleria)
+3. Compare filters in the [full directory](https://opentibiaservers.com/directory)
+4. Confirm client version / host details before downloading a third-party client
+
+## Rates, world type, and activity
+
+Directory snapshots (may change):
+
+- EXP rate: **300x**
+- World type: **PVP**
+- Players online (snapshot): **764**
+- Client / protocol: **8.6**
+- Location: **Poland**
+
+Always re-check the [live profile](https://opentibiaservers.com/cyleria) for current online counts and status.
 
 ## Why use OpenTibiaServers.com
 
@@ -46,18 +64,32 @@ Players searching for **Cyleria** usually want the official website, client down
 1. Open the exact-match page for **Cyleria**: [https://opentibiaservers.com/cyleria](https://opentibiaservers.com/cyleria)
 2. Compare nearby OT servers by players online, version, and location
 3. Verify listing context before downloading a client from third-party mirrors
+4. Share the wiki page: [https://opentibiaservers.com/wiki/cyleria](https://opentibiaservers.com/wiki/cyleria)
 
-## External / see also
+## Related links
 
 - [Cyleria — Open Tibia Servers listing](https://opentibiaservers.com/cyleria)
+- [Cyleria — on-site wiki](https://opentibiaservers.com/wiki/cyleria)
 - [Open Tibia server directory](https://opentibiaservers.com/directory)
+- [All wiki pages](https://opentibiaservers.com/wiki)
 - [OpenTibiaServers.com](https://opentibiaservers.com)
 - [Official Cyleria website](https://cyleria.pl/)
+
+## Sources
+
+- static-route
+- otservlist-seed
+- review-page
+- curated
 
 ## Categories
 
 Open Tibia servers · OTServ · Cyleria · Tibia private servers · MMORPG directories
 
+## Disclaimer
+
+Cyleria is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH. Verify rules, donations, and downloads on the server's own channels.
+
 ---
 
-*This page was generated for external wiki publishing. Canonical player-facing listing: [https://opentibiaservers.com/cyleria](https://opentibiaservers.com/cyleria).*
+*Generated 2026-09-17 for on-site and external wiki publishing. Canonical listing: [https://opentibiaservers.com/cyleria](https://opentibiaservers.com/cyleria).*

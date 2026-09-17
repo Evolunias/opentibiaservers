@@ -2,6 +2,7 @@
 title: "Rookgaard Tales Open Tibia Server"
 slug: rookgaard-tales
 canonical: https://opentibiaservers.com/rookgaard-tales
+wiki: https://opentibiaservers.com/wiki/rookgaard-tales
 directory: https://opentibiaservers.com
 generated: 2026-09-17
 format: markdown
@@ -12,6 +13,7 @@ format: markdown
 **Rookgaard Tales** is an Open Tibia (OTServ) private server tracked by the [Open Tibia Servers](https://opentibiaservers.com) directory.
 
 > **Live listing:** [Rookgaard Tales on OpenTibiaServers.com](https://opentibiaservers.com/rookgaard-tales)  
+> **Server wiki:** [Rookgaard Tales wiki page](https://opentibiaservers.com/wiki/rookgaard-tales)  
 > **Browse all servers:** [Open Tibia server list](https://opentibiaservers.com/directory)
 
 ## Quick facts
@@ -20,17 +22,25 @@ format: markdown
 | --- | --- |
 | Server name | Rookgaard Tales |
 | Directory profile | [https://opentibiaservers.com/rookgaard-tales](https://opentibiaservers.com/rookgaard-tales) |
+| On-site wiki | [https://opentibiaservers.com/wiki/rookgaard-tales](https://opentibiaservers.com/wiki/rookgaard-tales) |
 | Status & rankings | [opentibiaservers.com](https://opentibiaservers.com) |
 
 ## Overview
 
 Meet Rookgaard Tales beyond the list row: verify its host, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
 
-Players searching for **Rookgaard Tales** usually want the official website, client download path, rules, rates, and whether the world is still active. The directory profile keeps those signals in one place:
+## Getting started
 
-- [Rookgaard Tales server profile](https://opentibiaservers.com/rookgaard-tales)
-- [Open Tibia Servers homepage](https://opentibiaservers.com)
-- [Full directory / filters](https://opentibiaservers.com/directory)
+Players searching for **Rookgaard Tales** usually want the official website, client download path, rules, rates, and whether the world is still active. Start here:
+
+1. Open the exact-match listing: [Rookgaard Tales server profile](https://opentibiaservers.com/rookgaard-tales)
+2. Read this wiki summary: [Rookgaard Tales wiki](https://opentibiaservers.com/wiki/rookgaard-tales)
+3. Compare filters in the [full directory](https://opentibiaservers.com/directory)
+4. Confirm client version / host details before downloading a third-party client
+
+## Rates, world type, and activity
+
+Rate and PvP details for **Rookgaard Tales** are maintained on the [live listing](https://opentibiaservers.com/rookgaard-tales). Snapshots in this article are only as fresh as the last directory sync.
 
 ## Why use OpenTibiaServers.com
 
@@ -39,17 +49,29 @@ Players searching for **Rookgaard Tales** usually want the official website, cli
 1. Open the exact-match page for **Rookgaard Tales**: [https://opentibiaservers.com/rookgaard-tales](https://opentibiaservers.com/rookgaard-tales)
 2. Compare nearby OT servers by players online, version, and location
 3. Verify listing context before downloading a client from third-party mirrors
+4. Share the wiki page: [https://opentibiaservers.com/wiki/rookgaard-tales](https://opentibiaservers.com/wiki/rookgaard-tales)
 
-## External / see also
+## Related links
 
 - [Rookgaard Tales — Open Tibia Servers listing](https://opentibiaservers.com/rookgaard-tales)
+- [Rookgaard Tales — on-site wiki](https://opentibiaservers.com/wiki/rookgaard-tales)
 - [Open Tibia server directory](https://opentibiaservers.com/directory)
+- [All wiki pages](https://opentibiaservers.com/wiki)
 - [OpenTibiaServers.com](https://opentibiaservers.com)
+
+## Sources
+
+- static-route
+- review-page
 
 ## Categories
 
 Open Tibia servers · OTServ · Rookgaard Tales · Tibia private servers · MMORPG directories
 
+## Disclaimer
+
+Rookgaard Tales is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH. Verify rules, donations, and downloads on the server's own channels.
+
 ---
 
-*This page was generated for external wiki publishing. Canonical player-facing listing: [https://opentibiaservers.com/rookgaard-tales](https://opentibiaservers.com/rookgaard-tales).*
+*Generated 2026-09-17 for on-site and external wiki publishing. Canonical listing: [https://opentibiaservers.com/rookgaard-tales](https://opentibiaservers.com/rookgaard-tales).*

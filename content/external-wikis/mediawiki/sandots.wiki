@@ -2,6 +2,7 @@
 | name = Sandots
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/sandots
+| wiki = https://opentibiaservers.com/wiki/sandots
 | host = sandots.eu:7171
 | version = 8.6
 | location = Poland
@@ -13,6 +14,7 @@
 '''Sandots''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/sandots Sandots on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/sandots Sandots wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Sandots
 |-
 | Directory profile || [https://opentibiaservers.com/sandots https://opentibiaservers.com/sandots]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/sandots https://opentibiaservers.com/wiki/sandots]
 |-
 | Host || sandots.eu:7171
 |-
@@ -42,30 +46,47 @@
 
 Meet Sandots beyond the list row: verify sandots.eu, understand its 8.6 PVP x500 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Sandots''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/sandots Sandots server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/sandots Sandots server profile]
+# [https://opentibiaservers.com/wiki/sandots Sandots wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''500x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''735'''
+* Client / protocol: '''8.6'''
+* Location: '''Poland'''
+Always re-check the [https://opentibiaservers.com/sandots live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Sandots''': [https://opentibiaservers.com/sandots https://opentibiaservers.com/sandots]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/sandots https://opentibiaservers.com/wiki/sandots]
 
 == External links ==
 
 * [https://opentibiaservers.com/sandots Sandots — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/sandots Sandots — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://sandots.eu/ Official Sandots website]
+
+== Disclaimer ==
+
+Sandots is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Sandots]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/sandots -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/sandots -->

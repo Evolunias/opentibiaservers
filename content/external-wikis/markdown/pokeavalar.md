@@ -2,6 +2,7 @@
 title: "PokeAvalar Open Tibia Server"
 slug: pokeavalar
 canonical: https://opentibiaservers.com/pokeavalar
+wiki: https://opentibiaservers.com/wiki/pokeavalar
 directory: https://opentibiaservers.com
 generated: 2026-09-17
 format: markdown
@@ -12,6 +13,7 @@ format: markdown
 **PokeAvalar** is an Open Tibia (OTServ) private server tracked by the [Open Tibia Servers](https://opentibiaservers.com) directory.
 
 > **Live listing:** [PokeAvalar on OpenTibiaServers.com](https://opentibiaservers.com/pokeavalar)  
+> **Server wiki:** [PokeAvalar wiki page](https://opentibiaservers.com/wiki/pokeavalar)  
 > **Browse all servers:** [Open Tibia server list](https://opentibiaservers.com/directory)
 
 ## Quick facts
@@ -20,17 +22,25 @@ format: markdown
 | --- | --- |
 | Server name | PokeAvalar |
 | Directory profile | [https://opentibiaservers.com/pokeavalar](https://opentibiaservers.com/pokeavalar) |
+| On-site wiki | [https://opentibiaservers.com/wiki/pokeavalar](https://opentibiaservers.com/wiki/pokeavalar) |
 | Status & rankings | [opentibiaservers.com](https://opentibiaservers.com) |
 
 ## Overview
 
 Meet PokeAvalar beyond the list row: verify its host, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
 
-Players searching for **PokeAvalar** usually want the official website, client download path, rules, rates, and whether the world is still active. The directory profile keeps those signals in one place:
+## Getting started
 
-- [PokeAvalar server profile](https://opentibiaservers.com/pokeavalar)
-- [Open Tibia Servers homepage](https://opentibiaservers.com)
-- [Full directory / filters](https://opentibiaservers.com/directory)
+Players searching for **PokeAvalar** usually want the official website, client download path, rules, rates, and whether the world is still active. Start here:
+
+1. Open the exact-match listing: [PokeAvalar server profile](https://opentibiaservers.com/pokeavalar)
+2. Read this wiki summary: [PokeAvalar wiki](https://opentibiaservers.com/wiki/pokeavalar)
+3. Compare filters in the [full directory](https://opentibiaservers.com/directory)
+4. Confirm client version / host details before downloading a third-party client
+
+## Rates, world type, and activity
+
+Rate and PvP details for **PokeAvalar** are maintained on the [live listing](https://opentibiaservers.com/pokeavalar). Snapshots in this article are only as fresh as the last directory sync.
 
 ## Why use OpenTibiaServers.com
 
@@ -39,17 +49,29 @@ Players searching for **PokeAvalar** usually want the official website, client d
 1. Open the exact-match page for **PokeAvalar**: [https://opentibiaservers.com/pokeavalar](https://opentibiaservers.com/pokeavalar)
 2. Compare nearby OT servers by players online, version, and location
 3. Verify listing context before downloading a client from third-party mirrors
+4. Share the wiki page: [https://opentibiaservers.com/wiki/pokeavalar](https://opentibiaservers.com/wiki/pokeavalar)
 
-## External / see also
+## Related links
 
 - [PokeAvalar — Open Tibia Servers listing](https://opentibiaservers.com/pokeavalar)
+- [PokeAvalar — on-site wiki](https://opentibiaservers.com/wiki/pokeavalar)
 - [Open Tibia server directory](https://opentibiaservers.com/directory)
+- [All wiki pages](https://opentibiaservers.com/wiki)
 - [OpenTibiaServers.com](https://opentibiaservers.com)
+
+## Sources
+
+- static-route
+- review-page
 
 ## Categories
 
 Open Tibia servers · OTServ · PokeAvalar · Tibia private servers · MMORPG directories
 
+## Disclaimer
+
+PokeAvalar is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH. Verify rules, donations, and downloads on the server's own channels.
+
 ---
 
-*This page was generated for external wiki publishing. Canonical player-facing listing: [https://opentibiaservers.com/pokeavalar](https://opentibiaservers.com/pokeavalar).*
+*Generated 2026-09-17 for on-site and external wiki publishing. Canonical listing: [https://opentibiaservers.com/pokeavalar](https://opentibiaservers.com/pokeavalar).*

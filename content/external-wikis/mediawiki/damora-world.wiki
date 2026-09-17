@@ -2,11 +2,13 @@
 | name = Damora World
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/damora-world
+| wiki = https://opentibiaservers.com/wiki/damora-world
 }}
 
 '''Damora World''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/damora-world Damora World on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/damora-world Damora World wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -17,6 +19,8 @@
 |-
 | Directory profile || [https://opentibiaservers.com/damora-world https://opentibiaservers.com/damora-world]
 |-
+| On-site wiki || [https://opentibiaservers.com/wiki/damora-world https://opentibiaservers.com/wiki/damora-world]
+|-
 | Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
 |}
 
@@ -24,29 +28,41 @@
 
 Damora World is listed in the Open Tibia Servers database so players can compare live status, player counts, rates, and related Open Tibia projects before creating an account.
 
-Players searching for '''Damora World''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/damora-world Damora World server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/damora-world Damora World server profile]
+# [https://opentibiaservers.com/wiki/damora-world Damora World wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+See the [https://opentibiaservers.com/damora-world live listing] for current rates and activity.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Damora World''': [https://opentibiaservers.com/damora-world https://opentibiaservers.com/damora-world]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/damora-world https://opentibiaservers.com/wiki/damora-world]
 
 == External links ==
 
 * [https://opentibiaservers.com/damora-world Damora World — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/damora-world Damora World — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
+
+== Disclaimer ==
+
+Damora World is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Damora World]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/damora-world -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/damora-world -->

@@ -2,6 +2,7 @@
 | name = Unline
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/unline
+| wiki = https://opentibiaservers.com/wiki/unline
 | host = status.unline.org:7171
 | version = 14.0
 | location = USA
@@ -13,6 +14,7 @@
 '''Unline''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/unline Unline on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/unline Unline wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Unline
 |-
 | Directory profile || [https://opentibiaservers.com/unline https://opentibiaservers.com/unline]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/unline https://opentibiaservers.com/wiki/unline]
 |-
 | Host || status.unline.org:7171
 |-
@@ -42,30 +46,47 @@
 
 A world that starts from zero: lower rates, a far tighter balance pass, and PvP decided by skill instead of by who stacked more. Everyone leaves the temple on the same day, at level one. This wording comes from the recorded official website metadata.
 
-Players searching for '''Unline''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/unline Unline server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/unline Unline server profile]
+# [https://opentibiaservers.com/wiki/unline Unline wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''100x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''80'''
+* Client / protocol: '''14.0'''
+* Location: '''USA'''
+Always re-check the [https://opentibiaservers.com/unline live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Unline''': [https://opentibiaservers.com/unline https://opentibiaservers.com/unline]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/unline https://opentibiaservers.com/wiki/unline]
 
 == External links ==
 
 * [https://opentibiaservers.com/unline Unline — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/unline Unline — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://unline.org/ Official Unline website]
+
+== Disclaimer ==
+
+Unline is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Unline]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/unline -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/unline -->

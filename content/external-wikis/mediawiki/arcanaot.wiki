@@ -2,12 +2,14 @@
 | name = Arcanaot
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/arcanaot
+| wiki = https://opentibiaservers.com/wiki/arcanaot
 | host = imperia.arcanaot.com:7171
 }}
 
 '''Arcanaot''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/arcanaot Arcanaot on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/arcanaot Arcanaot wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -18,6 +20,8 @@
 |-
 | Directory profile || [https://opentibiaservers.com/arcanaot https://opentibiaservers.com/arcanaot]
 |-
+| On-site wiki || [https://opentibiaservers.com/wiki/arcanaot https://opentibiaservers.com/wiki/arcanaot]
+|-
 | Host || imperia.arcanaot.com:7171
 |-
 | Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
@@ -27,29 +31,41 @@
 
 Meet Arcanaot beyond the list row: verify imperia.arcanaot.com, understand its 15.0 PVP x500 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Arcanaot''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/arcanaot Arcanaot server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/arcanaot Arcanaot server profile]
+# [https://opentibiaservers.com/wiki/arcanaot Arcanaot wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+See the [https://opentibiaservers.com/arcanaot live listing] for current rates and activity.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Arcanaot''': [https://opentibiaservers.com/arcanaot https://opentibiaservers.com/arcanaot]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/arcanaot https://opentibiaservers.com/wiki/arcanaot]
 
 == External links ==
 
 * [https://opentibiaservers.com/arcanaot Arcanaot — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/arcanaot Arcanaot — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
+
+== Disclaimer ==
+
+Arcanaot is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Arcanaot]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/arcanaot -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/arcanaot -->

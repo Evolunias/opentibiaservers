@@ -2,11 +2,13 @@
 | name = Original Legend of Bleach
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/original-legend-of-bleach
+| wiki = https://opentibiaservers.com/wiki/original-legend-of-bleach
 }}
 
 '''Original Legend of Bleach''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/original-legend-of-bleach Original Legend of Bleach on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/original-legend-of-bleach Original Legend of Bleach wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -17,6 +19,8 @@
 |-
 | Directory profile || [https://opentibiaservers.com/original-legend-of-bleach https://opentibiaservers.com/original-legend-of-bleach]
 |-
+| On-site wiki || [https://opentibiaservers.com/wiki/original-legend-of-bleach https://opentibiaservers.com/wiki/original-legend-of-bleach]
+|-
 | Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
 |}
 
@@ -24,29 +28,41 @@
 
 Meet Original Legend of Bleach beyond the list row: verify its host, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
 
-Players searching for '''Original Legend of Bleach''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/original-legend-of-bleach Original Legend of Bleach server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/original-legend-of-bleach Original Legend of Bleach server profile]
+# [https://opentibiaservers.com/wiki/original-legend-of-bleach Original Legend of Bleach wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+See the [https://opentibiaservers.com/original-legend-of-bleach live listing] for current rates and activity.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Original Legend of Bleach''': [https://opentibiaservers.com/original-legend-of-bleach https://opentibiaservers.com/original-legend-of-bleach]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/original-legend-of-bleach https://opentibiaservers.com/wiki/original-legend-of-bleach]
 
 == External links ==
 
 * [https://opentibiaservers.com/original-legend-of-bleach Original Legend of Bleach — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/original-legend-of-bleach Original Legend of Bleach — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
+
+== Disclaimer ==
+
+Original Legend of Bleach is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Original Legend of Bleach]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/original-legend-of-bleach -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/original-legend-of-bleach -->

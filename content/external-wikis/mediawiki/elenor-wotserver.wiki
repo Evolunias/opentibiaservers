@@ -2,6 +2,7 @@
 | name = Elenor WOTServer
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/elenor
+| wiki = https://opentibiaservers.com/wiki/elenor-wotserver
 | host = elenor.wotserver.com
 | location = Brazil
 | pvp = PVP
@@ -12,6 +13,7 @@
 '''Elenor WOTServer''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/elenor Elenor WOTServer on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/elenor-wotserver Elenor WOTServer wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -21,6 +23,8 @@
 | Server name || Elenor WOTServer
 |-
 | Directory profile || [https://opentibiaservers.com/elenor https://opentibiaservers.com/elenor]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/elenor-wotserver https://opentibiaservers.com/wiki/elenor-wotserver]
 |-
 | Host || elenor.wotserver.com
 |-
@@ -39,30 +43,46 @@
 
 Elenor WOTServer is tracked as a top Open Tibia server from the public otservlist players-online ranking under the listing title "Senhor dos Aneis". This page preserves the searchable server name, host, client/version signals, players-online snapshot, uptime, EXP rate, PvP type, and source attribution so players can compare it while the live Supabase sync and owner-claimed profile continue to enrich the record.
 
-Players searching for '''Elenor WOTServer''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/elenor Elenor WOTServer server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/elenor Elenor WOTServer server profile]
+# [https://opentibiaservers.com/wiki/elenor-wotserver Elenor WOTServer wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''10x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''114'''
+* Location: '''Brazil'''
+Always re-check the [https://opentibiaservers.com/elenor live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Elenor WOTServer''': [https://opentibiaservers.com/elenor https://opentibiaservers.com/elenor]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/elenor-wotserver https://opentibiaservers.com/wiki/elenor-wotserver]
 
 == External links ==
 
 * [https://opentibiaservers.com/elenor Elenor WOTServer — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/elenor-wotserver Elenor WOTServer — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://elenor.wotserver.com/ Official Elenor WOTServer website]
+
+== Disclaimer ==
+
+Elenor WOTServer is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Elenor WOTServer]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/elenor -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/elenor -->

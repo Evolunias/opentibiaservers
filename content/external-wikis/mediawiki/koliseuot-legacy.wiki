@@ -2,6 +2,7 @@
 | name = KoliseuOT Legacy
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/koliseuot
+| wiki = https://opentibiaservers.com/wiki/koliseuot-legacy
 | host = legacy.koliseuot.com.br
 | version = 15.0
 | location = Brazil
@@ -13,6 +14,7 @@
 '''KoliseuOT Legacy''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/koliseuot KoliseuOT Legacy on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/koliseuot-legacy KoliseuOT Legacy wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || KoliseuOT Legacy
 |-
 | Directory profile || [https://opentibiaservers.com/koliseuot https://opentibiaservers.com/koliseuot]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/koliseuot-legacy https://opentibiaservers.com/wiki/koliseuot-legacy]
 |-
 | Host || legacy.koliseuot.com.br
 |-
@@ -42,30 +46,47 @@
 
 KoliseuOT Legacy is tracked as a top Open Tibia server from the public otservlist players-online ranking under the listing title "OTC - BOT Liberado". This page preserves the searchable server name, host, client/version signals, players-online snapshot, uptime, EXP rate, PvP type, and source attribution so players can compare it while the live Supabase sync and owner-claimed profile continue to enrich the record.
 
-Players searching for '''KoliseuOT Legacy''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/koliseuot KoliseuOT Legacy server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/koliseuot KoliseuOT Legacy server profile]
+# [https://opentibiaservers.com/wiki/koliseuot-legacy KoliseuOT Legacy wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''300x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''167'''
+* Client / protocol: '''15.0'''
+* Location: '''Brazil'''
+Always re-check the [https://opentibiaservers.com/koliseuot live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''KoliseuOT Legacy''': [https://opentibiaservers.com/koliseuot https://opentibiaservers.com/koliseuot]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/koliseuot-legacy https://opentibiaservers.com/wiki/koliseuot-legacy]
 
 == External links ==
 
 * [https://opentibiaservers.com/koliseuot KoliseuOT Legacy — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/koliseuot-legacy KoliseuOT Legacy — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://legacy.koliseuot.com.br/ Official KoliseuOT Legacy website]
+
+== Disclaimer ==
+
+KoliseuOT Legacy is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:KoliseuOT Legacy]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/koliseuot -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/koliseuot -->

@@ -2,12 +2,14 @@
 | name = Imperialageonline
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/imperialageonline
+| wiki = https://opentibiaservers.com/wiki/imperialageonline
 | host = imperialageonline.servegame.com
 }}
 
 '''Imperialageonline''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/imperialageonline Imperialageonline on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/imperialageonline Imperialageonline wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -18,6 +20,8 @@
 |-
 | Directory profile || [https://opentibiaservers.com/imperialageonline https://opentibiaservers.com/imperialageonline]
 |-
+| On-site wiki || [https://opentibiaservers.com/wiki/imperialageonline https://opentibiaservers.com/wiki/imperialageonline]
+|-
 | Host || imperialageonline.servegame.com
 |-
 | Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
@@ -27,29 +31,41 @@
 
 Client Patch 2.2.5 Changelog Beginner’s Wings added for level 100, obtainable through the Dawnport Quest.. New temporary special wings available in the Market Points shop.. Updated sprites for all existing wings.. Companion food is now saved even after dismissing your companion.. A new food status icon will appear when your companion is regenerating from food while summoned.. Fixed a server crash related to Onlook’s loot list.. These changes will take effect after a server restart.. This wording comes from the recorded official website metadata.
 
-Players searching for '''Imperialageonline''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/imperialageonline Imperialageonline server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/imperialageonline Imperialageonline server profile]
+# [https://opentibiaservers.com/wiki/imperialageonline Imperialageonline wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+See the [https://opentibiaservers.com/imperialageonline live listing] for current rates and activity.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Imperialageonline''': [https://opentibiaservers.com/imperialageonline https://opentibiaservers.com/imperialageonline]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/imperialageonline https://opentibiaservers.com/wiki/imperialageonline]
 
 == External links ==
 
 * [https://opentibiaservers.com/imperialageonline Imperialageonline — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/imperialageonline Imperialageonline — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
+
+== Disclaimer ==
+
+Imperialageonline is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Imperialageonline]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/imperialageonline -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/imperialageonline -->

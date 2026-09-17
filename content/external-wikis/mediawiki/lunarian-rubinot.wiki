@@ -2,6 +2,7 @@
 | name = Lunarian RubinOT
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/rubinot
+| wiki = https://opentibiaservers.com/wiki/lunarian-rubinot
 | host = lunarian.rubinot.com.br
 | version = 15.0
 | location = Brazil
@@ -13,6 +14,7 @@
 '''Lunarian RubinOT''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/rubinot Lunarian RubinOT on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/lunarian-rubinot Lunarian RubinOT wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Lunarian RubinOT
 |-
 | Directory profile || [https://opentibiaservers.com/rubinot https://opentibiaservers.com/rubinot]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/lunarian-rubinot https://opentibiaservers.com/wiki/lunarian-rubinot]
 |-
 | Host || lunarian.rubinot.com.br
 |-
@@ -42,30 +46,47 @@
 
 Lunarian RubinOT is tracked as a top Open Tibia server from the public otservlist players-online ranking. This page preserves the searchable server name, host, client/version signals, players-online snapshot, uptime, EXP rate, PvP type, and source attribution so players can compare it while the live Supabase sync and owner-claimed profile continue to enrich the record.
 
-Players searching for '''Lunarian RubinOT''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/rubinot Lunarian RubinOT server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/rubinot Lunarian RubinOT server profile]
+# [https://opentibiaservers.com/wiki/lunarian-rubinot Lunarian RubinOT wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''80x'''
+* World type: '''nPVP'''
+* Players online (snapshot): '''529'''
+* Client / protocol: '''15.0'''
+* Location: '''Brazil'''
+Always re-check the [https://opentibiaservers.com/rubinot live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Lunarian RubinOT''': [https://opentibiaservers.com/rubinot https://opentibiaservers.com/rubinot]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/lunarian-rubinot https://opentibiaservers.com/wiki/lunarian-rubinot]
 
 == External links ==
 
 * [https://opentibiaservers.com/rubinot Lunarian RubinOT — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/lunarian-rubinot Lunarian RubinOT — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://lunarian.rubinot.com.br/ Official Lunarian RubinOT website]
+
+== Disclaimer ==
+
+Lunarian RubinOT is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Lunarian RubinOT]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/rubinot -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/rubinot -->

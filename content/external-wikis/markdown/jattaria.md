@@ -2,6 +2,7 @@
 title: "Jattaria Open Tibia Server"
 slug: jattaria
 canonical: https://opentibiaservers.com/jattaria
+wiki: https://opentibiaservers.com/wiki/jattaria
 directory: https://opentibiaservers.com
 generated: 2026-09-17
 format: markdown
@@ -12,6 +13,7 @@ format: markdown
 **Jattaria** is an Open Tibia (OTServ) private server tracked by the [Open Tibia Servers](https://opentibiaservers.com) directory.
 
 > **Live listing:** [Jattaria on OpenTibiaServers.com](https://opentibiaservers.com/jattaria)  
+> **Server wiki:** [Jattaria wiki page](https://opentibiaservers.com/wiki/jattaria)  
 > **Browse all servers:** [Open Tibia server list](https://opentibiaservers.com/directory)
 
 ## Quick facts
@@ -20,17 +22,25 @@ format: markdown
 | --- | --- |
 | Server name | Jattaria |
 | Directory profile | [https://opentibiaservers.com/jattaria](https://opentibiaservers.com/jattaria) |
+| On-site wiki | [https://opentibiaservers.com/wiki/jattaria](https://opentibiaservers.com/wiki/jattaria) |
 | Status & rankings | [opentibiaservers.com](https://opentibiaservers.com) |
 
 ## Overview
 
 Meet Jattaria beyond the list row: verify its host, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
 
-Players searching for **Jattaria** usually want the official website, client download path, rules, rates, and whether the world is still active. The directory profile keeps those signals in one place:
+## Getting started
 
-- [Jattaria server profile](https://opentibiaservers.com/jattaria)
-- [Open Tibia Servers homepage](https://opentibiaservers.com)
-- [Full directory / filters](https://opentibiaservers.com/directory)
+Players searching for **Jattaria** usually want the official website, client download path, rules, rates, and whether the world is still active. Start here:
+
+1. Open the exact-match listing: [Jattaria server profile](https://opentibiaservers.com/jattaria)
+2. Read this wiki summary: [Jattaria wiki](https://opentibiaservers.com/wiki/jattaria)
+3. Compare filters in the [full directory](https://opentibiaservers.com/directory)
+4. Confirm client version / host details before downloading a third-party client
+
+## Rates, world type, and activity
+
+Rate and PvP details for **Jattaria** are maintained on the [live listing](https://opentibiaservers.com/jattaria). Snapshots in this article are only as fresh as the last directory sync.
 
 ## Why use OpenTibiaServers.com
 
@@ -39,17 +49,29 @@ Players searching for **Jattaria** usually want the official website, client dow
 1. Open the exact-match page for **Jattaria**: [https://opentibiaservers.com/jattaria](https://opentibiaservers.com/jattaria)
 2. Compare nearby OT servers by players online, version, and location
 3. Verify listing context before downloading a client from third-party mirrors
+4. Share the wiki page: [https://opentibiaservers.com/wiki/jattaria](https://opentibiaservers.com/wiki/jattaria)
 
-## External / see also
+## Related links
 
 - [Jattaria — Open Tibia Servers listing](https://opentibiaservers.com/jattaria)
+- [Jattaria — on-site wiki](https://opentibiaservers.com/wiki/jattaria)
 - [Open Tibia server directory](https://opentibiaservers.com/directory)
+- [All wiki pages](https://opentibiaservers.com/wiki)
 - [OpenTibiaServers.com](https://opentibiaservers.com)
+
+## Sources
+
+- static-route
+- review-page
 
 ## Categories
 
 Open Tibia servers · OTServ · Jattaria · Tibia private servers · MMORPG directories
 
+## Disclaimer
+
+Jattaria is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH. Verify rules, donations, and downloads on the server's own channels.
+
 ---
 
-*This page was generated for external wiki publishing. Canonical player-facing listing: [https://opentibiaservers.com/jattaria](https://opentibiaservers.com/jattaria).*
+*Generated 2026-09-17 for on-site and external wiki publishing. Canonical listing: [https://opentibiaservers.com/jattaria](https://opentibiaservers.com/jattaria).*

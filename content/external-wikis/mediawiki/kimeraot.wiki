@@ -2,6 +2,7 @@
 | name = Kimeraot
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/kimeraot
+| wiki = https://opentibiaservers.com/wiki/kimeraot
 | host = on.kimeraot.com.br:7171
 | version = 13.4
 | location = Brazil
@@ -13,6 +14,7 @@
 '''Kimeraot''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/kimeraot Kimeraot on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/kimeraot Kimeraot wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Kimeraot
 |-
 | Directory profile || [https://opentibiaservers.com/kimeraot https://opentibiaservers.com/kimeraot]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/kimeraot https://opentibiaservers.com/wiki/kimeraot]
 |-
 | Host || on.kimeraot.com.br:7171
 |-
@@ -42,30 +46,47 @@
 
 Meet Kimeraot beyond the list row: verify on.kimeraot.com.br, understand its 13.4 nPVP x9999 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Kimeraot''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/kimeraot Kimeraot server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/kimeraot Kimeraot server profile]
+# [https://opentibiaservers.com/wiki/kimeraot Kimeraot wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''9999x'''
+* World type: '''nPVP'''
+* Players online (snapshot): '''64'''
+* Client / protocol: '''13.4'''
+* Location: '''Brazil'''
+Always re-check the [https://opentibiaservers.com/kimeraot live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Kimeraot''': [https://opentibiaservers.com/kimeraot https://opentibiaservers.com/kimeraot]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/kimeraot https://opentibiaservers.com/wiki/kimeraot]
 
 == External links ==
 
 * [https://opentibiaservers.com/kimeraot Kimeraot — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/kimeraot Kimeraot — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://kimeraot.com.br/ Official Kimeraot website]
+
+== Disclaimer ==
+
+Kimeraot is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Kimeraot]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/kimeraot -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/kimeraot -->

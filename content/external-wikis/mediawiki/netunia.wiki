@@ -2,6 +2,7 @@
 | name = Netunia
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/netunia
+| wiki = https://opentibiaservers.com/wiki/netunia
 | host = netunia.net:7171
 | version = 8.6
 | location = Mexico
@@ -13,6 +14,7 @@
 '''Netunia''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/netunia Netunia on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/netunia Netunia wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Netunia
 |-
 | Directory profile || [https://opentibiaservers.com/netunia https://opentibiaservers.com/netunia]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/netunia https://opentibiaservers.com/wiki/netunia]
 |-
 | Host || netunia.net:7171
 |-
@@ -42,30 +46,47 @@
 
 Meet Netunia beyond the list row: verify netunia.net, understand its 8.6 PVP x2500 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Netunia''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/netunia Netunia server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/netunia Netunia server profile]
+# [https://opentibiaservers.com/wiki/netunia Netunia wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''2500x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''172'''
+* Client / protocol: '''8.6'''
+* Location: '''Mexico'''
+Always re-check the [https://opentibiaservers.com/netunia live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Netunia''': [https://opentibiaservers.com/netunia https://opentibiaservers.com/netunia]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/netunia https://opentibiaservers.com/wiki/netunia]
 
 == External links ==
 
 * [https://opentibiaservers.com/netunia Netunia — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/netunia Netunia — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://netunia.net/ Official Netunia website]
+
+== Disclaimer ==
+
+Netunia is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Netunia]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/netunia -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/netunia -->

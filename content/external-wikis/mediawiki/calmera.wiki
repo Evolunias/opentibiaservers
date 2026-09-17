@@ -2,6 +2,7 @@
 | name = Calmera
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/calmera
+| wiki = https://opentibiaservers.com/wiki/calmera
 | host = servers.calmera.com.br:7171
 | version = 15.0
 | location = Brazil
@@ -13,6 +14,7 @@
 '''Calmera''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/calmera Calmera on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/calmera Calmera wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Calmera
 |-
 | Directory profile || [https://opentibiaservers.com/calmera https://opentibiaservers.com/calmera]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/calmera https://opentibiaservers.com/wiki/calmera]
 |-
 | Host || servers.calmera.com.br:7171
 |-
@@ -42,30 +46,47 @@
 
 Meet Calmera beyond the list row: verify servers.calmera.com.br, understand its 15.0 nPVP x400 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Calmera''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/calmera Calmera server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/calmera Calmera server profile]
+# [https://opentibiaservers.com/wiki/calmera Calmera wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''400x'''
+* World type: '''nPVP'''
+* Players online (snapshot): '''766'''
+* Client / protocol: '''15.0'''
+* Location: '''Brazil'''
+Always re-check the [https://opentibiaservers.com/calmera live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Calmera''': [https://opentibiaservers.com/calmera https://opentibiaservers.com/calmera]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/calmera https://opentibiaservers.com/wiki/calmera]
 
 == External links ==
 
 * [https://opentibiaservers.com/calmera Calmera — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/calmera Calmera — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://servers.calmera.com.br/ Official Calmera website]
+
+== Disclaimer ==
+
+Calmera is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Calmera]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/calmera -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/calmera -->

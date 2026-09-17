@@ -2,6 +2,7 @@
 | name = Justrl
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/justrl
+| wiki = https://opentibiaservers.com/wiki/justrl
 | host = justrl.sytes.net:7171
 | version = 15.2
 | location = Poland
@@ -13,6 +14,7 @@
 '''Justrl''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/justrl Justrl on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/justrl Justrl wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Justrl
 |-
 | Directory profile || [https://opentibiaservers.com/justrl https://opentibiaservers.com/justrl]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/justrl https://opentibiaservers.com/wiki/justrl]
 |-
 | Host || justrl.sytes.net:7171
 |-
@@ -42,30 +46,47 @@
 
 Meet Justrl beyond the list row: verify justrl.sytes.net, understand its 15.2 nPVP x2 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Justrl''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/justrl Justrl server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/justrl Justrl server profile]
+# [https://opentibiaservers.com/wiki/justrl Justrl wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''2x'''
+* World type: '''nPVP'''
+* Players online (snapshot): '''26'''
+* Client / protocol: '''15.2'''
+* Location: '''Poland'''
+Always re-check the [https://opentibiaservers.com/justrl live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Justrl''': [https://opentibiaservers.com/justrl https://opentibiaservers.com/justrl]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/justrl https://opentibiaservers.com/wiki/justrl]
 
 == External links ==
 
 * [https://opentibiaservers.com/justrl Justrl — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/justrl Justrl — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://justrl.sytes.net/ Official Justrl website]
+
+== Disclaimer ==
+
+Justrl is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Justrl]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/justrl -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/justrl -->

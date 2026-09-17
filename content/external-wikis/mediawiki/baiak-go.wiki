@@ -2,6 +2,7 @@
 | name = Baiak Go
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/baiak-go
+| wiki = https://opentibiaservers.com/wiki/baiak-go
 | host = baiak-go.com:7171
 | version = 8.6
 | location = Brazil
@@ -13,6 +14,7 @@
 '''Baiak Go''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/baiak-go Baiak Go on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/baiak-go Baiak Go wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || Baiak Go
 |-
 | Directory profile || [https://opentibiaservers.com/baiak-go https://opentibiaservers.com/baiak-go]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/baiak-go https://opentibiaservers.com/wiki/baiak-go]
 |-
 | Host || baiak-go.com:7171
 |-
@@ -42,30 +46,47 @@
 
 Meet Baiak Go beyond the list row: verify baiak-go.com, understand its 8.6 PVP x400 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
 
-Players searching for '''Baiak Go''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/baiak-go Baiak Go server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/baiak-go Baiak Go server profile]
+# [https://opentibiaservers.com/wiki/baiak-go Baiak Go wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''400x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''182'''
+* Client / protocol: '''8.6'''
+* Location: '''Brazil'''
+Always re-check the [https://opentibiaservers.com/baiak-go live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Baiak Go''': [https://opentibiaservers.com/baiak-go https://opentibiaservers.com/baiak-go]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/baiak-go https://opentibiaservers.com/wiki/baiak-go]
 
 == External links ==
 
 * [https://opentibiaservers.com/baiak-go Baiak Go — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/baiak-go Baiak Go — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://baiak-go.com/ Official Baiak Go website]
+
+== Disclaimer ==
+
+Baiak Go is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Baiak Go]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/baiak-go -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/baiak-go -->

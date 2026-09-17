@@ -2,6 +2,7 @@
 | name = OxygenOT
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/oxygenot
+| wiki = https://opentibiaservers.com/wiki/oxygenot
 | host = login.oxygenot.live
 | location = Sweden
 | pvp = PVPe
@@ -12,6 +13,7 @@
 '''OxygenOT''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/oxygenot OxygenOT on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/oxygenot OxygenOT wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -21,6 +23,8 @@
 | Server name || OxygenOT
 |-
 | Directory profile || [https://opentibiaservers.com/oxygenot https://opentibiaservers.com/oxygenot]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/oxygenot https://opentibiaservers.com/wiki/oxygenot]
 |-
 | Host || login.oxygenot.live
 |-
@@ -39,30 +43,46 @@
 
 Meet OxygenOT beyond the list row: verify login.oxygenot.live, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
 
-Players searching for '''OxygenOT''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/oxygenot OxygenOT server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/oxygenot OxygenOT server profile]
+# [https://opentibiaservers.com/wiki/oxygenot OxygenOT wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''50x'''
+* World type: '''PVPe'''
+* Players online (snapshot): '''878'''
+* Location: '''Sweden'''
+Always re-check the [https://opentibiaservers.com/oxygenot live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''OxygenOT''': [https://opentibiaservers.com/oxygenot https://opentibiaservers.com/oxygenot]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/oxygenot https://opentibiaservers.com/wiki/oxygenot]
 
 == External links ==
 
 * [https://opentibiaservers.com/oxygenot OxygenOT — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/oxygenot OxygenOT — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://oxygenot.live/ Official OxygenOT website]
+
+== Disclaimer ==
+
+OxygenOT is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:OxygenOT]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/oxygenot -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/oxygenot -->

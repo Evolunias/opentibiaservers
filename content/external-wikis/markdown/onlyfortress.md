@@ -2,6 +2,7 @@
 title: "Onlyfortress Open Tibia Server"
 slug: onlyfortress
 canonical: https://opentibiaservers.com/onlyfortress
+wiki: https://opentibiaservers.com/wiki/onlyfortress
 directory: https://opentibiaservers.com
 generated: 2026-09-17
 format: markdown
@@ -12,6 +13,7 @@ format: markdown
 **Onlyfortress** is an Open Tibia (OTServ) private server tracked by the [Open Tibia Servers](https://opentibiaservers.com) directory.
 
 > **Live listing:** [Onlyfortress on OpenTibiaServers.com](https://opentibiaservers.com/onlyfortress)  
+> **Server wiki:** [Onlyfortress wiki page](https://opentibiaservers.com/wiki/onlyfortress)  
 > **Browse all servers:** [Open Tibia server list](https://opentibiaservers.com/directory)
 
 ## Quick facts
@@ -20,6 +22,7 @@ format: markdown
 | --- | --- |
 | Server name | Onlyfortress |
 | Directory profile | [https://opentibiaservers.com/onlyfortress](https://opentibiaservers.com/onlyfortress) |
+| On-site wiki | [https://opentibiaservers.com/wiki/onlyfortress](https://opentibiaservers.com/wiki/onlyfortress) |
 | Host | onlyfortress.online |
 | Status & rankings | [opentibiaservers.com](https://opentibiaservers.com) |
 
@@ -27,11 +30,18 @@ format: markdown
 
 Only Fortress - The Real Competition Awaits You Here! Build your fortress, fight PvP battles, and play cross-platform. This wording comes from the recorded official website metadata.
 
-Players searching for **Onlyfortress** usually want the official website, client download path, rules, rates, and whether the world is still active. The directory profile keeps those signals in one place:
+## Getting started
 
-- [Onlyfortress server profile](https://opentibiaservers.com/onlyfortress)
-- [Open Tibia Servers homepage](https://opentibiaservers.com)
-- [Full directory / filters](https://opentibiaservers.com/directory)
+Players searching for **Onlyfortress** usually want the official website, client download path, rules, rates, and whether the world is still active. Start here:
+
+1. Open the exact-match listing: [Onlyfortress server profile](https://opentibiaservers.com/onlyfortress)
+2. Read this wiki summary: [Onlyfortress wiki](https://opentibiaservers.com/wiki/onlyfortress)
+3. Compare filters in the [full directory](https://opentibiaservers.com/directory)
+4. Confirm client version / host details before downloading a third-party client
+
+## Rates, world type, and activity
+
+Rate and PvP details for **Onlyfortress** are maintained on the [live listing](https://opentibiaservers.com/onlyfortress). Snapshots in this article are only as fresh as the last directory sync.
 
 ## Why use OpenTibiaServers.com
 
@@ -40,17 +50,28 @@ Players searching for **Onlyfortress** usually want the official website, client
 1. Open the exact-match page for **Onlyfortress**: [https://opentibiaservers.com/onlyfortress](https://opentibiaservers.com/onlyfortress)
 2. Compare nearby OT servers by players online, version, and location
 3. Verify listing context before downloading a client from third-party mirrors
+4. Share the wiki page: [https://opentibiaservers.com/wiki/onlyfortress](https://opentibiaservers.com/wiki/onlyfortress)
 
-## External / see also
+## Related links
 
 - [Onlyfortress — Open Tibia Servers listing](https://opentibiaservers.com/onlyfortress)
+- [Onlyfortress — on-site wiki](https://opentibiaservers.com/wiki/onlyfortress)
 - [Open Tibia server directory](https://opentibiaservers.com/directory)
+- [All wiki pages](https://opentibiaservers.com/wiki)
 - [OpenTibiaServers.com](https://opentibiaservers.com)
+
+## Sources
+
+- review-page
 
 ## Categories
 
 Open Tibia servers · OTServ · Onlyfortress · Tibia private servers · MMORPG directories
 
+## Disclaimer
+
+Onlyfortress is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH. Verify rules, donations, and downloads on the server's own channels.
+
 ---
 
-*This page was generated for external wiki publishing. Canonical player-facing listing: [https://opentibiaservers.com/onlyfortress](https://opentibiaservers.com/onlyfortress).*
+*Generated 2026-09-17 for on-site and external wiki publishing. Canonical listing: [https://opentibiaservers.com/onlyfortress](https://opentibiaservers.com/onlyfortress).*

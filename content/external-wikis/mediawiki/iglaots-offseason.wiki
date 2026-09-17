@@ -2,11 +2,13 @@
 | name = Iglaots Offseason
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/iglaots-offseason
+| wiki = https://opentibiaservers.com/wiki/iglaots-offseason
 }}
 
 '''Iglaots Offseason''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/iglaots-offseason Iglaots Offseason on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/iglaots-offseason Iglaots Offseason wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -17,6 +19,8 @@
 |-
 | Directory profile || [https://opentibiaservers.com/iglaots-offseason https://opentibiaservers.com/iglaots-offseason]
 |-
+| On-site wiki || [https://opentibiaservers.com/wiki/iglaots-offseason https://opentibiaservers.com/wiki/iglaots-offseason]
+|-
 | Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
 |}
 
@@ -24,29 +28,41 @@
 
 Iglaots Offseason is listed in the Open Tibia Servers database so players can compare live status, player counts, rates, and related Open Tibia projects before creating an account.
 
-Players searching for '''Iglaots Offseason''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/iglaots-offseason Iglaots Offseason server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/iglaots-offseason Iglaots Offseason server profile]
+# [https://opentibiaservers.com/wiki/iglaots-offseason Iglaots Offseason wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+See the [https://opentibiaservers.com/iglaots-offseason live listing] for current rates and activity.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Iglaots Offseason''': [https://opentibiaservers.com/iglaots-offseason https://opentibiaservers.com/iglaots-offseason]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/iglaots-offseason https://opentibiaservers.com/wiki/iglaots-offseason]
 
 == External links ==
 
 * [https://opentibiaservers.com/iglaots-offseason Iglaots Offseason — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/iglaots-offseason Iglaots Offseason — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
+
+== Disclaimer ==
+
+Iglaots Offseason is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Iglaots Offseason]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/iglaots-offseason -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/iglaots-offseason -->

@@ -2,6 +2,7 @@
 title: "Arcanthoria Open Tibia Server"
 slug: arcanthoria
 canonical: https://opentibiaservers.com/arcanthoria
+wiki: https://opentibiaservers.com/wiki/arcanthoria
 directory: https://opentibiaservers.com
 generated: 2026-09-17
 format: markdown
@@ -12,6 +13,7 @@ format: markdown
 **Arcanthoria** is an Open Tibia (OTServ) private server tracked by the [Open Tibia Servers](https://opentibiaservers.com) directory.
 
 > **Live listing:** [Arcanthoria on OpenTibiaServers.com](https://opentibiaservers.com/arcanthoria)  
+> **Server wiki:** [Arcanthoria wiki page](https://opentibiaservers.com/wiki/arcanthoria)  
 > **Browse all servers:** [Open Tibia server list](https://opentibiaservers.com/directory)
 
 ## Quick facts
@@ -20,6 +22,7 @@ format: markdown
 | --- | --- |
 | Server name | Arcanthoria |
 | Directory profile | [https://opentibiaservers.com/arcanthoria](https://opentibiaservers.com/arcanthoria) |
+| On-site wiki | [https://opentibiaservers.com/wiki/arcanthoria](https://opentibiaservers.com/wiki/arcanthoria) |
 | Host | arcanthoria.com |
 | Status & rankings | [opentibiaservers.com](https://opentibiaservers.com) |
 
@@ -27,11 +30,18 @@ format: markdown
 
 Meet Arcanthoria beyond the list row: verify arcanthoria.com, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
 
-Players searching for **Arcanthoria** usually want the official website, client download path, rules, rates, and whether the world is still active. The directory profile keeps those signals in one place:
+## Getting started
 
-- [Arcanthoria server profile](https://opentibiaservers.com/arcanthoria)
-- [Open Tibia Servers homepage](https://opentibiaservers.com)
-- [Full directory / filters](https://opentibiaservers.com/directory)
+Players searching for **Arcanthoria** usually want the official website, client download path, rules, rates, and whether the world is still active. Start here:
+
+1. Open the exact-match listing: [Arcanthoria server profile](https://opentibiaservers.com/arcanthoria)
+2. Read this wiki summary: [Arcanthoria wiki](https://opentibiaservers.com/wiki/arcanthoria)
+3. Compare filters in the [full directory](https://opentibiaservers.com/directory)
+4. Confirm client version / host details before downloading a third-party client
+
+## Rates, world type, and activity
+
+Rate and PvP details for **Arcanthoria** are maintained on the [live listing](https://opentibiaservers.com/arcanthoria). Snapshots in this article are only as fresh as the last directory sync.
 
 ## Why use OpenTibiaServers.com
 
@@ -40,17 +50,29 @@ Players searching for **Arcanthoria** usually want the official website, client 
 1. Open the exact-match page for **Arcanthoria**: [https://opentibiaservers.com/arcanthoria](https://opentibiaservers.com/arcanthoria)
 2. Compare nearby OT servers by players online, version, and location
 3. Verify listing context before downloading a client from third-party mirrors
+4. Share the wiki page: [https://opentibiaservers.com/wiki/arcanthoria](https://opentibiaservers.com/wiki/arcanthoria)
 
-## External / see also
+## Related links
 
 - [Arcanthoria — Open Tibia Servers listing](https://opentibiaservers.com/arcanthoria)
+- [Arcanthoria — on-site wiki](https://opentibiaservers.com/wiki/arcanthoria)
 - [Open Tibia server directory](https://opentibiaservers.com/directory)
+- [All wiki pages](https://opentibiaservers.com/wiki)
 - [OpenTibiaServers.com](https://opentibiaservers.com)
+
+## Sources
+
+- static-route
+- review-page
 
 ## Categories
 
 Open Tibia servers · OTServ · Arcanthoria · Tibia private servers · MMORPG directories
 
+## Disclaimer
+
+Arcanthoria is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH. Verify rules, donations, and downloads on the server's own channels.
+
 ---
 
-*This page was generated for external wiki publishing. Canonical player-facing listing: [https://opentibiaservers.com/arcanthoria](https://opentibiaservers.com/arcanthoria).*
+*Generated 2026-09-17 for on-site and external wiki publishing. Canonical listing: [https://opentibiaservers.com/arcanthoria](https://opentibiaservers.com/arcanthoria).*

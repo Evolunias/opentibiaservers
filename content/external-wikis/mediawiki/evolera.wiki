@@ -2,12 +2,14 @@
 | name = Evolera
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/evolera
+| wiki = https://opentibiaservers.com/wiki/evolera
 | host = login.evolera.live
 }}
 
 '''Evolera''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/evolera Evolera on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/evolera Evolera wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -18,6 +20,8 @@
 |-
 | Directory profile || [https://opentibiaservers.com/evolera https://opentibiaservers.com/evolera]
 |-
+| On-site wiki || [https://opentibiaservers.com/wiki/evolera https://opentibiaservers.com/wiki/evolera]
+|-
 | Host || login.evolera.live
 |-
 | Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
@@ -27,29 +31,41 @@
 
 Meet Evolera beyond the list row: verify login.evolera.live, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
 
-Players searching for '''Evolera''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/evolera Evolera server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/evolera Evolera server profile]
+# [https://opentibiaservers.com/wiki/evolera Evolera wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+See the [https://opentibiaservers.com/evolera live listing] for current rates and activity.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Evolera''': [https://opentibiaservers.com/evolera https://opentibiaservers.com/evolera]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/evolera https://opentibiaservers.com/wiki/evolera]
 
 == External links ==
 
 * [https://opentibiaservers.com/evolera Evolera — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/evolera Evolera — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
+
+== Disclaimer ==
+
+Evolera is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Evolera]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/evolera -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/evolera -->

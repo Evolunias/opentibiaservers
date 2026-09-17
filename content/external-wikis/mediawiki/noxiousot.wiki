@@ -2,6 +2,7 @@
 | name = NoxiousOT
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/noxiousot
+| wiki = https://opentibiaservers.com/wiki/noxiousot
 | host = noxiousot.com:7171
 | version = 8.6
 | location = USA
@@ -13,6 +14,7 @@
 '''NoxiousOT''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/noxiousot NoxiousOT on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/noxiousot NoxiousOT wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -22,6 +24,8 @@
 | Server name || NoxiousOT
 |-
 | Directory profile || [https://opentibiaservers.com/noxiousot https://opentibiaservers.com/noxiousot]
+|-
+| On-site wiki || [https://opentibiaservers.com/wiki/noxiousot https://opentibiaservers.com/wiki/noxiousot]
 |-
 | Host || noxiousot.com:7171
 |-
@@ -42,30 +46,47 @@
 
 NoxiousOT is a free to play massively multiplayer online role-playing game (MMORPG). Complete challenging quests, fight in massive PvP guild battles and much more. An epic adventure awaits! Hosted in USA and based off the 8.6 Tibia Client. This wording comes from the recorded official website metadata.
 
-Players searching for '''NoxiousOT''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/noxiousot NoxiousOT server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/noxiousot NoxiousOT server profile]
+# [https://opentibiaservers.com/wiki/noxiousot NoxiousOT wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+* EXP rate: '''10x'''
+* World type: '''PVP'''
+* Players online (snapshot): '''324'''
+* Client / protocol: '''8.6'''
+* Location: '''USA'''
+Always re-check the [https://opentibiaservers.com/noxiousot live profile] for current online counts and status.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''NoxiousOT''': [https://opentibiaservers.com/noxiousot https://opentibiaservers.com/noxiousot]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/noxiousot https://opentibiaservers.com/wiki/noxiousot]
 
 == External links ==
 
 * [https://opentibiaservers.com/noxiousot NoxiousOT — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/noxiousot NoxiousOT — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
 * [https://www.noxiousot.com/ Official NoxiousOT website]
+
+== Disclaimer ==
+
+NoxiousOT is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:NoxiousOT]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/noxiousot -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/noxiousot -->

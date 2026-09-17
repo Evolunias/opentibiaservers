@@ -2,12 +2,14 @@
 | name = Halera
 | directory = [https://opentibiaservers.com OpenTibiaServers.com]
 | profile = https://opentibiaservers.com/halera
+| wiki = https://opentibiaservers.com/wiki/halera
 | host = Halera.net
 }}
 
 '''Halera''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
 
 '''Live listing:''' [https://opentibiaservers.com/halera Halera on OpenTibiaServers.com]<br/>
+'''Server wiki:''' [https://opentibiaservers.com/wiki/halera Halera wiki page]<br/>
 '''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
 
 == Quick facts ==
@@ -18,6 +20,8 @@
 |-
 | Directory profile || [https://opentibiaservers.com/halera https://opentibiaservers.com/halera]
 |-
+| On-site wiki || [https://opentibiaservers.com/wiki/halera https://opentibiaservers.com/wiki/halera]
+|-
 | Host || Halera.net
 |-
 | Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
@@ -27,29 +31,41 @@
 
 Halera - Retro MMORPG with 6 vocations, 15 rarity tiers, void elite bosses, bestiary, and deep character progression. Free to play, launching soon. This wording comes from the recorded official website metadata.
 
-Players searching for '''Halera''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+== Getting started ==
 
-* [https://opentibiaservers.com/halera Halera server profile]
-* [https://opentibiaservers.com OpenTibiaServers.com homepage]
-* [https://opentibiaservers.com/directory Full directory / filters]
+# [https://opentibiaservers.com/halera Halera server profile]
+# [https://opentibiaservers.com/wiki/halera Halera wiki]
+# [https://opentibiaservers.com/directory Full directory / filters]
+# Confirm client version / host before third-party downloads
+
+== Rates, world type, and activity ==
+
+See the [https://opentibiaservers.com/halera live listing] for current rates and activity.
 
 == Why use OpenTibiaServers.com ==
 
-[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site.
 
 # Open the exact-match page for '''Halera''': [https://opentibiaservers.com/halera https://opentibiaservers.com/halera]
 # Compare nearby OT servers by players online, version, and location
 # Verify listing context before downloading a client from third-party mirrors
+# Share the wiki page: [https://opentibiaservers.com/wiki/halera https://opentibiaservers.com/wiki/halera]
 
 == External links ==
 
 * [https://opentibiaservers.com/halera Halera — Open Tibia Servers listing]
+* [https://opentibiaservers.com/wiki/halera Halera — on-site wiki]
 * [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com/wiki All wiki pages]
 * [https://opentibiaservers.com OpenTibiaServers.com]
+
+== Disclaimer ==
+
+Halera is an independent Open Tibia project. OpenTibiaServers.com aggregates public listing data and is not affiliated with CipSoft GmbH.
 
 [[Category:Open Tibia servers]]
 [[Category:OTServ]]
 [[Category:Tibia private servers]]
 [[Category:Halera]]
 
-<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/halera -->
+<!-- Generated 2026-09-17. Canonical listing: https://opentibiaservers.com/halera -->
