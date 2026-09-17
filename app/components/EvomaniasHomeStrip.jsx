@@ -1,8 +1,11 @@
 'use client';
 
-const EVOMANIAS_URL = 'https://evomanias.com/';
-const DOWNLOADS_URL = 'https://evomanias.com/downloads';
-const DISCORD_URL = 'https://discord.gg/wj4D48Jj5W';
+import {
+  EVOMANIAS_SITE_URL,
+  EVOMANIAS_DOWNLOADS_URL,
+  EVOMANIAS_DISCORD_URL,
+  EVOMANIAS_OFFER,
+} from '@/lib/partner-offer';
 
 export default function EvomaniasHomeStrip() {
   return (
@@ -11,18 +14,19 @@ export default function EvomaniasHomeStrip() {
         <div className="evomanias-home-strip__copy">
           <p className="evomanias-home-strip__eyebrow">Featured partner</p>
           <p className="evomanias-home-strip__headline">
-            <strong>Evomanias</strong> — free download, Plus Plan <strong>$200/yr</strong> (was $360, save $160),
-            500 free points, Discord backpack.
+            <strong>{EVOMANIAS_OFFER.name}</strong> - free download, Plus Plan{' '}
+            <strong>{EVOMANIAS_OFFER.plusPlan}</strong> (was {EVOMANIAS_OFFER.plusWas}, save {EVOMANIAS_OFFER.plusSave}),
+            {EVOMANIAS_OFFER.points}, {EVOMANIAS_OFFER.discordPerk}.
           </p>
         </div>
         <div className="evomanias-home-strip__actions">
-          <a href={DOWNLOADS_URL} target="_blank" rel="noopener noreferrer" className="evomanias-home-strip__primary">
+          <a href={EVOMANIAS_DOWNLOADS_URL} target="_blank" rel="noopener noreferrer" className="evomanias-home-strip__primary">
             Free Download
           </a>
-          <a href={EVOMANIAS_URL} target="_blank" rel="noopener noreferrer" className="evomanias-home-strip__secondary">
+          <a href={EVOMANIAS_SITE_URL} target="_blank" rel="noopener noreferrer" className="evomanias-home-strip__secondary">
             View Offer
           </a>
-          <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className="evomanias-home-strip__secondary">
+          <a href={EVOMANIAS_DISCORD_URL} target="_blank" rel="noopener noreferrer" className="evomanias-home-strip__secondary">
             Discord Backpack
           </a>
           <a href="/evomanias" className="evomanias-home-strip__link">

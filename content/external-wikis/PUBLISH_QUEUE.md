@@ -4,7 +4,7 @@ Account: `support@opentibiaservers.com`
 
 ## Status
 - [x] Source articles generated (markdown + MediaWiki via `generate-server-wikis.mjs`)
-- [ ] Live on opentibiaservers.com `/wiki/{slug}` (ship with app deploy; auth-free)
+- [x] Live on opentibiaservers.com `/wiki/{slug}` (on-site library + sitemap + nav)
 - [ ] **GitHub Wiki (repo wiki) — DEFERRED (auth)**
 - [ ] **Miraheze OT wiki — DEFERRED (auth)**
 - [ ] **TibiaWiki / Tibia Fandom — DEFERRED (auth)** (only where OT pages are allowed)
@@ -16,3 +16,7 @@ Wikipedia, Wiktionary, Bulbapedia, Wookieepedia, SCP, TV Tropes, unrelated game 
 
 ## Cadence
 Prefer on-site `/wiki` first. External hosts wait until login/credentials are available; then publish in batches of 10–25 pages per host after account verify.
+
+## Marketing automation (auth-free)
+- Weekday routine refreshes wiki pack + promo sanity on Open Tibia Servers.
+- Share blurbs live under `content/marketing/` for social/paste use (no auto-post to external networks without explicit ask).

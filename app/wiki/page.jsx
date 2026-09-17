@@ -1,10 +1,27 @@
 import Link from 'next/link';
 import { listServerWikiSlugs, readServerWikiMarkdown } from '@/lib/server-wiki-markdown';
+import { buildAbsoluteUrl, getSiteName } from '@/lib/seo';
+
+const title = 'Open Tibia Servers Wiki | Every server guide';
+const description = 'Markdown wiki pages for every Open Tibia server listed on OpenTibiaServers.com, with links back to live directory profiles and related servers.';
+const canonical = buildAbsoluteUrl('/wiki');
 
 export const metadata = {
-  title: 'Open Tibia Servers Wiki | Every server guide',
-  description: 'Markdown wiki pages for every Open Tibia server listed on OpenTibiaServers.com, with links back to live directory profiles.',
-  alternates: { canonical: '/wiki' },
+  title,
+  description,
+  alternates: { canonical },
+  openGraph: {
+    title,
+    description,
+    url: canonical,
+    siteName: getSiteName(),
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title,
+    description,
+  },
 };
 
 export default function WikiIndexPage() {
@@ -27,6 +44,7 @@ export default function WikiIndexPage() {
         <p className="server-wiki__lede">
           {pages.length} markdown wiki pages with backlinks to{' '}
           <a href="https://opentibiaservers.com">opentibiaservers.com</a> listings.
+          Share any page for SEO and player discovery.
         </p>
       </header>
       <ul className="server-wiki__index-list">
@@ -34,8 +52,8 @@ export default function WikiIndexPage() {
           <li key={page.slug}>
             <Link href={page.href}>{page.title}</Link>
             <span>
-              {' '}
-              · <Link href={page.listing}>listing</Link>
+              {' | '}
+              <Link href={page.listing}>listing</Link>
             </span>
           </li>
         ))}

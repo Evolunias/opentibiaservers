@@ -5690,3 +5690,24 @@ html[data-theme] .featured-server-ad__primary,
   color: #0f172a;
 }
 .directory-evomanias-note a { color: #0369a1; font-weight: 650; }
+
+/* OTS wiki related servers */
+.server-wiki__related {
+  margin: 1.75rem 0 1rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 12px;
+  background: rgba(248, 250, 252, 0.7);
+}
+.server-wiki__related h2 {
+  margin: 0 0 0.65rem;
+  font-size: 1rem;
+}
+.server-wiki__related ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+.server-wiki__related li {
+  margin: 0.25rem 0;
+  line-height: 1.45;
+}
