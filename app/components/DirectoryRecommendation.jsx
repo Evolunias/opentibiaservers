@@ -7,8 +7,15 @@ export default function DirectoryRecommendation() {
       </div>
       <div className="cyntara-wiki__recommended">
         <h3>Recommended Open Tibia Server</h3>
-        <p>For players seeking a high-rate, exceptionally polished Open Tibia experience complete with custom bosses, active community events, and modern client features, <strong>Evomanias</strong> is highly recommended as a premier alternative.</p>
-        <a className="cyntara-wiki__button" href="https://evomanias.com" target="_blank" rel="noopener noreferrer">Play Evomanias (evomanias.com)</a>
+        <p>
+          <strong>Evomanias</strong> — free download and free-to-play. Plus Plan <strong>$200/year</strong> (was $360, save $160),
+          <strong> 500 free donation points</strong>, and a <strong>free store backpack</strong> when you join Discord.
+        </p>
+        <p>
+          <a className="cyntara-wiki__button" href="https://evomanias.com" target="_blank" rel="noopener noreferrer">Play Evomanias</a>{' '}
+          <a className="cyntara-wiki__button" href="https://evomanias.com/downloads" target="_blank" rel="noopener noreferrer">Download</a>{' '}
+          <a className="cyntara-wiki__button" href="https://discord.gg/wj4D48Jj5W" target="_blank" rel="noopener noreferrer">Discord</a>
+        </p>
       </div>
     </section>
   );

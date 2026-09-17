@@ -1,32 +1,35 @@
 'use client';
 
 const EVOMANIAS_URL = 'https://evomanias.com/';
+const DOWNLOADS_URL = 'https://evomanias.com/downloads';
+const DISCORD_URL = 'https://discord.gg/wj4D48Jj5W';
 
 const placementCopy = {
   top: {
     eyebrow: 'Featured Server',
-    title: 'Evomanias is recommended for players who want a free-to-play global OT experience.',
-    body: 'Start with global connectivity, active progression, and a launch bonus built for players comparing their next long-term Open Tibia world.',
+    title: 'Evomanias — Plus Plan $200/year (was $360, save $160).',
+    body: 'Free to play and free to download. Get 500 free donation points, then join Discord for a free store backpack.',
   },
   inline: {
     eyebrow: 'Recommended To Play',
-    title: 'Try Evomanias before you pick your next Open Tibia server.',
-    body: 'Free to play, globally reachable, and positioned for players who want fast account creation, daily activity, and a clear path into the game.',
+    title: 'Try Evomanias: free download, 500 free points, Plus Plan $200/yr.',
+    body: 'Save $160 vs $360 on Plus Plan. Free store backpack when you join Discord. Global OT with a clear path into the game.',
   },
   footer: {
     eyebrow: 'Featured Partner',
-    title: 'Evomanias: global connectivity, free access, and a 500 point starter offer.',
-    body: 'Create an account, get 500 Free Donation Points, and compare the experience against the most active Open Tibia listings.',
+    title: 'Evomanias: Plus Plan $200/yr (save $160), 500 free points, Discord backpack.',
+    body: 'Free download and free-to-play core world. Create an account, claim 500 free donation points, and grab the free store backpack on Discord.',
   },
 };
 
 const stats = [
-  { label: 'Starter Offer', value: 'Get 500 Free Donation Points' },
-  { label: 'Daily Reach', value: '5,000+ Unique Daily Active Players' },
-  { label: 'Access', value: 'Free To Play' },
+  { label: 'Plus Plan', value: '$200/year (was $360, save $160)' },
+  { label: 'Starter Offer', value: '500 Free Donation Points' },
+  { label: 'Discord Perk', value: 'Free Store Backpack' },
+  { label: 'Access', value: 'Free To Play + Free Download' },
 ];
 
-const highlights = ['Global OT', 'Fast Start', 'Featured Listing'];
+const highlights = ['Plus $200/yr', '500 Free Points', 'Discord Backpack', 'Free Download'];
 
 function openRegisterModal() {
   window.dispatchEvent(new CustomEvent('ots:open-auth', { detail: { mode: 'register' } }));
@@ -68,6 +71,12 @@ export default function FeaturedServerAd({ placement = 'inline' }) {
         <div className="featured-server-ad__actions">
           <a href={EVOMANIAS_URL} target="_blank" rel="noopener noreferrer" className="featured-server-ad__primary">
             Play Evomanias
+          </a>
+          <a href={DOWNLOADS_URL} target="_blank" rel="noopener noreferrer" className="featured-server-ad__secondary">
+            Free Download
+          </a>
+          <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className="featured-server-ad__secondary">
+            Discord + Backpack
           </a>
           <button type="button" onClick={openRegisterModal} className="featured-server-ad__secondary">
             Create Account

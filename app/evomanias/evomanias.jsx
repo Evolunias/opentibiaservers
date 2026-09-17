@@ -8,7 +8,7 @@ const page = polishPlayerFacingCopy({
   type: 'server',
   title: 'Evomanias Open Tibia Server Guide | Featured Listing, Official Site, and Player Notes',
   h1: 'Evomanias Open Tibia Server: official site, account flow, and featured player guide',
-  dek: 'Evomanias is presented here as a featured Open Tibia server page with a direct link to the official domain, account-creation guidance, and comparison notes for players deciding where to start next.',
+  dek: 'Evomanias is featured with a free download, Plus Plan at $200/year (was $360, save $160), 500 free donation points, and a free store backpack for joining Discord — plus a direct path to the official site.',
   primaryKeyword: 'Evomanias',
   keywords: [
     'Evomanias',
@@ -21,13 +21,21 @@ const page = polishPlayerFacingCopy({
     'free to play OT server',
   ],
   metaDescription:
-    'Evomanias Open Tibia server guide covering the official site, featured listing context, account flow, comparison checklist, and player-facing notes for visitors who want a clean starting point.',
-  updatedAt: '2026-08-12',
+    'Evomanias Open Tibia server guide: free download, Plus Plan $200/yr (save $160), 500 free donation points, Discord free store backpack, official site links, and player-facing onboarding notes.',
+  updatedAt: '2026-09-17',
   pageLabel: 'Featured Server',
   sourceLinks: [
     {
       label: 'Evomanias official website',
       href: 'https://evomanias.com/',
+    },
+    {
+      label: 'Free download / client',
+      href: 'https://evomanias.com/downloads',
+    },
+    {
+      label: 'Official Discord',
+      href: 'https://discord.gg/wj4D48Jj5W',
     },
   ],
   officialAccess: [
@@ -35,18 +43,32 @@ const page = polishPlayerFacingCopy({
       label: 'Official Website',
       href: 'https://evomanias.com/',
       kind: 'official-domain',
-      note: 'Primary domain supplied for the featured Evomanias listing.',
+      note: 'Primary domain for the featured Evomanias listing.',
+    },
+    {
+      label: 'Free Download',
+      href: 'https://evomanias.com/downloads',
+      kind: 'download',
+      note: 'Client download — free to play core world.',
+    },
+    {
+      label: 'Discord (free store backpack)',
+      href: 'https://discord.gg/wj4D48Jj5W',
+      kind: 'discord',
+      note: 'Join Discord for the free store backpack perk.',
     },
   ],
   cta: {
-    label: 'Visit the official Evomanias site',
-    href: 'https://evomanias.com/',
+    label: 'Play Evomanias — free download',
+    href: 'https://evomanias.com/downloads',
   },
   facts: [
     { label: 'Primary topic', value: 'Evomanias featured server profile' },
     { label: 'Official domain', value: 'evomanias.com' },
+    { label: 'Plus Plan', value: '$200/year (was $360, save $160)' },
+    { label: 'Starter offer', value: '500 free donation points + free Discord store backpack' },
+    { label: 'Access', value: 'Free download and free-to-play core world' },
     { label: 'Directory role', value: 'Featured server and comparison landing page' },
-    { label: 'Player intent', value: 'Official site, account creation, community fit, and launch details' },
   ],
   infobox: [
     { label: 'Canonical page', value: 'opentibiaservers.com/evomanias' },
@@ -54,10 +76,10 @@ const page = polishPlayerFacingCopy({
     { label: 'Best use', value: 'Start here before comparing Evomanias with other OT servers' },
     { label: 'Access path', value: 'Official website supplied by the server operator' },
     { label: 'Verification status', value: 'Partial until owner-confirmed details are added' },
-    { label: 'Comparison angle', value: 'Global OT, free-to-play, and account-first player onboarding' },
+    { label: 'Comparison angle', value: 'Free download, Plus Plan $200/yr, 500 free points, Discord backpack' },
   ],
   overview:
-    'Evomanias sits at the top of the directory as a featured Open Tibia choice. This page is designed to give searchers a clean first stop: the official domain, the directory context, the kind of player intent that usually follows the name, and the verification steps that should happen before anyone treats a game world as complete.',
+    'Evomanias sits at the top of the directory as a featured Open Tibia choice. Current player offer: free download and free-to-play, Plus Plan at $200/year (was $360, save $160), 500 free donation points, and a free store backpack for joining Discord. This page links the official site, downloads, and Discord so searchers can act without hunting for the next step.',
   timeline: [
     {
       date: 'Current',
@@ -115,12 +137,12 @@ const page = polishPlayerFacingCopy({
     {
       label: 'Promotional banner context',
       value:
-        'OpenTibiaServers.com highlights Evomanias as the featured server with free-to-play language, account creation prompts, and a starter-offer style call to action.',
+        'OpenTibiaServers.com highlights Evomanias with Plus Plan $200/yr (save $160), 500 free donation points, free download, and a Discord free store backpack CTA.',
     },
     {
-      label: 'Fields still waiting for owner confirmation',
+      label: 'Offer links confirmed for this update',
       value:
-        'Discord, launcher details, screenshot galleries, support contacts, and rules should be added once the server owner or a manager claims the listing.',
+        'Official site, downloads, and Discord are linked for the Plus Plan / free-points / backpack campaign. Screenshots, rules, and support contacts can still expand after claim.',
     },
   ],
   sections: [
@@ -178,17 +200,17 @@ const page = polishPlayerFacingCopy({
     {
       question: 'Is Evomanias free to play?',
       answer:
-        'The featured banner positions Evomanias as free to play. Players should still check the official site for the current account and access model before they start.',
+        'Yes — Evomanias is free to download and free to play for the core world. Plus Plan is optional at $200/year (was $360, save $160). New players also get 500 free donation points, and a free store backpack for joining Discord.',
     },
     {
       question: 'Where should I go first for Evomanias?',
       answer:
-        'Start with the official domain, evomanias.com, then return here to compare the server against similar Open Tibia options and see whether the page has been expanded with owner-confirmed fields.',
+        'Download from evomanias.com/downloads, create an account on evomanias.com, then join Discord at discord.gg/wj4D48Jj5W for the free store backpack. Come back here to compare Evomanias with other OT options.',
     },
     {
-      question: 'Why is the page marked partial?',
+      question: 'What is the current Evomanias offer?',
       answer:
-        'Because only the official domain and the directory-facing promotional context are confirmed right now. The page should be expanded when the owner provides the rest of the public record.',
+        'Plus Plan $200/year (was $360, save $160), free download, 500 free donation points, and a free store backpack for joining the official Discord. Check evomanias.com for the latest store and community verify flow.',
     },
     {
       question: 'What makes a strong Evomanias profile?',
@@ -200,15 +222,27 @@ const page = polishPlayerFacingCopy({
   wikiDepth: {
     status: 'partial',
     statusLabel: 'Featured server profile',
-    missingFields: ['Discord', 'launcher', 'support contact', 'screenshots', 'rules', 'owner notes'],
+    missingFields: ['launcher details', 'support contact', 'screenshots', 'rules', 'owner notes'],
     sourcePolicy:
-      'Only the official Evomanias domain is linked here. Owner confirmation, screenshots, and support information should be added once the listing is claimed.',
+      'Official site, downloads, and Discord are linked for the current campaign. Screenshots, rules, and support contacts should still be expanded once the listing is claimed.',
     sourceCandidates: [
       {
         label: 'Evomanias official website',
         href: 'https://evomanias.com/',
         type: 'official_domain',
         use: 'Primary official domain for account, launch, and public server details.',
+      },
+      {
+        label: 'Free download',
+        href: 'https://evomanias.com/downloads',
+        type: 'download',
+        use: 'Client download for free-to-play access.',
+      },
+      {
+        label: 'Official Discord',
+        href: 'https://discord.gg/wj4D48Jj5W',
+        type: 'discord',
+        use: 'Community Discord — free store backpack join perk.',
       },
     ],
     gameplayGuide: [
@@ -232,7 +266,7 @@ const page = polishPlayerFacingCopy({
       access: [
         'Official site first',
         'Claim flow for owner confirmation',
-        'Future support for launcher and Discord links',
+        'Discord and downloads linked for current offer',
       ],
       discovery: [
         'Featured banner placement',
@@ -246,9 +280,9 @@ const page = polishPlayerFacingCopy({
       ],
     },
     editorialQueue: [
+      'Keep Plus Plan $200/yr and starter offer copy current.',
       'Add screenshots from the official site or owner approval.',
-      'Map Discord and support contact details.',
-      'List launch notes, rules, and client instructions.',
+      'List launch notes, rules, and support contacts.',
       'Expand the profile with a verified gameplay summary once the owner claims it.',
     ],
   },
