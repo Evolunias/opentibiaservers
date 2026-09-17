@@ -148,7 +148,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
     const listedHostValue = (sourcePage.facts || []).find((fact) => fact?.label === 'Listed host')?.value;
     const listedHost = /^(pending|unknown|n\/?a|-)$/i.test(listedHostValue || '') ? '' : listedHostValue;
     const identity = deriveServerIdentity({ ...sourcePage, host: sourcePage.host || sourcePage.ip || listedHost });
-    const canonicalPath = identity.slug ? `/servers/${identity.slug}` : null;
+    const canonicalPath = identity.slug ? `/${identity.slug}` : null;
     if (canonicalPath && sourcePage.path !== canonicalPath) permanentRedirect(canonicalPath);
   }
 
@@ -658,7 +658,7 @@ export default async function CuratedGuideArticle({ page: sourcePage }) {
                   {directoryServers.map((server) => (
                     <Link
                       key={server.id || `${server.name}-${server.ip}`}
-                      href={`/servers/${buildServerSlug(server)}`}
+                      href={`/${buildServerSlug(server)}`}
                       className="rounded border border-black bg-white p-4 hover:no-underline"
                     >
                       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
