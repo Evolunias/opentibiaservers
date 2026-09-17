@@ -69,6 +69,7 @@ export default async function ForumBoardPage({ params }) {
                 <div>
                   {topic.pinned ? <em className="forum-topic-row__pin">Pinned</em> : null}
                   <strong>{topic.title}</strong>
+                  <small className="forum-topic-row__author">{topic.author_name || 'Member'}</small>
                 </div>
                 <span>{Number(topic.reply_count || 0).toLocaleString()}</span>
                 <span>{Number(topic.view_count || 0).toLocaleString()}</span>

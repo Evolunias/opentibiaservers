@@ -1,4 +1,3 @@
-ï»¿import FeaturedServerAd from './components/FeaturedServerAd';
 import ForumIndex from './components/ForumIndex';
 import SiteModeTabs from './components/SiteModeTabs';
 import { getForumIndex } from '@/lib/forum-data';
@@ -7,9 +6,9 @@ import { buildAbsoluteUrl, getSiteName } from '@/lib/seo';
 export const revalidate = 120;
 
 export async function generateMetadata() {
-  const title = 'Open Tibia Forum â€” Support, Releases, Scripts, Mapping & Servers';
+  const title = 'Open Tibia Forum — Support, Releases, Scripts, Mapping & Servers';
   const description =
-    'Modern Open Tibia community forum for support, downloads, scripting, mapping, server launches, jobs, and development â€” plus a full OT server directory.';
+    'Modern Open Tibia community forum for support, downloads, scripting, mapping, server launches, jobs, and development — plus a full OT server directory.';
 
   return {
     title,
@@ -65,12 +64,10 @@ export default async function HomePage() {
         <div className="directory-shell__glow" aria-hidden="true" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 pt-6 pb-12">
           <SiteModeTabs />
-          <div className="mt-5 mb-6">
-            <FeaturedServerAd placement="inline" />
-          </div>
           <ForumIndex sections={sections} error={error} />
         </div>
       </main>
     </>
   );
 }
+

@@ -6,7 +6,6 @@ import ViewToggle from './components/ViewToggle';
 import ServerCard from './components/ServerCard';
 import ServerList from './components/ServerList';
 import Pagination from './components/Pagination';
-import FeaturedServerAd from './components/FeaturedServerAd';
 import { fetchServers } from '@/lib/supabase';
 import { prioritizeFeaturedServer } from '@/lib/presentation-metrics';
 
@@ -86,7 +85,6 @@ export default function HomeClient({ initialServers = [], initialTotal = 0, init
           </p>
         </header>
 
-        <FeaturedServerAd placement="inline" />
       </section>
 
       <section id="servers" className="relative z-10 max-w-7xl mx-auto px-6 pb-10">

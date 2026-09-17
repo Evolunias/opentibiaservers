@@ -4630,3 +4630,11 @@ body.ots-directory-light .email-capture-dialog {
   border-color: var(--directory-line, #dfe5ec);
   color: var(--directory-ink, #17202a);
 }
+
+.forum-topic-row__author {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  color: rgba(226, 232, 240, 0.62);
+  font-weight: 500;
+}

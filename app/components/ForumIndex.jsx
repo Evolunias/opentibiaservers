@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 
 function formatCount(value) {
   return Number(value || 0).toLocaleString();
@@ -44,7 +44,7 @@ export default function ForumIndex({ sections = [], error = null }) {
         <h1 className="forum-hero__title">Forum</h1>
         <p className="forum-hero__dek">
           A modern home for Open Tibia builders and players — support, releases, scripting, mapping, launches, and collaboration.
-          Cleaner structure than legacy boards, with sharper descriptions and a directory one tab away.
+          Structured boards for support, releases, scripting, mapping, launches, and collaboration — with the server directory one tab away.
         </p>
       </header>
 
@@ -58,7 +58,7 @@ export default function ForumIndex({ sections = [], error = null }) {
       {!error && !sections.length ? (
         <div className="forum-alert">
           <strong>Forum boards are ready to seed.</strong>
-          <p>Run <code>supabase/migrations/012_forum_otland_inspired.sql</code> in Supabase, then refresh.</p>
+          <p>Run the forum migrations in Supabase (012 then 015), then refresh.</p>
         </div>
       ) : null}
 

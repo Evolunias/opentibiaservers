@@ -40,19 +40,19 @@ export default async function ForumTopicPage({ params }) {
           </div>
           <header className="forum-topic-page__head">
             <h1>{topic.title}</h1>
-            <p>Started {formatWhen(topic.created_at)} · {Number(topic.reply_count || 0)} replies</p>
+            <p>Started by {topic.author_name || 'Member'} - {formatWhen(topic.created_at)} - {Number(topic.reply_count || 0)} replies</p>
           </header>
           {error ? <div className="forum-alert">{error}</div> : null}
           <div className="forum-posts">
             {!posts.length && topic.body ? (
               <article className="forum-post">
-                <div className="forum-post__meta">Original post · {formatWhen(topic.created_at)}</div>
+                <div className="forum-post__meta"><strong>{topic.author_name || 'Member'}</strong> - Original post - {formatWhen(topic.created_at)}</div>
                 <div className="forum-post__body">{topic.body}</div>
               </article>
             ) : null}
             {posts.map((post, index) => (
               <article key={post.id} className="forum-post">
-                <div className="forum-post__meta">#{index + 1} · {formatWhen(post.created_at)}</div>
+                <div className="forum-post__meta"><strong>{post.author_name || 'Member'}</strong> - #{index + 1} - {formatWhen(post.created_at)}</div>
                 <div className="forum-post__body">{post.body}</div>
               </article>
             ))}
