@@ -156,7 +156,7 @@ export default function SubmitServerPage() {
             slug: identity.slug,
             canonical_slug: identity.slug,
             root_domain: identity.rootDomain,
-            canonical_path: `/servers/${identity.slug}`,
+            canonical_path: `/${identity.slug}`,
             keyword_primary: identity.name,
             seo_title: `${identity.name} | Open Tibia Server Listing | OpenTibiaServers.com`,
             seo_description: `${identity.name}. ${formData.version} Open Tibia server. ${formData.world_type} world hosted in ${formData.location}.`.slice(0, 158),

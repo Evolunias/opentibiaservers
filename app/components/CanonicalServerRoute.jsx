@@ -12,41 +12,35 @@ export async function buildCanonicalServerMetadata(slug) {
   if (page) {
     const metadata = buildArticleMetadata({
       ...page,
-      path: `/servers/${page.slug}`,
+      path: `/${page.slug}`,
     });
     const excerpt = getServerExcerpt(page, { maxLength: 160 });
     return {
       ...metadata,
       description: excerpt || undefined,
-      alternates: { canonical: `/servers/${page.slug}` },
+      alternates: { canonical: `/${page.slug}` },
     };
   }
 
   const server = await getServerRecordBySlug(slug);
   if (!server) return {};
   const livePage = buildSourceBackedServerProfile(buildOtServerCuratedPage(server));
-  return buildArticleMetadata({ ...livePage, path: `/servers/${server.slug}` });
+  return buildArticleMetadata({ ...livePage, path: `/${server.slug}` });
 }
 
 export default async function CanonicalServerRoute({ slug }) {
   const page = getServerReviewPage(slug);
   if (page) {
-    if (page.slug !== slug) permanentRedirect(`/servers/${page.slug}`);
-    return <CuratedGuideArticle page={{ ...page, path: `/servers/${page.slug}` }} />;
+    if (page.slug !== slug) permanentRedirect(`/${page.slug}`);
+    return <CuratedGuideArticle page={{ ...page, path: `/${page.slug}` }} />;
   }
 
   const server = await getServerRecordBySlug(slug);
   if (!server) notFound();
-  if (server.slug !== slug) permanentRedirect(`/servers/${server.slug}`);
+  if (server.slug !== slug) permanentRedirect(`/${server.slug}`);
   const livePage = buildSourceBackedServerProfile(buildOtServerCuratedPage(server));
-  return <CuratedGuideArticle page={{ ...livePage, path: `/servers/${server.slug}` }} />;
+  return <CuratedGuideArticle page={{ ...livePage, path: `/${server.slug}` }} />;
 }
 
-export async function LegacyServerRoute({ slug }) {
-  const page = getServerReviewPage(slug);
-  if (page) permanentRedirect(`/servers/${page.slug}`);
-
-  const server = await getServerRecordBySlug(slug);
-  if (server) permanentRedirect(`/servers/${server.slug}`);
-  notFound();
-}
+/** Kept for existing app/<slug>/page.jsx imports — renders at /name, no /servers redirect. */
+export { default as LegacyServerRoute } from '@/app/components/ServerSlugPage';
