@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Cyleria
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/cyleria
+| host = go.cyleria.pl
+| version = 8.6
+| location = Poland
+| pvp = PVP
+| exp = 300x
+| website = https://cyleria.pl/
+}}
+
+'''Cyleria''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/cyleria Cyleria on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Cyleria
+|-
+| Directory profile || [https://opentibiaservers.com/cyleria https://opentibiaservers.com/cyleria]
+|-
+| Host || go.cyleria.pl
+|-
+| Client / version || 8.6
+|-
+| Location || Poland
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 300x
+|-
+| Players online (snapshot) || 764
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+A source-backed Cyleria reference page for players exploring the Polish OTS, mobile/PC client, no-reset progression, events, Discord community, screenshots, and similar servers.
+
+Players searching for '''Cyleria''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/cyleria Cyleria server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Cyleria''': [https://opentibiaservers.com/cyleria https://opentibiaservers.com/cyleria]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/cyleria Cyleria — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://cyleria.pl/ Official Cyleria website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Cyleria]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/cyleria -->

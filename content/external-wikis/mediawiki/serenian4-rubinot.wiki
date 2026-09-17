@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Serenian4 RubinOT
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/rubinot
+| host = serenian4.rubinot.com.br
+| version = 15.0
+| location = Brazil
+| pvp = nPVP
+| exp = 80x
+| website = https://serenian4.rubinot.com.br/
+}}
+
+'''Serenian4 RubinOT''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/rubinot Serenian4 RubinOT on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Serenian4 RubinOT
+|-
+| Directory profile || [https://opentibiaservers.com/rubinot https://opentibiaservers.com/rubinot]
+|-
+| Host || serenian4.rubinot.com.br
+|-
+| Client / version || 15.0
+|-
+| Location || Brazil
+|-
+| World type || nPVP
+|-
+| EXP rate (snapshot) || 80x
+|-
+| Players online (snapshot) || 591
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Serenian4 RubinOT is tracked as a top Open Tibia server from the public otservlist players-online ranking. This page preserves the searchable server name, host, client/version signals, players-online snapshot, uptime, EXP rate, PvP type, and source attribution so players can compare it while the live Supabase sync and owner-claimed profile continue to enrich the record.
+
+Players searching for '''Serenian4 RubinOT''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/rubinot Serenian4 RubinOT server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Serenian4 RubinOT''': [https://opentibiaservers.com/rubinot https://opentibiaservers.com/rubinot]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/rubinot Serenian4 RubinOT — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://serenian4.rubinot.com.br/ Official Serenian4 RubinOT website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Serenian4 RubinOT]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/rubinot -->

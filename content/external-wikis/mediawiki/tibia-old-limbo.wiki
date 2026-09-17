@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Tibia Old Limbo
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/tibia-old
+| host = limbo.tibia-old.com
+| version = 7.4
+| location = Brazil
+| pvp = FUN
+| exp = 20x
+| website = https://limbo.tibia-old.com/
+}}
+
+'''Tibia Old Limbo''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/tibia-old Tibia Old Limbo on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Tibia Old Limbo
+|-
+| Directory profile || [https://opentibiaservers.com/tibia-old https://opentibiaservers.com/tibia-old]
+|-
+| Host || limbo.tibia-old.com
+|-
+| Client / version || 7.4
+|-
+| Location || Brazil
+|-
+| World type || FUN
+|-
+| EXP rate (snapshot) || 20x
+|-
+| Players online (snapshot) || 267
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Tibia Old Limbo is tracked as a top Open Tibia server from the public otservlist players-online ranking under the listing title "7.4 RL OLDSCHOOL". This page preserves the searchable server name, host, client/version signals, players-online snapshot, uptime, EXP rate, PvP type, and source attribution so players can compare it while the live Supabase sync and owner-claimed profile continue to enrich the record.
+
+Players searching for '''Tibia Old Limbo''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/tibia-old Tibia Old Limbo server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Tibia Old Limbo''': [https://opentibiaservers.com/tibia-old https://opentibiaservers.com/tibia-old]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/tibia-old Tibia Old Limbo — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://limbo.tibia-old.com/ Official Tibia Old Limbo website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Tibia Old Limbo]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/tibia-old -->

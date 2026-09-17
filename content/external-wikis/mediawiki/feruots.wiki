@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Feruots
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/feruots
+| host = play.feruots.eu:7171
+| version = 15.2
+| location = Poland
+| pvp = PVP
+| exp = 25x
+| website = https://feruots.eu/
+}}
+
+'''Feruots''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/feruots Feruots on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Feruots
+|-
+| Directory profile || [https://opentibiaservers.com/feruots https://opentibiaservers.com/feruots]
+|-
+| Host || play.feruots.eu:7171
+|-
+| Client / version || 15.2
+|-
+| Location || Poland
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 25x
+|-
+| Players online (snapshot) || 66
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Feruots beyond the list row: verify play.feruots.eu, understand its 15.2 PVP x25 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
+
+Players searching for '''Feruots''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/feruots Feruots server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Feruots''': [https://opentibiaservers.com/feruots https://opentibiaservers.com/feruots]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/feruots Feruots — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://feruots.eu/ Official Feruots website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Feruots]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/feruots -->

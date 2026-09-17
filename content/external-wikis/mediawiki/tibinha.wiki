@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Tibinha
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/tibinha
+| host = tibinha.com:7171
+}}
+
+'''Tibinha''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/tibinha Tibinha on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Tibinha
+|-
+| Directory profile || [https://opentibiaservers.com/tibinha https://opentibiaservers.com/tibinha]
+|-
+| Host || tibinha.com:7171
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Tibinha beyond the list row: verify tibinha.com, understand its 7.4 PVP x20 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
+
+Players searching for '''Tibinha''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/tibinha Tibinha server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Tibinha''': [https://opentibiaservers.com/tibinha https://opentibiaservers.com/tibinha]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/tibinha Tibinha — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Tibinha]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/tibinha -->

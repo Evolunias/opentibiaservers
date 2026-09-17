@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Tibiatales
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/tibiatales
+| host = tibiatales.com
+}}
+
+'''Tibiatales''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/tibiatales Tibiatales on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Tibiatales
+|-
+| Directory profile || [https://opentibiaservers.com/tibiatales https://opentibiaservers.com/tibiatales]
+|-
+| Host || tibiatales.com
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Visit the Adventurer’s Guild to try your luck at the King’s Slot Machine for 250 Hunting Task Points. After 250 plays, a special guaranteed prize awaits.. You can also try the dice minigame to bet your gold. This wording comes from the recorded official website metadata.
+
+Players searching for '''Tibiatales''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/tibiatales Tibiatales server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Tibiatales''': [https://opentibiaservers.com/tibiatales https://opentibiaservers.com/tibiatales]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/tibiatales Tibiatales — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Tibiatales]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/tibiatales -->

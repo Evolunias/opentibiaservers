@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Olympic74
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/olympic74
+| host = game.olympic74.com:7171
+}}
+
+'''Olympic74''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/olympic74 Olympic74 on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Olympic74
+|-
+| Directory profile || [https://opentibiaservers.com/olympic74 https://opentibiaservers.com/olympic74]
+|-
+| Host || game.olympic74.com:7171
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Olympic74 beyond the list row: verify game.olympic74.com, understand its 7.4 PVP x10 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
+
+Players searching for '''Olympic74''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/olympic74 Olympic74 server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Olympic74''': [https://opentibiaservers.com/olympic74 https://opentibiaservers.com/olympic74]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/olympic74 Olympic74 — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Olympic74]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/olympic74 -->

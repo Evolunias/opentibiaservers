@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Mortus
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/mortus
+| host = mortus.online
+}}
+
+'''Mortus''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/mortus Mortus on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Mortus
+|-
+| Directory profile || [https://opentibiaservers.com/mortus https://opentibiaservers.com/mortus]
+|-
+| Host || mortus.online
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Mortus: a modern-engine revamp of Tibia 7.4–8.0. New world, custom client, item upgrades, crafting, bosses & community events await. This wording comes from the recorded official website metadata.
+
+Players searching for '''Mortus''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/mortus Mortus server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Mortus''': [https://opentibiaservers.com/mortus https://opentibiaservers.com/mortus]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/mortus Mortus — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Mortus]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/mortus -->

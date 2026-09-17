@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Elenor
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/elenor
+| host = elenor.wotserver.com:7171
+}}
+
+'''Elenor''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/elenor Elenor on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Elenor
+|-
+| Directory profile || [https://opentibiaservers.com/elenor https://opentibiaservers.com/elenor]
+|-
+| Host || elenor.wotserver.com:7171
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Elenor beyond the list row: verify elenor.wotserver.com, understand its PVP x10 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
+
+Players searching for '''Elenor''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/elenor Elenor server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Elenor''': [https://opentibiaservers.com/elenor https://opentibiaservers.com/elenor]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/elenor Elenor — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Elenor]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/elenor -->

@@ -1,0 +1,32 @@
+# Wiki platforms
+
+- **Fandom.com** — MediaWiki
+- **Miraheze.org** — MediaWiki
+- **Wikidot.com** — Wikidot
+- **ShoutWiki.com** — MediaWiki
+- **Telepedia.net** — MediaWiki
+- **WikiOasis.com** — MediaWiki
+- **EditThis.info** — MediaWiki
+- **Wiki.js** — Markdown
+- **GitBook.com** — Markdown
+- **BookStack** — Markdown/HTML
+- **Notion.so** — Markdown paste
+- **GitHub Wikis** — Markdown
+- **GitLab Wikis** — Markdown
+- **Bitbucket Wikis** — Markdown
+- **SourceForge Wikis** — MediaWiki/Markdown
+- **Neocities.org** — HTML/Markdown
+- **Tiddlyhost.com** — TiddlyWiki
+- **Wikipedia.org** — MediaWiki (notability required)
+- **Wikidata.org** — Wikidata
+- **TibiaWiki** — MediaWiki / Fandom
+- **OpenTibia Community Wiki** — Community docs
+- **Wiki.gg** — MediaWiki
+- **Liquipedia.net** — MediaWiki
+- **StrategyWiki.org** — MediaWiki
+- **PCGamingWiki.com** — MediaWiki
+- **TV Tropes** — Custom
+- **World Anvil** — Worldbuilding
+- **LocalWiki.org** — MediaWiki
+- **ArchWiki** — MediaWiki
+- **MDN Web Docs** — Community docs

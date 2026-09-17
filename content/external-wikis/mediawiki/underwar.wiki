@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Underwar
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/underwar
+| host = go.underwar.org:7171
+| version = 8.6
+| location = Brazil
+| pvp = PVP
+| exp = 15x
+| website = https://underwar.org/
+}}
+
+'''Underwar''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/underwar Underwar on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Underwar
+|-
+| Directory profile || [https://opentibiaservers.com/underwar https://opentibiaservers.com/underwar]
+|-
+| Host || go.underwar.org:7171
+|-
+| Client / version || 8.6
+|-
+| Location || Brazil
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 15x
+|-
+| Players online (snapshot) || 47
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Underwar beyond the list row: verify go.underwar.org, understand its 8.6 PVP x15 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
+
+Players searching for '''Underwar''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/underwar Underwar server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Underwar''': [https://opentibiaservers.com/underwar https://opentibiaservers.com/underwar]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/underwar Underwar — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://underwar.org/ Official Underwar website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Underwar]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/underwar -->

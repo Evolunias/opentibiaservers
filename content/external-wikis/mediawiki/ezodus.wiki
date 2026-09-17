@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Ezodus
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/ezodus
+| host = ezodus.net
+}}
+
+'''Ezodus''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/ezodus Ezodus on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Ezodus
+|-
+| Directory profile || [https://opentibiaservers.com/ezodus https://opentibiaservers.com/ezodus]
+|-
+| Host || ezodus.net
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Ezodus is an Open Tibia (OTS) server with custom items, active PvP, castle & guild wars. Download the client and join our open-tibia server today. This wording comes from the recorded official website metadata.
+
+Players searching for '''Ezodus''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/ezodus Ezodus server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Ezodus''': [https://opentibiaservers.com/ezodus https://opentibiaservers.com/ezodus]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/ezodus Ezodus — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Ezodus]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/ezodus -->

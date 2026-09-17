@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Crownots
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/crownots
+| host = crownots.eu
+}}
+
+'''Crownots''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/crownots Crownots on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Crownots
+|-
+| Directory profile || [https://opentibiaservers.com/crownots https://opentibiaservers.com/crownots]
+|-
+| Host || crownots.eu
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+🎮 SERVER INFO & SYSTEMS​. Welcome to our server! Below you will find a complete overview of the most important mechanics, PvP systems, and game rules. Learn how combat works, explore the reward system, and get ready for your adventure! This wording comes from the recorded official website metadata.
+
+Players searching for '''Crownots''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/crownots Crownots server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Crownots''': [https://opentibiaservers.com/crownots https://opentibiaservers.com/crownots]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/crownots Crownots — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Crownots]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/crownots -->

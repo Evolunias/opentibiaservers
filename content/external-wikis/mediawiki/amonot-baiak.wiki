@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = AmonOT Baiak
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/amonot
+| host = baiak.amonot.online
+| version = 15.2
+| location = Brazil
+| pvp = PVP
+| exp = 2250x
+| website = https://baiak.amonot.online/
+}}
+
+'''AmonOT Baiak''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/amonot AmonOT Baiak on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || AmonOT Baiak
+|-
+| Directory profile || [https://opentibiaservers.com/amonot https://opentibiaservers.com/amonot]
+|-
+| Host || baiak.amonot.online
+|-
+| Client / version || 15.2
+|-
+| Location || Brazil
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 2250x
+|-
+| Players online (snapshot) || 560
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+AmonOT Baiak is tracked as a top Open Tibia server from the public otservlist players-online ranking under the listing title "NOVO BALANCEAMENTO". This page preserves the searchable server name, host, client/version signals, players-online snapshot, uptime, EXP rate, PvP type, and source attribution so players can compare it while the live Supabase sync and owner-claimed profile continue to enrich the record.
+
+Players searching for '''AmonOT Baiak''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/amonot AmonOT Baiak server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''AmonOT Baiak''': [https://opentibiaservers.com/amonot https://opentibiaservers.com/amonot]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/amonot AmonOT Baiak — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://baiak.amonot.online/ Official AmonOT Baiak website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:AmonOT Baiak]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/amonot -->

@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = TNT Server
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/tntserver
+| host = sv.tntserver.com.br
+| version = 15.2
+| location = Brazil
+| pvp = PVP
+| exp = 70x
+| website = https://tntserver.com.br/
+}}
+
+'''TNT Server''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/tntserver TNT Server on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || TNT Server
+|-
+| Directory profile || [https://opentibiaservers.com/tntserver https://opentibiaservers.com/tntserver]
+|-
+| Host || sv.tntserver.com.br
+|-
+| Client / version || 15.2
+|-
+| Location || Brazil
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 70x
+|-
+| Players online (snapshot) || 100
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+TNT Server is tracked as a top Open Tibia server from the public otservlist players-online ranking under the listing title "TNT SERVER - 1530". This page preserves the searchable server name, host, client/version signals, players-online snapshot, uptime, EXP rate, PvP type, and source attribution so players can compare it while the live Supabase sync and owner-claimed profile continue to enrich the record.
+
+Players searching for '''TNT Server''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/tntserver TNT Server server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''TNT Server''': [https://opentibiaservers.com/tntserver https://opentibiaservers.com/tntserver]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/tntserver TNT Server — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://tntserver.com.br/ Official TNT Server website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:TNT Server]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/tntserver -->

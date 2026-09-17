@@ -1,0 +1,68 @@
+{{Infobox OTServer
+| name = Blacktalon Online
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/blacktalon
+| host = international.blacktalon.online
+| location = USA
+| pvp = PVP
+| exp = 99x
+| website = https://international.blacktalon.online/
+}}
+
+'''Blacktalon Online''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/blacktalon Blacktalon Online on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Blacktalon Online
+|-
+| Directory profile || [https://opentibiaservers.com/blacktalon https://opentibiaservers.com/blacktalon]
+|-
+| Host || international.blacktalon.online
+|-
+| Location || USA
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 99x
+|-
+| Players online (snapshot) || 98
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Blacktalon Online is tracked as a top Open Tibia server from the public otservlist players-online ranking. This page preserves the searchable server name, host, client/version signals, players-online snapshot, uptime, EXP rate, PvP type, and source attribution so players can compare it while the live Supabase sync and owner-claimed profile continue to enrich the record.
+
+Players searching for '''Blacktalon Online''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/blacktalon Blacktalon Online server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Blacktalon Online''': [https://opentibiaservers.com/blacktalon https://opentibiaservers.com/blacktalon]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/blacktalon Blacktalon Online — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://international.blacktalon.online/ Official Blacktalon Online website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Blacktalon Online]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/blacktalon -->

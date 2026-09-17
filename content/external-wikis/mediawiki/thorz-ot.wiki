@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Thorz OT
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/thorz-ot
+| host = thorz-ot.se
+}}
+
+'''Thorz OT''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/thorz-ot Thorz OT on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Thorz OT
+|-
+| Directory profile || [https://opentibiaservers.com/thorz-ot https://opentibiaservers.com/thorz-ot]
+|-
+| Host || thorz-ot.se
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Thorz OT beyond the list row: verify thorz-ot.se, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
+
+Players searching for '''Thorz OT''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/thorz-ot Thorz OT server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Thorz OT''': [https://opentibiaservers.com/thorz-ot https://opentibiaservers.com/thorz-ot]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/thorz-ot Thorz OT — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Thorz OT]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/thorz-ot -->

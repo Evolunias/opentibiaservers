@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Imperialageonline
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/imperialageonline
+| host = imperialageonline.servegame.com
+}}
+
+'''Imperialageonline''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/imperialageonline Imperialageonline on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Imperialageonline
+|-
+| Directory profile || [https://opentibiaservers.com/imperialageonline https://opentibiaservers.com/imperialageonline]
+|-
+| Host || imperialageonline.servegame.com
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Client Patch 2.2.5 Changelog Beginner’s Wings added for level 100, obtainable through the Dawnport Quest.. New temporary special wings available in the Market Points shop.. Updated sprites for all existing wings.. Companion food is now saved even after dismissing your companion.. A new food status icon will appear when your companion is regenerating from food while summoned.. Fixed a server crash related to Onlook’s loot list.. These changes will take effect after a server restart.. This wording comes from the recorded official website metadata.
+
+Players searching for '''Imperialageonline''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/imperialageonline Imperialageonline server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Imperialageonline''': [https://opentibiaservers.com/imperialageonline https://opentibiaservers.com/imperialageonline]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/imperialageonline Imperialageonline — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Imperialageonline]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/imperialageonline -->

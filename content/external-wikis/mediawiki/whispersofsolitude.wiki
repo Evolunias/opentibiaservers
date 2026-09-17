@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Whispersofsolitude
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/whispersofsolitude
+| host = on.whispersofsolitude.org
+}}
+
+'''Whispersofsolitude''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/whispersofsolitude Whispersofsolitude on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Whispersofsolitude
+|-
+| Directory profile || [https://opentibiaservers.com/whispersofsolitude https://opentibiaservers.com/whispersofsolitude]
+|-
+| Host || on.whispersofsolitude.org
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Welcome to Whispers of Solitude - Whispers of Solitude is a massive online RPG where danger, discovery, and progression define your path. Enter the world and forge your legacy. This wording comes from the recorded official website metadata.
+
+Players searching for '''Whispersofsolitude''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/whispersofsolitude Whispersofsolitude server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Whispersofsolitude''': [https://opentibiaservers.com/whispersofsolitude https://opentibiaservers.com/whispersofsolitude]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/whispersofsolitude Whispersofsolitude — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Whispersofsolitude]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/whispersofsolitude -->

@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Cronots
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/cronots
+| host = cronots.com
+}}
+
+'''Cronots''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/cronots Cronots on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Cronots
+|-
+| Directory profile || [https://opentibiaservers.com/cronots https://opentibiaservers.com/cronots]
+|-
+| Host || cronots.com
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+CronOTS is a classic 7.6 MMORPG modernized with seasonal progression, events and custom systems. This wording comes from the recorded official website metadata.
+
+Players searching for '''Cronots''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/cronots Cronots server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Cronots''': [https://opentibiaservers.com/cronots https://opentibiaservers.com/cronots]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/cronots Cronots — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Cronots]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/cronots -->

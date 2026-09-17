@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Primot
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/primot
+| host = sv.primot.com.br:7171
+| version = 8.6
+| location = Brazil
+| pvp = PVP
+| exp = 100x
+| website = https://primot.com.br/
+}}
+
+'''Primot''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/primot Primot on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Primot
+|-
+| Directory profile || [https://opentibiaservers.com/primot https://opentibiaservers.com/primot]
+|-
+| Host || sv.primot.com.br:7171
+|-
+| Client / version || 8.6
+|-
+| Location || Brazil
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 100x
+|-
+| Players online (snapshot) || 28
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Primot beyond the list row: verify sv.primot.com.br, understand its 8.6 PVP x100 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
+
+Players searching for '''Primot''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/primot Primot server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Primot''': [https://opentibiaservers.com/primot https://opentibiaservers.com/primot]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/primot Primot — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://primot.com.br/ Official Primot website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Primot]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/primot -->

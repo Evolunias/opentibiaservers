@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Rafidea
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/rafidea
+| host = rafidea.pl
+}}
+
+'''Rafidea''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/rafidea Rafidea on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Rafidea
+|-
+| Directory profile || [https://opentibiaservers.com/rafidea https://opentibiaservers.com/rafidea]
+|-
+| Host || rafidea.pl
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Rafidea beyond the list row: verify rafidea.pl, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
+
+Players searching for '''Rafidea''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/rafidea Rafidea server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Rafidea''': [https://opentibiaservers.com/rafidea https://opentibiaservers.com/rafidea]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/rafidea Rafidea — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Rafidea]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/rafidea -->

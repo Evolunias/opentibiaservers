@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Celenium RubinOT
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/rubinot
+| host = cellenium.rubinot.net
+| version = 15.0
+| location = France
+| pvp = PVP
+| exp = 80x
+| website = https://cellenium.rubinot.net/
+}}
+
+'''Celenium RubinOT''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/rubinot Celenium RubinOT on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Celenium RubinOT
+|-
+| Directory profile || [https://opentibiaservers.com/rubinot https://opentibiaservers.com/rubinot]
+|-
+| Host || cellenium.rubinot.net
+|-
+| Client / version || 15.0
+|-
+| Location || France
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 80x
+|-
+| Players online (snapshot) || 137
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Celenium RubinOT is tracked as a top Open Tibia server from the public otservlist players-online ranking under the listing title "27K ON - BATTLE PASS". This page preserves the searchable server name, host, client/version signals, players-online snapshot, uptime, EXP rate, PvP type, and source attribution so players can compare it while the live Supabase sync and owner-claimed profile continue to enrich the record.
+
+Players searching for '''Celenium RubinOT''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/rubinot Celenium RubinOT server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Celenium RubinOT''': [https://opentibiaservers.com/rubinot https://opentibiaservers.com/rubinot]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/rubinot Celenium RubinOT — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://cellenium.rubinot.net/ Official Celenium RubinOT website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Celenium RubinOT]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/rubinot -->

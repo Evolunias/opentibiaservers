@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Tntserver
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/tntserver
+| host = sv.tntserver.com.br:7171
+}}
+
+'''Tntserver''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/tntserver Tntserver on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Tntserver
+|-
+| Directory profile || [https://opentibiaservers.com/tntserver https://opentibiaservers.com/tntserver]
+|-
+| Host || sv.tntserver.com.br:7171
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Tntserver beyond the list row: verify sv.tntserver.com.br, understand its 15.2 PVP x70 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
+
+Players searching for '''Tntserver''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/tntserver Tntserver server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Tntserver''': [https://opentibiaservers.com/tntserver https://opentibiaservers.com/tntserver]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/tntserver Tntserver — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Tntserver]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/tntserver -->

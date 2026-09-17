@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Heroserv
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/heroserv
+| host = heroserv.com:7171
+| version = 8.6
+| location = Brazil
+| pvp = PVP
+| exp = 1000x
+| website = https://heroserv.com/
+}}
+
+'''Heroserv''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/heroserv Heroserv on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Heroserv
+|-
+| Directory profile || [https://opentibiaservers.com/heroserv https://opentibiaservers.com/heroserv]
+|-
+| Host || heroserv.com:7171
+|-
+| Client / version || 8.6
+|-
+| Location || Brazil
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 1000x
+|-
+| Players online (snapshot) || 95
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Pvp - Use o comando "!pvp on" ou "!pvp off" para ativar/desativar o pvp do seu char evitando que magias de &aacute;reas peguem skull. Lembrando que voc&ecirc; ainda pode ser atacado por outros players, afinal o server &eacute; PVP - Players da mesma guild n&atilde;o pegam skull/pz entre si - Apenas o &uacute;ltimo player pega o frag do char. This wording comes from the recorded official website metadata.
+
+Players searching for '''Heroserv''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/heroserv Heroserv server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Heroserv''': [https://opentibiaservers.com/heroserv https://opentibiaservers.com/heroserv]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/heroserv Heroserv — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://heroserv.com/ Official Heroserv website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Heroserv]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/heroserv -->

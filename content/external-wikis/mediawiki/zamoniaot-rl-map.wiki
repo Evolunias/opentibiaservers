@@ -1,0 +1,52 @@
+{{Infobox OTServer
+| name = Zamoniaot Rl Map
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/zamoniaot-rl-map
+}}
+
+'''Zamoniaot Rl Map''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/zamoniaot-rl-map Zamoniaot Rl Map on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Zamoniaot Rl Map
+|-
+| Directory profile || [https://opentibiaservers.com/zamoniaot-rl-map https://opentibiaservers.com/zamoniaot-rl-map]
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Zamoniaot Rl Map is listed in the Open Tibia Servers database so players can compare live status, player counts, rates, and related Open Tibia projects before creating an account.
+
+Players searching for '''Zamoniaot Rl Map''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/zamoniaot-rl-map Zamoniaot Rl Map server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Zamoniaot Rl Map''': [https://opentibiaservers.com/zamoniaot-rl-map https://opentibiaservers.com/zamoniaot-rl-map]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/zamoniaot-rl-map Zamoniaot Rl Map — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Zamoniaot Rl Map]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/zamoniaot-rl-map -->

@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Ravox Monk OT
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/ravox-monk-ot
+| host = www.ravox-monk-ot.com.br:7171
+| version = 15.0
+| location = Brazil
+| pvp = PVP
+| exp = 90x
+| website = https://www.ravox-monk-ot.com.br/
+}}
+
+'''Ravox Monk OT''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/ravox-monk-ot Ravox Monk OT on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Ravox Monk OT
+|-
+| Directory profile || [https://opentibiaservers.com/ravox-monk-ot https://opentibiaservers.com/ravox-monk-ot]
+|-
+| Host || www.ravox-monk-ot.com.br:7171
+|-
+| Client / version || 15.0
+|-
+| Location || Brazil
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 90x
+|-
+| Players online (snapshot) || 70
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Ravox Monk OT beyond the list row: verify www.ravox-monk-ot.com.br, understand its 15.0 PVP x90 pace, find safer play links, read the rules, and discover the player stories that give the world a character of its own.
+
+Players searching for '''Ravox Monk OT''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/ravox-monk-ot Ravox Monk OT server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Ravox Monk OT''': [https://opentibiaservers.com/ravox-monk-ot https://opentibiaservers.com/ravox-monk-ot]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/ravox-monk-ot Ravox Monk OT — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://www.ravox-monk-ot.com.br/ Official Ravox Monk OT website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Ravox Monk OT]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/ravox-monk-ot -->

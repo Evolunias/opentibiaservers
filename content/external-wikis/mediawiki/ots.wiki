@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Ots
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/ots
+| host = hellgrave.ots.me
+}}
+
+'''Ots''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/ots Ots on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Ots
+|-
+| Directory profile || [https://opentibiaservers.com/ots https://opentibiaservers.com/ots]
+|-
+| Host || hellgrave.ots.me
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Ots beyond the list row: verify hellgrave.ots.me, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
+
+Players searching for '''Ots''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/ots Ots server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Ots''': [https://opentibiaservers.com/ots https://opentibiaservers.com/ots]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/ots Ots — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Ots]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/ots -->

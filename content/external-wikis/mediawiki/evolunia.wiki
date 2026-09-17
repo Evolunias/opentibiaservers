@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Evolunia
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/evolunia
+| host = evolunia.net
+| version = 10.98
+| location = Sweden
+| pvp = PVPe
+| exp = 100x
+| website = https://evolunia.net/
+}}
+
+'''Evolunia''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/evolunia Evolunia on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Evolunia
+|-
+| Directory profile || [https://opentibiaservers.com/evolunia https://opentibiaservers.com/evolunia]
+|-
+| Host || evolunia.net
+|-
+| Client / version || 10.98
+|-
+| Location || Sweden
+|-
+| World type || PVPe
+|-
+| EXP rate (snapshot) || 100x
+|-
+| Players online (snapshot) || 210
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+A player-focused Evolunia reference page for exploring rules, client version, online activity, progression fit, community expectations, and similar Open Tibia servers.
+
+Players searching for '''Evolunia''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/evolunia Evolunia server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Evolunia''': [https://opentibiaservers.com/evolunia https://opentibiaservers.com/evolunia]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/evolunia Evolunia — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://evolunia.net/ Official Evolunia website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Evolunia]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/evolunia -->

@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Roxor1337
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/roxor1337
+| host = roxor1337.zapto.org
+}}
+
+'''Roxor1337''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/roxor1337 Roxor1337 on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Roxor1337
+|-
+| Directory profile || [https://opentibiaservers.com/roxor1337 https://opentibiaservers.com/roxor1337]
+|-
+| Host || roxor1337.zapto.org
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Roxor1337 beyond the list row: verify roxor1337.zapto.org, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
+
+Players searching for '''Roxor1337''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/roxor1337 Roxor1337 server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Roxor1337''': [https://opentibiaservers.com/roxor1337 https://opentibiaservers.com/roxor1337]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/roxor1337 Roxor1337 — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Roxor1337]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/roxor1337 -->

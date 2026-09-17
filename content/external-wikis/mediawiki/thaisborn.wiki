@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Thaisborn
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/thaisborn
+| host = thaisborn.net
+}}
+
+'''Thaisborn''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/thaisborn Thaisborn on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Thaisborn
+|-
+| Directory profile || [https://opentibiaservers.com/thaisborn https://opentibiaservers.com/thaisborn]
+|-
+| Host || thaisborn.net
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+It's official: Thaisborn has its own YouTube channel, and our very first trailer just dropped. One look at the world we've been building &mdash; the classic Tibia 7.4 feeling, a deep custom end-game and factions clashing in the Eternal War. This wording comes from the recorded official website metadata.
+
+Players searching for '''Thaisborn''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/thaisborn Thaisborn server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Thaisborn''': [https://opentibiaservers.com/thaisborn https://opentibiaservers.com/thaisborn]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/thaisborn Thaisborn — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Thaisborn]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/thaisborn -->

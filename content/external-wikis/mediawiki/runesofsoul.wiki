@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Runesofsoul
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/runesofsoul
+| host = runesofsoul.servegame.com
+}}
+
+'''Runesofsoul''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/runesofsoul Runesofsoul on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Runesofsoul
+|-
+| Directory profile || [https://opentibiaservers.com/runesofsoul https://opentibiaservers.com/runesofsoul]
+|-
+| Host || runesofsoul.servegame.com
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Runesofsoul beyond the list row: verify runesofsoul.servegame.com, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
+
+Players searching for '''Runesofsoul''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/runesofsoul Runesofsoul server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Runesofsoul''': [https://opentibiaservers.com/runesofsoul https://opentibiaservers.com/runesofsoul]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/runesofsoul Runesofsoul — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Runesofsoul]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/runesofsoul -->

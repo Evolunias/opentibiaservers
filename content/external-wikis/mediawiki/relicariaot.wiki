@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Relicariaot
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/relicariaot
+| host = game.relicariaot.com.br:7171
+| version = 15.2
+| location = Brazil
+| pvp = nPVP
+| exp = 600x
+| website = https://relicariaot.com.br/
+}}
+
+'''Relicariaot''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/relicariaot Relicariaot on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Relicariaot
+|-
+| Directory profile || [https://opentibiaservers.com/relicariaot https://opentibiaservers.com/relicariaot]
+|-
+| Host || game.relicariaot.com.br:7171
+|-
+| Client / version || 15.2
+|-
+| Location || Brazil
+|-
+| World type || nPVP
+|-
+| EXP rate (snapshot) || 600x
+|-
+| Players online (snapshot) || 23
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Para os mais corajosos, o Relicaria conta com uma zona PvP custom de grande extens&atilde;o. O acesso &eacute; feito pelo barco de Thais e requer status VIP. Dentro dessa zona, o PvP &eacute; totalmente liberado &mdash; ca&ccedil;ar l&aacute; garante b&ocirc;nus de experi&ecirc;ncia e drop, mas fique atento: outros jogadores tamb&eacute;m estar&atilde;o &agrave; espreita. Risco e recompensa andam lado a lado! This wording comes from the recorded official website metadata.
+
+Players searching for '''Relicariaot''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/relicariaot Relicariaot server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Relicariaot''': [https://opentibiaservers.com/relicariaot https://opentibiaservers.com/relicariaot]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/relicariaot Relicariaot — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://relicariaot.com.br/ Official Relicariaot website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Relicariaot]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/relicariaot -->

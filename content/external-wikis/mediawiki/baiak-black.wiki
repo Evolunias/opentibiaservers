@@ -1,0 +1,52 @@
+{{Infobox OTServer
+| name = Baiak Black
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/baiak-black
+}}
+
+'''Baiak Black''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/baiak-black Baiak Black on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Baiak Black
+|-
+| Directory profile || [https://opentibiaservers.com/baiak-black https://opentibiaservers.com/baiak-black]
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Baiak Black beyond the list row: verify its host, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
+
+Players searching for '''Baiak Black''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/baiak-black Baiak Black server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Baiak Black''': [https://opentibiaservers.com/baiak-black https://opentibiaservers.com/baiak-black]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/baiak-black Baiak Black — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Baiak Black]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/baiak-black -->

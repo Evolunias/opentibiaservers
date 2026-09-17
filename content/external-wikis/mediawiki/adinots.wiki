@@ -1,0 +1,55 @@
+{{Infobox OTServer
+| name = Adinots
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/adinots
+| host = play.adinots.pl
+}}
+
+'''Adinots''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/adinots Adinots on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Adinots
+|-
+| Directory profile || [https://opentibiaservers.com/adinots https://opentibiaservers.com/adinots]
+|-
+| Host || play.adinots.pl
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+A major update has been released on the server in Tibia, introducing the upgrade system, crafting, new items, and a new boss Grand Master Oberon. Additionally, the Double EXP event is still active. This wording comes from the recorded official website metadata.
+
+Players searching for '''Adinots''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/adinots Adinots server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Adinots''': [https://opentibiaservers.com/adinots https://opentibiaservers.com/adinots]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/adinots Adinots — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Adinots]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/adinots -->

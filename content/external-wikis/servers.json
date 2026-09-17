@@ -1,0 +1,2547 @@
+[
+  {
+    "slug": "12-anos-online",
+    "name": "12 Anos Online",
+    "url": "https://opentibiaservers.com/aurera-global"
+  },
+  {
+    "slug": "14-12-qumoras-rook-valley",
+    "name": "14.12 Qumoras Rook-Valley",
+    "url": "https://opentibiaservers.com/14-12-qumoras-rook-valley"
+  },
+  {
+    "slug": "20th-february-2026-18-00",
+    "name": "20th February 2026 18 00",
+    "url": "https://opentibiaservers.com/20th-february-2026-18-00"
+  },
+  {
+    "slug": "8-0-freebia-online-lowrate-20-06-2026",
+    "name": "8 0 Freebia Online Lowrate 20 06 2026",
+    "url": "https://opentibiaservers.com/8-0-freebia-online-lowrate-20-06-2026"
+  },
+  {
+    "slug": "adinots",
+    "name": "Adinots",
+    "url": "https://opentibiaservers.com/adinots"
+  },
+  {
+    "slug": "adlera",
+    "name": "Adlera",
+    "url": "https://opentibiaservers.com/adlera"
+  },
+  {
+    "slug": "adrastea",
+    "name": "Adrastea",
+    "url": "https://opentibiaservers.com/adrastea"
+  },
+  {
+    "slug": "aegis-exordion",
+    "name": "Aegis Exordion",
+    "url": "https://opentibiaservers.com/exordion"
+  },
+  {
+    "slug": "aethera",
+    "name": "Aethera",
+    "url": "https://opentibiaservers.com/aethera"
+  },
+  {
+    "slug": "aiolosot",
+    "name": "Aiolosot",
+    "url": "https://opentibiaservers.com/aiolosot"
+  },
+  {
+    "slug": "alastera",
+    "name": "Alastera",
+    "url": "https://opentibiaservers.com/alastera"
+  },
+  {
+    "slug": "aldora",
+    "name": "Aldora",
+    "url": "https://opentibiaservers.com/aldora"
+  },
+  {
+    "slug": "almyria",
+    "name": "Almyria",
+    "url": "https://opentibiaservers.com/almyria"
+  },
+  {
+    "slug": "almyria-online",
+    "name": "Almyria Online",
+    "url": "https://opentibiaservers.com/almyria-online"
+  },
+  {
+    "slug": "alphaot",
+    "name": "Alphaot",
+    "url": "https://opentibiaservers.com/alphaot"
+  },
+  {
+    "slug": "alzeria",
+    "name": "Alzeria",
+    "url": "https://opentibiaservers.com/alzeria"
+  },
+  {
+    "slug": "amera",
+    "name": "Amera",
+    "url": "https://opentibiaservers.com/amera"
+  },
+  {
+    "slug": "amirots",
+    "name": "Amirots",
+    "url": "https://opentibiaservers.com/amirots"
+  },
+  {
+    "slug": "amirots-arc",
+    "name": "Amirots Arc",
+    "url": "https://opentibiaservers.com/amirots-arc"
+  },
+  {
+    "slug": "amonot",
+    "name": "Amonot",
+    "url": "https://opentibiaservers.com/amonot"
+  },
+  {
+    "slug": "amonot-baiak",
+    "name": "AmonOT Baiak",
+    "url": "https://opentibiaservers.com/amonot"
+  },
+  {
+    "slug": "antica",
+    "name": "Antica",
+    "url": "https://opentibiaservers.com/antica"
+  },
+  {
+    "slug": "anubis-amonot",
+    "name": "Anubis AMONOT",
+    "url": "https://opentibiaservers.com/amonot"
+  },
+  {
+    "slug": "aquele-ot",
+    "name": "Aquele OT",
+    "url": "https://opentibiaservers.com/aqueleot"
+  },
+  {
+    "slug": "aqueleot",
+    "name": "Aqueleot",
+    "url": "https://opentibiaservers.com/aqueleot"
+  },
+  {
+    "slug": "arborots-v2",
+    "name": "ArborOTS V2",
+    "url": "https://opentibiaservers.com/arborots-v2"
+  },
+  {
+    "slug": "arcanaot",
+    "name": "Arcanaot",
+    "url": "https://opentibiaservers.com/arcanaot"
+  },
+  {
+    "slug": "arcania",
+    "name": "Arcania",
+    "url": "https://opentibiaservers.com/arcania"
+  },
+  {
+    "slug": "arcanthoria",
+    "name": "Arcanthoria",
+    "url": "https://opentibiaservers.com/arcanthoria"
+  },
+  {
+    "slug": "archezot",
+    "name": "Archezot",
+    "url": "https://opentibiaservers.com/archezot"
+  },
+  {
+    "slug": "archezot-remake",
+    "name": "Archezot Remake",
+    "url": "https://opentibiaservers.com/archezot-remake"
+  },
+  {
+    "slug": "archlightonline",
+    "name": "Archlightonline",
+    "url": "https://opentibiaservers.com/archlightonline"
+  },
+  {
+    "slug": "ardera",
+    "name": "Ardera",
+    "url": "https://opentibiaservers.com/ardera"
+  },
+  {
+    "slug": "ardera-8-0-lunaris",
+    "name": "Ardera 8 0 Lunaris",
+    "url": "https://opentibiaservers.com/ardera-8-0-lunaris"
+  },
+  {
+    "slug": "armanderia",
+    "name": "Armanderia",
+    "url": "https://opentibiaservers.com/armanderia"
+  },
+  {
+    "slug": "armia-toproste",
+    "name": "Armia Toproste",
+    "url": "https://opentibiaservers.com/armia-toproste"
+  },
+  {
+    "slug": "askara",
+    "name": "Askara",
+    "url": "https://opentibiaservers.com/askara"
+  },
+  {
+    "slug": "astera",
+    "name": "Astera",
+    "url": "https://opentibiaservers.com/astera"
+  },
+  {
+    "slug": "august-13th-2022",
+    "name": "August 13th 2022",
+    "url": "https://opentibiaservers.com/august-13th-2022"
+  },
+  {
+    "slug": "aurea",
+    "name": "Aurea",
+    "url": "https://opentibiaservers.com/aurea"
+  },
+  {
+    "slug": "aurera-global",
+    "name": "Aurera Global",
+    "url": "https://opentibiaservers.com/aurera-global"
+  },
+  {
+    "slug": "aurera-world",
+    "name": "Aurera World",
+    "url": "https://opentibiaservers.com/aurera-world"
+  },
+  {
+    "slug": "aurora-world",
+    "name": "Aurora World",
+    "url": "https://opentibiaservers.com/aurora-world"
+  },
+  {
+    "slug": "auroria-rubinot",
+    "name": "Auroria RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "azura",
+    "name": "Azura",
+    "url": "https://opentibiaservers.com/azura"
+  },
+  {
+    "slug": "baiak-black",
+    "name": "Baiak Black",
+    "url": "https://opentibiaservers.com/baiak-black"
+  },
+  {
+    "slug": "baiak-go",
+    "name": "Baiak Go",
+    "url": "https://opentibiaservers.com/baiak-go"
+  },
+  {
+    "slug": "baiak-icewar",
+    "name": "Baiak Icewar",
+    "url": "https://opentibiaservers.com/baiak-icewar"
+  },
+  {
+    "slug": "baiak-ilusion",
+    "name": "Baiak Ilusion",
+    "url": "https://opentibiaservers.com/baiak-ilusion"
+  },
+  {
+    "slug": "baiaksp",
+    "name": "Baiaksp",
+    "url": "https://opentibiaservers.com/baiaksp"
+  },
+  {
+    "slug": "balera",
+    "name": "Balera",
+    "url": "https://opentibiaservers.com/balera"
+  },
+  {
+    "slug": "banicja",
+    "name": "BANICJA",
+    "url": "https://opentibiaservers.com/banicja"
+  },
+  {
+    "slug": "belaria-rubinot",
+    "name": "Belaria RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "bellum-rubinot",
+    "name": "Bellum RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "belobra",
+    "name": "Belobra",
+    "url": "https://opentibiaservers.com/belobra"
+  },
+  {
+    "slug": "berylia",
+    "name": "Berylia",
+    "url": "https://opentibiaservers.com/berylia"
+  },
+  {
+    "slug": "blackd",
+    "name": "Blackd",
+    "url": "https://opentibiaservers.com/blackd"
+  },
+  {
+    "slug": "blackd-proxy",
+    "name": "Blackd Proxy",
+    "url": "https://opentibiaservers.com/blackd-proxy"
+  },
+  {
+    "slug": "blacktalon",
+    "name": "Blacktalon",
+    "url": "https://opentibiaservers.com/blacktalon"
+  },
+  {
+    "slug": "blacktalon-online",
+    "name": "Blacktalon Online",
+    "url": "https://opentibiaservers.com/blacktalon"
+  },
+  {
+    "slug": "blazera",
+    "name": "Blazera",
+    "url": "https://opentibiaservers.com/blazera"
+  },
+  {
+    "slug": "blazera-real-map",
+    "name": "Blazera Real Map",
+    "url": "https://opentibiaservers.com/blazera-real-map"
+  },
+  {
+    "slug": "bloxer-ot",
+    "name": "Bloxer OT",
+    "url": "https://opentibiaservers.com/bloxer-ot"
+  },
+  {
+    "slug": "bona",
+    "name": "Bona",
+    "url": "https://opentibiaservers.com/bona"
+  },
+  {
+    "slug": "bravora-exordion",
+    "name": "Bravora Exordion",
+    "url": "https://opentibiaservers.com/exordion"
+  },
+  {
+    "slug": "bravoria",
+    "name": "Bravoria",
+    "url": "https://opentibiaservers.com/bravoria"
+  },
+  {
+    "slug": "calmera",
+    "name": "Calmera",
+    "url": "https://opentibiaservers.com/calmera"
+  },
+  {
+    "slug": "calmera-ot",
+    "name": "Calmera Ot",
+    "url": "https://opentibiaservers.com/calmera-ot"
+  },
+  {
+    "slug": "calmera-world",
+    "name": "Calmera World",
+    "url": "https://opentibiaservers.com/calmera-world"
+  },
+  {
+    "slug": "canary",
+    "name": "Canary",
+    "url": "https://opentibiaservers.com/canary"
+  },
+  {
+    "slug": "candia-world",
+    "name": "Candia World",
+    "url": "https://opentibiaservers.com/candia-world"
+  },
+  {
+    "slug": "canob",
+    "name": "Canob",
+    "url": "https://opentibiaservers.com/canob"
+  },
+  {
+    "slug": "cantabra",
+    "name": "Cantabra",
+    "url": "https://opentibiaservers.com/cantabra"
+  },
+  {
+    "slug": "castabra",
+    "name": "Castabra",
+    "url": "https://opentibiaservers.com/castabra"
+  },
+  {
+    "slug": "castoria-beta-launch-tomorrow-at-10-00-pm-gmt-2",
+    "name": "Castoria Beta Launch Tomorrow At 10 00 Pm Gmt 2",
+    "url": "https://opentibiaservers.com/castoria-beta-launch-tomorrow-at-10-00-pm-gmt-2"
+  },
+  {
+    "slug": "castoria-classic-7-4-experience",
+    "name": "Castoria Classic 7 4 Experience",
+    "url": "https://opentibiaservers.com/castoria-classic-7-4-experience"
+  },
+  {
+    "slug": "castoria74",
+    "name": "Castoria74",
+    "url": "https://opentibiaservers.com/castoria74"
+  },
+  {
+    "slug": "celebra",
+    "name": "Celebra",
+    "url": "https://opentibiaservers.com/celebra"
+  },
+  {
+    "slug": "celenium-rubinot",
+    "name": "Celenium RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "celesta",
+    "name": "Celesta",
+    "url": "https://opentibiaservers.com/celesta"
+  },
+  {
+    "slug": "chaos-reborn",
+    "name": "Chaos Reborn",
+    "url": "https://opentibiaservers.com/chaos-reborn"
+  },
+  {
+    "slug": "chillera",
+    "name": "Chillera",
+    "url": "https://opentibiaservers.com/chillera"
+  },
+  {
+    "slug": "chimera",
+    "name": "Chimera",
+    "url": "https://opentibiaservers.com/chimera"
+  },
+  {
+    "slug": "chrona",
+    "name": "Chrona",
+    "url": "https://opentibiaservers.com/chrona"
+  },
+  {
+    "slug": "classick-drakoria-starts-friday-17th",
+    "name": "Classick Drakoria Starts Friday 17th",
+    "url": "https://opentibiaservers.com/classick-drakoria-starts-friday-17th"
+  },
+  {
+    "slug": "collabra",
+    "name": "Collabra",
+    "url": "https://opentibiaservers.com/collabra"
+  },
+  {
+    "slug": "crevasse",
+    "name": "Crevasse",
+    "url": "https://opentibiaservers.com/crevasse"
+  },
+  {
+    "slug": "cronfun",
+    "name": "Cronfun",
+    "url": "https://opentibiaservers.com/cronfun"
+  },
+  {
+    "slug": "cronots",
+    "name": "Cronots",
+    "url": "https://opentibiaservers.com/cronots"
+  },
+  {
+    "slug": "crownots",
+    "name": "Crownots",
+    "url": "https://opentibiaservers.com/crownots"
+  },
+  {
+    "slug": "crownots-low-rate-4fun-server",
+    "name": "Crownots Low Rate 4fun Server",
+    "url": "https://opentibiaservers.com/crownots-low-rate-4fun-server"
+  },
+  {
+    "slug": "crownots-start-on-feb-28th-18-00-cet",
+    "name": "Crownots Start On Feb 28th 18 00 Cet",
+    "url": "https://opentibiaservers.com/crownots-start-on-feb-28th-18-00-cet"
+  },
+  {
+    "slug": "crowot",
+    "name": "Crowot",
+    "url": "https://opentibiaservers.com/crowot"
+  },
+  {
+    "slug": "custom-map",
+    "name": "Custom Map",
+    "url": "https://opentibiaservers.com/custom-map"
+  },
+  {
+    "slug": "cyleria",
+    "name": "Cyleria",
+    "url": "https://opentibiaservers.com/cyleria"
+  },
+  {
+    "slug": "cyntara",
+    "name": "Cyntara",
+    "url": "https://opentibiaservers.com/cyntara"
+  },
+  {
+    "slug": "cyntara-highrate",
+    "name": "Cyntara Highrate",
+    "url": "https://opentibiaservers.com/cyntara-highrate"
+  },
+  {
+    "slug": "damora-world",
+    "name": "Damora World",
+    "url": "https://opentibiaservers.com/damora-world"
+  },
+  {
+    "slug": "danera",
+    "name": "Danera",
+    "url": "https://opentibiaservers.com/danera"
+  },
+  {
+    "slug": "danubia",
+    "name": "Danubia",
+    "url": "https://opentibiaservers.com/danubia"
+  },
+  {
+    "slug": "darkeria-8-0",
+    "name": "Darkeria 8 0",
+    "url": "https://opentibiaservers.com/darkeria-8-0"
+  },
+  {
+    "slug": "darkeriaonline",
+    "name": "Darkeriaonline",
+    "url": "https://opentibiaservers.com/darkeriaonline"
+  },
+  {
+    "slug": "dat-editor",
+    "name": "Dat Editor",
+    "url": "https://opentibiaservers.com/dat-editor"
+  },
+  {
+    "slug": "dawn-port",
+    "name": "Dawn Port",
+    "url": "https://opentibiaservers.com/dawn-port"
+  },
+  {
+    "slug": "dbko-warrior-x999",
+    "name": "DBKO WARRIOR X999",
+    "url": "https://opentibiaservers.com/dbko-warrior-x999"
+  },
+  {
+    "slug": "deathzot",
+    "name": "Deathzot",
+    "url": "https://opentibiaservers.com/deathzot"
+  },
+  {
+    "slug": "demolidores",
+    "name": "Demolidores",
+    "url": "https://opentibiaservers.com/demolidores"
+  },
+  {
+    "slug": "demora-online",
+    "name": "Demora Online",
+    "url": "https://opentibiaservers.com/demora-online"
+  },
+  {
+    "slug": "descubra",
+    "name": "Descubra",
+    "url": "https://opentibiaservers.com/descubra"
+  },
+  {
+    "slug": "dia",
+    "name": "Dia",
+    "url": "https://opentibiaservers.com/dia"
+  },
+  {
+    "slug": "dolera",
+    "name": "Dolera",
+    "url": "https://opentibiaservers.com/dolera"
+  },
+  {
+    "slug": "draconiaot",
+    "name": "Draconiaot",
+    "url": "https://opentibiaservers.com/draconiaot"
+  },
+  {
+    "slug": "dragon-ball-soul-fighter",
+    "name": "DRAGON BALL SOUL FIGHTER |",
+    "url": "https://opentibiaservers.com/dragon-ball-soul-fighter"
+  },
+  {
+    "slug": "dragon-realms-ot",
+    "name": "Dragon Realms OT",
+    "url": "https://opentibiaservers.com/dragon-realms-ot"
+  },
+  {
+    "slug": "dragora",
+    "name": "Dragora",
+    "url": "https://opentibiaservers.com/dragora"
+  },
+  {
+    "slug": "dragora-online-7-92-fresh-start-may-15",
+    "name": "Dragora Online 7 92 Fresh Start May 15",
+    "url": "https://opentibiaservers.com/dragora-online-7-92-fresh-start-may-15"
+  },
+  {
+    "slug": "drakoria-80",
+    "name": "Drakoria 80",
+    "url": "https://opentibiaservers.com/drakoria80"
+  },
+  {
+    "slug": "drakoria80",
+    "name": "Drakoria80",
+    "url": "https://opentibiaservers.com/drakoria80"
+  },
+  {
+    "slug": "dura",
+    "name": "Dura",
+    "url": "https://opentibiaservers.com/dura"
+  },
+  {
+    "slug": "dura-online",
+    "name": "Dura Online",
+    "url": "https://opentibiaservers.com/dura-online"
+  },
+  {
+    "slug": "eldera-calmera",
+    "name": "Eldera Calmera",
+    "url": "https://opentibiaservers.com/calmera"
+  },
+  {
+    "slug": "elderan",
+    "name": "Elderan",
+    "url": "https://opentibiaservers.com/elderan"
+  },
+  {
+    "slug": "elderan-na",
+    "name": "Elderan NA",
+    "url": "https://opentibiaservers.com/elderan"
+  },
+  {
+    "slug": "elderan-online",
+    "name": "Elderan Online",
+    "url": "https://opentibiaservers.com/elderan-online"
+  },
+  {
+    "slug": "elenor",
+    "name": "Elenor",
+    "url": "https://opentibiaservers.com/elenor"
+  },
+  {
+    "slug": "elenor-wotserver",
+    "name": "Elenor WOTServer",
+    "url": "https://opentibiaservers.com/elenor"
+  },
+  {
+    "slug": "elf-bot",
+    "name": "Elf Bot",
+    "url": "https://opentibiaservers.com/elf-bot"
+  },
+  {
+    "slug": "elfbot",
+    "name": "Elfbot",
+    "url": "https://opentibiaservers.com/elfbot"
+  },
+  {
+    "slug": "eloria",
+    "name": "Eloria",
+    "url": "https://opentibiaservers.com/eloria"
+  },
+  {
+    "slug": "elysian-rubinot",
+    "name": "Elysian RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "elythia",
+    "name": "Elythia",
+    "url": "https://opentibiaservers.com/elythia"
+  },
+  {
+    "slug": "empera",
+    "name": "Empera",
+    "url": "https://opentibiaservers.com/empera"
+  },
+  {
+    "slug": "empirebr",
+    "name": "EmpireBR",
+    "url": "https://opentibiaservers.com/empirebr"
+  },
+  {
+    "slug": "endless-rpg",
+    "name": "Endless Rpg",
+    "url": "https://opentibiaservers.com/endless-rpg"
+  },
+  {
+    "slug": "endlessrpg",
+    "name": "Endlessrpg",
+    "url": "https://opentibiaservers.com/endlessrpg"
+  },
+  {
+    "slug": "epoca",
+    "name": "Epoca",
+    "url": "https://opentibiaservers.com/epoca"
+  },
+  {
+    "slug": "etebra",
+    "name": "Etebra",
+    "url": "https://opentibiaservers.com/etebra"
+  },
+  {
+    "slug": "eternal-odyssey",
+    "name": "Eternal Odyssey",
+    "url": "https://opentibiaservers.com/eternal-odyssey"
+  },
+  {
+    "slug": "eternalodyssey",
+    "name": "Eternalodyssey",
+    "url": "https://opentibiaservers.com/eternalodyssey"
+  },
+  {
+    "slug": "eternia",
+    "name": "Eternia",
+    "url": "https://opentibiaservers.com/eternia"
+  },
+  {
+    "slug": "euro-karma",
+    "name": "Euro-Karma",
+    "url": "https://opentibiaservers.com/euro-karma"
+  },
+  {
+    "slug": "evolera",
+    "name": "Evolera",
+    "url": "https://opentibiaservers.com/evolera"
+  },
+  {
+    "slug": "evolera-999x",
+    "name": "Evolera 999x",
+    "url": "https://opentibiaservers.com/evolera-999x"
+  },
+  {
+    "slug": "evolera-highexp",
+    "name": "Evolera HighExp",
+    "url": "https://opentibiaservers.com/evolera-highexp"
+  },
+  {
+    "slug": "evolisca",
+    "name": "Evolisca",
+    "url": "https://opentibiaservers.com/evolisca"
+  },
+  {
+    "slug": "evolisca-s3",
+    "name": "Evolisca S3",
+    "url": "https://opentibiaservers.com/evolisca-s3"
+  },
+  {
+    "slug": "evolunia",
+    "name": "Evolunia",
+    "url": "https://opentibiaservers.com/evolunia"
+  },
+  {
+    "slug": "evozera",
+    "name": "EvoZera",
+    "url": "https://opentibiaservers.com/evozera"
+  },
+  {
+    "slug": "exodus-ot",
+    "name": "Exodus Ot",
+    "url": "https://opentibiaservers.com/exodus-ot"
+  },
+  {
+    "slug": "exodusot",
+    "name": "Exodusot",
+    "url": "https://opentibiaservers.com/exodusot"
+  },
+  {
+    "slug": "exordion",
+    "name": "Exordion",
+    "url": "https://opentibiaservers.com/exordion"
+  },
+  {
+    "slug": "exordion-legacy",
+    "name": "Exordion Legacy",
+    "url": "https://opentibiaservers.com/exordion"
+  },
+  {
+    "slug": "exoria74",
+    "name": "Exoria74",
+    "url": "https://opentibiaservers.com/exoria74"
+  },
+  {
+    "slug": "ezodus",
+    "name": "Ezodus",
+    "url": "https://opentibiaservers.com/ezodus"
+  },
+  {
+    "slug": "faloria",
+    "name": "Faloria",
+    "url": "https://opentibiaservers.com/faloria"
+  },
+  {
+    "slug": "falumirot",
+    "name": "Falumirot",
+    "url": "https://opentibiaservers.com/falumirot"
+  },
+  {
+    "slug": "fast-baiak",
+    "name": "Fast Baiak",
+    "url": "https://opentibiaservers.com/fast-baiak"
+  },
+  {
+    "slug": "ferobra",
+    "name": "Ferobra",
+    "url": "https://opentibiaservers.com/ferobra"
+  },
+  {
+    "slug": "feruots",
+    "name": "Feruots",
+    "url": "https://opentibiaservers.com/feruots"
+  },
+  {
+    "slug": "firmera",
+    "name": "Firmera",
+    "url": "https://opentibiaservers.com/firmera"
+  },
+  {
+    "slug": "forge-of-elements-multi-world-8-7",
+    "name": "Forge of Elements: & & Multi-world []8.7[]",
+    "url": "https://opentibiaservers.com/forge-of-elements-multi-world-8-7"
+  },
+  {
+    "slug": "fossil-early-alpha",
+    "name": "Fossil Early Alpha",
+    "url": "https://opentibiaservers.com/fossil-early-alpha"
+  },
+  {
+    "slug": "fossil-legacy",
+    "name": "Fossil Legacy",
+    "url": "https://opentibiaservers.com/fossil-legacy"
+  },
+  {
+    "slug": "foxworld-server-1",
+    "name": "FoxWorld Server 1",
+    "url": "https://opentibiaservers.com/foxworldserver"
+  },
+  {
+    "slug": "foxworldserver",
+    "name": "Foxworldserver",
+    "url": "https://opentibiaservers.com/foxworldserver"
+  },
+  {
+    "slug": "free-ot",
+    "name": "Free OT",
+    "url": "https://opentibiaservers.com/free-ot"
+  },
+  {
+    "slug": "freebia",
+    "name": "Freebia",
+    "url": "https://opentibiaservers.com/freebia"
+  },
+  {
+    "slug": "furia",
+    "name": "Furia",
+    "url": "https://opentibiaservers.com/furia"
+  },
+  {
+    "slug": "gamada",
+    "name": "Gamada",
+    "url": "https://opentibiaservers.com/gamada"
+  },
+  {
+    "slug": "gamadaot",
+    "name": "Gamadaot",
+    "url": "https://opentibiaservers.com/gamadaot"
+  },
+  {
+    "slug": "gamelaots",
+    "name": "Gamelaots",
+    "url": "https://opentibiaservers.com/gamelaots"
+  },
+  {
+    "slug": "gentebra",
+    "name": "Gentebra",
+    "url": "https://opentibiaservers.com/gentebra"
+  },
+  {
+    "slug": "gesior",
+    "name": "Gesior",
+    "url": "https://opentibiaservers.com/gesior"
+  },
+  {
+    "slug": "gesior-aac",
+    "name": "Gesior Aac",
+    "url": "https://opentibiaservers.com/gesior-aac"
+  },
+  {
+    "slug": "ghastlyot",
+    "name": "GhastlyOT",
+    "url": "https://opentibiaservers.com/ghastlyot"
+  },
+  {
+    "slug": "gladera",
+    "name": "Gladera",
+    "url": "https://opentibiaservers.com/gladera"
+  },
+  {
+    "slug": "gladibra",
+    "name": "Gladibra",
+    "url": "https://opentibiaservers.com/gladibra"
+  },
+  {
+    "slug": "globera",
+    "name": "Globera",
+    "url": "https://opentibiaservers.com/globera"
+  },
+  {
+    "slug": "goldenots",
+    "name": "Goldenots",
+    "url": "https://opentibiaservers.com/goldenots"
+  },
+  {
+    "slug": "grand-opening-of-whispers-of-solitude-30-1-2026",
+    "name": "Grand opening of Whispers of solitude 30/1-2026",
+    "url": "https://opentibiaservers.com/grand-opening-of-whispers-of-solitude-30-1-2026"
+  },
+  {
+    "slug": "grimhaven",
+    "name": "Grimhaven",
+    "url": "https://opentibiaservers.com/grimhaven"
+  },
+  {
+    "slug": "grimhaven-ot",
+    "name": "Grimhaven Ot",
+    "url": "https://opentibiaservers.com/grimhaven-ot"
+  },
+  {
+    "slug": "grimoria2-rubinot",
+    "name": "Grimoria2 RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "grimoria3-rubinot",
+    "name": "Grimoria3 RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "gunzodus",
+    "name": "Gunzodus",
+    "url": "https://opentibiaservers.com/gunzodus"
+  },
+  {
+    "slug": "halera",
+    "name": "Halera",
+    "url": "https://opentibiaservers.com/halera"
+  },
+  {
+    "slug": "harmonia",
+    "name": "Harmonia",
+    "url": "https://opentibiaservers.com/harmonia"
+  },
+  {
+    "slug": "hellgate-global",
+    "name": "Hellgate Global",
+    "url": "https://opentibiaservers.com/hellgate-global"
+  },
+  {
+    "slug": "hellgrave-exodus",
+    "name": "Hellgrave Exodus",
+    "url": "https://opentibiaservers.com/hellgrave-exodus"
+  },
+  {
+    "slug": "heroserv",
+    "name": "Heroserv",
+    "url": "https://opentibiaservers.com/heroserv"
+  },
+  {
+    "slug": "hexadia",
+    "name": "Hexadia",
+    "url": "https://opentibiaservers.com/hexadia"
+  },
+  {
+    "slug": "hiberna",
+    "name": "Hiberna",
+    "url": "https://opentibiaservers.com/hiberna"
+  },
+  {
+    "slug": "horusbr",
+    "name": "Horusbr",
+    "url": "https://opentibiaservers.com/horusbr"
+  },
+  {
+    "slug": "iglaots",
+    "name": "Iglaots",
+    "url": "https://opentibiaservers.com/iglaots"
+  },
+  {
+    "slug": "iglaots-offseason",
+    "name": "Iglaots Offseason",
+    "url": "https://opentibiaservers.com/iglaots-offseason"
+  },
+  {
+    "slug": "ikasera-war-launch-28-february",
+    "name": "Ikasera War – Launch 28 February",
+    "url": "https://opentibiaservers.com/ikasera-war-launch-28-february"
+  },
+  {
+    "slug": "imperia-arcanaot",
+    "name": "Imperia ArcanaOT",
+    "url": "https://opentibiaservers.com/arcanaot"
+  },
+  {
+    "slug": "imperial-age-online",
+    "name": "Imperial Age Online",
+    "url": "https://opentibiaservers.com/imperial-age-online"
+  },
+  {
+    "slug": "imperialageonline",
+    "name": "Imperialageonline",
+    "url": "https://opentibiaservers.com/imperialageonline"
+  },
+  {
+    "slug": "inferna",
+    "name": "Inferna",
+    "url": "https://opentibiaservers.com/inferna"
+  },
+  {
+    "slug": "inferno-war",
+    "name": "Inferno-war",
+    "url": "https://opentibiaservers.com/inferno-war"
+  },
+  {
+    "slug": "ironco",
+    "name": "Ironco",
+    "url": "https://opentibiaservers.com/ironco"
+  },
+  {
+    "slug": "ironcore",
+    "name": "Ironcore",
+    "url": "https://opentibiaservers.com/ironcore"
+  },
+  {
+    "slug": "ironman-ot",
+    "name": "Ironman OT",
+    "url": "https://opentibiaservers.com/ironman-ot"
+  },
+  {
+    "slug": "isara",
+    "name": "Isara",
+    "url": "https://opentibiaservers.com/isara"
+  },
+  {
+    "slug": "isaworld",
+    "name": "Isaworld",
+    "url": "https://opentibiaservers.com/isaworld"
+  },
+  {
+    "slug": "isaworld-online-7-4-7-72",
+    "name": "Isaworld Online 7 4 7 72",
+    "url": "https://opentibiaservers.com/isaworld-online-7-4-7-72"
+  },
+  {
+    "slug": "item-editor",
+    "name": "Item Editor",
+    "url": "https://opentibiaservers.com/item-editor"
+  },
+  {
+    "slug": "jamera",
+    "name": "Jamera",
+    "url": "https://opentibiaservers.com/jamera"
+  },
+  {
+    "slug": "jattaria",
+    "name": "Jattaria",
+    "url": "https://opentibiaservers.com/jattaria"
+  },
+  {
+    "slug": "justrl",
+    "name": "Justrl",
+    "url": "https://opentibiaservers.com/justrl"
+  },
+  {
+    "slug": "kaldrox",
+    "name": "Kaldrox",
+    "url": "https://opentibiaservers.com/kaldrox"
+  },
+  {
+    "slug": "karmia-8-0",
+    "name": "Karmia 8.0",
+    "url": "https://opentibiaservers.com/karmia-8-0"
+  },
+  {
+    "slug": "kasteria",
+    "name": "Kasteria",
+    "url": "https://opentibiaservers.com/kasteria"
+  },
+  {
+    "slug": "keltera",
+    "name": "Keltera",
+    "url": "https://opentibiaservers.com/keltera"
+  },
+  {
+    "slug": "kimeraot",
+    "name": "Kimeraot",
+    "url": "https://opentibiaservers.com/kimeraot"
+  },
+  {
+    "slug": "knightwatch",
+    "name": "Knightwatch",
+    "url": "https://opentibiaservers.com/knightwatch"
+  },
+  {
+    "slug": "koliseuot",
+    "name": "KoliseuOT",
+    "url": "https://opentibiaservers.com/koliseuot"
+  },
+  {
+    "slug": "koliseuot-legacy",
+    "name": "KoliseuOT Legacy",
+    "url": "https://opentibiaservers.com/koliseuot"
+  },
+  {
+    "slug": "koliseuot-season",
+    "name": "KoliseuOT Season",
+    "url": "https://opentibiaservers.com/koliseuot"
+  },
+  {
+    "slug": "kyra",
+    "name": "Kyra",
+    "url": "https://opentibiaservers.com/kyra"
+  },
+  {
+    "slug": "landoria-ots",
+    "name": "Landoria Ots",
+    "url": "https://opentibiaservers.com/landoria-ots"
+  },
+  {
+    "slug": "landoriaots",
+    "name": "Landoriaots",
+    "url": "https://opentibiaservers.com/landoriaots"
+  },
+  {
+    "slug": "lapis-item-editor",
+    "name": "Lapis Item Editor",
+    "url": "https://opentibiaservers.com/lapis-item-editor"
+  },
+  {
+    "slug": "light",
+    "name": "Light",
+    "url": "https://opentibiaservers.com/light"
+  },
+  {
+    "slug": "lightot",
+    "name": "LightOT",
+    "url": "https://opentibiaservers.com/light"
+  },
+  {
+    "slug": "long-term",
+    "name": "Long Term",
+    "url": "https://opentibiaservers.com/long-term"
+  },
+  {
+    "slug": "lordebra-paulistinha",
+    "name": "Lordebra Paulistinha",
+    "url": "https://opentibiaservers.com/paulistinhaot"
+  },
+  {
+    "slug": "loucoserv",
+    "name": "Loucoserv",
+    "url": "https://opentibiaservers.com/loucoserv"
+  },
+  {
+    "slug": "lucera",
+    "name": "Lucera",
+    "url": "https://opentibiaservers.com/lucera"
+  },
+  {
+    "slug": "lunara",
+    "name": "Lunara",
+    "url": "https://opentibiaservers.com/lunara"
+  },
+  {
+    "slug": "lunarian-rubinot",
+    "name": "Lunarian RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "madot",
+    "name": "Madot",
+    "url": "https://opentibiaservers.com/madot"
+  },
+  {
+    "slug": "madot-oasis",
+    "name": "MadOT Oasis",
+    "url": "https://opentibiaservers.com/madot"
+  },
+  {
+    "slug": "marlboro-war",
+    "name": "Marlboro War",
+    "url": "https://opentibiaservers.com/marlboro-war"
+  },
+  {
+    "slug": "marolaot",
+    "name": "MarolaOT",
+    "url": "https://opentibiaservers.com/marolaot"
+  },
+  {
+    "slug": "maskaots",
+    "name": "Maskaots",
+    "url": "https://opentibiaservers.com/maskaots"
+  },
+  {
+    "slug": "maskaots-acts-i-ii",
+    "name": "Maskaots Acts I Ii",
+    "url": "https://opentibiaservers.com/maskaots-acts-i-ii"
+  },
+  {
+    "slug": "mazeot",
+    "name": "Mazeot",
+    "url": "https://opentibiaservers.com/mazeot"
+  },
+  {
+    "slug": "medivia",
+    "name": "Medivia",
+    "url": "https://opentibiaservers.com/medivia"
+  },
+  {
+    "slug": "medivia-online",
+    "name": "Medivia Online",
+    "url": "https://opentibiaservers.com/medivia-online"
+  },
+  {
+    "slug": "melhorot",
+    "name": "Melhorot",
+    "url": "https://opentibiaservers.com/melhorot"
+  },
+  {
+    "slug": "memsoria",
+    "name": "Memsoria",
+    "url": "https://opentibiaservers.com/memsoria"
+  },
+  {
+    "slug": "middle-earth-server",
+    "name": "Middle Earth Server",
+    "url": "https://opentibiaservers.com/middleearth-server"
+  },
+  {
+    "slug": "middleearth-server",
+    "name": "Middleearth Server",
+    "url": "https://opentibiaservers.com/middleearth-server"
+  },
+  {
+    "slug": "midhem",
+    "name": "Midhem",
+    "url": "https://opentibiaservers.com/midhem"
+  },
+  {
+    "slug": "midhem-online",
+    "name": "Midhem Online",
+    "url": "https://opentibiaservers.com/midhem-online"
+  },
+  {
+    "slug": "minibia",
+    "name": "Minibia",
+    "url": "https://opentibiaservers.com/minibia"
+  },
+  {
+    "slug": "minibia-tibia-7-6-in-your-browser-mobile-desktop",
+    "name": "Minibia Tibia 7 6 In Your Browser Mobile Desktop",
+    "url": "https://opentibiaservers.com/minibia-tibia-7-6-in-your-browser-mobile-desktop"
+  },
+  {
+    "slug": "miracle",
+    "name": "Miracle",
+    "url": "https://opentibiaservers.com/miracle"
+  },
+  {
+    "slug": "miracle-7-4",
+    "name": "Miracle 7.4",
+    "url": "https://opentibiaservers.com/miracle74"
+  },
+  {
+    "slug": "miracle74",
+    "name": "Miracle74",
+    "url": "https://opentibiaservers.com/miracle74"
+  },
+  {
+    "slug": "mist-of-death-reset",
+    "name": "Mist Of Death Reset",
+    "url": "https://opentibiaservers.com/mist-of-death-reset"
+  },
+  {
+    "slug": "mistofdeath",
+    "name": "Mistofdeath",
+    "url": "https://opentibiaservers.com/mistofdeath"
+  },
+  {
+    "slug": "mithycal-global",
+    "name": "Mithycal Global",
+    "url": "https://opentibiaservers.com/mithycal-global"
+  },
+  {
+    "slug": "modukot",
+    "name": "Modukot",
+    "url": "https://opentibiaservers.com/modukot"
+  },
+  {
+    "slug": "monzera-10-98",
+    "name": "Monzera 10.98",
+    "url": "https://opentibiaservers.com/monzera-10-98"
+  },
+  {
+    "slug": "moouseot",
+    "name": "Moouseot",
+    "url": "https://opentibiaservers.com/moouseot"
+  },
+  {
+    "slug": "mortus",
+    "name": "Mortus",
+    "url": "https://opentibiaservers.com/mortus"
+  },
+  {
+    "slug": "mortus-online",
+    "name": "Mortus Online",
+    "url": "https://opentibiaservers.com/mortus-online"
+  },
+  {
+    "slug": "my-aac",
+    "name": "My Aac",
+    "url": "https://opentibiaservers.com/my-aac"
+  },
+  {
+    "slug": "myaac",
+    "name": "Myaac",
+    "url": "https://opentibiaservers.com/myaac"
+  },
+  {
+    "slug": "mysteria",
+    "name": "Mysteria",
+    "url": "https://opentibiaservers.com/mysteria"
+  },
+  {
+    "slug": "mysteria-2",
+    "name": "Mysteria 2",
+    "url": "https://opentibiaservers.com/mysteria-2"
+  },
+  {
+    "slug": "mysteria74",
+    "name": "Mysteria74",
+    "url": "https://opentibiaservers.com/mysteria74"
+  },
+  {
+    "slug": "mystian-rubinot",
+    "name": "Mystian RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "mythera-7-4",
+    "name": "Mythera 7 4",
+    "url": "https://opentibiaservers.com/mythera-7-4"
+  },
+  {
+    "slug": "mythera74",
+    "name": "Mythera74",
+    "url": "https://opentibiaservers.com/mythera74"
+  },
+  {
+    "slug": "mythibia",
+    "name": "Mythibia",
+    "url": "https://opentibiaservers.com/mythibia"
+  },
+  {
+    "slug": "mythibia-v2",
+    "name": "Mythibia V2",
+    "url": "https://opentibiaservers.com/mythibia-v2"
+  },
+  {
+    "slug": "n-v",
+    "name": "N V",
+    "url": "https://opentibiaservers.com/n-v"
+  },
+  {
+    "slug": "naruto-shinobi-fight",
+    "name": "Naruto Shinobi Fight",
+    "url": "https://opentibiaservers.com/naruto-shinobi-fight"
+  },
+  {
+    "slug": "naruto-the-shinobi-war",
+    "name": "Naruto The Shinobi War",
+    "url": "https://opentibiaservers.com/naruto-the-shinobi-war"
+  },
+  {
+    "slug": "natala",
+    "name": "Natala",
+    "url": "https://opentibiaservers.com/natala"
+  },
+  {
+    "slug": "natala-ot",
+    "name": "Natala OT",
+    "url": "https://opentibiaservers.com/natala-ot"
+  },
+  {
+    "slug": "nebula",
+    "name": "Nebula",
+    "url": "https://opentibiaservers.com/nebula"
+  },
+  {
+    "slug": "neobot",
+    "name": "Neobot",
+    "url": "https://opentibiaservers.com/neobot"
+  },
+  {
+    "slug": "neptera",
+    "name": "Neptera",
+    "url": "https://opentibiaservers.com/neptera"
+  },
+  {
+    "slug": "nerana",
+    "name": "Nerana",
+    "url": "https://opentibiaservers.com/nerana"
+  },
+  {
+    "slug": "netunia",
+    "name": "Netunia",
+    "url": "https://opentibiaservers.com/netunia"
+  },
+  {
+    "slug": "nexoria",
+    "name": "NEXORIA",
+    "url": "https://opentibiaservers.com/nexoria"
+  },
+  {
+    "slug": "nightmare-server",
+    "name": "Nightmare Server",
+    "url": "https://opentibiaservers.com/nightmare-server"
+  },
+  {
+    "slug": "nordica",
+    "name": "Nordica",
+    "url": "https://opentibiaservers.com/nordica"
+  },
+  {
+    "slug": "nostalrius",
+    "name": "Nostalrius",
+    "url": "https://opentibiaservers.com/nostalrius"
+  },
+  {
+    "slug": "nostalrius-on-nostalrius-com-br",
+    "name": "Nostalrius On Nostalrius Com Br",
+    "url": "https://opentibiaservers.com/nostalrius-on-nostalrius-com-br"
+  },
+  {
+    "slug": "nova",
+    "name": "Nova",
+    "url": "https://opentibiaservers.com/nova"
+  },
+  {
+    "slug": "noxiousot",
+    "name": "NoxiousOT",
+    "url": "https://opentibiaservers.com/noxiousot"
+  },
+  {
+    "slug": "nsfots",
+    "name": "Nsfots",
+    "url": "https://opentibiaservers.com/nsfots"
+  },
+  {
+    "slug": "nto-shinobi-tales",
+    "name": "NTO Shinobi Tales",
+    "url": "https://opentibiaservers.com/nto-shinobi-tales"
+  },
+  {
+    "slug": "nto-star-new-narutibia",
+    "name": "Nto Star New Narutibia",
+    "url": "https://opentibiaservers.com/nto-star-new-narutibia"
+  },
+  {
+    "slug": "ntostar",
+    "name": "Ntostar",
+    "url": "https://opentibiaservers.com/ntostar"
+  },
+  {
+    "slug": "ntsw",
+    "name": "Ntsw",
+    "url": "https://opentibiaservers.com/ntsw"
+  },
+  {
+    "slug": "oblema",
+    "name": "Oblema",
+    "url": "https://opentibiaservers.com/oblema"
+  },
+  {
+    "slug": "oblema-7-4-server",
+    "name": "Oblema 7 4 Server",
+    "url": "https://opentibiaservers.com/oblema-7-4-server"
+  },
+  {
+    "slug": "oblera",
+    "name": "Oblera",
+    "url": "https://opentibiaservers.com/oblera"
+  },
+  {
+    "slug": "obsidia",
+    "name": "Obsidia",
+    "url": "https://opentibiaservers.com/obsidia"
+  },
+  {
+    "slug": "ocera",
+    "name": "Ocera",
+    "url": "https://opentibiaservers.com/ocera"
+  },
+  {
+    "slug": "oldera",
+    "name": "Oldera",
+    "url": "https://opentibiaservers.com/oldera"
+  },
+  {
+    "slug": "oldera74",
+    "name": "Oldera74",
+    "url": "https://opentibiaservers.com/oldera74"
+  },
+  {
+    "slug": "oldevo-pl",
+    "name": "OldEvo.pl",
+    "url": "https://opentibiaservers.com/oldevo-pl"
+  },
+  {
+    "slug": "oldheart",
+    "name": "Oldheart",
+    "url": "https://opentibiaservers.com/oldheart"
+  },
+  {
+    "slug": "oldheart-global",
+    "name": "Oldheart Global",
+    "url": "https://opentibiaservers.com/oldheart-global"
+  },
+  {
+    "slug": "oldheart-online",
+    "name": "Oldheart Online",
+    "url": "https://opentibiaservers.com/oldheart-online"
+  },
+  {
+    "slug": "oldschool-wodbo-is-back-03-10-2025-no-pay2win-dragon-ball",
+    "name": "OldSchool WoDBO is back! 03.10.2025 No Pay2Win! Dragon Ball",
+    "url": "https://opentibiaservers.com/oldschool-wodbo-is-back-03-10-2025-no-pay2win-dragon-ball"
+  },
+  {
+    "slug": "oldtimes",
+    "name": "Oldtimes",
+    "url": "https://opentibiaservers.com/oldtimes"
+  },
+  {
+    "slug": "olympa",
+    "name": "Olympa",
+    "url": "https://opentibiaservers.com/olympa"
+  },
+  {
+    "slug": "olympiaot",
+    "name": "Olympiaot",
+    "url": "https://opentibiaservers.com/olympiaot"
+  },
+  {
+    "slug": "olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak",
+    "name": "Olympiaot Full Custom A New Way To Play Long Term Server Not For The Weak",
+    "url": "https://opentibiaservers.com/olympiaot-full-custom-a-new-way-to-play-long-term-server-not-for-the-weak"
+  },
+  {
+    "slug": "olympic-7-4",
+    "name": "Olympic 7.4",
+    "url": "https://opentibiaservers.com/olympic74"
+  },
+  {
+    "slug": "olympic74",
+    "name": "Olympic74",
+    "url": "https://opentibiaservers.com/olympic74"
+  },
+  {
+    "slug": "only-fortress-online",
+    "name": "Only Fortress Online",
+    "url": "https://opentibiaservers.com/only-fortress-online"
+  },
+  {
+    "slug": "onlyfortress",
+    "name": "Onlyfortress",
+    "url": "https://opentibiaservers.com/onlyfortress"
+  },
+  {
+    "slug": "open-tibia-library",
+    "name": "Open Tibia Library",
+    "url": "https://opentibiaservers.com/open-tibia-library"
+  },
+  {
+    "slug": "opentibia-library",
+    "name": "Opentibia Library",
+    "url": "https://opentibiaservers.com/opentibia-library"
+  },
+  {
+    "slug": "opentibiabr-canary",
+    "name": "Opentibiabr Canary",
+    "url": "https://opentibiaservers.com/opentibiabr-canary"
+  },
+  {
+    "slug": "oraculo-server",
+    "name": "Oraculo Server",
+    "url": "https://opentibiaservers.com/oraculo-server"
+  },
+  {
+    "slug": "original-legend-of-bleach",
+    "name": "Original Legend of Bleach",
+    "url": "https://opentibiaservers.com/original-legend-of-bleach"
+  },
+  {
+    "slug": "osiris-horusbr",
+    "name": "Osiris HorusBR",
+    "url": "https://opentibiaservers.com/horusbr"
+  },
+  {
+    "slug": "ot-mobile-resets",
+    "name": "OT Mobile Resets",
+    "url": "https://opentibiaservers.com/resentech"
+  },
+  {
+    "slug": "otb-editor",
+    "name": "Otb Editor",
+    "url": "https://opentibiaservers.com/otb-editor"
+  },
+  {
+    "slug": "otchaos-mobile-desktop",
+    "name": "OTCHAOS (Mobile & Desktop)",
+    "url": "https://opentibiaservers.com/otchaos-mobile-desktop"
+  },
+  {
+    "slug": "otchaosreborn",
+    "name": "Otchaosreborn",
+    "url": "https://opentibiaservers.com/otchaosreborn"
+  },
+  {
+    "slug": "otclient",
+    "name": "Otclient",
+    "url": "https://opentibiaservers.com/otclient"
+  },
+  {
+    "slug": "otitemeditor",
+    "name": "Otitemeditor",
+    "url": "https://opentibiaservers.com/otitemeditor"
+  },
+  {
+    "slug": "otland",
+    "name": "Otland",
+    "url": "https://opentibiaservers.com/otland"
+  },
+  {
+    "slug": "otmadness",
+    "name": "OTMadness",
+    "url": "https://opentibiaservers.com/otmadness"
+  },
+  {
+    "slug": "otpiece-com",
+    "name": "otPiece.com",
+    "url": "https://opentibiaservers.com/otpiece-com"
+  },
+  {
+    "slug": "otpokemon-com",
+    "name": "otPokemon.com",
+    "url": "https://opentibiaservers.com/otpokemon-com"
+  },
+  {
+    "slug": "ots",
+    "name": "Ots",
+    "url": "https://opentibiaservers.com/ots"
+  },
+  {
+    "slug": "otservlist",
+    "name": "Otservlist",
+    "url": "https://opentibiaservers.com/otservlist"
+  },
+  {
+    "slug": "oxygenot",
+    "name": "OxygenOT",
+    "url": "https://opentibiaservers.com/oxygenot"
+  },
+  {
+    "slug": "pandoria",
+    "name": "Pandoria",
+    "url": "https://opentibiaservers.com/pandoria"
+  },
+  {
+    "slug": "papot-retro",
+    "name": "Papot Retro",
+    "url": "https://opentibiaservers.com/papotretro"
+  },
+  {
+    "slug": "papotretro",
+    "name": "Papotretro",
+    "url": "https://opentibiaservers.com/papotretro"
+  },
+  {
+    "slug": "patagonia-online",
+    "name": "Patagonia Online",
+    "url": "https://opentibiaservers.com/patagonia-online"
+  },
+  {
+    "slug": "paulistinha-deletera",
+    "name": "Paulistinha Deletera",
+    "url": "https://opentibiaservers.com/paulistinha-deletera"
+  },
+  {
+    "slug": "paulistinha-dominium",
+    "name": "Paulistinha Dominium",
+    "url": "https://opentibiaservers.com/paulistinhaot"
+  },
+  {
+    "slug": "paulistinhaot",
+    "name": "Paulistinhaot",
+    "url": "https://opentibiaservers.com/paulistinhaot"
+  },
+  {
+    "slug": "pazzur",
+    "name": "Pazzur",
+    "url": "https://opentibiaservers.com/pazzur"
+  },
+  {
+    "slug": "pbotwars",
+    "name": "PBotWars",
+    "url": "https://opentibiaservers.com/pbotwars"
+  },
+  {
+    "slug": "pegaz-ots",
+    "name": "PEGAZ-OTS",
+    "url": "https://opentibiaservers.com/pegaz-ots"
+  },
+  {
+    "slug": "peloxia",
+    "name": "Peloxia",
+    "url": "https://opentibiaservers.com/peloxia"
+  },
+  {
+    "slug": "pokeavalar",
+    "name": "PokeAvalar",
+    "url": "https://opentibiaservers.com/pokeavalar"
+  },
+  {
+    "slug": "pokeavalar-2",
+    "name": "Pokeavalar 2",
+    "url": "https://opentibiaservers.com/pokeavalar-2"
+  },
+  {
+    "slug": "premia",
+    "name": "Premia",
+    "url": "https://opentibiaservers.com/premia"
+  },
+  {
+    "slug": "prestige-imperia",
+    "name": "Prestige Imperia",
+    "url": "https://opentibiaservers.com/prestige-imperia"
+  },
+  {
+    "slug": "primot",
+    "name": "Primot",
+    "url": "https://opentibiaservers.com/primot"
+  },
+  {
+    "slug": "project-antica-classic-tibia",
+    "name": "Project Antica Classic Tibia",
+    "url": "https://opentibiaservers.com/project-antica-classic-tibia"
+  },
+  {
+    "slug": "projectantica",
+    "name": "Projectantica",
+    "url": "https://opentibiaservers.com/projectantica"
+  },
+  {
+    "slug": "psoul-classic",
+    "name": "Psoul Classic",
+    "url": "https://opentibiaservers.com/psoul-classic"
+  },
+  {
+    "slug": "pythera",
+    "name": "Pythera",
+    "url": "https://opentibiaservers.com/pythera"
+  },
+  {
+    "slug": "rafidea",
+    "name": "Rafidea",
+    "url": "https://opentibiaservers.com/rafidea"
+  },
+  {
+    "slug": "rafidea-v5",
+    "name": "Rafidea V5",
+    "url": "https://opentibiaservers.com/rafidea-v5"
+  },
+  {
+    "slug": "ragame",
+    "name": "Ragame",
+    "url": "https://opentibiaservers.com/ragame"
+  },
+  {
+    "slug": "ramonia",
+    "name": "Ramonia",
+    "url": "https://opentibiaservers.com/ramonia"
+  },
+  {
+    "slug": "ramonia-7-6",
+    "name": "Ramonia 7 6",
+    "url": "https://opentibiaservers.com/ramonia-7-6"
+  },
+  {
+    "slug": "ranger-s-arcani",
+    "name": "Ranger S Arcani",
+    "url": "https://opentibiaservers.com/ranger-s-arcani"
+  },
+  {
+    "slug": "ravnica-pazzur",
+    "name": "Ravnica Pazzur",
+    "url": "https://opentibiaservers.com/pazzur"
+  },
+  {
+    "slug": "ravox-monk-ot",
+    "name": "Ravox Monk OT",
+    "url": "https://opentibiaservers.com/ravox-monk-ot"
+  },
+  {
+    "slug": "razorot-16-01-custom-server",
+    "name": "RazorOT 16.01 Custom Server",
+    "url": "https://opentibiaservers.com/razorot-16-01-custom-server"
+  },
+  {
+    "slug": "realera",
+    "name": "Realera",
+    "url": "https://opentibiaservers.com/realera"
+  },
+  {
+    "slug": "realesta-7-4",
+    "name": "Realesta 7 4",
+    "url": "https://opentibiaservers.com/realesta-7-4"
+  },
+  {
+    "slug": "realesta74",
+    "name": "Realesta74",
+    "url": "https://opentibiaservers.com/realesta74"
+  },
+  {
+    "slug": "reaperot",
+    "name": "Reaperot",
+    "url": "https://opentibiaservers.com/reaperot"
+  },
+  {
+    "slug": "rearmonia",
+    "name": "Rearmonia",
+    "url": "https://opentibiaservers.com/rearmonia"
+  },
+  {
+    "slug": "redream",
+    "name": "Redream",
+    "url": "https://opentibiaservers.com/redream"
+  },
+  {
+    "slug": "redream-otserver-7-6-l-custom-mechanics",
+    "name": "Redream Otserver 7 6 L Custom Mechanics",
+    "url": "https://opentibiaservers.com/redream-otserver-7-6-l-custom-mechanics"
+  },
+  {
+    "slug": "relicariaot",
+    "name": "Relicariaot",
+    "url": "https://opentibiaservers.com/relicariaot"
+  },
+  {
+    "slug": "remeres-map-editor",
+    "name": "Remeres Map Editor",
+    "url": "https://opentibiaservers.com/remeres-map-editor"
+  },
+  {
+    "slug": "resentech",
+    "name": "Resentech",
+    "url": "https://opentibiaservers.com/resentech"
+  },
+  {
+    "slug": "resetwar-fusion",
+    "name": "Resetwar Fusion",
+    "url": "https://opentibiaservers.com/resetwar-fusion"
+  },
+  {
+    "slug": "return-of-the-saiyans",
+    "name": "Return Of The Saiyans",
+    "url": "https://opentibiaservers.com/return-of-the-saiyans"
+  },
+  {
+    "slug": "rexia",
+    "name": "Rexia",
+    "url": "https://opentibiaservers.com/rexia"
+  },
+  {
+    "slug": "rezoria",
+    "name": "Rezoria -",
+    "url": "https://opentibiaservers.com/rezoria"
+  },
+  {
+    "slug": "rezoria-eu",
+    "name": "Rezoria.EU",
+    "url": "https://opentibiaservers.com/rezoria-eu"
+  },
+  {
+    "slug": "rivalia-online",
+    "name": "Rivalia Online",
+    "url": "https://opentibiaservers.com/rivalia-online"
+  },
+  {
+    "slug": "rivaliaonline",
+    "name": "Rivaliaonline",
+    "url": "https://opentibiaservers.com/rivaliaonline"
+  },
+  {
+    "slug": "rme",
+    "name": "Rme",
+    "url": "https://opentibiaservers.com/rme"
+  },
+  {
+    "slug": "road-to-shinigami",
+    "name": "Road To Shinigami",
+    "url": "https://opentibiaservers.com/road-to-shinigami"
+  },
+  {
+    "slug": "rookgaard-tales",
+    "name": "Rookgaard Tales",
+    "url": "https://opentibiaservers.com/rookgaard-tales"
+  },
+  {
+    "slug": "rookhaven",
+    "name": "Rookhaven",
+    "url": "https://opentibiaservers.com/rookhaven"
+  },
+  {
+    "slug": "roxor-1337-8-6",
+    "name": "Roxor 1337 8 6",
+    "url": "https://opentibiaservers.com/roxor-1337-8-6"
+  },
+  {
+    "slug": "roxor1337",
+    "name": "Roxor1337",
+    "url": "https://opentibiaservers.com/roxor1337"
+  },
+  {
+    "slug": "rtsonline",
+    "name": "Rtsonline",
+    "url": "https://opentibiaservers.com/rtsonline"
+  },
+  {
+    "slug": "rubera",
+    "name": "Rubera",
+    "url": "https://opentibiaservers.com/rubera"
+  },
+  {
+    "slug": "rubinot",
+    "name": "RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "runes-of-soul",
+    "name": "Runes Of Soul",
+    "url": "https://opentibiaservers.com/runes-of-soul"
+  },
+  {
+    "slug": "runesofsoul",
+    "name": "Runesofsoul",
+    "url": "https://opentibiaservers.com/runesofsoul"
+  },
+  {
+    "slug": "saboorbaiak",
+    "name": "Saboorbaiak",
+    "url": "https://opentibiaservers.com/saboorbaiak"
+  },
+  {
+    "slug": "sagaot-starts-july-26th-build-freedom",
+    "name": "SagaOT STARTS July 26th! Build Freedom",
+    "url": "https://opentibiaservers.com/sagaot-starts-july-26th-build-freedom"
+  },
+  {
+    "slug": "saintsot",
+    "name": "SaintsOT",
+    "url": "https://opentibiaservers.com/saintsot"
+  },
+  {
+    "slug": "saiyansreturn",
+    "name": "Saiyansreturn",
+    "url": "https://opentibiaservers.com/saiyansreturn"
+  },
+  {
+    "slug": "samera",
+    "name": "Samera",
+    "url": "https://opentibiaservers.com/samera"
+  },
+  {
+    "slug": "sanctumot",
+    "name": "Sanctumot",
+    "url": "https://opentibiaservers.com/sanctumot"
+  },
+  {
+    "slug": "sandots",
+    "name": "Sandots",
+    "url": "https://opentibiaservers.com/sandots"
+  },
+  {
+    "slug": "saphira",
+    "name": "Saphira",
+    "url": "https://opentibiaservers.com/saphira"
+  },
+  {
+    "slug": "secura",
+    "name": "Secura",
+    "url": "https://opentibiaservers.com/secura"
+  },
+  {
+    "slug": "serenian-rubinot",
+    "name": "Serenian RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "serenian2-rubinot",
+    "name": "Serenian2 RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "serenian3-rubinot",
+    "name": "Serenian3 RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "serenian4-rubinot",
+    "name": "Serenian4 RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "serverlandia",
+    "name": "Serverlandia",
+    "url": "https://opentibiaservers.com/serverlandia"
+  },
+  {
+    "slug": "shadow-arms",
+    "name": "Shadow Arms",
+    "url": "https://opentibiaservers.com/shadow-arms"
+  },
+  {
+    "slug": "shadow-illusion",
+    "name": "Shadow Illusion",
+    "url": "https://opentibiaservers.com/shadow-illusion"
+  },
+  {
+    "slug": "shadow-of-the-crown",
+    "name": "Shadow Of The Crown",
+    "url": "https://opentibiaservers.com/shadow-of-the-crown"
+  },
+  {
+    "slug": "shadowofthecrown",
+    "name": "Shadowofthecrown",
+    "url": "https://opentibiaservers.com/shadowofthecrown"
+  },
+  {
+    "slug": "shanera",
+    "name": "Shanera",
+    "url": "https://opentibiaservers.com/shanera"
+  },
+  {
+    "slug": "sodb",
+    "name": "Sodb",
+    "url": "https://opentibiaservers.com/sodb"
+  },
+  {
+    "slug": "sodb-online",
+    "name": "Sodb Online",
+    "url": "https://opentibiaservers.com/sodb-online"
+  },
+  {
+    "slug": "soe-rpg",
+    "name": "SoE RPG",
+    "url": "https://opentibiaservers.com/soe-rpg"
+  },
+  {
+    "slug": "solarian-rubinot",
+    "name": "Solarian RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "spectrum-rubinot",
+    "name": "Spectrum RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "spider-server",
+    "name": "Spider Server",
+    "url": "https://opentibiaservers.com/spider-server"
+  },
+  {
+    "slug": "spiderot",
+    "name": "SpiderOT",
+    "url": "https://opentibiaservers.com/spider-server"
+  },
+  {
+    "slug": "spr-editor",
+    "name": "Spr Editor",
+    "url": "https://opentibiaservers.com/spr-editor"
+  },
+  {
+    "slug": "super-edit-zentoria",
+    "name": "Super Edit Zentoria",
+    "url": "https://opentibiaservers.com/super-edit-zentoria"
+  },
+  {
+    "slug": "symikot",
+    "name": "Symikot",
+    "url": "https://opentibiaservers.com/symikot"
+  },
+  {
+    "slug": "taleon",
+    "name": "Taleon",
+    "url": "https://opentibiaservers.com/taleon"
+  },
+  {
+    "slug": "taleon-aurapvp",
+    "name": "Taleon AuraPvP",
+    "url": "https://opentibiaservers.com/taleon"
+  },
+  {
+    "slug": "taleon-sanpvp",
+    "name": "Taleon Sanpvp",
+    "url": "https://opentibiaservers.com/taleon-sanpvp"
+  },
+  {
+    "slug": "tavola-global",
+    "name": "Tavola Global",
+    "url": "https://opentibiaservers.com/tavola-global"
+  },
+  {
+    "slug": "tenebrium-rubinot",
+    "name": "Tenebrium RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "tfs",
+    "name": "Tfs",
+    "url": "https://opentibiaservers.com/tfs"
+  },
+  {
+    "slug": "thaisborn",
+    "name": "Thaisborn",
+    "url": "https://opentibiaservers.com/thaisborn"
+  },
+  {
+    "slug": "thaisborn-7-4",
+    "name": "Thaisborn 7 4",
+    "url": "https://opentibiaservers.com/thaisborn-7-4"
+  },
+  {
+    "slug": "the-best-global-8-60",
+    "name": "The Best Global 8.60",
+    "url": "https://opentibiaservers.com/kaldrox"
+  },
+  {
+    "slug": "the-forgotten-server",
+    "name": "The Forgotten Server",
+    "url": "https://opentibiaservers.com/the-forgotten-server"
+  },
+  {
+    "slug": "the-nexus-world-a-new-era",
+    "name": "The Nexus World A New Era",
+    "url": "https://opentibiaservers.com/the-nexus-world-a-new-era"
+  },
+  {
+    "slug": "thornia",
+    "name": "Thornia",
+    "url": "https://opentibiaservers.com/thornia"
+  },
+  {
+    "slug": "thorz-ot",
+    "name": "Thorz OT",
+    "url": "https://opentibiaservers.com/thorz-ot"
+  },
+  {
+    "slug": "thunderia",
+    "name": "Thunderia",
+    "url": "https://opentibiaservers.com/thunderia"
+  },
+  {
+    "slug": "tiberion-online",
+    "name": "Tiberion Online",
+    "url": "https://opentibiaservers.com/tiberion-online"
+  },
+  {
+    "slug": "tibia",
+    "name": "Tibia",
+    "url": "https://opentibiaservers.com/tibia"
+  },
+  {
+    "slug": "tibia-8-0-low-rate",
+    "name": "Tibia 8 0 Low Rate",
+    "url": "https://opentibiaservers.com/tibia-8-0-low-rate"
+  },
+  {
+    "slug": "tibia-bot-ng",
+    "name": "Tibia Bot Ng",
+    "url": "https://opentibiaservers.com/tibia-bot-ng"
+  },
+  {
+    "slug": "tibia-dat-editor",
+    "name": "Tibia Dat Editor",
+    "url": "https://opentibiaservers.com/tibia-dat-editor"
+  },
+  {
+    "slug": "tibia-old",
+    "name": "Tibia Old",
+    "url": "https://opentibiaservers.com/tibia-old"
+  },
+  {
+    "slug": "tibia-old-limbo",
+    "name": "Tibia Old Limbo",
+    "url": "https://opentibiaservers.com/tibia-old"
+  },
+  {
+    "slug": "tibia-reborn",
+    "name": "Tibia Reborn",
+    "url": "https://opentibiaservers.com/tibia-reborn"
+  },
+  {
+    "slug": "tibia-retro",
+    "name": "Tibia-Retro",
+    "url": "https://opentibiaservers.com/tibia-retro"
+  },
+  {
+    "slug": "tibia-spr-editor",
+    "name": "Tibia Spr Editor",
+    "url": "https://opentibiaservers.com/tibia-spr-editor"
+  },
+  {
+    "slug": "tibia-tales",
+    "name": "Tibia Tales",
+    "url": "https://opentibiaservers.com/tibia-tales"
+  },
+  {
+    "slug": "tibiabase",
+    "name": "Tibiabase",
+    "url": "https://opentibiaservers.com/tibiabase"
+  },
+  {
+    "slug": "tibiabot-ng",
+    "name": "Tibiabot Ng",
+    "url": "https://opentibiaservers.com/tibiabot-ng"
+  },
+  {
+    "slug": "tibiaclassic",
+    "name": "Tibiaclassic",
+    "url": "https://opentibiaservers.com/tibiaclassic"
+  },
+  {
+    "slug": "tibiafun",
+    "name": "TibiaFun",
+    "url": "https://opentibiaservers.com/tibiafun"
+  },
+  {
+    "slug": "tibiafun-evolution",
+    "name": "TibiaFun Evolution",
+    "url": "https://opentibiaservers.com/tibiafun-evolution"
+  },
+  {
+    "slug": "tibiafunevo",
+    "name": "Tibiafunevo",
+    "url": "https://opentibiaservers.com/tibiafunevo"
+  },
+  {
+    "slug": "tibiantis",
+    "name": "Tibiantis",
+    "url": "https://opentibiaservers.com/tibiantis"
+  },
+  {
+    "slug": "tibiantis-online",
+    "name": "Tibiantis Online",
+    "url": "https://opentibiaservers.com/tibiantis-online"
+  },
+  {
+    "slug": "tibiaorigins",
+    "name": "Tibiaorigins",
+    "url": "https://opentibiaservers.com/tibiaorigins"
+  },
+  {
+    "slug": "tibiaorigins-2-0",
+    "name": "Tibiaorigins 2 0",
+    "url": "https://opentibiaservers.com/tibiaorigins-2-0"
+  },
+  {
+    "slug": "tibiara",
+    "name": "Tibiara",
+    "url": "https://opentibiaservers.com/tibiara"
+  },
+  {
+    "slug": "tibiareborn",
+    "name": "Tibiareborn",
+    "url": "https://opentibiaservers.com/tibiareborn"
+  },
+  {
+    "slug": "tibiascape",
+    "name": "Tibiascape",
+    "url": "https://opentibiaservers.com/tibiascape"
+  },
+  {
+    "slug": "tibiatales",
+    "name": "Tibiatales",
+    "url": "https://opentibiaservers.com/tibiatales"
+  },
+  {
+    "slug": "tibinha",
+    "name": "Tibinha",
+    "url": "https://opentibiaservers.com/tibinha"
+  },
+  {
+    "slug": "tibinha-yurots",
+    "name": "Tibinha YurOTS",
+    "url": "https://opentibiaservers.com/tibinha"
+  },
+  {
+    "slug": "titania",
+    "name": "Titania",
+    "url": "https://opentibiaservers.com/titania"
+  },
+  {
+    "slug": "titania-7-4",
+    "name": "Titania 7 4",
+    "url": "https://opentibiaservers.com/titania-7-4"
+  },
+  {
+    "slug": "titania74",
+    "name": "Titania74",
+    "url": "https://opentibiaservers.com/titania74"
+  },
+  {
+    "slug": "tnt-server",
+    "name": "TNT Server",
+    "url": "https://opentibiaservers.com/tntserver"
+  },
+  {
+    "slug": "tntserver",
+    "name": "Tntserver",
+    "url": "https://opentibiaservers.com/tntserver"
+  },
+  {
+    "slug": "treasura",
+    "name": "Treasura",
+    "url": "https://opentibiaservers.com/treasura"
+  },
+  {
+    "slug": "treasura-long-term-x1-start-12-04-2024-at-18-00-cest",
+    "name": "Treasura Long Term X1 Start 12 04 2024 At 18 00 Cest",
+    "url": "https://opentibiaservers.com/treasura-long-term-x1-start-12-04-2024-at-18-00-cest"
+  },
+  {
+    "slug": "trimera",
+    "name": "Trimera",
+    "url": "https://opentibiaservers.com/trimera"
+  },
+  {
+    "slug": "underwar",
+    "name": "Underwar",
+    "url": "https://opentibiaservers.com/underwar"
+  },
+  {
+    "slug": "unline",
+    "name": "Unline",
+    "url": "https://opentibiaservers.com/unline"
+  },
+  {
+    "slug": "valantis",
+    "name": "Valantis",
+    "url": "https://opentibiaservers.com/valantis"
+  },
+  {
+    "slug": "valantis-online",
+    "name": "Valantis Online",
+    "url": "https://opentibiaservers.com/valantis-online"
+  },
+  {
+    "slug": "valdareth-8-0-custom-war-server",
+    "name": "Valdareth 8.0 Custom WAR Server",
+    "url": "https://opentibiaservers.com/valdareth-8-0-custom-war-server"
+  },
+  {
+    "slug": "valeriaot",
+    "name": "Valeriaot",
+    "url": "https://opentibiaservers.com/valeriaot"
+  },
+  {
+    "slug": "valmor",
+    "name": "Valmor",
+    "url": "https://opentibiaservers.com/valmor"
+  },
+  {
+    "slug": "valmorots-launch-1-march-2026",
+    "name": "Valmorots Launch 1 March 2026",
+    "url": "https://opentibiaservers.com/valmorots-launch-1-march-2026"
+  },
+  {
+    "slug": "valoria",
+    "name": "Valoria",
+    "url": "https://opentibiaservers.com/valoria"
+  },
+  {
+    "slug": "vantoria",
+    "name": "Vantoria",
+    "url": "https://opentibiaservers.com/vantoria"
+  },
+  {
+    "slug": "vantoria-net-start-13-02-2026",
+    "name": "Vantoria Net Start 13 02 2026",
+    "url": "https://opentibiaservers.com/vantoria-net-start-13-02-2026"
+  },
+  {
+    "slug": "vbest-pvp-wow",
+    "name": "vbest Pvp-Wow",
+    "url": "https://opentibiaservers.com/vbest-pvp-wow"
+  },
+  {
+    "slug": "veneria-online-modern-evo",
+    "name": "Veneria Online Modern Evo",
+    "url": "https://opentibiaservers.com/veneria-online-modern-evo"
+  },
+  {
+    "slug": "venerix",
+    "name": "Venerix",
+    "url": "https://opentibiaservers.com/venerix"
+  },
+  {
+    "slug": "venoria-online",
+    "name": "Venoria Online",
+    "url": "https://opentibiaservers.com/venoria-online"
+  },
+  {
+    "slug": "vesperia-rubinot",
+    "name": "Vesperia RubinOT",
+    "url": "https://opentibiaservers.com/rubinot"
+  },
+  {
+    "slug": "vestia",
+    "name": "Vestia",
+    "url": "https://opentibiaservers.com/vestia"
+  },
+  {
+    "slug": "vestia-forever",
+    "name": "Vestia Forever",
+    "url": "https://opentibiaservers.com/vestia"
+  },
+  {
+    "slug": "veylaria",
+    "name": "Veylaria",
+    "url": "https://opentibiaservers.com/veylaria"
+  },
+  {
+    "slug": "veylaria-8-6",
+    "name": "Veylaria 8 6",
+    "url": "https://opentibiaservers.com/veylaria-8-6"
+  },
+  {
+    "slug": "vinera",
+    "name": "Vinera",
+    "url": "https://opentibiaservers.com/vinera"
+  },
+  {
+    "slug": "visionot",
+    "name": "Visionot",
+    "url": "https://opentibiaservers.com/visionot"
+  },
+  {
+    "slug": "vitox-ots",
+    "name": "Vitox Ots",
+    "url": "https://opentibiaservers.com/vitox-ots"
+  },
+  {
+    "slug": "vitox-ots-8-6",
+    "name": "Vitox Ots 8 6",
+    "url": "https://opentibiaservers.com/vitox-ots-8-6"
+  },
+  {
+    "slug": "whispers-of-solitude",
+    "name": "Whispers Of Solitude",
+    "url": "https://opentibiaservers.com/whispers-of-solitude"
+  },
+  {
+    "slug": "whispersofsolitude",
+    "name": "Whispersofsolitude",
+    "url": "https://opentibiaservers.com/whispersofsolitude"
+  },
+  {
+    "slug": "wypas",
+    "name": "Wypas",
+    "url": "https://opentibiaservers.com/wypas"
+  },
+  {
+    "slug": "wypasots",
+    "name": "Wypasots",
+    "url": "https://opentibiaservers.com/wypasots"
+  },
+  {
+    "slug": "xenobot",
+    "name": "Xenobot",
+    "url": "https://opentibiaservers.com/xenobot"
+  },
+  {
+    "slug": "xerena",
+    "name": "Xerena",
+    "url": "https://opentibiaservers.com/xerena"
+  },
+  {
+    "slug": "xnova-rl-map-custom-areas",
+    "name": "XNOVA – RL Map & Custom Areas",
+    "url": "https://opentibiaservers.com/xnova-rl-map-custom-areas"
+  },
+  {
+    "slug": "xnovaot",
+    "name": "Xnovaot",
+    "url": "https://opentibiaservers.com/xnovaot"
+  },
+  {
+    "slug": "yurot",
+    "name": "Yurot",
+    "url": "https://opentibiaservers.com/yurot"
+  },
+  {
+    "slug": "yurots",
+    "name": "Yurots",
+    "url": "https://opentibiaservers.com/yurots"
+  },
+  {
+    "slug": "yurots76",
+    "name": "Yurots76",
+    "url": "https://opentibiaservers.com/yurots76"
+  },
+  {
+    "slug": "zamonia77",
+    "name": "Zamonia77",
+    "url": "https://opentibiaservers.com/zamonia77"
+  },
+  {
+    "slug": "zamoniaot-rl-map",
+    "name": "Zamoniaot Rl Map",
+    "url": "https://opentibiaservers.com/zamoniaot-rl-map"
+  },
+  {
+    "slug": "zathroth",
+    "name": "Zathroth",
+    "url": "https://opentibiaservers.com/zathroth"
+  },
+  {
+    "slug": "zeno-tide-both-clients",
+    "name": "Zeno Tide BOTH CLIENTS!",
+    "url": "https://opentibiaservers.com/zeno-tide-both-clients"
+  },
+  {
+    "slug": "znote",
+    "name": "Znote",
+    "url": "https://opentibiaservers.com/znote"
+  },
+  {
+    "slug": "znote-aac",
+    "name": "Znote Aac",
+    "url": "https://opentibiaservers.com/znote-aac"
+  },
+  {
+    "slug": "zuna",
+    "name": "Zuna",
+    "url": "https://opentibiaservers.com/zuna"
+  },
+  {
+    "slug": "zunera",
+    "name": "Zunera",
+    "url": "https://opentibiaservers.com/zunera"
+  }
+]

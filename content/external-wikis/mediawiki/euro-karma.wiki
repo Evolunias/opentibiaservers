@@ -1,0 +1,52 @@
+{{Infobox OTServer
+| name = Euro-Karma
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/euro-karma
+}}
+
+'''Euro-Karma''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/euro-karma Euro-Karma on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Euro-Karma
+|-
+| Directory profile || [https://opentibiaservers.com/euro-karma https://opentibiaservers.com/euro-karma]
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Euro-Karma beyond the list row: verify its host, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
+
+Players searching for '''Euro-Karma''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/euro-karma Euro-Karma server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Euro-Karma''': [https://opentibiaservers.com/euro-karma https://opentibiaservers.com/euro-karma]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/euro-karma Euro-Karma — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Euro-Karma]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/euro-karma -->

@@ -1,0 +1,68 @@
+{{Infobox OTServer
+| name = OTMadness
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/otmadness
+| host = OTMadness.com
+| location = USA
+| pvp = FUN
+| exp = 1500x
+| website = https://otmadness.com/
+}}
+
+'''OTMadness''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/otmadness OTMadness on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || OTMadness
+|-
+| Directory profile || [https://opentibiaservers.com/otmadness https://opentibiaservers.com/otmadness]
+|-
+| Host || OTMadness.com
+|-
+| Location || USA
+|-
+| World type || FUN
+|-
+| EXP rate (snapshot) || 1500x
+|-
+| Players online (snapshot) || 261
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+A reference-style OTMadness page for players exploring high-EXP gameplay, official play links, live listing signals, community activity, and similar OT servers.
+
+Players searching for '''OTMadness''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/otmadness OTMadness server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''OTMadness''': [https://opentibiaservers.com/otmadness https://opentibiaservers.com/otmadness]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/otmadness OTMadness — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://otmadness.com/ Official OTMadness website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:OTMadness]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/otmadness -->

@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Valeriaot
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/valeriaot
+| host = play.valeriaot.com:7171
+| version = 15.2
+| location = Sweden
+| pvp = PVP
+| exp = 300x
+| website = https://valeriaot.com/
+}}
+
+'''Valeriaot''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/valeriaot Valeriaot on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Valeriaot
+|-
+| Directory profile || [https://opentibiaservers.com/valeriaot https://opentibiaservers.com/valeriaot]
+|-
+| Host || play.valeriaot.com:7171
+|-
+| Client / version || 15.2
+|-
+| Location || Sweden
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 300x
+|-
+| Players online (snapshot) || 71
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+This gives players on Vanyria, as well as players attempting the quest solo on Valeria, enough time to complete the fights. This wording comes from the recorded official website metadata.
+
+Players searching for '''Valeriaot''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/valeriaot Valeriaot server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Valeriaot''': [https://opentibiaservers.com/valeriaot https://opentibiaservers.com/valeriaot]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/valeriaot Valeriaot — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://valeriaot.com/ Official Valeriaot website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Valeriaot]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/valeriaot -->

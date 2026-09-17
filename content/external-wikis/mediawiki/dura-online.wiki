@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Dura Online
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/dura-online
+| host = dura-online.com
+| version = 7.4
+| location = USA
+| pvp = PVP
+| exp = 1x
+| website = https://dura-online.com/
+}}
+
+'''Dura Online''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/dura-online Dura Online on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Dura Online
+|-
+| Directory profile || [https://opentibiaservers.com/dura-online https://opentibiaservers.com/dura-online]
+|-
+| Host || dura-online.com
+|-
+| Client / version || 7.4
+|-
+| Location || USA
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 1x
+|-
+| Players online (snapshot) || 41
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Meet Dura Online beyond the list row: verify dura-online.com, understand the published profile, and inspect the source thread, owner links, and community context before creating a character.
+
+Players searching for '''Dura Online''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/dura-online Dura Online server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Dura Online''': [https://opentibiaservers.com/dura-online https://opentibiaservers.com/dura-online]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/dura-online Dura Online — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://dura-online.com/ Official Dura Online website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Dura Online]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/dura-online -->

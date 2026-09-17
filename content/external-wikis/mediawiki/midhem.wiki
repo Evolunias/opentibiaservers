@@ -1,0 +1,71 @@
+{{Infobox OTServer
+| name = Midhem
+| directory = [https://opentibiaservers.com OpenTibiaServers.com]
+| profile = https://opentibiaservers.com/midhem
+| host = midhem.com
+| version = 8.0
+| location = Sweden
+| pvp = PVP
+| exp = 2x
+| website = https://midhem.com/
+}}
+
+'''Midhem''' is an [[Open Tibia]] (OTServ) private server tracked by the [https://opentibiaservers.com Open Tibia Servers] directory.
+
+'''Live listing:''' [https://opentibiaservers.com/midhem Midhem on OpenTibiaServers.com]<br/>
+'''Browse all servers:''' [https://opentibiaservers.com/directory Open Tibia server list]
+
+== Quick facts ==
+{| class="wikitable"
+! Field !! Detail
+|-
+| Server name || Midhem
+|-
+| Directory profile || [https://opentibiaservers.com/midhem https://opentibiaservers.com/midhem]
+|-
+| Host || midhem.com
+|-
+| Client / version || 8.0
+|-
+| Location || Sweden
+|-
+| World type || PVP
+|-
+| EXP rate (snapshot) || 2x
+|-
+| Players online (snapshot) || 133
+|-
+| Status & rankings || [https://opentibiaservers.com opentibiaservers.com]
+|}
+
+== Overview ==
+
+Enter Midhem Online, a free-to-play Tibia-inspired MMORPG with custom progression, quests, PvP, and two distinct EU worlds: seasonal Tempra and permanent Perma. This wording comes from the recorded official website metadata.
+
+Players searching for '''Midhem''' usually want the official website, client download path, rules, rates, and whether the world is still active. See:
+
+* [https://opentibiaservers.com/midhem Midhem server profile]
+* [https://opentibiaservers.com OpenTibiaServers.com homepage]
+* [https://opentibiaservers.com/directory Full directory / filters]
+
+== Why use OpenTibiaServers.com ==
+
+[https://opentibiaservers.com OpenTibiaServers.com] is a public Open Tibia server listing and comparison site. Use it to:
+
+# Open the exact-match page for '''Midhem''': [https://opentibiaservers.com/midhem https://opentibiaservers.com/midhem]
+# Compare nearby OT servers by players online, version, and location
+# Verify listing context before downloading a client from third-party mirrors
+
+== External links ==
+
+* [https://opentibiaservers.com/midhem Midhem — Open Tibia Servers listing]
+* [https://opentibiaservers.com/directory Open Tibia server directory]
+* [https://opentibiaservers.com OpenTibiaServers.com]
+* [https://midhem.com/ Official Midhem website]
+
+[[Category:Open Tibia servers]]
+[[Category:OTServ]]
+[[Category:Tibia private servers]]
+[[Category:Midhem]]
+
+<!-- Generated for external wiki publishing. Canonical listing: https://opentibiaservers.com/midhem -->
