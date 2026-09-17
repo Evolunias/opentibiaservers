@@ -1689,8 +1689,8 @@ body.ots-plain-site .knowledge-shell {
 
 .featured-server-ad__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) auto auto;
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.25rem;
   align-items: center;
   width: min(100%, 80rem);
   margin: 0 auto;
@@ -1699,7 +1699,7 @@ body.ots-plain-site .knowledge-shell {
 
 .featured-server-ad--inline .featured-server-ad__inner,
 .featured-server-ad--footer .featured-server-ad__inner {
-  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   padding: 1.35rem 1.5rem;
 }
 
@@ -1712,7 +1712,7 @@ body.ots-plain-site .knowledge-shell {
 
 .featured-server-ad--inline .featured-server-ad__copy h2,
 .featured-server-ad--footer .featured-server-ad__copy h2 {
-  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-size: clamp(1.2rem, 1.6vw, 1.55rem);
 }
 
 .featured-server-ad__copy p {
@@ -1797,10 +1797,83 @@ body.ots-plain-site .knowledge-shell {
 
 .featured-server-ad__actions {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
   gap: 0.6rem;
-  min-width: 15rem;
+  min-width: 12.5rem;
+}
+
+.featured-server-ad__rotator {
+  position: relative;
+  margin-top: 0.7rem;
+  min-height: 5.75rem;
+  overflow: hidden;
+}
+
+.featured-server-ad__slide {
+  display: grid;
+  gap: 0.28rem;
+  animation: featuredAdSlideIn 420ms ease both;
+}
+
+.featured-server-ad__slide-label {
+  margin: 0.15rem 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.featured-server-ad__slide-headline {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.featured-server-ad__slide-detail {
+  margin: 0;
+  max-width: 36rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.featured-server-ad__dots {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+}
+
+.featured-server-ad__dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+
+.featured-server-ad__dot.is-active {
+  width: 1.35rem;
+  background: #ffe5a4;
+}
+
+@keyframes featuredAdSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .featured-server-ad__primary,
