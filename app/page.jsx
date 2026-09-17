@@ -6,16 +6,15 @@ import { buildAbsoluteUrl, getSiteName } from '@/lib/seo';
 export const revalidate = 120;
 
 export async function generateMetadata() {
-  const title = 'Open Tibia Forum — Support, Releases, Scripts, Mapping & Servers';
+  const title = 'Open Tibia Forum - Support, Releases, Scripts, Mapping & Servers';
   const description =
-    'Modern Open Tibia community forum for support, downloads, scripting, mapping, server launches, jobs, and development — plus a full OT server directory.';
+    'Modern Open Tibia community forum for support, downloads, scripting, mapping, server launches, jobs, and development - plus a full OT server directory.';
 
   return {
     title,
     description,
     keywords: [
       'open tibia forum',
-      'otland alternative',
       'ot server forum',
       'tfs scripts',
       'otclient',

@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '@/app/context/AuthContext';
 import AuthModal from '@/app/components/AuthModal';
 import LanguageSelector from '@/app/components/LanguageSelector';
+import ThemeSelector from '@/app/components/ThemeSelector';
 
 export default function Header() {
   const router = useRouter();
@@ -98,6 +99,7 @@ export default function Header() {
                 >
                   Rankings
                 </Link>
+                <ThemeSelector />
                 <LanguageSelector />
                 {user ? (
                   <>

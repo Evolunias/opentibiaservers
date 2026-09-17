@@ -1,4 +1,4 @@
-﻿import "./globals.css";
+import "./globals.css";
 import { AuthProvider } from "./context/AuthContext";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -88,8 +88,14 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="ots-directory-light">
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var t=localStorage.getItem('ots_theme')||'light';var ok=['light','dark','classic','midnight','forest','ocean','sunset','grayscale','neon','arcane'];if(ok.indexOf(t)<0)t='light';document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=(t==='light'||t==='classic'||t==='sunset')?'light':'dark';}catch(e){document.documentElement.setAttribute('data-theme','light');}})();",
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
