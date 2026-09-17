@@ -1,174 +1,87 @@
 import Link from 'next/link';
-import { buildAbsoluteUrl, getSiteName } from '@/lib/seo';
-import { getPrimaryResourcePages } from '@/lib/resource-pages';
+import catalog from '../../data/ot-open-source-catalog.json';
 
 export const metadata = {
-  title: 'Open Tibia Resources, Tools, Editors, Engines, Bots and History',
-  description: 'Browse Open Tibia resources including Remere\'s Map Editor, item editors, DAT and SPR tools, OTClient, TFS, Canary, AACs, and historical Tibia bots.',
-  keywords: [
-    'Open Tibia resources',
-    'Open Tibia tools',
-    'Remeres Map Editor',
-    'OTItemEditor',
-    'Tibia DAT editor',
-    'Tibia SPR editor',
-    'OTClient',
-    'The Forgotten Server',
-    'Canary OpenTibia',
-    'Tibia bots history',
-  ],
-  alternates: {
-    canonical: buildAbsoluteUrl('/resources'),
-  },
-  openGraph: {
-    title: 'Open Tibia Resources, Tools, Editors, Engines, Bots and History',
-    description: 'A source-linked Open Tibia resource index for tools, editors, engines, account makers, clients, and historical automation names.',
-    url: buildAbsoluteUrl('/resources'),
-    siteName: getSiteName(),
-    type: 'website',
-  },
+  title: 'Open-source OT resources | OpenTibiaServers',
+  description: 'Curated GitHub engines, clients, OTBM map tools, and datapacks. No third-party forum scrapes. VirusTotal required for binaries.',
 };
 
-function groupResources(resources) {
-  return resources.reduce((groups, page) => {
-    const category = page.facts.find((fact) => fact.label === 'Category')?.value || 'Resources';
-    groups[category] = groups[category] || [];
-    groups[category].push(page);
-    return groups;
-  }, {});
-}
-
 export default function ResourcesPage() {
-  const resources = getPrimaryResourcePages();
-  const groups = groupResources(resources);
-
-  const jsonLd = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: 'Open Tibia Resources',
-      description: metadata.description,
-      url: buildAbsoluteUrl('/resources'),
-      hasPart: resources.map((page) => ({
-        '@type': 'Article',
-        name: page.primaryKeyword,
-        url: buildAbsoluteUrl(page.path),
-      })),
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Open Tibia Servers', item: buildAbsoluteUrl('/') },
-        { '@type': 'ListItem', position: 2, name: 'Resources', item: buildAbsoluteUrl('/resources') },
-      ],
-    },
-  ];
-
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-950">
-      {jsonLd.map((entry, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(entry) }}
-        />
-      ))}
-
-      <section className="border-b border-gray-200 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-12">
-          <div className="mb-5 flex flex-wrap items-center gap-3 text-sm">
-            <Link href="/" className="font-semibold text-gray-800 hover:text-gray-950">
-              Open Tibia Servers
-            </Link>
-            <span className="text-gray-400">/</span>
-            <span className="text-gray-600">Resources</span>
-          </div>
-          <h1 className="max-w-4xl text-4xl font-bold leading-tight text-gray-950 md:text-6xl">
-            Open Tibia Resources
-          </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-700">
-            A source-linked resource library for Open Tibia tools, editors, engines, clients, account makers, and historical Tibia automation names. The goal is to help players and server owners understand the ecosystem behind the listings.
-          </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/" className="rounded border border-gray-950 bg-gray-950 px-5 py-3 text-sm font-bold text-white hover:opacity-85 hover:no-underline">
-              Browse Servers
-            </Link>
-            <Link href="/community_archive" className="rounded border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-950 hover:bg-gray-100 hover:no-underline">
-              community_archive Guide
-            </Link>
-            <Link href="/knowledge" className="rounded border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-950 hover:bg-gray-100 hover:no-underline">
-              Knowledge Base
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-gray-200 bg-gray-100">
-        <div className="mx-auto max-w-6xl px-6 py-8">
-          <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr_1fr]">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Historical Standard</p>
-              <h2 className="mt-2 text-2xl font-bold text-gray-950">Dates are tied to surviving evidence</h2>
-              <p className="mt-3 text-sm leading-7 text-gray-700">
-                Every entry distinguishes an exact release, an earliest verified archive, a repository opening, and an uncertain community memory. A date is never made more precise than its source.
-              </p>
-            </div>
-            <div className="border-l border-gray-300 pl-5">
-              <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Coverage</p>
-              <p className="mt-2 text-3xl font-bold text-gray-950">{resources.length}</p>
-              <p className="mt-2 text-sm leading-7 text-gray-700">
-                Canonical tools, engines, clients, account makers, libraries, editors, and historical automation projects.
-              </p>
-            </div>
-            <div className="border-l border-gray-300 pl-5">
-              <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Page Depth</p>
-              <p className="mt-2 text-lg font-bold text-gray-950">Origin through present status</p>
-              <p className="mt-2 text-sm leading-7 text-gray-700">
-                Each guide covers lineage, milestones, trends, common uses, notable impact, compatibility, safety, and primary references.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-10">
-        <div className="grid gap-6">
-          {Object.entries(groups).map(([category, pages]) => (
-            <section key={category} className="border-b border-gray-200 pb-8">
-              <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Resource Category</p>
-                  <h2 className="mt-1 text-2xl font-bold text-gray-950">{category}</h2>
-                </div>
-                <p className="text-sm font-semibold text-gray-500">{pages.length} entries</p>
-              </div>
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {pages.map((page) => (
-                  <Link key={page.slug} href={page.path} className="rounded border border-gray-200 bg-white p-5 hover:border-gray-400 hover:no-underline">
-                    <h3 className="text-lg font-bold text-gray-950">{page.primaryKeyword}</h3>
-                    <p className="mt-2 text-sm leading-6 text-gray-700">{page.dek}</p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {page.facts.slice(1, 3).map((fact) => (
-                        <span key={fact.label} className="rounded border border-gray-200 bg-gray-50 px-2 py-1 text-xs font-semibold text-gray-700">
-                          {fact.value}
-                        </span>
-                      ))}
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          ))}
+    <main className="directory-shell min-h-screen">
+      <div className="directory-shell__glow" aria-hidden="true" />
+      <div className="relative z-10 max-w-5xl mx-auto px-6 pt-8 pb-16">
+        <p className="text-sm opacity-70 mb-2">
+          <Link href="/">Forum</Link>
+          <span> / </span>
+          <span>Resources</span>
+        </p>
+        <h1 className="text-3xl font-extrabold mb-3">{catalog.title}</h1>
+        <p className="mb-4 opacity-90 max-w-3xl">
+          Real upstream GitHub projects server owners use: engines, clients, Remere/OTBM tooling,
+          and datapacks with monsters, scripts, and world data. We link the source. We do not
+          scrape or rehost OTLand forum posts, galleries, or attachments.
+        </p>
+        <div className="mb-8 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm">
+          <strong>File share rule:</strong> {catalog.policy.virustotal_rule}
         </div>
 
-        <section className="mt-2 rounded border border-gray-200 bg-white p-6">
-          <h2 className="text-2xl font-bold text-gray-950">Historical Automation Policy</h2>
-          <p className="mt-3 text-base leading-8 text-gray-700">
-            Bot pages are included for community history, search context, and rule awareness. They are not download pages or usage guides. Open Tibia servers set their own automation rules, and players should follow each server&apos;s official policy before using any client modification, macro, proxy, or automation tool.
-          </p>
+        <div className="mb-8 flex flex-wrap gap-3">
+          <Link
+            href="/resources/submit"
+            className="inline-flex items-center rounded-lg bg-emerald-500 px-4 py-2 text-sm font-bold text-black"
+          >
+            Submit a resource
+          </Link>
+          <a
+            href="https://www.virustotal.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-lg border border-white/20 px-4 py-2 text-sm font-semibold"
+          >
+            Open VirusTotal
+          </a>
+        </div>
+
+        {catalog.categories.map((cat) => (
+          <section key={cat.id} className="mb-10">
+            <h2 className="text-xl font-bold mb-3">{cat.name}</h2>
+            <ul className="space-y-3">
+              {cat.items.map((item) => (
+                <li key={item.url} className="rounded-lg border border-white/10 bg-black/20 p-4">
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold underline"
+                  >
+                    {item.full_name}
+                  </a>
+                  <span className="ml-2 text-sm opacity-70">
+                    Ã¢Ëœâ€¦ {item.stars} Ã‚Â· {item.license}
+                  </span>
+                  <p className="mt-1 text-sm opacity-90">{item.description}</p>
+                  {item.provides ? (
+                    <p className="mt-2 text-xs opacity-70">Provides: {item.provides.join(', ')}</p>
+                  ) : null}
+                  {item.map_release ? (
+                    <p className="mt-1 text-xs opacity-70">Map assets: {item.map_release}</p>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+
+        <section className="mb-8">
+          <h2 className="text-xl font-bold mb-2">When you share a map or pack on the forum</h2>
+          <ol className="list-decimal ml-5 space-y-1 text-sm opacity-90">
+            {catalog.share_template.body_fields.map((f) => (
+              <li key={f}>{f}</li>
+            ))}
+          </ol>
         </section>
-      </section>
+      </div>
     </main>
   );
 }

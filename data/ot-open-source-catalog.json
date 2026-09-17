@@ -1,0 +1,55 @@
+{
+  "title": "Open Tibia open-source resource catalog",
+  "policy": {
+    "no_otland_scrape": true,
+    "virustotal_required_for_binaries": true,
+    "virustotal_rule": "Any .exe/.dll/.zip/.rar/.7z shared on OpenTibiaServers must include file name, version, SHA-256, VirusTotal GUI URL for that hash, engine/client compatibility, and license. Prefer GitHub Releases over rehosting."
+  },
+  "categories": [
+    {
+      "id": "engines",
+      "name": "Server engines",
+      "items": [
+        {"full_name":"otland/forgottenserver","stars":1837,"license":"GPL-2.0","url":"https://github.com/otland/forgottenserver","description":"The Forgotten Server - C++ OT server emulator.","provides":["engine","lua-api"]},
+        {"full_name":"opentibiabr/canary","stars":646,"license":"GPL-2.0","url":"https://github.com/opentibiabr/canary","description":"Canary 15.x engine + datapacks (monsters, NPCs, scripts, world).","provides":["engine","datapack","monsters","npcs","quests","map-release"],"map_release":"https://github.com/opentibiabr/canary/releases"},
+        {"full_name":"zimbadev/crystalserver","stars":118,"license":"GPL-2.0","url":"https://github.com/zimbadev/crystalserver","description":"Crystal Server 15.25 with vocation balancing.","provides":["engine","datapack"]}
+      ]
+    },
+    {
+      "id": "clients",
+      "name": "Clients",
+      "items": [
+        {"full_name":"edubart/otclient","stars":704,"license":"NOASSERTION","url":"https://github.com/edubart/otclient","description":"Original OTClient (C++/Lua modules).","provides":["client"]},
+        {"full_name":"opentibiabr/otclient","stars":527,"license":"NOASSERTION","url":"https://github.com/opentibiabr/otclient","description":"OTClient Redemption line - modern OTC for TFS + Canary.","provides":["client","modules"]}
+      ]
+    },
+    {
+      "id": "maps_tools",
+      "name": "Maps and OTBM tools",
+      "items": [
+        {"full_name":"hampusborgos/rme","stars":323,"license":"NOASSERTION","url":"https://github.com/hampusborgos/rme","description":"Remere Map Editor for .otbm worlds, spawns, houses.","provides":["map-editor","otbm"]},
+        {"full_name":"opentibiabr/remeres-map-editor","stars":58,"license":"NOASSERTION","url":"https://github.com/opentibiabr/remeres-map-editor","description":"OpenTibiaBR RME fork for Canary assets/OTBM.","provides":["map-editor","otbm"]},
+        {"full_name":"Inconcessus/OTBM2JSON","stars":58,"license":"MIT","url":"https://github.com/Inconcessus/OTBM2JSON","description":"Programmatic OTBM read/write via JSON (Node).","provides":["otbm","converter"]}
+      ]
+    },
+    {
+      "id": "datapacks",
+      "name": "Datapacks (monsters, scripts, world)",
+      "items": [
+        {"full_name":"opentibiabr/canary (data-otservbr-global)","stars":646,"license":"GPL-2.0","url":"https://github.com/opentibiabr/canary/tree/main/data-otservbr-global","description":"Global-style datapack: monsters, NPCs, spells, quests, scripts, world.","provides":["monsters","npcs","spells","quests","world"]},
+        {"full_name":"opentibiabr/canary (data-canary)","stars":646,"license":"GPL-2.0","url":"https://github.com/opentibiabr/canary/tree/main/data-canary","description":"Minimal Canary datapack for custom servers.","provides":["datapack","scripts"]}
+      ]
+    }
+  ],
+  "share_template": {
+    "title": "[Resource] <name> - <engine/client>",
+    "body_fields": [
+      "What it is (map / monsters / tool / full datapack)",
+      "GitHub or release URL (preferred)",
+      "License",
+      "Compatible engine + client versions",
+      "Preview screenshots (your captures, or upstream README images with credit)",
+      "If binary/zip attached: VirusTotal URL + SHA-256 + exact filename/version"
+    ]
+  }
+}

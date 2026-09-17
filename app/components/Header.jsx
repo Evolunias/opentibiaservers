@@ -93,6 +93,12 @@ export default function Header() {
                 >
                   Knowledge
                 </Link>
+          <Link
+            href="/resources"
+            className="nav-chip"
+          >
+            Resources
+          </Link>
                 <Link
                   href="/rankings"
                   className="nav-chip"
@@ -143,3 +149,4 @@ export default function Header() {
     </>
   );
 }
+

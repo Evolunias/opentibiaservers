@@ -33,6 +33,7 @@ export default function SubmitServerPage() {
     exp_rate: '1',
     skill_rate: '1',
     loot_rate: '1',
+    status_endpoint_url: '',
   });
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
@@ -147,6 +148,7 @@ export default function SubmitServerPage() {
             exp_rate: parseFloat(formData.exp_rate),
             skill_rate: parseFloat(formData.skill_rate),
             loot_rate: parseFloat(formData.loot_rate),
+            status_endpoint_url: formData.status_endpoint_url.trim() || null,
             user_id: user.id,
             owner_user_id: user.id,
             source: 'user_submission',
@@ -598,6 +600,27 @@ export default function SubmitServerPage() {
             />
           </div>
 
+          
+          <div className="md:col-span-2">
+            <h2 className="text-xl font-semibold text-gray-900 mb-2 mt-4">Player metrics (optional)</h2>
+            <p className="text-sm text-gray-600 mb-4">
+              Provide a public HTTPS JSON endpoint you host with metrics only — no emails, no scrapes.
+              Expected shape: {"players_online": 42, "players_peak": 120, "is_online": true}
+            </p>
+            <label htmlFor="status_endpoint_url" className="block text-sm font-medium text-gray-700 mb-2">
+              Status endpoint URL
+            </label>
+            <input
+              id="status_endpoint_url"
+              type="url"
+              name="status_endpoint_url"
+              value={formData.status_endpoint_url}
+              onChange={handleChange}
+              placeholder="https://your-server.example/status.json"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isSubmitting}
+            />
+          </div>
           <div className="md:col-span-2 bg-blue-50 border border-blue-200 p-4 rounded-lg">
             <p className="text-sm text-blue-800">
               <span className="font-semibold">Verification:</span> Your server will be verified through DNS record checks and IP/port connectivity tests. Make sure your contact information is accurate.
