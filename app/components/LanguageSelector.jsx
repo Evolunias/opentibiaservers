@@ -3,15 +3,15 @@
 import { useEffect, useMemo, useState } from 'react';
 
 const languages = [
-  { code: 'en', label: 'English' },
-  { code: 'pt', label: 'Português' },
-  { code: 'pl', label: 'Polski' },
-  { code: 'es', label: 'Español' },
-  { code: 'sv', label: 'Svenska' },
-  { code: 'tr', label: 'Türkçe' },
-  { code: 'fr', label: 'Français' },
-  { code: 'de', label: 'Deutsch' },
-  { code: 'nl', label: 'Nederlands' },
+  { code: 'en', label: 'English', short: 'EN' },
+  { code: 'pt', label: 'Portugu\u00eas', short: 'PT' },
+  { code: 'pl', label: 'Polski', short: 'PL' },
+  { code: 'es', label: 'Espa\u00f1ol', short: 'ES' },
+  { code: 'sv', label: 'Svenska', short: 'SV' },
+  { code: 'tr', label: 'T\u00fcrk\u00e7e', short: 'TR' },
+  { code: 'fr', label: 'Fran\u00e7ais', short: 'FR' },
+  { code: 'de', label: 'Deutsch', short: 'DE' },
+  { code: 'nl', label: 'Nederlands', short: 'NL' },
 ];
 
 const googleTranslateElementId = 'google_translate_element';
@@ -24,6 +24,7 @@ function setCookie(name, value) {
 function clearTranslateCookie() {
   document.cookie = 'googtrans=;path=/;max-age=0;SameSite=Lax';
   document.cookie = 'googtrans=;path=/;domain=.opentibiaservers.com;max-age=0;SameSite=Lax';
+  document.cookie = 'googtrans=;path=/;domain=opentibiaservers.com;max-age=0;SameSite=Lax';
 }
 
 function applyTranslation(languageCode) {
@@ -33,8 +34,7 @@ function applyTranslation(languageCode) {
     return;
   }
 
-  const value = `/en/${languageCode}`;
-  setCookie('googtrans', value);
+  setCookie('googtrans', `/en/${languageCode}`);
 
   const select = document.querySelector('.goog-te-combo');
   if (select) {
@@ -46,18 +46,51 @@ function applyTranslation(languageCode) {
   window.location.reload();
 }
 
+function readSavedLanguage(labelByCode) {
+  const match = document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);
+  if (match?.[1] && labelByCode.has(match[1])) return match[1];
+  return 'en';
+}
+
 export default function LanguageSelector() {
   const [language, setLanguage] = useState('en');
-  const labelByCode = useMemo(() => new Map(languages.map((item) => [item.code, item.label])), []);
+  const labelByCode = useMemo(
+    () => new Map(languages.map((item) => [item.code, item.label])),
+    [],
+  );
 
   useEffect(() => {
+    setLanguage(readSavedLanguage(labelByCode));
+
+    const scrubGoogleChrome = () => {
+      document
+        .querySelectorAll(
+          '.goog-te-banner-frame, .goog-te-balloon-frame, iframe.goog-te-banner-frame, body > .skiptranslate, #goog-gt-tt, .VIpgJd-ZVi9od-ORHb-OEVmcd',
+        )
+        .forEach((node) => {
+          if (node.id === googleTranslateElementId) return;
+          if (node.closest?.('.language-selector')) return;
+          node.remove();
+        });
+      document.body.style.top = '0px';
+      document.documentElement.style.marginTop = '0px';
+    };
+
+    scrubGoogleChrome();
+    const chromeObserver = new MutationObserver(scrubGoogleChrome);
+    chromeObserver.observe(document.documentElement, { childList: true, subtree: true });
+
     window.googleTranslateElementInit = () => {
       if (!window.google?.translate?.TranslateElement) return;
-      window.google.translate.TranslateElement(
+      const host = document.getElementById(googleTranslateElementId);
+      if (host) host.innerHTML = '';
+      // eslint-disable-next-line no-new
+      new window.google.translate.TranslateElement(
         {
           pageLanguage: 'en',
           includedLanguages: languages.map((item) => item.code).join(','),
           autoDisplay: false,
+          layout: window.google.translate.TranslateElement.InlineLayout?.SIMPLE,
         },
         googleTranslateElementId,
       );
@@ -65,16 +98,14 @@ export default function LanguageSelector() {
 
     if (!document.querySelector('script[data-ots-translate="true"]')) {
       const script = document.createElement('script');
-      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
       script.async = true;
       script.dataset.otsTranslate = 'true';
       document.body.appendChild(script);
+    } else if (window.google?.translate?.TranslateElement) {
+      window.googleTranslateElementInit();
     }
-
-    const match = document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);
-    if (match?.[1] && labelByCode.has(match[1])) {
-      setLanguage(match[1]);
-    }
+      return () => chromeObserver.disconnect();
   }, [labelByCode]);
 
   const handleChange = (event) => {
@@ -83,23 +114,35 @@ export default function LanguageSelector() {
     applyTranslation(nextLanguage);
   };
 
+  const current = languages.find((item) => item.code === language) || languages[0];
+
   return (
-    <div className="language-selector">
-      <label htmlFor="language-selector" className="sr-only">Language</label>
+    <div className="language-selector" data-lang={language}>
+      <label htmlFor="language-selector" className="sr-only">
+        Language
+      </label>
+      <span className="language-selector__glyph" aria-hidden="true">
+        Aa
+      </span>
       <select
         id="language-selector"
         value={language}
         onChange={handleChange}
         className="language-selector__select"
-        aria-label="Translate site language"
+        aria-label="Site language"
+        title={current.label}
       >
         {languages.map((item) => (
           <option key={item.code} value={item.code}>
-            {item.label}
+            {item.short} - {item.label}
           </option>
         ))}
       </select>
-      <div id={googleTranslateElementId} className="language-selector__widget" aria-hidden="true" />
+      <div
+        id={googleTranslateElementId}
+        className="language-selector__widget skiptranslate"
+        aria-hidden="true"
+      />
     </div>
   );
 }
