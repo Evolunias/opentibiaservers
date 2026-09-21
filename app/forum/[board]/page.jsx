@@ -21,10 +21,19 @@ function formatWhen(value) {
   try { return new Date(value).toLocaleString(); } catch { return '—'; }
 }
 
-export default async function ForumBoardPage({ params }) {
+function pageHref(slug, page) {
+  return page <= 1 ? `/forum/${slug}` : `/forum/${slug}?page=${page}`;
+}
+
+export default async function ForumBoardPage({ params, searchParams }) {
   const { board, children, error } = await getBoardBySlug(params.board);
   if (!board) notFound();
-  const { topics } = await getTopicsForBoard(board.id);
+
+  const requestedPage = Number(searchParams?.page || 1);
+  const { topics, total, page, totalPages } = await getTopicsForBoard(board.id, {
+    page: requestedPage,
+    pageSize: 40,
+  });
 
   return (
     <main className="directory-shell min-h-screen">
@@ -41,6 +50,12 @@ export default async function ForumBoardPage({ params }) {
             <div>
               <h1>{board.name}</h1>
               <p>{board.description}</p>
+              {total ? (
+                <p className="forum-board-page__meta">
+                  {total.toLocaleString()} topics
+                  {totalPages > 1 ? ` · Page ${page} of ${totalPages}` : ''}
+                </p>
+              ) : null}
             </div>
             <Link href={`/forum/${board.slug}/new`} className="auth-btn auth-btn--register">New thread</Link>
           </header>
@@ -77,6 +92,21 @@ export default async function ForumBoardPage({ params }) {
               </Link>
             ))}
           </div>
+          {totalPages > 1 ? (
+            <nav className="forum-pagination" aria-label="Topic pages">
+              {page > 1 ? (
+                <Link href={pageHref(board.slug, page - 1)} className="forum-pagination__btn">Previous</Link>
+              ) : (
+                <span className="forum-pagination__btn is-disabled">Previous</span>
+              )}
+              <span className="forum-pagination__status">Page {page} of {totalPages}</span>
+              {page < totalPages ? (
+                <Link href={pageHref(board.slug, page + 1)} className="forum-pagination__btn">Next</Link>
+              ) : (
+                <span className="forum-pagination__btn is-disabled">Next</span>
+              )}
+            </nav>
+          ) : null}
         </div>
       </div>
     </main>
