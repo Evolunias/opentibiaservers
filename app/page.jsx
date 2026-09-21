@@ -1,4 +1,3 @@
-import EvomaniasHomeStrip from './components/EvomaniasHomeStrip';
 import ForumIndex from './components/ForumIndex';
 import SiteModeTabs from './components/SiteModeTabs';
 import { getForumIndex } from '@/lib/forum-data';
@@ -61,7 +60,6 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
       <main className="directory-shell min-h-screen">
-<EvomaniasHomeStrip />
         <div className="directory-shell__glow" aria-hidden="true" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 pt-6 pb-12">
           <SiteModeTabs />

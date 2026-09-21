@@ -3,6 +3,11 @@ import Link from 'next/link';
 export default function ResearchArticle({ article }) {
   return (
     <main className="server-wiki research-wiki">
+      <nav className="server-wiki__portal-nav" aria-label="Research navigation">
+        <Link href="/wiki">Server wiki</Link>
+        <Link href="/research">Research library</Link>
+        <Link href="/directory">Server directory</Link>
+      </nav>
       <header className="server-wiki__header">
         <p className="server-wiki__eyebrow">Independent Research Wiki</p>
         <h1>{article.heading}</h1>

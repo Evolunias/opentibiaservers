@@ -32,6 +32,11 @@ export default function ResearchIndexPage() {
 
   return (
     <main className="server-wiki server-wiki--index research-wiki">
+      <nav className="server-wiki__portal-nav" aria-label="Research navigation">
+        <Link href="/wiki">Server wiki</Link>
+        <Link href="/research" aria-current="page">Research library</Link>
+        <Link href="/directory">Server directory</Link>
+      </nav>
       <header className="server-wiki__header">
         <p className="server-wiki__eyebrow">Independent Research Wiki</p>
         <h1>Research library</h1>
@@ -54,7 +59,7 @@ export default function ResearchIndexPage() {
         </p>
       </section>
 
-      <h2 className="server-wiki__header" style={{ marginTop: '1.5rem' }}>Sample research pages</h2>
+      <h2 className="server-wiki__section-title">Sample research pages</h2>
       <ul className="server-wiki__index-list">
         {samples.map((key) => (
           <li key={key}>

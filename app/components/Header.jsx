@@ -63,9 +63,9 @@ export default function Header() {
   return (
     <>
       <header className="site-header site-header--enterprise sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-            <Link href="/" className="brand-mark group flex items-center gap-3 hover:no-underline">
+        <div className="w-full px-4 py-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
+            <Link href="/" className="brand-mark group flex shrink-0 items-center gap-3 hover:no-underline">
               {showAureraLogo ? (
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F1d2cd06444d64f5aae6a6cb23ba0be77%2F3d9fb8fdaec4431b851211fbec4d4616?format=webp&width=800&height=1200"
@@ -86,7 +86,7 @@ export default function Header() {
             </Link>
 
             {!loading ? (
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2 xl:flex-nowrap">
                 <Link
                   href="/knowledge"
                   className="nav-chip"

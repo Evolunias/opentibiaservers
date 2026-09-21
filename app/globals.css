@@ -5502,105 +5502,202 @@ html[data-theme] .featured-server-ad__primary,
   -webkit-text-fill-color: #1a1208 !important;
 }
 
-/* ===== Server wiki library ===== */
+/* ===== Wikipedia-inspired server and research libraries ===== */
 .server-wiki {
-  width: min(100%, 52rem);
-  margin: 0 auto;
-  padding: 2rem 1.25rem 4rem;
-  color: #17202a;
+  width: calc(100% - 3rem);
+  max-width: 1180px;
+  min-height: 70vh;
+  margin: 1.5rem auto 3rem;
+  padding: 1.25rem 2.75rem 4rem;
+  border: 1px solid #a2a9b1;
+  background: #fff;
+  color: #202122;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
+.server-wiki__portal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  margin: 0 -0.25rem 1.5rem;
+  border-bottom: 1px solid #a2a9b1;
+  font-size: 0.875rem;
+}
+.server-wiki__portal-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.35rem;
+  padding: 0 0.25rem;
+  border-bottom: 2px solid transparent;
+  color: #36c !important;
+  text-decoration: none;
+}
+.server-wiki__portal-nav a:hover,
+.server-wiki__portal-nav a[aria-current="page"] {
+  border-bottom-color: #36c;
+  color: #202122 !important;
+}
+.server-wiki__portal-nav a[aria-current="page"] { font-weight: 700; }
 .server-wiki__header {
   margin-bottom: 1.75rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid #dfe5ec;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #a2a9b1;
 }
 .server-wiki__eyebrow {
-  margin: 0 0 0.35rem;
-  color: #0f766e;
-  font-size: 0.75rem;
-  font-weight: 800;
+  margin: 0 0 0.25rem;
+  color: #54595d;
+  font-size: 0.72rem;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 .server-wiki__header h1 {
   margin: 0;
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  line-height: 1.15;
+  color: #000;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 4vw, 2.65rem);
+  font-weight: 400;
+  line-height: 1.18;
 }
 .server-wiki__lede {
-  margin: 0.75rem 0 0;
-  color: #475569;
+  max-width: 70rem;
+  margin: 0.55rem 0 0;
+  color: #54595d;
+  font-size: 0.92rem;
 }
+.server-wiki a,
+.server-wiki__content a,
+.server-wiki__index-list a {
+  color: #36c;
+  text-decoration: none;
+}
+.server-wiki a:hover { text-decoration: underline; }
 .server-wiki__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.45rem;
   margin-top: 1rem;
 }
-.server-wiki__button {
+.server-wiki__button,
+.server-wiki__button--ghost {
   display: inline-flex;
+  min-height: 2.15rem;
   align-items: center;
   justify-content: center;
-  min-height: 2.5rem;
-  padding: 0.55rem 0.9rem;
-  border-radius: 6px;
-  background: #0f766e;
-  color: #fff !important;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #a2a9b1;
+  border-radius: 2px;
+  background: #f8f9fa;
+  color: #36c !important;
+  font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none !important;
 }
-.server-wiki__button--ghost {
+.server-wiki__button:hover,
+.server-wiki__button--ghost:hover {
+  border-color: #72777d;
   background: #fff;
-  color: #0f766e !important;
-  border: 1px solid #99d5cb;
 }
-.server-wiki__content :is(h1,h2,h3,h4) {
-  margin-top: 1.6rem;
-  margin-bottom: 0.55rem;
+.server-wiki__content :is(h1, h2, h3, h4),
+.server-wiki__related h2 {
+  margin: 1.75rem 0 0.65rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #a2a9b1;
+  color: #000;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.server-wiki__content h2,
+.server-wiki__related h2 { font-size: 1.55rem; }
+.server-wiki__content h3 { font-size: 1.2rem; }
+.server-wiki__section-title {
+  margin: 1.75rem 0 0.65rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #a2a9b1;
+  color: #000;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.3;
 }
 .server-wiki__content p,
 .server-wiki__content li {
+  color: #202122;
   line-height: 1.65;
-  color: #1f2937;
 }
-.server-wiki__content a {
-  color: #0f766e;
-  font-weight: 600;
+.server-wiki__content code,
+.server-wiki__lede code {
+  padding: 0.1rem 0.25rem;
+  border: 1px solid #eaecf0;
+  background: #f8f9fa;
+  color: #202122;
+  font-size: 0.88em;
 }
 .server-wiki__content blockquote {
   margin: 1rem 0;
-  padding: 0.85rem 1rem;
-  border-left: 4px solid #0f766e;
-  background: #f0fdfa;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #a2a9b1;
+  background: #f8f9fa;
+  color: #54595d;
 }
 .server-wiki__table {
   width: 100%;
-  border-collapse: collapse;
   margin: 1rem 0;
-  font-size: 0.95rem;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.9rem;
 }
 .server-wiki__table th,
 .server-wiki__table td {
-  border: 1px solid #dbe3ea;
-  padding: 0.55rem 0.7rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #a2a9b1;
   text-align: left;
+  vertical-align: top;
 }
 .server-wiki__table th {
-  background: #f8fafc;
+  width: 12rem;
+  background: #eaecf0;
+  font-weight: 700;
 }
 .server-wiki__index-list {
-  columns: 2;
-  gap: 1.5rem;
-  padding-left: 1.1rem;
+  columns: 3;
+  column-gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #eaecf0;
 }
 .server-wiki__index-list li {
   break-inside: avoid;
-  margin: 0.35rem 0;
+  padding: 0.42rem 0;
+  border-bottom: 1px solid #eaecf0;
+  line-height: 1.4;
 }
-@media (max-width: 720px) {
-  .server-wiki__index-list { columns: 1; }
+.server-wiki__index-list span { color: #72777d; font-size: 0.82rem; }
+.server-wiki__footer-nav {
+  margin-top: 2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #a2a9b1;
+  color: #54595d;
+  font-size: 0.85rem;
+}
+html[data-theme] .server-wiki {
+  background: #fff !important;
+  color: #202122 !important;
+  border-color: #a2a9b1 !important;
 }
 
+@media (max-width: 900px) {
+  .server-wiki { width: calc(100% - 1.5rem); padding: 1rem 1.25rem 3rem; }
+  .server-wiki__index-list { columns: 2; }
+}
+@media (max-width: 600px) {
+  .server-wiki { width: 100%; margin-top: 0; border-right: 0; border-left: 0; padding-inline: 1rem; }
+  .server-wiki__index-list { columns: 1; }
+  .server-wiki__table { display: block; overflow-x: auto; }
+}
 /* Evomanias auth-free homepage strip — keep visual weight below FeaturedServerAd carousel */
 .evomanias-home-strip {
   margin: 0 0 1.25rem;

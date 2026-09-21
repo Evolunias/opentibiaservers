@@ -38,6 +38,11 @@ export default function WikiIndexPage() {
 
   return (
     <main className="server-wiki server-wiki--index">
+      <nav className="server-wiki__portal-nav" aria-label="Wiki navigation">
+        <Link href="/wiki" aria-current="page">Main page</Link>
+        <Link href="/directory">Server directory</Link>
+        <Link href="/research">Research library</Link>
+      </nav>
       <header className="server-wiki__header">
         <p className="server-wiki__eyebrow">OpenTibiaServers Wiki</p>
         <h1>Server wiki library</h1>
@@ -47,6 +52,7 @@ export default function WikiIndexPage() {
           Share any page for SEO and player discovery.
         </p>
       </header>
+      <h2 className="server-wiki__section-title">All server articles</h2>
       <ul className="server-wiki__index-list">
         {pages.map((page) => (
           <li key={page.slug}>

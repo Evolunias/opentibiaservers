@@ -6,6 +6,11 @@ export default function WikiArticle({ page, related = [] }) {
 
   return (
     <main className="server-wiki">
+      <nav className="server-wiki__portal-nav" aria-label="Wiki navigation">
+        <Link href="/wiki">Main page</Link>
+        <Link href="/directory">Server directory</Link>
+        <Link href="/research">Research library</Link>
+      </nav>
       <header className="server-wiki__header">
         <p className="server-wiki__eyebrow">OpenTibiaServers Wiki</p>
         <h1>{name}</h1>
